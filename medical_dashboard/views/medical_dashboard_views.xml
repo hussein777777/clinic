@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_medical_dashboard" model="ir.actions.client">
+        <field name="name">Clinic Dashboard</field>
+        <field name="tag">medical_dashboard.dashboard</field>
+    </record>
+
+    <menuitem id="menu_medical_dashboard" name="Dashboard" parent="medical_core.menu_medical_root"
+              action="action_medical_dashboard" sequence="1" groups="medical_core.group_medical_manager"/>
+</odoo>

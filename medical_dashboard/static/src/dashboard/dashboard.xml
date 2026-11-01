@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="medical_dashboard.ChartCard">
+        <section class="o_dd_card">
+            <header class="o_dd_card_head">
+                <div>
+                    <h3 class="o_dd_card_title" t-esc="props.title"/>
+                    <p class="o_dd_card_sub" t-if="props.subtitle" t-esc="props.subtitle"/>
+                </div>
+                <button class="btn btn-link btn-sm o_dd_view_toggle" t-on-click="toggleTable" t-if="!isEmpty"
+                        t-att-aria-pressed="state.table ? 'true' : 'false'">
+                    <i t-attf-class="fa {{ state.table ? 'fa-bar-chart' : 'fa-table' }} me-1"/>
+                    <t t-if="state.table">Chart</t><t t-else="">Table</t>
+                </button>
+            </header>
+            <div t-if="isEmpty" class="o_dd_empty">No data for this period yet.</div>
+            <div t-elif="state.table" class="o_dd_table_wrap">
+                <table class="table table-sm o_dd_table">
+                    <thead>
+                        <tr>
+                            <th/>
+                            <th t-foreach="props.series" t-as="serie" t-key="serie_index" class="text-end" t-esc="serie.label"/>
+                            <th t-if="props.series.length > 1" class="text-end">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="tableRows" t-as="row" t-key="row_index">
+                            <td t-esc="row.label"/>
+                            <td t-foreach="row.values" t-as="value" t-key="value_index" class="text-end o_dd_num" t-esc="value"/>
+                            <td t-if="row.total" class="text-end o_dd_num fw-semibold" t-esc="row.total"/>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div t-else="" class="o_dd_canvas" t-attf-style="height: {{ chartHeight }}px">
+                <canvas t-ref="canvas" role="img" t-att-aria-label="props.title"/>
+            </div>
+            <t t-slot="footer"/>
+        </section>
+    </t>
+
+    <t t-name="medical_dashboard.Heatmap">
+        <section class="o_dd_card">
+            <header class="o_dd_card_head">
+                <div>
+                    <h3 class="o_dd_card_title">When rooms are busy</h3>
+                    <p class="o_dd_card_sub">
+                        Share of <t t-esc="props.occupancy.rooms"/> rooms booked, by weekday and hour. Lighter cells are idle time to fill.
+                    </p>
+                </div>
+                <button class="btn btn-link btn-sm o_dd_view_toggle" t-on-click="toggleTable">
+                    <i t-attf-class="fa {{ state.table ? 'fa-th' : 'fa-table' }} me-1"/>
+                    <t t-if="state.table">Grid</t><t t-else="">Table</t>
+                </button>
+            </header>
+            <div t-if="state.table" class="o_dd_table_wrap">
+                <table class="table table-sm o_dd_table">
+                    <thead>
+                        <tr>
+                            <th/>
+                            <th t-foreach="props.occupancy.hours" t-as="hour" t-key="hour" class="text-end" t-esc="hourLabel(hour)"/>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="rows" t-as="row" t-key="row.weekday">
+                            <td t-esc="row.label"/>
+                            <td t-foreach="row.cells" t-as="cell" t-key="cell_index" class="text-end o_dd_num" t-esc="cellText(cell)"/>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div t-else="" class="o_dd_heat" t-attf-style="--dd-heat-cols: {{ props.occupancy.hours.length }}">
+                <div class="o_dd_heat_corner"/>
+                <div t-foreach="props.occupancy.hours" t-as="hour" t-key="hour" class="o_dd_heat_hour" t-esc="hourLabel(hour)"/>
+                <t t-foreach="rows" t-as="row" t-key="row.weekday">
+                    <div class="o_dd_heat_day" t-esc="row.label"/>
+                    <div t-foreach="row.cells" t-as="cell" t-key="cell_index" t-att-class="cellClass(cell)"
+                         t-att-title="cellTitle(row, cell)" t-att-aria-label="cellTitle(row, cell)" role="img"/>
+                </t>
+            </div>
+            <div class="o_dd_heat_legend" t-if="!state.table">
+                <span>0%</span>
+                <span class="o_dd_heat_cell o_dd_heat_0"/>
+                <span class="o_dd_heat_cell o_dd_heat_1"/>
+                <span class="o_dd_heat_cell o_dd_heat_2"/>
+                <span class="o_dd_heat_cell o_dd_heat_3"/>
+                <span class="o_dd_heat_cell o_dd_heat_4"/>
+                <span class="o_dd_heat_cell o_dd_heat_5"/>
+                <span class="o_dd_heat_cell o_dd_heat_6"/>
+                <span>100%</span>
+                <span class="o_dd_heat_cell o_dd_heat_closed ms-3"/>
+                <span>Closed</span>
+            </div>
+        </section>
+    </t>
+
+    <t t-name="medical_dashboard.Dashboard">
+        <div class="o_action o_dd_root">
+            <div class="o_dd_scroll">
+                <div class="o_dd_page" t-if="state.data">
+                    <div class="o_dd_toolbar">
+                        <div>
+                            <h1 class="o_dd_heading">Medical Center Dashboard</h1>
+                            <p class="o_dd_period">
+                                <t t-esc="state.data.period.label"/>
+                                <span class="o_dd_muted"> · compared with <t t-esc="state.data.period.prev_label"/></span>
+                            </p>
+                        </div>
+                        <div class="o_dd_filters">
+                            <div class="btn-group o_dd_periods" role="group" aria-label="Period">
+                                <button t-foreach="periods" t-as="p" t-key="p.key" type="button"
+                                        t-attf-class="btn btn-sm {{ state.period === p.key ? 'btn-primary' : 'btn-light' }}"
+                                        t-att-aria-pressed="state.period === p.key ? 'true' : 'false'"
+                                        t-on-click="() => this.setPeriod(p.key)" t-esc="p.label"/>
+                            </div>
+                            <select class="form-select form-select-sm o_dd_doctor" t-on-change="onDepartmentChange" aria-label="Clinic">
+                                <option value="">All clinics</option>
+                                <option t-foreach="state.data.departments" t-as="dep" t-key="dep.id" t-att-value="dep.id"
+                                        t-att-selected="state.departmentId === dep.id" t-esc="dep.name"/>
+                            </select>
+                            <select class="form-select form-select-sm o_dd_doctor" t-on-change="onDoctorChange" aria-label="Doctor">
+                                <option value="">All doctors</option>
+                                <option t-foreach="state.data.doctors" t-as="d" t-key="d.id" t-att-value="d.id"
+                                        t-att-selected="state.doctorId === d.id" t-esc="d.name"/>
+                            </select>
+                            <i class="fa fa-circle-o-notch fa-spin o_dd_muted" t-if="state.loading"/>
+                        </div>
+                    </div>
+
+                    <div class="o_dd_kpis">
+                        <div t-foreach="kpiTiles" t-as="tile" t-key="tile.key"
+                             t-attf-class="o_dd_tile {{ tile.hero ? 'o_dd_tile_hero' : '' }}" t-att-title="tile.full or ''">
+                            <div class="o_dd_tile_label" t-esc="tile.label"/>
+                            <div class="o_dd_tile_value" t-esc="tile.value"/>
+                            <div class="o_dd_meter" t-if="tile.meter !== undefined">
+                                <div t-attf-class="o_dd_meter_fill {{ tile.meterBad and tile.meter > 10 ? 'o_dd_meter_bad' : '' }}"
+                                     t-attf-style="width: {{ tile.meter }}%"/>
+                            </div>
+                            <div class="o_dd_tile_foot">
+                                <span t-if="tile.delta" t-attf-class="o_dd_delta {{ tile.delta.cls }}">
+                                    <i t-if="tile.delta.icon" t-attf-class="fa {{ tile.delta.icon }}" aria-hidden="true"/>
+                                    <t t-esc="tile.delta.text"/>
+                                </span>
+                                <span class="o_dd_muted" t-esc="tile.hint"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="o_dd_grid o_dd_grid_full">
+                        <MedicalChartCard title.translate="Production by month"
+                                         subtitle.translate="Last 12 months, split by who pays"
+                                         kind="'stacked'" labels="trendChart.labels" series="trendChart.series"
+                                         unit="'money'" currency="currency"/>
+                    </div>
+
+                    <div class="o_dd_grid o_dd_grid_2">
+                        <MedicalChartCard title.translate="Production by doctor"
+                                         subtitle.translate="Treatments and earned care-program revenue in the period"
+                                         kind="'hbar'" labels="doctorChart.labels" series="doctorChart.series"
+                                         unit="'money'" currency="currency"/>
+                        <MedicalChartCard title="specialtyChart.title"
+                                         subtitle="specialtyChart.subtitle"
+                                         kind="'hbar'" labels="specialtyChart.labels" series="specialtyChart.series"
+                                         unit="'money'" currency="currency"/>
+                    </div>
+
+                    <div class="o_dd_grid o_dd_grid_2">
+                        <MedicalHeatmap occupancy="state.data.occupancy"/>
+                        <MedicalChartCard title.translate="Rejection rate by insurer"
+                                         subtitle.translate="Share of the settled amount the insurer refused"
+                                         kind="'hbar'" labels="insurerChart.labels" series="insurerChart.series"
+                                         unit="'percent'" currency="currency">
+                            <t t-set-slot="footer">
+                                <div class="o_dd_reasons" t-if="state.data.insurance.reasons.length">
+                                    <h4 class="o_dd_minor">Top rejection reasons</h4>
+                                    <table class="table table-sm o_dd_table mb-0">
+                                        <tbody>
+                                            <tr t-foreach="state.data.insurance.reasons" t-as="r" t-key="r_index">
+                                                <td t-esc="r.reason"/>
+                                                <td class="text-end o_dd_num o_dd_muted"><t t-esc="r.count"/>×</td>
+                                                <td class="text-end o_dd_num" t-esc="money(r.amount)"/>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </t>
+                        </MedicalChartCard>
+                    </div>
+
+                    <section class="o_dd_card o_dd_leaks">
+                        <header class="o_dd_card_head">
+                            <div>
+                                <h3 class="o_dd_card_title">Money on the table</h3>
+                                <p class="o_dd_card_sub">Open right now, all dates. Click a line to work the list.</p>
+                            </div>
+                            <div class="o_dd_leak_total">
+                                <span class="o_dd_muted">Total</span>
+                                <strong t-esc="money(leakageTotal)"/>
+                            </div>
+                        </header>
+                        <button t-foreach="state.data.leakage" t-as="item" t-key="item.key" type="button"
+                                class="o_dd_leak" t-on-click="() => this.openLeak(item)">
+                            <span class="o_dd_leak_text">
+                                <span class="o_dd_leak_label" t-esc="item.label"/>
+                                <span class="o_dd_muted" t-esc="item.hint"/>
+                            </span>
+                            <span class="o_dd_leak_count o_dd_num"><t t-esc="item.count"/></span>
+                            <span class="o_dd_leak_amount o_dd_num">
+                                <t t-if="item.amount !== null" t-esc="money(item.amount)"/>
+                            </span>
+                            <i class="fa fa-chevron-right o_dd_muted o_dd_chev" aria-hidden="true"/>
+                        </button>
+                    </section>
+                </div>
+                <div class="o_dd_loading" t-else="">
+                    <i class="fa fa-circle-o-notch fa-spin"/>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

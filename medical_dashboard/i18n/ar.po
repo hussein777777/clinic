@@ -1,0 +1,526 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* medical_dashboard
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-11 17:50+0000\n"
+"PO-Revision-Date: 2026-10-11 17:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: medical_dashboard
+#. odoo-python
+#: code:addons/medical_dashboard/models/medical_dashboard.py:0
+msgid "Accepted treatments not booked"
+msgstr "علاجات مقبولة لم تُحجز"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid "All clinics"
+msgstr "كل العيادات"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid "All doctors"
+msgstr "كل الأطباء"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Booked patients who did not come"
+msgstr "مرضى محجوزون لم يحضروا"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Booked share of opening hours"
+msgstr "نسبة المحجوز من ساعات العمل"
+
+#. module: medical_dashboard
+#. odoo-python
+#: code:addons/medical_dashboard/models/medical_dashboard.py:0
+msgid "Call these patients to book"
+msgstr "اتصل بهؤلاء المرضى للحجز"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#. odoo-python
+#: code:addons/medical_dashboard/models/medical_dashboard.py:0
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Care programs"
+msgstr "برامج الرعاية"
+
+#. module: medical_dashboard
+#. odoo-python
+#: code:addons/medical_dashboard/models/medical_dashboard.py:0
+msgid "Cast removals, recalls, vaccinations, result reviews..."
+msgstr "فك الجبائر، الاستدعاءات، التطعيمات، مراجعة النتائج..."
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid "Chart"
+msgstr "رسم"
+
+#. module: medical_dashboard
+#. odoo-python
+#: code:addons/medical_dashboard/models/medical_dashboard.py:0
+msgid "Claim Lines"
+msgstr "سطور المطالبات"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid "Clinic"
+msgstr "العيادة"
+
+#. module: medical_dashboard
+#: model:ir.actions.client,name:medical_dashboard.action_medical_dashboard
+msgid "Clinic Dashboard"
+msgstr "لوحة المركز"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid "Closed"
+msgstr "مغلق"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Collected"
+msgstr "المحصّل"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Completed visits"
+msgstr "الزيارات المكتملة"
+
+#. module: medical_dashboard
+#. odoo-python
+#: code:addons/medical_dashboard/models/medical_dashboard.py:0
+msgid "Create the monthly claims"
+msgstr "أنشئ المطالبات الشهرية"
+
+#. module: medical_dashboard
+#: model:ir.ui.menu,name:medical_dashboard.menu_medical_dashboard
+msgid "Dashboard"
+msgstr "لوحة المتابعة"
+
+#. module: medical_dashboard
+#: model:ir.model.fields,field_description:medical_dashboard.field_medical_dashboard__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid "Doctor"
+msgstr "الطبيب"
+
+#. module: medical_dashboard
+#. odoo-python
+#: code:addons/medical_dashboard/models/medical_dashboard.py:0
+msgid "Due within a week or already late"
+msgstr "مستحقة خلال أسبوع أو متأخرة بالفعل"
+
+#. module: medical_dashboard
+#. odoo-python
+#: code:addons/medical_dashboard/models/medical_dashboard.py:0
+msgid "Follow-ups not booked"
+msgstr "متابعات لم تُحجز"
+
+#. module: medical_dashboard
+#. odoo-python
+#: code:addons/medical_dashboard/models/medical_dashboard.py:0
+msgid "Follow-ups to Book"
+msgstr "متابعات للحجز"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Fri"
+msgstr "جمعة"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid "Grid"
+msgstr "شبكة"
+
+#. module: medical_dashboard
+#: model:ir.model.fields,field_description:medical_dashboard.field_medical_dashboard__id
+msgid "ID"
+msgstr "المُعرّف"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Insurance rejection rate"
+msgstr "نسبة رفض التأمين"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Insurer share"
+msgstr "حصة التأمين"
+
+#. module: medical_dashboard
+#. odoo-python
+#: code:addons/medical_dashboard/models/medical_dashboard.py:0
+msgid "Insurer shares not yet claimed"
+msgstr "حصص تأمين لم يُطالب بها بعد"
+
+#. module: medical_dashboard
+#. odoo-python
+#: code:addons/medical_dashboard/models/medical_dashboard.py:0
+msgid "Invoices and installments past due"
+msgstr "فواتير وأقساط تجاوزت موعد استحقاقها"
+
+#. module: medical_dashboard
+#. odoo-python
+#: code:addons/medical_dashboard/models/medical_dashboard.py:0
+msgid "Lab & Imaging"
+msgstr "التحاليل والأشعة"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid "Last 12 months, split by who pays"
+msgstr "آخر 12 شهرًا، مقسمة حسب الجهة الدافعة"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Last 90 days"
+msgstr "آخر 90 يومًا"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Last month"
+msgstr "الشهر الماضي"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid "Medical Center Dashboard"
+msgstr "لوحة المركز الطبي"
+
+#. module: medical_dashboard
+#: model:ir.model,name:medical_dashboard.model_medical_dashboard
+msgid "Medical management dashboard data"
+msgstr "بيانات لوحة الإدارة الطبية"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Mon"
+msgstr "إثنين"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid "Money on the table"
+msgstr "أموال على الطاولة"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid "No data for this period yet."
+msgstr "لا توجد بيانات لهذه الفترة بعد."
+
+#. module: medical_dashboard
+#. odoo-python
+#: code:addons/medical_dashboard/models/medical_dashboard.py:0
+msgid "No reason given"
+msgstr "بدون سبب"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "No-show rate"
+msgstr "نسبة التغيّب"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Of settled claims, by amount"
+msgstr "من المطالبات المسوّاة، بالمبلغ"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid "Open right now, all dates. Click a line to work the list."
+msgstr "مفتوحة الآن، لكل التواريخ. اضغط على أي سطر لفتح القائمة."
+
+#. module: medical_dashboard
+#. odoo-python
+#: code:addons/medical_dashboard/models/medical_dashboard.py:0
+msgid "Other"
+msgstr "أخرى"
+
+#. module: medical_dashboard
+#. odoo-python
+#: code:addons/medical_dashboard/models/medical_dashboard.py:0
+msgid "Overdue Clinical Tasks"
+msgstr "مهام سريرية متأخرة"
+
+#. module: medical_dashboard
+#. odoo-python
+#: code:addons/medical_dashboard/models/medical_dashboard.py:0
+msgid "Overdue clinical tasks"
+msgstr "مهام سريرية متأخرة"
+
+#. module: medical_dashboard
+#. odoo-python
+#: code:addons/medical_dashboard/models/medical_dashboard.py:0
+msgid "Overdue patient balances"
+msgstr "أرصدة مرضى متأخرة"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Patient share"
+msgstr "حصة المريض"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Payments received on medical invoices"
+msgstr "المدفوعات المستلمة على الفواتير الطبية"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid "Period"
+msgstr "الفترة"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Production"
+msgstr "الإنتاج"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Production by clinic"
+msgstr "الإنتاج حسب العيادة"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid "Production by doctor"
+msgstr "الإنتاج حسب الطبيب"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid "Production by month"
+msgstr "الإنتاج حسب الشهر"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Production by specialty"
+msgstr "الإنتاج حسب التخصص"
+
+#. module: medical_dashboard
+#. odoo-python
+#: code:addons/medical_dashboard/models/medical_dashboard.py:0
+msgid "Re-bill, write off or resubmit"
+msgstr "إعادة فوترة أو شطب أو إعادة تقديم"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Rejection rate"
+msgstr "نسبة الرفض"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid "Rejection rate by insurer"
+msgstr "نسبة الرفض حسب شركة التأمين"
+
+#. module: medical_dashboard
+#. odoo-python
+#: code:addons/medical_dashboard/models/medical_dashboard.py:0
+msgid "Rejections to Decide"
+msgstr "مرفوضات تحتاج قرار"
+
+#. module: medical_dashboard
+#. odoo-python
+#: code:addons/medical_dashboard/models/medical_dashboard.py:0
+msgid "Rejections waiting for a decision"
+msgstr "مرفوضات بانتظار قرار"
+
+#. module: medical_dashboard
+#. odoo-python
+#: code:addons/medical_dashboard/models/medical_dashboard.py:0
+msgid "Requested more than 2 days ago"
+msgstr "مطلوبة منذ أكثر من يومين"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Room occupancy"
+msgstr "إشغال الغرف"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Sat"
+msgstr "سبت"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid "Share of"
+msgstr "نسبة المحجوز من"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid "Share of the settled amount the insurer refused"
+msgstr "نسبة المبلغ المسوّى الذي رفضته شركة التأمين"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Sun"
+msgstr "أحد"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid "Table"
+msgstr "جدول"
+
+#. module: medical_dashboard
+#. odoo-python
+#: code:addons/medical_dashboard/models/medical_dashboard.py:0
+msgid "Tests waiting for results"
+msgstr "فحوصات في انتظار النتائج"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "This month"
+msgstr "هذا الشهر"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "This year"
+msgstr "هذا العام"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Thu"
+msgstr "خميس"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid "Top rejection reasons"
+msgstr "أكثر أسباب الرفض"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid "Treatments and earned care-program revenue in the period"
+msgstr "العلاجات وإيرادات برامج الرعاية المكتسبة خلال الفترة"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Treatments performed, all payers"
+msgstr "العلاجات المنفذة، لكل الجهات الدافعة"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Tue"
+msgstr "ثلاثاء"
+
+#. module: medical_dashboard
+#. odoo-python
+#: code:addons/medical_dashboard/models/medical_dashboard.py:0
+msgid "Unassigned"
+msgstr "غير محدد"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Wed"
+msgstr "أربعاء"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid "When rooms are busy"
+msgstr "متى تكون الغرف مشغولة"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Where this clinic's revenue comes from"
+msgstr "من أين تأتي إيرادات هذه العيادة"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "Which clinics bring the revenue"
+msgstr "أي العيادات تحقق الإيراد"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "new patients"
+msgstr "مريض جديد"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "no change"
+msgstr "بدون تغيير"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.js:0
+msgid "pts"
+msgstr "نقطة"
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid ""
+"rooms booked, by weekday and hour. Lighter cells are idle time to fill."
+msgstr ""
+"غرف محجوزة حسب يوم الأسبوع والساعة. الخلايا الفاتحة وقت فارغ يمكن ملؤه."
+
+#. module: medical_dashboard
+#. odoo-javascript
+#: code:addons/medical_dashboard/static/src/dashboard/dashboard.xml:0
+msgid "· compared with"
+msgstr "· مقارنةً بـ"

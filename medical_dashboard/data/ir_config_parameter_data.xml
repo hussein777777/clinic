@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- opening hours used for room occupancy (local time) -->
+        <record id="config_open_hour" model="ir.config_parameter">
+            <field name="key">medical_dashboard.open_hour</field>
+            <field name="value">10</field>
+        </record>
+        <record id="config_close_hour" model="ir.config_parameter">
+            <field name="key">medical_dashboard.close_hour</field>
+            <field name="value">22</field>
+        </record>
+        <!-- Python weekday numbers, comma separated (0 = Monday ... 4 = Friday) -->
+        <record id="config_closed_weekdays" model="ir.config_parameter">
+            <field name="key">medical_dashboard.closed_weekdays</field>
+            <field name="value">4</field>
+        </record>
+    </data>
+</odoo>

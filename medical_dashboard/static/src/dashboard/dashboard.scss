@@ -1,0 +1,390 @@
+// Tokens: reference data-viz palette (validated: adjacent CVD ΔE 9.2, normal ΔE 27.6).
+.o_dd_root {
+    --dd-font: system-ui, -apple-system, "Segoe UI", sans-serif;
+    --dd-page: #f9f9f7;
+    --dd-surface: #fcfcfb;
+    --dd-ink: #0b0b0b;
+    --dd-secondary: #52514e;
+    --dd-muted: #898781;
+    --dd-grid: #e1e0d9;
+    --dd-axis: #c3c2b7;
+    --dd-ring: rgba(11, 11, 11, 0.10);
+    --dd-series-1: #2a78d6;
+    --dd-series-2: #eb6834;
+    --dd-series-3: #1baf7a;
+    --dd-good-text: #006300;
+    --dd-critical: #d03b3b;
+    --dd-tooltip-bg: #0b0b0b;
+    --dd-tooltip-ink: #f0efec;
+    // sequential blue ramp (steps 100 -> 700 of the reference palette)
+    --dd-seq-0: #eef4fd;
+    --dd-seq-1: #cde2fb;
+    --dd-seq-2: #9ec5f4;
+    --dd-seq-3: #6da7ec;
+    --dd-seq-4: #3987e5;
+    --dd-seq-5: #256abf;
+    --dd-seq-6: #184f95;
+    --dd-closed: #f0efec;
+
+    font-family: var(--dd-font);
+    background: var(--dd-page);
+    color: var(--dd-ink);
+    height: 100%;
+}
+
+.o_rtl .o_dd_root {
+    // Odoo mirrors physical properties with rtlcss but keeps dir=ltr: flip the layout itself here
+    /*rtl:ignore*/
+    direction: rtl;
+}
+
+.o_dd_scroll {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.o_dd_page {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 20px 24px 40px;
+}
+
+.o_dd_loading {
+    display: flex;
+    justify-content: center;
+    padding: 80px;
+    color: var(--dd-muted);
+    font-size: 24px;
+}
+
+.o_dd_muted {
+    color: var(--dd-muted);
+}
+
+.o_dd_num {
+    font-variant-numeric: tabular-nums;
+}
+
+// ------------------------------------------------------------------ toolbar
+.o_dd_toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.o_dd_heading {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.o_dd_period {
+    margin: 4px 0 0;
+    color: var(--dd-secondary);
+    font-size: 13px;
+}
+
+.o_dd_filters {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.o_dd_doctor {
+    width: auto;
+    min-width: 180px;
+}
+
+// ---------------------------------------------------------------------- KPIs
+.o_dd_kpis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.o_dd_tile {
+    background: var(--dd-surface);
+    border: 1px solid var(--dd-ring);
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.o_dd_tile_label {
+    font-size: 13px;
+    color: var(--dd-secondary);
+}
+
+.o_dd_tile_value {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.o_dd_tile_hero .o_dd_tile_value {
+    font-size: 36px;
+}
+
+.o_dd_tile_foot {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 12px;
+    align-items: baseline;
+}
+
+.o_dd_delta {
+    font-weight: 600;
+    white-space: nowrap;
+
+    .fa {
+        font-size: 10px;
+    }
+}
+
+.o_dd_delta_good {
+    color: var(--dd-good-text);
+}
+
+.o_dd_delta_bad {
+    color: var(--dd-critical);
+}
+
+.o_dd_delta_flat {
+    color: var(--dd-secondary);
+}
+
+.o_dd_meter {
+    height: 6px;
+    border-radius: 3px;
+    background: var(--dd-seq-1);
+    overflow: hidden;
+}
+
+.o_dd_meter_fill {
+    height: 100%;
+    border-radius: 3px;
+    background: var(--dd-series-1);
+}
+
+.o_dd_meter_bad {
+    background: var(--dd-critical);
+}
+
+// --------------------------------------------------------------------- cards
+.o_dd_grid {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.o_dd_grid_2 {
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+}
+
+.o_dd_card {
+    background: var(--dd-surface);
+    border: 1px solid var(--dd-ring);
+    border-radius: 10px;
+    padding: 16px;
+    min-width: 0;
+}
+
+.o_dd_card_head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.o_dd_card_title {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.o_dd_card_sub {
+    font-size: 12px;
+    color: var(--dd-secondary);
+    margin: 2px 0 0;
+}
+
+.o_dd_view_toggle {
+    color: var(--dd-secondary);
+    white-space: nowrap;
+}
+
+.o_dd_canvas {
+    position: relative;
+}
+
+.o_dd_empty {
+    color: var(--dd-muted);
+    padding: 32px 0;
+    text-align: center;
+    font-size: 13px;
+}
+
+.o_dd_table_wrap {
+    max-height: 340px;
+    overflow: auto;
+}
+
+.o_dd_table {
+    font-size: 12px;
+    --bs-table-bg: transparent;
+    color: var(--dd-ink);
+
+    th {
+        color: var(--dd-secondary);
+        font-weight: 600;
+    }
+}
+
+.o_dd_minor {
+    font-size: 13px;
+    font-weight: 600;
+    margin: 14px 0 6px;
+}
+
+// ------------------------------------------------------------------- heatmap
+.o_dd_heat {
+    display: grid;
+    grid-template-columns: 40px repeat(var(--dd-heat-cols), minmax(18px, 1fr));
+    gap: 2px;
+    font-size: 11px;
+}
+
+.o_dd_heat_hour {
+    text-align: center;
+    color: var(--dd-muted);
+    font-variant-numeric: tabular-nums;
+}
+
+.o_dd_heat_day {
+    color: var(--dd-secondary);
+    align-self: center;
+}
+
+.o_dd_heat_cell {
+    height: 26px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.o_dd_heat .o_dd_heat_cell {
+    display: block;
+}
+
+.o_dd_heat_0 { background: var(--dd-seq-0); }
+.o_dd_heat_1 { background: var(--dd-seq-1); }
+.o_dd_heat_2 { background: var(--dd-seq-2); }
+.o_dd_heat_3 { background: var(--dd-seq-3); }
+.o_dd_heat_4 { background: var(--dd-seq-4); }
+.o_dd_heat_5 { background: var(--dd-seq-5); }
+.o_dd_heat_6 { background: var(--dd-seq-6); }
+
+.o_dd_heat_closed {
+    background: repeating-linear-gradient(45deg, var(--dd-closed), var(--dd-closed) 3px, var(--dd-surface) 3px, var(--dd-surface) 6px);
+}
+
+.o_dd_heat_legend {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-top: 10px;
+    font-size: 11px;
+    color: var(--dd-secondary);
+
+    .o_dd_heat_cell {
+        width: 18px;
+        height: 12px;
+    }
+
+    > span:first-child {
+        margin-inline-end: 4px;
+    }
+}
+
+// ------------------------------------------------------------------- leakage
+.o_dd_leak_total {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 12px;
+
+    strong {
+        font-size: 20px;
+        font-weight: 600;
+    }
+}
+
+.o_dd_leak {
+    display: grid;
+    grid-template-columns: 1fr 60px 160px 16px;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-top: 1px solid var(--dd-grid);
+    padding: 10px 4px;
+    text-align: start;
+    color: inherit;
+
+    &:hover,
+    &:focus-visible {
+        background: var(--dd-page);
+    }
+}
+
+.o_dd_leak_text {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+}
+
+.o_dd_leak_label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--dd-ink);
+}
+
+.o_dd_leak_count {
+    text-align: end;
+    color: var(--dd-secondary);
+}
+
+.o_dd_leak_amount {
+    text-align: end;
+    font-weight: 600;
+}
+
+.o_rtl .o_dd_chev {
+    /*rtl:ignore*/
+    transform: scaleX(-1);
+}
+
+@media (max-width: 767px) {
+    .o_dd_page {
+        padding: 12px 16px 32px;
+    }
+    .o_dd_grid_2 {
+        grid-template-columns: 1fr;
+    }
+    .o_dd_leak {
+        grid-template-columns: 1fr auto 16px;
+    }
+    .o_dd_leak_count {
+        display: none;
+    }
+}

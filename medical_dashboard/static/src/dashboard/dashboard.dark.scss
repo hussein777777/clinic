@@ -1,0 +1,26 @@
+// Dark steps from the same ramps, validated against the dark surface #1a1a19.
+.o_dd_root {
+    --dd-page: #0d0d0d;
+    --dd-surface: #1a1a19;
+    --dd-ink: #f0efec;
+    --dd-secondary: #c3c2b7;
+    --dd-muted: #898781;
+    --dd-grid: #2c2c2a;
+    --dd-axis: #383835;
+    --dd-ring: rgba(255, 255, 255, 0.10);
+    --dd-series-1: #3987e5;
+    --dd-series-2: #d95926;
+    --dd-series-3: #199e70;
+    --dd-good-text: #0ca30c;
+    --dd-critical: #e66767;
+    --dd-tooltip-bg: #f0efec;
+    --dd-tooltip-ink: #0b0b0b;
+    --dd-seq-0: #1f2833;
+    --dd-seq-1: #104281;
+    --dd-seq-2: #184f95;
+    --dd-seq-3: #256abf;
+    --dd-seq-4: #3987e5;
+    --dd-seq-5: #6da7ec;
+    --dd-seq-6: #9ec5f4;
+    --dd-closed: #2c2c2a;
+}
