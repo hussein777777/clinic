@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_form_medical_stock" model="ir.ui.view">
+        <field name="name">product.template.form.medical.stock</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="medical_core.product_template_form_view_medical"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='medical']" position="inside">
+                <separator string="Consumed Materials"/>
+                <field name="medical_consumable_ids">
+                    <list editable="bottom">
+                        <field name="product_id"/>
+                        <field name="quantity"/>
+                        <field name="uom_id" groups="uom.group_uom"/>
+                        <field name="tracking"/>
+                    </list>
+                </field>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_visit_form_stock" model="ir.ui.view">
+        <field name="name">medical.visit.form.stock</field>
+        <field name="model">medical.visit</field>
+        <field name="inherit_id" ref="medical_core.medical_visit_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='line_ids']/list/field[@name='laterality']" position="after">
+                <field name="tracked_material_id" column_invisible="True"/>
+                <field name="lot_id" optional="show" invisible="not tracked_material_id" readonly="state == 'executed'"
+                       required="tracked_material_id and state != 'executed'" options="{'no_create': True}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_medical_material_consumption" model="ir.actions.act_window">
+        <field name="name">Material Consumption</field>
+        <field name="res_model">stock.move.line</field>
+        <field name="view_mode">list,pivot</field>
+        <field name="domain">[('move_id.medical_line_id', '!=', False), ('state', '=', 'done')]</field>
+        <field name="context">{'search_default_groupby_product_id': 1}</field>
+    </record>
+
+    <record id="action_medical_implant_traceability" model="ir.actions.act_window">
+        <field name="name">Implant Traceability</field>
+        <field name="res_model">medical.treatment.line</field>
+        <field name="view_mode">list</field>
+        <field name="domain">[('lot_id', '!=', False)]</field>
+    </record>
+
+    <record id="medical_treatment_line_list_stock" model="ir.ui.view">
+        <field name="name">medical.treatment.line.list.stock</field>
+        <field name="model">medical.treatment.line</field>
+        <field name="inherit_id" ref="medical_core.medical_treatment_line_view_list"/>
+        <field name="arch" type="xml">
+            <field name="site_label" position="after">
+                <field name="lot_id" optional="show"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="medical_treatment_line_search_stock" model="ir.ui.view">
+        <field name="name">medical.treatment.line.search.stock</field>
+        <field name="model">medical.treatment.line</field>
+        <field name="inherit_id" ref="medical_core.medical_treatment_line_view_search"/>
+        <field name="arch" type="xml">
+            <field name="site_label" position="after">
+                <field name="lot_id"/>
+            </field>
+        </field>
+    </record>
+
+    <menuitem id="menu_medical_material_consumption" name="Material Consumption" parent="medical_core.menu_medical_reporting"
+              action="action_medical_material_consumption" sequence="30"/>
+    <menuitem id="menu_medical_implant_traceability" name="Implant Traceability" parent="medical_core.menu_medical_reporting"
+              action="action_medical_implant_traceability" sequence="40"/>
+</odoo>
