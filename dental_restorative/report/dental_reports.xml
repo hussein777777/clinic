@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_dental_post_op" model="ir.actions.report">
+        <field name="name">Post-operative Instructions</field>
+        <field name="model">medical.visit</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">dental_restorative.report_dental_post_op</field>
+        <field name="report_file">dental_restorative.report_dental_post_op</field>
+        <field name="print_report_name">'Instructions - %s' % object.patient_id.name</field>
+        <field name="binding_model_id" ref="medical_core.model_medical_visit"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_dental_post_op_document">
+        <t t-call="web.external_layout">
+            <t t-set="visit" t-value="visit.with_context(lang=visit.patient_id.lang)"/>
+            <div class="page">
+                <h3>Post-operative Instructions</h3>
+                <t t-call="medical_core.report_patient_header">
+                    <t t-set="patient" t-value="visit.patient_id"/>
+                    <t t-set="doctor" t-value="visit.doctor_id"/>
+                    <t t-set="date" t-value="visit.start.date()"/>
+                </t>
+                <ul>
+                    <li t-foreach="visit.line_ids.filtered(lambda l: l.state != 'cancelled')" t-as="line" t-out="line.display_name"/>
+                </ul>
+                <div t-field="visit.post_op_instructions"/>
+                <p class="mt-4">Call the center if bleeding does not stop, swelling increases after 3 days, or you have a fever.</p>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_dental_post_op">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="visit">
+                <t t-call="dental_restorative.report_dental_post_op_document" t-lang="visit.patient_id.lang"/>
+            </t>
+        </t>
+    </template>
+</odoo>

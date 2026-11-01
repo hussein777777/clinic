@@ -1,0 +1,182 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dental_restorative
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-11 17:50+0000\n"
+"PO-Revision-Date: 2026-10-11 17:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dental_restorative
+#: model:ir.actions.report,print_report_name:dental_restorative.action_report_dental_post_op
+msgid "'Instructions - %s' % object.patient_id.name"
+msgstr ""
+
+#. module: dental_restorative
+#: model:ir.model.fields,help:dental_restorative.field_product_product__dental_price_per_extra_surface
+#: model:ir.model.fields,help:dental_restorative.field_product_template__dental_price_per_extra_surface
+msgid ""
+"Added to the price for every surface beyond the first (e.g. MOD = 2 extra "
+"surfaces)."
+msgstr ""
+
+#. module: dental_restorative
+#: model:ir.model.fields.selection,name:dental_restorative.selection__medical_treatment_line__material__amalgam
+#: model:ir.model.fields.selection,name:dental_restorative.selection__product_template__dental_default_material__amalgam
+msgid "Amalgam"
+msgstr ""
+
+#. module: dental_restorative
+#: model:product.template,name:dental_restorative.product_amalgam_filling_product_template
+msgid "Amalgam Filling"
+msgstr ""
+
+#. module: dental_restorative
+#: model_terms:ir.ui.view,arch_db:dental_restorative.dental_visit_form_restorative
+msgid "Bite on the gauze for 30 minutes, no rinsing today..."
+msgstr ""
+
+#. module: dental_restorative
+#: model_terms:ir.ui.view,arch_db:dental_restorative.report_dental_post_op_document
+msgid ""
+"Call the center if bleeding does not stop, swelling increases after 3 days, "
+"or you have a fever."
+msgstr ""
+
+#. module: dental_restorative
+#: model:ir.model.fields.selection,name:dental_restorative.selection__medical_treatment_line__material__ceramic
+#: model:ir.model.fields.selection,name:dental_restorative.selection__product_template__dental_default_material__ceramic
+msgid "Ceramic"
+msgstr ""
+
+#. module: dental_restorative
+#: model:ir.model.fields.selection,name:dental_restorative.selection__medical_treatment_line__material__composite
+#: model:ir.model.fields.selection,name:dental_restorative.selection__product_template__dental_default_material__composite
+msgid "Composite"
+msgstr ""
+
+#. module: dental_restorative
+#: model:product.template,name:dental_restorative.product_composite_filling_product_template
+msgid "Composite Filling"
+msgstr ""
+
+#. module: dental_restorative
+#: model:ir.model.fields,field_description:dental_restorative.field_product_product__dental_default_material
+#: model:ir.model.fields,field_description:dental_restorative.field_product_template__dental_default_material
+msgid "Default Material"
+msgstr ""
+
+#. module: dental_restorative
+#: model:ir.model.fields,field_description:dental_restorative.field_medical_treatment_line__display_name
+#: model:ir.model.fields,field_description:dental_restorative.field_medical_visit__display_name
+#: model:ir.model.fields,field_description:dental_restorative.field_product_template__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: dental_restorative
+#: model:ir.model.fields.selection,name:dental_restorative.selection__medical_treatment_line__material__gic
+#: model:ir.model.fields.selection,name:dental_restorative.selection__product_template__dental_default_material__gic
+msgid "Glass Ionomer"
+msgstr ""
+
+#. module: dental_restorative
+#: model:product.template,name:dental_restorative.product_gic_filling_product_template
+msgid "Glass Ionomer Filling"
+msgstr ""
+
+#. module: dental_restorative
+#: model_terms:product.template,consent_text:dental_restorative.product_simple_extraction_product_template
+#: model_terms:product.template,consent_text:dental_restorative.product_surgical_extraction_product_template
+#: model_terms:product.template,consent_text:dental_restorative.product_wisdom_extraction_product_template
+msgid ""
+"I agree to the extraction of the tooth listed on this form. The dentist "
+"explained the alternatives (keeping the tooth with root canal treatment, or "
+"no treatment) and the possible risks: pain, swelling, bleeding, infection, "
+"dry socket, damage to neighbouring teeth or fillings, temporary or rarely "
+"permanent numbness of the lip or tongue, and sinus involvement for upper "
+"back teeth. I will follow the post-operative instructions given to me."
+msgstr ""
+
+#. module: dental_restorative
+#: model:ir.model.fields,field_description:dental_restorative.field_medical_treatment_line__id
+#: model:ir.model.fields,field_description:dental_restorative.field_medical_visit__id
+#: model:ir.model.fields,field_description:dental_restorative.field_product_template__id
+msgid "ID"
+msgstr ""
+
+#. module: dental_restorative
+#: model:product.template,name:dental_restorative.product_wisdom_extraction_product_template
+msgid "Impacted Wisdom Tooth Extraction"
+msgstr ""
+
+#. module: dental_restorative
+#: model:ir.model.fields,field_description:dental_restorative.field_medical_treatment_line__material
+msgid "Material"
+msgstr ""
+
+#. module: dental_restorative
+#: model_terms:ir.ui.view,arch_db:dental_restorative.dental_visit_form_restorative
+msgid "Post-op"
+msgstr ""
+
+#. module: dental_restorative
+#: model:ir.actions.report,name:dental_restorative.action_report_dental_post_op
+#: model:ir.model.fields,field_description:dental_restorative.field_medical_visit__post_op_instructions
+#: model_terms:ir.ui.view,arch_db:dental_restorative.report_dental_post_op_document
+msgid "Post-operative Instructions"
+msgstr ""
+
+#. module: dental_restorative
+#: model:ir.model.fields,field_description:dental_restorative.field_product_product__dental_price_per_extra_surface
+#: model:ir.model.fields,field_description:dental_restorative.field_product_template__dental_price_per_extra_surface
+msgid "Price per Extra Surface"
+msgstr ""
+
+#. module: dental_restorative
+#: model_terms:ir.ui.view,arch_db:dental_restorative.dental_visit_form_restorative
+msgid "Print Instructions"
+msgstr ""
+
+#. module: dental_restorative
+#: model:ir.model,name:dental_restorative.model_product_template
+msgid "Product"
+msgstr ""
+
+#. module: dental_restorative
+#: model:product.template,name:dental_restorative.product_root_canal_product_template
+msgid "Root Canal Treatment"
+msgstr ""
+
+#. module: dental_restorative
+#: model:product.template,name:dental_restorative.product_simple_extraction_product_template
+msgid "Simple Extraction"
+msgstr ""
+
+#. module: dental_restorative
+#: model:product.template,name:dental_restorative.product_surgical_extraction_product_template
+msgid "Surgical Extraction"
+msgstr ""
+
+#. module: dental_restorative
+#: model:ir.model.fields.selection,name:dental_restorative.selection__medical_treatment_line__material__temporary
+#: model:ir.model.fields.selection,name:dental_restorative.selection__product_template__dental_default_material__temporary
+msgid "Temporary"
+msgstr ""
+
+#. module: dental_restorative
+#: model:ir.model,name:dental_restorative.model_medical_treatment_line
+msgid "Treatment Line"
+msgstr ""
+
+#. module: dental_restorative
+#: model:ir.model,name:dental_restorative.model_medical_visit
+msgid "Visit"
+msgstr ""

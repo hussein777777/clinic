@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_form_dental_restorative" model="ir.ui.view">
+        <field name="name">product.template.form.dental.restorative</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="dental_core.product_template_form_dental"/>
+        <field name="arch" type="xml">
+            <field name="dental_chart_condition" position="after">
+                <field name="dental_default_material" invisible="site_requirement != 'tooth'"/>
+                <field name="dental_price_per_extra_surface" invisible="not dental_requires_surface"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="dental_visit_form_restorative" model="ir.ui.view">
+        <field name="name">medical.visit.form.restorative</field>
+        <field name="model">medical.visit</field>
+        <field name="inherit_id" ref="dental_core.medical_visit_form_dental"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='line_ids']/list/field[@name='surfaces']" position="after">
+                <field name="material" optional="show" readonly="state == 'executed'"/>
+            </xpath>
+            <xpath expr="//page[@name='follow_up']" position="before">
+                <page string="Post-op" name="post_op" invisible="not is_dental">
+                    <button name="action_print_post_op" type="object" string="Print Instructions" icon="fa-print"
+                            class="btn-secondary mb-2" invisible="not post_op_instructions"/>
+                    <field name="post_op_instructions" placeholder="Bite on the gauze for 30 minutes, no rinsing today..."/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="dental_plan_form_restorative" model="ir.ui.view">
+        <field name="name">medical.treatment.plan.form.restorative</field>
+        <field name="model">medical.treatment.plan</field>
+        <field name="inherit_id" ref="dental_core.medical_treatment_plan_form_dental"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='line_ids']/list/field[@name='surfaces']" position="after">
+                <field name="material" optional="show" readonly="state == 'executed'"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

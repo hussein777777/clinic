@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="product_composite_filling" model="product.product">
+            <field name="name">Composite Filling</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="specialty_id" ref="dental_core.spec_restorative"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">800</field>
+            <field name="dental_price_per_extra_surface">200</field>
+            <field name="site_requirement">tooth</field>
+            <field name="dental_requires_surface" eval="True"/>
+            <field name="dental_chart_condition">filled</field>
+            <field name="dental_default_material">composite</field>
+            <field name="insurance_code">D2391</field>
+        </record>
+        <record id="product_amalgam_filling" model="product.product">
+            <field name="name">Amalgam Filling</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="specialty_id" ref="dental_core.spec_restorative"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">500</field>
+            <field name="dental_price_per_extra_surface">150</field>
+            <field name="site_requirement">tooth</field>
+            <field name="dental_requires_surface" eval="True"/>
+            <field name="dental_chart_condition">filled</field>
+            <field name="dental_default_material">amalgam</field>
+            <field name="insurance_code">D2140</field>
+        </record>
+        <record id="product_gic_filling" model="product.product">
+            <field name="name">Glass Ionomer Filling</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="specialty_id" ref="dental_core.spec_restorative"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">450</field>
+            <field name="site_requirement">tooth</field>
+            <field name="dental_requires_surface" eval="True"/>
+            <field name="dental_chart_condition">filled</field>
+            <field name="dental_default_material">gic</field>
+        </record>
+        <record id="product_root_canal" model="product.product">
+            <field name="name">Root Canal Treatment</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="specialty_id" ref="dental_core.spec_endo"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">2500</field>
+            <field name="site_requirement">tooth</field>
+            <field name="multi_stage" eval="True"/>
+            <field name="dental_chart_condition">rct</field>
+            <field name="insurance_code">D3330</field>
+            <field name="procedure_duration">60</field>
+        </record>
+        <record id="product_simple_extraction" model="product.product">
+            <field name="name">Simple Extraction</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="specialty_id" ref="dental_core.spec_surgery"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">500</field>
+            <field name="site_requirement">tooth</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the extraction of the tooth listed on this form. The dentist explained the alternatives (keeping the tooth with root canal treatment, or no treatment) and the possible risks: pain, swelling, bleeding, infection, dry socket, damage to neighbouring teeth or fillings, temporary or rarely permanent numbness of the lip or tongue, and sinus involvement for upper back teeth. I will follow the post-operative instructions given to me.</p></field>
+            <field name="dental_chart_condition">extracted</field>
+            <field name="insurance_code">D7140</field>
+        </record>
+        <record id="product_surgical_extraction" model="product.product">
+            <field name="name">Surgical Extraction</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="specialty_id" ref="dental_core.spec_surgery"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">1200</field>
+            <field name="site_requirement">tooth</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the extraction of the tooth listed on this form. The dentist explained the alternatives (keeping the tooth with root canal treatment, or no treatment) and the possible risks: pain, swelling, bleeding, infection, dry socket, damage to neighbouring teeth or fillings, temporary or rarely permanent numbness of the lip or tongue, and sinus involvement for upper back teeth. I will follow the post-operative instructions given to me.</p></field>
+            <field name="dental_chart_condition">extracted</field>
+            <field name="insurance_code">D7210</field>
+        </record>
+        <record id="product_wisdom_extraction" model="product.product">
+            <field name="name">Impacted Wisdom Tooth Extraction</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="specialty_id" ref="dental_core.spec_surgery"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">2500</field>
+            <field name="site_requirement">tooth</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the extraction of the tooth listed on this form. The dentist explained the alternatives (keeping the tooth with root canal treatment, or no treatment) and the possible risks: pain, swelling, bleeding, infection, dry socket, damage to neighbouring teeth or fillings, temporary or rarely permanent numbness of the lip or tongue, and sinus involvement for upper back teeth. I will follow the post-operative instructions given to me.</p></field>
+            <field name="dental_chart_condition">extracted</field>
+            <field name="insurance_code">D7240</field>
+            <field name="procedure_duration">60</field>
+        </record>
+    </data>
+</odoo>
