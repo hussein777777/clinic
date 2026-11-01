@@ -1,0 +1,1421 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* medical_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-19 19:28+0000\n"
+"PO-Revision-Date: 2026-10-19 19:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_claim.py:0
+msgid "%(proc)s - not covered by %(insurer)s (%(reason)s)"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_care_contract.py:0
+msgid "%(product)s - %(months)s months (%(contract)s)"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_care_contract.py:0
+msgid "%(product)s - %(n)s sessions (%(contract)s)"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_claim.py:0
+msgid "%s has no open rejected amount."
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_care_contract_form_account
+msgid "<span class=\"o_stat_text\">Contract</span>"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_care_contract_form_account
+msgid "<span class=\"o_stat_text\">Entries</span>"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_claim_form_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_visit_form_account
+msgid "<span class=\"o_stat_text\">Invoice</span>"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.ui.menu,name:medical_account.menu_medical_accounting
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_care_contract_form_account
+msgid "Accounting"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_care_contract__move_ids
+msgid "Accounting Entries"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.res_config_settings_view_form_medical
+msgid "Accounts"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_res_company__medical_insurance_accrual
+#: model:ir.model.fields,field_description:medical_account.field_res_config_settings__medical_insurance_accrual
+msgid "Accrue Unbilled Insurance Revenue"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_treatment_plan.py:0
+msgid "Advance - treatment plan %s"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_treatment_plan__advance_balance
+msgid "Advance Balance"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_reconciliation_check__advance_diff
+msgid "Advance Diff"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_treatment_plan__advance_invoice_count
+msgid "Advance Invoice Count"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_treatment_plan__advance_move_ids
+msgid "Advance Journal Items"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_treatment_plan.py:0
+msgid "Advance deduction - %s"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_plan_form_account
+msgid "Advances"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,help:medical_account.field_medical_treatment_plan__advance_balance
+msgid "Advances received for this plan and not yet deducted from an invoice."
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_advance_wizard__amount
+msgid "Amount"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_visit__amount_due
+msgid "Amount Due"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_care_contract__amount_paid
+msgid "Amount Paid"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_advance_wizard_view_form
+msgid ""
+"An advance invoice is posted to the patient advances account and kept for this plan.\n"
+"                   It is deducted automatically from the next patient invoices of the plan."
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_commission_line_view_list
+msgid "Approve"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_commission.py:0
+msgid "Approve the commission lines first."
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields.selection,name:medical_account.selection__medical_commission_line__state__approved
+msgid "Approved"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.res_config_settings_view_form_medical
+msgid "Balance-sheet and P&L accounts used by the medical flows"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_line__bill_id
+msgid "Bill"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_claim_line_list_account
+msgid "Bill Patient"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields.selection,name:medical_account.selection__medical_commission_line__state__billed
+msgid "Billed"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_line__partner_id
+msgid "Billed To"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_res_company__medical_writeoff_to_loss
+#: model:ir.model.fields,field_description:medical_account.field_res_config_settings__medical_writeoff_to_loss
+msgid "Book Rejections as a Loss"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_advance_wizard_view_form
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_commission_wizard_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model,name:medical_account.model_medical_care_contract
+#: model:ir.model.fields,field_description:medical_account.field_account_bank_statement_line__care_contract_id
+#: model:ir.model.fields,field_description:medical_account.field_account_move__care_contract_id
+msgid "Care Program"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields.selection,name:medical_account.selection__account_move__medical_move_kind__program_contract
+msgid "Care Program Contract"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.actions.act_window,name:medical_account.action_medical_cash_closing
+#: model:ir.ui.menu,name:medical_account.menu_medical_cash_closing_front
+msgid "Cash Closing"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields.selection,name:medical_account.selection__account_move__medical_move_kind__cash_diff
+msgid "Cash Difference"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_cash_closing.py:0
+msgid "Cash difference %s"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__user_id
+msgid "Cashier"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_rule__categ_id
+msgid "Category"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_account_move_line__medical_claim_line_id
+msgid "Claim Line"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_reconciliation_check__insurance_subledger
+msgid "Claims: open insurer balance"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_rule__department_id
+msgid "Clinic"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_reconciliation_check_view_form
+msgid "Close"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_cash_closing_view_form
+msgid "Close the Drawer"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_cash_closing_view_form
+msgid "Close the drawer with the counted amount?"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields.selection,name:medical_account.selection__medical_cash_closing__state__closed
+msgid "Closed"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_visit_form_account
+msgid "Collect Payment"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__amount_in
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_line__base_amount
+#: model:ir.model.fields.selection,name:medical_account.selection__res_company__medical_commission_basis__collected
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_commission_line_view_list
+msgid "Collected"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,help:medical_account.field_medical_commission_line__date
+msgid "Collection (or invoice) date."
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_line__amount
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_commission_line_view_list
+msgid "Commission"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_commission.py:0
+msgid "Commission %(specialty)s"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_res_company__medical_commission_basis
+#: model:ir.model.fields,field_description:medical_account.field_res_config_settings__medical_commission_basis
+msgid "Commission Basis"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_res_company__medical_commission_journal_id
+#: model:ir.model.fields,field_description:medical_account.field_res_config_settings__medical_commission_journal_id
+msgid "Commission Bills Journal"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_res_company__medical_commission_expense_account_id
+#: model:ir.model.fields,field_description:medical_account.field_res_config_settings__medical_commission_expense_account_id
+msgid "Commission Expense Account"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.actions.act_window,name:medical_account.action_medical_commission_rule
+#: model:ir.ui.menu,name:medical_account.menu_medical_commission_rule
+msgid "Commission Rules"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.res_config_settings_view_form_medical
+msgid "Commission basis"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.actions.act_window,name:medical_account.action_medical_commission_line
+#: model:ir.ui.menu,name:medical_account.menu_medical_commission_line
+msgid "Commissions"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_commission.py:0
+msgid "Commissions %(doctor)s %(period)s"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model,name:medical_account.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__company_id
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_line__company_id
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_rule__company_id
+#: model:ir.model.fields,field_description:medical_account.field_medical_reconciliation_check__company_id
+msgid "Company"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,help:medical_account.field_medical_cash_closing__company_id
+msgid "Company related to this journal"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_commission_wizard_view_form
+msgid "Compute"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.actions.act_window,name:medical_account.action_medical_commission_wizard
+#: model:ir.ui.menu,name:medical_account.menu_medical_commission_wizard
+msgid "Compute Commissions"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model,name:medical_account.model_medical_commission_wizard
+msgid "Compute doctor commissions"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model,name:medical_account.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model,name:medical_account.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_care_contract__contract_move_id
+msgid "Contract Invoice"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__amount_counted
+msgid "Counted"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_advance_wizard_view_form
+msgid "Create & Collect"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_commission_line_view_list
+msgid "Create Bills"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.res_config_settings_view_form_medical
+msgid "Create missing accounts & journals"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_advance_wizard__create_uid
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__create_uid
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_line__create_uid
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_rule__create_uid
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_wizard__create_uid
+#: model:ir.model.fields,field_description:medical_account.field_medical_reconciliation_check__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_advance_wizard__create_date
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__create_date
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_line__create_date
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_rule__create_date
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_wizard__create_date
+#: model:ir.model.fields,field_description:medical_account.field_medical_reconciliation_check__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_visit_form_account
+msgid "Credit the patient invoice and re-open the visit for correction?"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_advance_wizard__currency_id
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__currency_id
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_line__currency_id
+#: model:ir.model.fields,field_description:medical_account.field_medical_reconciliation_check__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model,name:medical_account.model_medical_cash_closing
+msgid "Daily Cash Closing"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__date
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_line__date
+#: model:ir.model.fields,field_description:medical_account.field_medical_reconciliation_check__date
+msgid "Date"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_line__date_from
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_wizard__date_from
+msgid "Date From"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_line__date_to
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_wizard__date_to
+msgid "Date To"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_rule__deduct_lab
+msgid "Deduct Lab Cost"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_care_contract__deferred_balance
+msgid "Deferred Balance"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_reconciliation_check__deferred_diff
+msgid "Deferred Diff"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_res_company__medical_deferred_account_id
+#: model:ir.model.fields,field_description:medical_account.field_res_config_settings__medical_deferred_account_id
+msgid "Deferred Program Revenue Account"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_res_company__medical_deferred_journal_id
+#: model:ir.model.fields,field_description:medical_account.field_res_config_settings__medical_deferred_journal_id
+msgid "Deferred Revenue Journal"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__difference
+msgid "Difference"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__difference_move_id
+msgid "Difference Move"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_account_move__display_name
+#: model:ir.model.fields,field_description:medical_account.field_account_move_line__display_name
+#: model:ir.model.fields,field_description:medical_account.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:medical_account.field_medical_advance_wizard__display_name
+#: model:ir.model.fields,field_description:medical_account.field_medical_care_contract__display_name
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__display_name
+#: model:ir.model.fields,field_description:medical_account.field_medical_claim__display_name
+#: model:ir.model.fields,field_description:medical_account.field_medical_claim_line__display_name
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_line__display_name
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_rule__display_name
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_wizard__display_name
+#: model:ir.model.fields,field_description:medical_account.field_medical_reconciliation_check__display_name
+#: model:ir.model.fields,field_description:medical_account.field_medical_treatment_line__display_name
+#: model:ir.model.fields,field_description:medical_account.field_medical_treatment_plan__display_name
+#: model:ir.model.fields,field_description:medical_account.field_medical_visit__display_name
+#: model:ir.model.fields,field_description:medical_account.field_res_company__display_name
+#: model:ir.model.fields,field_description:medical_account.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:medical_account.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_account_move_line__medical_doctor_id
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_line__doctor_id
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_rule__doctor_id
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_commission_line_view_search
+msgid "Doctor"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_commission.py:0
+msgid "Doctor %s has no work contact to bill."
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_hr_employee__medical_analytic_account_id
+msgid "Doctor Analytic Account"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields.selection,name:medical_account.selection__account_move__medical_move_kind__commission
+msgid "Doctor Commission"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model,name:medical_account.model_medical_commission_line
+msgid "Doctor Commission Line"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model,name:medical_account.model_medical_commission_rule
+msgid "Doctor Commission Rule"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/res_company.py:0
+msgid "Doctor Commissions"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.actions.act_window,name:medical_account.action_medical_doctor_analytic
+#: model:ir.ui.menu,name:medical_account.menu_medical_doctor_profitability
+msgid "Doctor Profitability"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_wizard__doctor_ids
+msgid "Doctors"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_res_company__medical_analytic_plan_id
+msgid "Doctors Analytic Plan"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields.selection,name:medical_account.selection__medical_commission_line__state__draft
+msgid "Draft"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_visit_list_account
+msgid "Due"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_reconciliation_check_view_form
+msgid ""
+"Each sub-ledger total must equal its general-ledger account. A difference means a\n"
+"                    manual entry was posted on a medical account."
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_care_contract.py:0
+msgid "Early termination %s"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model,name:medical_account.model_hr_employee
+msgid "Employee"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,help:medical_account.field_medical_commission_rule__department_id
+msgid "Empty = all clinics."
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,help:medical_account.field_medical_commission_rule__specialty_id
+msgid "Empty = all specialties."
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__amount_expected
+msgid "Expected in Drawer"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_reconciliation_check__deferred_gl
+msgid "GL: deferred program revenue"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_reconciliation_check__insurance_gl
+msgid "GL: insurer receivable"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_reconciliation_check__advance_gl
+msgid "GL: patient advances"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_account_move__id
+#: model:ir.model.fields,field_description:medical_account.field_account_move_line__id
+#: model:ir.model.fields,field_description:medical_account.field_hr_employee__id
+#: model:ir.model.fields,field_description:medical_account.field_medical_advance_wizard__id
+#: model:ir.model.fields,field_description:medical_account.field_medical_care_contract__id
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__id
+#: model:ir.model.fields,field_description:medical_account.field_medical_claim__id
+#: model:ir.model.fields,field_description:medical_account.field_medical_claim_line__id
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_line__id
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_rule__id
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_wizard__id
+#: model:ir.model.fields,field_description:medical_account.field_medical_reconciliation_check__id
+#: model:ir.model.fields,field_description:medical_account.field_medical_treatment_line__id
+#: model:ir.model.fields,field_description:medical_account.field_medical_treatment_plan__id
+#: model:ir.model.fields,field_description:medical_account.field_medical_visit__id
+#: model:ir.model.fields,field_description:medical_account.field_res_company__id
+#: model:ir.model.fields,field_description:medical_account.field_res_config_settings__id
+#: model:ir.model.fields,field_description:medical_account.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,help:medical_account.field_medical_cash_closing__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,help:medical_account.field_medical_cash_closing__message_has_error
+#: model:ir.model.fields,help:medical_account.field_medical_cash_closing__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/res_company.py:0
+msgid "Install a chart of accounts for %s first."
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_care_contract_search_account
+msgid "Installments Late"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_care_contract_form_account
+msgid "Installments late"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields.selection,name:medical_account.selection__account_move__medical_move_kind__accrual
+msgid "Insurance Accrual"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_account_bank_statement_line__medical_claim_id
+#: model:ir.model.fields,field_description:medical_account.field_account_move__medical_claim_id
+msgid "Insurance Claim"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model,name:medical_account.model_medical_claim
+msgid "Insurance Claim Batch"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model,name:medical_account.model_medical_claim_line
+msgid "Insurance Claim Line"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_reconciliation_check__insurance_diff
+msgid "Insurance Diff"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/res_company.py:0
+msgid "Insurance Invoices"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_res_company__medical_insurance_loss_account_id
+#: model:ir.model.fields,field_description:medical_account.field_res_config_settings__medical_insurance_loss_account_id
+msgid "Insurance Rejection Loss Account"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields.selection,name:medical_account.selection__account_move__medical_move_kind__rebill
+msgid "Insurance Rejection Re-bill"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields.selection,name:medical_account.selection__account_move__medical_move_kind__writeoff
+msgid "Insurance Write-off"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_claim.py:0
+msgid "Insurance accrual %s"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_claim.py:0
+msgid "Insurance rejection"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_claim__move_id
+#: model:ir.model.fields.selection,name:medical_account.selection__account_move__medical_move_kind__insurer
+msgid "Insurer Invoice"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.actions.act_window,name:medical_account.action_medical_insurer_invoices
+#: model:ir.ui.menu,name:medical_account.menu_medical_insurer_invoices
+msgid "Insurer Invoices"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_res_company__medical_insurance_journal_id
+#: model:ir.model.fields,field_description:medical_account.field_res_config_settings__medical_insurance_journal_id
+msgid "Insurer Invoices Journal"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_res_company__medical_insurance_receivable_account_id
+#: model:ir.model.fields,field_description:medical_account.field_res_config_settings__medical_insurance_receivable_account_id
+msgid "Insurer Receivable Account"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields.selection,name:medical_account.selection__account_move__medical_move_kind__insurer_refund
+msgid "Insurer Rejection Credit Note"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_reconciliation_check_view_form
+msgid "Insurer receivable"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_line__move_id
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_visit_form_account
+msgid "Invoice"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_line__move_line_id
+msgid "Invoice Line"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_treatment_line__invoice_line_ids
+msgid "Invoice Lines"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields.selection,name:medical_account.selection__res_company__medical_commission_basis__invoiced
+msgid "Invoiced"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,help:medical_account.field_medical_care_contract__deferred_balance
+msgid "Invoiced but not yet earned."
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_care_contract__is_late
+msgid "Is Late"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__journal_id
+msgid "Journal"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model,name:medical_account.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model,name:medical_account.model_account_move_line
+msgid "Journal Item"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.res_config_settings_view_form_medical
+msgid "Journals"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.res_config_settings_view_form_medical
+msgid ""
+"Keep written-off insurance rejections visible as a loss instead of a revenue"
+" reduction"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_commission_line_view_list
+msgid "Lab"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_line__lab_deduction
+msgid "Lab Deduction"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_care_contract__last_recognized_date
+msgid "Last Recognized Date"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_advance_wizard__write_uid
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__write_uid
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_line__write_uid
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_rule__write_uid
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_wizard__write_uid
+#: model:ir.model.fields,field_description:medical_account.field_medical_reconciliation_check__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_advance_wizard__write_date
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__write_date
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_line__write_date
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_rule__write_date
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_wizard__write_date
+#: model:ir.model.fields,field_description:medical_account.field_medical_reconciliation_check__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,help:medical_account.field_medical_commission_wizard__doctor_ids
+msgid "Leave empty for all doctors."
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.res_config_settings_view_form_medical
+msgid "Medical Center"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/res_company.py:0
+msgid "Medical Deferrals"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_account_bank_statement_line__medical_move_kind
+#: model:ir.model.fields,field_description:medical_account.field_account_move__medical_move_kind
+msgid "Medical Document"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_account_move_line__medical_line_id
+msgid "Medical Treatment"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_account_bank_statement_line__medical_visit_id
+#: model:ir.model.fields,field_description:medical_account.field_account_move__medical_visit_id
+msgid "Medical Visit"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model,name:medical_account.model_medical_reconciliation_check
+msgid "Medical sub-ledger reconciliation check"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.actions.server,name:medical_account.ir_cron_medical_insurance_accrual_ir_actions_server
+msgid "Medical: accrue unbilled insurance revenue (month-end)"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.actions.server,name:medical_account.ir_cron_medical_program_recognition_ir_actions_server
+msgid "Medical: recognize care program revenue (monthly)"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__name
+msgid "Name"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__note
+msgid "Note"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_cash_closing_view_form
+msgid "Notes..."
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_visit.py:0
+msgid "Nothing to collect on this visit."
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,help:medical_account.field_medical_cash_closing__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,help:medical_account.field_medical_cash_closing__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_visit.py:0
+msgid "Only invoiced visits can be reversed."
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields.selection,name:medical_account.selection__medical_cash_closing__state__draft
+msgid "Open"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_claim__amount_residual
+msgid "Open Balance"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_reconciliation_check_view_form
+msgid "Orthodontic deferred revenue"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_care_contract__overdue_amount
+msgid "Overdue Amount"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,help:medical_account.field_medical_commission_line__base_amount
+msgid "Part of the invoice line collected in the period."
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields.selection,name:medical_account.selection__account_move__medical_move_kind__advance
+#: model:product.template,name:medical_account.product_patient_advance_product_template
+msgid "Patient Advance"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_res_company__medical_advance_account_id
+#: model:ir.model.fields,field_description:medical_account.field_res_config_settings__medical_advance_account_id
+msgid "Patient Advances Account"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_visit__patient_move_id
+#: model:ir.model.fields.selection,name:medical_account.selection__account_move__medical_move_kind__patient
+msgid "Patient Invoice"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/res_company.py:0
+#: model:ir.actions.act_window,name:medical_account.action_medical_patient_invoices
+#: model:ir.ui.menu,name:medical_account.menu_medical_patient_invoices
+msgid "Patient Invoices"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_res_company__medical_patient_journal_id
+#: model:ir.model.fields,field_description:medical_account.field_res_config_settings__medical_patient_journal_id
+msgid "Patient Invoices Journal"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_reconciliation_check_view_form
+msgid "Patient advances"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.res_config_settings_view_form_medical
+msgid "Pay doctors on collected or on invoiced revenue"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_claim__payment_state
+#: model:ir.model.fields,field_description:medical_account.field_medical_visit__payment_state
+msgid "Payment Status"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_care_contract__payment_term_id
+msgid "Payment Term"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__payment_ids
+msgid "Payments"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_commission_line_view_search
+msgid "Period"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_advance_wizard__plan_id
+msgid "Plan"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_reconciliation_check__advance_subledger
+msgid "Plans: unused advances"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,help:medical_account.field_res_company__medical_insurance_accrual
+#: model:ir.model.fields,help:medical_account.field_res_config_settings__medical_insurance_accrual
+msgid ""
+"Post a month-end accrual for insurer shares not yet invoiced (reversed on "
+"the 1st of the next month)."
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.res_config_settings_view_form_medical
+msgid ""
+"Post a month-end accrual for insurer shares served but not yet invoiced"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_line__product_id
+msgid "Procedure"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_care_contract.py:0
+msgid "Program %(contract)s - %(n)s installments"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_res_company__medical_program_revenue_account_id
+#: model:ir.model.fields,field_description:medical_account.field_res_config_settings__medical_program_revenue_account_id
+msgid "Program Revenue Account"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields.selection,name:medical_account.selection__account_move__medical_move_kind__program_recognition
+msgid "Program Revenue Recognition"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields.selection,name:medical_account.selection__account_move__medical_move_kind__program_termination
+msgid "Program Termination"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_care_contract.py:0
+msgid "Program revenue %(contract)s - %(period)s"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_care_contract.py:0
+msgid "Program revenue %s - completed"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_reconciliation_check__deferred_subledger
+msgid "Programs: unearned"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_line__rate
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_rule__rate
+msgid "Rate (%)"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_claim_line__rebill_move_id
+msgid "Re-bill Invoice"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_treatment_plan.py:0
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_plan_form_account
+msgid "Receive Advance"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model,name:medical_account.model_medical_advance_wizard
+msgid "Receive a patient advance"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_care_contract__recognized_amount
+msgid "Recognized Amount"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_care_contract__recognized_months
+msgid "Recognized Months"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.actions.act_window,name:medical_account.action_medical_reconciliation_check
+#: model:ir.ui.menu,name:medical_account.menu_medical_reconciliation_check
+msgid "Reconciliation Check"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__amount_out
+msgid "Refunded"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_claim.py:0
+msgid "Rejections %s"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_claim__refund_move_ids
+msgid "Related Entries"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,help:medical_account.field_hr_employee__medical_analytic_account_id
+msgid ""
+"Revenue, lab costs and commissions of this doctor are tagged with this "
+"analytic account."
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_claim.py:0
+#: code:addons/medical_account/models/medical_visit.py:0
+msgid "Reversal of %s"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_visit_form_account
+msgid "Reverse Invoice"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_line__rule_id
+msgid "Rule"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_rule__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_reconciliation_check__unclaimed_amount
+msgid "Served, not yet claimed"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_care_contract.py:0
+msgid "Session %(n)s/%(total)s - %(contract)s"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_cash_closing.py:0
+msgid "Set the profit / loss accounts on journal %s."
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_visit.py:0
+msgid ""
+"Some lines were already sent to the insurer (%s). Settle them through the "
+"claim."
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_rule__specialty_id
+msgid "Specialty"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_cash_closing__state
+#: model:ir.model.fields,field_description:medical_account.field_medical_commission_line__state
+msgid "State"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_treatment_plan.py:0
+msgid "The advance must be positive."
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_commission.py:0
+msgid "The commission rate must be between 0 and 100%."
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.constraint,message:medical_account.constraint_medical_cash_closing_uniq
+msgid "This cashier already has a closing for that day."
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_commission_line_view_search
+msgid "To Approve"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_commission_line_view_search
+msgid "To Bill"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_cash_closing_view_form
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_cash_closing_view_list
+msgid "Total"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model,name:medical_account.model_medical_treatment_line
+msgid "Treatment Line"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model,name:medical_account.model_medical_treatment_plan
+msgid "Treatment Plan"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_account_move_line__medical_plan_id
+msgid "Treatment Plan (advance)"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_res_company__medical_unbilled_insurance_account_id
+#: model:ir.model.fields,field_description:medical_account.field_res_config_settings__medical_unbilled_insurance_account_id
+msgid "Unbilled Insurance Account"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_care_contract.py:0
+msgid "Unused part of the program - %s"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model,name:medical_account.model_medical_visit
+msgid "Visit"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.actions.act_window,name:medical_account.action_medical_visit_to_collect
+#: model:ir.ui.menu,name:medical_account.menu_medical_visit_to_collect
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_visit_search_account
+msgid "Waiting for Payment"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.res_config_settings_view_form_medical
+msgid "Where patient, insurer, deferral and commission documents are posted"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_claim_line_list_account
+msgid "Write Off"
+msgstr ""
+
+#. module: medical_account
+#: model_terms:ir.ui.view,arch_db:medical_account.medical_claim_line_list_account
+msgid "Write off the rejected amount?"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,field_description:medical_account.field_medical_claim_line__writeoff_move_id
+msgid "Write-off Entry"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_claim.py:0
+msgid "Write-off of rejected claim - %s"
+msgstr ""
+
+#. module: medical_account
+#: model:ir.model.fields,help:medical_account.field_res_company__medical_writeoff_to_loss
+#: model:ir.model.fields,help:medical_account.field_res_config_settings__medical_writeoff_to_loss
+msgid ""
+"Written-off rejections are moved from revenue to the loss account so they "
+"stay visible in the P&L."
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_treatment_line.py:0
+msgid "approval %s"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_commission.py:0
+msgid "general"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_treatment_line.py:0
+msgid "insurer covers %(amount)s"
+msgstr ""
+
+#. module: medical_account
+#. odoo-python
+#: code:addons/medical_account/models/medical_claim.py:0
+msgid "rejected"
+msgstr ""

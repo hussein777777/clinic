@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="ir_cron_medical_program_recognition" model="ir.cron">
+            <field name="name">Medical: recognize care program revenue (monthly)</field>
+            <field name="model_id" ref="medical_core.model_medical_care_contract"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_recognize_program_revenue()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="ir_cron_medical_insurance_accrual" model="ir.cron">
+            <field name="name">Medical: accrue unbilled insurance revenue (month-end)</field>
+            <field name="model_id" ref="medical_insurance.model_medical_claim"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_insurance_accrual()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

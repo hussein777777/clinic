@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_medical_visit_to_collect" name="Waiting for Payment" parent="medical_core.menu_medical_front"
+              action="action_medical_visit_to_collect" sequence="15"/>
+    <menuitem id="menu_medical_cash_closing_front" name="Cash Closing" parent="medical_core.menu_medical_front"
+              action="action_medical_cash_closing" sequence="30"/>
+
+    <menuitem id="menu_medical_accounting" name="Accounting" parent="medical_core.menu_medical_root" sequence="60"
+              groups="account.group_account_invoice,medical_core.group_medical_manager"/>
+    <menuitem id="menu_medical_patient_invoices" name="Patient Invoices" parent="menu_medical_accounting"
+              action="action_medical_patient_invoices" sequence="10"/>
+    <menuitem id="menu_medical_insurer_invoices" name="Insurer Invoices" parent="menu_medical_accounting"
+              action="action_medical_insurer_invoices" sequence="20"/>
+    <menuitem id="menu_medical_commission_wizard" name="Compute Commissions" parent="menu_medical_accounting"
+              action="action_medical_commission_wizard" sequence="30"/>
+    <menuitem id="menu_medical_commission_line" name="Commissions" parent="menu_medical_accounting"
+              action="action_medical_commission_line" sequence="35"/>
+    <menuitem id="menu_medical_reconciliation_check" name="Reconciliation Check" parent="menu_medical_accounting"
+              action="action_medical_reconciliation_check" sequence="50"/>
+
+    <menuitem id="menu_medical_doctor_profitability" name="Doctor Profitability" parent="medical_core.menu_medical_reporting"
+              action="action_medical_doctor_analytic" sequence="20"/>
+    <menuitem id="menu_medical_commission_rule" name="Commission Rules" parent="medical_core.menu_medical_config"
+              action="action_medical_commission_rule" sequence="60"/>
+</odoo>

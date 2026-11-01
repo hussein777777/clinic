@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_claim_form_account" model="ir.ui.view">
+        <field name="name">medical.claim.form.account</field>
+        <field name="model">medical.claim</field>
+        <field name="inherit_id" ref="medical_insurance.medical_claim_view_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button name="action_view_invoice" type="object" class="oe_stat_button" icon="fa-file-text-o"
+                        invisible="not move_id">
+                    <div class="o_stat_info">
+                        <span class="o_stat_text">Invoice</span>
+                        <field name="payment_state" readonly="1" class="o_stat_value"/>
+                    </div>
+                </button>
+            </div>
+            <field name="settlement_date" position="before">
+                <field name="move_id" readonly="1"/>
+                <field name="amount_residual" invisible="not move_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="medical_claim_line_list_account" model="ir.ui.view">
+        <field name="name">medical.claim.line.list.account</field>
+        <field name="model">medical.claim.line</field>
+        <field name="inherit_id" ref="medical_insurance.medical_claim_line_view_list"/>
+        <field name="arch" type="xml">
+            <button name="action_resubmit" position="after">
+                <button name="action_rebill_patient" type="object" string="Bill Patient" class="btn-link"
+                        invisible="state not in ('rejected', 'partially_approved') or rejected_amount == 0"/>
+                <button name="action_write_off" type="object" string="Write Off" class="btn-link"
+                        invisible="state not in ('rejected', 'partially_approved') or rejected_amount == 0"
+                        confirm="Write off the rejected amount?"/>
+            </button>
+            <field name="reject_reason" position="after">
+                <field name="rebill_move_id" optional="hide"/>
+            </field>
+        </field>
+    </record>
+</odoo>

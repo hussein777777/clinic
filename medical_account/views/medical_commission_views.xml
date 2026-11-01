@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_commission_rule_view_list" model="ir.ui.view">
+        <field name="name">medical.commission.rule.list</field>
+        <field name="model">medical.commission.rule</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="doctor_id"/>
+                <field name="sequence" widget="handle"/>
+                <field name="department_id"/>
+                <field name="specialty_id"/>
+                <field name="categ_id"/>
+                <field name="rate"/>
+                <field name="deduct_lab"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </list>
+        </field>
+    </record>
+    <record id="action_medical_commission_rule" model="ir.actions.act_window">
+        <field name="name">Commission Rules</field>
+        <field name="res_model">medical.commission.rule</field>
+        <field name="view_mode">list</field>
+    </record>
+
+    <record id="medical_commission_line_view_list" model="ir.ui.view">
+        <field name="name">medical.commission.line.list</field>
+        <field name="model">medical.commission.line</field>
+        <field name="arch" type="xml">
+            <list create="0">
+                <header>
+                    <button name="action_approve" type="object" string="Approve"/>
+                    <button name="action_create_bills" type="object" string="Create Bills" class="btn-primary"/>
+                </header>
+                <field name="date"/>
+                <field name="doctor_id"/>
+                <field name="move_id"/>
+                <field name="partner_id" optional="show"/>
+                <field name="product_id"/>
+                <field name="base_amount" sum="Collected"/>
+                <field name="lab_deduction" sum="Lab" optional="show"/>
+                <field name="rate"/>
+                <field name="amount" sum="Commission"/>
+                <field name="currency_id" column_invisible="True"/>
+                <field name="bill_id" optional="show"/>
+                <field name="state" widget="badge" decoration-success="state == 'billed'" decoration-info="state == 'approved'"/>
+            </list>
+        </field>
+    </record>
+    <record id="medical_commission_line_view_search" model="ir.ui.view">
+        <field name="name">medical.commission.line.search</field>
+        <field name="model">medical.commission.line</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="doctor_id"/>
+                <field name="move_id"/>
+                <filter name="draft" string="To Approve" domain="[('state', '=', 'draft')]"/>
+                <filter name="approved" string="To Bill" domain="[('state', '=', 'approved')]"/>
+                <group>
+                    <filter name="group_doctor" string="Doctor" context="{'group_by': 'doctor_id'}"/>
+                    <filter name="group_period" string="Period" context="{'group_by': 'date_to'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="action_medical_commission_line" model="ir.actions.act_window">
+        <field name="name">Commissions</field>
+        <field name="res_model">medical.commission.line</field>
+        <field name="view_mode">list</field>
+        <field name="context">{'search_default_group_doctor': 1}</field>
+    </record>
+</odoo>

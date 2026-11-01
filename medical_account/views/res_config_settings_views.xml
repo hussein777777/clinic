@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_medical" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.medical</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='account']" position="inside">
+                <block title="Medical Center" name="medical_accounting">
+                    <setting string="Journals" help="Where patient, insurer, deferral and commission documents are posted">
+                        <div class="content-group">
+                            <div class="row mt-2"><label for="medical_patient_journal_id" class="col-lg-5 o_light_label"/><field name="medical_patient_journal_id"/></div>
+                            <div class="row"><label for="medical_insurance_journal_id" class="col-lg-5 o_light_label"/><field name="medical_insurance_journal_id"/></div>
+                            <div class="row"><label for="medical_deferred_journal_id" class="col-lg-5 o_light_label"/><field name="medical_deferred_journal_id"/></div>
+                            <div class="row"><label for="medical_commission_journal_id" class="col-lg-5 o_light_label"/><field name="medical_commission_journal_id"/></div>
+                        </div>
+                        <button name="action_medical_setup_accounting" type="object" string="Create missing accounts &amp; journals"
+                                class="btn-link" icon="oi-arrow-right"/>
+                    </setting>
+                    <setting string="Accounts" help="Balance-sheet and P&amp;L accounts used by the medical flows">
+                        <div class="content-group">
+                            <div class="row mt-2"><label for="medical_advance_account_id" class="col-lg-5 o_light_label"/><field name="medical_advance_account_id"/></div>
+                            <div class="row"><label for="medical_deferred_account_id" class="col-lg-5 o_light_label"/><field name="medical_deferred_account_id"/></div>
+                            <div class="row"><label for="medical_program_revenue_account_id" class="col-lg-5 o_light_label"/><field name="medical_program_revenue_account_id"/></div>
+                            <div class="row"><label for="medical_insurance_receivable_account_id" class="col-lg-5 o_light_label"/><field name="medical_insurance_receivable_account_id"/></div>
+                            <div class="row"><label for="medical_unbilled_insurance_account_id" class="col-lg-5 o_light_label"/><field name="medical_unbilled_insurance_account_id"/></div>
+                            <div class="row"><label for="medical_insurance_loss_account_id" class="col-lg-5 o_light_label"/><field name="medical_insurance_loss_account_id"/></div>
+                            <div class="row"><label for="medical_commission_expense_account_id" class="col-lg-5 o_light_label"/><field name="medical_commission_expense_account_id"/></div>
+                        </div>
+                    </setting>
+                    <setting help="Post a month-end accrual for insurer shares served but not yet invoiced">
+                        <field name="medical_insurance_accrual"/>
+                    </setting>
+                    <setting help="Keep written-off insurance rejections visible as a loss instead of a revenue reduction">
+                        <field name="medical_writeoff_to_loss"/>
+                    </setting>
+                    <setting string="Commission basis" help="Pay doctors on collected or on invoiced revenue">
+                        <field name="medical_commission_basis" widget="radio"/>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>

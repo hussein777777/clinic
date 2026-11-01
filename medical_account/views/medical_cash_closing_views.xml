@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_cash_closing_view_form" model="ir.ui.view">
+        <field name="name">medical.cash.closing.form</field>
+        <field name="model">medical.cash.closing</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_close" type="object" string="Close the Drawer" class="btn-primary"
+                            invisible="state != 'draft'" confirm="Close the drawer with the counted amount?"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title"><h1><field name="name"/></h1></div>
+                    <group>
+                        <group>
+                            <field name="date" readonly="state != 'draft'"/>
+                            <field name="journal_id" readonly="state != 'draft'"/>
+                            <field name="user_id" readonly="state != 'draft'"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="amount_in"/>
+                            <field name="amount_out"/>
+                            <field name="amount_expected"/>
+                            <field name="amount_counted" readonly="state != 'draft'"/>
+                            <field name="difference" decoration-danger="difference != 0"/>
+                            <field name="difference_move_id" invisible="not difference_move_id"/>
+                        </group>
+                    </group>
+                    <field name="payment_ids">
+                        <list>
+                            <field name="name"/>
+                            <field name="partner_id"/>
+                            <field name="payment_type"/>
+                            <field name="amount" sum="Total"/>
+                            <field name="currency_id" column_invisible="True"/>
+                        </list>
+                    </field>
+                    <field name="note" placeholder="Notes..."/>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+    <record id="medical_cash_closing_view_list" model="ir.ui.view">
+        <field name="name">medical.cash.closing.list</field>
+        <field name="model">medical.cash.closing</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="date"/>
+                <field name="journal_id"/>
+                <field name="user_id"/>
+                <field name="amount_counted" sum="Total"/>
+                <field name="difference" sum="Total" decoration-danger="difference != 0"/>
+                <field name="currency_id" column_invisible="True"/>
+                <field name="state" widget="badge"/>
+            </list>
+        </field>
+    </record>
+    <record id="action_medical_cash_closing" model="ir.actions.act_window">
+        <field name="name">Cash Closing</field>
+        <field name="res_model">medical.cash.closing</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

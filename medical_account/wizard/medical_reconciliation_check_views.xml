@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_reconciliation_check_view_form" model="ir.ui.view">
+        <field name="name">medical.reconciliation.check.form</field>
+        <field name="model">medical.reconciliation.check</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="date"/>
+                </group>
+                <p class="text-muted">Each sub-ledger total must equal its general-ledger account. A difference means a
+                    manual entry was posted on a medical account.</p>
+                <group>
+                    <group string="Orthodontic deferred revenue">
+                        <field name="deferred_subledger"/>
+                        <field name="deferred_gl"/>
+                        <field name="deferred_diff" decoration-danger="deferred_diff != 0"/>
+                    </group>
+                    <group string="Patient advances">
+                        <field name="advance_subledger"/>
+                        <field name="advance_gl"/>
+                        <field name="advance_diff" decoration-danger="advance_diff != 0"/>
+                    </group>
+                    <group string="Insurer receivable">
+                        <field name="insurance_subledger"/>
+                        <field name="insurance_gl"/>
+                        <field name="insurance_diff" decoration-danger="insurance_diff != 0"/>
+                        <field name="unclaimed_amount"/>
+                    </group>
+                </group>
+                <footer>
+                    <button special="cancel" string="Close"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_medical_reconciliation_check" model="ir.actions.act_window">
+        <field name="name">Reconciliation Check</field>
+        <field name="res_model">medical.reconciliation.check</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>
