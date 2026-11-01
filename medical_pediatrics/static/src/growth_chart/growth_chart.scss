@@ -1,0 +1,115 @@
+.o_gc_root {
+    --gc-surface: #fcfcfb;
+    --gc-ink: #0b0b0b;
+    --gc-secondary: #52514e;
+    --gc-muted: #898781;
+    --gc-grid: #eceae4;
+    --gc-axis: #c3c2b7;
+    --gc-series: #2a78d6;
+    --gc-median: #52514e;
+    --gc-inner: #b5b3aa;
+    --gc-outer: #c3c2b7;
+    --gc-serious: #ec835a;
+    --gc-tooltip-bg: #0b0b0b;
+    --gc-tooltip-ink: #f0efec;
+    width: 100%;
+}
+
+.o_gc_empty {
+    padding: 24px;
+    text-align: center;
+    color: var(--gc-muted);
+}
+
+.o_gc_tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.o_gc_card {
+    border: 1px solid var(--gc-grid);
+    border-radius: 8px;
+    background: var(--gc-surface);
+    padding: 12px 16px;
+}
+
+.o_gc_head {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.o_gc_title {
+    font-size: 15px;
+    margin: 0;
+    color: var(--gc-ink);
+}
+
+.o_gc_sub {
+    font-size: 12px;
+    color: var(--gc-secondary);
+    margin: 2px 0 6px;
+}
+
+.o_gc_status {
+    margin-inline-start: 6px;
+    color: var(--gc-ink);
+    i {
+        color: var(--gc-serious);
+    }
+}
+
+.o_gc_legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 12px;
+    color: var(--gc-secondary);
+    margin-bottom: 6px;
+    span {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+}
+
+.o_gc_swatch {
+    display: inline-block;
+    width: 16px;
+    height: 0;
+    border-top: 2px solid var(--gc-series);
+    &.o_gc_swatch_median {
+        border-top: 2px solid var(--gc-median);
+    }
+    &.o_gc_swatch_inner {
+        border-top: 1px solid var(--gc-inner);
+    }
+    &.o_gc_swatch_outer {
+        border-top: 1px dashed var(--gc-outer);
+    }
+}
+
+.o_gc_canvas {
+    height: 300px;
+}
+
+.o_gc_table_wrap {
+    max-height: 320px;
+    overflow-y: auto;
+}
+
+.o_gc_num {
+    font-variant-numeric: tabular-nums;
+}
+
+.o_gc_icon_bad {
+    color: var(--gc-serious);
+}
+
+.o_gc_note {
+    margin: 6px 0 0;
+    font-size: 11px;
+    color: var(--gc-muted);
+}

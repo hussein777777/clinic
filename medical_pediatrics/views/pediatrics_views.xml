@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_partner_form_pediatrics" model="ir.ui.view">
+        <field name="name">res.partner.form.pediatrics</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="medical_core.res_partner_form_medical"/>
+        <field name="arch" type="xml">
+            <page name="measurements" position="before">
+                <field name="is_child" invisible="1"/>
+                <page string="Growth" name="growth" invisible="not is_patient or not is_child or not id" groups="medical_core.group_medical_nurse">
+                    <widget name="medical_growth_chart"/>
+                </page>
+                <page string="Vaccinations" name="vaccinations" invisible="not is_patient or not id" groups="medical_core.group_medical_user">
+                    <button name="action_generate_vaccination_plan" type="object" string="Plan from Schedule" class="btn-secondary mb-2"
+                            icon="fa-calendar-plus-o"/>
+                    <field name="vaccination_ids" context="{'default_patient_id': id}">
+                        <list decoration-danger="is_overdue" decoration-success="state == 'given'" decoration-muted="state == 'skipped'">
+                            <field name="vaccine_id"/>
+                            <field name="dose_label"/>
+                            <field name="due_date"/>
+                            <field name="date_given"/>
+                            <field name="lot_number" optional="show"/>
+                            <field name="is_overdue" column_invisible="True"/>
+                            <field name="state" widget="badge" decoration-success="state == 'given'"/>
+                            <button name="action_give" type="object" string="Give" invisible="state != 'planned'"
+                                    groups="medical_core.group_medical_nurse"/>
+                        </list>
+                    </field>
+                </page>
+                <page string="Development" name="development" invisible="not is_patient or not is_child or not id"
+                      groups="medical_core.group_medical_nurse">
+                    <button name="action_update_milestones" type="object" string="Update for Age" class="btn-secondary mb-2" icon="fa-refresh"/>
+                    <field name="milestone_check_ids">
+                        <list editable="bottom" create="0" decoration-danger="status == 'late'" decoration-success="status == 'done'">
+                            <field name="age_months"/>
+                            <field name="domain"/>
+                            <field name="milestone_id" readonly="1"/>
+                            <field name="achieved" widget="boolean_toggle"/>
+                            <field name="date"/>
+                            <field name="status" widget="badge" decoration-danger="status == 'late'" decoration-success="status == 'done'"/>
+                        </list>
+                    </field>
+                    <p class="text-muted small">Typical ages from developmental screening guidance. A milestone "not yet" a few months
+                        after the typical age is a reason to discuss, not a diagnosis.</p>
+                </page>
+            </page>
+        </field>
+    </record>
+
+    <record id="medical_visit_form_pediatrics" model="ir.ui.view">
+        <field name="name">medical.visit.form.pediatrics</field>
+        <field name="model">medical.visit</field>
+        <field name="inherit_id" ref="medical_core.medical_visit_view_form"/>
+        <field name="arch" type="xml">
+            <field name="bmi" position="after">
+                <field name="is_pediatric" invisible="1"/>
+                <field name="head_circumference" invisible="not is_pediatric"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="medical_prescription_form_pediatrics" model="ir.ui.view">
+        <field name="name">medical.prescription.form.pediatrics</field>
+        <field name="model">medical.prescription</field>
+        <field name="inherit_id" ref="medical_core.medical_prescription_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='line_ids']/list/field[@name='dose']" position="before">
+                <field name="dose_mg_kg" optional="show"/>
+                <field name="dose_mg" optional="show" readonly="1" decoration-warning="dose_capped"/>
+                <field name="dose_ml" optional="show" readonly="1"/>
+                <field name="dose_capped" column_invisible="True"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_template_form_pediatrics" model="ir.ui.view">
+        <field name="name">product.template.form.pediatrics</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="medical_core.product_template_form_view_medical"/>
+        <field name="arch" type="xml">
+            <field name="allergen_ids" position="after">
+                <field name="concentration_mg_ml"/>
+                <field name="pediatric_mg_kg"/>
+                <field name="pediatric_max_mg"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="medical_vaccination_view_list" model="ir.ui.view">
+        <field name="name">medical.vaccination.list</field>
+        <field name="model">medical.vaccination</field>
+        <field name="arch" type="xml">
+            <list decoration-danger="is_overdue" decoration-success="state == 'given'">
+                <field name="patient_id"/>
+                <field name="vaccine_id"/>
+                <field name="dose_label"/>
+                <field name="due_date"/>
+                <field name="date_given"/>
+                <field name="is_overdue" column_invisible="True"/>
+                <field name="state" widget="badge" decoration-success="state == 'given'"/>
+                <button name="action_give" type="object" string="Give" invisible="state != 'planned'" groups="medical_core.group_medical_nurse"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_vaccination_view_form" model="ir.ui.view">
+        <field name="name">medical.vaccination.form</field>
+        <field name="model">medical.vaccination</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_give" type="object" string="Mark as Given" class="btn-primary" invisible="state != 'planned'"
+                            groups="medical_core.group_medical_nurse"/>
+                    <button name="action_skip" type="object" string="Not Given" invisible="state != 'planned'"/>
+                    <button name="action_reset" type="object" string="Reset" invisible="state == 'planned'"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="patient_id"/>
+                            <field name="vaccine_id"/>
+                            <field name="dose_label"/>
+                            <field name="due_date"/>
+                        </group>
+                        <group>
+                            <field name="date_given"/>
+                            <field name="lot_number"/>
+                            <field name="expiry_date"/>
+                            <field name="site"/>
+                            <field name="given_by"/>
+                            <field name="visit_id" domain="[('patient_id', '=', patient_id)]"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="reaction"/>
+                        <field name="skip_reason" invisible="state != 'skipped'"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_vaccination_view_search" model="ir.ui.view">
+        <field name="name">medical.vaccination.search</field>
+        <field name="model">medical.vaccination</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="patient_id"/>
+                <field name="vaccine_id"/>
+                <filter name="due" string="Due This Week" domain="[('state', '=', 'planned'), ('due_date', '&lt;=', (context_today() + relativedelta(days=7)).strftime('%Y-%m-%d'))]"/>
+                <filter name="overdue" string="Overdue" domain="[('is_overdue', '=', True)]"/>
+                <filter name="given" string="Given" domain="[('state', '=', 'given')]"/>
+                <group>
+                    <filter name="group_vaccine" string="Vaccine" context="{'group_by': 'vaccine_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_medical_vaccination_due" model="ir.actions.act_window">
+        <field name="name">Vaccinations Due</field>
+        <field name="res_model">medical.vaccination</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_due': 1}</field>
+    </record>
+
+    <record id="medical_vaccine_schedule_view_list" model="ir.ui.view">
+        <field name="name">medical.vaccine.schedule.list</field>
+        <field name="model">medical.vaccine.schedule</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="age_days"/>
+                <field name="age_label"/>
+                <field name="vaccine_id"/>
+                <field name="dose_label"/>
+                <field name="active" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_medical_vaccine_schedule" model="ir.actions.act_window">
+        <field name="name">Immunisation Schedule</field>
+        <field name="res_model">medical.vaccine.schedule</field>
+        <field name="view_mode">list</field>
+        <field name="help" type="html">
+            <p>The default schedule follows the WHO-recommended series. Edit ages and doses to match your national schedule.</p>
+        </field>
+    </record>
+
+    <record id="medical_vaccine_view_list" model="ir.ui.view">
+        <field name="name">medical.vaccine.list</field>
+        <field name="model">medical.vaccine</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="diseases"/>
+                <field name="route"/>
+                <field name="product_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_medical_vaccine" model="ir.actions.act_window">
+        <field name="name">Vaccines</field>
+        <field name="res_model">medical.vaccine</field>
+        <field name="view_mode">list</field>
+    </record>
+
+    <record id="medical_milestone_view_list" model="ir.ui.view">
+        <field name="name">medical.milestone.list</field>
+        <field name="model">medical.milestone</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="age_months"/>
+                <field name="domain"/>
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_medical_milestone" model="ir.actions.act_window">
+        <field name="name">Developmental Milestones</field>
+        <field name="res_model">medical.milestone</field>
+        <field name="view_mode">list</field>
+    </record>
+
+    <record id="action_pediatric_patient" model="ir.actions.act_window">
+        <field name="name">Children</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('is_patient', '=', True), ('birthdate', '&gt;', (context_today() - relativedelta(years=18)).strftime('%Y-%m-%d'))]</field>
+        <field name="context">{'default_is_patient': True, 'default_company_type': 'person'}</field>
+        <field name="search_view_id" ref="medical_core.medical_patient_view_search"/>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'list', 'view_id': ref('medical_core.medical_patient_view_list')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('base.view_partner_form')})]"/>
+    </record>
+
+    <record id="action_pediatric_visit" model="ir.actions.act_window">
+        <field name="name">Pediatrics Schedule</field>
+        <field name="res_model">medical.visit</field>
+        <field name="view_mode">calendar,list,kanban,form</field>
+        <field name="domain" eval="[('department_id', '=', ref('dept_pediatrics'))]"/>
+        <field name="context" eval="{'default_department_id': ref('dept_pediatrics')}"/>
+    </record>
+
+    <menuitem id="menu_pediatrics" name="Pediatrics" parent="medical_core.menu_medical_clinics" sequence="40"/>
+    <menuitem id="menu_pediatric_visit" name="Schedule" parent="menu_pediatrics" action="action_pediatric_visit" sequence="5"/>
+    <menuitem id="menu_pediatric_patient" name="Children" parent="menu_pediatrics" action="action_pediatric_patient" sequence="10"/>
+    <menuitem id="menu_vaccination_due" name="Vaccinations Due" parent="menu_pediatrics" action="action_medical_vaccination_due" sequence="20"/>
+    <menuitem id="menu_vaccine_schedule" name="Immunisation Schedule" parent="menu_pediatrics" action="action_medical_vaccine_schedule"
+              sequence="80" groups="medical_core.group_medical_manager"/>
+    <menuitem id="menu_vaccine" name="Vaccines" parent="menu_pediatrics" action="action_medical_vaccine"
+              sequence="85" groups="medical_core.group_medical_manager"/>
+    <menuitem id="menu_milestone" name="Developmental Milestones" parent="menu_pediatrics" action="action_medical_milestone"
+              sequence="90" groups="medical_core.group_medical_manager"/>
+</odoo>

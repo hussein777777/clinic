@@ -1,0 +1,1534 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* medical_pediatrics
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-11 18:36+0000\n"
+"PO-Revision-Date: 2026-10-11 18:36+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_prescription.py:0
+msgid "%(ml)s ml (%(mg)s mg)"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.js:0
+msgid "%(y)s y %(m)s m"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_prescription.py:0
+msgid "%s mg"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_vaccination.py:0
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.js:0
+msgid "%s months"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_vaccination.py:0
+msgid "%s was already given."
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_vaccination.py:0
+msgid "%s years"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.js:0
+msgid "%sth percentile"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "15th / 85th"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "3rd / 97th"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "50th percentile"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.observation.type,name:medical_pediatrics.obs_apgar
+msgid "APGAR Score"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.assessment.template,name:medical_pediatrics.score_apgar
+msgid "APGAR Score (newborn)"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__achieved
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_milestone_check__status__done
+msgid "Achieved"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone__active
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__active
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine_schedule__active
+msgid "Active"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.diagnosis,name:medical_pediatrics.icd_j21_9
+msgid "Acute bronchiolitis, unspecified"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine_schedule__age_label
+msgid "Age"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.js:0
+msgid "Age (months)"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "Assessment"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_vaccination.py:0
+msgid "At birth"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,name:medical_pediatrics.vaccine_bcg
+msgid "BCG"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_growth_reference__indicator__bmifa
+msgid "BMI-for-age"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_08
+msgid "Babbles 'mamamama', 'babababa'"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__product_id
+msgid "Billing Item"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_01
+msgid "Birth dose"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_14
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_16
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_17
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_18
+msgid "Booster"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_growth_reference__sex__male
+msgid "Boys"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_04
+msgid "Brings hands to mouth"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_26
+msgid "Catches a large ball most of the time"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "Chart"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Check weight-for-height"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__date
+msgid "Checked on"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.js:0
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "Child"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Child health"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.actions.act_window,name:medical_pediatrics.action_pediatric_patient
+#: model:ir.ui.menu,name:medical_pediatrics.menu_pediatric_patient
+msgid "Children"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__code
+msgid "Code"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__company_id
+msgid "Company"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_product_product__concentration_mg_ml
+#: model:ir.model.fields,field_description:medical_pediatrics.field_product_template__concentration_mg_ml
+msgid "Concentration (mg/ml)"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_growth_reference__create_uid
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone__create_uid
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__create_uid
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__create_uid
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__create_uid
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine_schedule__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_growth_reference__create_date
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone__create_date
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__create_date
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__create_date
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__create_date
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine_schedule__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,name:medical_pediatrics.vaccine_dtap
+msgid "DTaP Booster"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,name:medical_pediatrics.vaccine_dtap_ipv
+msgid "DTaP-IPV Booster"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "Date"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__date_given
+msgid "Date Given"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_res_partner__milestone_check_ids
+#: model:ir.model.fields,field_description:medical_pediatrics.field_res_users__milestone_check_ids
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.res_partner_form_pediatrics
+msgid "Development"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_medical_milestone
+msgid "Developmental Milestone"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.actions.act_window,name:medical_pediatrics.action_medical_milestone
+#: model:ir.ui.menu,name:medical_pediatrics.menu_milestone
+msgid "Developmental Milestones"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.diagnosis,name:medical_pediatrics.icd_l22
+msgid "Diaper (napkin) dermatitis"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,diseases:medical_pediatrics.vaccine_dtap
+msgid "Diphtheria, tetanus, pertussis"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,diseases:medical_pediatrics.vaccine_dtap_ipv
+msgid "Diphtheria, tetanus, pertussis, polio"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,diseases:medical_pediatrics.vaccine_hexa
+msgid ""
+"Diphtheria, tetanus, pertussis, polio, Haemophilus influenzae b, hepatitis B"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__diseases
+msgid "Diseases"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_growth_reference__display_name
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone__display_name
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__display_name
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_prescription_line__display_name
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__display_name
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__display_name
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine_schedule__display_name
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_visit__display_name
+#: model:ir.model.fields,field_description:medical_pediatrics.field_product_template__display_name
+#: model:ir.model.fields,field_description:medical_pediatrics.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone__domain
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__domain
+msgid "Domain"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__dose_label
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine_schedule__dose_label
+msgid "Dose"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_prescription_line__dose_mg
+msgid "Dose (mg)"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_prescription_line__dose_ml
+msgid "Dose (ml)"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_02
+msgid "Dose 0"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_03
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_04
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_05
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_06
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_13
+msgid "Dose 1"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_07
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_08
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_09
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_10
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_15
+msgid "Dose 2"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_11
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_12
+msgid "Dose 3"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_prescription_line__dose_capped
+msgid "Dose Capped"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_24
+msgid "Draws a circle when shown how"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__due_date
+msgid "Due Date"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.medical_vaccination_view_search
+msgid "Due This Week"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine_schedule__age_days
+msgid "Due at Age (days)"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Enter the date of birth and gender to see the growth charts."
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_vaccination.py:0
+msgid "Enter the date of birth of %s first."
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccination__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.specialty,name:medical_pediatrics.spec_peds_general
+msgid "General Pediatrics"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_growth_reference__sex__female
+msgid "Girls"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.medical_vaccination_view_list
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.res_partner_form_pediatrics
+msgid "Give"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_vaccination.py:0
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_vaccination__state__given
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.medical_vaccination_view_search
+msgid "Given"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__given_by
+msgid "Given by"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.res_partner_form_pediatrics
+msgid "Growth"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_milestone__domain__fine_motor
+msgid "Hands"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.observation.type,name:medical_pediatrics.obs_head_circ
+msgid "Head Circumference"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_visit__head_circumference
+msgid "Head Circumference (cm)"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_growth_reference__indicator__hcfa
+msgid "Head circumference-for-age"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,diseases:medical_pediatrics.vaccine_hepb
+#: model:medical.vaccine,name:medical_pediatrics.vaccine_hepb
+msgid "Hepatitis B"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,name:medical_pediatrics.vaccine_hexa
+msgid "Hexavalent (DTaP-IPV-Hib-HepB)"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_02
+msgid "Holds head steady without support when held"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_01
+msgid "Holds head up when on tummy"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_growth_reference__id
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone__id
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__id
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_prescription_line__id
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__id
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__id
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine_schedule__id
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_visit__id
+#: model:ir.model.fields,field_description:medical_pediatrics.field_product_template__id
+#: model:ir.model.fields,field_description:medical_pediatrics.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccination__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccination__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccination__message_has_error
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccination__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.actions.act_window,name:medical_pediatrics.action_medical_vaccine_schedule
+#: model:ir.ui.menu,name:medical_pediatrics.menu_vaccine_schedule
+msgid "Immunisation Schedule"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_medical_vaccine_schedule
+msgid "Immunisation Schedule Dose"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_growth_reference__indicator
+msgid "Indicator"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__site
+msgid "Injection Site"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_vaccine__route__id
+msgid "Intradermal"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_vaccine__route__im
+msgid "Intramuscular"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_res_partner__is_child
+#: model:ir.model.fields,field_description:medical_pediatrics.field_res_users__is_child
+msgid "Is Child"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__is_overdue
+msgid "Is Overdue"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_visit__is_pediatric
+msgid "Is Pediatric"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_22
+msgid "Jumps off the ground with both feet"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_19
+msgid "Kicks a ball"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_growth_reference__l
+msgid "L"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_milestone__domain__language
+msgid "Language"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Large head: check"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_growth_reference__write_uid
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone__write_uid
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__write_uid
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__write_uid
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__write_uid
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine_schedule__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_growth_reference__write_date
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone__write_date
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__write_date
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__write_date
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__write_date
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine_schedule__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_06
+msgid "Laughs"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_vaccination__site__left_arm
+msgid "Left arm"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_vaccination__site__left_thigh
+msgid "Left thigh"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_growth_reference__indicator__lhfa
+msgid "Length / height-for-age"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_09
+msgid "Looks for objects when dropped out of sight"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__lot_number
+msgid "Lot / Batch"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_growth_reference__m
+msgid "M"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,name:medical_pediatrics.vaccine_mmr
+msgid "MMR"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_03
+msgid "Makes cooing sounds like 'oooo', 'aahh'"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.medical_vaccination_view_form
+msgid "Mark as Given"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_product_product__pediatric_max_mg
+#: model:ir.model.fields,field_description:medical_pediatrics.field_product_template__pediatric_max_mg
+msgid "Maximum Single Dose (mg)"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,diseases:medical_pediatrics.vaccine_mmr
+msgid "Measles, mumps, rubella"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.actions.server,name:medical_pediatrics.ir_cron_vaccination_reminders_ir_actions_server
+msgid "Medical: vaccination reminders"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__milestone_id
+msgid "Milestone"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_medical_milestone_check
+msgid "Milestone Check"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.constraint,message:medical_pediatrics.constraint_medical_milestone_check_patient_milestone_uniq
+msgid "Milestone already checked."
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_res_partner__milestones_late
+#: model:ir.model.fields,field_description:medical_pediatrics.field_res_users__milestones_late
+msgid "Milestones Late"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.diagnosis,name:medical_pediatrics.icd_e44_0
+msgid "Moderate protein-energy malnutrition"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_growth_reference__month
+msgid "Month"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone__age_months
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__age_months
+msgid "Most Children by (months)"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_milestone__domain__gross_motor
+msgid "Movement"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone__name
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__name
+msgid "Name"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_peds_nebulizer_product_template
+msgid "Nebulizer Session (child)"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.diagnosis,name:medical_pediatrics.icd_p59_9
+msgid "Neonatal jaundice, unspecified"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.specialty,name:medical_pediatrics.spec_neonatology
+msgid "Newborn Care"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_newborn_exam_product_template
+msgid "Newborn Examination"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "No measurement before 5 years of age yet."
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Normal"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_vaccination__state__skipped
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.medical_vaccination_view_form
+msgid "Not Given"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_milestone_check__status__pending
+msgid "Not yet"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_milestone_check__status__late
+msgid "Not yet - discuss"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccination__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccination__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Obese"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_vaccination__site__oral
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_vaccine__route__oral
+msgid "Oral"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,name:medical_pediatrics.vaccine_opv
+msgid "Oral Polio (OPV)"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.diagnosis,name:medical_pediatrics.icd_r62_8
+msgid "Other lack of expected normal physiological development"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.diagnosis,name:medical_pediatrics.icd_h66_9
+msgid "Otitis media, unspecified"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.medical_vaccination_view_search
+msgid "Overdue"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Overweight"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__patient_id
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__patient_id
+msgid "Patient"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_peds_consultation_product_template
+msgid "Pediatric Consultation"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.ui.menu,name:medical_pediatrics.menu_pediatrics
+#: model:medical.department,name:medical_pediatrics.dept_pediatrics
+msgid "Pediatrics"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.actions.act_window,name:medical_pediatrics.action_pediatric_visit
+msgid "Pediatrics Schedule"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "Percentile"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_12
+msgid "Picks things up between thumb and pointer finger"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.res_partner_form_pediatrics
+msgid "Plan from Schedule"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_vaccination__state__planned
+msgid "Planned"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,name:medical_pediatrics.vaccine_pcv
+msgid "Pneumococcal Conjugate (PCV)"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,diseases:medical_pediatrics.vaccine_pcv
+msgid "Pneumococcal disease"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_20
+msgid "Points to things in a book when asked"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,diseases:medical_pediatrics.vaccine_opv
+msgid "Poliomyelitis"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Possible risk of overweight"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_medical_prescription_line
+msgid "Prescription Line"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccine__product_id
+msgid ""
+"Procedure added to the visit when the dose is given (vaccine + "
+"administration)."
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_product_template
+msgid "Product"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_10
+msgid "Pulls up to stand"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__reaction
+msgid "Reaction Observed"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.medical_vaccination_view_form
+msgid "Reset"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_vaccination__site__right_arm
+msgid "Right arm"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_vaccination__site__right_thigh
+msgid "Right thigh"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_05
+msgid "Rolls from tummy to back"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,name:medical_pediatrics.vaccine_rota
+msgid "Rotavirus"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,diseases:medical_pediatrics.vaccine_rota
+msgid "Rotavirus diarrhoea"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__route
+msgid "Route"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.diagnosis,name:medical_pediatrics.icd_z00_1
+msgid "Routine child health examination"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_growth_reference__s
+msgid "S"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "Save the patient first."
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_21
+msgid "Says about 50 words"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_18
+msgid "Says at least two words together, like 'more milk'"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_14
+msgid "Says one or two words besides 'mama' or 'baba'"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_25
+msgid "Says sentences with four or more words"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__schedule_id
+#: model:ir.ui.menu,name:medical_pediatrics.menu_pediatric_visit
+msgid "Schedule"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_17
+msgid "Scribbles"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone__sequence
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__sequence
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine_schedule__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Severely stunted"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Severely underweight"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Severely wasted"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_growth_reference__sex
+msgid "Sex"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_00
+msgid "Single dose"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_07
+msgid "Sits without support"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__skip_reason
+msgid "Skip Reason"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Small head: check"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_00
+msgid "Smiles when you talk to or smile at them"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_milestone__domain__social
+msgid "Social & Emotional"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__state
+msgid "State"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__status
+msgid "Status"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccination__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Stunted"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_vaccine__route__sc
+msgid "Subcutaneous"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_product_product__concentration_mg_ml
+#: model:ir.model.fields,help:medical_pediatrics.field_product_template__concentration_mg_ml
+msgid "Syrups and drops: used to turn a weight-based dose into millilitres."
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "Table"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_13
+msgid "Takes a few steps alone"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_23
+msgid "Talks in conversation with at least two back-and-forth exchanges"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_27
+msgid "Tells a story with at least two events"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model_terms:ir.actions.act_window,help:medical_pediatrics.action_medical_vaccine_schedule
+msgid ""
+"The default schedule follows the WHO-recommended series. Edit ages and doses"
+" to match your national schedule."
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.constraint,message:medical_pediatrics.constraint_medical_vaccine_code_uniq
+msgid "The vaccine code must be unique."
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_vaccination.py:0
+msgid "The vaccine lot %s is expired."
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_prescription_line__dose_capped
+msgid ""
+"The weight-based dose was above the maximum single dose and was capped."
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_milestone__domain__cognitive
+msgid "Thinking"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.constraint,message:medical_pediatrics.constraint_medical_vaccination_patient_schedule_uniq
+msgid "This dose is already planned."
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_16
+msgid "Tries to say three or more words"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,diseases:medical_pediatrics.vaccine_bcg
+msgid "Tuberculosis"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccination__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: medical_pediatrics
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.res_partner_form_pediatrics
+msgid ""
+"Typical ages from developmental screening guidance. A milestone \"not yet\" a few months\n"
+"                        after the typical age is a reason to discuss, not a diagnosis."
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Underweight"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.res_partner_form_pediatrics
+msgid "Update for Age"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_product_product__pediatric_mg_kg
+#: model:ir.model.fields,field_description:medical_pediatrics.field_product_template__pediatric_mg_kg
+msgid "Usual Dose (mg/kg per dose)"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_medical_vaccination
+#: model:medical.specialty,name:medical_pediatrics.spec_vaccination
+msgid "Vaccination"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_res_partner__vaccination_ids
+#: model:ir.model.fields,field_description:medical_pediatrics.field_res_users__vaccination_ids
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.res_partner_form_pediatrics
+msgid "Vaccinations"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.actions.act_window,name:medical_pediatrics.action_medical_vaccination_due
+#: model:ir.ui.menu,name:medical_pediatrics.menu_vaccination_due
+msgid "Vaccinations Due"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_medical_vaccine
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__vaccine_id
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine_schedule__vaccine_id
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.medical_vaccination_view_search
+msgid "Vaccine"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__expiry_date
+msgid "Vaccine Expiry"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_vaccination.py:0
+msgid "Vaccine due: %(vac)s - %(child)s"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_vaccine_bcg_product_template
+msgid "Vaccine: BCG"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_vaccine_dtap_product_template
+msgid "Vaccine: DTaP Booster"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_vaccine_dtap_ipv_product_template
+msgid "Vaccine: DTaP-IPV Booster"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_vaccine_hepb_product_template
+msgid "Vaccine: Hepatitis B"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_vaccine_hexa_product_template
+msgid "Vaccine: Hexavalent (DTaP-IPV-Hib-HepB)"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_vaccine_mmr_product_template
+msgid "Vaccine: MMR"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_vaccine_opv_product_template
+msgid "Vaccine: Oral Polio (OPV)"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_vaccine_pcv_product_template
+msgid "Vaccine: Pneumococcal Conjugate (PCV)"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_vaccine_rota_product_template
+msgid "Vaccine: Rotavirus"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.actions.act_window,name:medical_pediatrics.action_medical_vaccine
+#: model:ir.ui.menu,name:medical_pediatrics.menu_vaccine
+msgid "Vaccines"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_res_partner__vaccines_overdue
+#: model:ir.model.fields,field_description:medical_pediatrics.field_res_users__vaccines_overdue
+msgid "Vaccines Overdue"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Vaccines due: %s"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "Value"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.diagnosis,name:medical_pediatrics.icd_b01_9
+msgid "Varicella without complication"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Very tall"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.diagnosis,name:medical_pediatrics.icd_a08_4
+msgid "Viral intestinal infection, unspecified"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_medical_visit
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__visit_id
+msgid "Visit"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.diagnosis,name:medical_pediatrics.icd_e86
+msgid "Volume depletion (dehydration)"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "WHO Child Growth Standards, birth to 5 years."
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_medical_growth_reference
+msgid "WHO Growth Reference (LMS)"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_15
+msgid "Walks without holding on"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Wasted"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_11
+msgid "Waves 'bye-bye'"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccination__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_growth_reference__indicator__wfa
+msgid "Weight-for-age"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_well_child_product_template
+msgid "Well-Child Check (growth & development)"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccine__diseases
+msgid "What it protects against."
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_28
+msgid "Writes some letters of their name"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:medical.observation.type,unit:medical_pediatrics.obs_head_circ
+msgid "cm"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccine_schedule__dose_label
+msgid "e.g. Dose 1, Booster"
+msgstr ""
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_prescription_line__dose_mg_kg
+msgid "mg/kg"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "z-score"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "· P"
+msgstr ""
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "· z"
+msgstr ""

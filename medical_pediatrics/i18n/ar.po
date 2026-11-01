@@ -1,0 +1,1545 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* medical_pediatrics
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-11 18:36+0000\n"
+"PO-Revision-Date: 2026-10-11 18:36+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_prescription.py:0
+msgid "%(ml)s ml (%(mg)s mg)"
+msgstr "%(ml)s مل (%(mg)s مجم)"
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.js:0
+msgid "%(y)s y %(m)s m"
+msgstr "%(y)s سنة %(m)s شهر"
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_prescription.py:0
+msgid "%s mg"
+msgstr "%s مجم"
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_vaccination.py:0
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.js:0
+msgid "%s months"
+msgstr "%s شهر"
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_vaccination.py:0
+msgid "%s was already given."
+msgstr "تم إعطاء %s بالفعل."
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_vaccination.py:0
+msgid "%s years"
+msgstr "%s سنة"
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.js:0
+msgid "%sth percentile"
+msgstr "المئين %s"
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "15th / 85th"
+msgstr "15 / 85"
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "3rd / 97th"
+msgstr "3 / 97"
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "50th percentile"
+msgstr "المئين 50"
+
+#. module: medical_pediatrics
+#: model:medical.observation.type,name:medical_pediatrics.obs_apgar
+msgid "APGAR Score"
+msgstr "مقياس أبجار"
+
+#. module: medical_pediatrics
+#: model:medical.assessment.template,name:medical_pediatrics.score_apgar
+msgid "APGAR Score (newborn)"
+msgstr "مقياس أبجار (حديث الولادة)"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__achieved
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_milestone_check__status__done
+msgid "Achieved"
+msgstr "تحقق"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone__active
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__active
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine_schedule__active
+msgid "Active"
+msgstr "نشطة"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: medical_pediatrics
+#: model:medical.diagnosis,name:medical_pediatrics.icd_j21_9
+msgid "Acute bronchiolitis, unspecified"
+msgstr "التهاب القصيبات الحاد، غير محدد"
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine_schedule__age_label
+msgid "Age"
+msgstr "العمر"
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.js:0
+msgid "Age (months)"
+msgstr "العمر (بالشهور)"
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "Assessment"
+msgstr "التقييم"
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_vaccination.py:0
+msgid "At birth"
+msgstr "عند الولادة"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,name:medical_pediatrics.vaccine_bcg
+msgid "BCG"
+msgstr "BCG"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_growth_reference__indicator__bmifa
+msgid "BMI-for-age"
+msgstr "مؤشر كتلة الجسم حسب العمر"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_08
+msgid "Babbles 'mamamama', 'babababa'"
+msgstr "يناغي 'مامامام'، 'بابابا'"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__product_id
+msgid "Billing Item"
+msgstr "بند الفوترة"
+
+#. module: medical_pediatrics
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_01
+msgid "Birth dose"
+msgstr "جرعة الولادة"
+
+#. module: medical_pediatrics
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_14
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_16
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_17
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_18
+msgid "Booster"
+msgstr "جرعة منشطة"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_growth_reference__sex__male
+msgid "Boys"
+msgstr "الأولاد"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_04
+msgid "Brings hands to mouth"
+msgstr "يضع يديه في فمه"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_26
+msgid "Catches a large ball most of the time"
+msgstr "يلتقط كرة كبيرة في أغلب الأحيان"
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "Chart"
+msgstr "رسم"
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Check weight-for-height"
+msgstr "افحص الوزن مقابل الطول"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__date
+msgid "Checked on"
+msgstr "فُحص في"
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.js:0
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "Child"
+msgstr "طفل"
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Child health"
+msgstr "صحة الطفل"
+
+#. module: medical_pediatrics
+#: model:ir.actions.act_window,name:medical_pediatrics.action_pediatric_patient
+#: model:ir.ui.menu,name:medical_pediatrics.menu_pediatric_patient
+msgid "Children"
+msgstr "الأطفال"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__code
+msgid "Code"
+msgstr "الكود"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_product_product__concentration_mg_ml
+#: model:ir.model.fields,field_description:medical_pediatrics.field_product_template__concentration_mg_ml
+msgid "Concentration (mg/ml)"
+msgstr "التركيز (mg/ml)"
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_growth_reference__create_uid
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone__create_uid
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__create_uid
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__create_uid
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__create_uid
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine_schedule__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_growth_reference__create_date
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone__create_date
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__create_date
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__create_date
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__create_date
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine_schedule__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,name:medical_pediatrics.vaccine_dtap
+msgid "DTaP Booster"
+msgstr "جرعة منشطة DTaP"
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,name:medical_pediatrics.vaccine_dtap_ipv
+msgid "DTaP-IPV Booster"
+msgstr "جرعة منشطة DTaP-IPV"
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__date_given
+msgid "Date Given"
+msgstr "تاريخ الإعطاء"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_res_partner__milestone_check_ids
+#: model:ir.model.fields,field_description:medical_pediatrics.field_res_users__milestone_check_ids
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.res_partner_form_pediatrics
+msgid "Development"
+msgstr "النمو والتطور"
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_medical_milestone
+msgid "Developmental Milestone"
+msgstr "مرحلة تطور"
+
+#. module: medical_pediatrics
+#: model:ir.actions.act_window,name:medical_pediatrics.action_medical_milestone
+#: model:ir.ui.menu,name:medical_pediatrics.menu_milestone
+msgid "Developmental Milestones"
+msgstr "مراحل التطور"
+
+#. module: medical_pediatrics
+#: model:medical.diagnosis,name:medical_pediatrics.icd_l22
+msgid "Diaper (napkin) dermatitis"
+msgstr "التهاب جلد الحفاض"
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,diseases:medical_pediatrics.vaccine_dtap
+msgid "Diphtheria, tetanus, pertussis"
+msgstr "الدفتيريا، التيتانوس، السعال الديكي"
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,diseases:medical_pediatrics.vaccine_dtap_ipv
+msgid "Diphtheria, tetanus, pertussis, polio"
+msgstr "الدفتيريا، التيتانوس، السعال الديكي، شلل الأطفال"
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,diseases:medical_pediatrics.vaccine_hexa
+msgid ""
+"Diphtheria, tetanus, pertussis, polio, Haemophilus influenzae b, hepatitis B"
+msgstr ""
+"الدفتيريا، التيتانوس، السعال الديكي، شلل الأطفال، المستدمية النزلية ب، "
+"الالتهاب الكبدي ب"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__diseases
+msgid "Diseases"
+msgstr "الأمراض"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_growth_reference__display_name
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone__display_name
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__display_name
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_prescription_line__display_name
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__display_name
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__display_name
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine_schedule__display_name
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_visit__display_name
+#: model:ir.model.fields,field_description:medical_pediatrics.field_product_template__display_name
+#: model:ir.model.fields,field_description:medical_pediatrics.field_res_partner__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone__domain
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__domain
+msgid "Domain"
+msgstr "المجال"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__dose_label
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine_schedule__dose_label
+msgid "Dose"
+msgstr "الجرعة"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_prescription_line__dose_mg
+msgid "Dose (mg)"
+msgstr "الجرعة (مجم)"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_prescription_line__dose_ml
+msgid "Dose (ml)"
+msgstr "الجرعة (مل)"
+
+#. module: medical_pediatrics
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_02
+msgid "Dose 0"
+msgstr "الجرعة 0"
+
+#. module: medical_pediatrics
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_03
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_04
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_05
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_06
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_13
+msgid "Dose 1"
+msgstr "الجرعة 1"
+
+#. module: medical_pediatrics
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_07
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_08
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_09
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_10
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_15
+msgid "Dose 2"
+msgstr "الجرعة 2"
+
+#. module: medical_pediatrics
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_11
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_12
+msgid "Dose 3"
+msgstr "الجرعة 3"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_prescription_line__dose_capped
+msgid "Dose Capped"
+msgstr "تم تقييد الجرعة"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_24
+msgid "Draws a circle when shown how"
+msgstr "يرسم دائرة بعد أن تُريه كيف"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__due_date
+msgid "Due Date"
+msgstr "تاريخ التسليم"
+
+#. module: medical_pediatrics
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.medical_vaccination_view_search
+msgid "Due This Week"
+msgstr "مستحقة هذا الأسبوع"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine_schedule__age_days
+msgid "Due at Age (days)"
+msgstr "مستحقة عند عمر (أيام)"
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Enter the date of birth and gender to see the growth charts."
+msgstr "أدخل تاريخ الميلاد والجنس لعرض منحنيات النمو."
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_vaccination.py:0
+msgid "Enter the date of birth of %s first."
+msgstr "أدخل تاريخ ميلاد %s أولًا."
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccination__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
+
+#. module: medical_pediatrics
+#: model:medical.specialty,name:medical_pediatrics.spec_peds_general
+msgid "General Pediatrics"
+msgstr "الأطفال العامة"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_growth_reference__sex__female
+msgid "Girls"
+msgstr "البنات"
+
+#. module: medical_pediatrics
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.medical_vaccination_view_list
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.res_partner_form_pediatrics
+msgid "Give"
+msgstr "إعطاء"
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_vaccination.py:0
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_vaccination__state__given
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.medical_vaccination_view_search
+msgid "Given"
+msgstr "أُعطيت"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__given_by
+msgid "Given by"
+msgstr "أعطاها"
+
+#. module: medical_pediatrics
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.res_partner_form_pediatrics
+msgid "Growth"
+msgstr "النمو"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_milestone__domain__fine_motor
+msgid "Hands"
+msgstr "اليدان"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: medical_pediatrics
+#: model:medical.observation.type,name:medical_pediatrics.obs_head_circ
+msgid "Head Circumference"
+msgstr "محيط الرأس"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_visit__head_circumference
+msgid "Head Circumference (cm)"
+msgstr "محيط الرأس (سم)"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_growth_reference__indicator__hcfa
+msgid "Head circumference-for-age"
+msgstr "محيط الرأس حسب العمر"
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,diseases:medical_pediatrics.vaccine_hepb
+#: model:medical.vaccine,name:medical_pediatrics.vaccine_hepb
+msgid "Hepatitis B"
+msgstr "الالتهاب الكبدي ب"
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,name:medical_pediatrics.vaccine_hexa
+msgid "Hexavalent (DTaP-IPV-Hib-HepB)"
+msgstr "السداسي (DTaP-IPV-Hib-HepB)"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_02
+msgid "Holds head steady without support when held"
+msgstr "يثبّت رأسه بدون سند عند حمله"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_01
+msgid "Holds head up when on tummy"
+msgstr "يرفع رأسه وهو على بطنه"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_growth_reference__id
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone__id
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__id
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_prescription_line__id
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__id
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__id
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine_schedule__id
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_visit__id
+#: model:ir.model.fields,field_description:medical_pediatrics.field_product_template__id
+#: model:ir.model.fields,field_description:medical_pediatrics.field_res_partner__id
+msgid "ID"
+msgstr "المُعرّف"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccination__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "الأيقونة للإشارة إلى النشاط المستثنى."
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccination__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة تحتاج انتباهك."
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccination__message_has_error
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccination__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: medical_pediatrics
+#: model:ir.actions.act_window,name:medical_pediatrics.action_medical_vaccine_schedule
+#: model:ir.ui.menu,name:medical_pediatrics.menu_vaccine_schedule
+msgid "Immunisation Schedule"
+msgstr "جدول التطعيمات"
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_medical_vaccine_schedule
+msgid "Immunisation Schedule Dose"
+msgstr "جرعة في جدول التطعيمات"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_growth_reference__indicator
+msgid "Indicator"
+msgstr "المؤشر"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__site
+msgid "Injection Site"
+msgstr "مكان الحقن"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_vaccine__route__id
+msgid "Intradermal"
+msgstr "داخل الجلد"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_vaccine__route__im
+msgid "Intramuscular"
+msgstr "عضلي"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_res_partner__is_child
+#: model:ir.model.fields,field_description:medical_pediatrics.field_res_users__is_child
+msgid "Is Child"
+msgstr "طفل"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__is_overdue
+msgid "Is Overdue"
+msgstr "متأخر"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_visit__is_pediatric
+msgid "Is Pediatric"
+msgstr "أطفال"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_22
+msgid "Jumps off the ground with both feet"
+msgstr "يقفز من الأرض بالقدمين معًا"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_19
+msgid "Kicks a ball"
+msgstr "يركل الكرة"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_growth_reference__l
+msgid "L"
+msgstr "L"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_milestone__domain__language
+msgid "Language"
+msgstr "اللغة"
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Large head: check"
+msgstr "رأس كبير: افحص"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_growth_reference__write_uid
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone__write_uid
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__write_uid
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__write_uid
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__write_uid
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine_schedule__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_growth_reference__write_date
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone__write_date
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__write_date
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__write_date
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__write_date
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine_schedule__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_06
+msgid "Laughs"
+msgstr "يضحك"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_vaccination__site__left_arm
+msgid "Left arm"
+msgstr "الذراع الأيسر"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_vaccination__site__left_thigh
+msgid "Left thigh"
+msgstr "الفخذ الأيسر"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_growth_reference__indicator__lhfa
+msgid "Length / height-for-age"
+msgstr "الطول حسب العمر"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_09
+msgid "Looks for objects when dropped out of sight"
+msgstr "يبحث عن الأشياء عندما تسقط بعيدًا عن نظره"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__lot_number
+msgid "Lot / Batch"
+msgstr "رقم التشغيلة"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_growth_reference__m
+msgid "M"
+msgstr "M"
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,name:medical_pediatrics.vaccine_mmr
+msgid "MMR"
+msgstr "MMR"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_03
+msgid "Makes cooing sounds like 'oooo', 'aahh'"
+msgstr "يصدر أصوات هديل مثل 'أووو'، 'آآه'"
+
+#. module: medical_pediatrics
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.medical_vaccination_view_form
+msgid "Mark as Given"
+msgstr "تعليم كمُعطاة"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_product_product__pediatric_max_mg
+#: model:ir.model.fields,field_description:medical_pediatrics.field_product_template__pediatric_max_mg
+msgid "Maximum Single Dose (mg)"
+msgstr "أقصى جرعة مفردة (مجم)"
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,diseases:medical_pediatrics.vaccine_mmr
+msgid "Measles, mumps, rubella"
+msgstr "الحصبة، النكاف، الحصبة الألمانية"
+
+#. module: medical_pediatrics
+#: model:ir.actions.server,name:medical_pediatrics.ir_cron_vaccination_reminders_ir_actions_server
+msgid "Medical: vaccination reminders"
+msgstr "طبي: تذكيرات التطعيم"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__milestone_id
+msgid "Milestone"
+msgstr "مرحلة التطور"
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_medical_milestone_check
+msgid "Milestone Check"
+msgstr "فحص مرحلة التطور"
+
+#. module: medical_pediatrics
+#: model:ir.model.constraint,message:medical_pediatrics.constraint_medical_milestone_check_patient_milestone_uniq
+msgid "Milestone already checked."
+msgstr "تم فحص مرحلة التطور بالفعل."
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_res_partner__milestones_late
+#: model:ir.model.fields,field_description:medical_pediatrics.field_res_users__milestones_late
+msgid "Milestones Late"
+msgstr "مراحل تطور متأخرة"
+
+#. module: medical_pediatrics
+#: model:medical.diagnosis,name:medical_pediatrics.icd_e44_0
+msgid "Moderate protein-energy malnutrition"
+msgstr "سوء تغذية بروتيني متوسط"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_growth_reference__month
+msgid "Month"
+msgstr "الشهر"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone__age_months
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__age_months
+msgid "Most Children by (months)"
+msgstr "معظم الأطفال بعمر (شهور)"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_milestone__domain__gross_motor
+msgid "Movement"
+msgstr "الحركة"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "موعدي النهائي للنشاط"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone__name
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_peds_nebulizer_product_template
+msgid "Nebulizer Session (child)"
+msgstr "جلسة نيبولايزر (طفل)"
+
+#. module: medical_pediatrics
+#: model:medical.diagnosis,name:medical_pediatrics.icd_p59_9
+msgid "Neonatal jaundice, unspecified"
+msgstr "صفراء حديثي الولادة، غير محددة"
+
+#. module: medical_pediatrics
+#: model:medical.specialty,name:medical_pediatrics.spec_neonatology
+msgid "Newborn Care"
+msgstr "رعاية حديثي الولادة"
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_newborn_exam_product_template
+msgid "Newborn Examination"
+msgstr "فحص حديث الولادة"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "No measurement before 5 years of age yet."
+msgstr "لا توجد قياسات قبل عمر 5 سنوات بعد."
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Normal"
+msgstr "طبيعي"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_vaccination__state__skipped
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.medical_vaccination_view_form
+msgid "Not Given"
+msgstr "لم تُعطَ"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_milestone_check__status__pending
+msgid "Not yet"
+msgstr "ليس بعد"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_milestone_check__status__late
+msgid "Not yet - discuss"
+msgstr "ليس بعد - للمناقشة"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccination__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراءً"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccination__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Obese"
+msgstr "سمنة"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_vaccination__site__oral
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_vaccine__route__oral
+msgid "Oral"
+msgstr "فموي"
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,name:medical_pediatrics.vaccine_opv
+msgid "Oral Polio (OPV)"
+msgstr "شلل الأطفال الفموي (OPV)"
+
+#. module: medical_pediatrics
+#: model:medical.diagnosis,name:medical_pediatrics.icd_r62_8
+msgid "Other lack of expected normal physiological development"
+msgstr "نقص آخر في النمو الفسيولوجي الطبيعي المتوقع"
+
+#. module: medical_pediatrics
+#: model:medical.diagnosis,name:medical_pediatrics.icd_h66_9
+msgid "Otitis media, unspecified"
+msgstr "التهاب الأذن الوسطى، غير محدد"
+
+#. module: medical_pediatrics
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.medical_vaccination_view_search
+msgid "Overdue"
+msgstr "متأخرة"
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Overweight"
+msgstr "زيادة الوزن"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__patient_id
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__patient_id
+msgid "Patient"
+msgstr "المريض"
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_peds_consultation_product_template
+msgid "Pediatric Consultation"
+msgstr "كشف أطفال"
+
+#. module: medical_pediatrics
+#: model:ir.ui.menu,name:medical_pediatrics.menu_pediatrics
+#: model:medical.department,name:medical_pediatrics.dept_pediatrics
+msgid "Pediatrics"
+msgstr "الأطفال"
+
+#. module: medical_pediatrics
+#: model:ir.actions.act_window,name:medical_pediatrics.action_pediatric_visit
+msgid "Pediatrics Schedule"
+msgstr "جدول الأطفال"
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "Percentile"
+msgstr "المئين"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_12
+msgid "Picks things up between thumb and pointer finger"
+msgstr "يلتقط الأشياء بين الإبهام والسبابة"
+
+#. module: medical_pediatrics
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.res_partner_form_pediatrics
+msgid "Plan from Schedule"
+msgstr "التخطيط من الجدول"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_vaccination__state__planned
+msgid "Planned"
+msgstr "مخطط"
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,name:medical_pediatrics.vaccine_pcv
+msgid "Pneumococcal Conjugate (PCV)"
+msgstr "المكورات الرئوية المقترن (PCV)"
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,diseases:medical_pediatrics.vaccine_pcv
+msgid "Pneumococcal disease"
+msgstr "أمراض المكورات الرئوية"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_20
+msgid "Points to things in a book when asked"
+msgstr "يشير إلى الأشياء في الكتاب عند سؤاله"
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,diseases:medical_pediatrics.vaccine_opv
+msgid "Poliomyelitis"
+msgstr "شلل الأطفال"
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Possible risk of overweight"
+msgstr "احتمال خطر زيادة الوزن"
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_medical_prescription_line
+msgid "Prescription Line"
+msgstr "سطر الوصفة الطبية"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccine__product_id
+msgid ""
+"Procedure added to the visit when the dose is given (vaccine + "
+"administration)."
+msgstr "الإجراء الذي يُضاف للزيارة عند إعطاء الجرعة (اللقاح + الإعطاء)."
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_product_template
+msgid "Product"
+msgstr "المنتج"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_10
+msgid "Pulls up to stand"
+msgstr "يشد نفسه ليقف"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__reaction
+msgid "Reaction Observed"
+msgstr "رد فعل ملحوظ"
+
+#. module: medical_pediatrics
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.medical_vaccination_view_form
+msgid "Reset"
+msgstr "إعادة ضبط"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_vaccination__site__right_arm
+msgid "Right arm"
+msgstr "الذراع الأيمن"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_vaccination__site__right_thigh
+msgid "Right thigh"
+msgstr "الفخذ الأيمن"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_05
+msgid "Rolls from tummy to back"
+msgstr "ينقلب من البطن إلى الظهر"
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,name:medical_pediatrics.vaccine_rota
+msgid "Rotavirus"
+msgstr "الروتا"
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,diseases:medical_pediatrics.vaccine_rota
+msgid "Rotavirus diarrhoea"
+msgstr "إسهال فيروس الروتا"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__route
+msgid "Route"
+msgstr "طريقة الإعطاء"
+
+#. module: medical_pediatrics
+#: model:medical.diagnosis,name:medical_pediatrics.icd_z00_1
+msgid "Routine child health examination"
+msgstr "فحص روتيني لصحة الطفل"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_growth_reference__s
+msgid "S"
+msgstr "S"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية"
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "Save the patient first."
+msgstr "احفظ المريض أولًا."
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_21
+msgid "Says about 50 words"
+msgstr "يقول حوالي 50 كلمة"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_18
+msgid "Says at least two words together, like 'more milk'"
+msgstr "يقول كلمتين على الأقل معًا، مثل 'لبن تاني'"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_14
+msgid "Says one or two words besides 'mama' or 'baba'"
+msgstr "يقول كلمة أو كلمتين غير 'ماما' أو 'بابا'"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_25
+msgid "Says sentences with four or more words"
+msgstr "يقول جملًا من أربع كلمات أو أكثر"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__schedule_id
+#: model:ir.ui.menu,name:medical_pediatrics.menu_pediatric_visit
+msgid "Schedule"
+msgstr "الجدول"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_17
+msgid "Scribbles"
+msgstr "يشخبط"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone__sequence
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine__sequence
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine_schedule__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Severely stunted"
+msgstr "تقزم شديد"
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Severely underweight"
+msgstr "نقص وزن شديد"
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Severely wasted"
+msgstr "هزال شديد"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_growth_reference__sex
+msgid "Sex"
+msgstr "الجنس"
+
+#. module: medical_pediatrics
+#: model:medical.vaccine.schedule,dose_label:medical_pediatrics.schedule_00
+msgid "Single dose"
+msgstr "جرعة واحدة"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_07
+msgid "Sits without support"
+msgstr "يجلس بدون سند"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__skip_reason
+msgid "Skip Reason"
+msgstr "سبب التخطي"
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Small head: check"
+msgstr "رأس صغير: افحص"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_00
+msgid "Smiles when you talk to or smile at them"
+msgstr "يبتسم عندما تكلمه أو تبتسم له"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_milestone__domain__social
+msgid "Social & Emotional"
+msgstr "اجتماعي وعاطفي"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_milestone_check__status
+msgid "Status"
+msgstr "الحالة"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccination__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخرة: تاريخ الاستحقاق قد فات\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخططة: أنشطة مستقبلية."
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Stunted"
+msgstr "تقزم"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_vaccine__route__sc
+msgid "Subcutaneous"
+msgstr "تحت الجلد"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_product_product__concentration_mg_ml
+#: model:ir.model.fields,help:medical_pediatrics.field_product_template__concentration_mg_ml
+msgid "Syrups and drops: used to turn a weight-based dose into millilitres."
+msgstr "الشراب والنقط: تُستخدم لتحويل الجرعة حسب الوزن إلى ملليلترات."
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "Table"
+msgstr "جدول"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_13
+msgid "Takes a few steps alone"
+msgstr "يمشي خطوات قليلة وحده"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_23
+msgid "Talks in conversation with at least two back-and-forth exchanges"
+msgstr "يتحدث في حوار بتبادلين على الأقل"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_27
+msgid "Tells a story with at least two events"
+msgstr "يحكي قصة فيها حدثان على الأقل"
+
+#. module: medical_pediatrics
+#: model_terms:ir.actions.act_window,help:medical_pediatrics.action_medical_vaccine_schedule
+msgid ""
+"The default schedule follows the WHO-recommended series. Edit ages and doses"
+" to match your national schedule."
+msgstr ""
+"الجدول الافتراضي يتبع السلسلة الموصى بها من منظمة الصحة العالمية. عدّل "
+"الأعمار والجرعات لتطابق الجدول الوطني."
+
+#. module: medical_pediatrics
+#: model:ir.model.constraint,message:medical_pediatrics.constraint_medical_vaccine_code_uniq
+msgid "The vaccine code must be unique."
+msgstr "يجب أن يكون رمز اللقاح فريدًا."
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_vaccination.py:0
+msgid "The vaccine lot %s is expired."
+msgstr "تشغيلة اللقاح %s منتهية الصلاحية."
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_prescription_line__dose_capped
+msgid ""
+"The weight-based dose was above the maximum single dose and was capped."
+msgstr "الجرعة حسب الوزن تجاوزت أقصى جرعة مفردة وتم تقييدها."
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_milestone__domain__cognitive
+msgid "Thinking"
+msgstr "التفكير"
+
+#. module: medical_pediatrics
+#: model:ir.model.constraint,message:medical_pediatrics.constraint_medical_vaccination_patient_schedule_uniq
+msgid "This dose is already planned."
+msgstr "هذه الجرعة مخططة بالفعل."
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_16
+msgid "Tries to say three or more words"
+msgstr "يحاول قول ثلاث كلمات أو أكثر"
+
+#. module: medical_pediatrics
+#: model:medical.vaccine,diseases:medical_pediatrics.vaccine_bcg
+msgid "Tuberculosis"
+msgstr "السل"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccination__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط المستثنى في السجل."
+
+#. module: medical_pediatrics
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.res_partner_form_pediatrics
+msgid ""
+"Typical ages from developmental screening guidance. A milestone \"not yet\" a few months\n"
+"                        after the typical age is a reason to discuss, not a diagnosis."
+msgstr ""
+"أعمار نموذجية من إرشادات فحص التطور. مرحلة \"لم تتحقق بعد\" بعد عدة أشهر\n"
+"                        من العمر النموذجي سبب للمناقشة وليست تشخيصًا."
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Underweight"
+msgstr "نقص الوزن"
+
+#. module: medical_pediatrics
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.res_partner_form_pediatrics
+msgid "Update for Age"
+msgstr "تحديث حسب العمر"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_product_product__pediatric_mg_kg
+#: model:ir.model.fields,field_description:medical_pediatrics.field_product_template__pediatric_mg_kg
+msgid "Usual Dose (mg/kg per dose)"
+msgstr "الجرعة المعتادة (مجم/كجم للجرعة)"
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_medical_vaccination
+#: model:medical.specialty,name:medical_pediatrics.spec_vaccination
+msgid "Vaccination"
+msgstr "التطعيم"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_res_partner__vaccination_ids
+#: model:ir.model.fields,field_description:medical_pediatrics.field_res_users__vaccination_ids
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.res_partner_form_pediatrics
+msgid "Vaccinations"
+msgstr "التطعيمات"
+
+#. module: medical_pediatrics
+#: model:ir.actions.act_window,name:medical_pediatrics.action_medical_vaccination_due
+#: model:ir.ui.menu,name:medical_pediatrics.menu_vaccination_due
+msgid "Vaccinations Due"
+msgstr "التطعيمات المستحقة"
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_medical_vaccine
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__vaccine_id
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccine_schedule__vaccine_id
+#: model_terms:ir.ui.view,arch_db:medical_pediatrics.medical_vaccination_view_search
+msgid "Vaccine"
+msgstr "اللقاح"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__expiry_date
+msgid "Vaccine Expiry"
+msgstr "انتهاء صلاحية اللقاح"
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_vaccination.py:0
+msgid "Vaccine due: %(vac)s - %(child)s"
+msgstr "تطعيم مستحق: %(vac)s - %(child)s"
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_vaccine_bcg_product_template
+msgid "Vaccine: BCG"
+msgstr "لقاح: BCG"
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_vaccine_dtap_product_template
+msgid "Vaccine: DTaP Booster"
+msgstr "لقاح: جرعة منشطة DTaP"
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_vaccine_dtap_ipv_product_template
+msgid "Vaccine: DTaP-IPV Booster"
+msgstr "لقاح: جرعة منشطة DTaP-IPV"
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_vaccine_hepb_product_template
+msgid "Vaccine: Hepatitis B"
+msgstr "لقاح: الالتهاب الكبدي ب"
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_vaccine_hexa_product_template
+msgid "Vaccine: Hexavalent (DTaP-IPV-Hib-HepB)"
+msgstr "لقاح: السداسي (DTaP-IPV-Hib-HepB)"
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_vaccine_mmr_product_template
+msgid "Vaccine: MMR"
+msgstr "لقاح: MMR"
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_vaccine_opv_product_template
+msgid "Vaccine: Oral Polio (OPV)"
+msgstr "لقاح: شلل الأطفال الفموي (OPV)"
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_vaccine_pcv_product_template
+msgid "Vaccine: Pneumococcal Conjugate (PCV)"
+msgstr "لقاح: المكورات الرئوية المقترن (PCV)"
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_vaccine_rota_product_template
+msgid "Vaccine: Rotavirus"
+msgstr "لقاح: الروتا"
+
+#. module: medical_pediatrics
+#: model:ir.actions.act_window,name:medical_pediatrics.action_medical_vaccine
+#: model:ir.ui.menu,name:medical_pediatrics.menu_vaccine
+msgid "Vaccines"
+msgstr "اللقاحات"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_res_partner__vaccines_overdue
+#: model:ir.model.fields,field_description:medical_pediatrics.field_res_users__vaccines_overdue
+msgid "Vaccines Overdue"
+msgstr "تطعيمات متأخرة"
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Vaccines due: %s"
+msgstr "تطعيمات مستحقة: %s"
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "Value"
+msgstr "القيمة"
+
+#. module: medical_pediatrics
+#: model:medical.diagnosis,name:medical_pediatrics.icd_b01_9
+msgid "Varicella without complication"
+msgstr "جديري مائي بدون مضاعفات"
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Very tall"
+msgstr "طويل جدًا"
+
+#. module: medical_pediatrics
+#: model:medical.diagnosis,name:medical_pediatrics.icd_a08_4
+msgid "Viral intestinal infection, unspecified"
+msgstr "عدوى معوية فيروسية، غير محددة"
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_medical_visit
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__visit_id
+msgid "Visit"
+msgstr "الزيارة"
+
+#. module: medical_pediatrics
+#: model:medical.diagnosis,name:medical_pediatrics.icd_e86
+msgid "Volume depletion (dehydration)"
+msgstr "نقص حجم السوائل (جفاف)"
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "WHO Child Growth Standards, birth to 5 years."
+msgstr "معايير منظمة الصحة العالمية لنمو الطفل، من الولادة حتى 5 سنوات."
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_medical_growth_reference
+msgid "WHO Growth Reference (LMS)"
+msgstr "مرجع النمو لمنظمة الصحة العالمية (LMS)"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_15
+msgid "Walks without holding on"
+msgstr "يمشي بدون استناد"
+
+#. module: medical_pediatrics
+#. odoo-python
+#: code:addons/medical_pediatrics/models/medical_growth.py:0
+msgid "Wasted"
+msgstr "هزال"
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_11
+msgid "Waves 'bye-bye'"
+msgstr "يلوّح 'باي باي'"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_vaccination__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccination__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع الإلكتروني"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields.selection,name:medical_pediatrics.selection__medical_growth_reference__indicator__wfa
+msgid "Weight-for-age"
+msgstr "الوزن حسب العمر"
+
+#. module: medical_pediatrics
+#: model:product.template,name:medical_pediatrics.product_well_child_product_template
+msgid "Well-Child Check (growth & development)"
+msgstr "فحص الطفل السليم (النمو والتطور)"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccine__diseases
+msgid "What it protects against."
+msgstr "ما يحمي منه."
+
+#. module: medical_pediatrics
+#: model:medical.milestone,name:medical_pediatrics.milestone_28
+msgid "Writes some letters of their name"
+msgstr "يكتب بعض حروف اسمه"
+
+#. module: medical_pediatrics
+#: model:medical.observation.type,unit:medical_pediatrics.obs_head_circ
+msgid "cm"
+msgstr "سم"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,help:medical_pediatrics.field_medical_vaccine_schedule__dose_label
+msgid "e.g. Dose 1, Booster"
+msgstr "مثال: الجرعة 1، جرعة منشطة"
+
+#. module: medical_pediatrics
+#: model:ir.model.fields,field_description:medical_pediatrics.field_medical_prescription_line__dose_mg_kg
+msgid "mg/kg"
+msgstr "mg/kg"
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "z-score"
+msgstr "z-score"
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "· P"
+msgstr "· P"
+
+#. module: medical_pediatrics
+#. odoo-javascript
+#: code:addons/medical_pediatrics/static/src/growth_chart/growth_chart.xml:0
+msgid "· z"
+msgstr "· z"

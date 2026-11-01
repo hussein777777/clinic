@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_growth_reference_user,medical.growth.reference user,model_medical_growth_reference,medical_core.group_medical_user,1,0,0,0
+access_growth_reference_manager,medical.growth.reference manager,model_medical_growth_reference,medical_core.group_medical_manager,1,1,1,1
+access_vaccine_user,medical.vaccine user,model_medical_vaccine,medical_core.group_medical_user,1,0,0,0
+access_vaccine_manager,medical.vaccine manager,model_medical_vaccine,medical_core.group_medical_manager,1,1,1,1
+access_vaccine_schedule_user,medical.vaccine.schedule user,model_medical_vaccine_schedule,medical_core.group_medical_user,1,0,0,0
+access_vaccine_schedule_manager,medical.vaccine.schedule manager,model_medical_vaccine_schedule,medical_core.group_medical_manager,1,1,1,1
+access_vaccination_user,medical.vaccination user,model_medical_vaccination,medical_core.group_medical_user,1,1,1,0
+access_vaccination_manager,medical.vaccination manager,model_medical_vaccination,medical_core.group_medical_manager,1,1,1,1
+access_milestone_user,medical.milestone user,model_medical_milestone,medical_core.group_medical_user,1,0,0,0
+access_milestone_manager,medical.milestone manager,model_medical_milestone,medical_core.group_medical_manager,1,1,1,1
+access_milestone_check_nurse,medical.milestone.check nurse,model_medical_milestone_check,medical_core.group_medical_nurse,1,1,1,1

@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="dept_pediatrics" model="medical.department">
+            <field name="name">Pediatrics</field>
+            <field name="code">PED</field>
+            <field name="sequence">25</field>
+            <field name="color">3</field>
+        </record>
+        <record id="spec_peds_general" model="medical.specialty">
+            <field name="name">General Pediatrics</field>
+            <field name="code">PED-GEN</field>
+            <field name="department_id" ref="dept_pediatrics"/>
+            <field name="sequence">1</field>
+        </record>
+        <record id="spec_neonatology" model="medical.specialty">
+            <field name="name">Newborn Care</field>
+            <field name="code">PED-NEO</field>
+            <field name="department_id" ref="dept_pediatrics"/>
+            <field name="sequence">2</field>
+        </record>
+        <record id="spec_vaccination" model="medical.specialty">
+            <field name="name">Vaccination</field>
+            <field name="code">PED-VAC</field>
+            <field name="department_id" ref="dept_pediatrics"/>
+            <field name="sequence">3</field>
+        </record>
+        <record id="room_vaccination" model="medical.room">
+            <field name="name">Vaccination Room</field>
+            <field name="room_type">procedure</field>
+            <field name="department_id" ref="dept_pediatrics"/>
+        </record>
+        <record id="product_peds_consultation" model="product.product">
+            <field name="name">Pediatric Consultation</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">consultation</field>
+            <field name="specialty_id" ref="spec_peds_general"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">300</field>
+            <field name="insurance_code">PED-CONS</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_well_child" model="product.product">
+            <field name="name">Well-Child Check (growth &amp; development)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">consultation</field>
+            <field name="specialty_id" ref="spec_peds_general"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">250</field>
+            <field name="insurance_code">PED-WELL</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_newborn_exam" model="product.product">
+            <field name="name">Newborn Examination</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">consultation</field>
+            <field name="specialty_id" ref="spec_neonatology"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">300</field>
+            <field name="insurance_code">PED-NB</field>
+            <field name="procedure_duration">30</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_peds_nebulizer" model="product.product">
+            <field name="name">Nebulizer Session (child)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_peds_general"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">100</field>
+            <field name="insurance_code">PED-NEB</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_vaccine_bcg" model="product.product">
+            <field name="name">Vaccine: BCG</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_vaccination"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">50</field>
+            <field name="insurance_code">VAC-BCG</field>
+            <field name="procedure_duration">10</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="vaccine_bcg" model="medical.vaccine">
+            <field name="name">BCG</field>
+            <field name="code">BCG</field>
+            <field name="diseases">Tuberculosis</field>
+            <field name="route">id</field>
+            <field name="sequence">0</field>
+            <field name="product_id" ref="product_vaccine_bcg"/>
+        </record>
+        <record id="product_vaccine_hepb" model="product.product">
+            <field name="name">Vaccine: Hepatitis B</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_vaccination"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">80</field>
+            <field name="insurance_code">VAC-HEPB</field>
+            <field name="procedure_duration">10</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="vaccine_hepb" model="medical.vaccine">
+            <field name="name">Hepatitis B</field>
+            <field name="code">HEPB</field>
+            <field name="diseases">Hepatitis B</field>
+            <field name="route">im</field>
+            <field name="sequence">1</field>
+            <field name="product_id" ref="product_vaccine_hepb"/>
+        </record>
+        <record id="product_vaccine_opv" model="product.product">
+            <field name="name">Vaccine: Oral Polio (OPV)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_vaccination"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">30</field>
+            <field name="insurance_code">VAC-OPV</field>
+            <field name="procedure_duration">10</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="vaccine_opv" model="medical.vaccine">
+            <field name="name">Oral Polio (OPV)</field>
+            <field name="code">OPV</field>
+            <field name="diseases">Poliomyelitis</field>
+            <field name="route">oral</field>
+            <field name="sequence">2</field>
+            <field name="product_id" ref="product_vaccine_opv"/>
+        </record>
+        <record id="product_vaccine_hexa" model="product.product">
+            <field name="name">Vaccine: Hexavalent (DTaP-IPV-Hib-HepB)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_vaccination"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">900</field>
+            <field name="insurance_code">VAC-HEXA</field>
+            <field name="procedure_duration">10</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="vaccine_hexa" model="medical.vaccine">
+            <field name="name">Hexavalent (DTaP-IPV-Hib-HepB)</field>
+            <field name="code">HEXA</field>
+            <field name="diseases">Diphtheria, tetanus, pertussis, polio, Haemophilus influenzae b, hepatitis B</field>
+            <field name="route">im</field>
+            <field name="sequence">3</field>
+            <field name="product_id" ref="product_vaccine_hexa"/>
+        </record>
+        <record id="product_vaccine_pcv" model="product.product">
+            <field name="name">Vaccine: Pneumococcal Conjugate (PCV)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_vaccination"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">1100</field>
+            <field name="insurance_code">VAC-PCV</field>
+            <field name="procedure_duration">10</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="vaccine_pcv" model="medical.vaccine">
+            <field name="name">Pneumococcal Conjugate (PCV)</field>
+            <field name="code">PCV</field>
+            <field name="diseases">Pneumococcal disease</field>
+            <field name="route">im</field>
+            <field name="sequence">4</field>
+            <field name="product_id" ref="product_vaccine_pcv"/>
+        </record>
+        <record id="product_vaccine_rota" model="product.product">
+            <field name="name">Vaccine: Rotavirus</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_vaccination"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">700</field>
+            <field name="insurance_code">VAC-ROTA</field>
+            <field name="procedure_duration">10</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="vaccine_rota" model="medical.vaccine">
+            <field name="name">Rotavirus</field>
+            <field name="code">ROTA</field>
+            <field name="diseases">Rotavirus diarrhoea</field>
+            <field name="route">oral</field>
+            <field name="sequence">5</field>
+            <field name="product_id" ref="product_vaccine_rota"/>
+        </record>
+        <record id="product_vaccine_mmr" model="product.product">
+            <field name="name">Vaccine: MMR</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_vaccination"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">300</field>
+            <field name="insurance_code">VAC-MMR</field>
+            <field name="procedure_duration">10</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="vaccine_mmr" model="medical.vaccine">
+            <field name="name">MMR</field>
+            <field name="code">MMR</field>
+            <field name="diseases">Measles, mumps, rubella</field>
+            <field name="route">sc</field>
+            <field name="sequence">6</field>
+            <field name="product_id" ref="product_vaccine_mmr"/>
+        </record>
+        <record id="product_vaccine_dtap" model="product.product">
+            <field name="name">Vaccine: DTaP Booster</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_vaccination"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">400</field>
+            <field name="insurance_code">VAC-DTAP</field>
+            <field name="procedure_duration">10</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="vaccine_dtap" model="medical.vaccine">
+            <field name="name">DTaP Booster</field>
+            <field name="code">DTAP</field>
+            <field name="diseases">Diphtheria, tetanus, pertussis</field>
+            <field name="route">im</field>
+            <field name="sequence">7</field>
+            <field name="product_id" ref="product_vaccine_dtap"/>
+        </record>
+        <record id="product_vaccine_dtap_ipv" model="product.product">
+            <field name="name">Vaccine: DTaP-IPV Booster</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_vaccination"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">500</field>
+            <field name="insurance_code">VAC-DTAP_IPV</field>
+            <field name="procedure_duration">10</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="vaccine_dtap_ipv" model="medical.vaccine">
+            <field name="name">DTaP-IPV Booster</field>
+            <field name="code">DTAP_IPV</field>
+            <field name="diseases">Diphtheria, tetanus, pertussis, polio</field>
+            <field name="route">im</field>
+            <field name="sequence">8</field>
+            <field name="product_id" ref="product_vaccine_dtap_ipv"/>
+        </record>
+        <record id="schedule_00" model="medical.vaccine.schedule">
+            <field name="vaccine_id" ref="vaccine_bcg"/>
+            <field name="dose_label">Single dose</field>
+            <field name="age_days">0</field>
+            <field name="sequence">0</field>
+        </record>
+        <record id="schedule_01" model="medical.vaccine.schedule">
+            <field name="vaccine_id" ref="vaccine_hepb"/>
+            <field name="dose_label">Birth dose</field>
+            <field name="age_days">0</field>
+            <field name="sequence">1</field>
+        </record>
+        <record id="schedule_02" model="medical.vaccine.schedule">
+            <field name="vaccine_id" ref="vaccine_opv"/>
+            <field name="dose_label">Dose 0</field>
+            <field name="age_days">0</field>
+            <field name="sequence">2</field>
+        </record>
+        <record id="schedule_03" model="medical.vaccine.schedule">
+            <field name="vaccine_id" ref="vaccine_hexa"/>
+            <field name="dose_label">Dose 1</field>
+            <field name="age_days">60</field>
+            <field name="sequence">3</field>
+        </record>
+        <record id="schedule_04" model="medical.vaccine.schedule">
+            <field name="vaccine_id" ref="vaccine_pcv"/>
+            <field name="dose_label">Dose 1</field>
+            <field name="age_days">60</field>
+            <field name="sequence">4</field>
+        </record>
+        <record id="schedule_05" model="medical.vaccine.schedule">
+            <field name="vaccine_id" ref="vaccine_rota"/>
+            <field name="dose_label">Dose 1</field>
+            <field name="age_days">60</field>
+            <field name="sequence">5</field>
+        </record>
+        <record id="schedule_06" model="medical.vaccine.schedule">
+            <field name="vaccine_id" ref="vaccine_opv"/>
+            <field name="dose_label">Dose 1</field>
+            <field name="age_days">60</field>
+            <field name="sequence">6</field>
+        </record>
+        <record id="schedule_07" model="medical.vaccine.schedule">
+            <field name="vaccine_id" ref="vaccine_hexa"/>
+            <field name="dose_label">Dose 2</field>
+            <field name="age_days">120</field>
+            <field name="sequence">7</field>
+        </record>
+        <record id="schedule_08" model="medical.vaccine.schedule">
+            <field name="vaccine_id" ref="vaccine_pcv"/>
+            <field name="dose_label">Dose 2</field>
+            <field name="age_days">120</field>
+            <field name="sequence">8</field>
+        </record>
+        <record id="schedule_09" model="medical.vaccine.schedule">
+            <field name="vaccine_id" ref="vaccine_rota"/>
+            <field name="dose_label">Dose 2</field>
+            <field name="age_days">120</field>
+            <field name="sequence">9</field>
+        </record>
+        <record id="schedule_10" model="medical.vaccine.schedule">
+            <field name="vaccine_id" ref="vaccine_opv"/>
+            <field name="dose_label">Dose 2</field>
+            <field name="age_days">120</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="schedule_11" model="medical.vaccine.schedule">
+            <field name="vaccine_id" ref="vaccine_hexa"/>
+            <field name="dose_label">Dose 3</field>
+            <field name="age_days">180</field>
+            <field name="sequence">11</field>
+        </record>
+        <record id="schedule_12" model="medical.vaccine.schedule">
+            <field name="vaccine_id" ref="vaccine_opv"/>
+            <field name="dose_label">Dose 3</field>
+            <field name="age_days">180</field>
+            <field name="sequence">12</field>
+        </record>
+        <record id="schedule_13" model="medical.vaccine.schedule">
+            <field name="vaccine_id" ref="vaccine_mmr"/>
+            <field name="dose_label">Dose 1</field>
+            <field name="age_days">365</field>
+            <field name="sequence">13</field>
+        </record>
+        <record id="schedule_14" model="medical.vaccine.schedule">
+            <field name="vaccine_id" ref="vaccine_pcv"/>
+            <field name="dose_label">Booster</field>
+            <field name="age_days">365</field>
+            <field name="sequence">14</field>
+        </record>
+        <record id="schedule_15" model="medical.vaccine.schedule">
+            <field name="vaccine_id" ref="vaccine_mmr"/>
+            <field name="dose_label">Dose 2</field>
+            <field name="age_days">548</field>
+            <field name="sequence">15</field>
+        </record>
+        <record id="schedule_16" model="medical.vaccine.schedule">
+            <field name="vaccine_id" ref="vaccine_dtap"/>
+            <field name="dose_label">Booster</field>
+            <field name="age_days">548</field>
+            <field name="sequence">16</field>
+        </record>
+        <record id="schedule_17" model="medical.vaccine.schedule">
+            <field name="vaccine_id" ref="vaccine_opv"/>
+            <field name="dose_label">Booster</field>
+            <field name="age_days">548</field>
+            <field name="sequence">17</field>
+        </record>
+        <record id="schedule_18" model="medical.vaccine.schedule">
+            <field name="vaccine_id" ref="vaccine_dtap_ipv"/>
+            <field name="dose_label">Booster</field>
+            <field name="age_days">1461</field>
+            <field name="sequence">18</field>
+        </record>
+        <record id="milestone_00" model="medical.milestone">
+            <field name="name">Smiles when you talk to or smile at them</field>
+            <field name="domain">social</field>
+            <field name="age_months">2</field>
+            <field name="sequence">0</field>
+        </record>
+        <record id="milestone_01" model="medical.milestone">
+            <field name="name">Holds head up when on tummy</field>
+            <field name="domain">gross_motor</field>
+            <field name="age_months">2</field>
+            <field name="sequence">1</field>
+        </record>
+        <record id="milestone_02" model="medical.milestone">
+            <field name="name">Holds head steady without support when held</field>
+            <field name="domain">gross_motor</field>
+            <field name="age_months">4</field>
+            <field name="sequence">2</field>
+        </record>
+        <record id="milestone_03" model="medical.milestone">
+            <field name="name">Makes cooing sounds like 'oooo', 'aahh'</field>
+            <field name="domain">language</field>
+            <field name="age_months">4</field>
+            <field name="sequence">3</field>
+        </record>
+        <record id="milestone_04" model="medical.milestone">
+            <field name="name">Brings hands to mouth</field>
+            <field name="domain">fine_motor</field>
+            <field name="age_months">4</field>
+            <field name="sequence">4</field>
+        </record>
+        <record id="milestone_05" model="medical.milestone">
+            <field name="name">Rolls from tummy to back</field>
+            <field name="domain">gross_motor</field>
+            <field name="age_months">6</field>
+            <field name="sequence">5</field>
+        </record>
+        <record id="milestone_06" model="medical.milestone">
+            <field name="name">Laughs</field>
+            <field name="domain">social</field>
+            <field name="age_months">6</field>
+            <field name="sequence">6</field>
+        </record>
+        <record id="milestone_07" model="medical.milestone">
+            <field name="name">Sits without support</field>
+            <field name="domain">gross_motor</field>
+            <field name="age_months">9</field>
+            <field name="sequence">7</field>
+        </record>
+        <record id="milestone_08" model="medical.milestone">
+            <field name="name">Babbles 'mamamama', 'babababa'</field>
+            <field name="domain">language</field>
+            <field name="age_months">9</field>
+            <field name="sequence">8</field>
+        </record>
+        <record id="milestone_09" model="medical.milestone">
+            <field name="name">Looks for objects when dropped out of sight</field>
+            <field name="domain">cognitive</field>
+            <field name="age_months">9</field>
+            <field name="sequence">9</field>
+        </record>
+        <record id="milestone_10" model="medical.milestone">
+            <field name="name">Pulls up to stand</field>
+            <field name="domain">gross_motor</field>
+            <field name="age_months">12</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="milestone_11" model="medical.milestone">
+            <field name="name">Waves 'bye-bye'</field>
+            <field name="domain">social</field>
+            <field name="age_months">12</field>
+            <field name="sequence">11</field>
+        </record>
+        <record id="milestone_12" model="medical.milestone">
+            <field name="name">Picks things up between thumb and pointer finger</field>
+            <field name="domain">fine_motor</field>
+            <field name="age_months">12</field>
+            <field name="sequence">12</field>
+        </record>
+        <record id="milestone_13" model="medical.milestone">
+            <field name="name">Takes a few steps alone</field>
+            <field name="domain">gross_motor</field>
+            <field name="age_months">15</field>
+            <field name="sequence">13</field>
+        </record>
+        <record id="milestone_14" model="medical.milestone">
+            <field name="name">Says one or two words besides 'mama' or 'baba'</field>
+            <field name="domain">language</field>
+            <field name="age_months">15</field>
+            <field name="sequence">14</field>
+        </record>
+        <record id="milestone_15" model="medical.milestone">
+            <field name="name">Walks without holding on</field>
+            <field name="domain">gross_motor</field>
+            <field name="age_months">18</field>
+            <field name="sequence">15</field>
+        </record>
+        <record id="milestone_16" model="medical.milestone">
+            <field name="name">Tries to say three or more words</field>
+            <field name="domain">language</field>
+            <field name="age_months">18</field>
+            <field name="sequence">16</field>
+        </record>
+        <record id="milestone_17" model="medical.milestone">
+            <field name="name">Scribbles</field>
+            <field name="domain">fine_motor</field>
+            <field name="age_months">18</field>
+            <field name="sequence">17</field>
+        </record>
+        <record id="milestone_18" model="medical.milestone">
+            <field name="name">Says at least two words together, like 'more milk'</field>
+            <field name="domain">language</field>
+            <field name="age_months">24</field>
+            <field name="sequence">18</field>
+        </record>
+        <record id="milestone_19" model="medical.milestone">
+            <field name="name">Kicks a ball</field>
+            <field name="domain">gross_motor</field>
+            <field name="age_months">24</field>
+            <field name="sequence">19</field>
+        </record>
+        <record id="milestone_20" model="medical.milestone">
+            <field name="name">Points to things in a book when asked</field>
+            <field name="domain">cognitive</field>
+            <field name="age_months">24</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="milestone_21" model="medical.milestone">
+            <field name="name">Says about 50 words</field>
+            <field name="domain">language</field>
+            <field name="age_months">30</field>
+            <field name="sequence">21</field>
+        </record>
+        <record id="milestone_22" model="medical.milestone">
+            <field name="name">Jumps off the ground with both feet</field>
+            <field name="domain">gross_motor</field>
+            <field name="age_months">30</field>
+            <field name="sequence">22</field>
+        </record>
+        <record id="milestone_23" model="medical.milestone">
+            <field name="name">Talks in conversation with at least two back-and-forth exchanges</field>
+            <field name="domain">language</field>
+            <field name="age_months">36</field>
+            <field name="sequence">23</field>
+        </record>
+        <record id="milestone_24" model="medical.milestone">
+            <field name="name">Draws a circle when shown how</field>
+            <field name="domain">fine_motor</field>
+            <field name="age_months">36</field>
+            <field name="sequence">24</field>
+        </record>
+        <record id="milestone_25" model="medical.milestone">
+            <field name="name">Says sentences with four or more words</field>
+            <field name="domain">language</field>
+            <field name="age_months">48</field>
+            <field name="sequence">25</field>
+        </record>
+        <record id="milestone_26" model="medical.milestone">
+            <field name="name">Catches a large ball most of the time</field>
+            <field name="domain">gross_motor</field>
+            <field name="age_months">48</field>
+            <field name="sequence">26</field>
+        </record>
+        <record id="milestone_27" model="medical.milestone">
+            <field name="name">Tells a story with at least two events</field>
+            <field name="domain">language</field>
+            <field name="age_months">60</field>
+            <field name="sequence">27</field>
+        </record>
+        <record id="milestone_28" model="medical.milestone">
+            <field name="name">Writes some letters of their name</field>
+            <field name="domain">fine_motor</field>
+            <field name="age_months">60</field>
+            <field name="sequence">28</field>
+        </record>
+        <record id="obs_head_circ" model="medical.observation.type">
+            <field name="name">Head Circumference</field>
+            <field name="code">head_circ</field>
+            <field name="unit">cm</field>
+            <field name="category">growth</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">0</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">1</field>
+            <field name="lower_is_better" eval="False"/>
+            <field name="sequence">12</field>
+            <field name="department_ids" eval="[(4, ref('dept_pediatrics'))]"/>
+        </record>
+        <record id="obs_apgar" model="medical.observation.type">
+            <field name="name">APGAR Score</field>
+            <field name="code">apgar</field>
+            <field name="unit">/10</field>
+            <field name="category">score</field>
+            <field name="normal_min">7</field>
+            <field name="normal_max">0</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="False"/>
+            <field name="sequence">96</field>
+            <field name="department_ids" eval="[(4, ref('dept_pediatrics'))]"/>
+        </record>
+        <record id="score_apgar" model="medical.assessment.template">
+            <field name="name">APGAR Score (newborn)</field>
+            <field name="code">APGAR</field>
+            <field name="score_mode">sum</field>
+            <field name="department_ids" eval="[(4, ref('dept_pediatrics'))]"/>
+            <field name="item_ids" eval="[(0, 0, {'sequence': 1, 'name': 'Appearance (skin colour)', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Blue or pale all over', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Blue hands and feet, pink body', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'Pink all over', 'score': 2, 'is_alert': False})]}), (0, 0, {'sequence': 2, 'name': 'Pulse', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Absent', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Below 100 per minute', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': '100 per minute or more', 'score': 2, 'is_alert': False})]}), (0, 0, {'sequence': 3, 'name': 'Grimace (reflex irritability)', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No response', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Grimace', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'Cries or pulls away', 'score': 2, 'is_alert': False})]}), (0, 0, {'sequence': 4, 'name': 'Activity (muscle tone)', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Limp', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Some flexion', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'Active movement', 'score': 2, 'is_alert': False})]}), (0, 0, {'sequence': 5, 'name': 'Respiration', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Absent', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Slow or irregular', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'Good, crying', 'score': 2, 'is_alert': False})]})]"/>
+            <field name="range_ids" eval="[(0, 0, {'min_score': 7, 'max_score': 10, 'name': 'Reassuring', 'severity': 'none'}), (0, 0, {'min_score': 4, 'max_score': 6, 'name': 'Moderately abnormal', 'severity': 'moderate'}), (0, 0, {'min_score': 0, 'max_score': 3, 'name': 'Low', 'severity': 'severe'})]"/>
+            <field name="observation_type_id" ref="obs_apgar"/>
+        </record>
+        <record id="icd_j21_9" model="medical.diagnosis">
+            <field name="code">J21.9</field>
+            <field name="name">Acute bronchiolitis, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_pediatrics'))]"/>
+        </record>
+        <record id="icd_h66_9" model="medical.diagnosis">
+            <field name="code">H66.9</field>
+            <field name="name">Otitis media, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_pediatrics'))]"/>
+        </record>
+        <record id="icd_a08_4" model="medical.diagnosis">
+            <field name="code">A08.4</field>
+            <field name="name">Viral intestinal infection, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_pediatrics'))]"/>
+        </record>
+        <record id="icd_e86" model="medical.diagnosis">
+            <field name="code">E86</field>
+            <field name="name">Volume depletion (dehydration)</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_pediatrics'))]"/>
+        </record>
+        <record id="icd_l22" model="medical.diagnosis">
+            <field name="code">L22</field>
+            <field name="name">Diaper (napkin) dermatitis</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_pediatrics'))]"/>
+        </record>
+        <record id="icd_p59_9" model="medical.diagnosis">
+            <field name="code">P59.9</field>
+            <field name="name">Neonatal jaundice, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_pediatrics'))]"/>
+        </record>
+        <record id="icd_e44_0" model="medical.diagnosis">
+            <field name="code">E44.0</field>
+            <field name="name">Moderate protein-energy malnutrition</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_pediatrics'))]"/>
+        </record>
+        <record id="icd_r62_8" model="medical.diagnosis">
+            <field name="code">R62.8</field>
+            <field name="name">Other lack of expected normal physiological development</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_pediatrics'))]"/>
+        </record>
+        <record id="icd_b01_9" model="medical.diagnosis">
+            <field name="code">B01.9</field>
+            <field name="name">Varicella without complication</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_pediatrics'))]"/>
+        </record>
+        <record id="icd_z00_1" model="medical.diagnosis">
+            <field name="code">Z00.1</field>
+            <field name="name">Routine child health examination</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_pediatrics'))]"/>
+        </record>
+        <record id="medical_core.medicine_paracetamol_syrup" model="product.product">
+            <field name="concentration_mg_ml">24</field>
+            <field name="pediatric_mg_kg">15</field>
+            <field name="pediatric_max_mg">1000</field>
+        </record>
+        <record id="medical_core.medicine_ibuprofen_syrup" model="product.product">
+            <field name="concentration_mg_ml">20</field>
+            <field name="pediatric_mg_kg">10</field>
+            <field name="pediatric_max_mg">400</field>
+        </record>
+        <record id="medical_core.medicine_amoxicillin_susp" model="product.product">
+            <field name="concentration_mg_ml">50</field>
+        </record>
+        <record id="config_auto_vaccination_plan" model="ir.config_parameter">
+            <field name="key">medical_pediatrics.auto_vaccination_plan</field>
+            <field name="value">True</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="medical_pediatrics.GrowthChart">
+        <div class="o_gc_root">
+            <div t-if="!state.data" class="o_gc_empty">Save the patient first.</div>
+            <div t-elif="!state.data.ready" class="o_gc_empty" t-esc="state.data.reason"/>
+            <t t-else="">
+                <div class="o_gc_tabs" role="tablist">
+                    <button t-foreach="indicators" t-as="ind" t-key="ind.key" type="button" role="tab"
+                            t-attf-class="btn btn-sm {{ ind.key === state.selected ? 'btn-primary' : 'btn-light' }}"
+                            t-att-aria-selected="ind.key === state.selected ? 'true' : 'false'"
+                            t-on-click="() => this.select(ind.key)" t-esc="ind.name"/>
+                </div>
+                <div class="o_gc_card" t-if="current">
+                    <div class="o_gc_head">
+                        <div>
+                            <h4 class="o_gc_title" t-esc="current.name"/>
+                            <p class="o_gc_sub" t-if="latest">
+                                <t t-esc="ageText(latest.age)"/>:
+                                <strong><t t-esc="rows[0].valueText"/> <t t-esc="current.unit"/></strong>
+                                · z <t t-esc="rows[0].zText"/> · P<t t-esc="rows[0].pText"/>
+                                <span t-attf-class="o_gc_status {{ isAbnormal(latest) ? 'o_gc_status_bad' : '' }}">
+                                    <i t-if="isAbnormal(latest)" class="fa fa-exclamation-circle" aria-hidden="true"/>
+                                    <t t-esc="latest.status"/>
+                                </span>
+                            </p>
+                            <p class="o_gc_sub" t-else="">No measurement before 5 years of age yet.</p>
+                        </div>
+                        <button type="button" class="btn btn-link btn-sm" t-on-click="toggleTable"
+                                t-att-aria-pressed="state.table ? 'true' : 'false'">
+                            <i t-attf-class="fa {{ state.table ? 'fa-line-chart' : 'fa-table' }} me-1"/>
+                            <t t-if="state.table">Chart</t><t t-else="">Table</t>
+                        </button>
+                    </div>
+                    <div class="o_gc_legend" t-if="!state.table">
+                        <span><i class="o_gc_swatch o_gc_swatch_child"/>Child</span>
+                        <span><i class="o_gc_swatch o_gc_swatch_median"/>50th percentile</span>
+                        <span><i class="o_gc_swatch o_gc_swatch_inner"/>15th / 85th</span>
+                        <span><i class="o_gc_swatch o_gc_swatch_outer"/>3rd / 97th</span>
+                    </div>
+                    <div t-if="state.table" class="o_gc_table_wrap">
+                        <table class="table table-sm mb-0">
+                            <thead><tr><th>Date</th><th>Age</th><th class="text-end">Value</th><th class="text-end">z-score</th>
+                                <th class="text-end">Percentile</th><th>Assessment</th></tr></thead>
+                            <tbody>
+                                <tr t-foreach="rows" t-as="row" t-key="row_index">
+                                    <td t-esc="row.date"/>
+                                    <td t-esc="row.ageText"/>
+                                    <td class="text-end o_gc_num" t-esc="row.valueText"/>
+                                    <td class="text-end o_gc_num" t-esc="row.zText"/>
+                                    <td class="text-end o_gc_num" t-esc="row.pText"/>
+                                    <td>
+                                        <i t-if="row.abnormal" class="fa fa-exclamation-circle o_gc_icon_bad me-1" aria-hidden="true"/>
+                                        <t t-esc="row.status"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div t-else="" class="o_gc_canvas">
+                        <canvas t-ref="canvas" role="img" t-att-aria-label="current.name"/>
+                    </div>
+                    <p class="o_gc_note">WHO Child Growth Standards, birth to 5 years.</p>
+                </div>
+            </t>
+        </div>
+    </t>
+</templates>
