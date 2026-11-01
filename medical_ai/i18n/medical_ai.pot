@@ -1,0 +1,977 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* medical_ai
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-14 23:57+0000\n"
+"PO-Revision-Date: 2026-10-14 23:57+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_claim_scrubber.py:0
+msgid ""
+"%(insurer)s rejected %(k)s of %(n)s similar claims in the last 12 months."
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_claim_scrubber.py:0
+msgid "%(insurer)s rejects about %(rate)s%% of claims overall."
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_brief.py:0
+msgid "%(name)s, month %(m)s of %(t)s"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_brief.py:0
+msgid "%(name)s, session %(n)s of %(t)s"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_brief.py:0
+msgid "%s left this year"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_brief.py:0
+msgid "%s overdue"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_claim_form_ai
+msgid "). Fix them or move them out before submitting."
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.ui.menu,name:medical_ai.menu_medical_ai_config
+msgid "AI"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_res_config_settings__medical_ai_language
+msgid "AI Output Language"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_res_config_settings__medical_ai_provider
+msgid "AI Provider"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.actions.act_window,name:medical_ai.action_medical_ai_log
+#: model:ir.ui.menu,name:medical_ai.menu_medical_ai_log
+msgid "AI Request Log"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.ui.menu,name:medical_ai.menu_medical_ai_settings
+msgid "AI Settings"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.res_config_settings_view_form_medical_ai
+msgid "AI provider"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_ai_service.py:0
+msgid "AI provider reachable"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_res_config_settings__medical_ai_api_key
+msgid "API Key"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_plan_followup_list
+msgid "Accepted"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,help:medical_ai.field_medical_treatment_plan__unscheduled_amount
+msgid "Accepted treatments that are neither booked nor done."
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_visit__ai_brief_date
+msgid "Ai Brief Date"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_brief.py:0
+msgid "Allergies:"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_claim_scrubber.py:0
+msgid "Already claimed within the plan's %s-month frequency limit."
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.res_config_settings_view_form_medical_ai
+msgid "Always on. Re-checked nightly and before a claim batch is submitted."
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_ai_service.py:0
+msgid "Answer: %s"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields.selection,name:medical_ai.selection__res_config_settings__medical_ai_provider__anthropic
+msgid "Anthropic (Claude)"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_claim_line_list_ai
+msgid "Appeal"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_claim_line__appeal_text
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_claim_line_form_ai
+msgid "Appeal Letter"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields.selection,name:medical_ai.selection__medical_ai_log__feature__appeal
+msgid "Appeal letter"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields.selection,name:medical_ai.selection__res_config_settings__medical_ai_language__ar
+msgid "Arabic"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_res_config_settings__medical_ai_base_url
+msgid "Base URL"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_noshow.py:0
+msgid "Booked %s days ahead"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_noshow.py:0
+msgid "Booked for today or tomorrow"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.actions.act_window,help:medical_ai.action_medical_visit_to_confirm
+msgid ""
+"Bookings likely to be missed appear here so reception can call and confirm "
+"them."
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.actions.act_window,name:medical_ai.action_medical_visit_to_confirm
+#: model:ir.ui.menu,name:medical_ai.menu_medical_visit_to_confirm
+msgid "Bookings to Confirm"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_visit_form_ai
+msgid "Brief"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_brief.py:0
+msgid "Care program:"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_claim_form_ai
+msgid "Check Claims"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_claim_line_form_ai
+msgid "Check Risk"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.res_config_settings_view_form_medical_ai
+msgid "Check the model on the last 3 months"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.res_config_settings_view_form_medical_ai
+msgid "Claim scrubber"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_claim_scrubber.py:0
+msgid "Claimed %(claimed)s is above the plan coverage (%(expected)s)."
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_brief.py:0
+msgid "Complaint"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model,name:medical_ai.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_ai_service.py:0
+msgid "Configure an AI provider and model in Settings > Medical AI first."
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_noshow.py:0
+msgid "Confirmed the booking"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields.selection,name:medical_ai.selection__medical_ai_log__feature__test
+msgid "Connection test"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_ai_log__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_ai_log__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_ai_log_view_form
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_ai_log_view_list
+msgid "Date"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_ai_log__display_name
+#: model:ir.model.fields,field_description:medical_ai.field_medical_ai_service__display_name
+#: model:ir.model.fields,field_description:medical_ai.field_medical_claim__display_name
+#: model:ir.model.fields,field_description:medical_ai.field_medical_claim_line__display_name
+#: model:ir.model.fields,field_description:medical_ai.field_medical_treatment_plan__display_name
+#: model:ir.model.fields,field_description:medical_ai.field_medical_visit__display_name
+#: model:ir.model.fields,field_description:medical_ai.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_claim_line_form_ai
+msgid "Draft Appeal Letter"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_plan_form_ai
+msgid "Draft Follow-up"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_plan_followup_list
+msgid "Draft Messages"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_ai_log__duration
+msgid "Duration (s)"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.res_config_settings_view_form_medical_ai
+msgid ""
+"Each booking gets a risk from the patient's history, the day and hour, lead "
+"time and confirmation."
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields.selection,name:medical_ai.selection__res_config_settings__medical_ai_language__en
+msgid "English"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_ai_log__error
+#: model:ir.model.fields.selection,name:medical_ai.selection__medical_ai_log__state__error
+msgid "Error"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,help:medical_ai.field_medical_claim_line__risk_score
+msgid ""
+"Estimated chance that the insurer rejects this line, from rule checks and "
+"this clinic's own rejection history."
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,help:medical_ai.field_medical_visit__noshow_risk
+msgid ""
+"Estimated chance the patient does not come, from this clinic's own history."
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.actions.act_window,help:medical_ai.action_medical_followup
+msgid "Every accepted treatment is booked."
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.res_config_settings_view_form_medical_ai
+msgid ""
+"Every claim line gets a rejection risk from rule checks and your own insurer"
+" history, before it is sent."
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_ai_log__feature
+msgid "Feature"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_noshow.py:0
+msgid "First visit"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_brief.py:0
+msgid "First visit: no history yet."
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_plan_form_ai
+msgid "Follow-up"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_treatment_plan__followup_message
+msgid "Follow-up Message"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields.selection,name:medical_ai.selection__medical_ai_log__feature__followup
+msgid "Follow-up message"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields.selection,name:medical_ai.selection__res_config_settings__medical_ai_provider__gemini
+msgid "Google Gemini"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_noshow.py:0
+msgid "Has an overdue balance"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_followup.py:0
+msgid ""
+"Hello {patient}, this is {clinic}. Your treatment plan still includes: "
+"%(items)s. Completing it soon keeps the treatment simpler and avoids further"
+" damage. Reply to this message and we will find a time that suits you."
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_res_config_settings__medical_ai_anonymize
+msgid "Hide patient identity"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields.selection,name:medical_ai.selection__medical_claim_line__risk_level__high
+#: model:ir.model.fields.selection,name:medical_ai.selection__medical_visit__noshow_level__high
+msgid "High"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_visit_search_ai
+msgid "High No-show Risk"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_claim_line_search_ai
+msgid "High Rejection Risk"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_claim__high_risk_amount
+msgid "High Risk Amount"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_claim__high_risk_count
+msgid "High Risk Count"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_ai_log__id
+#: model:ir.model.fields,field_description:medical_ai.field_medical_ai_service__id
+#: model:ir.model.fields,field_description:medical_ai.field_medical_claim__id
+#: model:ir.model.fields,field_description:medical_ai.field_medical_claim_line__id
+#: model:ir.model.fields,field_description:medical_ai.field_medical_treatment_plan__id
+#: model:ir.model.fields,field_description:medical_ai.field_medical_visit__id
+#: model:ir.model.fields,field_description:medical_ai.field_res_config_settings__id
+msgid "ID"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model,name:medical_ai.model_medical_claim
+msgid "Insurance Claim Batch"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model,name:medical_ai.model_medical_claim_line
+msgid "Insurance Claim Line"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_brief.py:0
+msgid "Insurance:"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_res_config_settings__medical_ai_log_prompts
+msgid "Keep prompts in the log"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_noshow.py:0
+msgid ""
+"Last 3 months: %(visits)s visits, %(rate)s%% no-shows. The 20%% of visits "
+"the model flagged as riskiest had %(top)s%% no-shows and contained "
+"%(capture)s%% of all no-shows."
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_treatment_plan__followup_date
+msgid "Last Follow-up"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_ai_log__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_ai_log__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_brief.py:0
+msgid "Long-term medicines"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields.selection,name:medical_ai.selection__medical_claim_line__risk_level__low
+#: model:ir.model.fields.selection,name:medical_ai.selection__medical_visit__noshow_level__low
+msgid "Low"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.res_config_settings_view_form_medical_ai
+msgid "Medical AI"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.actions.act_window,name:medical_ai.action_medical_ai_settings
+msgid "Medical AI Settings"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model,name:medical_ai.model_medical_ai_service
+msgid "Medical AI provider gateway"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model,name:medical_ai.model_medical_ai_log
+msgid "Medical AI request log"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.actions.server,name:medical_ai.ir_cron_medical_scrub_ir_actions_server
+msgid "Medical AI: check claim lines waiting to be claimed"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.actions.server,name:medical_ai.ir_cron_medical_noshow_ir_actions_server
+msgid "Medical AI: refresh no-show risk of upcoming visits"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_brief.py:0
+msgid "Medical alert:"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields.selection,name:medical_ai.selection__medical_claim_line__risk_level__medium
+#: model:ir.model.fields.selection,name:medical_ai.selection__medical_visit__noshow_level__medium
+msgid "Medium"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_noshow.py:0
+msgid "Missed %(k)s of %(n)s past visits"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_brief.py:0
+msgid "Missed visits:"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_ai_log__model
+#: model:ir.model.fields,field_description:medical_ai.field_res_config_settings__medical_ai_model
+msgid "Model"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,help:medical_ai.field_res_config_settings__medical_ai_model
+msgid "Model identifier exactly as the provider names it."
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_claim_scrubber.py:0
+msgid "Most common reason: %s."
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,help:medical_ai.field_res_config_settings__medical_ai_anonymize
+msgid ""
+"Names, phones and IDs are replaced by placeholders before any text is sent, "
+"and put back in the answer locally."
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.res_config_settings_view_form_medical_ai
+msgid ""
+"Names, phones and IDs are replaced by placeholders before any text leaves "
+"Odoo, and restored locally. Medical alerts are never sent."
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.actions.act_window,help:medical_ai.action_medical_visit_to_confirm
+msgid "No risky bookings in the next 3 days."
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_visit_list_ai
+msgid "No-show %"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_visit__noshow_level
+msgid "No-show Risk"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_visit__noshow_risk
+msgid "No-show Risk (%)"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_noshow.py:0
+msgid "No-show model check"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.res_config_settings_view_form_medical_ai
+msgid "No-show risk"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_treatment_plan__unscheduled_amount
+msgid "Not Booked"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_noshow.py:0
+msgid "Not enough visits in the last 3 months to evaluate the model."
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,help:medical_ai.field_res_config_settings__medical_ai_base_url
+msgid ""
+"Only for self-hosted / OpenAI-compatible servers, e.g. "
+"http://localhost:11434/v1"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,help:medical_ai.field_medical_ai_log__prompt
+msgid "Only stored when \"Keep prompts in the log\" is enabled."
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields.selection,name:medical_ai.selection__res_config_settings__medical_ai_provider__openai
+msgid "OpenAI"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields.selection,name:medical_ai.selection__res_config_settings__medical_ai_provider__openai_compatible
+msgid "OpenAI-compatible server (Ollama, vLLM, Azure...)"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_brief.py:0
+msgid "Overdue balance:"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_treatment_plan__patient_phone
+msgid "Phone"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_brief.py:0
+msgid "Planned, not done yet"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_brief.py:0
+msgid "Pre-authorization missing:"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_visit__ai_brief
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_visit_form_ai
+msgid "Pre-visit Brief"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields.selection,name:medical_ai.selection__medical_ai_log__feature__brief
+msgid "Pre-visit brief"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_brief.py:0
+msgid "Problem list"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_ai_log__prompt
+msgid "Prompt"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_ai_log__prompt_chars
+msgid "Prompt Chars"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_ai_log__provider
+#: model_terms:ir.ui.view,arch_db:medical_ai.res_config_settings_view_form_medical_ai
+msgid "Provider"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_brief.py:0
+msgid "Recent abnormal results"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_brief.py:0
+msgid "Recent diagnoses"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_brief.py:0
+msgid "Recent treatments"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_claim_line_form_ai
+msgid "Rejection Risk"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_claim_line__risk_score
+msgid "Rejection Risk (%)"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_ai_log__res_id
+msgid "Res"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_ai_log__res_model
+msgid "Res Model"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_ai_log__response_chars
+msgid "Response Chars"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_claim_line_form_ai
+msgid "Resubmit"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_claim_form_ai
+msgid "Review"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_claim_line__risk_checked_at
+msgid "Risk Checked At"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_claim_line__risk_level
+msgid "Risk Level"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_claim_line__risk_reasons
+msgid "Risk Reasons"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_claim_scrubber.py:0
+msgid "Same procedure already claimed for this patient on the same day."
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_plan_form_ai
+msgid "Send on WhatsApp"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_claim_scrubber.py:0
+msgid "Site missing: %s"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_ai_log__state
+msgid "State"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.res_config_settings_view_form_medical_ai
+msgid ""
+"Store the exact text sent to the provider in the AI log (for audits). Off by"
+" default."
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields.selection,name:medical_ai.selection__medical_ai_log__state__ok
+msgid "Success"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.res_config_settings_view_form_medical_ai
+msgid "Test connection"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_ai_service.py:0
+msgid "The AI provider did not answer: %s"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_claim_scrubber.py:0
+msgid "The approval expired on %s, before the service date."
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_claim_scrubber.py:0
+msgid "The plan excludes this procedure."
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_claim_scrubber.py:0
+msgid "The policy was not valid on the service date."
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_claim_scrubber.py:0
+msgid "The procedure has no insurance code."
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_noshow.py:0
+msgid "This day and hour are usually kept"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_noshow.py:0
+msgid "This day and hour have more no-shows"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_claim_scrubber.py:0
+msgid ""
+"This procedure needs pre-authorization and no approval number is attached."
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_claim_scrubber.py:0
+msgid ""
+"To the claims department of %(insurer)s,\n"
+"\n"
+"We kindly ask you to review the rejection of the claim for {patient} (member no. {member_no}) for %(procedure)s%(site)s performed on %(date)s.\n"
+"Reason given: %(reason)s.\n"
+"The treatment was clinically necessary. The supporting reports and clinical notes are attached for your review.\n"
+"\n"
+"Regards,\n"
+"{doctor}\n"
+"{clinic}"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_brief.py:0
+msgid "Today"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_plan_followup_list
+msgid "Total"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.actions.act_window,name:medical_ai.action_medical_followup
+#: model:ir.ui.menu,name:medical_ai.menu_medical_followup
+msgid "Treatment Follow-up"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model,name:medical_ai.model_medical_treatment_plan
+msgid "Treatment Plan"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_plan_followup_list
+msgid "Treatments"
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_ai_service.py:0
+msgid "Unexpected answer from the AI provider: %s"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_treatment_plan__unscheduled_count
+msgid "Unscheduled Count"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_claim_line_form_ai
+msgid "Use 'Draft Appeal Letter', then edit and send."
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_plan_form_ai
+msgid "Use 'Draft Follow-up', edit if needed, then send."
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.res_config_settings_view_form_medical_ai
+msgid "Used for pre-visit briefs, follow-up messages and appeal letters."
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_ai_log__user_id
+msgid "User"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields.selection,name:medical_ai.selection__res_config_settings__medical_ai_language__auto
+msgid "User's language"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model,name:medical_ai.model_medical_visit
+msgid "Visit"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_plan_followup_list
+msgid "WhatsApp"
+msgstr ""
+
+#. module: medical_ai
+#: model:ir.model.fields,field_description:medical_ai.field_medical_visit__noshow_factors
+msgid "Why"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.res_config_settings_view_form_medical_ai
+msgid "Works without an AI provider"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.res_config_settings_view_form_medical_ai
+msgid "e.g. the model name from your provider"
+msgstr ""
+
+#. module: medical_ai
+#: model_terms:ir.ui.view,arch_db:medical_ai.medical_claim_form_ai
+msgid ""
+"lines are likely to be rejected\n"
+"                    ("
+msgstr ""
+
+#. module: medical_ai
+#. odoo-python
+#: code:addons/medical_ai/models/medical_claim_scrubber.py:0
+msgid "not specified"
+msgstr ""

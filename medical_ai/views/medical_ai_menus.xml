@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_medical_visit_to_confirm" name="Bookings to Confirm" parent="medical_core.menu_medical_front"
+              action="action_medical_visit_to_confirm" sequence="12"/>
+    <menuitem id="menu_medical_followup" name="Treatment Follow-up" parent="medical_core.menu_medical_front"
+              action="action_medical_followup" sequence="25"/>
+    <menuitem id="menu_medical_ai_config" name="AI" parent="medical_core.menu_medical_config" sequence="70"
+              groups="medical_core.group_medical_manager"/>
+    <menuitem id="menu_medical_ai_settings" name="AI Settings" parent="menu_medical_ai_config"
+              action="action_medical_ai_settings" sequence="10"/>
+    <menuitem id="menu_medical_ai_log" name="AI Request Log" parent="menu_medical_ai_config"
+              action="action_medical_ai_log" sequence="20"/>
+</odoo>

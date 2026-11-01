@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_plan_form_ai" model="ir.ui.view">
+        <field name="name">medical.treatment.plan.form.ai</field>
+        <field name="model">medical.treatment.plan</field>
+        <field name="inherit_id" ref="medical_core.medical_treatment_plan_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <field name="unscheduled_count" invisible="1"/>
+                <button name="action_draft_followup" type="object" string="Draft Follow-up" icon="fa-magic"
+                        invisible="unscheduled_count == 0"/>
+            </xpath>
+            <xpath expr="//page[@name='notes']" position="before">
+                <page string="Follow-up" name="followup" invisible="not followup_message and unscheduled_count == 0">
+                    <group>
+                        <group>
+                            <field name="unscheduled_amount"/>
+                            <field name="followup_date"/>
+                            <field name="patient_phone" widget="phone"/>
+                        </group>
+                    </group>
+                    <field name="followup_message" placeholder="Use 'Draft Follow-up', edit if needed, then send."/>
+                    <button name="action_open_whatsapp" type="object" string="Send on WhatsApp" icon="fa-whatsapp"
+                            class="btn-secondary mt-2" invisible="not followup_message or not patient_phone"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_plan_followup_list" model="ir.ui.view">
+        <field name="name">medical.treatment.plan.followup.list</field>
+        <field name="model">medical.treatment.plan</field>
+        <field name="priority">90</field>
+        <field name="arch" type="xml">
+            <list create="0" default_order="unscheduled_amount desc">
+                <header>
+                    <button name="action_draft_followup" type="object" string="Draft Messages"/>
+                </header>
+                <field name="patient_id"/>
+                <field name="patient_phone" widget="phone"/>
+                <field name="doctor_id"/>
+                <field name="date" string="Accepted"/>
+                <field name="unscheduled_count" string="Treatments"/>
+                <field name="unscheduled_amount" sum="Total"/>
+                <field name="currency_id" column_invisible="True"/>
+                <field name="followup_date"/>
+                <button name="action_open_whatsapp" type="object" icon="fa-whatsapp" title="WhatsApp"
+                        invisible="not patient_phone"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_medical_followup" model="ir.actions.act_window">
+        <field name="name">Treatment Follow-up</field>
+        <field name="res_model">medical.treatment.plan</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('unscheduled_amount', '&gt;', 0)]</field>
+        <field name="view_ids" eval="[(5, 0, 0), (0, 0, {'view_mode': 'list', 'view_id': ref('medical_plan_followup_list')})]"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiley_face">Every accepted treatment is booked.</p>
+        </field>
+    </record>
+</odoo>

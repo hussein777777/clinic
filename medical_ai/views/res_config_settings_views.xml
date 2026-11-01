@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_medical_ai" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.medical.ai</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="80"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="Medical AI" string="Medical AI" name="medical_ai" groups="medical_core.group_medical_manager">
+                    <block title="Works without an AI provider" name="medical_ai_local">
+                        <setting string="Claim scrubber" help="Every claim line gets a rejection risk from rule checks and your own insurer history, before it is sent.">
+                            <div class="text-muted">Always on. Re-checked nightly and before a claim batch is submitted.</div>
+                        </setting>
+                        <setting string="No-show risk" help="Each booking gets a risk from the patient's history, the day and hour, lead time and confirmation.">
+                            <button name="action_medical_noshow_backtest" type="object" string="Check the model on the last 3 months"
+                                    class="btn-link" icon="oi-arrow-right"/>
+                        </setting>
+                    </block>
+                    <block title="AI provider" name="medical_ai_provider">
+                        <setting string="Provider" help="Used for pre-visit briefs, follow-up messages and appeal letters.">
+                            <div class="content-group">
+                                <div class="row mt-2"><label for="medical_ai_provider" class="col-lg-4 o_light_label"/><field name="medical_ai_provider"/></div>
+                                <div class="row"><label for="medical_ai_model" class="col-lg-4 o_light_label"/><field name="medical_ai_model" placeholder="e.g. the model name from your provider"/></div>
+                                <div class="row"><label for="medical_ai_api_key" class="col-lg-4 o_light_label"/><field name="medical_ai_api_key" password="True"/></div>
+                                <div class="row" invisible="medical_ai_provider != 'openai_compatible'">
+                                    <label for="medical_ai_base_url" class="col-lg-4 o_light_label"/><field name="medical_ai_base_url"/>
+                                </div>
+                                <div class="row"><label for="medical_ai_language" class="col-lg-4 o_light_label"/><field name="medical_ai_language"/></div>
+                            </div>
+                            <button name="action_medical_ai_test" type="object" string="Test connection" class="btn-link" icon="oi-arrow-right"/>
+                        </setting>
+                        <setting help="Names, phones and IDs are replaced by placeholders before any text leaves Odoo, and restored locally. Medical alerts are never sent.">
+                            <field name="medical_ai_anonymize"/>
+                        </setting>
+                        <setting help="Store the exact text sent to the provider in the AI log (for audits). Off by default.">
+                            <field name="medical_ai_log_prompts"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_medical_ai_settings" model="ir.actions.act_window">
+        <field name="name">Medical AI Settings</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">current</field>
+        <field name="context">{'module': 'medical_ai', 'bin_size': False}</field>
+    </record>
+</odoo>

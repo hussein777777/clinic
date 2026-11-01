@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_visit_form_ai" model="ir.ui.view">
+        <field name="name">medical.visit.form.ai</field>
+        <field name="model">medical.visit</field>
+        <field name="inherit_id" ref="medical_core.medical_visit_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_ai_brief" type="object" string="Pre-visit Brief" icon="fa-magic"
+                        groups="medical_core.group_medical_doctor"
+                        invisible="state not in ('draft', 'confirmed', 'checked_in', 'in_consult')"/>
+            </xpath>
+            <field name="patient_phone" position="after">
+                <field name="noshow_level" widget="badge" decoration-danger="noshow_level == 'high'"
+                       decoration-warning="noshow_level == 'medium'" decoration-success="noshow_level == 'low'"
+                       invisible="not noshow_level or state not in ('draft', 'confirmed')"/>
+                <field name="noshow_risk" invisible="not noshow_level or state not in ('draft', 'confirmed')"/>
+                <field name="noshow_factors" invisible="not noshow_factors or state not in ('draft', 'confirmed')"/>
+            </field>
+            <xpath expr="//page[@name='lines']" position="before">
+                <page string="Brief" name="ai_brief" groups="medical_core.group_medical_doctor" invisible="not ai_brief">
+                    <field name="ai_brief_date" readonly="1"/>
+                    <field name="ai_brief" readonly="1" nolabel="1"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_visit_list_ai" model="ir.ui.view">
+        <field name="name">medical.visit.list.ai</field>
+        <field name="model">medical.visit</field>
+        <field name="inherit_id" ref="medical_core.medical_visit_view_list"/>
+        <field name="arch" type="xml">
+            <field name="room_id" position="after">
+                <field name="noshow_risk" optional="show" string="No-show %" invisible="state not in ('draft', 'confirmed')"/>
+                <field name="noshow_level" optional="hide" widget="badge" decoration-danger="noshow_level == 'high'"
+                       decoration-warning="noshow_level == 'medium'"/>
+                <field name="noshow_factors" optional="hide"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="medical_visit_kanban_ai" model="ir.ui.view">
+        <field name="name">medical.visit.kanban.ai</field>
+        <field name="model">medical.visit</field>
+        <field name="inherit_id" ref="medical_core.medical_visit_view_kanban"/>
+        <field name="arch" type="xml">
+            <field name="patient_id" position="after">
+                <field name="noshow_level" widget="badge" decoration-danger="noshow_level == 'high'"
+                       decoration-warning="noshow_level == 'medium'"
+                       invisible="noshow_level != 'high' or state not in ('draft', 'confirmed')"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="medical_visit_search_ai" model="ir.ui.view">
+        <field name="name">medical.visit.search.ai</field>
+        <field name="model">medical.visit</field>
+        <field name="inherit_id" ref="medical_core.medical_visit_view_search"/>
+        <field name="arch" type="xml">
+            <filter name="open" position="after">
+                <filter name="noshow_high" string="High No-show Risk" domain="[('noshow_level', '=', 'high')]"/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="action_medical_visit_to_confirm" model="ir.actions.act_window">
+        <field name="name">Bookings to Confirm</field>
+        <field name="res_model">medical.visit</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('state', '=', 'draft'), ('start', '&gt;=', context_today().strftime('%Y-%m-%d')),
+                              ('start', '&lt;', (context_today() + relativedelta(days=3)).strftime('%Y-%m-%d')),
+                              ('noshow_level', 'in', ('medium', 'high'))]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiley_face">No risky bookings in the next 3 days.</p>
+            <p>Bookings likely to be missed appear here so reception can call and confirm them.</p>
+        </field>
+    </record>
+</odoo>

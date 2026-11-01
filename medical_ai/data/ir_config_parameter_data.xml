@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="config_ai_provider" model="ir.config_parameter">
+            <field name="key">medical_ai.provider</field>
+            <field name="value">openai</field>
+        </record>
+        <record id="config_ai_anonymize" model="ir.config_parameter">
+            <field name="key">medical_ai.anonymize</field>
+            <field name="value">True</field>
+        </record>
+        <record id="config_ai_language" model="ir.config_parameter">
+            <field name="key">medical_ai.language</field>
+            <field name="value">auto</field>
+        </record>
+    </data>
+</odoo>
