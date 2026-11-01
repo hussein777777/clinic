@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_skin_lesion_nurse,medical.skin.lesion nurse,model_medical_skin_lesion,medical_core.group_medical_nurse,1,1,1,0
+access_skin_lesion_manager,medical.skin.lesion manager,model_medical_skin_lesion,medical_core.group_medical_manager,1,1,1,1
+access_skin_photo_nurse,medical.skin.photo nurse,model_medical_skin_photo,medical_core.group_medical_nurse,1,1,1,1

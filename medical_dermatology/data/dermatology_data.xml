@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="dept_dermatology" model="medical.department">
+            <field name="name">Dermatology</field>
+            <field name="code">DER</field>
+            <field name="sequence">50</field>
+            <field name="color">8</field>
+        </record>
+        <record id="spec_derm_general" model="medical.specialty">
+            <field name="name">Medical Dermatology</field>
+            <field name="code">DER-GEN</field>
+            <field name="department_id" ref="dept_dermatology"/>
+            <field name="sequence">1</field>
+        </record>
+        <record id="spec_derm_surgery" model="medical.specialty">
+            <field name="name">Dermatologic Surgery</field>
+            <field name="code">DER-SURG</field>
+            <field name="department_id" ref="dept_dermatology"/>
+            <field name="sequence">2</field>
+        </record>
+        <record id="spec_derm_aesthetic" model="medical.specialty">
+            <field name="name">Aesthetic Dermatology</field>
+            <field name="code">DER-AEST</field>
+            <field name="department_id" ref="dept_dermatology"/>
+            <field name="sequence">3</field>
+        </record>
+        <record id="room_derm_laser" model="medical.room">
+            <field name="name">Laser Room (skin)</field>
+            <field name="room_type">procedure</field>
+            <field name="department_id" ref="dept_dermatology"/>
+        </record>
+        <record id="room_derm_procedure" model="medical.room">
+            <field name="name">Skin Procedure Room</field>
+            <field name="room_type">procedure</field>
+            <field name="department_id" ref="dept_dermatology"/>
+        </record>
+        <record id="product_derm_consultation" model="product.product">
+            <field name="name">Dermatology Consultation</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">consultation</field>
+            <field name="specialty_id" ref="spec_derm_general"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">300</field>
+            <field name="insurance_code">DER-CONS</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_dermoscopy" model="product.product">
+            <field name="name">Dermoscopy</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">test</field>
+            <field name="specialty_id" ref="spec_derm_general"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">250</field>
+            <field name="insurance_code">DER-DSC</field>
+            <field name="procedure_duration">15</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_cryotherapy" model="product.product">
+            <field name="name">Cryotherapy</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_derm_general"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">350</field>
+            <field name="insurance_code">DER-CRYO</field>
+            <field name="procedure_duration">15</field>
+            <field name="site_requirement">body_site</field>
+        </record>
+        <record id="product_skin_biopsy" model="product.product">
+            <field name="name">Skin Biopsy</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_derm_surgery"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">900</field>
+            <field name="insurance_code">DER-BX</field>
+            <field name="procedure_duration">30</field>
+            <field name="site_requirement">body_site</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to a skin biopsy / removal of the lesion described on this form under local anaesthetic. Possible effects were explained: a small scar, bleeding, infection, and the need for further treatment depending on the result.</p></field>
+        </record>
+        <record id="product_lesion_excision" model="product.product">
+            <field name="name">Excision of Skin Lesion</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_derm_surgery"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">2500</field>
+            <field name="insurance_code">DER-EXC</field>
+            <field name="procedure_duration">45</field>
+            <field name="site_requirement">body_site</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to a skin biopsy / removal of the lesion described on this form under local anaesthetic. Possible effects were explained: a small scar, bleeding, infection, and the need for further treatment depending on the result.</p></field>
+        </record>
+        <record id="product_chemical_peel" model="product.product">
+            <field name="name">Chemical Peel Session</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">session</field>
+            <field name="specialty_id" ref="spec_derm_aesthetic"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">800</field>
+            <field name="insurance_code">DER-PEEL</field>
+            <field name="procedure_duration">30</field>
+            <field name="site_requirement">none</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the laser / light treatment. The number of sessions needed varies. Possible effects were explained: redness and swelling for a few days, blistering or crusting, temporary darkening or lightening of the skin, and rarely scarring. I will avoid sun exposure and use sunscreen as advised.</p></field>
+        </record>
+        <record id="product_laser_hair_session" model="product.product">
+            <field name="name">Laser Hair Removal Session</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">session</field>
+            <field name="specialty_id" ref="spec_derm_aesthetic"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">700</field>
+            <field name="insurance_code">DER-LHR</field>
+            <field name="procedure_duration">30</field>
+            <field name="site_requirement">none</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the laser / light treatment. The number of sessions needed varies. Possible effects were explained: redness and swelling for a few days, blistering or crusting, temporary darkening or lightening of the skin, and rarely scarring. I will avoid sun exposure and use sunscreen as advised.</p></field>
+        </record>
+        <record id="product_laser_hair_package_6" model="product.product">
+            <field name="name">Laser Hair Removal - 6 Sessions</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">package</field>
+            <field name="specialty_id" ref="spec_derm_aesthetic"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">3600</field>
+            <field name="insurance_code">DER-LHR6</field>
+            <field name="procedure_duration">30</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_prp_hair" model="product.product">
+            <field name="name">PRP for Hair Loss Session</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">session</field>
+            <field name="specialty_id" ref="spec_derm_aesthetic"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">1200</field>
+            <field name="insurance_code">DER-PRP</field>
+            <field name="procedure_duration">30</field>
+            <field name="site_requirement">none</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the cosmetic injection. Possible effects were explained: bruising, swelling, asymmetry, and for toxin injections temporary drooping of an eyelid or eyebrow. Results are temporary.</p></field>
+        </record>
+        <record id="product_botox_cosmetic" model="product.product">
+            <field name="name">Botulinum Toxin (cosmetic)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_derm_aesthetic"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">3000</field>
+            <field name="insurance_code">DER-BTX</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">none</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the cosmetic injection. Possible effects were explained: bruising, swelling, asymmetry, and for toxin injections temporary drooping of an eyelid or eyebrow. Results are temporary.</p></field>
+        </record>
+        <record id="product_filler" model="product.product">
+            <field name="name">Dermal Filler (1 ml)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_derm_aesthetic"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">4000</field>
+            <field name="insurance_code">DER-FILL</field>
+            <field name="procedure_duration">30</field>
+            <field name="site_requirement">none</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the cosmetic injection. Possible effects were explained: bruising, swelling, asymmetry, and for toxin injections temporary drooping of an eyelid or eyebrow. Results are temporary.</p></field>
+        </record>
+        <record id="icd_l70_0" model="medical.diagnosis">
+            <field name="code">L70.0</field>
+            <field name="name">Acne vulgaris</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_dermatology'))]"/>
+        </record>
+        <record id="icd_l20_9" model="medical.diagnosis">
+            <field name="code">L20.9</field>
+            <field name="name">Atopic dermatitis, unspecified</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_dermatology'))]"/>
+        </record>
+        <record id="icd_l40_0" model="medical.diagnosis">
+            <field name="code">L40.0</field>
+            <field name="name">Psoriasis vulgaris</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_dermatology'))]"/>
+        </record>
+        <record id="icd_l30_9" model="medical.diagnosis">
+            <field name="code">L30.9</field>
+            <field name="name">Dermatitis, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_dermatology'))]"/>
+        </record>
+        <record id="icd_l50_9" model="medical.diagnosis">
+            <field name="code">L50.9</field>
+            <field name="name">Urticaria, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_dermatology'))]"/>
+        </record>
+        <record id="icd_b35_1" model="medical.diagnosis">
+            <field name="code">B35.1</field>
+            <field name="name">Tinea unguium</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_dermatology'))]"/>
+        </record>
+        <record id="icd_b35_4" model="medical.diagnosis">
+            <field name="code">B35.4</field>
+            <field name="name">Tinea corporis</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_dermatology'))]"/>
+        </record>
+        <record id="icd_b07" model="medical.diagnosis">
+            <field name="code">B07</field>
+            <field name="name">Viral warts</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_dermatology'))]"/>
+        </record>
+        <record id="icd_l63_9" model="medical.diagnosis">
+            <field name="code">L63.9</field>
+            <field name="name">Alopecia areata, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_dermatology'))]"/>
+        </record>
+        <record id="icd_l80" model="medical.diagnosis">
+            <field name="code">L80</field>
+            <field name="name">Vitiligo</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_dermatology'))]"/>
+        </record>
+        <record id="icd_l81_1" model="medical.diagnosis">
+            <field name="code">L81.1</field>
+            <field name="name">Chloasma (melasma)</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_dermatology'))]"/>
+        </record>
+        <record id="icd_d22_9" model="medical.diagnosis">
+            <field name="code">D22.9</field>
+            <field name="name">Melanocytic naevi, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_dermatology'))]"/>
+        </record>
+        <record id="icd_l82" model="medical.diagnosis">
+            <field name="code">L82</field>
+            <field name="name">Seborrhoeic keratosis</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_dermatology'))]"/>
+        </record>
+        <record id="icd_l21_9" model="medical.diagnosis">
+            <field name="code">L21.9</field>
+            <field name="name">Seborrhoeic dermatitis, unspecified</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_dermatology'))]"/>
+        </record>
+        <record id="icd_l71_9" model="medical.diagnosis">
+            <field name="code">L71.9</field>
+            <field name="name">Rosacea, unspecified</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_dermatology'))]"/>
+        </record>
+        <record id="icd_l68_0" model="medical.diagnosis">
+            <field name="code">L68.0</field>
+            <field name="name">Hirsutism</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_dermatology'))]"/>
+        </record>
+        <record id="obs_itch_nrs" model="medical.observation.type">
+            <field name="name">Itch Intensity</field>
+            <field name="code">itch_nrs</field>
+            <field name="unit">/10</field>
+            <field name="category">score</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">3</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="True"/>
+            <field name="sequence">97</field>
+            <field name="department_ids" eval="[(4, ref('dept_dermatology'))]"/>
+        </record>
+        <record id="obs_acne_iga" model="medical.observation.type">
+            <field name="name">Acne Severity (global grade)</field>
+            <field name="code">acne_iga</field>
+            <field name="unit">/4</field>
+            <field name="category">score</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">1</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="True"/>
+            <field name="sequence">98</field>
+            <field name="department_ids" eval="[(4, ref('dept_dermatology'))]"/>
+        </record>
+        <record id="score_itch_nrs" model="medical.assessment.template">
+            <field name="name">Itch Numeric Rating Scale</field>
+            <field name="code">ITCH_NRS</field>
+            <field name="score_mode">sum</field>
+            <field name="department_ids" eval="[(4, ref('dept_dermatology'))]"/>
+            <field name="item_ids" eval="[(0, 0, {'sequence': 1, 'name': 'Worst itch in the last 24 hours (0 = none, 10 = worst imaginable)', 'section': False, 'answer_type': 'number', 'min_value': 0, 'max_value': 10})]"/>
+            <field name="range_ids" eval="[(0, 0, {'min_score': 0, 'max_score': 0, 'name': 'No itch', 'severity': 'none'}), (0, 0, {'min_score': 0.01, 'max_score': 3.99, 'name': 'Mild itch', 'severity': 'mild'}), (0, 0, {'min_score': 4, 'max_score': 6.99, 'name': 'Moderate itch', 'severity': 'moderate'}), (0, 0, {'min_score': 7, 'max_score': 8.99, 'name': 'Severe itch', 'severity': 'severe'}), (0, 0, {'min_score': 9, 'max_score': 10, 'name': 'Very severe itch', 'severity': 'severe'})]"/>
+            <field name="observation_type_id" ref="obs_itch_nrs"/>
+        </record>
+        <record id="score_acne_iga" model="medical.assessment.template">
+            <field name="name">Acne Global Severity</field>
+            <field name="code">ACNE_IGA</field>
+            <field name="score_mode">sum</field>
+            <field name="department_ids" eval="[(4, ref('dept_dermatology'))]"/>
+            <field name="item_ids" eval="[(0, 0, {'sequence': 1, 'name': 'Overall severity', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Clear', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Almost clear', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'Mild', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Moderate', 'score': 3, 'is_alert': False}), (0, 0, {'sequence': 5, 'name': 'Severe', 'score': 4, 'is_alert': False})]})]"/>
+            <field name="range_ids" eval="[(0, 0, {'min_score': 0, 'max_score': 1, 'name': 'Clear or almost clear', 'severity': 'none'}), (0, 0, {'min_score': 2, 'max_score': 2, 'name': 'Mild', 'severity': 'mild'}), (0, 0, {'min_score': 3, 'max_score': 3, 'name': 'Moderate', 'severity': 'moderate'}), (0, 0, {'min_score': 4, 'max_score': 4, 'name': 'Severe', 'severity': 'severe'})]"/>
+            <field name="observation_type_id" ref="obs_acne_iga"/>
+        </record>
+        <record id="medicine_isotretinoin_20" model="product.product">
+            <field name="name">Isotretinoin 20 mg</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Isotretinoin</field>
+            <field name="strength">20 mg</field>
+            <field name="dosage_form">capsule</field>
+            <field name="default_route">oral</field>
+        </record>
+        <record id="medicine_hydrocortisone_cream" model="product.product">
+            <field name="name">Hydrocortisone 1% Cream</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Hydrocortisone</field>
+            <field name="strength">1%</field>
+            <field name="dosage_form">cream</field>
+            <field name="default_route">topical</field>
+        </record>
+        <record id="medicine_terbinafine_250" model="product.product">
+            <field name="name">Terbinafine 250 mg</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Terbinafine</field>
+            <field name="strength">250 mg</field>
+            <field name="dosage_form">tablet</field>
+            <field name="default_route">oral</field>
+        </record>
+        <record id="medicine_adapalene_gel" model="product.product">
+            <field name="name">Adapalene 0.1% Gel</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Adapalene</field>
+            <field name="strength">0.1%</field>
+            <field name="dosage_form">gel</field>
+            <field name="default_route">topical</field>
+        </record>
+    </data>
+</odoo>

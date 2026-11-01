@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_skin_lesion_view_form" model="ir.ui.view">
+        <field name="name">medical.skin.lesion.form</field>
+        <field name="model">medical.skin.lesion</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_checked_today" type="object" string="Checked Today" class="btn-primary"
+                            invisible="status != 'monitoring'"/>
+                    <field name="status" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_photos" type="object" class="oe_stat_button" icon="fa-camera">
+                            <field name="photo_count" widget="statinfo" string="Photos"/>
+                        </button>
+                    </div>
+                    <div class="alert alert-danger" role="alert" invisible="risk != 'high'">
+                        <i class="fa fa-exclamation-triangle me-1" title="Suspicious"/>
+                        Several warning signs: consider dermoscopy and biopsy.
+                    </div>
+                    <div class="oe_title"><h1><field name="name"/></h1></div>
+                    <group>
+                        <group>
+                            <field name="patient_id"/>
+                            <field name="body_site_id"/>
+                            <field name="laterality"/>
+                            <field name="location_detail"/>
+                            <field name="lesion_type"/>
+                            <field name="size_mm"/>
+                            <field name="color"/>
+                        </group>
+                        <group string="ABCDE">
+                            <field name="abcde_asymmetry"/>
+                            <field name="abcde_border"/>
+                            <field name="abcde_color"/>
+                            <field name="abcde_diameter"/>
+                            <field name="abcde_evolving"/>
+                            <field name="risk" widget="badge" decoration-danger="risk == 'high'" decoration-warning="risk == 'watch'"
+                                   decoration-success="risk == 'low'"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="diagnosis_id"/>
+                            <field name="first_seen"/>
+                        </group>
+                        <group>
+                            <field name="check_every_months"/>
+                            <field name="last_check"/>
+                            <field name="next_check"/>
+                        </group>
+                    </group>
+                    <field name="note" placeholder="Notes..."/>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_skin_lesion_view_list" model="ir.ui.view">
+        <field name="name">medical.skin.lesion.list</field>
+        <field name="model">medical.skin.lesion</field>
+        <field name="arch" type="xml">
+            <list decoration-danger="risk == 'high'" decoration-muted="status == 'resolved'">
+                <field name="patient_id"/>
+                <field name="name"/>
+                <field name="lesion_type"/>
+                <field name="body_site_id"/>
+                <field name="size_mm"/>
+                <field name="abcde_count"/>
+                <field name="risk" widget="badge" decoration-danger="risk == 'high'" decoration-warning="risk == 'watch'"/>
+                <field name="next_check"/>
+                <field name="status" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_skin_lesion_view_search" model="ir.ui.view">
+        <field name="name">medical.skin.lesion.search</field>
+        <field name="model">medical.skin.lesion</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="patient_id"/>
+                <filter name="monitoring" string="Monitoring" domain="[('status', '=', 'monitoring')]"/>
+                <filter name="suspicious" string="Suspicious" domain="[('risk', '=', 'high')]"/>
+                <filter name="due" string="Check Due" domain="[('next_check', '&lt;=', context_today().strftime('%Y-%m-%d'))]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_medical_skin_lesion" model="ir.actions.act_window">
+        <field name="name">Skin Lesions</field>
+        <field name="res_model">medical.skin.lesion</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_monitoring': 1}</field>
+    </record>
+
+    <record id="medical_skin_photo_view_kanban" model="ir.ui.view">
+        <field name="name">medical.skin.photo.kanban</field>
+        <field name="model">medical.skin.photo</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="stage" group_create="0" quick_create="0">
+                <field name="id"/>
+                <templates>
+                    <t t-name="card">
+                        <field name="image_small" widget="image" options="{'size': [0, 180]}" class="mb-1"/>
+                        <div class="d-flex justify-content-between">
+                            <field name="date"/>
+                            <field name="body_site_id" class="text-muted"/>
+                        </div>
+                        <field name="note" class="small"/>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="medical_skin_photo_view_form" model="ir.ui.view">
+        <field name="name">medical.skin.photo.form</field>
+        <field name="model">medical.skin.photo</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="patient_id"/>
+                            <field name="lesion_id"/>
+                            <field name="care_contract_id"/>
+                            <field name="body_site_id"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <field name="stage"/>
+                            <field name="visit_id"/>
+                            <field name="consent_to_use"/>
+                        </group>
+                    </group>
+                    <field name="image" widget="image"/>
+                    <field name="note" placeholder="Note..."/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_skin_photo_view_list" model="ir.ui.view">
+        <field name="name">medical.skin.photo.list</field>
+        <field name="model">medical.skin.photo</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="date"/>
+                <field name="patient_id"/>
+                <field name="lesion_id"/>
+                <field name="body_site_id"/>
+                <field name="stage"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_medical_skin_photo" model="ir.actions.act_window">
+        <field name="name">Clinical Photos</field>
+        <field name="res_model">medical.skin.photo</field>
+        <field name="view_mode">kanban,list,form</field>
+    </record>
+
+    <record id="res_partner_form_dermatology" model="ir.ui.view">
+        <field name="name">res.partner.form.dermatology</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="medical_core.res_partner_form_medical"/>
+        <field name="arch" type="xml">
+            <field name="blood_group" position="after">
+                <field name="fitzpatrick"/>
+            </field>
+            <page name="measurements" position="after">
+                <page string="Skin" name="skin" invisible="not is_patient or not id" groups="medical_core.group_medical_nurse">
+                    <field name="skin_lesion_ids" context="{'default_patient_id': id}">
+                        <list decoration-danger="risk == 'high'">
+                            <field name="name"/>
+                            <field name="lesion_type"/>
+                            <field name="body_site_id"/>
+                            <field name="size_mm"/>
+                            <field name="risk" widget="badge" decoration-danger="risk == 'high'" decoration-warning="risk == 'watch'"/>
+                            <field name="next_check"/>
+                            <field name="status"/>
+                        </list>
+                    </field>
+                </page>
+            </page>
+        </field>
+    </record>
+
+    <record id="medical_visit_form_dermatology" model="ir.ui.view">
+        <field name="name">medical.visit.form.dermatology</field>
+        <field name="model">medical.visit</field>
+        <field name="inherit_id" ref="medical_core.medical_visit_view_form"/>
+        <field name="arch" type="xml">
+            <field name="visit_type" position="after">
+                <field name="is_derm" invisible="1"/>
+            </field>
+            <xpath expr="//page[@name='follow_up']" position="before">
+                <page string="Skin &amp; Laser" name="skin" invisible="not is_derm" groups="medical_core.group_medical_nurse">
+                    <group>
+                        <group string="Laser / Light Settings">
+                            <field name="patient_fitzpatrick"/>
+                            <field name="laser_device"/>
+                            <field name="laser_area"/>
+                            <field name="laser_fluence"/>
+                            <field name="laser_spot_mm"/>
+                            <field name="laser_pulse_ms"/>
+                            <field name="laser_passes"/>
+                            <field name="skin_reaction"/>
+                        </group>
+                        <group>
+                            <button name="action_copy_last_settings" type="object" string="Copy Last Session Settings"
+                                    class="btn-secondary" invisible="not care_contract_id" colspan="2"/>
+                        </group>
+                    </group>
+                    <field name="skin_photo_ids" mode="kanban"
+                           context="{'default_patient_id': patient_id, 'default_visit_id': id, 'default_care_contract_id': care_contract_id}">
+                        <kanban>
+                            <templates>
+                                <t t-name="card">
+                                    <field name="image_small" widget="image" options="{'size': [0, 120]}"/>
+                                    <field name="stage"/>
+                                </t>
+                            </templates>
+                        </kanban>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_care_contract_form_aesthetic" model="ir.ui.view">
+        <field name="name">medical.care.contract.form.aesthetic</field>
+        <field name="model">medical.care.contract</field>
+        <field name="inherit_id" ref="medical_core.medical_care_contract_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='notes']" position="before">
+                <page string="Before / After" name="photos" invisible="care_type != 'aesthetic'">
+                    <field name="photo_ids" mode="kanban" context="{'default_patient_id': patient_id, 'default_care_contract_id': id}">
+                        <kanban default_group_by="stage">
+                            <templates>
+                                <t t-name="card">
+                                    <field name="image_small" widget="image" options="{'size': [0, 140]}"/>
+                                    <field name="date"/>
+                                </t>
+                            </templates>
+                        </kanban>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_medical_aesthetic_program" model="ir.actions.act_window">
+        <field name="name">Aesthetic &amp; Laser Programs</field>
+        <field name="res_model">medical.care.contract</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('care_type', '=', 'aesthetic')]</field>
+        <field name="context" eval="{'default_care_type': 'aesthetic', 'default_billing_mode': 'sessions', 'default_session_count': 6,
+                                     'default_est_months': 8, 'default_product_id': ref('product_laser_hair_package_6'),
+                                     'default_session_product_id': ref('product_laser_hair_session'), 'search_default_running': 1}"/>
+    </record>
+
+    <record id="action_derm_visit" model="ir.actions.act_window">
+        <field name="name">Dermatology Schedule</field>
+        <field name="res_model">medical.visit</field>
+        <field name="view_mode">calendar,list,kanban,form</field>
+        <field name="domain" eval="[('department_id', '=', ref('dept_dermatology'))]"/>
+        <field name="context" eval="{'default_department_id': ref('dept_dermatology')}"/>
+    </record>
+
+    <menuitem id="menu_dermatology" name="Dermatology" parent="medical_core.menu_medical_clinics" sequence="60"/>
+    <menuitem id="menu_derm_visit" name="Schedule" parent="menu_dermatology" action="action_derm_visit" sequence="5"/>
+    <menuitem id="menu_skin_lesion" name="Skin Lesions" parent="menu_dermatology" action="action_medical_skin_lesion" sequence="10"
+              groups="medical_core.group_medical_nurse"/>
+    <menuitem id="menu_skin_photo" name="Clinical Photos" parent="menu_dermatology" action="action_medical_skin_photo" sequence="20"
+              groups="medical_core.group_medical_nurse"/>
+    <menuitem id="menu_aesthetic_program" name="Aesthetic &amp; Laser Programs" parent="menu_dermatology"
+              action="action_medical_aesthetic_program" sequence="30"/>
+</odoo>

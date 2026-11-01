@@ -1,0 +1,1034 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* medical_dermatology
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-11 17:50+0000\n"
+"PO-Revision-Date: 2026-10-11 17:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: medical_dermatology
+#: model_terms:ir.ui.view,arch_db:medical_dermatology.medical_skin_lesion_view_form
+msgid ""
+"<i class=\"fa fa-exclamation-triangle me-1\" title=\"Suspicious\"/>\n"
+"                        Several warning signs: consider dermoscopy and biopsy."
+msgstr ""
+"<i class=\"fa fa-exclamation-triangle me-1\" title=\"مشتبه\"/>\n"
+"                        عدة علامات تحذيرية: يُنصح بالفحص بالمنظار الجلدي وأخذ عينة."
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__abcde_asymmetry
+msgid "A - Asymmetry"
+msgstr "A - عدم التماثل"
+
+#. module: medical_dermatology
+#: model_terms:ir.ui.view,arch_db:medical_dermatology.medical_skin_lesion_view_form
+msgid "ABCDE"
+msgstr "ABCDE"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__abcde_count
+msgid "Abcde Count"
+msgstr "عدد علامات ABCDE"
+
+#. module: medical_dermatology
+#: model:medical.assessment.template,name:medical_dermatology.score_acne_iga
+msgid "Acne Global Severity"
+msgstr "الشدة العامة لحب الشباب"
+
+#. module: medical_dermatology
+#: model:medical.observation.type,name:medical_dermatology.obs_acne_iga
+msgid "Acne Severity (global grade)"
+msgstr "شدة حب الشباب (الدرجة العامة)"
+
+#. module: medical_dermatology
+#: model:medical.diagnosis,name:medical_dermatology.icd_l70_0
+msgid "Acne vulgaris"
+msgstr "حب الشباب الشائع"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: medical_dermatology
+#: model:product.template,name:medical_dermatology.medicine_adapalene_gel_product_template
+msgid "Adapalene 0.1% Gel"
+msgstr "Adapalene 0.1% Gel"
+
+#. module: medical_dermatology
+#: model:ir.actions.act_window,name:medical_dermatology.action_medical_aesthetic_program
+#: model:ir.ui.menu,name:medical_dermatology.menu_aesthetic_program
+msgid "Aesthetic & Laser Programs"
+msgstr "برامج التجميل والليزر"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_care_contract__care_type__aesthetic
+msgid "Aesthetic / Laser Program"
+msgstr "برنامج تجميل / ليزر"
+
+#. module: medical_dermatology
+#: model:medical.specialty,name:medical_dermatology.spec_derm_aesthetic
+msgid "Aesthetic Dermatology"
+msgstr "الجلدية التجميلية"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_photo__stage__after
+msgid "After"
+msgstr "بعد"
+
+#. module: medical_dermatology
+#: model:medical.diagnosis,name:medical_dermatology.icd_l63_9
+msgid "Alopecia areata, unspecified"
+msgstr "الثعلبة البقعية، غير محددة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_photo__body_site_id
+msgid "Area"
+msgstr "المنطقة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_visit__laser_area
+msgid "Area Treated"
+msgstr "المنطقة المعالجة"
+
+#. module: medical_dermatology
+#: model:medical.diagnosis,name:medical_dermatology.icd_l20_9
+msgid "Atopic dermatitis, unspecified"
+msgstr "التهاب الجلد التأتبي، غير محدد"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__abcde_border
+msgid "B - Irregular border"
+msgstr "B - حواف غير منتظمة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_photo__stage__before
+msgid "Before"
+msgstr "قبل"
+
+#. module: medical_dermatology
+#: model_terms:ir.ui.view,arch_db:medical_dermatology.medical_care_contract_form_aesthetic
+msgid "Before / After"
+msgstr "قبل / بعد"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_care_contract__photo_ids
+msgid "Before / After Photos"
+msgstr "صور قبل / بعد"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_lesion__status__biopsied
+msgid "Biopsied"
+msgstr "أُخذت عينة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_visit__skin_reaction__blister
+msgid "Blistering"
+msgstr "فقاعات"
+
+#. module: medical_dermatology
+#: model:product.template,name:medical_dermatology.product_botox_cosmetic_product_template
+msgid "Botulinum Toxin (cosmetic)"
+msgstr "حقن البوتوكس (تجميلي)"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__abcde_color
+msgid "C - Several colours"
+msgstr "C - ألوان متعددة"
+
+#. module: medical_dermatology
+#: model:ir.model,name:medical_dermatology.model_medical_care_contract
+msgid "Care Program"
+msgstr "برنامج الرعاية"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_care_contract__care_type
+msgid "Care Type"
+msgstr "نوع البرنامج"
+
+#. module: medical_dermatology
+#: model_terms:ir.ui.view,arch_db:medical_dermatology.medical_skin_lesion_view_search
+msgid "Check Due"
+msgstr "موعد الفحص"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__check_every_months
+msgid "Check Every (months)"
+msgstr "الفحص كل (شهر)"
+
+#. module: medical_dermatology
+#: model_terms:ir.ui.view,arch_db:medical_dermatology.medical_skin_lesion_view_form
+msgid "Checked Today"
+msgstr "تم الفحص اليوم"
+
+#. module: medical_dermatology
+#: model:product.template,name:medical_dermatology.product_chemical_peel_product_template
+msgid "Chemical Peel Session"
+msgstr "جلسة تقشير كيميائي"
+
+#. module: medical_dermatology
+#: model:medical.diagnosis,name:medical_dermatology.icd_l81_1
+msgid "Chloasma (melasma)"
+msgstr "الكلف (ميلازما)"
+
+#. module: medical_dermatology
+#: model:ir.model,name:medical_dermatology.model_medical_skin_photo
+msgid "Clinical Photo"
+msgstr "صورة سريرية"
+
+#. module: medical_dermatology
+#: model:ir.actions.act_window,name:medical_dermatology.action_medical_skin_photo
+#: model:ir.ui.menu,name:medical_dermatology.menu_skin_photo
+msgid "Clinical Photos"
+msgstr "الصور السريرية"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__color
+msgid "Color"
+msgstr "اللون"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__company_id
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_photo__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: medical_dermatology
+#: model:ir.model,name:medical_dermatology.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: medical_dermatology
+#: model_terms:ir.ui.view,arch_db:medical_dermatology.medical_visit_form_dermatology
+msgid "Copy Last Session Settings"
+msgstr "نسخ إعدادات الجلسة السابقة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__create_uid
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_photo__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__create_date
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_photo__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: medical_dermatology
+#: model:product.template,name:medical_dermatology.product_cryotherapy_product_template
+msgid "Cryotherapy"
+msgstr "العلاج بالتبريد"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__abcde_diameter
+msgid "D - Larger than 6 mm"
+msgstr "D - أكبر من 6 مم"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_photo__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: medical_dermatology
+#: model:product.template,name:medical_dermatology.product_filler_product_template
+msgid "Dermal Filler (1 ml)"
+msgstr "فيلر (1 مل)"
+
+#. module: medical_dermatology
+#: model:medical.diagnosis,name:medical_dermatology.icd_l30_9
+msgid "Dermatitis, unspecified"
+msgstr "التهاب الجلد، غير محدد"
+
+#. module: medical_dermatology
+#: model:medical.specialty,name:medical_dermatology.spec_derm_surgery
+msgid "Dermatologic Surgery"
+msgstr "جراحة الجلد"
+
+#. module: medical_dermatology
+#: model:ir.ui.menu,name:medical_dermatology.menu_dermatology
+#: model:medical.department,name:medical_dermatology.dept_dermatology
+msgid "Dermatology"
+msgstr "الجلدية"
+
+#. module: medical_dermatology
+#: model:product.template,name:medical_dermatology.product_derm_consultation_product_template
+msgid "Dermatology Consultation"
+msgstr "كشف جلدية"
+
+#. module: medical_dermatology
+#: model:ir.actions.act_window,name:medical_dermatology.action_derm_visit
+msgid "Dermatology Schedule"
+msgstr "جدول الجلدية"
+
+#. module: medical_dermatology
+#: model:product.template,name:medical_dermatology.product_dermoscopy_product_template
+msgid "Dermoscopy"
+msgstr "منظار جلدي"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_visit__laser_device
+msgid "Device"
+msgstr "جهاز"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__diagnosis_id
+msgid "Diagnosis"
+msgstr "التشخيص"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_care_contract__display_name
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__display_name
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_photo__display_name
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_visit__display_name
+#: model:ir.model.fields,field_description:medical_dermatology.field_res_partner__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_photo__stage__during
+msgid "During Treatment"
+msgstr "أثناء العلاج"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__abcde_evolving
+msgid "E - Changing"
+msgstr "E - متغيّر"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__location_detail
+msgid "Exact Location"
+msgstr "الموضع الدقيق"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_lesion__status__excised
+msgid "Excised"
+msgstr "تم استئصاله"
+
+#. module: medical_dermatology
+#: model:product.template,name:medical_dermatology.product_lesion_excision_product_template
+msgid "Excision of Skin Lesion"
+msgstr "استئصال آفة جلدية"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__first_seen
+msgid "First Seen"
+msgstr "أول ظهور"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_visit__laser_fluence
+msgid "Fluence (J/cm²)"
+msgstr "الطاقة (J/cm²)"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_photo__stage__follow_up
+msgid "Follow-up"
+msgstr "المتابعة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,help:medical_dermatology.field_medical_skin_lesion__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: medical_dermatology
+#: model:medical.diagnosis,name:medical_dermatology.icd_l68_0
+msgid "Hirsutism"
+msgstr "الشعرانية"
+
+#. module: medical_dermatology
+#: model:product.template,name:medical_dermatology.medicine_hydrocortisone_cream_product_template
+msgid "Hydrocortisone 1% Cream"
+msgstr "Hydrocortisone 1% Cream"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__res_partner__fitzpatrick__1
+msgid "I - always burns, never tans"
+msgstr "I - يحترق دائمًا ولا يسمرّ أبدًا"
+
+#. module: medical_dermatology
+#: model_terms:product.template,consent_text:medical_dermatology.product_lesion_excision_product_template
+#: model_terms:product.template,consent_text:medical_dermatology.product_skin_biopsy_product_template
+msgid ""
+"I agree to a skin biopsy / removal of the lesion described on this form "
+"under local anaesthetic. Possible effects were explained: a small scar, "
+"bleeding, infection, and the need for further treatment depending on the "
+"result."
+msgstr ""
+"أوافق على أخذ عينة من الجلد / إزالة الآفة الموضحة في هذا النموذج تحت تخدير "
+"موضعي. شُرحت لي الآثار المحتملة: ندبة صغيرة، نزيف، عدوى، واحتمال الحاجة "
+"لعلاج إضافي حسب النتيجة."
+
+#. module: medical_dermatology
+#: model_terms:product.template,consent_text:medical_dermatology.product_botox_cosmetic_product_template
+#: model_terms:product.template,consent_text:medical_dermatology.product_filler_product_template
+#: model_terms:product.template,consent_text:medical_dermatology.product_prp_hair_product_template
+msgid ""
+"I agree to the cosmetic injection. Possible effects were explained: "
+"bruising, swelling, asymmetry, and for toxin injections temporary drooping "
+"of an eyelid or eyebrow. Results are temporary."
+msgstr ""
+"أوافق على الحقن التجميلي. شُرحت لي الآثار المحتملة: كدمات، تورم، عدم تماثل، "
+"وفي حقن البوتوكس ارتخاء مؤقت للجفن أو الحاجب. النتائج مؤقتة."
+
+#. module: medical_dermatology
+#: model_terms:product.template,consent_text:medical_dermatology.product_chemical_peel_product_template
+#: model_terms:product.template,consent_text:medical_dermatology.product_laser_hair_session_product_template
+msgid ""
+"I agree to the laser / light treatment. The number of sessions needed "
+"varies. Possible effects were explained: redness and swelling for a few "
+"days, blistering or crusting, temporary darkening or lightening of the skin,"
+" and rarely scarring. I will avoid sun exposure and use sunscreen as "
+"advised."
+msgstr ""
+"أوافق على العلاج بالليزر / الضوء. يختلف عدد الجلسات المطلوبة. شُرحت لي "
+"الآثار المحتملة: احمرار وتورم لعدة أيام، فقاعات أو قشور، تغميق أو تفتيح مؤقت"
+" للجلد، ونادرًا ندبات. سأتجنب التعرض للشمس وأستخدم واقي الشمس حسب التعليمات."
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_care_contract__id
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__id
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_photo__id
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_visit__id
+#: model:ir.model.fields,field_description:medical_dermatology.field_res_partner__id
+msgid "ID"
+msgstr "المُعرّف"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__res_partner__fitzpatrick__2
+msgid "II - usually burns, tans minimally"
+msgstr "II - يحترق غالبًا ويسمرّ قليلًا"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__res_partner__fitzpatrick__3
+msgid "III - sometimes burns, tans gradually"
+msgstr "III - يحترق أحيانًا ويسمرّ تدريجيًا"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__res_partner__fitzpatrick__4
+msgid "IV - burns minimally, tans well"
+msgstr "IV - يحترق قليلًا ويسمرّ جيدًا"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,help:medical_dermatology.field_medical_skin_lesion__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "الأيقونة للإشارة إلى النشاط المستثنى."
+
+#. module: medical_dermatology
+#: model:ir.model.fields,help:medical_dermatology.field_medical_skin_lesion__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة تحتاج انتباهك."
+
+#. module: medical_dermatology
+#: model:ir.model.fields,help:medical_dermatology.field_medical_skin_lesion__message_has_error
+#: model:ir.model.fields,help:medical_dermatology.field_medical_skin_lesion__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_photo__image
+msgid "Image"
+msgstr "الصورة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_visit__is_derm
+msgid "Is Derm"
+msgstr "جلدية"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: medical_dermatology
+#: model:product.template,name:medical_dermatology.medicine_isotretinoin_20_product_template
+msgid "Isotretinoin 20 mg"
+msgstr "Isotretinoin 20 mg"
+
+#. module: medical_dermatology
+#: model:medical.observation.type,name:medical_dermatology.obs_itch_nrs
+msgid "Itch Intensity"
+msgstr "شدة الحكة"
+
+#. module: medical_dermatology
+#: model:medical.assessment.template,name:medical_dermatology.score_itch_nrs
+msgid "Itch Numeric Rating Scale"
+msgstr "مقياس الحكة الرقمي"
+
+#. module: medical_dermatology
+#: model_terms:ir.ui.view,arch_db:medical_dermatology.medical_visit_form_dermatology
+msgid "Laser / Light Settings"
+msgstr "إعدادات الليزر / الضوء"
+
+#. module: medical_dermatology
+#: model:product.template,name:medical_dermatology.product_laser_hair_package_6_product_template
+msgid "Laser Hair Removal - 6 Sessions"
+msgstr "إزالة الشعر بالليزر - 6 جلسات"
+
+#. module: medical_dermatology
+#: model:product.template,name:medical_dermatology.product_laser_hair_session_product_template
+msgid "Laser Hair Removal Session"
+msgstr "جلسة إزالة شعر بالليزر"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__last_check
+msgid "Last Check"
+msgstr "آخر فحص"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__write_uid
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_photo__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__write_date
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_photo__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: medical_dermatology
+#. odoo-python
+#: code:addons/medical_dermatology/models/medical_skin.py:0
+msgid "Last laser session: %(f)s J/cm², spot %(s)s mm, reaction %(r)s"
+msgstr "آخر جلسة ليزر: %(f)s J/cm²، البقعة %(s)s مم، التفاعل %(r)s"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_lesion__laterality__left
+msgid "Left"
+msgstr "يسار"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_photo__lesion_id
+msgid "Lesion"
+msgstr "الآفة"
+
+#. module: medical_dermatology
+#. odoo-python
+#: code:addons/medical_dermatology/models/medical_skin.py:0
+msgid "Lesion %s"
+msgstr "الآفة %s"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__lesion_type
+msgid "Lesion Type"
+msgstr "نوع الآفة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_lesion__risk__low
+msgid "Low"
+msgstr "منخفض"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_lesion__lesion_type__macule
+msgid "Macule / patch"
+msgstr "بقعة / لطخة"
+
+#. module: medical_dermatology
+#: model:medical.specialty,name:medical_dermatology.spec_derm_general
+msgid "Medical Dermatology"
+msgstr "الجلدية العلاجية"
+
+#. module: medical_dermatology
+#: model:medical.diagnosis,name:medical_dermatology.icd_d22_9
+msgid "Melanocytic naevi, unspecified"
+msgstr "شامات صبغية، غير محددة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_visit__skin_reaction__erythema
+msgid "Mild redness"
+msgstr "احمرار خفيف"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_lesion__lesion_type__nevus
+msgid "Mole (naevus)"
+msgstr "شامة (وحمة)"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_lesion__status__monitoring
+#: model_terms:ir.ui.view,arch_db:medical_dermatology.medical_skin_lesion_view_search
+msgid "Monitoring"
+msgstr "متابعة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "موعدي النهائي للنشاط"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: medical_dermatology
+#. odoo-python
+#: code:addons/medical_dermatology/models/medical_skin.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__next_check
+msgid "Next Check"
+msgstr "الفحص القادم"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_lesion__lesion_type__nodule
+msgid "Nodule"
+msgstr "عقدة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_visit__skin_reaction__none
+msgid "None"
+msgstr "لا شيء"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__note
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_photo__note
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: medical_dermatology
+#: model_terms:ir.ui.view,arch_db:medical_dermatology.medical_skin_photo_view_form
+msgid "Note..."
+msgstr "ملاحظة..."
+
+#. module: medical_dermatology
+#: model_terms:ir.ui.view,arch_db:medical_dermatology.medical_skin_lesion_view_form
+msgid "Notes..."
+msgstr "ملاحظات..."
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,help:medical_dermatology.field_medical_skin_lesion__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراءً"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,help:medical_dermatology.field_medical_skin_lesion__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_lesion__lesion_type__other
+msgid "Other"
+msgstr "أخرى"
+
+#. module: medical_dermatology
+#: model:product.template,name:medical_dermatology.product_prp_hair_product_template
+msgid "PRP for Hair Loss Session"
+msgstr "جلسة بلازما (PRP) لتساقط الشعر"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_lesion__lesion_type__papule
+msgid "Papule"
+msgstr "حطاطة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_visit__laser_passes
+msgid "Passes"
+msgstr "عدد المرات"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__patient_id
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_photo__patient_id
+msgid "Patient"
+msgstr "المريض"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_photo__consent_to_use
+msgid "Patient agreed to the photo"
+msgstr "وافق المريض على التصوير"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__photo_count
+msgid "Photo Count"
+msgstr "عدد الصور"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__photo_ids
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_visit__skin_photo_ids
+#: model_terms:ir.ui.view,arch_db:medical_dermatology.medical_skin_lesion_view_form
+msgid "Photos"
+msgstr "الصور"
+
+#. module: medical_dermatology
+#. odoo-python
+#: code:addons/medical_dermatology/models/medical_skin.py:0
+msgid "Photos: %s"
+msgstr "الصور: %s"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_visit__skin_reaction__pigment
+msgid "Pigment change"
+msgstr "تغيّر في التصبغ"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_lesion__lesion_type__plaque
+msgid "Plaque"
+msgstr "لويحة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_photo__care_contract_id
+msgid "Program"
+msgstr "البرنامج"
+
+#. module: medical_dermatology
+#: model:medical.diagnosis,name:medical_dermatology.icd_l40_0
+msgid "Psoriasis vulgaris"
+msgstr "الصدفية الشائعة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_visit__laser_pulse_ms
+msgid "Pulse Width (ms)"
+msgstr "عرض النبضة (ms)"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_lesion__lesion_type__pustule
+msgid "Pustule"
+msgstr "بثرة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_lesion__status__resolved
+msgid "Resolved"
+msgstr "انتهى"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_lesion__laterality__right
+msgid "Right"
+msgstr "يمين"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__risk
+msgid "Risk"
+msgstr "الخطورة"
+
+#. module: medical_dermatology
+#: model:medical.diagnosis,name:medical_dermatology.icd_l71_9
+msgid "Rosacea, unspecified"
+msgstr "الوردية، غير محددة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_lesion__lesion_type__scar
+msgid "Scar"
+msgstr "ندبة"
+
+#. module: medical_dermatology
+#: model:ir.ui.menu,name:medical_dermatology.menu_derm_visit
+msgid "Schedule"
+msgstr "الجدول"
+
+#. module: medical_dermatology
+#: model:medical.diagnosis,name:medical_dermatology.icd_l21_9
+msgid "Seborrhoeic dermatitis, unspecified"
+msgstr "التهاب الجلد الدهني، غير محدد"
+
+#. module: medical_dermatology
+#: model:medical.diagnosis,name:medical_dermatology.icd_l82
+msgid "Seborrhoeic keratosis"
+msgstr "التقران الدهني"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__laterality
+msgid "Side"
+msgstr "الجهة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__body_site_id
+msgid "Site"
+msgstr "الموضع"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__size_mm
+msgid "Size (mm)"
+msgstr "الحجم (مم)"
+
+#. module: medical_dermatology
+#. odoo-python
+#: code:addons/medical_dermatology/models/medical_skin.py:0
+#: model_terms:ir.ui.view,arch_db:medical_dermatology.res_partner_form_dermatology
+msgid "Skin"
+msgstr "الجلد"
+
+#. module: medical_dermatology
+#: model_terms:ir.ui.view,arch_db:medical_dermatology.medical_visit_form_dermatology
+msgid "Skin & Laser"
+msgstr "الجلدية والليزر"
+
+#. module: medical_dermatology
+#: model:product.template,name:medical_dermatology.product_skin_biopsy_product_template
+msgid "Skin Biopsy"
+msgstr "عينة من الجلد"
+
+#. module: medical_dermatology
+#: model:ir.model,name:medical_dermatology.model_medical_skin_lesion
+msgid "Skin Lesion"
+msgstr "آفة جلدية"
+
+#. module: medical_dermatology
+#: model:ir.actions.act_window,name:medical_dermatology.action_medical_skin_lesion
+#: model:ir.model.fields,field_description:medical_dermatology.field_res_partner__skin_lesion_ids
+#: model:ir.model.fields,field_description:medical_dermatology.field_res_users__skin_lesion_ids
+#: model:ir.ui.menu,name:medical_dermatology.menu_skin_lesion
+msgid "Skin Lesions"
+msgstr "الآفات الجلدية"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_res_partner__skin_photo_ids
+#: model:ir.model.fields,field_description:medical_dermatology.field_res_users__skin_photo_ids
+msgid "Skin Photos"
+msgstr "صور الجلد"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_visit__skin_reaction
+msgid "Skin Reaction"
+msgstr "تفاعل الجلد"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_visit__patient_fitzpatrick
+#: model:ir.model.fields,field_description:medical_dermatology.field_res_partner__fitzpatrick
+#: model:ir.model.fields,field_description:medical_dermatology.field_res_users__fitzpatrick
+msgid "Skin Type (Fitzpatrick)"
+msgstr "نوع البشرة (فيتزباتريك)"
+
+#. module: medical_dermatology
+#. odoo-python
+#: code:addons/medical_dermatology/models/medical_skin.py:0
+msgid "Skin check: %(lesion)s - %(patient)s"
+msgstr "فحص جلدي: %(lesion)s - %(patient)s"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_visit__laser_spot_mm
+msgid "Spot Size (mm)"
+msgstr "حجم البقعة (مم)"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_photo__stage
+msgid "Stage"
+msgstr "المرحلة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__status
+msgid "Status"
+msgstr "الحالة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,help:medical_dermatology.field_medical_skin_lesion__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخرة: تاريخ الاستحقاق قد فات\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخططة: أنشطة مستقبلية."
+
+#. module: medical_dermatology
+#: model_terms:ir.ui.view,arch_db:medical_dermatology.medical_skin_lesion_view_search
+msgid "Suspicious"
+msgstr "مشتبه"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_lesion__risk__high
+msgid "Suspicious - consider biopsy"
+msgstr "مشتبه - يُنصح بأخذ عينة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_visit__skin_reaction__edema
+msgid "Swelling"
+msgstr "تورم"
+
+#. module: medical_dermatology
+#: model:product.template,name:medical_dermatology.medicine_terbinafine_250_product_template
+msgid "Terbinafine 250 mg"
+msgstr "Terbinafine 250 mg"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_photo__image_small
+msgid "Thumbnail"
+msgstr "صورة مصغرة"
+
+#. module: medical_dermatology
+#: model:medical.diagnosis,name:medical_dermatology.icd_b35_4
+msgid "Tinea corporis"
+msgstr "سعفة الجسم"
+
+#. module: medical_dermatology
+#: model:medical.diagnosis,name:medical_dermatology.icd_b35_1
+msgid "Tinea unguium"
+msgstr "فطريات الأظافر"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_lesion__status__treated
+msgid "Treated"
+msgstr "تمت المعالجة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,help:medical_dermatology.field_medical_skin_lesion__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط المستثنى في السجل."
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_lesion__lesion_type__ulcer
+msgid "Ulcer"
+msgstr "قرحة"
+
+#. module: medical_dermatology
+#: model:medical.diagnosis,name:medical_dermatology.icd_l50_9
+msgid "Urticaria, unspecified"
+msgstr "الأرتيكاريا، غير محددة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__res_partner__fitzpatrick__5
+msgid "V - rarely burns, tans profusely"
+msgstr "V - نادرًا ما يحترق ويسمرّ بشدة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__res_partner__fitzpatrick__6
+msgid "VI - never burns"
+msgstr "VI - لا يحترق أبدًا"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_lesion__lesion_type__vesicle
+msgid "Vesicle / bulla"
+msgstr "حويصلة / فقاعة"
+
+#. module: medical_dermatology
+#: model:medical.diagnosis,name:medical_dermatology.icd_b07
+msgid "Viral warts"
+msgstr "الثآليل الفيروسية"
+
+#. module: medical_dermatology
+#: model:ir.model,name:medical_dermatology.model_medical_visit
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_photo__visit_id
+msgid "Visit"
+msgstr "الزيارة"
+
+#. module: medical_dermatology
+#: model:medical.diagnosis,name:medical_dermatology.icd_l80
+msgid "Vitiligo"
+msgstr "البهاق"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_lesion__lesion_type__wart
+msgid "Wart"
+msgstr "ثؤلول"
+
+#. module: medical_dermatology
+#: model:ir.model.fields.selection,name:medical_dermatology.selection__medical_skin_lesion__risk__watch
+msgid "Watch"
+msgstr "مراقبة"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,field_description:medical_dermatology.field_medical_skin_lesion__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,help:medical_dermatology.field_medical_skin_lesion__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع الإلكتروني"
+
+#. module: medical_dermatology
+#: model:ir.model.fields,help:medical_dermatology.field_medical_skin_lesion__location_detail
+msgid "e.g. 3 cm above the right scapula"
+msgstr "مثال: 3 سم فوق لوح الكتف الأيمن"
