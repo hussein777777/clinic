@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_claim_view_form" model="ir.ui.view">
+        <field name="name">medical.claim.form</field>
+        <field name="model">medical.claim</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_submit" type="object" string="Submit to Insurer" class="btn-primary"
+                            invisible="state != 'draft'"/>
+                    <button name="action_export_xlsx" type="object" string="Export Excel" invisible="state == 'cancelled'"/>
+                    <button name="%(action_report_medical_claim)d" type="action" string="Print Statement" invisible="state == 'cancelled'"/>
+                    <button name="action_settle" type="object" string="Settle (apply insurer statement)" class="btn-primary"
+                            invisible="state != 'submitted'"
+                            confirm="Have you entered the approved amount and reject reason on every line?"/>
+                    <button name="action_cancel" type="object" string="Cancel" invisible="state != 'draft'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,submitted,settled,paid"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box"/>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="insurer_id" readonly="state != 'draft'"/>
+                            <field name="date_from" readonly="state != 'draft'"/>
+                            <field name="date_to" readonly="state != 'draft'"/>
+                        </group>
+                        <group>
+                            <field name="settlement_date"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="export_filename" invisible="1"/>
+                            <field name="export_file" filename="export_filename" readonly="1" invisible="not export_file"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Lines" name="lines">
+                            <field name="line_ids" readonly="state not in ('draft', 'submitted')">
+                                <list editable="bottom" create="0"
+                                      decoration-danger="state == 'rejected'" decoration-warning="state == 'partially_approved'">
+                                    <field name="service_date" readonly="1"/>
+                                    <field name="member_no" readonly="1"/>
+                                    <field name="patient_id" readonly="1"/>
+                                    <field name="product_id" readonly="1"/>
+                                    <field name="site_label" optional="show"/>
+                                    <field name="approval_no" optional="show"/>
+                                    <field name="claimed" readonly="1" sum="Claimed"/>
+                                    <field name="approved" sum="Approved" readonly="parent.state != 'submitted'"/>
+                                    <field name="rejected_amount" sum="Rejected"/>
+                                    <field name="reject_reason" readonly="parent.state != 'submitted'"/>
+                                    <field name="currency_id" column_invisible="True"/>
+                                    <field name="state" widget="badge" decoration-success="state == 'approved'"
+                                           decoration-danger="state == 'rejected'" decoration-warning="state == 'partially_approved'"/>
+                                </list>
+                            </field>
+                            <group class="oe_subtotal_footer">
+                                <field name="amount_claimed"/>
+                                <field name="amount_approved"/>
+                                <field name="amount_rejected"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_claim_view_list" model="ir.ui.view">
+        <field name="name">medical.claim.list</field>
+        <field name="model">medical.claim</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="insurer_id"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="line_count"/>
+                <field name="amount_claimed" sum="Total"/>
+                <field name="amount_approved" sum="Total"/>
+                <field name="amount_rejected" sum="Total"/>
+                <field name="currency_id" column_invisible="True"/>
+                <field name="state" widget="badge" decoration-success="state == 'paid'" decoration-info="state in ('submitted', 'settled')"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_medical_claim" model="ir.actions.act_window">
+        <field name="name">Claim Batches</field>
+        <field name="res_model">medical.claim</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="medical_claim_line_view_list" model="ir.ui.view">
+        <field name="name">medical.claim.line.list</field>
+        <field name="model">medical.claim.line</field>
+        <field name="arch" type="xml">
+            <list create="0" decoration-danger="state == 'rejected'">
+                <field name="service_date"/>
+                <field name="insurer_id"/>
+                <field name="member_no"/>
+                <field name="patient_id"/>
+                <field name="product_id"/>
+                <field name="doctor_id" optional="hide"/>
+                <field name="claim_id"/>
+                <field name="claimed" sum="Claimed"/>
+                <field name="approved" sum="Approved"/>
+                <field name="rejected_amount" sum="Rejected"/>
+                <field name="reject_reason" optional="show"/>
+                <field name="currency_id" column_invisible="True"/>
+                <field name="state" widget="badge"/>
+                <button name="action_resubmit" type="object" string="Resubmit" class="btn-link"
+                        invisible="state not in ('rejected', 'partially_approved')"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_claim_line_view_search" model="ir.ui.view">
+        <field name="name">medical.claim.line.search</field>
+        <field name="model">medical.claim.line</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="patient_id"/>
+                <field name="member_no"/>
+                <field name="insurer_id"/>
+                <filter name="to_claim" string="To Claim" domain="[('state', '=', 'to_claim')]"/>
+                <filter name="rejections" string="Rejections to Decide" domain="[('state', 'in', ('rejected', 'partially_approved')), ('rejected_amount', '>', 0)]"/>
+                <separator/>
+                <filter name="service_date" string="Service Date" date="service_date"/>
+                <group>
+                    <filter name="group_insurer" string="Insurer" context="{'group_by': 'insurer_id'}"/>
+                    <filter name="group_reason" string="Reject Reason" context="{'group_by': 'reject_reason'}"/>
+                    <filter name="group_state" string="Status" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="medical_claim_line_view_pivot" model="ir.ui.view">
+        <field name="name">medical.claim.line.pivot</field>
+        <field name="model">medical.claim.line</field>
+        <field name="arch" type="xml">
+            <pivot string="Claims">
+                <field name="insurer_id" type="row"/>
+                <field name="state" type="col"/>
+                <field name="claimed" type="measure"/>
+                <field name="rejected_amount" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="action_medical_claim_line" model="ir.actions.act_window">
+        <field name="name">Claim Lines</field>
+        <field name="res_model">medical.claim.line</field>
+        <field name="view_mode">list,pivot</field>
+        <field name="context">{'search_default_to_claim': 1}</field>
+    </record>
+
+    <record id="action_medical_claim_rejections" model="ir.actions.act_window">
+        <field name="name">Rejections to Decide</field>
+        <field name="res_model">medical.claim.line</field>
+        <field name="view_mode">list,pivot</field>
+        <field name="context">{'search_default_rejections': 1}</field>
+    </record>
+</odoo>

@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medical_insurance_plan_user,medical.insurance.plan user,model_medical_insurance_plan,medical_core.group_medical_user,1,0,0,0
+access_medical_insurance_plan_officer,medical.insurance.plan officer,model_medical_insurance_plan,group_medical_insurance,1,1,1,1
+access_medical_insurance_rule_user,medical.insurance.rule user,model_medical_insurance_rule,medical_core.group_medical_user,1,0,0,0
+access_medical_insurance_rule_officer,medical.insurance.rule officer,model_medical_insurance_rule,group_medical_insurance,1,1,1,1
+access_medical_patient_policy_user,medical.patient.policy user,model_medical_patient_policy,medical_core.group_medical_user,1,1,1,0
+access_medical_patient_policy_officer,medical.patient.policy officer,model_medical_patient_policy,group_medical_insurance,1,1,1,1
+access_medical_preauth_user,medical.preauth user,model_medical_preauth,medical_core.group_medical_user,1,1,1,0
+access_medical_preauth_officer,medical.preauth officer,model_medical_preauth,group_medical_insurance,1,1,1,1
+access_medical_preauth_line_user,medical.preauth.line user,model_medical_preauth_line,medical_core.group_medical_user,1,1,1,1
+access_medical_claim_line_user,medical.claim.line user,model_medical_claim_line,medical_core.group_medical_user,1,0,0,0
+access_medical_claim_line_officer,medical.claim.line officer,model_medical_claim_line,group_medical_insurance,1,1,1,0
+access_medical_claim_officer,medical.claim officer,model_medical_claim,group_medical_insurance,1,1,1,0
+access_medical_claim_manager,medical.claim manager,model_medical_claim,medical_core.group_medical_manager,1,1,1,1
+access_medical_claim_batch_wizard_officer,medical.claim.batch.wizard officer,model_medical_claim_batch_wizard,group_medical_insurance,1,1,1,1

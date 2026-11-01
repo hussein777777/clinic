@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_visit_form_insurance_fields" model="ir.ui.view">
+        <field name="name">medical.visit.form.insurance.fields</field>
+        <field name="model">medical.visit</field>
+        <field name="inherit_id" ref="medical_core.medical_visit_view_form"/>
+        <field name="arch" type="xml">
+            <field name="plan_id" position="after">
+                <field name="policy_id" readonly="state in ('done', 'invoiced')"/>
+            </field>
+            <xpath expr="//field[@name='line_ids']/list/field[@name='price_subtotal']" position="after">
+                <field name="policy_id" column_invisible="True"/>
+                <field name="coverage_pct" optional="hide"/>
+                <field name="insurance_amount" optional="show" readonly="1"/>
+                <field name="patient_amount" optional="show"/>
+                <field name="requires_preauth" column_invisible="True"/>
+                <field name="preauth_status" optional="show" invisible="not requires_preauth"
+                       decoration-danger="preauth_status in ('missing', 'rejected')" decoration-success="preauth_status == 'approved'"
+                       widget="badge"/>
+                <field name="insurance_excluded" optional="hide" readonly="state == 'executed'"/>
+            </xpath>
+            <xpath expr="//field[@name='line_ids']/list" position="inside">
+                <button name="action_convert_to_cash" type="object" icon="fa-money" title="Switch to cash"
+                        invisible="not policy_id or insurance_excluded or state == 'executed'"/>
+            </xpath>
+            <group name="totals" position="inside">
+                <field name="amount_insurance"/>
+                <field name="amount_patient" class="oe_subtotal_footer_separator"/>
+            </group>
+        </field>
+    </record>
+
+    <record id="medical_plan_form_insurance" model="ir.ui.view">
+        <field name="name">medical.treatment.plan.form.insurance</field>
+        <field name="model">medical.treatment.plan</field>
+        <field name="inherit_id" ref="medical_core.medical_treatment_plan_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <field name="needs_preauth" invisible="1"/>
+                <button name="action_request_preauth" type="object" string="Request Pre-authorization"
+                        class="btn-primary" invisible="not needs_preauth or state not in ('presented', 'accepted', 'in_progress')"/>
+            </xpath>
+            <div name="button_box" position="inside">
+                <button name="action_view_preauths" type="object" class="oe_stat_button" icon="fa-check-square-o"
+                        invisible="preauth_count == 0">
+                    <field name="preauth_count" widget="statinfo" string="Pre-auths"/>
+                </button>
+            </div>
+            <field name="doctor_id" position="after">
+                <field name="policy_id"/>
+            </field>
+            <xpath expr="//field[@name='line_ids']/list/field[@name='price_subtotal']" position="after">
+                <field name="insurance_amount" optional="show" readonly="1"/>
+                <field name="patient_amount" optional="show"/>
+                <field name="requires_preauth" column_invisible="True"/>
+                <field name="preauth_status" optional="show" invisible="not requires_preauth" widget="badge"
+                       decoration-danger="preauth_status in ('missing', 'rejected')" decoration-success="preauth_status == 'approved'"/>
+            </xpath>
+            <group name="totals" position="inside">
+                <field name="amount_insurance_est"/>
+                <field name="amount_patient_est"/>
+            </group>
+        </field>
+    </record>
+
+    <record id="res_partner_form_medical_insurance" model="ir.ui.view">
+        <field name="name">res.partner.form.medical.insurance</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="medical_core.res_partner_form_medical"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='medical']/group" position="after">
+                <separator string="Insurance"/>
+                <field name="medical_policy_ids" context="{'default_patient_id': id}">
+                    <list editable="bottom">
+                        <field name="plan_id"/>
+                        <field name="member_no"/>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                        <field name="currency_id" column_invisible="True"/>
+                        <field name="remaining_limit" optional="show"/>
+                    </list>
+                </field>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_partner_form_insurer_flag" model="ir.ui.view">
+        <field name="name">res.partner.form.insurer.flag</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="category_id" position="after">
+                <field name="is_insurer" invisible="not is_company" groups="medical_core.group_medical_user"/>
+            </field>
+        </field>
+    </record>
+</odoo>

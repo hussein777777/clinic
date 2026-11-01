@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_medical_insurance" name="Insurance" parent="medical_core.menu_medical_root" sequence="40"
+              groups="group_medical_insurance"/>
+    <menuitem id="menu_medical_preauth" name="Pre-authorizations" parent="menu_medical_insurance" action="action_medical_preauth" sequence="10"/>
+    <menuitem id="menu_medical_claim_line" name="Claim Lines" parent="menu_medical_insurance" action="action_medical_claim_line" sequence="20"/>
+    <menuitem id="menu_medical_claim_batch_wizard" name="Create Monthly Claims" parent="menu_medical_insurance"
+              action="action_medical_claim_batch_wizard" sequence="25"/>
+    <menuitem id="menu_medical_claim" name="Claim Batches" parent="menu_medical_insurance" action="action_medical_claim" sequence="30"/>
+    <menuitem id="menu_medical_claim_rejections" name="Rejections to Decide" parent="menu_medical_insurance"
+              action="action_medical_claim_rejections" sequence="40"/>
+    <menuitem id="menu_medical_patient_policy" name="Patient Policies" parent="menu_medical_insurance"
+              action="action_medical_patient_policy" sequence="50"/>
+
+    <menuitem id="menu_medical_insurance_config" name="Insurance" parent="medical_core.menu_medical_config" sequence="50"/>
+    <menuitem id="menu_medical_insurer" name="Insurers / TPAs" parent="menu_medical_insurance_config" action="action_medical_insurer" sequence="10"/>
+    <menuitem id="menu_medical_insurance_plan" name="Plans &amp; Coverage" parent="menu_medical_insurance_config"
+              action="action_medical_insurance_plan" sequence="20"/>
+</odoo>

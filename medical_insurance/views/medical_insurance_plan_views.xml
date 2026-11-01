@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_insurance_plan_view_form" model="ir.ui.view">
+        <field name="name">medical.insurance.plan.form</field>
+        <field name="model">medical.insurance.plan</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_policies" type="object" class="oe_stat_button" icon="fa-id-card">
+                            <field name="policy_count" widget="statinfo" string="Members"/>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="e.g. Gold Network"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="insurer_id" context="{'default_is_insurer': True, 'default_is_company': True}"/>
+                            <field name="pricelist_id"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="annual_limit"/>
+                            <field name="preauth_threshold"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Coverage Rules" name="rules">
+                            <field name="rule_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="product_id"/>
+                                    <field name="categ_id"/>
+                                    <field name="specialty_id"/>
+                                    <field name="department_id"/>
+                                    <field name="excluded"/>
+                                    <field name="coverage_pct" invisible="excluded"/>
+                                    <field name="max_per_item" invisible="excluded"/>
+                                    <field name="currency_id" column_invisible="True"/>
+                                    <field name="requires_preauth" invisible="excluded"/>
+                                    <field name="waiting_days" optional="show"/>
+                                    <field name="frequency_months" optional="show"/>
+                                </list>
+                            </field>
+                            <p class="text-muted">
+                                The most specific rule wins: procedure, then category, then specialty, then clinic,
+                                then a rule with none of them (catch-all).
+                            </p>
+                        </page>
+                        <page string="Contract Notes" name="notes">
+                            <field name="note"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_insurance_plan_view_list" model="ir.ui.view">
+        <field name="name">medical.insurance.plan.list</field>
+        <field name="model">medical.insurance.plan</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="insurer_id"/>
+                <field name="name"/>
+                <field name="pricelist_id"/>
+                <field name="annual_limit"/>
+                <field name="currency_id" column_invisible="True"/>
+                <field name="policy_count"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_medical_insurance_plan" model="ir.actions.act_window">
+        <field name="name">Insurance Plans</field>
+        <field name="res_model">medical.insurance.plan</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_medical_insurer" model="ir.actions.act_window">
+        <field name="name">Insurers / TPAs</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('is_insurer', '=', True)]</field>
+        <field name="context">{'default_is_insurer': True, 'default_is_company': True}</field>
+    </record>
+</odoo>

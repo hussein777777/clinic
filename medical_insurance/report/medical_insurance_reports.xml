@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_medical_preauth" model="ir.actions.report">
+        <field name="name">Pre-authorization Request</field>
+        <field name="model">medical.preauth</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">medical_insurance.report_medical_preauth</field>
+        <field name="report_file">medical_insurance.report_medical_preauth</field>
+        <field name="print_report_name">'Preauth - %s' % object.name</field>
+        <field name="binding_model_id" ref="model_medical_preauth"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_report_medical_claim" model="ir.actions.report">
+        <field name="name">Claim Statement</field>
+        <field name="model">medical.claim</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">medical_insurance.report_medical_claim</field>
+        <field name="report_file">medical_insurance.report_medical_claim</field>
+        <field name="print_report_name">'Claim - %s' % object.name</field>
+        <field name="binding_model_id" ref="model_medical_claim"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_medical_preauth">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="pa">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h3>Pre-authorization Request <span t-field="pa.name"/></h3>
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <strong>Insurer:</strong> <span t-field="pa.insurer_id.name"/><br/>
+                                <strong>Member No.:</strong> <span t-field="pa.member_no"/><br/>
+                                <strong>Patient:</strong> <span t-field="pa.patient_id.name"/>
+                            </div>
+                            <div class="col-6 text-end">
+                                <strong>Date:</strong> <span t-field="pa.request_date"/><br/>
+                                <t t-if="pa.plan_id.doctor_id">
+                                    <strong>Doctor:</strong> <span t-field="pa.plan_id.doctor_id.name"/>
+                                </t>
+                            </div>
+                        </div>
+                        <table class="table table-sm">
+                            <thead>
+                                <tr><th>Code</th><th>Procedure</th><th>Site</th><th class="text-end">Requested</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="pa.line_ids" t-as="line">
+                                    <td><span t-field="line.insurance_code"/></td>
+                                    <td><span t-field="line.product_id.name"/></td>
+                                    <td><span t-field="line.site_label"/></td>
+                                    <td class="text-end"><span t-field="line.requested_amount"/></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr><td colspan="3" class="text-end"><strong>Total</strong></td>
+                                    <td class="text-end"><strong t-field="pa.requested_amount"/></td></tr>
+                            </tfoot>
+                        </table>
+                        <p t-if="pa.note" t-field="pa.note"/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_medical_claim">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="claim">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h3>Claim Statement <span t-field="claim.name"/></h3>
+                        <p>
+                            <strong>Insurer:</strong> <span t-field="claim.insurer_id.name"/> —
+                            <strong>Period:</strong> <span t-field="claim.date_from"/> → <span t-field="claim.date_to"/>
+                        </p>
+                        <table class="table table-sm">
+                            <thead>
+                                <tr><th>Date</th><th>Member</th><th>Patient</th><th>Code</th><th>Procedure</th>
+                                    <th>Site</th><th>Approval</th><th class="text-end">Claimed</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="claim.line_ids.sorted('service_date')" t-as="line">
+                                    <td><span t-field="line.service_date"/></td>
+                                    <td><span t-field="line.member_no"/></td>
+                                    <td><span t-field="line.patient_id.name"/></td>
+                                    <td><span t-field="line.insurance_code"/></td>
+                                    <td><span t-field="line.product_id.name"/></td>
+                                    <td><span t-field="line.site_label"/></td>
+                                    <td><span t-field="line.approval_no"/></td>
+                                    <td class="text-end"><span t-field="line.claimed"/></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr><td colspan="7" class="text-end"><strong>Total</strong></td>
+                                    <td class="text-end"><strong t-field="claim.amount_claimed"/></td></tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

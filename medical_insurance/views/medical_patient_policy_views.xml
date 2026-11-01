@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_patient_policy_view_form" model="ir.ui.view">
+        <field name="name">medical.patient.policy.form</field>
+        <field name="model">medical.patient.policy</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <group>
+                        <group>
+                            <field name="patient_id"/>
+                            <field name="plan_id"/>
+                            <field name="insurer_id"/>
+                            <field name="member_no"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="annual_limit"/>
+                            <field name="used_amount"/>
+                            <field name="remaining_limit" invisible="not annual_limit"/>
+                        </group>
+                    </group>
+                    <field name="claim_line_ids" readonly="1">
+                        <list>
+                            <field name="service_date"/>
+                            <field name="product_id"/>
+                            <field name="claimed"/>
+                            <field name="approved"/>
+                            <field name="currency_id" column_invisible="True"/>
+                            <field name="state" widget="badge"/>
+                        </list>
+                    </field>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_patient_policy_view_list" model="ir.ui.view">
+        <field name="name">medical.patient.policy.list</field>
+        <field name="model">medical.patient.policy</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="patient_id"/>
+                <field name="insurer_id"/>
+                <field name="plan_id"/>
+                <field name="member_no"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_patient_policy_view_search" model="ir.ui.view">
+        <field name="name">medical.patient.policy.search</field>
+        <field name="model">medical.patient.policy</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="patient_id"/>
+                <field name="member_no"/>
+                <field name="insurer_id"/>
+                <filter name="valid" string="Valid Today"
+                        domain="[('date_from', '&lt;=', context_today().strftime('%Y-%m-%d')), ('date_to', '&gt;=', context_today().strftime('%Y-%m-%d'))]"/>
+                <group>
+                    <filter name="group_insurer" string="Insurer" context="{'group_by': 'insurer_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_medical_patient_policy" model="ir.actions.act_window">
+        <field name="name">Patient Policies</field>
+        <field name="res_model">medical.patient.policy</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

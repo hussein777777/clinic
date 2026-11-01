@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_claim_batch_wizard_view_form" model="ir.ui.view">
+        <field name="name">medical.claim.batch.wizard.form</field>
+        <field name="model">medical.claim.batch.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <p>One claim batch is created per insurer with every unclaimed line of the period.</p>
+                <group>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="insurer_ids" widget="many2many_tags"/>
+                </group>
+                <footer>
+                    <button name="action_create" type="object" string="Create Claims" class="btn-primary"/>
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_medical_claim_batch_wizard" model="ir.actions.act_window">
+        <field name="name">Create Monthly Claims</field>
+        <field name="res_model">medical.claim.batch.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

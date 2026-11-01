@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="seq_medical_preauth" model="ir.sequence">
+            <field name="name">Medical Pre-authorization</field>
+            <field name="code">medical.preauth</field>
+            <field name="prefix">PA/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="seq_medical_claim" model="ir.sequence">
+            <field name="name">Medical Insurance Claim</field>
+            <field name="code">medical.claim</field>
+            <field name="prefix">CLM/%(year)s/</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

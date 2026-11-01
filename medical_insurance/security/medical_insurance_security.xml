@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_medical_insurance" model="res.groups">
+        <field name="name">Insurance Officer</field>
+        <field name="sequence">15</field>
+        <field name="privilege_id" ref="medical_core.res_groups_privilege_medical"/>
+        <field name="implied_ids" eval="[(4, ref('medical_core.group_medical_user'))]"/>
+        <field name="comment">Policies, pre-authorizations, claim batches and settlements.</field>
+    </record>
+    <record id="medical_core.group_medical_manager" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_medical_insurance'))]"/>
+    </record>
+
+    <record id="medical_claim_company_rule" model="ir.rule">
+        <field name="name">Medical claim: multi-company</field>
+        <field name="model_id" ref="model_medical_claim"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="medical_claim_line_company_rule" model="ir.rule">
+        <field name="name">Medical claim line: multi-company</field>
+        <field name="model_id" ref="model_medical_claim_line"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="medical_insurance_plan_company_rule" model="ir.rule">
+        <field name="name">Medical insurance plan: multi-company</field>
+        <field name="model_id" ref="model_medical_insurance_plan"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+</odoo>

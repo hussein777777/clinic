@@ -1,0 +1,1441 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* medical_insurance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-11 17:50+0000\n"
+"PO-Revision-Date: 2026-10-11 17:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: medical_insurance
+#: model:ir.actions.report,print_report_name:medical_insurance.action_report_medical_claim
+msgid "'Claim - %s' % object.name"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.actions.report,print_report_name:medical_insurance.action_report_medical_preauth
+msgid "'Preauth - %s' % object.name"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,help:medical_insurance.field_medical_insurance_rule__max_per_item
+msgid "0 = no cap."
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,help:medical_insurance.field_medical_insurance_plan__annual_limit
+#: model:ir.model.fields,help:medical_insurance.field_medical_patient_policy__annual_limit
+msgid "0 means no limit."
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.report_medical_preauth
+msgid ""
+"<br/>\n"
+"                                <strong>Member No.:</strong>"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.report_medical_preauth
+msgid ""
+"<br/>\n"
+"                                <strong>Patient:</strong>"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.report_medical_preauth
+msgid "<strong>Date:</strong>"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.report_medical_preauth
+msgid "<strong>Doctor:</strong>"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.report_medical_claim
+#: model_terms:ir.ui.view,arch_db:medical_insurance.report_medical_preauth
+msgid "<strong>Insurer:</strong>"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.report_medical_claim
+#: model_terms:ir.ui.view,arch_db:medical_insurance.report_medical_preauth
+msgid "<strong>Total</strong>"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__message_needaction
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__message_needaction
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__message_needaction
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__active
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__active
+msgid "Active"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__activity_ids
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__activity_exception_decoration
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__activity_state
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__activity_type_icon
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_preauth.py:0
+msgid "Add at least one procedure."
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_insurance_plan.py:0
+msgid "All procedures"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__amount_approved
+msgid "Amount Approved"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__amount_claimed
+msgid "Amount Claimed"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__amount_rejected
+msgid "Amount Rejected"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,help:medical_insurance.field_medical_claim_line__approved
+msgid "Amount accepted by the insurer. Defaults to the claimed amount."
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__annual_limit
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__annual_limit
+msgid "Annual Limit per Member"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,help:medical_insurance.field_medical_patient_policy__remaining_limit
+msgid ""
+"Annual limit minus the insurer share already consumed in this policy year (0"
+" when unlimited)."
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,help:medical_insurance.field_medical_insurance_plan__preauth_threshold
+msgid ""
+"Any procedure priced above this amount needs pre-authorization. 0 = rules "
+"only."
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.report_medical_claim
+msgid "Approval"
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_claim.py:0
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__approval_no
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__approval_no
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_treatment_line__approval_no
+msgid "Approval No."
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__approved
+#: model:ir.model.fields.selection,name:medical_insurance.selection__medical_claim_line__state__approved
+#: model:ir.model.fields.selection,name:medical_insurance.selection__medical_preauth__state__approved
+#: model:ir.model.fields.selection,name:medical_insurance.selection__medical_treatment_line__preauth_status__approved
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_line_view_list
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_view_form
+msgid "Approved"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__approved_amount
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth_line__approved_amount
+msgid "Approved Amount"
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_claim.py:0
+msgid "Approved amount cannot exceed the claimed amount (%s)."
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,help:medical_insurance.field_medical_preauth_line__is_valid
+msgid "Approved, not expired and the request is not cancelled."
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_insurance_plan_view_form
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_patient_policy_view_form
+msgid "Archived"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__message_attachment_count
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__message_attachment_count
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__message_attachment_count
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_batch_wizard_view_form
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_view_form
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_preauth_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields.selection,name:medical_insurance.selection__medical_claim__state__cancelled
+#: model:ir.model.fields.selection,name:medical_insurance.selection__medical_preauth__state__cancelled
+msgid "Cancelled"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_treatment_line__insurance_excluded
+msgid "Cash (not claimed)"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_rule__categ_id
+msgid "Category"
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_claim.py:0
+msgid "Claim %s has no lines."
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__claim_id
+msgid "Claim Batch"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.actions.act_window,name:medical_insurance.action_medical_claim
+#: model:ir.ui.menu,name:medical_insurance.menu_medical_claim
+msgid "Claim Batches"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__claim_line_ids
+msgid "Claim Line"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.actions.act_window,name:medical_insurance.action_medical_claim_line
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__line_ids
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_treatment_line__claim_line_ids
+#: model:ir.ui.menu,name:medical_insurance.menu_medical_claim_line
+msgid "Claim Lines"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.actions.report,name:medical_insurance.action_report_medical_claim
+#: model_terms:ir.ui.view,arch_db:medical_insurance.report_medical_claim
+msgid "Claim Statement"
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_claim.py:0
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__claimed
+#: model:ir.model.fields.selection,name:medical_insurance.selection__medical_claim_line__state__claimed
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_line_view_list
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_view_form
+#: model_terms:ir.ui.view,arch_db:medical_insurance.report_medical_claim
+msgid "Claimed"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_line_view_pivot
+msgid "Claims"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_rule__department_id
+msgid "Clinic"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.report_medical_claim
+#: model_terms:ir.ui.view,arch_db:medical_insurance.report_medical_preauth
+msgid "Code"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__company_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__company_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__company_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__company_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__company_id
+msgid "Company"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model,name:medical_insurance.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__note
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_insurance_plan_view_form
+msgid "Contract Notes"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__pricelist_id
+msgid "Contracted Prices"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_rule__coverage_pct
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_treatment_line__coverage_pct
+msgid "Coverage (%)"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__rule_ids
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_insurance_plan_view_form
+msgid "Coverage Rules"
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_insurance_plan.py:0
+msgid "Coverage must be between 0 and 100%."
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_batch_wizard_view_form
+msgid "Create Claims"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.actions.act_window,name:medical_insurance.action_medical_claim_batch_wizard
+#: model:ir.ui.menu,name:medical_insurance.menu_medical_claim_batch_wizard
+msgid "Create Monthly Claims"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model,name:medical_insurance.model_medical_claim_batch_wizard
+msgid "Create monthly insurance claims"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__create_uid
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_batch_wizard__create_uid
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__create_uid
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__create_uid
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_rule__create_uid
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__create_uid
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__create_uid
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__create_date
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_batch_wizard__create_date
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__create_date
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__create_date
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_rule__create_date
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__create_date
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__create_date
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__currency_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__currency_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__currency_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_rule__currency_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__currency_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__currency_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth_line__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.report_medical_claim
+msgid "Date"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__date_from
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_batch_wizard__date_from
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__date_from
+msgid "Date From"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__date_to
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_batch_wizard__date_to
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__date_to
+msgid "Date To"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,help:medical_insurance.field_medical_insurance_rule__waiting_days
+msgid "Days after the policy start before this rule applies."
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__department_id
+msgid "Department"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__display_name
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_batch_wizard__display_name
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__display_name
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__display_name
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_rule__display_name
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__display_name
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__display_name
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth_line__display_name
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_treatment_line__display_name
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_treatment_plan__display_name
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_visit__display_name
+#: model:ir.model.fields,field_description:medical_insurance.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_claim.py:0
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__doctor_id
+msgid "Doctor"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields.selection,name:medical_insurance.selection__medical_claim__state__draft
+#: model:ir.model.fields.selection,name:medical_insurance.selection__medical_preauth__state__draft
+msgid "Draft"
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_preauth.py:0
+msgid "Enter the insurer approval number."
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_treatment_plan__amount_insurance_est
+msgid "Estimated Insurer Share"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_treatment_plan__amount_patient_est
+msgid "Estimated Patient Share"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__expiry_date
+msgid "Expiry Date"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_view_form
+msgid "Export Excel"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__export_file
+msgid "Export File"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__export_filename
+msgid "Export Filename"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__message_follower_ids
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__message_follower_ids
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__message_follower_ids
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__message_partner_ids
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__message_partner_ids
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__message_partner_ids
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,help:medical_insurance.field_medical_claim__activity_type_icon
+#: model:ir.model.fields,help:medical_insurance.field_medical_preauth__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__has_message
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__has_message
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__has_message
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_view_form
+msgid "Have you entered the approved amount and reject reason on every line?"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_batch_wizard__id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_rule__id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth_line__id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_treatment_line__id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_treatment_plan__id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_visit__id
+#: model:ir.model.fields,field_description:medical_insurance.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__activity_exception_icon
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,help:medical_insurance.field_medical_claim__activity_exception_icon
+#: model:ir.model.fields,help:medical_insurance.field_medical_preauth__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,help:medical_insurance.field_medical_claim__message_needaction
+#: model:ir.model.fields,help:medical_insurance.field_medical_insurance_plan__message_needaction
+#: model:ir.model.fields,help:medical_insurance.field_medical_patient_policy__message_needaction
+#: model:ir.model.fields,help:medical_insurance.field_medical_preauth__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,help:medical_insurance.field_medical_claim__message_has_error
+#: model:ir.model.fields,help:medical_insurance.field_medical_claim__message_has_sms_error
+#: model:ir.model.fields,help:medical_insurance.field_medical_insurance_plan__message_has_error
+#: model:ir.model.fields,help:medical_insurance.field_medical_insurance_plan__message_has_sms_error
+#: model:ir.model.fields,help:medical_insurance.field_medical_patient_policy__message_has_error
+#: model:ir.model.fields,help:medical_insurance.field_medical_patient_policy__message_has_sms_error
+#: model:ir.model.fields,help:medical_insurance.field_medical_preauth__message_has_error
+#: model:ir.model.fields,help:medical_insurance.field_medical_preauth__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.ui.menu,name:medical_insurance.menu_medical_insurance
+#: model:ir.ui.menu,name:medical_insurance.menu_medical_insurance_config
+#: model_terms:ir.ui.view,arch_db:medical_insurance.res_partner_form_medical_insurance
+msgid "Insurance"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model,name:medical_insurance.model_medical_claim
+msgid "Insurance Claim Batch"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model,name:medical_insurance.model_medical_claim_line
+msgid "Insurance Claim Line"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__insurance_code
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth_line__insurance_code
+msgid "Insurance Code"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_res_partner__is_insurer
+#: model:ir.model.fields,field_description:medical_insurance.field_res_users__is_insurer
+msgid "Insurance Company / TPA"
+msgstr ""
+
+#. module: medical_insurance
+#: model:res.groups,name:medical_insurance.group_medical_insurance
+msgid "Insurance Officer"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.actions.act_window,name:medical_insurance.action_medical_insurance_plan
+#: model:ir.model.fields,field_description:medical_insurance.field_res_partner__medical_insurance_plan_ids
+#: model:ir.model.fields,field_description:medical_insurance.field_res_users__medical_insurance_plan_ids
+msgid "Insurance Plans"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_res_partner__medical_policy_ids
+#: model:ir.model.fields,field_description:medical_insurance.field_res_users__medical_policy_ids
+msgid "Insurance Policies"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_treatment_line__policy_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_treatment_plan__policy_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_visit__policy_id
+msgid "Insurance Policy"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model,name:medical_insurance.model_medical_preauth
+msgid "Insurance Pre-authorization"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__insurer_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__insurer_id
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_line_view_search
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_patient_policy_view_search
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_preauth_view_search
+msgid "Insurer"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__insurer_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__insurer_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__insurer_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_visit__insurer_id
+msgid "Insurer / TPA"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_treatment_line__insurance_amount
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_visit__amount_insurance
+msgid "Insurer Share"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_preauth_view_form
+msgid "Insurer remarks..."
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_batch_wizard__insurer_ids
+msgid "Insurers"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.actions.act_window,name:medical_insurance.action_medical_insurer
+#: model:ir.ui.menu,name:medical_insurance.menu_medical_insurer
+msgid "Insurers / TPAs"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__message_is_follower
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__message_is_follower
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__message_is_follower
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth_line__is_valid
+msgid "Is Valid"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__write_uid
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_batch_wizard__write_uid
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__write_uid
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__write_uid
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_rule__write_uid
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__write_uid
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__write_uid
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__write_date
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_batch_wizard__write_date
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__write_date
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__write_date
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_rule__write_date
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__write_date
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__write_date
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,help:medical_insurance.field_medical_claim_batch_wizard__insurer_ids
+msgid "Leave empty for all insurers."
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__line_count
+msgid "Line Count"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_view_form
+msgid "Lines"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_preauth_view_form
+msgid "Mark as Sent"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_rule__max_per_item
+msgid "Max per Procedure"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model,name:medical_insurance.model_medical_insurance_rule
+msgid "Medical Insurance Coverage Rule"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model,name:medical_insurance.model_medical_insurance_plan
+msgid "Medical Insurance Plan"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.report_medical_claim
+msgid "Member"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__member_no
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__member_no
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__member_no
+msgid "Member / Card No."
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_claim.py:0
+msgid "Member No."
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_insurance_plan_view_form
+msgid "Members"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__message_has_error
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__message_has_error
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__message_has_error
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__message_ids
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__message_ids
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__message_ids
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields.selection,name:medical_insurance.selection__medical_treatment_line__preauth_status__missing
+msgid "Missing"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__my_activity_date_deadline
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__name
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__name
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__name
+msgid "Name"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_rule__requires_preauth
+msgid "Needs Pre-authorization"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_treatment_plan__needs_preauth
+msgid "Needs Preauth"
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_claim.py:0
+#: code:addons/medical_insurance/models/medical_preauth.py:0
+msgid "New"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__activity_date_deadline
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__activity_summary
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__activity_type_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_visit.py:0
+msgid "No line of this plan needs a new pre-authorization."
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_rule__excluded
+msgid "Not Covered"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields.selection,name:medical_insurance.selection__medical_treatment_line__preauth_status__not_needed
+msgid "Not needed"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__note
+msgid "Note"
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/wizard/medical_claim_batch_wizard.py:0
+msgid "Nothing to claim for this period."
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__message_needaction_counter
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__message_needaction_counter
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__message_needaction_counter
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__message_has_error_counter
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__message_has_error_counter
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__message_has_error_counter
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,help:medical_insurance.field_medical_claim__message_needaction_counter
+#: model:ir.model.fields,help:medical_insurance.field_medical_insurance_plan__message_needaction_counter
+#: model:ir.model.fields,help:medical_insurance.field_medical_patient_policy__message_needaction_counter
+#: model:ir.model.fields,help:medical_insurance.field_medical_preauth__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,help:medical_insurance.field_medical_claim__message_has_error_counter
+#: model:ir.model.fields,help:medical_insurance.field_medical_insurance_plan__message_has_error_counter
+#: model:ir.model.fields,help:medical_insurance.field_medical_patient_policy__message_has_error_counter
+#: model:ir.model.fields,help:medical_insurance.field_medical_preauth__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_rule__frequency_months
+msgid "Once every (months)"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_batch_wizard_view_form
+msgid ""
+"One claim batch is created per insurer with every unclaimed line of the "
+"period."
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_claim.py:0
+msgid "Only draft claims can be cancelled."
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_claim.py:0
+msgid "Only draft claims can be submitted."
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_claim.py:0
+msgid "Only rejected amounts can be resubmitted."
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_claim.py:0
+msgid "Only submitted claims can be settled."
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields.selection,name:medical_insurance.selection__medical_claim__state__paid
+msgid "Paid"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields.selection,name:medical_insurance.selection__medical_claim_line__state__partially_approved
+#: model:ir.model.fields.selection,name:medical_insurance.selection__medical_preauth__state__partial
+msgid "Partially Approved"
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_claim.py:0
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__patient_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__patient_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__patient_id
+#: model_terms:ir.ui.view,arch_db:medical_insurance.report_medical_claim
+msgid "Patient"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model,name:medical_insurance.model_medical_patient_policy
+msgid "Patient Insurance Policy"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.actions.act_window,name:medical_insurance.action_medical_patient_policy
+#: model:ir.ui.menu,name:medical_insurance.menu_medical_patient_policy
+msgid "Patient Policies"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_treatment_line__patient_amount
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_visit__amount_patient
+msgid "Patient Share"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields.selection,name:medical_insurance.selection__medical_treatment_line__preauth_status__pending
+msgid "Pending"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_rule__plan_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__plan_id
+msgid "Plan"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.ui.menu,name:medical_insurance.menu_medical_insurance_plan
+msgid "Plans & Coverage"
+msgstr ""
+
+#. module: medical_insurance
+#: model:res.groups,comment:medical_insurance.group_medical_insurance
+msgid "Policies, pre-authorizations, claim batches and settlements."
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__policy_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__policy_id
+msgid "Policy"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__policy_count
+msgid "Policy Count"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model,name:medical_insurance.model_medical_preauth_line
+msgid "Pre-authorization Line"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.actions.report,name:medical_insurance.action_report_medical_preauth
+#: model_terms:ir.ui.view,arch_db:medical_insurance.report_medical_preauth
+msgid "Pre-authorization Request"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__preauth_threshold
+msgid "Pre-authorization above"
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_treatment_line.py:0
+msgid ""
+"Pre-authorization is missing for: %s.\n"
+"Record the insurer approval, or switch the line to cash."
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.actions.act_window,name:medical_insurance.action_medical_preauth
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_treatment_line__preauth_line_ids
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_treatment_plan__preauth_ids
+#: model:ir.ui.menu,name:medical_insurance.menu_medical_preauth
+msgid "Pre-authorizations"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_plan_form_insurance
+msgid "Pre-auths"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth_line__preauth_id
+msgid "Preauth"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_treatment_plan__preauth_count
+msgid "Preauth Count"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_treatment_line__preauth_status
+msgid "Preauth Status"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,help:medical_insurance.field_medical_insurance_plan__pricelist_id
+msgid ""
+"Prices agreed with the insurer. Leave empty to use the clinic price list."
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_preauth_view_form
+msgid "Print Request"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_view_form
+msgid "Print Statement"
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_claim.py:0
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__product_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_rule__product_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth_line__product_id
+#: model_terms:ir.ui.view,arch_db:medical_insurance.report_medical_claim
+#: model_terms:ir.ui.view,arch_db:medical_insurance.report_medical_preauth
+msgid "Procedure"
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_claim.py:0
+msgid "Procedure Code"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,help:medical_insurance.field_medical_claim_line__insurance_code
+#: model:ir.model.fields,help:medical_insurance.field_medical_preauth_line__insurance_code
+msgid "Procedure code used on insurance claims."
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__line_ids
+msgid "Procedures"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields.selection,name:medical_insurance.selection__medical_claim_line__state__rebilled
+msgid "Re-billed to Patient"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_preauth_view_form
+msgid "Record Insurer Response"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__reject_reason
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_line_view_search
+msgid "Reject Reason"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields.selection,name:medical_insurance.selection__medical_claim_line__state__rejected
+#: model:ir.model.fields.selection,name:medical_insurance.selection__medical_preauth__state__rejected
+#: model:ir.model.fields.selection,name:medical_insurance.selection__medical_treatment_line__preauth_status__rejected
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_line_view_list
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_view_form
+msgid "Rejected"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__rejected_amount
+msgid "Rejected Amount"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.actions.act_window,name:medical_insurance.action_medical_claim_rejections
+#: model:ir.ui.menu,name:medical_insurance.menu_medical_claim_rejections
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_line_view_search
+msgid "Rejections to Decide"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__remaining_limit
+msgid "Remaining Limit"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__request_date
+msgid "Request Date"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_plan_form_insurance
+msgid "Request Pre-authorization"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.report_medical_preauth
+msgid "Requested"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__requested_amount
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth_line__requested_amount
+msgid "Requested Amount"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_treatment_line__requires_preauth
+msgid "Requires Preauth"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_preauth_view_form
+msgid "Reset to Draft"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__response_date
+msgid "Response Date"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__activity_user_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__resubmission_of_id
+msgid "Resubmission of"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_line_view_list
+msgid "Resubmit"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields.selection,name:medical_insurance.selection__medical_claim_line__state__resubmitted
+msgid "Resubmitted"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__message_has_sms_error
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__message_has_sms_error
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__message_has_sms_error
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields.selection,name:medical_insurance.selection__medical_preauth__state__sent
+msgid "Sent"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_rule__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_claim.py:0
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__service_date
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_line_view_search
+msgid "Service Date"
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_visit.py:0
+msgid "Set the patient's insurance policy on the plan first."
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_view_form
+msgid "Settle (apply insurer statement)"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields.selection,name:medical_insurance.selection__medical_claim__state__settled
+msgid "Settled"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__settlement_date
+msgid "Settlement Date"
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_claim.py:0
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__site_label
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth_line__site_label
+#: model_terms:ir.ui.view,arch_db:medical_insurance.report_medical_claim
+#: model_terms:ir.ui.view,arch_db:medical_insurance.report_medical_preauth
+msgid "Site"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_rule__specialty_id
+msgid "Specialty"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__state
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__state
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__state
+msgid "State"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_line_view_search
+msgid "Status"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,help:medical_insurance.field_medical_claim__activity_state
+#: model:ir.model.fields,help:medical_insurance.field_medical_preauth__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_view_form
+msgid "Submit to Insurer"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields.selection,name:medical_insurance.selection__medical_claim__state__submitted
+msgid "Submitted"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_visit_form_insurance_fields
+msgid "Switch to cash"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_insurance_plan_view_form
+msgid ""
+"The most specific rule wins: procedure, then category, then specialty, then clinic,\n"
+"                                then a rule with none of them (catch-all)."
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,help:medical_insurance.field_medical_treatment_line__insurance_excluded
+msgid "The patient pays this line in full; it is not sent to the insurer."
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_patient_policy.py:0
+msgid "The policy end date must be after its start date."
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_preauth.py:0
+msgid "The response was already recorded."
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.constraint,message:medical_insurance.constraint_medical_patient_policy_member_plan_uniq
+msgid "This member already has a policy starting on that date for this plan."
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields.selection,name:medical_insurance.selection__medical_claim_line__state__to_claim
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_line_view_search
+msgid "To Claim"
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_claim.py:0
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_claim_view_list
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_preauth_view_list
+msgid "Total"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model,name:medical_insurance.model_medical_treatment_line
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__treatment_line_id
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth_line__treatment_line_id
+msgid "Treatment Line"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model,name:medical_insurance.model_medical_treatment_plan
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__plan_id
+msgid "Treatment Plan"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,help:medical_insurance.field_medical_claim__activity_exception_decoration
+#: model:ir.model.fields,help:medical_insurance.field_medical_preauth__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__used_amount
+msgid "Used Amount"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_treatment_line__preauth_line_id
+msgid "Valid Pre-authorization"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_patient_policy_view_search
+msgid "Valid Today"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model,name:medical_insurance.model_medical_visit
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim_line__visit_id
+msgid "Visit"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_rule__waiting_days
+msgid "Waiting Days"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_preauth_view_search
+msgid "Waiting for Insurer"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_claim__website_message_ids
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan__website_message_ids
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_patient_policy__website_message_ids
+#: model:ir.model.fields,field_description:medical_insurance.field_medical_preauth__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,help:medical_insurance.field_medical_claim__website_message_ids
+#: model:ir.model.fields,help:medical_insurance.field_medical_insurance_plan__website_message_ids
+#: model:ir.model.fields,help:medical_insurance.field_medical_patient_policy__website_message_ids
+#: model:ir.model.fields,help:medical_insurance.field_medical_preauth__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,help:medical_insurance.field_medical_claim_line__site_label
+#: model:ir.model.fields,help:medical_insurance.field_medical_preauth_line__site_label
+msgid "Where the procedure is done: body site, side, tooth..."
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields.selection,name:medical_insurance.selection__medical_claim_line__state__written_off
+msgid "Written Off"
+msgstr ""
+
+#. module: medical_insurance
+#: model:ir.model.fields,help:medical_insurance.field_medical_insurance_rule__frequency_months
+msgid ""
+"e.g. 6 for scaling: a second one within 6 months is not covered. 0 = no "
+"limit."
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.medical_insurance_plan_view_form
+msgid "e.g. Gold Network"
+msgstr ""
+
+#. module: medical_insurance
+#. odoo-python
+#: code:addons/medical_insurance/models/medical_insurance_plan.py:0
+msgid "not covered"
+msgstr ""
+
+#. module: medical_insurance
+#: model_terms:ir.ui.view,arch_db:medical_insurance.report_medical_claim
+msgid ""
+"—\n"
+"                            <strong>Period:</strong>"
+msgstr ""
