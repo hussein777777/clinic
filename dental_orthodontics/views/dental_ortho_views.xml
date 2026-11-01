@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_care_contract_form_ortho" model="ir.ui.view">
+        <field name="name">medical.care.contract.form.ortho</field>
+        <field name="model">medical.care.contract</field>
+        <field name="inherit_id" ref="medical_core.medical_care_contract_view_form"/>
+        <field name="arch" type="xml">
+            <field name="session_product_id" position="after">
+                <field name="appliance_type" invisible="care_type != 'orthodontics'"/>
+                <field name="arch" invisible="care_type != 'orthodontics'"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="action_dental_ortho_case" model="ir.actions.act_window">
+        <field name="name">Orthodontic Cases</field>
+        <field name="res_model">medical.care.contract</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('care_type', '=', 'orthodontics')]</field>
+        <field name="context" eval="{'default_care_type': 'orthodontics', 'default_billing_mode': 'monthly',
+                                     'default_est_months': 18, 'default_installment_count': 12,
+                                     'default_session_product_id': ref('product_ortho_adjustment'),
+                                     'search_default_running': 1}"/>
+    </record>
+
+    <menuitem id="menu_dental_ortho_case" name="Orthodontic Cases" parent="dental_core.menu_dental"
+              action="action_dental_ortho_case" sequence="20"/>
+</odoo>

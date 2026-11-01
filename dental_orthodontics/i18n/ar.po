@@ -1,0 +1,123 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dental_orthodontics
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-11 17:50+0000\n"
+"PO-Revision-Date: 2026-10-11 17:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: dental_orthodontics
+#: model:ir.model.fields,field_description:dental_orthodontics.field_medical_care_contract__appliance_type
+msgid "Appliance Type"
+msgstr "نوع الجهاز"
+
+#. module: dental_orthodontics
+#: model:ir.model.fields,field_description:dental_orthodontics.field_medical_care_contract__arch
+msgid "Arch"
+msgstr "الفك"
+
+#. module: dental_orthodontics
+#: model:ir.model.fields.selection,name:dental_orthodontics.selection__medical_care_contract__arch__both
+msgid "Both Arches"
+msgstr "الفكّان"
+
+#. module: dental_orthodontics
+#: model:ir.model,name:dental_orthodontics.model_medical_care_contract
+msgid "Care Program"
+msgstr "برنامج الرعاية"
+
+#. module: dental_orthodontics
+#: model:ir.model.fields,field_description:dental_orthodontics.field_medical_care_contract__care_type
+msgid "Care Type"
+msgstr "نوع البرنامج"
+
+#. module: dental_orthodontics
+#: model:ir.model.fields.selection,name:dental_orthodontics.selection__medical_care_contract__appliance_type__ceramic
+msgid "Ceramic Brackets"
+msgstr "تقويم سيراميك"
+
+#. module: dental_orthodontics
+#: model:ir.model.fields.selection,name:dental_orthodontics.selection__medical_care_contract__appliance_type__aligners
+msgid "Clear Aligners"
+msgstr "مصففات شفافة"
+
+#. module: dental_orthodontics
+#: model:product.template,name:dental_orthodontics.product_ortho_aligners_product_template
+msgid "Clear Aligners Treatment"
+msgstr "علاج بالمصففات الشفافة"
+
+#. module: dental_orthodontics
+#: model:ir.model.fields,field_description:dental_orthodontics.field_medical_care_contract__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: dental_orthodontics
+#: model:ir.model.fields,field_description:dental_orthodontics.field_medical_care_contract__id
+msgid "ID"
+msgstr "المُعرّف"
+
+#. module: dental_orthodontics
+#: model:ir.model.fields.selection,name:dental_orthodontics.selection__medical_care_contract__appliance_type__lingual
+msgid "Lingual"
+msgstr "تقويم لساني (داخلي)"
+
+#. module: dental_orthodontics
+#: model:ir.model.fields.selection,name:dental_orthodontics.selection__medical_care_contract__arch__lower
+msgid "Lower"
+msgstr "سفلي"
+
+#. module: dental_orthodontics
+#: model:ir.model.fields.selection,name:dental_orthodontics.selection__medical_care_contract__appliance_type__metal
+msgid "Metal Brackets"
+msgstr "تقويم معدني"
+
+#. module: dental_orthodontics
+#: model:product.template,name:dental_orthodontics.product_ortho_adjustment_product_template
+msgid "Orthodontic Adjustment Visit"
+msgstr "زيارة ضبط تقويم"
+
+#. module: dental_orthodontics
+#: model:ir.actions.act_window,name:dental_orthodontics.action_dental_ortho_case
+#: model:ir.ui.menu,name:dental_orthodontics.menu_dental_ortho_case
+msgid "Orthodontic Cases"
+msgstr "حالات التقويم"
+
+#. module: dental_orthodontics
+#: model:product.template,name:dental_orthodontics.product_ortho_ceramic_product_template
+msgid "Orthodontic Treatment - Ceramic Brackets"
+msgstr "علاج تقويم - سيراميك"
+
+#. module: dental_orthodontics
+#: model:product.template,name:dental_orthodontics.product_ortho_metal_product_template
+msgid "Orthodontic Treatment - Metal Brackets"
+msgstr "علاج تقويم - معدني"
+
+#. module: dental_orthodontics
+#: model:ir.model.fields.selection,name:dental_orthodontics.selection__medical_care_contract__care_type__orthodontics
+msgid "Orthodontics"
+msgstr "تقويم الأسنان"
+
+#. module: dental_orthodontics
+#: model:ir.model.fields.selection,name:dental_orthodontics.selection__medical_care_contract__appliance_type__removable
+msgid "Removable Appliance"
+msgstr "جهاز متحرك"
+
+#. module: dental_orthodontics
+#: model:ir.model.fields.selection,name:dental_orthodontics.selection__medical_care_contract__appliance_type__retainer
+msgid "Retainer Only"
+msgstr "مثبّت فقط"
+
+#. module: dental_orthodontics
+#: model:ir.model.fields.selection,name:dental_orthodontics.selection__medical_care_contract__arch__upper
+msgid "Upper"
+msgstr "علوي"

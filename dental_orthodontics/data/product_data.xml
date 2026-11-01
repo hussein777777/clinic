@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="product_ortho_metal" model="product.product">
+            <field name="name">Orthodontic Treatment - Metal Brackets</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="specialty_id" ref="dental_core.spec_ortho"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">30000</field>
+            <field name="procedure_type">package</field>
+            <field name="insurance_code">D8080</field>
+        </record>
+        <record id="product_ortho_ceramic" model="product.product">
+            <field name="name">Orthodontic Treatment - Ceramic Brackets</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="specialty_id" ref="dental_core.spec_ortho"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">40000</field>
+            <field name="procedure_type">package</field>
+        </record>
+        <record id="product_ortho_aligners" model="product.product">
+            <field name="name">Clear Aligners Treatment</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="specialty_id" ref="dental_core.spec_ortho"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">60000</field>
+            <field name="procedure_type">package</field>
+        </record>
+        <record id="product_ortho_adjustment" model="product.product">
+            <field name="name">Orthodontic Adjustment Visit</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="specialty_id" ref="dental_core.spec_ortho"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">0</field>
+            <field name="procedure_duration">20</field>
+            <field name="procedure_type">session</field>
+        </record>
+    </data>
+</odoo>
