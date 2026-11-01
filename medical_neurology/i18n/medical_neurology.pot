@@ -1,0 +1,908 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* medical_neurology
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-11 17:50+0000\n"
+"PO-Revision-Date: 2026-10-11 17:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: medical_neurology
+#. odoo-python
+#: code:addons/medical_neurology/models/medical_neuro_event.py:0
+msgid "%s min"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_ll__0
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_lu__0
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_rl__0
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_ru__0
+msgid "0 (absent)"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_ll__1
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_lu__1
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_rl__1
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_ru__1
+msgid "1+ (reduced)"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_ll__2
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_lu__2
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_rl__2
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_ru__2
+msgid "2+ (normal)"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_ll__3
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_lu__3
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_rl__3
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_ru__3
+msgid "3+ (brisk)"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_ll__4
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_lu__4
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_rl__4
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_ru__4
+msgid "4+ (clonus)"
+msgstr ""
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid ""
+"<i class=\"fa fa-exclamation-triangle me-1\" title=\"Focal deficit\"/>\n"
+"                        <strong>Focal deficit: </strong>"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_cranial_nerves__abnormal
+msgid "Abnormal"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__seizure_type__absence
+msgid "Absence"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_sensation__absent
+msgid "Absent"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_consciousness__alert
+msgid "Alert"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g30_9
+msgid "Alzheimer's disease, unspecified"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_gait__antalgic
+msgid "Antalgic"
+msgstr ""
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Arm power"
+msgstr ""
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Arm reflexes"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_coordination__ataxic
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_gait__ataxic
+msgid "Ataxic"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__seizure_type__atonic
+msgid "Atonic"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__aura
+msgid "Aura"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g51_0
+msgid "Bell's palsy"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_h81_1
+msgid "Benign paroxysmal vertigo"
+msgstr ""
+
+#. module: medical_neurology
+#: model:product.template,name:medical_neurology.product_botox_migraine_product_template
+msgid "Botulinum Toxin for Chronic Migraine"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_i63_9
+msgid "Cerebral infarction, unspecified"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_consciousness__coma
+msgid "Comatose"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__company_id
+msgid "Company"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_consciousness
+msgid "Consciousness"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model,name:medical_neurology.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_coordination
+msgid "Coordination"
+msgstr ""
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Coordination & Gait"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_cranial_nerves
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Cranial Nerves"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_cranial_note
+msgid "Cranial Nerves Findings"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__date
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_neuro_event_view_search
+msgid "Date"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_orientation__none
+msgid "Disoriented"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__display_name
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__display_name
+#: model:ir.model.fields,field_description:medical_neurology.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_consciousness__drowsy
+msgid "Drowsy"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__duration_min
+msgid "Duration (min)"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_speech__dysarthria
+msgid "Dysarthria"
+msgstr ""
+
+#. module: medical_neurology
+#: model:product.template,name:medical_neurology.product_eeg_routine_product_template
+msgid "EEG (routine)"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.actions.act_window,name:medical_neurology.action_neurology_studies
+#: model:ir.ui.menu,name:medical_neurology.menu_neurology_studies
+msgid "EEG / EMG / NCS Studies"
+msgstr ""
+
+#. module: medical_neurology
+#: model:product.template,name:medical_neurology.product_emg_product_template
+msgid "Electromyography (EMG)"
+msgstr ""
+
+#. module: medical_neurology
+#: model_terms:medical.assessment.template,description:medical_neurology.score_moca
+msgid ""
+"Enter the points of each section from the paper test. Total capped at 30 in "
+"practice."
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.specialty,name:medical_neurology.spec_epilepsy
+msgid "Epilepsy & EEG"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g40_9
+msgid "Epilepsy, unspecified"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_plantar_l__equivocal
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_plantar_r__equivocal
+msgid "Equivocal"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g25_0
+msgid "Essential tremor"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__event_type
+msgid "Event Type"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_speech__expressive
+msgid "Expressive aphasia"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_plantar_l__extensor
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_plantar_r__extensor
+msgid "Extensor (Babinski)"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_plantar_l__flexor
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_plantar_r__flexor
+msgid "Flexor (down)"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_focal_deficit
+msgid "Focal Deficit"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_findings
+msgid "Focal Findings"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__seizure_type__focal_aware
+msgid "Focal aware"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__seizure_type__focal_to_bilateral
+msgid "Focal to bilateral tonic-clonic"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__seizure_type__focal_impaired
+msgid "Focal with impaired awareness"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_gait
+msgid "Gait"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.specialty,name:medical_neurology.spec_neuro_general
+msgid "General Neurology"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g40_3
+msgid "Generalized idiopathic epilepsy"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__seizure_type__gtc
+msgid "Generalized tonic-clonic"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.assessment.template,name:medical_neurology.score_gcs
+#: model:medical.observation.type,name:medical_neurology.obs_gcs
+msgid "Glasgow Coma Scale"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_speech__global
+msgid "Global aphasia"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__event_type__headache
+#: model:medical.specialty,name:medical_neurology.spec_headache
+msgid "Headache"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_res_partner__headache_days_30d
+#: model:ir.model.fields,field_description:medical_neurology.field_res_users__headache_days_30d
+msgid "Headache Days (30 days)"
+msgstr ""
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_neuro_event_view_search
+msgid "Headaches"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_gait__hemiparetic
+msgid "Hemiparetic"
+msgstr ""
+
+#. module: medical_neurology
+#: model_terms:product.template,consent_text:medical_neurology.product_lumbar_puncture_product_template
+msgid ""
+"I agree to a lumbar puncture. The doctor explained why it is needed and the "
+"possible risks: headache after the procedure (lying flat and drinking fluids"
+" help), back pain at the needle site, and rarely bleeding, infection or "
+"nerve irritation."
+msgstr ""
+
+#. module: medical_neurology
+#: model_terms:product.template,consent_text:medical_neurology.product_botox_migraine_product_template
+msgid ""
+"I agree to botulinum toxin injections. Possible side effects were explained:"
+" neck pain or stiffness, temporary drooping of the eyelid or eyebrow, and "
+"pain at the injection sites. The effect starts after about 2 weeks and lasts"
+" around 3 months."
+msgstr ""
+
+#. module: medical_neurology
+#: model_terms:product.template,consent_text:medical_neurology.product_nerve_block_product_template
+msgid ""
+"I agree to the nerve block injection. Possible risks: pain, bruising, "
+"temporary numbness or weakness, and rarely infection."
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__id
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__id
+#: model:ir.model.fields,field_description:medical_neurology.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_tone__rigid
+msgid "Increased (rigid)"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_tone__spastic
+msgid "Increased (spastic)"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__is_neuro
+msgid "Is Neuro"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_res_partner__last_seizure_date
+#: model:ir.model.fields,field_description:medical_neurology.field_res_users__last_seizure_date
+msgid "Last Seizure Date"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Left"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,help:medical_neurology.field_medical_visit__neuro_focal_deficit
+msgid "Left / right power difference, extensor plantar or aphasia."
+msgstr ""
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Leg power"
+msgstr ""
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Leg reflexes"
+msgstr ""
+
+#. module: medical_neurology
+#: model:product.template,name:medical_neurology.product_lumbar_puncture_product_template
+msgid "Lumbar Puncture"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.observation.type,name:medical_neurology.obs_midas
+msgid "MIDAS (migraine disability)"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.assessment.template,name:medical_neurology.score_midas
+msgid "MIDAS - Migraine Disability"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_meningism
+msgid "Meningism"
+msgstr ""
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Mental Status"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g43_1
+msgid "Migraine with aura"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g43_0
+msgid "Migraine without aura"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g43_9
+msgid "Migraine, unspecified"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,help:medical_neurology.field_medical_neuro_event__triggers
+msgid "Missed medicine, lack of sleep, fever, stress, menstruation, food..."
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.observation.type,name:medical_neurology.obs_moca
+msgid "MoCA (cognition)"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.assessment.template,name:medical_neurology.score_mrs
+#: model:medical.observation.type,name:medical_neurology.obs_mrs
+msgid "Modified Rankin Scale"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.assessment.template,name:medical_neurology.score_moca
+msgid "Montreal Cognitive Assessment (MoCA)"
+msgstr ""
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Motor (MRC 0-5) and Reflexes"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g35
+msgid "Multiple sclerosis"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__seizure_type__myoclonic
+msgid "Myoclonic"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.assessment.template,name:medical_neurology.score_nihss
+#: model:medical.observation.type,name:medical_neurology.obs_nihss
+msgid "NIH Stroke Scale"
+msgstr ""
+
+#. module: medical_neurology
+#: model:product.template,name:medical_neurology.product_ncs_product_template
+msgid "Nerve Conduction Study (NCS)"
+msgstr ""
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Neuro Exam"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.ui.menu,name:medical_neurology.menu_neurology
+#: model:medical.department,name:medical_neurology.dept_neurology
+msgid "Neurology"
+msgstr ""
+
+#. module: medical_neurology
+#: model:product.template,name:medical_neurology.product_neuro_consultation_product_template
+msgid "Neurology Consultation"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.actions.act_window,name:medical_neurology.action_neurology_visit
+msgid "Neurology Schedule"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.specialty,name:medical_neurology.spec_neurophysiology
+msgid "Neurophysiology (EMG / NCS)"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_coordination__normal
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_cranial_nerves__normal
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_gait__normal
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_sensation__normal
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_speech__normal
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_tone__normal
+msgid "Normal"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__note
+msgid "Note"
+msgstr ""
+
+#. module: medical_neurology
+#: model:product.template,name:medical_neurology.product_nerve_block_product_template
+msgid "Occipital Nerve Block"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_orientation
+msgid "Orientation"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_orientation__full
+msgid "Oriented to time, place and person"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__event_type__other
+msgid "Other Episode"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_r56_8
+msgid "Other and unspecified convulsions"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g20
+msgid "Parkinson's disease"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_gait__parkinsonian
+msgid "Parkinsonian"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_orientation__partial
+msgid "Partly oriented"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__patient_id
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__reported_by__patient
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_neuro_event_view_search
+msgid "Patient"
+msgstr ""
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Plantar"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_plantar_l
+msgid "Plantar Left"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_plantar_r
+msgid "Plantar Right"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g62_9
+msgid "Polyneuropathy, unspecified"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_power_lul
+msgid "Power Left Arm"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_power_lll
+msgid "Power Left Leg"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_power_rul
+msgid "Power Right Arm"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_power_rll
+msgid "Power Right Leg"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_speech__receptive
+msgid "Receptive aphasia"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_sensation__reduced
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_tone__reduced
+msgid "Reduced"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_reflex_lu
+msgid "Reflexes Left Arm"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_reflex_ll
+msgid "Reflexes Left Leg"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_reflex_ru
+msgid "Reflexes Right Arm"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_reflex_rl
+msgid "Reflexes Right Leg"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__reported_by
+msgid "Reported By"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__rescue_medication
+msgid "Rescue Medicine Used"
+msgstr ""
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Right"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.ui.menu,name:medical_neurology.menu_neurology_visit
+msgid "Schedule"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__reported_by__clinic
+msgid "Seen in Clinic"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__event_type__seizure
+msgid "Seizure"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.actions.act_window,name:medical_neurology.action_medical_neuro_event
+#: model:ir.ui.menu,name:medical_neurology.menu_neuro_event
+#: model_terms:ir.ui.view,arch_db:medical_neurology.res_partner_form_neurology
+msgid "Seizure & Headache Diary"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_res_partner__neuro_event_ids
+#: model:ir.model.fields,field_description:medical_neurology.field_res_users__neuro_event_ids
+msgid "Seizure / Headache Diary"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model,name:medical_neurology.model_medical_neuro_event
+msgid "Seizure / Headache Diary Entry"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_res_partner__seizure_free_days
+#: model:ir.model.fields,field_description:medical_neurology.field_res_users__seizure_free_days
+msgid "Seizure Free Days"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__seizure_type
+msgid "Seizure Type"
+msgstr ""
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_neuro_event_view_search
+msgid "Seizures"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_res_partner__seizures_90d
+#: model:ir.model.fields,field_description:medical_neurology.field_res_users__seizures_90d
+msgid "Seizures (90 days)"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_sensation
+msgid "Sensation"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_sensation_note
+msgid "Sensory Pattern"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_i69_3
+msgid "Sequelae of cerebral infarction"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__severity
+msgid "Severity (0-10)"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g47_3
+msgid "Sleep apnoea"
+msgstr ""
+
+#. module: medical_neurology
+#: model:product.template,name:medical_neurology.product_eeg_sleep_product_template
+msgid "Sleep-deprived EEG"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_speech
+msgid "Speech"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_gait__steppage
+msgid "Steppage"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.specialty,name:medical_neurology.spec_stroke
+msgid "Stroke"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_consciousness__stupor
+msgid "Stuporous"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g44_2
+msgid "Tension-type headache"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_tone
+msgid "Tone"
+msgstr ""
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Tone & Sensation"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g45_9
+msgid "Transient cerebral ischaemic attack, unspecified"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_r25_1
+msgid "Tremor, unspecified"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g50_0
+msgid "Trigeminal neuralgia"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__triggers
+msgid "Triggers"
+msgstr ""
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_neuro_event_view_search
+msgid "Type"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_gait__unable
+msgid "Unable to walk"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__seizure_type__unknown
+msgid "Unknown onset"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_f03
+msgid "Unspecified dementia"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model,name:medical_neurology.model_medical_visit
+msgid "Visit"
+msgstr ""
+
+#. module: medical_neurology
+#: model:product.template,name:medical_neurology.product_vep_product_template
+msgid "Visual Evoked Potentials (VEP)"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__emergency_visit
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_neuro_event_view_search
+msgid "Went to Emergency"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__reported_by__witness
+msgid "Witness / Family"
+msgstr ""
+
+#. module: medical_neurology
+#: model:medical.observation.type,unit:medical_neurology.obs_midas
+msgid "days"
+msgstr ""
+
+#. module: medical_neurology
+#: model:ir.model.fields,help:medical_neurology.field_medical_visit__neuro_sensation_note
+msgid "e.g. glove and stocking, L5 dermatome, left hemibody"
+msgstr ""

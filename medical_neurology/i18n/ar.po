@@ -1,0 +1,919 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* medical_neurology
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-11 17:50+0000\n"
+"PO-Revision-Date: 2026-10-11 17:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: medical_neurology
+#. odoo-python
+#: code:addons/medical_neurology/models/medical_neuro_event.py:0
+msgid "%s min"
+msgstr "%s دقيقة"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_ll__0
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_lu__0
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_rl__0
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_ru__0
+msgid "0 (absent)"
+msgstr "0 (غائب)"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_ll__1
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_lu__1
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_rl__1
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_ru__1
+msgid "1+ (reduced)"
+msgstr "1+ (ضعيف)"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_ll__2
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_lu__2
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_rl__2
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_ru__2
+msgid "2+ (normal)"
+msgstr "2+ (طبيعي)"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_ll__3
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_lu__3
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_rl__3
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_ru__3
+msgid "3+ (brisk)"
+msgstr "3+ (نشط)"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_ll__4
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_lu__4
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_rl__4
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_reflex_ru__4
+msgid "4+ (clonus)"
+msgstr "4+ (رمع)"
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid ""
+"<i class=\"fa fa-exclamation-triangle me-1\" title=\"Focal deficit\"/>\n"
+"                        <strong>Focal deficit: </strong>"
+msgstr ""
+"<i class=\"fa fa-exclamation-triangle me-1\" title=\"عجز بؤري\"/>\n"
+"                        <strong>عجز بؤري: </strong>"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_cranial_nerves__abnormal
+msgid "Abnormal"
+msgstr "غير طبيعي"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__seizure_type__absence
+msgid "Absence"
+msgstr "نوبة غياب"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_sensation__absent
+msgid "Absent"
+msgstr "غائب"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_consciousness__alert
+msgid "Alert"
+msgstr "تنبيه"
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g30_9
+msgid "Alzheimer's disease, unspecified"
+msgstr "مرض ألزهايمر، غير محدد"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_gait__antalgic
+msgid "Antalgic"
+msgstr "مشية مسكّنة للألم"
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Arm power"
+msgstr "قوة الذراع"
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Arm reflexes"
+msgstr "منعكسات الذراع"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_coordination__ataxic
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_gait__ataxic
+msgid "Ataxic"
+msgstr "مشية رنحية"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__seizure_type__atonic
+msgid "Atonic"
+msgstr "نوبة ارتخائية"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__aura
+msgid "Aura"
+msgstr "أورة"
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g51_0
+msgid "Bell's palsy"
+msgstr "شلل بل (العصب الوجهي)"
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_h81_1
+msgid "Benign paroxysmal vertigo"
+msgstr "الدوار الوضعي الانتيابي الحميد"
+
+#. module: medical_neurology
+#: model:product.template,name:medical_neurology.product_botox_migraine_product_template
+msgid "Botulinum Toxin for Chronic Migraine"
+msgstr "البوتوكس للصداع النصفي المزمن"
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_i63_9
+msgid "Cerebral infarction, unspecified"
+msgstr "احتشاء دماغي، غير محدد"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_consciousness__coma
+msgid "Comatose"
+msgstr "غيبوبة"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_consciousness
+msgid "Consciousness"
+msgstr "الوعي"
+
+#. module: medical_neurology
+#: model:ir.model,name:medical_neurology.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_coordination
+msgid "Coordination"
+msgstr "التناسق"
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Coordination & Gait"
+msgstr "التناسق والمشي"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_cranial_nerves
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Cranial Nerves"
+msgstr "الأعصاب القحفية"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_cranial_note
+msgid "Cranial Nerves Findings"
+msgstr "نتائج الأعصاب القحفية"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__date
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_neuro_event_view_search
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_orientation__none
+msgid "Disoriented"
+msgstr "غير مدرك للزمان والمكان"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__display_name
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__display_name
+#: model:ir.model.fields,field_description:medical_neurology.field_res_partner__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_consciousness__drowsy
+msgid "Drowsy"
+msgstr "نعسان"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__duration_min
+msgid "Duration (min)"
+msgstr "المدة (دقيقة)"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_speech__dysarthria
+msgid "Dysarthria"
+msgstr "عسر النطق"
+
+#. module: medical_neurology
+#: model:product.template,name:medical_neurology.product_eeg_routine_product_template
+msgid "EEG (routine)"
+msgstr "رسم المخ (روتيني)"
+
+#. module: medical_neurology
+#: model:ir.actions.act_window,name:medical_neurology.action_neurology_studies
+#: model:ir.ui.menu,name:medical_neurology.menu_neurology_studies
+msgid "EEG / EMG / NCS Studies"
+msgstr "دراسات رسم المخ / العضلات / توصيل الأعصاب"
+
+#. module: medical_neurology
+#: model:product.template,name:medical_neurology.product_emg_product_template
+msgid "Electromyography (EMG)"
+msgstr "رسم العضلات (EMG)"
+
+#. module: medical_neurology
+#: model_terms:medical.assessment.template,description:medical_neurology.score_moca
+msgid ""
+"Enter the points of each section from the paper test. Total capped at 30 in "
+"practice."
+msgstr "أدخل نقاط كل قسم من الاختبار الورقي. الحد الأقصى العملي للمجموع 30."
+
+#. module: medical_neurology
+#: model:medical.specialty,name:medical_neurology.spec_epilepsy
+msgid "Epilepsy & EEG"
+msgstr "الصرع ورسم المخ"
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g40_9
+msgid "Epilepsy, unspecified"
+msgstr "الصرع، غير محدد"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_plantar_l__equivocal
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_plantar_r__equivocal
+msgid "Equivocal"
+msgstr "غير حاسم"
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g25_0
+msgid "Essential tremor"
+msgstr "الرعاش مجهول السبب"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__event_type
+msgid "Event Type"
+msgstr "نوع الحدث"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_speech__expressive
+msgid "Expressive aphasia"
+msgstr "حبسة تعبيرية"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_plantar_l__extensor
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_plantar_r__extensor
+msgid "Extensor (Babinski)"
+msgstr "باسط (بابنسكي)"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_plantar_l__flexor
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_plantar_r__flexor
+msgid "Flexor (down)"
+msgstr "قابض (لأسفل)"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_focal_deficit
+msgid "Focal Deficit"
+msgstr "عجز بؤري"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_findings
+msgid "Focal Findings"
+msgstr "علامات بؤرية"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__seizure_type__focal_aware
+msgid "Focal aware"
+msgstr "بؤرية مع الوعي"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__seizure_type__focal_to_bilateral
+msgid "Focal to bilateral tonic-clonic"
+msgstr "بؤرية تتحول إلى توترية رمعية ثنائية"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__seizure_type__focal_impaired
+msgid "Focal with impaired awareness"
+msgstr "بؤرية مع ضعف الوعي"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_gait
+msgid "Gait"
+msgstr "المشي"
+
+#. module: medical_neurology
+#: model:medical.specialty,name:medical_neurology.spec_neuro_general
+msgid "General Neurology"
+msgstr "المخ والأعصاب العامة"
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g40_3
+msgid "Generalized idiopathic epilepsy"
+msgstr "الصرع المعمم مجهول السبب"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__seizure_type__gtc
+msgid "Generalized tonic-clonic"
+msgstr "توترية رمعية معممة"
+
+#. module: medical_neurology
+#: model:medical.assessment.template,name:medical_neurology.score_gcs
+#: model:medical.observation.type,name:medical_neurology.obs_gcs
+msgid "Glasgow Coma Scale"
+msgstr "مقياس غلاسكو للغيبوبة"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_speech__global
+msgid "Global aphasia"
+msgstr "حبسة شاملة"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__event_type__headache
+#: model:medical.specialty,name:medical_neurology.spec_headache
+msgid "Headache"
+msgstr "صداع"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_res_partner__headache_days_30d
+#: model:ir.model.fields,field_description:medical_neurology.field_res_users__headache_days_30d
+msgid "Headache Days (30 days)"
+msgstr "أيام الصداع (30 يومًا)"
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_neuro_event_view_search
+msgid "Headaches"
+msgstr "الصداع"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_gait__hemiparetic
+msgid "Hemiparetic"
+msgstr "مشية فالجية"
+
+#. module: medical_neurology
+#: model_terms:product.template,consent_text:medical_neurology.product_lumbar_puncture_product_template
+msgid ""
+"I agree to a lumbar puncture. The doctor explained why it is needed and the "
+"possible risks: headache after the procedure (lying flat and drinking fluids"
+" help), back pain at the needle site, and rarely bleeding, infection or "
+"nerve irritation."
+msgstr ""
+"أوافق على إجراء البزل القطني. شرح لي الطبيب سبب الحاجة إليه والمخاطر "
+"المحتملة: صداع بعد الإجراء (يساعد الاستلقاء وشرب السوائل)، ألم في الظهر مكان"
+" الإبرة، ونادرًا نزيف أو عدوى أو تهيج عصبي."
+
+#. module: medical_neurology
+#: model_terms:product.template,consent_text:medical_neurology.product_botox_migraine_product_template
+msgid ""
+"I agree to botulinum toxin injections. Possible side effects were explained:"
+" neck pain or stiffness, temporary drooping of the eyelid or eyebrow, and "
+"pain at the injection sites. The effect starts after about 2 weeks and lasts"
+" around 3 months."
+msgstr ""
+"أوافق على حقن البوتوكس. شُرحت لي الآثار الجانبية المحتملة: ألم أو تيبس في "
+"الرقبة، ارتخاء مؤقت للجفن أو الحاجب، وألم في أماكن الحقن. يبدأ المفعول بعد "
+"حوالي أسبوعين ويستمر نحو 3 أشهر."
+
+#. module: medical_neurology
+#: model_terms:product.template,consent_text:medical_neurology.product_nerve_block_product_template
+msgid ""
+"I agree to the nerve block injection. Possible risks: pain, bruising, "
+"temporary numbness or weakness, and rarely infection."
+msgstr ""
+"أوافق على حقن إحصار العصب. المخاطر المحتملة: ألم، كدمات، تنميل أو ضعف مؤقت، "
+"ونادرًا عدوى."
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__id
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__id
+#: model:ir.model.fields,field_description:medical_neurology.field_res_partner__id
+msgid "ID"
+msgstr "المُعرّف"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_tone__rigid
+msgid "Increased (rigid)"
+msgstr "زائد (تيبّس)"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_tone__spastic
+msgid "Increased (spastic)"
+msgstr "زائد (تشنّج)"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__is_neuro
+msgid "Is Neuro"
+msgstr "مخ وأعصاب"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_res_partner__last_seizure_date
+#: model:ir.model.fields,field_description:medical_neurology.field_res_users__last_seizure_date
+msgid "Last Seizure Date"
+msgstr "تاريخ آخر نوبة"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Left"
+msgstr "يسار"
+
+#. module: medical_neurology
+#: model:ir.model.fields,help:medical_neurology.field_medical_visit__neuro_focal_deficit
+msgid "Left / right power difference, extensor plantar or aphasia."
+msgstr "فرق في القوة بين اليمين واليسار، منعكس أخمصي باسط أو حبسة كلامية."
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Leg power"
+msgstr "قوة الساق"
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Leg reflexes"
+msgstr "منعكسات الساق"
+
+#. module: medical_neurology
+#: model:product.template,name:medical_neurology.product_lumbar_puncture_product_template
+msgid "Lumbar Puncture"
+msgstr "البزل القطني"
+
+#. module: medical_neurology
+#: model:medical.observation.type,name:medical_neurology.obs_midas
+msgid "MIDAS (migraine disability)"
+msgstr "MIDAS (إعاقة الصداع النصفي)"
+
+#. module: medical_neurology
+#: model:medical.assessment.template,name:medical_neurology.score_midas
+msgid "MIDAS - Migraine Disability"
+msgstr "MIDAS - إعاقة الصداع النصفي"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_meningism
+msgid "Meningism"
+msgstr "علامات سحائية"
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Mental Status"
+msgstr "الحالة الذهنية"
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g43_1
+msgid "Migraine with aura"
+msgstr "صداع نصفي مع أورة"
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g43_0
+msgid "Migraine without aura"
+msgstr "صداع نصفي بدون أورة"
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g43_9
+msgid "Migraine, unspecified"
+msgstr "صداع نصفي، غير محدد"
+
+#. module: medical_neurology
+#: model:ir.model.fields,help:medical_neurology.field_medical_neuro_event__triggers
+msgid "Missed medicine, lack of sleep, fever, stress, menstruation, food..."
+msgstr "نسيان الدواء، قلة النوم، الحمى، التوتر، الدورة الشهرية، الطعام..."
+
+#. module: medical_neurology
+#: model:medical.observation.type,name:medical_neurology.obs_moca
+msgid "MoCA (cognition)"
+msgstr "MoCA (الإدراك)"
+
+#. module: medical_neurology
+#: model:medical.assessment.template,name:medical_neurology.score_mrs
+#: model:medical.observation.type,name:medical_neurology.obs_mrs
+msgid "Modified Rankin Scale"
+msgstr "مقياس رانكن المعدّل"
+
+#. module: medical_neurology
+#: model:medical.assessment.template,name:medical_neurology.score_moca
+msgid "Montreal Cognitive Assessment (MoCA)"
+msgstr "تقييم مونتريال المعرفي (MoCA)"
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Motor (MRC 0-5) and Reflexes"
+msgstr "الحركة (MRC 0-5) والمنعكسات"
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g35
+msgid "Multiple sclerosis"
+msgstr "التصلب المتعدد"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__seizure_type__myoclonic
+msgid "Myoclonic"
+msgstr "نوبة رمعية عضلية"
+
+#. module: medical_neurology
+#: model:medical.assessment.template,name:medical_neurology.score_nihss
+#: model:medical.observation.type,name:medical_neurology.obs_nihss
+msgid "NIH Stroke Scale"
+msgstr "مقياس السكتة الدماغية NIH"
+
+#. module: medical_neurology
+#: model:product.template,name:medical_neurology.product_ncs_product_template
+msgid "Nerve Conduction Study (NCS)"
+msgstr "دراسة توصيل الأعصاب (NCS)"
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Neuro Exam"
+msgstr "الفحص العصبي"
+
+#. module: medical_neurology
+#: model:ir.ui.menu,name:medical_neurology.menu_neurology
+#: model:medical.department,name:medical_neurology.dept_neurology
+msgid "Neurology"
+msgstr "المخ والأعصاب"
+
+#. module: medical_neurology
+#: model:product.template,name:medical_neurology.product_neuro_consultation_product_template
+msgid "Neurology Consultation"
+msgstr "كشف مخ وأعصاب"
+
+#. module: medical_neurology
+#: model:ir.actions.act_window,name:medical_neurology.action_neurology_visit
+msgid "Neurology Schedule"
+msgstr "جدول المخ والأعصاب"
+
+#. module: medical_neurology
+#: model:medical.specialty,name:medical_neurology.spec_neurophysiology
+msgid "Neurophysiology (EMG / NCS)"
+msgstr "الفسيولوجيا العصبية (EMG / NCS)"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_coordination__normal
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_cranial_nerves__normal
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_gait__normal
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_sensation__normal
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_speech__normal
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_tone__normal
+msgid "Normal"
+msgstr "طبيعي"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__note
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: medical_neurology
+#: model:product.template,name:medical_neurology.product_nerve_block_product_template
+msgid "Occipital Nerve Block"
+msgstr "إحصار العصب القذالي"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_orientation
+msgid "Orientation"
+msgstr "الإدراك"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_orientation__full
+msgid "Oriented to time, place and person"
+msgstr "مدرك للزمان والمكان والأشخاص"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__event_type__other
+msgid "Other Episode"
+msgstr "نوبة أخرى"
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_r56_8
+msgid "Other and unspecified convulsions"
+msgstr "تشنجات أخرى وغير محددة"
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g20
+msgid "Parkinson's disease"
+msgstr "مرض باركنسون"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_gait__parkinsonian
+msgid "Parkinsonian"
+msgstr "مشية باركنسونية"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_orientation__partial
+msgid "Partly oriented"
+msgstr "مدرك جزئيًا"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__patient_id
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__reported_by__patient
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_neuro_event_view_search
+msgid "Patient"
+msgstr "المريض"
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Plantar"
+msgstr "المنعكس الأخمصي"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_plantar_l
+msgid "Plantar Left"
+msgstr "المنعكس الأخمصي الأيسر"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_plantar_r
+msgid "Plantar Right"
+msgstr "المنعكس الأخمصي الأيمن"
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g62_9
+msgid "Polyneuropathy, unspecified"
+msgstr "اعتلال الأعصاب المتعدد، غير محدد"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_power_lul
+msgid "Power Left Arm"
+msgstr "قوة الذراع اليسرى"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_power_lll
+msgid "Power Left Leg"
+msgstr "قوة الساق اليسرى"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_power_rul
+msgid "Power Right Arm"
+msgstr "قوة الذراع اليمنى"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_power_rll
+msgid "Power Right Leg"
+msgstr "قوة الساق اليمنى"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_speech__receptive
+msgid "Receptive aphasia"
+msgstr "حبسة استقبالية"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_sensation__reduced
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_tone__reduced
+msgid "Reduced"
+msgstr "منخفض"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_reflex_lu
+msgid "Reflexes Left Arm"
+msgstr "منعكسات الذراع اليسرى"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_reflex_ll
+msgid "Reflexes Left Leg"
+msgstr "منعكسات الساق اليسرى"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_reflex_ru
+msgid "Reflexes Right Arm"
+msgstr "منعكسات الذراع اليمنى"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_reflex_rl
+msgid "Reflexes Right Leg"
+msgstr "منعكسات الساق اليمنى"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__reported_by
+msgid "Reported By"
+msgstr "أبلغ عنه"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__rescue_medication
+msgid "Rescue Medicine Used"
+msgstr "استُخدم دواء إسعافي"
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Right"
+msgstr "يمين"
+
+#. module: medical_neurology
+#: model:ir.ui.menu,name:medical_neurology.menu_neurology_visit
+msgid "Schedule"
+msgstr "الجدول"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__reported_by__clinic
+msgid "Seen in Clinic"
+msgstr "شوهد في العيادة"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__event_type__seizure
+msgid "Seizure"
+msgstr "نوبة صرع"
+
+#. module: medical_neurology
+#: model:ir.actions.act_window,name:medical_neurology.action_medical_neuro_event
+#: model:ir.ui.menu,name:medical_neurology.menu_neuro_event
+#: model_terms:ir.ui.view,arch_db:medical_neurology.res_partner_form_neurology
+msgid "Seizure & Headache Diary"
+msgstr "مفكرة النوبات والصداع"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_res_partner__neuro_event_ids
+#: model:ir.model.fields,field_description:medical_neurology.field_res_users__neuro_event_ids
+msgid "Seizure / Headache Diary"
+msgstr "مفكرة النوبات / الصداع"
+
+#. module: medical_neurology
+#: model:ir.model,name:medical_neurology.model_medical_neuro_event
+msgid "Seizure / Headache Diary Entry"
+msgstr "إدخال في مفكرة النوبات / الصداع"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_res_partner__seizure_free_days
+#: model:ir.model.fields,field_description:medical_neurology.field_res_users__seizure_free_days
+msgid "Seizure Free Days"
+msgstr "أيام بدون نوبات"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__seizure_type
+msgid "Seizure Type"
+msgstr "نوع النوبة"
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_neuro_event_view_search
+msgid "Seizures"
+msgstr "النوبات"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_res_partner__seizures_90d
+#: model:ir.model.fields,field_description:medical_neurology.field_res_users__seizures_90d
+msgid "Seizures (90 days)"
+msgstr "النوبات (90 يومًا)"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_sensation
+msgid "Sensation"
+msgstr "الإحساس"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_sensation_note
+msgid "Sensory Pattern"
+msgstr "نمط الإحساس"
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_i69_3
+msgid "Sequelae of cerebral infarction"
+msgstr "عقابيل احتشاء دماغي"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__severity
+msgid "Severity (0-10)"
+msgstr "الشدة (0-10)"
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g47_3
+msgid "Sleep apnoea"
+msgstr "انقطاع النفس أثناء النوم"
+
+#. module: medical_neurology
+#: model:product.template,name:medical_neurology.product_eeg_sleep_product_template
+msgid "Sleep-deprived EEG"
+msgstr "رسم مخ بعد الحرمان من النوم"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_speech
+msgid "Speech"
+msgstr "الكلام"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_gait__steppage
+msgid "Steppage"
+msgstr "مشية الخطو العالي"
+
+#. module: medical_neurology
+#: model:medical.specialty,name:medical_neurology.spec_stroke
+msgid "Stroke"
+msgstr "سكتة دماغية"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_consciousness__stupor
+msgid "Stuporous"
+msgstr "شبه غيبوبة"
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g44_2
+msgid "Tension-type headache"
+msgstr "صداع التوتر"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_visit__neuro_tone
+msgid "Tone"
+msgstr "التوتر العضلي"
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_visit_form_neurology
+msgid "Tone & Sensation"
+msgstr "التوتر العضلي والإحساس"
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g45_9
+msgid "Transient cerebral ischaemic attack, unspecified"
+msgstr "نوبة نقص تروية دماغية عابرة، غير محددة"
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_r25_1
+msgid "Tremor, unspecified"
+msgstr "رعاش، غير محدد"
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_g50_0
+msgid "Trigeminal neuralgia"
+msgstr "ألم العصب الخامس"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__triggers
+msgid "Triggers"
+msgstr "المحفزات"
+
+#. module: medical_neurology
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_neuro_event_view_search
+msgid "Type"
+msgstr "النوع"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_visit__neuro_gait__unable
+msgid "Unable to walk"
+msgstr "غير قادر على المشي"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__seizure_type__unknown
+msgid "Unknown onset"
+msgstr "بداية غير معروفة"
+
+#. module: medical_neurology
+#: model:medical.diagnosis,name:medical_neurology.icd_f03
+msgid "Unspecified dementia"
+msgstr "خرف غير محدد"
+
+#. module: medical_neurology
+#: model:ir.model,name:medical_neurology.model_medical_visit
+msgid "Visit"
+msgstr "الزيارة"
+
+#. module: medical_neurology
+#: model:product.template,name:medical_neurology.product_vep_product_template
+msgid "Visual Evoked Potentials (VEP)"
+msgstr "الجهود البصرية المستثارة (VEP)"
+
+#. module: medical_neurology
+#: model:ir.model.fields,field_description:medical_neurology.field_medical_neuro_event__emergency_visit
+#: model_terms:ir.ui.view,arch_db:medical_neurology.medical_neuro_event_view_search
+msgid "Went to Emergency"
+msgstr "ذهب إلى الطوارئ"
+
+#. module: medical_neurology
+#: model:ir.model.fields.selection,name:medical_neurology.selection__medical_neuro_event__reported_by__witness
+msgid "Witness / Family"
+msgstr "شاهد / أحد الأسرة"
+
+#. module: medical_neurology
+#: model:medical.observation.type,unit:medical_neurology.obs_midas
+msgid "days"
+msgstr "يوم"
+
+#. module: medical_neurology
+#: model:ir.model.fields,help:medical_neurology.field_medical_visit__neuro_sensation_note
+msgid "e.g. glove and stocking, L5 dermatome, left hemibody"
+msgstr "مثال: نمط القفاز والجورب، الجلد العصبي L5، نصف الجسم الأيسر"

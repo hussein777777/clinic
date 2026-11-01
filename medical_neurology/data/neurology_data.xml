@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="dept_neurology" model="medical.department">
+            <field name="name">Neurology</field>
+            <field name="code">NEU</field>
+            <field name="sequence">40</field>
+            <field name="color">6</field>
+        </record>
+        <record id="spec_neuro_general" model="medical.specialty">
+            <field name="name">General Neurology</field>
+            <field name="code">NEU-GEN</field>
+            <field name="department_id" ref="dept_neurology"/>
+            <field name="sequence">1</field>
+        </record>
+        <record id="spec_epilepsy" model="medical.specialty">
+            <field name="name">Epilepsy &amp; EEG</field>
+            <field name="code">NEU-EPI</field>
+            <field name="department_id" ref="dept_neurology"/>
+            <field name="sequence">2</field>
+        </record>
+        <record id="spec_neurophysiology" model="medical.specialty">
+            <field name="name">Neurophysiology (EMG / NCS)</field>
+            <field name="code">NEU-NCS</field>
+            <field name="department_id" ref="dept_neurology"/>
+            <field name="sequence">3</field>
+        </record>
+        <record id="spec_stroke" model="medical.specialty">
+            <field name="name">Stroke</field>
+            <field name="code">NEU-STROKE</field>
+            <field name="department_id" ref="dept_neurology"/>
+            <field name="sequence">4</field>
+        </record>
+        <record id="spec_headache" model="medical.specialty">
+            <field name="name">Headache</field>
+            <field name="code">NEU-HEAD</field>
+            <field name="department_id" ref="dept_neurology"/>
+            <field name="sequence">5</field>
+        </record>
+        <record id="room_eeg" model="medical.room">
+            <field name="name">EEG Lab</field>
+            <field name="room_type">device</field>
+            <field name="department_id" ref="dept_neurology"/>
+        </record>
+        <record id="room_emg" model="medical.room">
+            <field name="name">EMG / NCS Lab</field>
+            <field name="room_type">device</field>
+            <field name="department_id" ref="dept_neurology"/>
+        </record>
+        <record id="product_neuro_consultation" model="product.product">
+            <field name="name">Neurology Consultation</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">consultation</field>
+            <field name="specialty_id" ref="spec_neuro_general"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">400</field>
+            <field name="insurance_code">NEU-CONS</field>
+            <field name="procedure_duration">30</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_eeg_routine" model="product.product">
+            <field name="name">EEG (routine)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">test</field>
+            <field name="specialty_id" ref="spec_epilepsy"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">800</field>
+            <field name="insurance_code">NEU-EEG</field>
+            <field name="procedure_duration">60</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_eeg_sleep" model="product.product">
+            <field name="name">Sleep-deprived EEG</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">test</field>
+            <field name="specialty_id" ref="spec_epilepsy"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">1200</field>
+            <field name="insurance_code">NEU-EEGSD</field>
+            <field name="procedure_duration">90</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_emg" model="product.product">
+            <field name="name">Electromyography (EMG)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">test</field>
+            <field name="specialty_id" ref="spec_neurophysiology"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">1000</field>
+            <field name="insurance_code">NEU-EMG</field>
+            <field name="procedure_duration">45</field>
+            <field name="site_requirement">side</field>
+        </record>
+        <record id="product_ncs" model="product.product">
+            <field name="name">Nerve Conduction Study (NCS)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">test</field>
+            <field name="specialty_id" ref="spec_neurophysiology"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">900</field>
+            <field name="insurance_code">NEU-NCS</field>
+            <field name="procedure_duration">45</field>
+            <field name="site_requirement">side</field>
+        </record>
+        <record id="product_vep" model="product.product">
+            <field name="name">Visual Evoked Potentials (VEP)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">test</field>
+            <field name="specialty_id" ref="spec_neurophysiology"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">700</field>
+            <field name="insurance_code">NEU-VEP</field>
+            <field name="procedure_duration">45</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_lumbar_puncture" model="product.product">
+            <field name="name">Lumbar Puncture</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_neuro_general"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">1500</field>
+            <field name="insurance_code">NEU-LP</field>
+            <field name="procedure_duration">45</field>
+            <field name="site_requirement">none</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to a lumbar puncture. The doctor explained why it is needed and the possible risks: headache after the procedure (lying flat and drinking fluids help), back pain at the needle site, and rarely bleeding, infection or nerve irritation.</p></field>
+        </record>
+        <record id="product_botox_migraine" model="product.product">
+            <field name="name">Botulinum Toxin for Chronic Migraine</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_headache"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">6000</field>
+            <field name="insurance_code">NEU-BTX</field>
+            <field name="procedure_duration">30</field>
+            <field name="site_requirement">none</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to botulinum toxin injections. Possible side effects were explained: neck pain or stiffness, temporary drooping of the eyelid or eyebrow, and pain at the injection sites. The effect starts after about 2 weeks and lasts around 3 months.</p></field>
+        </record>
+        <record id="product_nerve_block" model="product.product">
+            <field name="name">Occipital Nerve Block</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_headache"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">900</field>
+            <field name="insurance_code">NEU-ONB</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">side</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the nerve block injection. Possible risks: pain, bruising, temporary numbness or weakness, and rarely infection.</p></field>
+        </record>
+        <record id="icd_g40_9" model="medical.diagnosis">
+            <field name="code">G40.9</field>
+            <field name="name">Epilepsy, unspecified</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="icd_g40_3" model="medical.diagnosis">
+            <field name="code">G40.3</field>
+            <field name="name">Generalized idiopathic epilepsy</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="icd_g43_0" model="medical.diagnosis">
+            <field name="code">G43.0</field>
+            <field name="name">Migraine without aura</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="icd_g43_1" model="medical.diagnosis">
+            <field name="code">G43.1</field>
+            <field name="name">Migraine with aura</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="icd_g43_9" model="medical.diagnosis">
+            <field name="code">G43.9</field>
+            <field name="name">Migraine, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="icd_g44_2" model="medical.diagnosis">
+            <field name="code">G44.2</field>
+            <field name="name">Tension-type headache</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="icd_i63_9" model="medical.diagnosis">
+            <field name="code">I63.9</field>
+            <field name="name">Cerebral infarction, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="icd_g45_9" model="medical.diagnosis">
+            <field name="code">G45.9</field>
+            <field name="name">Transient cerebral ischaemic attack, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="icd_i69_3" model="medical.diagnosis">
+            <field name="code">I69.3</field>
+            <field name="name">Sequelae of cerebral infarction</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="icd_g20" model="medical.diagnosis">
+            <field name="code">G20</field>
+            <field name="name">Parkinson's disease</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="icd_g35" model="medical.diagnosis">
+            <field name="code">G35</field>
+            <field name="name">Multiple sclerosis</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="icd_g30_9" model="medical.diagnosis">
+            <field name="code">G30.9</field>
+            <field name="name">Alzheimer's disease, unspecified</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="icd_f03" model="medical.diagnosis">
+            <field name="code">F03</field>
+            <field name="name">Unspecified dementia</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="icd_g62_9" model="medical.diagnosis">
+            <field name="code">G62.9</field>
+            <field name="name">Polyneuropathy, unspecified</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="icd_g51_0" model="medical.diagnosis">
+            <field name="code">G51.0</field>
+            <field name="name">Bell's palsy</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="icd_g50_0" model="medical.diagnosis">
+            <field name="code">G50.0</field>
+            <field name="name">Trigeminal neuralgia</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="icd_g25_0" model="medical.diagnosis">
+            <field name="code">G25.0</field>
+            <field name="name">Essential tremor</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="icd_g47_3" model="medical.diagnosis">
+            <field name="code">G47.3</field>
+            <field name="name">Sleep apnoea</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="icd_r25_1" model="medical.diagnosis">
+            <field name="code">R25.1</field>
+            <field name="name">Tremor, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="icd_r56_8" model="medical.diagnosis">
+            <field name="code">R56.8</field>
+            <field name="name">Other and unspecified convulsions</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="icd_h81_1" model="medical.diagnosis">
+            <field name="code">H81.1</field>
+            <field name="name">Benign paroxysmal vertigo</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="obs_gcs" model="medical.observation.type">
+            <field name="name">Glasgow Coma Scale</field>
+            <field name="code">gcs</field>
+            <field name="unit">/15</field>
+            <field name="category">score</field>
+            <field name="normal_min">13</field>
+            <field name="normal_max">0</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="False"/>
+            <field name="sequence">90</field>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="obs_nihss" model="medical.observation.type">
+            <field name="name">NIH Stroke Scale</field>
+            <field name="code">nihss</field>
+            <field name="unit">/42</field>
+            <field name="category">score</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">0</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="True"/>
+            <field name="sequence">90</field>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="obs_mrs" model="medical.observation.type">
+            <field name="name">Modified Rankin Scale</field>
+            <field name="code">mrs</field>
+            <field name="unit">/6</field>
+            <field name="category">score</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">2</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="True"/>
+            <field name="sequence">90</field>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="obs_moca" model="medical.observation.type">
+            <field name="name">MoCA (cognition)</field>
+            <field name="code">moca</field>
+            <field name="unit">/30</field>
+            <field name="category">score</field>
+            <field name="normal_min">26</field>
+            <field name="normal_max">0</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="False"/>
+            <field name="sequence">90</field>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="obs_midas" model="medical.observation.type">
+            <field name="name">MIDAS (migraine disability)</field>
+            <field name="code">midas</field>
+            <field name="unit">days</field>
+            <field name="category">score</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">5</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="True"/>
+            <field name="sequence">90</field>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+        </record>
+        <record id="score_gcs" model="medical.assessment.template">
+            <field name="name">Glasgow Coma Scale</field>
+            <field name="code">GCS</field>
+            <field name="score_mode">sum</field>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+            <field name="item_ids" eval="[(0, 0, {'sequence': 1, 'name': 'Eye opening', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Spontaneous', 'score': 4}), (0, 0, {'sequence': 2, 'name': 'To sound', 'score': 3}), (0, 0, {'sequence': 3, 'name': 'To pressure / pain', 'score': 2}), (0, 0, {'sequence': 4, 'name': 'None', 'score': 1})]}), (0, 0, {'sequence': 2, 'name': 'Verbal response', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Oriented', 'score': 5}), (0, 0, {'sequence': 2, 'name': 'Confused', 'score': 4}), (0, 0, {'sequence': 3, 'name': 'Inappropriate words', 'score': 3}), (0, 0, {'sequence': 4, 'name': 'Incomprehensible sounds', 'score': 2}), (0, 0, {'sequence': 5, 'name': 'None', 'score': 1})]}), (0, 0, {'sequence': 3, 'name': 'Motor response', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Obeys commands', 'score': 6}), (0, 0, {'sequence': 2, 'name': 'Localises pain', 'score': 5}), (0, 0, {'sequence': 3, 'name': 'Withdraws from pain', 'score': 4}), (0, 0, {'sequence': 4, 'name': 'Abnormal flexion', 'score': 3}), (0, 0, {'sequence': 5, 'name': 'Extension', 'score': 2}), (0, 0, {'sequence': 6, 'name': 'None', 'score': 1})]})]"/>
+            <field name="range_ids" eval="[(0, 0, {'min_score': 3, 'max_score': 8, 'name': 'Severe impairment', 'severity': 'severe'}), (0, 0, {'min_score': 9, 'max_score': 12, 'name': 'Moderate impairment', 'severity': 'moderate'}), (0, 0, {'min_score': 13, 'max_score': 15, 'name': 'Mild or none', 'severity': 'none'})]"/>
+            <field name="observation_type_id" ref="obs_gcs"/>
+        </record>
+        <record id="score_nihss" model="medical.assessment.template">
+            <field name="name">NIH Stroke Scale</field>
+            <field name="code">NIHSS</field>
+            <field name="score_mode">sum</field>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+            <field name="item_ids" eval="[(0, 0, {'sequence': 1, 'name': '1a. Level of consciousness', 'section': 'Consciousness', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Alert', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'Not alert, arousable by minor stimulation', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Not alert, needs repeated stimulation', 'score': 2}), (0, 0, {'sequence': 4, 'name': 'Reflex responses only or unresponsive', 'score': 3})]}), (0, 0, {'sequence': 2, 'name': '1b. Questions (month, age)', 'section': 'Consciousness', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Both correct', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'One correct', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Neither correct', 'score': 2})]}), (0, 0, {'sequence': 3, 'name': '1c. Commands (eyes, grip)', 'section': 'Consciousness', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Performs both', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'Performs one', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Performs neither', 'score': 2})]}), (0, 0, {'sequence': 4, 'name': '2. Best gaze', 'section': 'Eyes', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Normal', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'Partial gaze palsy', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Forced deviation', 'score': 2})]}), (0, 0, {'sequence': 5, 'name': '3. Visual fields', 'section': 'Eyes', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No visual loss', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'Partial hemianopia', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Complete hemianopia', 'score': 2}), (0, 0, {'sequence': 4, 'name': 'Bilateral hemianopia', 'score': 3})]}), (0, 0, {'sequence': 6, 'name': '4. Facial palsy', 'section': 'Face', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Normal', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'Minor paralysis', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Partial paralysis', 'score': 2}), (0, 0, {'sequence': 4, 'name': 'Complete paralysis', 'score': 3})]}), (0, 0, {'sequence': 7, 'name': '5a. Motor left arm', 'section': 'Motor', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No drift', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'Drift', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Some effort against gravity', 'score': 2}), (0, 0, {'sequence': 4, 'name': 'No effort against gravity, limb falls', 'score': 3}), (0, 0, {'sequence': 5, 'name': 'No movement', 'score': 4})]}), (0, 0, {'sequence': 8, 'name': '5b. Motor right arm', 'section': 'Motor', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No drift', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'Drift', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Some effort against gravity', 'score': 2}), (0, 0, {'sequence': 4, 'name': 'No effort against gravity, limb falls', 'score': 3}), (0, 0, {'sequence': 5, 'name': 'No movement', 'score': 4})]}), (0, 0, {'sequence': 9, 'name': '6a. Motor left leg', 'section': 'Motor', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No drift', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'Drift', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Some effort against gravity', 'score': 2}), (0, 0, {'sequence': 4, 'name': 'No effort against gravity, limb falls', 'score': 3}), (0, 0, {'sequence': 5, 'name': 'No movement', 'score': 4})]}), (0, 0, {'sequence': 10, 'name': '6b. Motor right leg', 'section': 'Motor', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No drift', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'Drift', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Some effort against gravity', 'score': 2}), (0, 0, {'sequence': 4, 'name': 'No effort against gravity, limb falls', 'score': 3}), (0, 0, {'sequence': 5, 'name': 'No movement', 'score': 4})]}), (0, 0, {'sequence': 11, 'name': '7. Limb ataxia', 'section': 'Coordination', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Absent', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'Present in one limb', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Present in two limbs', 'score': 2})]}), (0, 0, {'sequence': 12, 'name': '8. Sensory', 'section': 'Sensory', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Normal', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'Mild to moderate loss', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Severe to total loss', 'score': 2})]}), (0, 0, {'sequence': 13, 'name': '9. Best language', 'section': 'Language', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No aphasia', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'Mild to moderate aphasia', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Severe aphasia', 'score': 2}), (0, 0, {'sequence': 4, 'name': 'Mute, global aphasia', 'score': 3})]}), (0, 0, {'sequence': 14, 'name': '10. Dysarthria', 'section': 'Language', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Normal', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'Mild to moderate', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Severe', 'score': 2})]}), (0, 0, {'sequence': 15, 'name': '11. Extinction and inattention', 'section': 'Attention', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No abnormality', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'Inattention to one modality', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Profound hemi-inattention', 'score': 2})]})]"/>
+            <field name="range_ids" eval="[(0, 0, {'min_score': 0, 'max_score': 0, 'name': 'No stroke symptoms', 'severity': 'none'}), (0, 0, {'min_score': 1, 'max_score': 4, 'name': 'Minor stroke', 'severity': 'mild'}), (0, 0, {'min_score': 5, 'max_score': 15, 'name': 'Moderate stroke', 'severity': 'moderate'}), (0, 0, {'min_score': 16, 'max_score': 20, 'name': 'Moderate to severe stroke', 'severity': 'severe'}), (0, 0, {'min_score': 21, 'max_score': 42, 'name': 'Severe stroke', 'severity': 'severe'})]"/>
+            <field name="observation_type_id" ref="obs_nihss"/>
+        </record>
+        <record id="score_mrs" model="medical.assessment.template">
+            <field name="name">Modified Rankin Scale</field>
+            <field name="code">MRS</field>
+            <field name="score_mode">sum</field>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+            <field name="item_ids" eval="[(0, 0, {'sequence': 1, 'name': 'Disability', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No symptoms', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'No significant disability despite symptoms', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Slight disability', 'score': 2}), (0, 0, {'sequence': 4, 'name': 'Moderate disability, walks without help', 'score': 3}), (0, 0, {'sequence': 5, 'name': 'Moderately severe disability, needs help to walk', 'score': 4}), (0, 0, {'sequence': 6, 'name': 'Severe disability, bedridden, needs constant care', 'score': 5}), (0, 0, {'sequence': 7, 'name': 'Dead', 'score': 6})]})]"/>
+            <field name="range_ids" eval="[(0, 0, {'min_score': 0, 'max_score': 2, 'name': 'Functionally independent', 'severity': 'none'}), (0, 0, {'min_score': 3, 'max_score': 3, 'name': 'Moderate disability', 'severity': 'moderate'}), (0, 0, {'min_score': 4, 'max_score': 5, 'name': 'Dependent', 'severity': 'severe'}), (0, 0, {'min_score': 6, 'max_score': 6, 'name': 'Dead', 'severity': 'severe'})]"/>
+            <field name="observation_type_id" ref="obs_mrs"/>
+        </record>
+        <record id="score_moca" model="medical.assessment.template">
+            <field name="name">Montreal Cognitive Assessment (MoCA)</field>
+            <field name="code">MOCA</field>
+            <field name="score_mode">sum</field>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+            <field name="item_ids" eval="[(0, 0, {'sequence': 1, 'name': 'Visuospatial / executive', 'section': False, 'answer_type': 'number', 'min_value': 0, 'max_value': 5}), (0, 0, {'sequence': 2, 'name': 'Naming', 'section': False, 'answer_type': 'number', 'min_value': 0, 'max_value': 3}), (0, 0, {'sequence': 3, 'name': 'Attention', 'section': False, 'answer_type': 'number', 'min_value': 0, 'max_value': 6}), (0, 0, {'sequence': 4, 'name': 'Language', 'section': False, 'answer_type': 'number', 'min_value': 0, 'max_value': 3}), (0, 0, {'sequence': 5, 'name': 'Abstraction', 'section': False, 'answer_type': 'number', 'min_value': 0, 'max_value': 2}), (0, 0, {'sequence': 6, 'name': 'Delayed recall', 'section': False, 'answer_type': 'number', 'min_value': 0, 'max_value': 5}), (0, 0, {'sequence': 7, 'name': 'Orientation', 'section': False, 'answer_type': 'number', 'min_value': 0, 'max_value': 6}), (0, 0, {'sequence': 8, 'name': 'Education 12 years or less (add 1 point)', 'section': False, 'answer_type': 'number', 'min_value': 0, 'max_value': 1})]"/>
+            <field name="range_ids" eval="[(0, 0, {'min_score': 26, 'max_score': 31, 'name': 'Normal', 'severity': 'none'}), (0, 0, {'min_score': 18, 'max_score': 25.99, 'name': 'Mild cognitive impairment', 'severity': 'mild'}), (0, 0, {'min_score': 10, 'max_score': 17.99, 'name': 'Moderate impairment', 'severity': 'moderate'}), (0, 0, {'min_score': 0, 'max_score': 9.99, 'name': 'Severe impairment', 'severity': 'severe'})]"/>
+            <field name="observation_type_id" ref="obs_moca"/>
+            <field name="description" type="html"><p>Enter the points of each section from the paper test. Total capped at 30 in practice.</p></field>
+        </record>
+        <record id="score_midas" model="medical.assessment.template">
+            <field name="name">MIDAS - Migraine Disability</field>
+            <field name="code">MIDAS</field>
+            <field name="score_mode">sum</field>
+            <field name="department_ids" eval="[(4, ref('dept_neurology'))]"/>
+            <field name="item_ids" eval="[(0, 0, {'sequence': 1, 'name': 'Days of work or school missed because of headaches (last 3 months)', 'section': False, 'answer_type': 'number', 'min_value': 0, 'max_value': 90}), (0, 0, {'sequence': 2, 'name': 'Days work or school productivity was halved (not counting missed days)', 'section': False, 'answer_type': 'number', 'min_value': 0, 'max_value': 90}), (0, 0, {'sequence': 3, 'name': 'Days household work was not done', 'section': False, 'answer_type': 'number', 'min_value': 0, 'max_value': 90}), (0, 0, {'sequence': 4, 'name': 'Days household productivity was halved (not counting days above)', 'section': False, 'answer_type': 'number', 'min_value': 0, 'max_value': 90}), (0, 0, {'sequence': 5, 'name': 'Days family, social or leisure activities were missed', 'section': False, 'answer_type': 'number', 'min_value': 0, 'max_value': 90})]"/>
+            <field name="range_ids" eval="[(0, 0, {'min_score': 0, 'max_score': 5, 'name': 'Grade I: little or no disability', 'severity': 'none'}), (0, 0, {'min_score': 6, 'max_score': 10, 'name': 'Grade II: mild disability', 'severity': 'mild'}), (0, 0, {'min_score': 11, 'max_score': 20, 'name': 'Grade III: moderate disability', 'severity': 'moderate'}), (0, 0, {'min_score': 21, 'max_score': 450, 'name': 'Grade IV: severe disability', 'severity': 'severe'})]"/>
+            <field name="observation_type_id" ref="obs_midas"/>
+        </record>
+    </data>
+</odoo>

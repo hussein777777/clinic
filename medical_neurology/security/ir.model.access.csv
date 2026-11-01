@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_neuro_event_nurse,medical.neuro.event nurse,model_medical_neuro_event,medical_core.group_medical_nurse,1,1,1,1
