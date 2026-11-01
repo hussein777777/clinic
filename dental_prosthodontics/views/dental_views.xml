@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_form_dental_prostho" model="ir.ui.view">
+        <field name="name">product.template.form.dental.prostho</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="medical_core.product_template_form_view_medical"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='medical']/group" position="inside">
+                <group string="Lab">
+                    <field name="dental_requires_lab"/>
+                    <field name="dental_lab_product_id" invisible="not dental_requires_lab"/>
+                    <field name="dental_lab_case_type" invisible="not dental_requires_lab"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_partner_form_dental_lab" model="ir.ui.view">
+        <field name="name">res.partner.form.dental.lab</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="category_id" position="after">
+                <field name="is_dental_lab" invisible="not is_company" groups="medical_core.group_medical_user"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="dental_plan_form_prostho" model="ir.ui.view">
+        <field name="name">dental.treatment.plan.form.prostho</field>
+        <field name="model">medical.treatment.plan</field>
+        <field name="inherit_id" ref="medical_core.medical_treatment_plan_view_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button name="action_view_lab_orders" type="object" class="oe_stat_button" icon="fa-flask"
+                        invisible="lab_order_count == 0">
+                    <field name="lab_order_count" widget="statinfo" string="Lab Orders"/>
+                </button>
+            </div>
+            <xpath expr="//field[@name='line_ids']/list/field[@name='state']" position="before">
+                <field name="requires_lab" column_invisible="True"/>
+                <field name="lab_stage" optional="show" invisible="not requires_lab"/>
+            </xpath>
+            <xpath expr="//field[@name='line_ids']/list" position="inside">
+                <button name="action_create_lab_order" type="object" icon="fa-flask" title="Lab Order"
+                        invisible="not requires_lab or state in ('executed', 'cancelled')"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="dental_visit_form_prostho" model="ir.ui.view">
+        <field name="name">medical.visit.form.prostho</field>
+        <field name="model">medical.visit</field>
+        <field name="inherit_id" ref="medical_core.medical_visit_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='line_ids']/list/field[@name='state']" position="before">
+                <field name="requires_lab" column_invisible="True"/>
+                <field name="lab_stage" optional="show" invisible="not requires_lab"/>
+            </xpath>
+            <xpath expr="//field[@name='line_ids']/list" position="inside">
+                <button name="action_create_lab_order" type="object" icon="fa-flask" title="Lab Order"
+                        invisible="not requires_lab or state in ('executed', 'cancelled')"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

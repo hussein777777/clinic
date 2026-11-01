@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dental_lab_order_user,dental.lab.order user,model_dental_lab_order,medical_core.group_medical_user,1,1,1,0
+access_dental_lab_order_manager,dental.lab.order manager,model_dental_lab_order,medical_core.group_medical_manager,1,1,1,1
+access_dental_lab_remake_wizard_user,dental.lab.remake.wizard user,model_dental_lab_remake_wizard,medical_core.group_medical_user,1,1,1,1

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="product_category_dental_lab" model="product.category">
+            <field name="name">Lab Services</field>
+            <field name="parent_id" ref="medical_core.product_category_medical"/>
+        </record>
+
+        <!-- Lab services (purchased) -->
+        <record id="product_lab_zirconia_crown" model="product.product">
+            <field name="name">Lab - Zirconia Crown</field>
+            <field name="type">service</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="True"/>
+            <field name="purchase_method">receive</field>
+            <field name="categ_id" ref="product_category_dental_lab"/>
+            <field name="standard_price">1200</field>
+        </record>
+        <record id="product_lab_pfm_crown" model="product.product">
+            <field name="name">Lab - PFM Crown</field>
+            <field name="type">service</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="True"/>
+            <field name="purchase_method">receive</field>
+            <field name="categ_id" ref="product_category_dental_lab"/>
+            <field name="standard_price">700</field>
+        </record>
+        <record id="product_lab_emax_veneer" model="product.product">
+            <field name="name">Lab - E.max Veneer</field>
+            <field name="type">service</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="True"/>
+            <field name="purchase_method">receive</field>
+            <field name="categ_id" ref="product_category_dental_lab"/>
+            <field name="standard_price">1500</field>
+        </record>
+        <record id="product_lab_full_denture" model="product.product">
+            <field name="name">Lab - Full Denture (per arch)</field>
+            <field name="type">service</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="True"/>
+            <field name="purchase_method">receive</field>
+            <field name="categ_id" ref="product_category_dental_lab"/>
+            <field name="standard_price">1800</field>
+        </record>
+
+        <!-- Clinical procedures (sold) -->
+        <record id="product_zirconia_crown" model="product.product">
+            <field name="name">Zirconia Crown</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="specialty_id" ref="dental_core.spec_prostho"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">5000</field>
+            <field name="site_requirement">tooth</field>
+            <field name="multi_stage" eval="True"/>
+            <field name="dental_chart_condition">crown</field>
+            <field name="dental_requires_lab" eval="True"/>
+            <field name="dental_lab_product_id" ref="product_lab_zirconia_crown"/>
+            <field name="dental_lab_case_type">crown</field>
+            <field name="insurance_code">D2740</field>
+        </record>
+        <record id="product_pfm_crown" model="product.product">
+            <field name="name">Porcelain-Fused-to-Metal Crown</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="specialty_id" ref="dental_core.spec_prostho"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">3000</field>
+            <field name="site_requirement">tooth</field>
+            <field name="multi_stage" eval="True"/>
+            <field name="dental_chart_condition">crown</field>
+            <field name="dental_requires_lab" eval="True"/>
+            <field name="dental_lab_product_id" ref="product_lab_pfm_crown"/>
+            <field name="dental_lab_case_type">crown</field>
+            <field name="insurance_code">D2750</field>
+        </record>
+        <record id="product_emax_veneer" model="product.product">
+            <field name="name">E.max Veneer</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="specialty_id" ref="dental_core.spec_prostho"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">6000</field>
+            <field name="site_requirement">tooth</field>
+            <field name="multi_stage" eval="True"/>
+            <field name="dental_chart_condition">veneer</field>
+            <field name="dental_requires_lab" eval="True"/>
+            <field name="dental_lab_product_id" ref="product_lab_emax_veneer"/>
+            <field name="dental_lab_case_type">veneer</field>
+        </record>
+        <record id="product_full_denture" model="product.product">
+            <field name="name">Complete Denture (per arch)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="specialty_id" ref="dental_core.spec_prostho"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">7000</field>
+            <field name="multi_stage" eval="True"/>
+            <field name="dental_requires_lab" eval="True"/>
+            <field name="dental_lab_product_id" ref="product_lab_full_denture"/>
+            <field name="dental_lab_case_type">denture_full</field>
+            <field name="insurance_code">D5110</field>
+        </record>
+    </data>
+</odoo>

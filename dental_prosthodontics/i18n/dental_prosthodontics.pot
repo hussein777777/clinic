@@ -1,0 +1,759 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dental_prosthodontics
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-11 17:50+0000\n"
+"PO-Revision-Date: 2026-10-11 17:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dental_prosthodontics
+#. odoo-python
+#: code:addons/dental_prosthodontics/models/dental_treatment_line.py:0
+msgid "%(line)s cannot be executed before its lab work is delivered."
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,help:dental_prosthodontics.field_dental_lab_order__lab_cost
+msgid "Billed amount when the vendor bill is posted, otherwise the PO amount."
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields.selection,name:dental_prosthodontics.selection__dental_lab_order__case_type__bridge
+#: model:ir.model.fields.selection,name:dental_prosthodontics.selection__product_template__dental_lab_case_type__bridge
+msgid "Bridge"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_lab_order_view_form
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_lab_remake_wizard_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields.selection,name:dental_prosthodontics.selection__dental_lab_order__stage__cancelled
+msgid "Cancelled"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_lab_order_view_form
+msgid "Case"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__case_type
+msgid "Case Type"
+msgstr ""
+
+#. module: dental_prosthodontics
+#. odoo-python
+#: code:addons/dental_prosthodontics/models/dental_lab_order.py:0
+msgid "Clinic fault (new lab charge)"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__company_id
+msgid "Company"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:product.template,name:dental_prosthodontics.product_full_denture_product_template
+msgid "Complete Denture (per arch)"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model,name:dental_prosthodontics.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_lab_order_view_form
+msgid "Cost"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__create_uid
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_remake_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__create_date
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_remake_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields.selection,name:dental_prosthodontics.selection__dental_lab_order__case_type__crown
+#: model:ir.model.fields.selection,name:dental_prosthodontics.selection__product_template__dental_lab_case_type__crown
+msgid "Crown"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_product_product__dental_lab_product_id
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_product_template__dental_lab_product_id
+msgid "Default Lab Service"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields.selection,name:dental_prosthodontics.selection__dental_lab_order__stage__delivered
+msgid "Delivered"
+msgstr ""
+
+#. module: dental_prosthodontics
+#. odoo-python
+#: code:addons/dental_prosthodontics/models/dental_lab_order.py:0
+msgid "Delivered lab orders cannot be cancelled."
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_lab_order_view_form
+msgid "Delivered to Patient"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_res_partner__is_dental_lab
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_res_users__is_dental_lab
+msgid "Dental Lab"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model,name:dental_prosthodontics.model_dental_lab_order
+msgid "Dental Lab Order"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_purchase_order_line__medical_line_id
+msgid "Dental Treatment"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__display_name
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_remake_wizard__display_name
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_medical_treatment_line__display_name
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_medical_treatment_plan__display_name
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_product_template__display_name
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_purchase_order_line__display_name
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__doctor_id
+msgid "Doctor"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields.selection,name:dental_prosthodontics.selection__dental_lab_order__stage__draft
+msgid "Draft"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__due_date
+msgid "Due Date"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:product.template,name:dental_prosthodontics.product_emax_veneer_product_template
+msgid "E.max Veneer"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,help:dental_prosthodontics.field_medical_treatment_line__requires_lab
+#: model:ir.model.fields,help:dental_prosthodontics.field_product_product__dental_requires_lab
+#: model:ir.model.fields,help:dental_prosthodontics.field_product_template__dental_requires_lab
+msgid "Executing this procedure requires a delivered lab order."
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_remake_wizard__fault
+msgid "Fault"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,help:dental_prosthodontics.field_dental_lab_order__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields.selection,name:dental_prosthodontics.selection__dental_lab_order__case_type__denture_full
+#: model:ir.model.fields.selection,name:dental_prosthodontics.selection__product_template__dental_lab_case_type__denture_full
+msgid "Full Denture"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__id
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_remake_wizard__id
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_medical_treatment_line__id
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_medical_treatment_plan__id
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_product_template__id
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_purchase_order_line__id
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,help:dental_prosthodontics.field_dental_lab_order__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,help:dental_prosthodontics.field_dental_lab_order__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,help:dental_prosthodontics.field_dental_lab_order__message_has_error
+#: model:ir.model.fields,help:dental_prosthodontics.field_dental_lab_order__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields.selection,name:dental_prosthodontics.selection__dental_lab_order__case_type__implant_crown
+#: model:ir.model.fields.selection,name:dental_prosthodontics.selection__product_template__dental_lab_case_type__implant_crown
+msgid "Implant Crown"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields.selection,name:dental_prosthodontics.selection__dental_lab_order__case_type__inlay
+#: model:ir.model.fields.selection,name:dental_prosthodontics.selection__product_template__dental_lab_case_type__inlay
+msgid "Inlay / Onlay"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_lab_order_view_form
+msgid "Instructions to the lab..."
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__is_late
+msgid "Is Late"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__lab_partner_id
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_lab_order_view_form
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_lab_order_view_search
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.product_template_form_dental_prostho
+msgid "Lab"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:product.template,name:dental_prosthodontics.product_lab_emax_veneer_product_template
+msgid "Lab - E.max Veneer"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:product.template,name:dental_prosthodontics.product_lab_full_denture_product_template
+msgid "Lab - Full Denture (per arch)"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:product.template,name:dental_prosthodontics.product_lab_pfm_crown_product_template
+msgid "Lab - PFM Crown"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:product.template,name:dental_prosthodontics.product_lab_zirconia_crown_product_template
+msgid "Lab - Zirconia Crown"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_product_product__dental_lab_case_type
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_product_template__dental_lab_case_type
+msgid "Lab Case Type"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__lab_cost
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_medical_treatment_line__lab_cost
+msgid "Lab Cost"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__lab_cost_is_estimate
+msgid "Lab Cost Is Estimate"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_remake_wizard__lab_order_id
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_purchase_order_line__dental_lab_order_id
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_plan_form_prostho
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_visit_form_prostho
+msgid "Lab Order"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_medical_treatment_plan__lab_order_count
+msgid "Lab Order Count"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.actions.act_window,name:dental_prosthodontics.action_dental_lab_order
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_medical_treatment_line__lab_order_ids
+#: model:ir.ui.menu,name:dental_prosthodontics.menu_dental_lab_order
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_plan_form_prostho
+msgid "Lab Orders"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__lab_product_id
+msgid "Lab Service"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_medical_treatment_line__lab_stage
+msgid "Lab Stage"
+msgstr ""
+
+#. module: dental_prosthodontics
+#. odoo-python
+#: code:addons/dental_prosthodontics/models/dental_lab_order.py:0
+msgid "Lab fault (no extra cost)"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model,name:dental_prosthodontics.model_dental_lab_remake_wizard
+msgid "Lab order remake"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.actions.act_window,name:dental_prosthodontics.action_dental_lab_partner
+#: model:ir.ui.menu,name:dental_prosthodontics.menu_dental_lab_partner
+msgid "Labs"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__write_uid
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_remake_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__write_date
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_remake_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_lab_order_view_form
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_lab_order_view_kanban
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_lab_order_view_search
+msgid "Late"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__material
+msgid "Material"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__name
+msgid "Name"
+msgstr ""
+
+#. module: dental_prosthodontics
+#. odoo-python
+#: code:addons/dental_prosthodontics/models/dental_lab_order.py:0
+msgid "New"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields.selection,name:dental_prosthodontics.selection__dental_lab_order__case_type__night_guard
+#: model:ir.model.fields.selection,name:dental_prosthodontics.selection__product_template__dental_lab_case_type__night_guard
+msgid "Night Guard"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__note
+msgid "Note"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_lab_order_view_form
+msgid "Notes"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,help:dental_prosthodontics.field_dental_lab_order__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,help:dental_prosthodontics.field_dental_lab_order__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,help:dental_prosthodontics.field_dental_lab_order__units
+msgid "Number of units (e.g. a 3-unit bridge)."
+msgstr ""
+
+#. module: dental_prosthodontics
+#. odoo-python
+#: code:addons/dental_prosthodontics/models/dental_lab_order.py:0
+msgid "Only draft lab orders can be sent."
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_lab_order_view_search
+msgid "Open"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields.selection,name:dental_prosthodontics.selection__dental_lab_order__case_type__other
+#: model:ir.model.fields.selection,name:dental_prosthodontics.selection__product_template__dental_lab_case_type__other
+msgid "Other"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields.selection,name:dental_prosthodontics.selection__dental_lab_order__case_type__denture_partial
+#: model:ir.model.fields.selection,name:dental_prosthodontics.selection__product_template__dental_lab_case_type__denture_partial
+msgid "Partial Denture"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__patient_id
+msgid "Patient"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:product.template,name:dental_prosthodontics.product_pfm_crown_product_template
+msgid "Porcelain-Fused-to-Metal Crown"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model,name:dental_prosthodontics.model_product_template
+msgid "Product"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__purchase_count
+msgid "Purchase Count"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__purchase_line_ids
+msgid "Purchase Lines"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model,name:dental_prosthodontics.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__purchase_ids
+msgid "Purchase Orders"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_lab_order_view_form
+msgid "Purchases"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_remake_wizard__reason
+msgid "Reason"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields.selection,name:dental_prosthodontics.selection__dental_lab_order__stage__received
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_lab_order_view_form
+msgid "Received from Lab"
+msgstr ""
+
+#. module: dental_prosthodontics
+#. odoo-python
+#: code:addons/dental_prosthodontics/models/dental_lab_order.py:0
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_lab_order_view_form
+msgid "Remake"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__remake_count
+msgid "Remake Count"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__remake_reason
+msgid "Remake Reason"
+msgstr ""
+
+#. module: dental_prosthodontics
+#. odoo-python
+#: code:addons/dental_prosthodontics/models/dental_lab_order.py:0
+msgid "Remake requested (%(fault)s): %(reason)s"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_lab_order_view_form
+msgid "Remakes"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_lab_remake_wizard_view_form
+msgid "Request Remake"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_medical_treatment_line__requires_lab
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_product_product__dental_requires_lab
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_product_template__dental_requires_lab
+msgid "Requires Lab Work"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_lab_order_view_form
+msgid "Send to Lab"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields.selection,name:dental_prosthodontics.selection__dental_lab_order__stage__sent
+msgid "Sent to Lab"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,help:dental_prosthodontics.field_product_product__dental_lab_product_id
+#: model:ir.model.fields,help:dental_prosthodontics.field_product_template__dental_lab_product_id
+msgid "Service purchased from the lab for this procedure."
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__shade
+msgid "Shade"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_lab_order_view_form
+msgid "Specification"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__stage
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_lab_order_view_search
+msgid "Stage"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,help:dental_prosthodontics.field_dental_lab_order__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: dental_prosthodontics
+#. odoo-python
+#: code:addons/dental_prosthodontics/models/dental_lab_order.py:0
+msgid "The work must be received from the lab before delivery."
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__tooth_id
+msgid "Tooth"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_lab_order_view_list
+msgid "Total"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__treatment_line_id
+msgid "Treatment"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model,name:dental_prosthodontics.model_medical_treatment_line
+msgid "Treatment Line"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model,name:dental_prosthodontics.model_medical_treatment_plan
+msgid "Treatment Plan"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields.selection,name:dental_prosthodontics.selection__dental_lab_order__stage__try_in
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_lab_order_view_form
+msgid "Try-in"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,help:dental_prosthodontics.field_dental_lab_order__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__units
+msgid "Units"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields.selection,name:dental_prosthodontics.selection__dental_lab_order__case_type__veneer
+#: model:ir.model.fields.selection,name:dental_prosthodontics.selection__product_template__dental_lab_case_type__veneer
+msgid "Veneer"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,field_description:dental_prosthodontics.field_dental_lab_order__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,help:dental_prosthodontics.field_dental_lab_order__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model_terms:ir.ui.view,arch_db:dental_prosthodontics.dental_lab_order_view_search
+msgid "With Remakes"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:product.template,name:dental_prosthodontics.product_zirconia_crown_product_template
+msgid "Zirconia Crown"
+msgstr ""
+
+#. module: dental_prosthodontics
+#: model:ir.model.fields,help:dental_prosthodontics.field_dental_lab_order__material
+msgid "Zirconia, E.max, PFM..."
+msgstr ""
+
+#. module: dental_prosthodontics
+#. odoo-python
+#: code:addons/dental_prosthodontics/models/dental_lab_order.py:0
+msgid "clinic"
+msgstr ""
+
+#. module: dental_prosthodontics
+#. odoo-python
+#: code:addons/dental_prosthodontics/models/dental_lab_order.py:0
+msgid "shade %s"
+msgstr ""
+
+#. module: dental_prosthodontics
+#. odoo-python
+#: code:addons/dental_prosthodontics/models/dental_lab_order.py:0
+msgid "tooth %s"
+msgstr ""

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dental_lab_order_view_form" model="ir.ui.view">
+        <field name="name">dental.lab.order.form</field>
+        <field name="model">dental.lab.order</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_send_to_lab" type="object" string="Send to Lab" class="btn-primary"
+                            invisible="stage != 'draft'"/>
+                    <button name="action_mark_received" type="object" string="Received from Lab" class="btn-primary"
+                            invisible="stage != 'sent'"/>
+                    <button name="action_try_in" type="object" string="Try-in" invisible="stage != 'received'"/>
+                    <button name="action_deliver" type="object" string="Delivered to Patient" class="btn-primary"
+                            invisible="stage not in ('received', 'try_in')"/>
+                    <button name="action_remake" type="object" string="Remake"
+                            invisible="stage not in ('received', 'try_in')"/>
+                    <button name="action_cancel" type="object" string="Cancel"
+                            invisible="stage in ('delivered', 'cancelled')"/>
+                    <field name="stage" widget="statusbar" statusbar_visible="draft,sent,received,try_in,delivered"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_purchase" type="object" class="oe_stat_button" icon="fa-shopping-cart"
+                                invisible="purchase_count == 0" groups="purchase.group_purchase_user">
+                            <field name="purchase_count" widget="statinfo" string="Purchases"/>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="Late" bg_color="text-bg-danger" invisible="not is_late"/>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group string="Case">
+                            <field name="treatment_line_id" readonly="stage != 'draft'"/>
+                            <field name="patient_id"/>
+                            <field name="doctor_id"/>
+                            <field name="tooth_id"/>
+                            <field name="is_late" invisible="1"/>
+                        </group>
+                        <group string="Lab">
+                            <field name="lab_partner_id" readonly="stage != 'draft'"
+                                   context="{'default_is_dental_lab': True, 'default_is_company': True}"/>
+                            <field name="lab_product_id" readonly="stage != 'draft'"/>
+                            <field name="case_type"/>
+                            <field name="units"/>
+                            <field name="due_date"/>
+                        </group>
+                        <group string="Specification">
+                            <field name="material"/>
+                            <field name="shade"/>
+                        </group>
+                        <group string="Cost" groups="medical_core.group_medical_manager,purchase.group_purchase_user">
+                            <field name="currency_id" invisible="1"/>
+                            <field name="company_id" invisible="1"/>
+                            <field name="lab_cost"/>
+                            <field name="lab_cost_is_estimate"/>
+                            <field name="remake_count"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Notes" name="notes">
+                            <field name="note" placeholder="Instructions to the lab..."/>
+                        </page>
+                        <page string="Remakes" name="remakes" invisible="remake_count == 0">
+                            <field name="remake_reason" readonly="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="dental_lab_order_view_list" model="ir.ui.view">
+        <field name="name">dental.lab.order.list</field>
+        <field name="model">dental.lab.order</field>
+        <field name="arch" type="xml">
+            <list decoration-danger="is_late" decoration-muted="stage == 'cancelled'">
+                <field name="name"/>
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <field name="tooth_id"/>
+                <field name="case_type"/>
+                <field name="lab_partner_id"/>
+                <field name="due_date"/>
+                <field name="is_late" column_invisible="True"/>
+                <field name="remake_count" optional="hide"/>
+                <field name="lab_cost" sum="Total" optional="show" groups="medical_core.group_medical_manager"/>
+                <field name="currency_id" column_invisible="True"/>
+                <field name="stage" widget="badge" decoration-success="stage == 'delivered'" decoration-info="stage in ('sent', 'received', 'try_in')"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="dental_lab_order_view_kanban" model="ir.ui.view">
+        <field name="name">dental.lab.order.kanban</field>
+        <field name="model">dental.lab.order</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="stage" quick_create="0" group_create="0">
+                <field name="is_late"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="d-flex justify-content-between">
+                            <field name="name" class="fw-bold"/>
+                            <span t-if="record.is_late.raw_value" class="badge text-bg-danger">Late</span>
+                        </div>
+                        <field name="patient_id"/>
+                        <div class="text-muted"><field name="case_type"/> · <field name="lab_partner_id"/></div>
+                        <field name="due_date"/>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="dental_lab_order_view_search" model="ir.ui.view">
+        <field name="name">dental.lab.order.search</field>
+        <field name="model">dental.lab.order</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="patient_id"/>
+                <field name="lab_partner_id"/>
+                <filter name="open" string="Open" domain="[('stage', 'not in', ('delivered', 'cancelled'))]"/>
+                <filter name="late" string="Late" domain="[('is_late', '=', True)]"/>
+                <filter name="remakes" string="With Remakes" domain="[('remake_count', '>', 0)]"/>
+                <group>
+                    <filter name="group_lab" string="Lab" context="{'group_by': 'lab_partner_id'}"/>
+                    <filter name="group_stage" string="Stage" context="{'group_by': 'stage'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_dental_lab_order" model="ir.actions.act_window">
+        <field name="name">Lab Orders</field>
+        <field name="res_model">dental.lab.order</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="context">{'search_default_open': 1}</field>
+    </record>
+
+    <record id="dental_lab_remake_wizard_view_form" model="ir.ui.view">
+        <field name="name">dental.lab.remake.wizard.form</field>
+        <field name="model">dental.lab.remake.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="lab_order_id" readonly="1"/>
+                    <field name="fault" widget="radio"/>
+                    <field name="reason"/>
+                </group>
+                <footer>
+                    <button name="action_confirm" type="object" string="Request Remake" class="btn-primary"/>
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_dental_lab_partner" model="ir.actions.act_window">
+        <field name="name">Labs</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('is_dental_lab', '=', True)]</field>
+        <field name="context">{'default_is_dental_lab': True, 'default_is_company': True}</field>
+    </record>
+
+    <menuitem id="menu_dental_lab_order" name="Lab Orders" parent="dental_core.menu_dental"
+              action="action_dental_lab_order" sequence="25"/>
+    <menuitem id="menu_dental_lab_partner" name="Labs" parent="dental_core.menu_dental"
+              action="action_dental_lab_partner" sequence="35"/>
+</odoo>
