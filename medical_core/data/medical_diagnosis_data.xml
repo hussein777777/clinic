@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="icd_i10" model="medical.diagnosis">
+            <field name="code">I10</field>
+            <field name="name">Essential (primary) hypertension</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_e11_9" model="medical.diagnosis">
+            <field name="code">E11.9</field>
+            <field name="name">Type 2 diabetes mellitus without complications</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_e10_9" model="medical.diagnosis">
+            <field name="code">E10.9</field>
+            <field name="name">Type 1 diabetes mellitus without complications</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_e78_5" model="medical.diagnosis">
+            <field name="code">E78.5</field>
+            <field name="name">Hyperlipidaemia, unspecified</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_e03_9" model="medical.diagnosis">
+            <field name="code">E03.9</field>
+            <field name="name">Hypothyroidism, unspecified</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_e05_9" model="medical.diagnosis">
+            <field name="code">E05.9</field>
+            <field name="name">Thyrotoxicosis, unspecified</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_e66_9" model="medical.diagnosis">
+            <field name="code">E66.9</field>
+            <field name="name">Obesity, unspecified</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_d50_9" model="medical.diagnosis">
+            <field name="code">D50.9</field>
+            <field name="name">Iron deficiency anaemia, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_e55_9" model="medical.diagnosis">
+            <field name="code">E55.9</field>
+            <field name="name">Vitamin D deficiency, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_j06_9" model="medical.diagnosis">
+            <field name="code">J06.9</field>
+            <field name="name">Acute upper respiratory infection, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_j02_9" model="medical.diagnosis">
+            <field name="code">J02.9</field>
+            <field name="name">Acute pharyngitis, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_j03_9" model="medical.diagnosis">
+            <field name="code">J03.9</field>
+            <field name="name">Acute tonsillitis, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_j20_9" model="medical.diagnosis">
+            <field name="code">J20.9</field>
+            <field name="name">Acute bronchitis, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_j18_9" model="medical.diagnosis">
+            <field name="code">J18.9</field>
+            <field name="name">Pneumonia, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_j45_9" model="medical.diagnosis">
+            <field name="code">J45.9</field>
+            <field name="name">Asthma, unspecified</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_j44_9" model="medical.diagnosis">
+            <field name="code">J44.9</field>
+            <field name="name">Chronic obstructive pulmonary disease, unspecified</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_k21_9" model="medical.diagnosis">
+            <field name="code">K21.9</field>
+            <field name="name">Gastro-oesophageal reflux disease without oesophagitis</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_k29_7" model="medical.diagnosis">
+            <field name="code">K29.7</field>
+            <field name="name">Gastritis, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_k30" model="medical.diagnosis">
+            <field name="code">K30</field>
+            <field name="name">Dyspepsia</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_k59_0" model="medical.diagnosis">
+            <field name="code">K59.0</field>
+            <field name="name">Constipation</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_a09" model="medical.diagnosis">
+            <field name="code">A09</field>
+            <field name="name">Gastroenteritis and colitis of infectious origin</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_n39_0" model="medical.diagnosis">
+            <field name="code">N39.0</field>
+            <field name="name">Urinary tract infection, site not specified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_r50_9" model="medical.diagnosis">
+            <field name="code">R50.9</field>
+            <field name="name">Fever, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_r51" model="medical.diagnosis">
+            <field name="code">R51</field>
+            <field name="name">Headache</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_r10_4" model="medical.diagnosis">
+            <field name="code">R10.4</field>
+            <field name="name">Other and unspecified abdominal pain</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_r05" model="medical.diagnosis">
+            <field name="code">R05</field>
+            <field name="name">Cough</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_m54_5" model="medical.diagnosis">
+            <field name="code">M54.5</field>
+            <field name="name">Low back pain</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_f41_1" model="medical.diagnosis">
+            <field name="code">F41.1</field>
+            <field name="name">Generalized anxiety disorder</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_f32_9" model="medical.diagnosis">
+            <field name="code">F32.9</field>
+            <field name="name">Depressive episode, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_g47_0" model="medical.diagnosis">
+            <field name="code">G47.0</field>
+            <field name="name">Insomnia</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_i25_1" model="medical.diagnosis">
+            <field name="code">I25.1</field>
+            <field name="name">Atherosclerotic heart disease</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_i48_9" model="medical.diagnosis">
+            <field name="code">I48.9</field>
+            <field name="name">Atrial fibrillation and atrial flutter, unspecified</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_i50_9" model="medical.diagnosis">
+            <field name="code">I50.9</field>
+            <field name="name">Heart failure, unspecified</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_n18_9" model="medical.diagnosis">
+            <field name="code">N18.9</field>
+            <field name="name">Chronic kidney disease, unspecified</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_k76_0" model="medical.diagnosis">
+            <field name="code">K76.0</field>
+            <field name="name">Fatty liver, not elsewhere classified</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_z00_0" model="medical.diagnosis">
+            <field name="code">Z00.0</field>
+            <field name="name">General medical examination</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_z71_3" model="medical.diagnosis">
+            <field name="code">Z71.3</field>
+            <field name="name">Dietary counselling and surveillance</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_g56_0" model="medical.diagnosis">
+            <field name="code">G56.0</field>
+            <field name="name">Carpal tunnel syndrome</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_m54_1" model="medical.diagnosis">
+            <field name="code">M54.1</field>
+            <field name="name">Radiculopathy</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_m54_2" model="medical.diagnosis">
+            <field name="code">M54.2</field>
+            <field name="name">Cervicalgia</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_m79_1" model="medical.diagnosis">
+            <field name="code">M79.1</field>
+            <field name="name">Myalgia</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_r42" model="medical.diagnosis">
+            <field name="code">R42</field>
+            <field name="name">Dizziness and giddiness</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+        <record id="icd_r55" model="medical.diagnosis">
+            <field name="code">R55</field>
+            <field name="name">Syncope and collapse</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_general'))]"/>
+        </record>
+    </data>
+</odoo>

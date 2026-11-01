@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- shared patient header -->
+    <template id="report_patient_header">
+        <div class="row mb-3 o_medical_patient_header">
+            <div class="col-6">
+                <strong t-field="patient.name"/>
+                <div class="text-muted">
+                    <span t-field="patient.patient_code"/>
+                    <t t-if="patient.patient_age_label"> · <span t-field="patient.patient_age_label"/></t>
+                    <t t-if="patient.gender"> · <span t-field="patient.gender"/></t>
+                </div>
+            </div>
+            <div class="col-6 text-end">
+                <div t-if="doctor"><strong t-field="doctor.name"/></div>
+                <div t-if="doctor and doctor.sudo().medical_title" class="text-muted" t-out="doctor.sudo().medical_title"/>
+                <div t-if="date" class="text-muted"><span t-out="date"/></div>
+            </div>
+        </div>
+    </template>
+
+    <!-- prescription -->
+    <template id="report_medical_prescription_document">
+        <t t-call="web.external_layout">
+            <t t-set="doc" t-value="doc.with_context(lang=doc.patient_id.lang)"/>
+            <div class="page">
+                <h3>Prescription <small class="text-muted" t-field="doc.name"/></h3>
+                <t t-call="medical_core.report_patient_header">
+                    <t t-set="patient" t-value="doc.patient_id"/>
+                    <t t-set="doctor" t-value="doc.doctor_id"/>
+                    <t t-set="date" t-value="doc.date"/>
+                </t>
+                <div t-if="doc.patient_weight" class="mb-2">Weight: <span t-esc="'%g' % doc.patient_weight"/> kg</div>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Medicine</th>
+                            <th>How to Take</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="doc.line_ids" t-as="line">
+                            <td t-out="line_index + 1"/>
+                            <td>
+                                <strong t-field="line.name"/>
+                                <div t-if="line.route" class="text-muted small" t-field="line.route"/>
+                            </td>
+                            <td>
+                                <span t-out="line._sig()"/>
+                                <div t-if="line.instructions" class="small" t-field="line.instructions"/>
+                            </td>
+                            <td t-field="line.quantity"/>
+                        </tr>
+                    </tbody>
+                </table>
+                <div t-if="doc.note" class="mt-3">
+                    <strong>Advice</strong>
+                    <p t-field="doc.note"/>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-6 offset-6 text-center">
+                        <div class="border-top pt-2">Doctor's signature</div>
+                        <div t-if="doc.doctor_id.sudo().medical_license_no" class="small text-muted">
+                            License No. <span t-out="doc.doctor_id.sudo().medical_license_no"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_medical_prescription">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="medical_core.report_medical_prescription_document" t-lang="doc.patient_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_medical_prescription" model="ir.actions.report">
+        <field name="name">Prescription</field>
+        <field name="model">medical.prescription</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">medical_core.report_medical_prescription</field>
+        <field name="report_file">medical_core.report_medical_prescription</field>
+        <field name="print_report_name">'Prescription - %s' % object.name.replace('/', '-')</field>
+        <field name="binding_model_id" ref="model_medical_prescription"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- visit medical report -->
+    <template id="report_medical_visit_document">
+        <t t-call="web.external_layout">
+            <t t-set="doc" t-value="doc.with_context(lang=doc.patient_id.lang)"/>
+            <div class="page">
+                <h3>Medical Report <small class="text-muted" t-field="doc.name"/></h3>
+                <t t-call="medical_core.report_patient_header">
+                    <t t-set="patient" t-value="doc.patient_id"/>
+                    <t t-set="doctor" t-value="doc.doctor_id"/>
+                    <t t-set="date" t-value="doc.start.date()"/>
+                </t>
+                <p><strong>Clinic: </strong><span t-field="doc.department_id"/></p>
+                <div t-if="doc.chief_complaint" class="mb-2">
+                    <strong>Complaint</strong>
+                    <p t-field="doc.chief_complaint"/>
+                </div>
+                <t t-set="vitals" t-value="[(doc._fields[f].get_description(doc.env)['string'], doc[f]) for f in ('bp_systolic', 'bp_diastolic', 'pulse', 'temperature', 'spo2', 'weight', 'height') if doc[f]]"/>
+                <div t-if="vitals" class="mb-2">
+                    <strong>Vital Signs</strong>
+                    <div><t t-foreach="vitals" t-as="v"><span t-out="v[0]"/>: <span t-out="'%g' % v[1]"/><t t-if="not v_last"> · </t></t></div>
+                </div>
+                <div t-if="doc.examination" class="mb-2">
+                    <strong>Examination</strong>
+                    <div t-field="doc.examination"/>
+                </div>
+                <div t-if="doc.diagnosis_ids" class="mb-2">
+                    <strong>Diagnosis</strong>
+                    <ul>
+                        <li t-foreach="doc.diagnosis_ids" t-as="dx">
+                            <span t-field="dx.diagnosis_id"/>
+                            <t t-if="dx.laterality"> (<span t-field="dx.laterality"/>)</t>
+                            <t t-if="dx.certainty == 'provisional'"> — <span t-field="dx.certainty"/></t>
+                        </li>
+                    </ul>
+                </div>
+                <div t-if="doc.line_ids.filtered(lambda l: l.state == 'executed')" class="mb-2">
+                    <strong>Procedures Done</strong>
+                    <ul>
+                        <li t-foreach="doc.line_ids.filtered(lambda l: l.state == 'executed')" t-as="line" t-out="line.display_name"/>
+                    </ul>
+                </div>
+                <div t-if="doc.note" class="mb-2">
+                    <strong>Assessment &amp; Plan</strong>
+                    <div t-field="doc.note"/>
+                </div>
+                <p t-if="doc.follow_up_date"><strong>Next visit: </strong><span t-field="doc.follow_up_date"/></p>
+                <div class="row mt-5">
+                    <div class="col-6 offset-6 text-center">
+                        <div class="border-top pt-2">Doctor's signature</div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_medical_visit">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="medical_core.report_medical_visit_document" t-lang="doc.patient_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_medical_visit" model="ir.actions.report">
+        <field name="name">Medical Report</field>
+        <field name="model">medical.visit</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">medical_core.report_medical_visit</field>
+        <field name="report_file">medical_core.report_medical_visit</field>
+        <field name="print_report_name">'Medical Report - %s' % object.name.replace('/', '-')</field>
+        <field name="binding_model_id" ref="model_medical_visit"/>
+        <field name="binding_type">report</field>
+        <field name="group_ids" eval="[(4, ref('medical_core.group_medical_doctor'))]"/>
+    </record>
+
+    <!-- lab / imaging request and results -->
+    <template id="report_medical_order_document">
+        <t t-call="web.external_layout">
+            <t t-set="doc" t-value="doc.with_context(lang=doc.patient_id.lang)"/>
+            <div class="page">
+                <h3>
+                    <t t-if="doc.state == 'done'">Test Results</t>
+                    <t t-else="">Test Request</t>
+                    <small class="text-muted" t-field="doc.name"/>
+                </h3>
+                <t t-call="medical_core.report_patient_header">
+                    <t t-set="patient" t-value="doc.patient_id"/>
+                    <t t-set="doctor" t-value="doc.doctor_id"/>
+                    <t t-set="date" t-value="doc.date.date()"/>
+                </t>
+                <p t-if="doc.priority == 'urgent'"><strong class="text-danger">URGENT</strong></p>
+                <p t-if="doc.clinical_info"><strong>Clinical information: </strong><span t-field="doc.clinical_info"/></p>
+                <t t-foreach="doc.line_ids" t-as="line">
+                    <h5 class="mt-3" t-out="line.display_name"/>
+                    <table t-if="line.result_ids.filtered('has_value')" class="table table-sm">
+                        <thead>
+                            <tr><th>Test</th><th class="text-end">Result</th><th>Unit</th><th>Normal Range</th><th/></tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="line.result_ids.filtered('has_value')" t-as="res">
+                                <td t-field="res.type_id.name"/>
+                                <td class="text-end"><strong t-out="('%.' + str(max(res.type_id.decimals, 0)) + 'f') % res.value"/></td>
+                                <td t-field="res.unit"/>
+                                <td t-field="res.normal_range"/>
+                                <td><span t-if="res.flag and res.flag != 'normal'" t-field="res.flag"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p t-if="line.result_text" t-field="line.result_text"/>
+                </t>
+                <div t-if="doc.conclusion" class="mt-3">
+                    <strong>Conclusion</strong>
+                    <div t-field="doc.conclusion"/>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_medical_order">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="medical_core.report_medical_order_document" t-lang="doc.patient_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_medical_order" model="ir.actions.report">
+        <field name="name">Test Request / Results</field>
+        <field name="model">medical.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">medical_core.report_medical_order</field>
+        <field name="report_file">medical_core.report_medical_order</field>
+        <field name="print_report_name">'Tests - %s' % object.name.replace('/', '-')</field>
+        <field name="binding_model_id" ref="model_medical_order"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- referral letter -->
+    <template id="report_medical_referral_document">
+        <t t-call="web.external_layout">
+            <t t-set="doc" t-value="doc.with_context(lang=doc.patient_id.lang)"/>
+            <div class="page">
+                <h3>Referral Letter <small class="text-muted" t-field="doc.name"/></h3>
+                <t t-call="medical_core.report_patient_header">
+                    <t t-set="patient" t-value="doc.patient_id"/>
+                    <t t-set="doctor" t-value="doc.from_doctor_id"/>
+                    <t t-set="date" t-value="doc.date"/>
+                </t>
+                <p>
+                    <strong>To: </strong>
+                    <t t-if="doc.referral_type == 'internal'">
+                        <span t-field="doc.to_department_id"/><t t-if="doc.to_doctor_id"> — <span t-field="doc.to_doctor_id"/></t>
+                    </t>
+                    <t t-else=""><span t-field="doc.external_partner_id"/></t>
+                </p>
+                <p><strong>Urgency: </strong><span t-field="doc.urgency"/></p>
+                <strong>Reason for referral</strong>
+                <p t-field="doc.reason"/>
+                <div t-if="doc.sudo().clinical_summary">
+                    <strong>Clinical summary</strong>
+                    <div t-out="doc.sudo().clinical_summary"/>
+                </div>
+                <p class="mt-4">Thank you for seeing this patient.</p>
+                <div class="row mt-5">
+                    <div class="col-6 offset-6 text-center">
+                        <div class="border-top pt-2" t-field="doc.from_doctor_id"/>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_medical_referral">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="medical_core.report_medical_referral_document" t-lang="doc.patient_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_medical_referral" model="ir.actions.report">
+        <field name="name">Referral Letter</field>
+        <field name="model">medical.referral</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">medical_core.report_medical_referral</field>
+        <field name="report_file">medical_core.report_medical_referral</field>
+        <field name="print_report_name">'Referral - %s' % object.name.replace('/', '-')</field>
+        <field name="binding_model_id" ref="model_medical_referral"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- operative report -->
+    <template id="report_medical_surgery_document">
+        <t t-call="web.external_layout">
+            <t t-set="doc" t-value="doc.with_context(lang=doc.patient_id.lang)"/>
+            <div class="page">
+                <h3>Operative Report <small class="text-muted" t-field="doc.name"/></h3>
+                <t t-call="medical_core.report_patient_header">
+                    <t t-set="patient" t-value="doc.patient_id"/>
+                    <t t-set="doctor" t-value="doc.surgeon_id"/>
+                    <t t-set="date" t-value="(doc.actual_start or doc.scheduled_start).date()"/>
+                </t>
+                <table class="table table-sm">
+                    <tr><th>Procedure</th><td><t t-foreach="doc.line_ids.filtered(lambda l: l.state != 'cancelled')" t-as="l"><span t-out="l.display_name"/><t t-if="not l_last">, </t></t></td></tr>
+                    <tr t-if="doc.assistant_ids"><th>Assistants</th><td t-out="', '.join(doc.assistant_ids.mapped('name'))"/></tr>
+                    <tr t-if="doc.anesthetist_id"><th>Anesthesia</th><td><span t-field="doc.anesthesia_type"/> — <span t-field="doc.anesthetist_id"/></td></tr>
+                    <tr><th>Time</th><td><span t-field="doc.actual_start"/> → <span t-field="doc.actual_end"/></td></tr>
+                    <tr t-if="doc.blood_loss_ml"><th>Blood loss</th><td><span t-field="doc.blood_loss_ml"/> ml</td></tr>
+                </table>
+                <div t-if="doc.sudo().findings"><strong>Findings</strong><div t-out="doc.sudo().findings"/></div>
+                <div t-if="doc.sudo().operative_note" class="mt-2"><strong>Procedure</strong><div t-out="doc.sudo().operative_note"/></div>
+                <div t-if="doc.sudo().complications" class="mt-2"><strong>Complications</strong><p t-out="doc.sudo().complications"/></div>
+                <div t-if="doc.post_op_instructions" class="mt-2"><strong>Post-operative Orders</strong><div t-field="doc.post_op_instructions"/></div>
+                <div class="row mt-5"><div class="col-6 offset-6 text-center"><div class="border-top pt-2">Surgeon's signature</div></div></div>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_medical_surgery">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="medical_core.report_medical_surgery_document" t-lang="doc.patient_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_medical_surgery" model="ir.actions.report">
+        <field name="name">Operative Report</field>
+        <field name="model">medical.surgery</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">medical_core.report_medical_surgery</field>
+        <field name="report_file">medical_core.report_medical_surgery</field>
+        <field name="binding_model_id" ref="model_medical_surgery"/>
+        <field name="binding_type">report</field>
+        <field name="group_ids" eval="[(4, ref('medical_core.group_medical_doctor'))]"/>
+    </record>
+
+    <!-- signed consent -->
+    <template id="report_medical_consent_document">
+        <t t-call="web.external_layout">
+            <t t-set="doc" t-value="doc.with_context(lang=doc.patient_id.lang)"/>
+            <div class="page">
+                <h3>Informed Consent</h3>
+                <t t-call="medical_core.report_patient_header">
+                    <t t-set="patient" t-value="doc.patient_id"/>
+                    <t t-set="doctor" t-value="doc.doctor_id"/>
+                    <t t-set="date" t-value="doc.signed_on and doc.signed_on.date()"/>
+                </t>
+                <p><strong>Procedure: </strong><span t-field="doc.product_id.name"/></p>
+                <div t-field="doc.consent_text"/>
+                <div class="row mt-4">
+                    <div class="col-6">
+                        <div>Signed by: <strong t-field="doc.signed_by"/> (<span t-field="doc.relationship"/>)</div>
+                        <img t-if="doc.signature" t-att-src="image_data_uri(doc.signature)" style="max-height: 90px;"/>
+                        <div class="small text-muted" t-field="doc.signed_on"/>
+                    </div>
+                    <div class="col-6 text-end">
+                        <div>Witness: <span t-field="doc.witness_id"/></div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_medical_consent">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="medical_core.report_medical_consent_document" t-lang="doc.patient_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_medical_consent" model="ir.actions.report">
+        <field name="name">Consent Form</field>
+        <field name="model">medical.consent</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">medical_core.report_medical_consent</field>
+        <field name="report_file">medical_core.report_medical_consent</field>
+        <field name="binding_model_id" ref="model_medical_consent"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

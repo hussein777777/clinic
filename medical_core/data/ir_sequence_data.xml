@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="seq_medical_patient" model="ir.sequence">
+            <field name="name">Patient</field>
+            <field name="code">medical.patient</field>
+            <field name="prefix">P</field>
+            <field name="padding">6</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="seq_medical_visit" model="ir.sequence">
+            <field name="name">Visit</field>
+            <field name="code">medical.visit</field>
+            <field name="prefix">V/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="seq_medical_treatment_plan" model="ir.sequence">
+            <field name="name">Treatment Plan</field>
+            <field name="code">medical.treatment.plan</field>
+            <field name="prefix">TP/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="seq_medical_prescription" model="ir.sequence">
+            <field name="name">Prescription</field>
+            <field name="code">medical.prescription</field>
+            <field name="prefix">RX/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="seq_medical_order" model="ir.sequence">
+            <field name="name">Lab / Imaging Order</field>
+            <field name="code">medical.order</field>
+            <field name="prefix">ORD/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="seq_medical_referral" model="ir.sequence">
+            <field name="name">Referral</field>
+            <field name="code">medical.referral</field>
+            <field name="prefix">REF/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="seq_medical_care_contract" model="ir.sequence">
+            <field name="name">Care Program</field>
+            <field name="code">medical.care.contract</field>
+            <field name="prefix">CP/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="seq_medical_surgery" model="ir.sequence">
+            <field name="name">Surgery</field>
+            <field name="code">medical.surgery</field>
+            <field name="prefix">OR/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="room_theatre_1" model="medical.room">
+            <field name="name">Operating Theatre 1</field>
+            <field name="room_type">theatre</field>
+            <field name="sequence">90</field>
+        </record>
+        <record id="config_doctor_discount_limit" model="ir.config_parameter">
+            <field name="key">medical_core.doctor_discount_limit</field>
+            <field name="value">10</field>
+        </record>
+        <record id="config_user_discount_limit" model="ir.config_parameter">
+            <field name="key">medical_core.user_discount_limit</field>
+            <field name="value">0</field>
+        </record>
+    </data>
+</odoo>

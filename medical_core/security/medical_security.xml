@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="module_category_medical" model="ir.module.category">
+        <field name="name">Medical Center</field>
+        <field name="sequence">30</field>
+    </record>
+
+    <record id="res_groups_privilege_medical" model="res.groups.privilege">
+        <field name="name">Medical Center</field>
+        <field name="sequence">30</field>
+        <field name="category_id" ref="module_category_medical"/>
+    </record>
+
+    <record id="group_medical_user" model="res.groups">
+        <field name="name">Reception</field>
+        <field name="sequence">10</field>
+        <field name="privilege_id" ref="res_groups_privilege_medical"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">Bookings, check-in, patients, collection. No access to clinical notes.</field>
+    </record>
+
+    <record id="group_medical_nurse" model="res.groups">
+        <field name="name">Nurse / Technician</field>
+        <field name="sequence">15</field>
+        <field name="privilege_id" ref="res_groups_privilege_medical"/>
+        <field name="implied_ids" eval="[(4, ref('group_medical_user'))]"/>
+        <field name="comment">Vital signs, measurements, clinical scores, allergies and test results.</field>
+    </record>
+
+    <record id="group_medical_doctor" model="res.groups">
+        <field name="name">Doctor</field>
+        <field name="sequence">20</field>
+        <field name="privilege_id" ref="res_groups_privilege_medical"/>
+        <field name="implied_ids" eval="[(4, ref('group_medical_nurse'))]"/>
+        <field name="comment">Diagnoses, treatment plans, prescriptions, clinical notes and medical history.</field>
+    </record>
+
+    <record id="group_medical_manager" model="res.groups">
+        <field name="name">Center Manager</field>
+        <field name="sequence">30</field>
+        <field name="privilege_id" ref="res_groups_privilege_medical"/>
+        <field name="implied_ids" eval="[(4, ref('group_medical_doctor'))]"/>
+        <field name="user_ids" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+    </record>
+
+    <record id="medical_visit_company_rule" model="ir.rule">
+        <field name="name">Visit: multi-company</field>
+        <field name="model_id" ref="model_medical_visit"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="medical_plan_company_rule" model="ir.rule">
+        <field name="name">Treatment plan: multi-company</field>
+        <field name="model_id" ref="model_medical_treatment_plan"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="medical_room_company_rule" model="ir.rule">
+        <field name="name">Room: multi-company</field>
+        <field name="model_id" ref="model_medical_room"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="medical_department_company_rule" model="ir.rule">
+        <field name="name">Department: multi-company</field>
+        <field name="model_id" ref="model_medical_department"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="medical_prescription_company_rule" model="ir.rule">
+        <field name="name">Prescription: multi-company</field>
+        <field name="model_id" ref="model_medical_prescription"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="medical_order_company_rule" model="ir.rule">
+        <field name="name">Order: multi-company</field>
+        <field name="model_id" ref="model_medical_order"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="medical_contract_company_rule" model="ir.rule">
+        <field name="name">Care program: multi-company</field>
+        <field name="model_id" ref="model_medical_care_contract"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="medical_referral_company_rule" model="ir.rule">
+        <field name="name">Referral: multi-company</field>
+        <field name="model_id" ref="model_medical_referral"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="medical_surgery_company_rule" model="ir.rule">
+        <field name="name">Surgery: multi-company</field>
+        <field name="model_id" ref="model_medical_surgery"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+</odoo>

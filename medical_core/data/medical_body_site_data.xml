@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="site_head" model="medical.body.site">
+            <field name="name">Head</field>
+            <field name="code">head</field>
+            <field name="region">head</field>
+            <field name="has_laterality" eval="False"/>
+            <field name="sequence">1</field>
+        </record>
+        <record id="site_scalp" model="medical.body.site">
+            <field name="name">Scalp</field>
+            <field name="code">scalp</field>
+            <field name="region">head</field>
+            <field name="has_laterality" eval="False"/>
+            <field name="sequence">2</field>
+        </record>
+        <record id="site_face" model="medical.body.site">
+            <field name="name">Face</field>
+            <field name="code">face</field>
+            <field name="region">head</field>
+            <field name="has_laterality" eval="False"/>
+            <field name="sequence">3</field>
+        </record>
+        <record id="site_forehead" model="medical.body.site">
+            <field name="name">Forehead</field>
+            <field name="code">forehead</field>
+            <field name="region">head</field>
+            <field name="has_laterality" eval="False"/>
+            <field name="sequence">4</field>
+        </record>
+        <record id="site_cheek" model="medical.body.site">
+            <field name="name">Cheek</field>
+            <field name="code">cheek</field>
+            <field name="region">head</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">5</field>
+        </record>
+        <record id="site_nose" model="medical.body.site">
+            <field name="name">Nose</field>
+            <field name="code">nose</field>
+            <field name="region">head</field>
+            <field name="has_laterality" eval="False"/>
+            <field name="sequence">6</field>
+        </record>
+        <record id="site_lip" model="medical.body.site">
+            <field name="name">Lip</field>
+            <field name="code">lip</field>
+            <field name="region">head</field>
+            <field name="has_laterality" eval="False"/>
+            <field name="sequence">7</field>
+        </record>
+        <record id="site_ear" model="medical.body.site">
+            <field name="name">Ear</field>
+            <field name="code">ear</field>
+            <field name="region">head</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">8</field>
+        </record>
+        <record id="site_jaw" model="medical.body.site">
+            <field name="name">Jaw / TMJ</field>
+            <field name="code">jaw</field>
+            <field name="region">head</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">9</field>
+        </record>
+        <record id="site_eye" model="medical.body.site">
+            <field name="name">Eye</field>
+            <field name="code">eye</field>
+            <field name="region">eye</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="site_eyelid" model="medical.body.site">
+            <field name="name">Eyelid</field>
+            <field name="code">eyelid</field>
+            <field name="region">eye</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">11</field>
+        </record>
+        <record id="site_neck" model="medical.body.site">
+            <field name="name">Neck</field>
+            <field name="code">neck</field>
+            <field name="region">neck</field>
+            <field name="has_laterality" eval="False"/>
+            <field name="sequence">12</field>
+        </record>
+        <record id="site_thyroid" model="medical.body.site">
+            <field name="name">Thyroid</field>
+            <field name="code">thyroid</field>
+            <field name="region">neck</field>
+            <field name="has_laterality" eval="False"/>
+            <field name="sequence">13</field>
+        </record>
+        <record id="site_c_spine" model="medical.body.site">
+            <field name="name">Cervical Spine</field>
+            <field name="code">c_spine</field>
+            <field name="region">spine</field>
+            <field name="has_laterality" eval="False"/>
+            <field name="sequence">14</field>
+        </record>
+        <record id="site_t_spine" model="medical.body.site">
+            <field name="name">Thoracic Spine</field>
+            <field name="code">t_spine</field>
+            <field name="region">spine</field>
+            <field name="has_laterality" eval="False"/>
+            <field name="sequence">15</field>
+        </record>
+        <record id="site_l_spine" model="medical.body.site">
+            <field name="name">Lumbar Spine</field>
+            <field name="code">l_spine</field>
+            <field name="region">spine</field>
+            <field name="has_laterality" eval="False"/>
+            <field name="sequence">16</field>
+        </record>
+        <record id="site_sacrum" model="medical.body.site">
+            <field name="name">Sacrum / Coccyx</field>
+            <field name="code">sacrum</field>
+            <field name="region">spine</field>
+            <field name="has_laterality" eval="False"/>
+            <field name="sequence">17</field>
+        </record>
+        <record id="site_chest" model="medical.body.site">
+            <field name="name">Chest</field>
+            <field name="code">chest</field>
+            <field name="region">trunk</field>
+            <field name="has_laterality" eval="False"/>
+            <field name="sequence">18</field>
+        </record>
+        <record id="site_breast" model="medical.body.site">
+            <field name="name">Breast</field>
+            <field name="code">breast</field>
+            <field name="region">trunk</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">19</field>
+        </record>
+        <record id="site_back" model="medical.body.site">
+            <field name="name">Back</field>
+            <field name="code">back</field>
+            <field name="region">trunk</field>
+            <field name="has_laterality" eval="False"/>
+            <field name="sequence">20</field>
+        </record>
+        <record id="site_abdomen" model="medical.body.site">
+            <field name="name">Abdomen</field>
+            <field name="code">abdomen</field>
+            <field name="region">trunk</field>
+            <field name="has_laterality" eval="False"/>
+            <field name="sequence">21</field>
+        </record>
+        <record id="site_pelvis" model="medical.body.site">
+            <field name="name">Pelvis</field>
+            <field name="code">pelvis</field>
+            <field name="region">pelvis</field>
+            <field name="has_laterality" eval="False"/>
+            <field name="sequence">22</field>
+        </record>
+        <record id="site_hip" model="medical.body.site">
+            <field name="name">Hip</field>
+            <field name="code">hip</field>
+            <field name="region">pelvis</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">23</field>
+        </record>
+        <record id="site_groin" model="medical.body.site">
+            <field name="name">Groin</field>
+            <field name="code">groin</field>
+            <field name="region">pelvis</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">24</field>
+        </record>
+        <record id="site_buttock" model="medical.body.site">
+            <field name="name">Buttock</field>
+            <field name="code">buttock</field>
+            <field name="region">pelvis</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">25</field>
+        </record>
+        <record id="site_shoulder" model="medical.body.site">
+            <field name="name">Shoulder</field>
+            <field name="code">shoulder</field>
+            <field name="region">upper_limb</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">26</field>
+        </record>
+        <record id="site_clavicle" model="medical.body.site">
+            <field name="name">Clavicle</field>
+            <field name="code">clavicle</field>
+            <field name="region">upper_limb</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">27</field>
+        </record>
+        <record id="site_arm" model="medical.body.site">
+            <field name="name">Upper Arm</field>
+            <field name="code">arm</field>
+            <field name="region">upper_limb</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">28</field>
+        </record>
+        <record id="site_elbow" model="medical.body.site">
+            <field name="name">Elbow</field>
+            <field name="code">elbow</field>
+            <field name="region">upper_limb</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">29</field>
+        </record>
+        <record id="site_forearm" model="medical.body.site">
+            <field name="name">Forearm</field>
+            <field name="code">forearm</field>
+            <field name="region">upper_limb</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">30</field>
+        </record>
+        <record id="site_wrist" model="medical.body.site">
+            <field name="name">Wrist</field>
+            <field name="code">wrist</field>
+            <field name="region">upper_limb</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">31</field>
+        </record>
+        <record id="site_hand" model="medical.body.site">
+            <field name="name">Hand</field>
+            <field name="code">hand</field>
+            <field name="region">upper_limb</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">32</field>
+        </record>
+        <record id="site_finger" model="medical.body.site">
+            <field name="name">Finger</field>
+            <field name="code">finger</field>
+            <field name="region">upper_limb</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">33</field>
+        </record>
+        <record id="site_axilla" model="medical.body.site">
+            <field name="name">Axilla</field>
+            <field name="code">axilla</field>
+            <field name="region">upper_limb</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">34</field>
+        </record>
+        <record id="site_thigh" model="medical.body.site">
+            <field name="name">Thigh</field>
+            <field name="code">thigh</field>
+            <field name="region">lower_limb</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">35</field>
+        </record>
+        <record id="site_knee" model="medical.body.site">
+            <field name="name">Knee</field>
+            <field name="code">knee</field>
+            <field name="region">lower_limb</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">36</field>
+        </record>
+        <record id="site_leg" model="medical.body.site">
+            <field name="name">Lower Leg</field>
+            <field name="code">leg</field>
+            <field name="region">lower_limb</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">37</field>
+        </record>
+        <record id="site_ankle" model="medical.body.site">
+            <field name="name">Ankle</field>
+            <field name="code">ankle</field>
+            <field name="region">lower_limb</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">38</field>
+        </record>
+        <record id="site_foot" model="medical.body.site">
+            <field name="name">Foot</field>
+            <field name="code">foot</field>
+            <field name="region">lower_limb</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">39</field>
+        </record>
+        <record id="site_heel" model="medical.body.site">
+            <field name="name">Heel</field>
+            <field name="code">heel</field>
+            <field name="region">lower_limb</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">40</field>
+        </record>
+        <record id="site_toe" model="medical.body.site">
+            <field name="name">Toe</field>
+            <field name="code">toe</field>
+            <field name="region">lower_limb</field>
+            <field name="has_laterality" eval="True"/>
+            <field name="sequence">41</field>
+        </record>
+        <record id="site_skin_general" model="medical.body.site">
+            <field name="name">Skin (multiple areas)</field>
+            <field name="code">skin_general</field>
+            <field name="region">skin</field>
+            <field name="has_laterality" eval="False"/>
+            <field name="sequence">42</field>
+        </record>
+        <record id="site_nail" model="medical.body.site">
+            <field name="name">Nail</field>
+            <field name="code">nail</field>
+            <field name="region">skin</field>
+            <field name="has_laterality" eval="False"/>
+            <field name="sequence">43</field>
+        </record>
+    </data>
+</odoo>

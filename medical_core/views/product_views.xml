@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_form_view_medical" model="ir.ui.view">
+        <field name="name">product.template.form.medical</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Medical" name="medical" invisible="not is_medical_procedure">
+                    <group>
+                        <group string="Procedure" name="procedure">
+                            <field name="specialty_id" required="is_medical_procedure"/>
+                            <field name="medical_department_id"/>
+                            <field name="procedure_type"/>
+                            <field name="insurance_code"/>
+                            <field name="procedure_duration"/>
+                            <field name="multi_stage"/>
+                        </group>
+                        <group string="Clinical Rules" name="rules">
+                            <field name="site_requirement"/>
+                            <field name="requires_consent"/>
+                            <field name="result_type_ids" widget="many2many_tags"
+                                   invisible="procedure_type not in ('lab', 'imaging', 'test')"/>
+                        </group>
+                    </group>
+                    <group string="Consent Text" invisible="not requires_consent">
+                        <field name="consent_text" nolabel="1" colspan="2"/>
+                    </group>
+                </page>
+                <page string="Medicine" name="medicine" invisible="not is_medicine">
+                    <group>
+                        <group>
+                            <field name="active_ingredient"/>
+                            <field name="strength"/>
+                        </group>
+                        <group>
+                            <field name="dosage_form"/>
+                            <field name="default_route"/>
+                            <field name="allergen_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//div[@name='options']" position="inside">
+                <span class="d-inline-flex">
+                    <field name="is_medical_procedure"/>
+                    <label for="is_medical_procedure"/>
+                </span>
+                <span class="d-inline-flex">
+                    <field name="is_medicine"/>
+                    <label for="is_medicine"/>
+                </span>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_procedure_view_list" model="ir.ui.view">
+        <field name="name">product.template.medical.list</field>
+        <field name="model">product.template</field>
+        <field name="priority">90</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="medical_department_id"/>
+                <field name="specialty_id" context="{'specialty_short': True}"/>
+                <field name="procedure_type"/>
+                <field name="insurance_code"/>
+                <field name="list_price" widget="monetary"/>
+                <field name="currency_id" column_invisible="True"/>
+                <field name="site_requirement" optional="hide"/>
+                <field name="requires_consent" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_procedure_view_search" model="ir.ui.view">
+        <field name="name">product.template.medical.search</field>
+        <field name="model">product.template</field>
+        <field name="priority">90</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="insurance_code"/>
+                <field name="medical_department_id"/>
+                <field name="specialty_id"/>
+                <filter name="consultations" string="Consultations" domain="[('procedure_type', '=', 'consultation')]"/>
+                <filter name="procedures" string="Procedures" domain="[('procedure_type', 'in', ('procedure', 'surgery', 'session'))]"/>
+                <filter name="tests" string="Lab &amp; Imaging" domain="[('procedure_type', 'in', ('lab', 'imaging', 'test'))]"/>
+                <filter name="packages" string="Packages" domain="[('procedure_type', '=', 'package')]"/>
+                <group>
+                    <filter name="group_department" string="Department" context="{'group_by': 'medical_department_id'}"/>
+                    <filter name="group_specialty" string="Specialty" context="{'group_by': 'specialty_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_medical_procedure" model="ir.actions.act_window">
+        <field name="name">Procedures &amp; Prices</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('is_medical_procedure', '=', True)]</field>
+        <field name="context">{'default_is_medical_procedure': True, 'default_type': 'service', 'search_default_group_department': 1}</field>
+        <field name="search_view_id" ref="medical_procedure_view_search"/>
+        <field name="view_ids" eval="[(5, 0, 0), (0, 0, {'view_mode': 'list', 'view_id': ref('medical_procedure_view_list')})]"/>
+    </record>
+
+    <record id="medical_medicine_view_list" model="ir.ui.view">
+        <field name="name">product.template.medicine.list</field>
+        <field name="model">product.template</field>
+        <field name="priority">91</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="active_ingredient"/>
+                <field name="strength"/>
+                <field name="dosage_form"/>
+                <field name="default_route" optional="show"/>
+                <field name="allergen_ids" widget="many2many_tags" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_medicine_view_search" model="ir.ui.view">
+        <field name="name">product.template.medicine.search</field>
+        <field name="model">product.template</field>
+        <field name="priority">91</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" filter_domain="['|', ('name', 'ilike', self), ('active_ingredient', 'ilike', self)]"/>
+                <group>
+                    <filter name="group_form" string="Form" context="{'group_by': 'dosage_form'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_medical_medicine" model="ir.actions.act_window">
+        <field name="name">Medicines</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('is_medicine', '=', True)]</field>
+        <field name="context">{'default_is_medicine': True, 'default_type': 'consu', 'default_sale_ok': False}</field>
+        <field name="search_view_id" ref="medical_medicine_view_search"/>
+        <field name="view_ids" eval="[(5, 0, 0), (0, 0, {'view_mode': 'list', 'view_id': ref('medical_medicine_view_list')})]"/>
+    </record>
+</odoo>

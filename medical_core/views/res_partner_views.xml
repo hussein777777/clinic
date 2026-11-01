@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_partner_form_medical" model="ir.ui.view">
+        <field name="name">res.partner.form.medical</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button name="action_open_medical_visits" type="object" class="oe_stat_button" icon="fa-calendar"
+                        invisible="not is_patient" groups="medical_core.group_medical_user">
+                    <field name="medical_visit_count" widget="statinfo" string="Visits"/>
+                </button>
+                <button name="action_open_medical_plans" type="object" class="oe_stat_button" icon="fa-list-ol"
+                        invisible="not is_patient or not medical_plan_count" groups="medical_core.group_medical_user">
+                    <field name="medical_plan_count" widget="statinfo" string="Plans"/>
+                </button>
+                <button name="action_open_medical_prescriptions" type="object" class="oe_stat_button" icon="fa-medkit"
+                        invisible="not is_patient or not medical_prescription_count" groups="medical_core.group_medical_user">
+                    <field name="medical_prescription_count" widget="statinfo" string="Prescriptions"/>
+                </button>
+                <button name="action_open_medical_orders" type="object" class="oe_stat_button" icon="fa-flask"
+                        invisible="not is_patient or not medical_order_count" groups="medical_core.group_medical_user">
+                    <field name="medical_order_count" widget="statinfo" string="Tests"/>
+                </button>
+                <button name="action_open_medical_contracts" type="object" class="oe_stat_button" icon="fa-refresh"
+                        invisible="not is_patient or not medical_contract_count" groups="medical_core.group_medical_user">
+                    <field name="medical_contract_count" widget="statinfo" string="Programs"/>
+                </button>
+            </div>
+            <xpath expr="//notebook" position="before">
+                <field name="is_patient" invisible="1"/>
+                <div class="alert alert-danger d-flex gap-2 align-items-start" role="alert"
+                     invisible="not is_patient or not has_medical_alert" groups="medical_core.group_medical_user">
+                    <i class="fa fa-exclamation-triangle mt-1" title="Alert" aria-hidden="true"/>
+                    <div>
+                        <field name="has_medical_alert" invisible="1"/>
+                        <strong>Medical alert on file.</strong>
+                        <div groups="medical_core.group_medical_nurse">
+                            <field name="allergen_ids" widget="many2many_tags" readonly="1" options="{'color_field': 'color'}"/>
+                            <field name="medical_alerts" readonly="1"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end mb-2" invisible="not is_patient" groups="medical_core.group_medical_user">
+                    <button name="action_book_visit" type="object" string="Book a Visit" class="btn btn-primary" icon="fa-calendar-plus-o"/>
+                </div>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Medical" name="medical" invisible="not is_patient" groups="medical_core.group_medical_user">
+                    <group>
+                        <group string="Patient">
+                            <field name="patient_code"/>
+                            <field name="birthdate"/>
+                            <field name="patient_age_label"/>
+                            <field name="gender"/>
+                            <field name="national_id"/>
+                            <field name="occupation"/>
+                        </group>
+                        <group string="Safety">
+                            <field name="blood_group" groups="medical_core.group_medical_nurse"/>
+                            <field name="allergen_ids" widget="many2many_tags" options="{'color_field': 'color'}"
+                                   groups="medical_core.group_medical_nurse"/>
+                            <field name="medical_alerts" placeholder="Anticoagulants, pacemaker, pregnancy..."
+                                   groups="medical_core.group_medical_nurse"/>
+                            <field name="emergency_contact"/>
+                            <field name="emergency_phone" widget="phone"/>
+                        </group>
+                    </group>
+                    <separator string="Problem List" groups="medical_core.group_medical_doctor"/>
+                    <field name="problem_ids" context="{'default_patient_id': id}" groups="medical_core.group_medical_doctor">
+                        <list editable="bottom" decoration-muted="state == 'resolved'">
+                            <field name="diagnosis_id"/>
+                            <field name="name"/>
+                            <field name="state" widget="badge" decoration-danger="state == 'active'"
+                                   decoration-success="state == 'controlled'"/>
+                            <field name="onset_date"/>
+                            <field name="department_id" optional="show"/>
+                            <field name="note" optional="show"/>
+                        </list>
+                    </field>
+                    <separator string="Medical History" groups="medical_core.group_medical_doctor"/>
+                    <field name="medical_history" groups="medical_core.group_medical_doctor"
+                           placeholder="Past illnesses, operations, family history, social history..."/>
+                </page>
+                <page string="Measurements" name="measurements" invisible="not is_patient or not id"
+                      groups="medical_core.group_medical_nurse">
+                    <widget name="medical_observation_trend"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_patient_view_list" model="ir.ui.view">
+        <field name="name">res.partner.patient.list</field>
+        <field name="model">res.partner</field>
+        <field name="priority">90</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="patient_code"/>
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="patient_age_label" string="Age"/>
+                <field name="gender" optional="show"/>
+                <field name="has_medical_alert" widget="boolean" string="Alert"/>
+                <field name="last_visit_date" optional="show"/>
+                <field name="medical_visit_count" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_patient_view_search" model="ir.ui.view">
+        <field name="name">res.partner.patient.search</field>
+        <field name="model">res.partner</field>
+        <field name="priority">90</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" filter_domain="['|', '|', '|', ('name', 'ilike', self), ('patient_code', 'ilike', self), ('phone', 'ilike', self), ('national_id', 'ilike', self)]"/>
+                <field name="patient_code"/>
+                <field name="phone"/>
+                <filter name="female" string="Female" domain="[('gender', '=', 'female')]"/>
+                <filter name="male" string="Male" domain="[('gender', '=', 'male')]"/>
+                <filter name="children" string="Children (under 18)"
+                        domain="[('birthdate', '&gt;', (context_today() - relativedelta(years=18)).strftime('%Y-%m-%d'))]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_medical_patient" model="ir.actions.act_window">
+        <field name="name">Patients</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('is_patient', '=', True)]</field>
+        <field name="context">{'default_is_patient': True, 'default_company_type': 'person'}</field>
+        <field name="search_view_id" ref="medical_patient_view_search"/>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'list', 'view_id': ref('medical_patient_view_list')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('base.view_partner_form')})]"/>
+    </record>
+</odoo>

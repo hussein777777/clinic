@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_order_view_form" model="ir.ui.view">
+        <field name="name">medical.order.form</field>
+        <field name="model">medical.order</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_request" type="object" string="Send Request" class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_start" type="object" string="Sample Taken" invisible="state != 'requested'"
+                            groups="medical_core.group_medical_nurse"/>
+                    <button name="action_done" type="object" string="Results Ready" class="btn-primary"
+                            invisible="state not in ('requested', 'in_progress')" groups="medical_core.group_medical_nurse"/>
+                    <button name="action_print" type="object" string="Print" icon="fa-print" invisible="state == 'draft'"/>
+                    <button name="action_cancel" type="object" string="Cancel" invisible="state in ('done', 'cancelled')"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,requested,in_progress,done"/>
+                </header>
+                <sheet>
+                    <div class="alert alert-warning" role="alert" invisible="not has_abnormal">
+                        <i class="fa fa-exclamation-circle me-1" title="Alert" aria-hidden="true"/>
+                        Some results are outside the normal range.
+                    </div>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="patient_id" readonly="state != 'draft'"/>
+                            <field name="visit_id" readonly="state != 'draft'"/>
+                            <field name="order_type" readonly="state != 'draft'"/>
+                            <field name="priority"/>
+                        </group>
+                        <group>
+                            <field name="doctor_id" readonly="state != 'draft'"/>
+                            <field name="department_id" readonly="state != 'draft'"/>
+                            <field name="date"/>
+                            <field name="performer" readonly="state != 'draft'"/>
+                            <field name="external_partner_id" invisible="performer != 'external'"
+                                   required="performer == 'external' and state != 'draft'"/>
+                            <field name="result_date" invisible="not result_date"/>
+                            <field name="has_abnormal" invisible="1"/>
+                        </group>
+                    </group>
+                    <field name="clinical_info" placeholder="Clinical information for the lab / radiologist..."/>
+                    <notebook>
+                        <page string="Tests &amp; Results" name="lines">
+                            <field name="line_ids" readonly="state in ('done', 'cancelled')">
+                                <list>
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="product_id"/>
+                                    <field name="body_site_id" optional="show"/>
+                                    <field name="laterality" optional="show"/>
+                                    <field name="note" optional="show"/>
+                                    <field name="result_text" optional="show"/>
+                                </list>
+                                <form>
+                                    <group>
+                                        <group>
+                                            <field name="product_id" domain="[('is_medical_procedure', '=', True), ('procedure_type', '=', parent.order_type)]"/>
+                                            <field name="body_site_id"/>
+                                            <field name="laterality"/>
+                                        </group>
+                                        <group>
+                                            <field name="note"/>
+                                            <field name="treatment_line_id" invisible="not treatment_line_id"/>
+                                        </group>
+                                    </group>
+                                    <field name="result_ids">
+                                        <list editable="bottom" create="0" decoration-danger="flag in ('critical_low', 'critical_high')"
+                                               decoration-warning="flag in ('low', 'high')">
+                                            <field name="type_id" readonly="1"/>
+                                            <field name="value"/>
+                                            <field name="unit"/>
+                                            <field name="normal_range"/>
+                                            <field name="has_value" optional="hide"/>
+                                            <field name="flag" widget="badge" decoration-danger="flag in ('critical_low', 'critical_high')"
+                                                   decoration-warning="flag in ('low', 'high')" decoration-success="flag == 'normal'"/>
+                                        </list>
+                                    </field>
+                                    <field name="result_text" placeholder="Findings / radiology report..."/>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Report &amp; Files" name="report">
+                            <field name="attachment_ids" widget="many2many_binary"/>
+                            <field name="conclusion" placeholder="Conclusion..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_order_view_list" model="ir.ui.view">
+        <field name="name">medical.order.list</field>
+        <field name="model">medical.order</field>
+        <field name="arch" type="xml">
+            <list decoration-muted="state == 'cancelled'" decoration-danger="priority == 'urgent' and state in ('requested', 'in_progress')">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="patient_id"/>
+                <field name="order_type"/>
+                <field name="line_ids" widget="many2many_tags" string="Tests"/>
+                <field name="doctor_id"/>
+                <field name="priority" optional="show"/>
+                <field name="has_abnormal" widget="boolean" optional="show"/>
+                <field name="state" widget="badge" decoration-success="state == 'done'"
+                       decoration-info="state in ('requested', 'in_progress')"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_order_view_search" model="ir.ui.view">
+        <field name="name">medical.order.search</field>
+        <field name="model">medical.order</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <filter name="pending" string="Waiting for Results" domain="[('state', 'in', ('requested', 'in_progress'))]"/>
+                <filter name="abnormal" string="Abnormal" domain="[('has_abnormal', '=', True)]"/>
+                <filter name="urgent" string="Urgent" domain="[('priority', '=', 'urgent')]"/>
+                <separator/>
+                <filter name="lab" string="Laboratory" domain="[('order_type', '=', 'lab')]"/>
+                <filter name="imaging" string="Imaging" domain="[('order_type', '=', 'imaging')]"/>
+                <filter name="test" string="Other Tests" domain="[('order_type', '=', 'test')]"/>
+                <filter name="date" string="Date" date="date"/>
+                <group>
+                    <filter name="group_state" string="Status" context="{'group_by': 'state'}"/>
+                    <filter name="group_doctor" string="Doctor" context="{'group_by': 'doctor_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_medical_order" model="ir.actions.act_window">
+        <field name="name">Lab &amp; Imaging</field>
+        <field name="res_model">medical.order</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_medical_order_worklist" model="ir.actions.act_window">
+        <field name="name">Worklist</field>
+        <field name="res_model">medical.order</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_pending': 1}</field>
+    </record>
+</odoo>

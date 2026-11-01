@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="allergen_penicillin" model="medical.allergen">
+            <field name="name">Penicillins</field>
+            <field name="kind">drug</field>
+        </record>
+        <record id="allergen_cephalosporin" model="medical.allergen">
+            <field name="name">Cephalosporins</field>
+            <field name="kind">drug</field>
+        </record>
+        <record id="allergen_sulfa" model="medical.allergen">
+            <field name="name">Sulfonamides</field>
+            <field name="kind">drug</field>
+        </record>
+        <record id="allergen_nsaid" model="medical.allergen">
+            <field name="name">NSAIDs</field>
+            <field name="kind">drug</field>
+        </record>
+        <record id="allergen_aspirin" model="medical.allergen">
+            <field name="name">Aspirin</field>
+            <field name="kind">drug</field>
+        </record>
+        <record id="allergen_opioid" model="medical.allergen">
+            <field name="name">Opioids</field>
+            <field name="kind">drug</field>
+        </record>
+        <record id="allergen_local_anesthetic" model="medical.allergen">
+            <field name="name">Local Anesthetics</field>
+            <field name="kind">drug</field>
+        </record>
+        <record id="allergen_macrolide" model="medical.allergen">
+            <field name="name">Macrolides</field>
+            <field name="kind">drug</field>
+        </record>
+        <record id="allergen_quinolone" model="medical.allergen">
+            <field name="name">Fluoroquinolones</field>
+            <field name="kind">drug</field>
+        </record>
+        <record id="allergen_contrast" model="medical.allergen">
+            <field name="name">Iodinated Contrast</field>
+            <field name="kind">drug</field>
+        </record>
+        <record id="allergen_latex" model="medical.allergen">
+            <field name="name">Latex</field>
+            <field name="kind">other</field>
+        </record>
+        <record id="allergen_peanut" model="medical.allergen">
+            <field name="name">Peanuts</field>
+            <field name="kind">food</field>
+        </record>
+        <record id="allergen_egg" model="medical.allergen">
+            <field name="name">Eggs</field>
+            <field name="kind">food</field>
+        </record>
+        <record id="allergen_seafood" model="medical.allergen">
+            <field name="name">Seafood</field>
+            <field name="kind">food</field>
+        </record>
+        <record id="allergen_milk" model="medical.allergen">
+            <field name="name">Cow Milk Protein</field>
+            <field name="kind">food</field>
+        </record>
+        <record id="medicine_paracetamol_500" model="product.product">
+            <field name="name">Paracetamol 500 mg</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Paracetamol</field>
+            <field name="strength">500 mg</field>
+            <field name="dosage_form">tablet</field>
+            <field name="default_route">oral</field>
+        </record>
+        <record id="medicine_paracetamol_syrup" model="product.product">
+            <field name="name">Paracetamol Syrup</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Paracetamol</field>
+            <field name="strength">120 mg/5 ml</field>
+            <field name="dosage_form">syrup</field>
+            <field name="default_route">oral</field>
+        </record>
+        <record id="medicine_ibuprofen_400" model="product.product">
+            <field name="name">Ibuprofen 400 mg</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Ibuprofen</field>
+            <field name="strength">400 mg</field>
+            <field name="dosage_form">tablet</field>
+            <field name="default_route">oral</field>
+            <field name="allergen_ids" eval="[(6, 0, [ref('allergen_nsaid')])]"/>
+        </record>
+        <record id="medicine_ibuprofen_syrup" model="product.product">
+            <field name="name">Ibuprofen Syrup</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Ibuprofen</field>
+            <field name="strength">100 mg/5 ml</field>
+            <field name="dosage_form">syrup</field>
+            <field name="default_route">oral</field>
+            <field name="allergen_ids" eval="[(6, 0, [ref('allergen_nsaid')])]"/>
+        </record>
+        <record id="medicine_diclofenac_50" model="product.product">
+            <field name="name">Diclofenac Sodium 50 mg</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Diclofenac</field>
+            <field name="strength">50 mg</field>
+            <field name="dosage_form">tablet</field>
+            <field name="default_route">oral</field>
+            <field name="allergen_ids" eval="[(6, 0, [ref('allergen_nsaid')])]"/>
+        </record>
+        <record id="medicine_diclofenac_gel" model="product.product">
+            <field name="name">Diclofenac Gel 1%</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Diclofenac</field>
+            <field name="strength">1%</field>
+            <field name="dosage_form">gel</field>
+            <field name="default_route">topical</field>
+            <field name="allergen_ids" eval="[(6, 0, [ref('allergen_nsaid')])]"/>
+        </record>
+        <record id="medicine_tramadol_50" model="product.product">
+            <field name="name">Tramadol 50 mg</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Tramadol</field>
+            <field name="strength">50 mg</field>
+            <field name="dosage_form">capsule</field>
+            <field name="default_route">oral</field>
+            <field name="allergen_ids" eval="[(6, 0, [ref('allergen_opioid')])]"/>
+        </record>
+        <record id="medicine_amoxicillin_500" model="product.product">
+            <field name="name">Amoxicillin 500 mg</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Amoxicillin</field>
+            <field name="strength">500 mg</field>
+            <field name="dosage_form">capsule</field>
+            <field name="default_route">oral</field>
+            <field name="allergen_ids" eval="[(6, 0, [ref('allergen_penicillin')])]"/>
+        </record>
+        <record id="medicine_amoxicillin_susp" model="product.product">
+            <field name="name">Amoxicillin Suspension</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Amoxicillin</field>
+            <field name="strength">250 mg/5 ml</field>
+            <field name="dosage_form">syrup</field>
+            <field name="default_route">oral</field>
+            <field name="allergen_ids" eval="[(6, 0, [ref('allergen_penicillin')])]"/>
+        </record>
+        <record id="medicine_amoxiclav_1g" model="product.product">
+            <field name="name">Amoxicillin/Clavulanate 1 g</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Amoxicillin + Clavulanic acid</field>
+            <field name="strength">875/125 mg</field>
+            <field name="dosage_form">tablet</field>
+            <field name="default_route">oral</field>
+            <field name="allergen_ids" eval="[(6, 0, [ref('allergen_penicillin')])]"/>
+        </record>
+        <record id="medicine_cefuroxime_500" model="product.product">
+            <field name="name">Cefuroxime 500 mg</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Cefuroxime</field>
+            <field name="strength">500 mg</field>
+            <field name="dosage_form">tablet</field>
+            <field name="default_route">oral</field>
+            <field name="allergen_ids" eval="[(6, 0, [ref('allergen_cephalosporin')])]"/>
+        </record>
+        <record id="medicine_azithromycin_500" model="product.product">
+            <field name="name">Azithromycin 500 mg</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Azithromycin</field>
+            <field name="strength">500 mg</field>
+            <field name="dosage_form">tablet</field>
+            <field name="default_route">oral</field>
+            <field name="allergen_ids" eval="[(6, 0, [ref('allergen_macrolide')])]"/>
+        </record>
+        <record id="medicine_ciprofloxacin_500" model="product.product">
+            <field name="name">Ciprofloxacin 500 mg</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Ciprofloxacin</field>
+            <field name="strength">500 mg</field>
+            <field name="dosage_form">tablet</field>
+            <field name="default_route">oral</field>
+            <field name="allergen_ids" eval="[(6, 0, [ref('allergen_quinolone')])]"/>
+        </record>
+        <record id="medicine_metformin_850" model="product.product">
+            <field name="name">Metformin 850 mg</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Metformin</field>
+            <field name="strength">850 mg</field>
+            <field name="dosage_form">tablet</field>
+            <field name="default_route">oral</field>
+        </record>
+        <record id="medicine_amlodipine_5" model="product.product">
+            <field name="name">Amlodipine 5 mg</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Amlodipine</field>
+            <field name="strength">5 mg</field>
+            <field name="dosage_form">tablet</field>
+            <field name="default_route">oral</field>
+        </record>
+        <record id="medicine_losartan_50" model="product.product">
+            <field name="name">Losartan 50 mg</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Losartan</field>
+            <field name="strength">50 mg</field>
+            <field name="dosage_form">tablet</field>
+            <field name="default_route">oral</field>
+        </record>
+        <record id="medicine_atorvastatin_20" model="product.product">
+            <field name="name">Atorvastatin 20 mg</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Atorvastatin</field>
+            <field name="strength">20 mg</field>
+            <field name="dosage_form">tablet</field>
+            <field name="default_route">oral</field>
+        </record>
+        <record id="medicine_omeprazole_20" model="product.product">
+            <field name="name">Omeprazole 20 mg</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Omeprazole</field>
+            <field name="strength">20 mg</field>
+            <field name="dosage_form">capsule</field>
+            <field name="default_route">oral</field>
+        </record>
+        <record id="medicine_cetirizine_10" model="product.product">
+            <field name="name">Cetirizine 10 mg</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Cetirizine</field>
+            <field name="strength">10 mg</field>
+            <field name="dosage_form">tablet</field>
+            <field name="default_route">oral</field>
+        </record>
+        <record id="medicine_prednisolone_5" model="product.product">
+            <field name="name">Prednisolone 5 mg</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Prednisolone</field>
+            <field name="strength">5 mg</field>
+            <field name="dosage_form">tablet</field>
+            <field name="default_route">oral</field>
+        </record>
+        <record id="medicine_salbutamol_inh" model="product.product">
+            <field name="name">Salbutamol Inhaler</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Salbutamol</field>
+            <field name="strength">100 mcg/dose</field>
+            <field name="dosage_form">inhaler</field>
+            <field name="default_route">inhalation</field>
+        </record>
+        <record id="medicine_vitd3_1000" model="product.product">
+            <field name="name">Vitamin D3 1000 IU</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Cholecalciferol</field>
+            <field name="strength">1000 IU</field>
+            <field name="dosage_form">tablet</field>
+            <field name="default_route">oral</field>
+        </record>
+        <record id="medicine_ferrous_sulfate" model="product.product">
+            <field name="name">Ferrous Sulfate</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Ferrous sulfate</field>
+            <field name="strength">325 mg</field>
+            <field name="dosage_form">tablet</field>
+            <field name="default_route">oral</field>
+        </record>
+        <record id="medicine_folic_acid" model="product.product">
+            <field name="name">Folic Acid 400 mcg</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Folic acid</field>
+            <field name="strength">400 mcg</field>
+            <field name="dosage_form">tablet</field>
+            <field name="default_route">oral</field>
+        </record>
+    </data>
+</odoo>

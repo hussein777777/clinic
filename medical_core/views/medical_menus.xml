@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_medical_root" name="Medical Center" sequence="25" web_icon="medical_core,static/description/icon.png"
+              groups="medical_core.group_medical_user"/>
+
+    <menuitem id="menu_medical_front" name="Reception" parent="menu_medical_root" sequence="10"/>
+    <menuitem id="menu_medical_visit_today" name="Today" parent="menu_medical_front" action="action_medical_visit_today" sequence="5"/>
+    <menuitem id="menu_medical_visit" name="Schedule" parent="menu_medical_front" action="action_medical_visit" sequence="10"/>
+    <menuitem id="menu_medical_patient" name="Patients" parent="menu_medical_front" action="action_medical_patient" sequence="20"/>
+    <menuitem id="menu_medical_follow_up" name="Follow-ups to Book" parent="menu_medical_front"
+              action="action_medical_visit_follow_up" sequence="30"/>
+    <menuitem id="menu_medical_referral" name="Referrals" parent="menu_medical_front" action="action_medical_referral" sequence="40"/>
+
+    <menuitem id="menu_medical_clinical" name="Clinical" parent="menu_medical_root" sequence="20"/>
+    <menuitem id="menu_medical_visit_history" name="Visits" parent="menu_medical_clinical" action="action_medical_visit_history" sequence="5"/>
+    <menuitem id="menu_medical_plan" name="Treatment Plans" parent="menu_medical_clinical" action="action_medical_treatment_plan" sequence="10"/>
+    <menuitem id="menu_medical_treatment_line" name="Treatments" parent="menu_medical_clinical" action="action_medical_treatment_line" sequence="20"/>
+    <menuitem id="menu_medical_prescription" name="Prescriptions" parent="menu_medical_clinical" action="action_medical_prescription" sequence="30"/>
+    <menuitem id="menu_medical_order" name="Lab &amp; Imaging" parent="menu_medical_clinical" action="action_medical_order" sequence="40"/>
+    <menuitem id="menu_medical_order_worklist" name="Results to Enter" parent="menu_medical_clinical" action="action_medical_order_worklist"
+              sequence="45" groups="medical_core.group_medical_nurse"/>
+    <menuitem id="menu_medical_care_contract" name="Care Programs" parent="menu_medical_clinical" action="action_medical_care_contract" sequence="50"/>
+    <menuitem id="menu_medical_observation" name="Measurements" parent="menu_medical_clinical" action="action_medical_observation"
+              sequence="60" groups="medical_core.group_medical_nurse"/>
+    <menuitem id="menu_medical_assessment" name="Clinical Scores" parent="menu_medical_clinical" action="action_medical_assessment"
+              sequence="70" groups="medical_core.group_medical_nurse"/>
+    <menuitem id="menu_medical_consent" name="Consents" parent="menu_medical_clinical" action="action_medical_consent" sequence="80"/>
+
+    <!-- each specialty module adds its own section here -->
+    <menuitem id="menu_medical_clinics" name="Clinics" parent="menu_medical_root" sequence="30"/>
+
+    <menuitem id="menu_medical_reporting" name="Reporting" parent="menu_medical_root" sequence="80" groups="medical_core.group_medical_manager"/>
+    <menuitem id="menu_medical_treatment_analysis" name="Treatments Analysis" parent="menu_medical_reporting"
+              action="action_medical_treatment_line_analysis" sequence="10"/>
+
+    <menuitem id="menu_medical_config" name="Configuration" parent="menu_medical_root" sequence="90" groups="medical_core.group_medical_manager"/>
+    <menuitem id="menu_medical_config_center" name="Center" parent="menu_medical_config" sequence="10"/>
+    <menuitem id="menu_medical_department" name="Clinics &amp; Departments" parent="menu_medical_config_center" action="action_medical_department" sequence="10"/>
+    <menuitem id="menu_medical_specialty" name="Specialties" parent="menu_medical_config_center" action="action_medical_specialty" sequence="15"/>
+    <menuitem id="menu_medical_doctor" name="Doctors" parent="menu_medical_config_center" action="action_medical_doctor" sequence="20"/>
+    <menuitem id="menu_medical_room" name="Rooms, Chairs &amp; Devices" parent="menu_medical_config_center" action="action_medical_room" sequence="30"/>
+    <menuitem id="menu_medical_config_catalog" name="Catalog" parent="menu_medical_config" sequence="20"/>
+    <menuitem id="menu_medical_procedure" name="Procedures &amp; Prices" parent="menu_medical_config_catalog" action="action_medical_procedure" sequence="10"/>
+    <menuitem id="menu_medical_medicine" name="Medicines" parent="menu_medical_config_catalog" action="action_medical_medicine" sequence="20"/>
+    <menuitem id="menu_medical_config_clinical" name="Clinical" parent="menu_medical_config" sequence="30"/>
+    <menuitem id="menu_medical_diagnosis" name="Diagnoses (ICD-10)" parent="menu_medical_config_clinical" action="action_medical_diagnosis" sequence="10"/>
+    <menuitem id="menu_medical_allergen" name="Allergies" parent="menu_medical_config_clinical" action="action_medical_allergen" sequence="20"/>
+    <menuitem id="menu_medical_observation_type" name="Measurements &amp; Normal Ranges" parent="menu_medical_config_clinical"
+              action="action_medical_observation_type" sequence="30"/>
+    <menuitem id="menu_medical_assessment_template" name="Clinical Scores" parent="menu_medical_config_clinical"
+              action="action_medical_assessment_template" sequence="40"/>
+    <menuitem id="menu_medical_body_site" name="Body Sites" parent="menu_medical_config_clinical" action="action_medical_body_site" sequence="50"/>
+</odoo>

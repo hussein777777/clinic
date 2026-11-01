@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_prescription_view_form" model="ir.ui.view">
+        <field name="name">medical.prescription.form</field>
+        <field name="model">medical.prescription</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_issue" type="object" string="Issue" class="btn-primary" invisible="state != 'draft'"
+                            groups="medical_core.group_medical_doctor"/>
+                    <button name="action_issue_override" type="object" string="Issue Anyway" invisible="state != 'draft' or not allergy_warning"
+                            groups="medical_core.group_medical_doctor"
+                            confirm="The patient is recorded as allergic to one of these medicines. Issue anyway?"/>
+                    <button name="action_print" type="object" string="Print" icon="fa-print" invisible="state != 'done'"/>
+                    <button name="action_draft" type="object" string="Edit" invisible="state != 'done'"
+                            groups="medical_core.group_medical_doctor"/>
+                    <button name="action_cancel" type="object" string="Cancel" invisible="state == 'cancelled'"
+                            groups="medical_core.group_medical_doctor"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+                </header>
+                <sheet>
+                    <div class="alert alert-danger" role="alert" invisible="not allergy_warning">
+                        <i class="fa fa-exclamation-triangle me-1" title="Alert" aria-hidden="true"/>
+                        <strong>Allergy: </strong><field name="allergy_warning" class="d-inline"/>
+                    </div>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="patient_id" readonly="state != 'draft'"/>
+                            <field name="visit_id" readonly="state != 'draft'"/>
+                            <field name="patient_weight" readonly="state != 'draft'"/>
+                        </group>
+                        <group>
+                            <field name="doctor_id" readonly="state != 'draft'"/>
+                            <field name="department_id" readonly="state != 'draft'"/>
+                            <field name="date" readonly="state != 'draft'"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <field name="line_ids" readonly="state != 'draft'">
+                        <list editable="bottom">
+                            <field name="sequence" widget="handle"/>
+                            <field name="product_id" options="{'no_create': True}"/>
+                            <field name="name"/>
+                            <field name="dose" placeholder="1 tablet"/>
+                            <field name="frequency"/>
+                            <field name="timing" optional="show"/>
+                            <field name="duration_days"/>
+                            <field name="route" optional="show"/>
+                            <field name="quantity" optional="hide"/>
+                            <field name="instructions" optional="show"/>
+                            <field name="is_chronic" optional="hide"/>
+                        </list>
+                    </field>
+                    <group string="Advice to the Patient">
+                        <field name="note" nolabel="1" colspan="2"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_prescription_view_list" model="ir.ui.view">
+        <field name="name">medical.prescription.list</field>
+        <field name="model">medical.prescription</field>
+        <field name="arch" type="xml">
+            <list decoration-muted="state == 'cancelled'">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <field name="department_id" optional="show"/>
+                <field name="state" widget="badge" decoration-success="state == 'done'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_prescription_view_search" model="ir.ui.view">
+        <field name="name">medical.prescription.search</field>
+        <field name="model">medical.prescription</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <field name="line_ids" string="Medicine" filter_domain="[('line_ids.name', 'ilike', self)]"/>
+                <filter name="issued" string="Issued" domain="[('state', '=', 'done')]"/>
+                <filter name="date" string="Date" date="date"/>
+                <group>
+                    <filter name="group_doctor" string="Doctor" context="{'group_by': 'doctor_id'}"/>
+                    <filter name="group_department" string="Department" context="{'group_by': 'department_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_medical_prescription" model="ir.actions.act_window">
+        <field name="name">Prescriptions</field>
+        <field name="res_model">medical.prescription</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

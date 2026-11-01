@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_visit_view_form" model="ir.ui.view">
+        <field name="name">medical.visit.form</field>
+        <field name="model">medical.visit</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_confirm" type="object" string="Confirm" invisible="state != 'draft'"/>
+                    <button name="action_check_in" type="object" string="Check In" class="btn-primary"
+                            invisible="state not in ('draft', 'confirmed')"/>
+                    <button name="action_start" type="object" string="Start Consultation" class="btn-primary"
+                            invisible="state != 'checked_in'" groups="medical_core.group_medical_doctor"/>
+                    <button name="action_done" type="object" string="Close Visit" class="btn-primary"
+                            invisible="state not in ('checked_in', 'in_consult')" groups="medical_core.group_medical_doctor"/>
+                    <button name="action_add_plan_lines" type="object" string="Add Planned Treatments"
+                            invisible="state not in ('draft', 'confirmed', 'checked_in', 'in_consult')"/>
+                    <button name="action_new_prescription" type="object" string="Prescription" icon="fa-medkit"
+                            invisible="state in ('cancelled', 'no_show', 'draft', 'confirmed')" groups="medical_core.group_medical_doctor"/>
+                    <button name="action_new_order" type="object" string="Lab / Imaging" icon="fa-flask"
+                            invisible="state in ('cancelled', 'no_show', 'draft', 'confirmed')" groups="medical_core.group_medical_doctor"/>
+                    <button name="action_refer" type="object" string="Refer" icon="fa-share"
+                            invisible="state in ('cancelled', 'no_show', 'draft', 'confirmed')" groups="medical_core.group_medical_doctor"/>
+                    <button name="action_print_report" type="object" string="Medical Report" icon="fa-print"
+                            invisible="state not in ('done', 'invoiced')" groups="medical_core.group_medical_doctor"/>
+                    <button name="action_no_show" type="object" string="No Show" invisible="state not in ('draft', 'confirmed')"/>
+                    <button name="action_cancel" type="object" string="Cancel"
+                            invisible="state not in ('draft', 'confirmed', 'checked_in', 'in_consult')"/>
+                    <button name="action_reset_draft" type="object" string="Re-book" invisible="state not in ('cancelled', 'no_show')"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,checked_in,in_consult,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_prescriptions" type="object" class="oe_stat_button" icon="fa-medkit"
+                                invisible="not prescription_count">
+                            <field name="prescription_count" widget="statinfo" string="Prescriptions"/>
+                        </button>
+                        <button name="action_view_orders" type="object" class="oe_stat_button" icon="fa-flask"
+                                invisible="not order_count">
+                            <field name="order_count" widget="statinfo" string="Tests"/>
+                        </button>
+                    </div>
+                    <div class="alert alert-danger mb-2" role="alert" invisible="not has_medical_alert">
+                        <i class="fa fa-exclamation-triangle me-1" title="Alert" aria-hidden="true"/>
+                        This patient has a medical alert or allergy. Check before treatment.
+                    </div>
+                    <div class="alert alert-warning mb-2" role="alert" invisible="not vitals_warning"
+                         groups="medical_core.group_medical_nurse">
+                        <i class="fa fa-heartbeat me-1" title="Alert" aria-hidden="true"/>
+                        <strong>Out of range: </strong><field name="vitals_warning" class="d-inline"/>
+                    </div>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group name="main">
+                        <group>
+                            <field name="patient_id" readonly="state not in ('draft', 'confirmed', 'checked_in')"/>
+                            <field name="patient_phone" widget="phone"/>
+                            <label for="patient_age_label" string="Age / Gender"/>
+                            <div class="o_row">
+                                <field name="patient_age_label" class="oe_inline"/>
+                                <field name="patient_gender" class="oe_inline"/>
+                            </div>
+                            <field name="has_medical_alert" invisible="1"/>
+                            <field name="visit_type"/>
+                            <field name="plan_id"/>
+                            <field name="care_contract_id" invisible="not care_contract_id and state in ('done', 'invoiced')"/>
+                        </group>
+                        <group name="schedule">
+                            <field name="department_id" readonly="state in ('done', 'invoiced')"/>
+                            <field name="doctor_id" readonly="state in ('done', 'invoiced')"
+                                   domain="[('is_practitioner', '=', True), ('medical_department_ids', 'in', department_id)] if department_id else [('is_practitioner', '=', True)]"/>
+                            <field name="room_id" domain="['|', ('department_id', '=', False), ('department_id', '=', department_id)]"/>
+                            <field name="start"/>
+                            <field name="duration" widget="float_time"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Vitals" name="vitals" groups="medical_core.group_medical_nurse">
+                            <group>
+                                <group string="Signs">
+                                    <label for="bp_systolic" string="Blood Pressure"/>
+                                    <div class="o_row">
+                                        <field name="bp_systolic" class="oe_inline" placeholder="120"/>
+                                        <span>/</span>
+                                        <field name="bp_diastolic" class="oe_inline" placeholder="80"/>
+                                        <span>mmHg</span>
+                                    </div>
+                                    <field name="pulse"/>
+                                    <field name="temperature"/>
+                                    <field name="resp_rate"/>
+                                    <field name="spo2"/>
+                                </group>
+                                <group string="Body">
+                                    <field name="weight"/>
+                                    <field name="height"/>
+                                    <field name="bmi"/>
+                                    <field name="pain_score"/>
+                                </group>
+                            </group>
+                            <group string="Chief Complaint">
+                                <field name="chief_complaint" nolabel="1" colspan="2" placeholder="Why the patient came, in their words..."/>
+                            </group>
+                            <separator string="Examination Measurements"/>
+                            <field name="exam_observation_ids"
+                                   context="{'default_patient_id': patient_id, 'default_source': 'exam', 'default_date': start}">
+                                <list editable="bottom" decoration-danger="flag in ('critical_low', 'critical_high')"
+                                      decoration-warning="flag in ('low', 'high')">
+                                    <field name="type_id" domain="[('category', 'in', ('exam', 'growth'))]" options="{'no_create': True}"/>
+                                    <field name="laterality"/>
+                                    <field name="value"/>
+                                    <field name="unit"/>
+                                    <field name="flag" widget="badge" decoration-warning="flag in ('low', 'high')"
+                                           decoration-danger="flag in ('critical_low', 'critical_high')"/>
+                                    <field name="patient_id" column_invisible="True"/>
+                                    <field name="source" column_invisible="True"/>
+                                    <field name="date" column_invisible="True"/>
+                                    <field name="note" optional="show"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Consultation" name="consultation" groups="medical_core.group_medical_doctor">
+                            <group>
+                                <field name="history" placeholder="Onset, duration, course, relevant negatives..."/>
+                                <field name="examination" placeholder="General and local examination..."/>
+                            </group>
+                            <separator string="Diagnosis"/>
+                            <field name="diagnosis_ids">
+                                <list editable="bottom">
+                                    <field name="is_primary" widget="boolean_toggle"/>
+                                    <field name="diagnosis_id"/>
+                                    <field name="certainty"/>
+                                    <field name="laterality" optional="show"/>
+                                    <field name="note" optional="show"/>
+                                </list>
+                            </field>
+                            <separator string="Assessment &amp; Plan"/>
+                            <field name="note" placeholder="Impression, plan, advice given..."/>
+                        </page>
+                        <page string="Treatments" name="lines">
+                            <field name="line_ids" readonly="state in ('done', 'invoiced', 'cancelled', 'no_show')"
+                                   context="{'default_patient_id': patient_id, 'default_doctor_id': doctor_id, 'default_visit_id': id, 'default_care_contract_id': care_contract_id}">
+                                <list editable="bottom" decoration-success="state == 'executed'" decoration-muted="state == 'cancelled'">
+                                    <field name="product_id" readonly="state == 'executed'"
+                                           context="{'default_is_medical_procedure': True}"/>
+                                    <field name="body_site_id" optional="show" readonly="state == 'executed'"/>
+                                    <field name="laterality" optional="show" readonly="state == 'executed'"/>
+                                    <field name="plan_id" optional="hide" readonly="1"/>
+                                    <field name="care_contract_id" optional="hide" readonly="state == 'executed'"/>
+                                    <field name="patient_id" column_invisible="True"/>
+                                    <field name="company_id" column_invisible="True"/>
+                                    <field name="currency_id" column_invisible="True"/>
+                                    <field name="consent_id" column_invisible="True"/>
+                                    <field name="price_unit" readonly="state == 'executed'"/>
+                                    <field name="discount" optional="show" readonly="state == 'executed'"/>
+                                    <field name="price_subtotal"/>
+                                    <field name="state" widget="badge" decoration-success="state == 'executed'"/>
+                                    <button name="action_consent" type="object" icon="fa-pencil-square-o" title="Consent"
+                                            invisible="state == 'cancelled'" class="text-warning"/>
+                                    <button name="action_execute" type="object" icon="fa-check" title="Execute"
+                                            invisible="state not in ('planned', 'scheduled')" groups="medical_core.group_medical_doctor"/>
+                                </list>
+                            </field>
+                            <group class="oe_subtotal_footer" name="totals">
+                                <field name="amount_total"/>
+                            </group>
+                        </page>
+                        <page string="Scores" name="scores" groups="medical_core.group_medical_nurse">
+                            <button name="action_new_assessment" type="object" string="Add a Score" class="btn-secondary mb-2"
+                                    icon="fa-plus"/>
+                            <field name="assessment_ids" readonly="1">
+                                <list>
+                                    <field name="date"/>
+                                    <field name="template_id"/>
+                                    <field name="score"/>
+                                    <field name="max_score"/>
+                                    <field name="interpretation"/>
+                                    <field name="severity" widget="badge" decoration-danger="severity == 'severe'"
+                                           decoration-warning="severity == 'moderate'"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Follow-up" name="follow_up">
+                            <group>
+                                <group>
+                                    <label for="follow_up_in" string="Come back in"/>
+                                    <div class="o_row">
+                                        <field name="follow_up_in" class="oe_inline"/>
+                                        <field name="follow_up_unit" class="oe_inline"/>
+                                    </div>
+                                    <field name="follow_up_date"/>
+                                </group>
+                                <group>
+                                    <field name="follow_up_visit_id"/>
+                                    <button name="action_book_follow_up" type="object" string="Book Follow-up" class="btn-secondary"
+                                            invisible="not follow_up_date or follow_up_visit_id" colspan="2"/>
+                                </group>
+                            </group>
+                            <field name="referral_ids" readonly="1">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="to_department_id"/>
+                                    <field name="to_doctor_id"/>
+                                    <field name="external_partner_id"/>
+                                    <field name="urgency"/>
+                                    <field name="state" widget="badge"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_visit_view_list" model="ir.ui.view">
+        <field name="name">medical.visit.list</field>
+        <field name="model">medical.visit</field>
+        <field name="arch" type="xml">
+            <list decoration-muted="state in ('cancelled', 'no_show')" decoration-info="state in ('checked_in', 'in_consult')">
+                <field name="name"/>
+                <field name="start"/>
+                <field name="patient_id"/>
+                <field name="department_id" optional="show"/>
+                <field name="doctor_id"/>
+                <field name="room_id" optional="show"/>
+                <field name="visit_type" optional="hide"/>
+                <field name="amount_total" sum="Total"/>
+                <field name="currency_id" column_invisible="True"/>
+                <field name="state" widget="badge" decoration-success="state in ('done', 'invoiced')"
+                       decoration-info="state in ('checked_in', 'in_consult')" decoration-danger="state == 'no_show'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_visit_view_calendar" model="ir.ui.view">
+        <field name="name">medical.visit.calendar</field>
+        <field name="model">medical.visit</field>
+        <field name="arch" type="xml">
+            <calendar string="Schedule" date_start="start" date_stop="stop" color="department_id" mode="day"
+                      quick_create="0" event_open_popup="0">
+                <field name="patient_id"/>
+                <field name="department_id" filters="1"/>
+                <field name="doctor_id" filters="1"/>
+                <field name="room_id" filters="1"/>
+                <field name="state"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="medical_visit_view_kanban" model="ir.ui.view">
+        <field name="name">medical.visit.kanban</field>
+        <field name="model">medical.visit</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state" group_create="0" quick_create="0">
+                <field name="state"/>
+                <field name="has_medical_alert"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="d-flex justify-content-between">
+                            <field name="patient_id" class="fw-bold"/>
+                            <i t-if="record.has_medical_alert.raw_value" class="fa fa-exclamation-triangle text-danger"
+                               title="Medical alert" role="img" aria-label="Medical alert"/>
+                        </div>
+                        <div><field name="start"/></div>
+                        <div class="text-muted"><field name="department_id"/> · <field name="doctor_id"/></div>
+                        <div class="text-muted" t-if="record.room_id.raw_value"><field name="room_id"/></div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="medical_visit_view_search" model="ir.ui.view">
+        <field name="name">medical.visit.search</field>
+        <field name="model">medical.visit</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <field name="department_id"/>
+                <field name="room_id"/>
+                <filter name="today" string="Today"
+                        domain="[('start', '&gt;=', datetime.datetime.combine(context_today(), datetime.time(0, 0, 0)).to_utc().strftime('%Y-%m-%d %H:%M:%S')),
+                                 ('start', '&lt;', datetime.datetime.combine(context_today() + relativedelta(days=1), datetime.time(0, 0, 0)).to_utc().strftime('%Y-%m-%d %H:%M:%S'))]"/>
+                <filter name="my_visits" string="My Patients" domain="[('doctor_id.user_id', '=', uid)]"/>
+                <filter name="open" string="Open" domain="[('state', 'in', ('draft', 'confirmed', 'checked_in', 'in_consult'))]"/>
+                <filter name="waiting" string="Waiting" domain="[('state', '=', 'checked_in')]"/>
+                <filter name="to_invoice" string="Closed, not invoiced" domain="[('state', '=', 'done')]"/>
+                <separator/>
+                <filter name="follow_up_due" string="Follow-up not booked"
+                        domain="[('follow_up_date', '!=', False), ('follow_up_visit_id', '=', False), ('state', 'in', ('done', 'invoiced'))]"/>
+                <separator/>
+                <filter name="start" string="Date" date="start"/>
+                <group>
+                    <filter name="group_department" string="Department" context="{'group_by': 'department_id'}"/>
+                    <filter name="group_doctor" string="Doctor" context="{'group_by': 'doctor_id'}"/>
+                    <filter name="group_room" string="Room" context="{'group_by': 'room_id'}"/>
+                    <filter name="group_state" string="Status" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_medical_visit" model="ir.actions.act_window">
+        <field name="name">Schedule</field>
+        <field name="res_model">medical.visit</field>
+        <field name="view_mode">calendar,list,kanban,form</field>
+    </record>
+
+    <record id="action_medical_visit_today" model="ir.actions.act_window">
+        <field name="name">Today's Visits</field>
+        <field name="res_model">medical.visit</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="context">{'search_default_today': 1}</field>
+    </record>
+
+    <record id="action_medical_visit_history" model="ir.actions.act_window">
+        <field name="name">Visits</field>
+        <field name="res_model">medical.visit</field>
+        <field name="view_mode">list,form,calendar</field>
+    </record>
+
+    <record id="action_medical_visit_follow_up" model="ir.actions.act_window">
+        <field name="name">Follow-ups to Book</field>
+        <field name="res_model">medical.visit</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_follow_up_due': 1}</field>
+    </record>
+</odoo>

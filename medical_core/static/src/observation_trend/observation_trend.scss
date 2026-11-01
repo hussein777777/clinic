@@ -1,0 +1,121 @@
+// Reference data-viz palette: series slot 1, status serious / critical, neutral band.
+.o_mo_root {
+    --mo-surface: #fcfcfb;
+    --mo-ink: #0b0b0b;
+    --mo-secondary: #52514e;
+    --mo-muted: #898781;
+    --mo-grid: #e1e0d9;
+    --mo-axis: #c3c2b7;
+    --mo-series: #2a78d6;
+    --mo-band: rgba(27, 175, 122, 0.10);
+    --mo-serious: #ec835a;
+    --mo-critical: #d03b3b;
+    --mo-tooltip-bg: #0b0b0b;
+    --mo-tooltip-ink: #f0efec;
+    width: 100%;
+}
+
+.o_mo_empty {
+    padding: 32px 16px;
+    text-align: center;
+    color: var(--mo-muted);
+}
+
+.o_mo_chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.o_mo_chip {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 128px;
+    padding: 8px 12px;
+    border: 1px solid var(--mo-grid);
+    border-radius: 8px;
+    background: var(--mo-surface);
+    color: var(--mo-ink);
+    text-align: start;
+    &:hover {
+        border-color: var(--mo-axis);
+    }
+    &.o_mo_chip_active {
+        border-color: var(--mo-series);
+        box-shadow: inset 0 0 0 1px var(--mo-series);
+    }
+}
+
+.o_mo_chip_name {
+    font-size: 12px;
+    color: var(--mo-secondary);
+}
+
+.o_mo_chip_value {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.o_mo_flag {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    margin-inline-start: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--mo-ink);
+    i {
+        font-size: 12px;
+    }
+    &.o_mo_flag_serious i {
+        color: var(--mo-serious);
+    }
+    &.o_mo_flag_critical i {
+        color: var(--mo-critical);
+    }
+}
+
+.o_mo_card {
+    border: 1px solid var(--mo-grid);
+    border-radius: 8px;
+    background: var(--mo-surface);
+    padding: 12px 16px;
+}
+
+.o_mo_head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.o_mo_title {
+    font-size: 15px;
+    margin: 0;
+}
+
+.o_mo_unit {
+    font-weight: 400;
+    color: var(--mo-muted);
+}
+
+.o_mo_sub {
+    margin: 2px 0 8px;
+    font-size: 12px;
+    color: var(--mo-secondary);
+}
+
+.o_mo_canvas {
+    height: 260px;
+}
+
+.o_mo_table_wrap {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.o_mo_num {
+    font-variant-numeric: tabular-nums;
+}

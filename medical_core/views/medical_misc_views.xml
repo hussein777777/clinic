@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- referrals -->
+    <record id="medical_referral_view_form" model="ir.ui.view">
+        <field name="name">medical.referral.form</field>
+        <field name="model">medical.referral</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_book" type="object" string="Book Visit" class="btn-primary"
+                            invisible="state != 'sent' or referral_type != 'internal' or not id"/>
+                    <button name="action_print" type="object" string="Print Letter" icon="fa-print" invisible="not id"/>
+                    <button name="action_done" type="object" string="Patient Seen" invisible="state not in ('sent', 'booked') or not id"/>
+                    <button name="action_cancel" type="object" string="Cancel" invisible="state in ('done', 'cancelled') or not id"/>
+                    <field name="state" widget="statusbar" statusbar_visible="sent,booked,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_title" invisible="not id">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="patient_id"/>
+                            <field name="visit_id"/>
+                            <field name="from_doctor_id"/>
+                            <field name="from_department_id"/>
+                        </group>
+                        <group>
+                            <field name="referral_type" widget="radio"/>
+                            <field name="to_department_id" invisible="referral_type != 'internal'" required="referral_type == 'internal'"/>
+                            <field name="to_doctor_id" invisible="referral_type != 'internal'"
+                                   domain="[('is_practitioner', '=', True), ('medical_department_ids', 'in', to_department_id)] if to_department_id else [('is_practitioner', '=', True)]"/>
+                            <field name="external_partner_id" invisible="referral_type != 'external'" required="referral_type == 'external'"/>
+                            <field name="urgency"/>
+                            <field name="date"/>
+                            <field name="booked_visit_id" invisible="not booked_visit_id"/>
+                        </group>
+                    </group>
+                    <group string="Reason">
+                        <field name="reason" nolabel="1" colspan="2" placeholder="Question for the specialist..."/>
+                    </group>
+                    <group string="Clinical Summary" groups="medical_core.group_medical_doctor">
+                        <field name="clinical_summary" nolabel="1" colspan="2"/>
+                    </group>
+                    <group string="Reply" invisible="not id">
+                        <field name="reply" nolabel="1" colspan="2"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_referral_view_list" model="ir.ui.view">
+        <field name="name">medical.referral.list</field>
+        <field name="model">medical.referral</field>
+        <field name="arch" type="xml">
+            <list decoration-danger="urgency == 'urgent' and state == 'sent'" decoration-muted="state == 'cancelled'">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="patient_id"/>
+                <field name="from_department_id"/>
+                <field name="to_department_id"/>
+                <field name="external_partner_id" optional="show"/>
+                <field name="urgency"/>
+                <field name="state" widget="badge" decoration-success="state == 'done'" decoration-info="state == 'booked'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_referral_view_search" model="ir.ui.view">
+        <field name="name">medical.referral.search</field>
+        <field name="model">medical.referral</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="patient_id"/>
+                <field name="to_department_id"/>
+                <filter name="to_book" string="To Book" domain="[('state', '=', 'sent'), ('referral_type', '=', 'internal')]"/>
+                <filter name="urgent" string="Urgent" domain="[('urgency', '=', 'urgent')]"/>
+                <group>
+                    <filter name="group_to" string="To Clinic" context="{'group_by': 'to_department_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_medical_referral" model="ir.actions.act_window">
+        <field name="name">Referrals</field>
+        <field name="res_model">medical.referral</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_to_book': 1}</field>
+    </record>
+
+    <!-- care programs -->
+    <record id="medical_care_contract_view_form" model="ir.ui.view">
+        <field name="name">medical.care.contract.form</field>
+        <field name="model">medical.care.contract</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_start" type="object" string="Start Program" class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_new_session_visit" type="object" string="Book Session" class="btn-primary"
+                            invisible="state not in ('active', 'maintenance')"/>
+                    <button name="action_maintenance" type="object" string="Retention / Maintenance" invisible="state != 'active'"/>
+                    <button name="action_complete" type="object" string="Complete" invisible="state not in ('active', 'maintenance')"/>
+                    <button name="action_terminate" type="object" string="Terminate Early" invisible="state not in ('active', 'maintenance')"
+                            confirm="Terminate this program? Unused months or sessions are credited back to the patient."/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,active,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_visits" type="object" class="oe_stat_button" icon="fa-calendar">
+                            <field name="visit_count" widget="statinfo" string="Visits"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group name="main">
+                        <group>
+                            <field name="care_type" readonly="state != 'draft'"/>
+                            <field name="patient_id" readonly="state != 'draft'"/>
+                            <field name="doctor_id"/>
+                            <field name="department_id"/>
+                            <field name="product_id" readonly="state != 'draft'"/>
+                            <field name="session_product_id"/>
+                        </group>
+                        <group name="money">
+                            <field name="billing_mode" widget="radio" readonly="state != 'draft'"/>
+                            <field name="package_price" readonly="state != 'draft'"/>
+                            <field name="down_payment" readonly="state != 'draft'"/>
+                            <field name="installment_count" readonly="state != 'draft'"/>
+                            <field name="installment_amount" invisible="not installment_count"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <group name="progress">
+                        <group>
+                            <field name="start_date" readonly="state != 'draft'"/>
+                            <field name="est_months" readonly="state != 'draft'"/>
+                            <field name="end_date"/>
+                        </group>
+                        <group>
+                            <field name="session_count" invisible="billing_mode != 'sessions'" readonly="state != 'draft'"/>
+                            <field name="sessions_used" invisible="billing_mode != 'sessions'"/>
+                            <field name="sessions_remaining" invisible="billing_mode != 'sessions'"/>
+                            <field name="months_elapsed" invisible="billing_mode != 'monthly'"/>
+                            <field name="progress" widget="progressbar"/>
+                            <field name="last_visit_date"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Sessions" name="sessions">
+                            <field name="line_ids" readonly="1">
+                                <list>
+                                    <field name="date_executed"/>
+                                    <field name="visit_id"/>
+                                    <field name="product_id"/>
+                                    <field name="site_label"/>
+                                    <field name="doctor_id"/>
+                                    <field name="state" widget="badge"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Notes" name="notes">
+                            <field name="note"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_care_contract_view_list" model="ir.ui.view">
+        <field name="name">medical.care.contract.list</field>
+        <field name="model">medical.care.contract</field>
+        <field name="arch" type="xml">
+            <list decoration-muted="state in ('done', 'terminated')">
+                <field name="name"/>
+                <field name="care_type"/>
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <field name="department_id" optional="show"/>
+                <field name="start_date"/>
+                <field name="package_price" sum="Total"/>
+                <field name="currency_id" column_invisible="True"/>
+                <field name="progress" widget="progressbar"/>
+                <field name="state" widget="badge" decoration-info="state == 'active'" decoration-success="state == 'done'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_care_contract_view_search" model="ir.ui.view">
+        <field name="name">medical.care.contract.search</field>
+        <field name="model">medical.care.contract</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <filter name="running" string="Running" domain="[('state', 'in', ('active', 'maintenance'))]"/>
+                <group>
+                    <filter name="group_type" string="Type" context="{'group_by': 'care_type'}"/>
+                    <filter name="group_department" string="Department" context="{'group_by': 'department_id'}"/>
+                    <filter name="group_state" string="Status" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_medical_care_contract" model="ir.actions.act_window">
+        <field name="name">Care Programs</field>
+        <field name="res_model">medical.care.contract</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_running': 1}</field>
+    </record>
+
+    <!-- consent -->
+    <record id="medical_consent_view_form" model="ir.ui.view">
+        <field name="name">medical.consent.form</field>
+        <field name="model">medical.consent</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h2><field name="display_name" readonly="1"/></h2>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="patient_id" readonly="signed"/>
+                            <field name="product_id" readonly="signed"/>
+                            <field name="doctor_id" readonly="signed"/>
+                        </group>
+                        <group>
+                            <field name="signed_by" readonly="signed"/>
+                            <field name="relationship" readonly="signed"/>
+                            <field name="witness_id" readonly="signed"/>
+                            <field name="signed_on" invisible="not signed"/>
+                            <field name="signed" invisible="1"/>
+                        </group>
+                    </group>
+                    <field name="consent_text" readonly="signed"/>
+                    <group string="Signature">
+                        <field name="signature" widget="signature" nolabel="1" colspan="2" readonly="signed"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_sign" type="object" string="Confirm Signature" class="btn-primary" invisible="signed"/>
+                    <button name="action_print" type="object" string="Print" invisible="not signed"/>
+                    <button special="cancel" string="Close"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_consent_view_list" model="ir.ui.view">
+        <field name="name">medical.consent.list</field>
+        <field name="model">medical.consent</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="patient_id"/>
+                <field name="product_id"/>
+                <field name="doctor_id"/>
+                <field name="signed_by"/>
+                <field name="signed_on"/>
+                <field name="signed" widget="boolean"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_medical_consent" model="ir.actions.act_window">
+        <field name="name">Consents</field>
+        <field name="res_model">medical.consent</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- measurements -->
+    <record id="medical_observation_view_list" model="ir.ui.view">
+        <field name="name">medical.observation.list</field>
+        <field name="model">medical.observation</field>
+        <field name="arch" type="xml">
+            <list editable="top" decoration-danger="flag in ('critical_low', 'critical_high')" decoration-warning="flag in ('low', 'high')">
+                <field name="date"/>
+                <field name="patient_id"/>
+                <field name="type_id"/>
+                <field name="laterality" optional="show"/>
+                <field name="value"/>
+                <field name="unit"/>
+                <field name="flag" widget="badge" decoration-danger="flag in ('critical_low', 'critical_high')"
+                       decoration-warning="flag in ('low', 'high')" decoration-success="flag == 'normal'"/>
+                <field name="source" optional="show"/>
+                <field name="visit_id" optional="hide"/>
+                <field name="note" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_observation_view_graph" model="ir.ui.view">
+        <field name="name">medical.observation.graph</field>
+        <field name="model">medical.observation</field>
+        <field name="arch" type="xml">
+            <graph type="line" sample="0">
+                <field name="date" interval="month"/>
+                <field name="value" type="measure" operator="avg"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="medical_observation_view_search" model="ir.ui.view">
+        <field name="name">medical.observation.search</field>
+        <field name="model">medical.observation</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="patient_id"/>
+                <field name="type_id"/>
+                <filter name="abnormal" string="Out of Range" domain="[('flag', 'not in', ('normal', False))]"/>
+                <filter name="critical" string="Critical" domain="[('flag', 'in', ('critical_low', 'critical_high'))]"/>
+                <separator/>
+                <filter name="date" string="Date" date="date"/>
+                <group>
+                    <filter name="group_type" string="Measurement" context="{'group_by': 'type_id'}"/>
+                    <filter name="group_patient" string="Patient" context="{'group_by': 'patient_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_medical_observation" model="ir.actions.act_window">
+        <field name="name">Measurements</field>
+        <field name="res_model">medical.observation</field>
+        <field name="view_mode">list,graph</field>
+    </record>
+
+    <!-- completed scores -->
+    <record id="medical_assessment_view_form" model="ir.ui.view">
+        <field name="name">medical.assessment.form</field>
+        <field name="model">medical.assessment</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="alert alert-danger" role="alert" invisible="not has_alert">
+                        <i class="fa fa-exclamation-triangle me-1" title="Alert"/>
+                        <strong>Act now: </strong><field name="alert_text" class="d-inline"/>
+                        <field name="has_alert" invisible="1"/>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="template_id" options="{'no_create': True}"/>
+                            <field name="patient_id"/>
+                            <field name="visit_id"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <field name="department_id" invisible="1"/>
+                            <label for="score"/>
+                            <div class="o_row">
+                                <field name="score" class="oe_inline fw-bold"/>
+                                <span>/</span>
+                                <field name="max_score" class="oe_inline"/>
+                            </div>
+                            <field name="interpretation"/>
+                            <field name="complete" invisible="1"/>
+                        </group>
+                    </group>
+                    <field name="answer_ids">
+                        <list editable="bottom" create="0" delete="0">
+                            <field name="section" optional="show"/>
+                            <field name="item_id" readonly="1"/>
+                            <field name="answer_type" column_invisible="True"/>
+                            <field name="option_id" invisible="answer_type != 'choice'" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="number" invisible="answer_type != 'number'"/>
+                            <field name="score"/>
+                        </list>
+                    </field>
+                    <field name="note" placeholder="Note..."/>
+                </sheet>
+                <footer>
+                    <button name="action_save" type="object" string="Save Score" class="btn-primary"/>
+                    <button special="cancel" string="Close"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_assessment_view_list" model="ir.ui.view">
+        <field name="name">medical.assessment.list</field>
+        <field name="model">medical.assessment</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="date"/>
+                <field name="patient_id"/>
+                <field name="template_id"/>
+                <field name="score"/>
+                <field name="max_score"/>
+                <field name="interpretation"/>
+                <field name="severity" widget="badge" decoration-danger="severity == 'severe'" decoration-warning="severity == 'moderate'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_medical_assessment" model="ir.actions.act_window">
+        <field name="name">Completed Scores</field>
+        <field name="res_model">medical.assessment</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

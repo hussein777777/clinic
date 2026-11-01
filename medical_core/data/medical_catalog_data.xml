@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="product_category_medical" model="product.category">
+            <field name="name">Medical Services</field>
+        </record>
+        <record id="dept_general" model="medical.department">
+            <field name="name">General Practice</field>
+            <field name="code">GP</field>
+            <field name="sequence">10</field>
+            <field name="color">1</field>
+        </record>
+        <record id="dept_lab" model="medical.department">
+            <field name="name">Laboratory</field>
+            <field name="code">LAB</field>
+            <field name="sequence">80</field>
+            <field name="color">9</field>
+        </record>
+        <record id="dept_radiology" model="medical.department">
+            <field name="name">Radiology</field>
+            <field name="code">RAD</field>
+            <field name="sequence">85</field>
+            <field name="color">4</field>
+        </record>
+        <record id="spec_general" model="medical.specialty">
+            <field name="name">General Medicine</field>
+            <field name="code">GEN</field>
+            <field name="department_id" ref="dept_general"/>
+        </record>
+        <record id="spec_lab" model="medical.specialty">
+            <field name="name">Clinical Laboratory</field>
+            <field name="code">LAB</field>
+            <field name="department_id" ref="dept_lab"/>
+        </record>
+        <record id="spec_radiology" model="medical.specialty">
+            <field name="name">Diagnostic Imaging</field>
+            <field name="code">RAD</field>
+            <field name="department_id" ref="dept_radiology"/>
+        </record>
+        <record id="obs_bp_systolic" model="medical.observation.type">
+            <field name="name">Systolic BP</field>
+            <field name="code">bp_systolic</field>
+            <field name="unit">mmHg</field>
+            <field name="category">vital</field>
+            <field name="normal_min">90</field>
+            <field name="normal_max">139</field>
+            <field name="critical_min">80</field>
+            <field name="critical_max">180</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="True"/>
+        </record>
+        <record id="obs_bp_diastolic" model="medical.observation.type">
+            <field name="name">Diastolic BP</field>
+            <field name="code">bp_diastolic</field>
+            <field name="unit">mmHg</field>
+            <field name="category">vital</field>
+            <field name="normal_min">60</field>
+            <field name="normal_max">89</field>
+            <field name="critical_min">40</field>
+            <field name="critical_max">120</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="True"/>
+        </record>
+        <record id="obs_pulse" model="medical.observation.type">
+            <field name="name">Pulse</field>
+            <field name="code">pulse</field>
+            <field name="unit">bpm</field>
+            <field name="category">vital</field>
+            <field name="normal_min">60</field>
+            <field name="normal_max">100</field>
+            <field name="critical_min">40</field>
+            <field name="critical_max">140</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="False"/>
+        </record>
+        <record id="obs_temperature" model="medical.observation.type">
+            <field name="name">Temperature</field>
+            <field name="code">temperature</field>
+            <field name="unit">°C</field>
+            <field name="category">vital</field>
+            <field name="normal_min">36.1</field>
+            <field name="normal_max">37.5</field>
+            <field name="critical_min">35</field>
+            <field name="critical_max">40</field>
+            <field name="decimals">1</field>
+            <field name="lower_is_better" eval="False"/>
+        </record>
+        <record id="obs_resp_rate" model="medical.observation.type">
+            <field name="name">Respiratory Rate</field>
+            <field name="code">resp_rate</field>
+            <field name="unit">/min</field>
+            <field name="category">vital</field>
+            <field name="normal_min">12</field>
+            <field name="normal_max">20</field>
+            <field name="critical_min">8</field>
+            <field name="critical_max">30</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="False"/>
+        </record>
+        <record id="obs_spo2" model="medical.observation.type">
+            <field name="name">Oxygen Saturation</field>
+            <field name="code">spo2</field>
+            <field name="unit">%</field>
+            <field name="category">vital</field>
+            <field name="normal_min">95</field>
+            <field name="normal_max">0</field>
+            <field name="critical_min">90</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="False"/>
+        </record>
+        <record id="obs_weight" model="medical.observation.type">
+            <field name="name">Weight</field>
+            <field name="code">weight</field>
+            <field name="unit">kg</field>
+            <field name="category">vital</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">0</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">1</field>
+            <field name="lower_is_better" eval="False"/>
+        </record>
+        <record id="obs_height" model="medical.observation.type">
+            <field name="name">Height</field>
+            <field name="code">height</field>
+            <field name="unit">cm</field>
+            <field name="category">vital</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">0</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">1</field>
+            <field name="lower_is_better" eval="False"/>
+        </record>
+        <record id="obs_bmi" model="medical.observation.type">
+            <field name="name">BMI</field>
+            <field name="code">bmi</field>
+            <field name="unit">kg/m²</field>
+            <field name="category">vital</field>
+            <field name="normal_min">18.5</field>
+            <field name="normal_max">24.9</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">1</field>
+            <field name="lower_is_better" eval="True"/>
+        </record>
+        <record id="obs_pain" model="medical.observation.type">
+            <field name="name">Pain Score</field>
+            <field name="code">pain</field>
+            <field name="unit">/10</field>
+            <field name="category">vital</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">3</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="True"/>
+        </record>
+        <record id="obs_hb" model="medical.observation.type">
+            <field name="name">Hemoglobin</field>
+            <field name="code">hb</field>
+            <field name="unit">g/dL</field>
+            <field name="category">lab</field>
+            <field name="normal_min">12</field>
+            <field name="normal_max">17.5</field>
+            <field name="critical_min">7</field>
+            <field name="critical_max">20</field>
+            <field name="decimals">1</field>
+            <field name="lower_is_better" eval="False"/>
+        </record>
+        <record id="obs_wbc" model="medical.observation.type">
+            <field name="name">White Blood Cells</field>
+            <field name="code">wbc</field>
+            <field name="unit">×10⁹/L</field>
+            <field name="category">lab</field>
+            <field name="normal_min">4</field>
+            <field name="normal_max">11</field>
+            <field name="critical_min">2</field>
+            <field name="critical_max">30</field>
+            <field name="decimals">1</field>
+            <field name="lower_is_better" eval="False"/>
+        </record>
+        <record id="obs_plt" model="medical.observation.type">
+            <field name="name">Platelets</field>
+            <field name="code">plt</field>
+            <field name="unit">×10⁹/L</field>
+            <field name="category">lab</field>
+            <field name="normal_min">150</field>
+            <field name="normal_max">400</field>
+            <field name="critical_min">50</field>
+            <field name="critical_max">1000</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="False"/>
+        </record>
+        <record id="obs_fbs" model="medical.observation.type">
+            <field name="name">Fasting Glucose</field>
+            <field name="code">fbs</field>
+            <field name="unit">mg/dL</field>
+            <field name="category">lab</field>
+            <field name="normal_min">70</field>
+            <field name="normal_max">100</field>
+            <field name="critical_min">54</field>
+            <field name="critical_max">400</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="True"/>
+        </record>
+        <record id="obs_rbs" model="medical.observation.type">
+            <field name="name">Random Glucose</field>
+            <field name="code">rbs</field>
+            <field name="unit">mg/dL</field>
+            <field name="category">lab</field>
+            <field name="normal_min">70</field>
+            <field name="normal_max">140</field>
+            <field name="critical_min">54</field>
+            <field name="critical_max">400</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="True"/>
+        </record>
+        <record id="obs_hba1c" model="medical.observation.type">
+            <field name="name">HbA1c</field>
+            <field name="code">hba1c</field>
+            <field name="unit">%</field>
+            <field name="category">lab</field>
+            <field name="normal_min">4</field>
+            <field name="normal_max">5.6</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">14</field>
+            <field name="decimals">1</field>
+            <field name="lower_is_better" eval="True"/>
+        </record>
+        <record id="obs_creatinine" model="medical.observation.type">
+            <field name="name">Creatinine</field>
+            <field name="code">creatinine</field>
+            <field name="unit">mg/dL</field>
+            <field name="category">lab</field>
+            <field name="normal_min">0.6</field>
+            <field name="normal_max">1.3</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">5</field>
+            <field name="decimals">2</field>
+            <field name="lower_is_better" eval="True"/>
+        </record>
+        <record id="obs_urea" model="medical.observation.type">
+            <field name="name">Urea</field>
+            <field name="code">urea</field>
+            <field name="unit">mg/dL</field>
+            <field name="category">lab</field>
+            <field name="normal_min">15</field>
+            <field name="normal_max">45</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">200</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="True"/>
+        </record>
+        <record id="obs_alt" model="medical.observation.type">
+            <field name="name">ALT</field>
+            <field name="code">alt</field>
+            <field name="unit">U/L</field>
+            <field name="category">lab</field>
+            <field name="normal_min">7</field>
+            <field name="normal_max">55</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">1000</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="True"/>
+        </record>
+        <record id="obs_ast" model="medical.observation.type">
+            <field name="name">AST</field>
+            <field name="code">ast</field>
+            <field name="unit">U/L</field>
+            <field name="category">lab</field>
+            <field name="normal_min">8</field>
+            <field name="normal_max">48</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">1000</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="True"/>
+        </record>
+        <record id="obs_tsh" model="medical.observation.type">
+            <field name="name">TSH</field>
+            <field name="code">tsh</field>
+            <field name="unit">mIU/L</field>
+            <field name="category">lab</field>
+            <field name="normal_min">0.4</field>
+            <field name="normal_max">4.0</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">2</field>
+            <field name="lower_is_better" eval="False"/>
+        </record>
+        <record id="obs_chol" model="medical.observation.type">
+            <field name="name">Total Cholesterol</field>
+            <field name="code">chol</field>
+            <field name="unit">mg/dL</field>
+            <field name="category">lab</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">200</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="True"/>
+        </record>
+        <record id="obs_ldl" model="medical.observation.type">
+            <field name="name">LDL Cholesterol</field>
+            <field name="code">ldl</field>
+            <field name="unit">mg/dL</field>
+            <field name="category">lab</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">100</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="True"/>
+        </record>
+        <record id="obs_hdl" model="medical.observation.type">
+            <field name="name">HDL Cholesterol</field>
+            <field name="code">hdl</field>
+            <field name="unit">mg/dL</field>
+            <field name="category">lab</field>
+            <field name="normal_min">40</field>
+            <field name="normal_max">0</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="False"/>
+        </record>
+        <record id="obs_tg" model="medical.observation.type">
+            <field name="name">Triglycerides</field>
+            <field name="code">tg</field>
+            <field name="unit">mg/dL</field>
+            <field name="category">lab</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">150</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">1000</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="True"/>
+        </record>
+        <record id="obs_vitd" model="medical.observation.type">
+            <field name="name">Vitamin D (25-OH)</field>
+            <field name="code">vitd</field>
+            <field name="unit">ng/mL</field>
+            <field name="category">lab</field>
+            <field name="normal_min">30</field>
+            <field name="normal_max">100</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">150</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="False"/>
+        </record>
+        <record id="obs_ferritin" model="medical.observation.type">
+            <field name="name">Ferritin</field>
+            <field name="code">ferritin</field>
+            <field name="unit">ng/mL</field>
+            <field name="category">lab</field>
+            <field name="normal_min">15</field>
+            <field name="normal_max">300</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="False"/>
+        </record>
+        <record id="obs_crp" model="medical.observation.type">
+            <field name="name">CRP</field>
+            <field name="code">crp</field>
+            <field name="unit">mg/L</field>
+            <field name="category">lab</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">5</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">1</field>
+            <field name="lower_is_better" eval="True"/>
+        </record>
+        <record id="obs_esr" model="medical.observation.type">
+            <field name="name">ESR</field>
+            <field name="code">esr</field>
+            <field name="unit">mm/h</field>
+            <field name="category">lab</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">20</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="True"/>
+        </record>
+        <record id="obs_uric" model="medical.observation.type">
+            <field name="name">Uric Acid</field>
+            <field name="code">uric</field>
+            <field name="unit">mg/dL</field>
+            <field name="category">lab</field>
+            <field name="normal_min">3.5</field>
+            <field name="normal_max">7.2</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">1</field>
+            <field name="lower_is_better" eval="True"/>
+        </record>
+        <record id="obs_na" model="medical.observation.type">
+            <field name="name">Sodium</field>
+            <field name="code">na</field>
+            <field name="unit">mmol/L</field>
+            <field name="category">lab</field>
+            <field name="normal_min">135</field>
+            <field name="normal_max">145</field>
+            <field name="critical_min">120</field>
+            <field name="critical_max">160</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="False"/>
+        </record>
+        <record id="obs_k" model="medical.observation.type">
+            <field name="name">Potassium</field>
+            <field name="code">k</field>
+            <field name="unit">mmol/L</field>
+            <field name="category">lab</field>
+            <field name="normal_min">3.5</field>
+            <field name="normal_max">5.1</field>
+            <field name="critical_min">2.5</field>
+            <field name="critical_max">6.5</field>
+            <field name="decimals">1</field>
+            <field name="lower_is_better" eval="False"/>
+        </record>
+        <record id="product_lab_cbc" model="product.product">
+            <field name="name">Complete Blood Count (CBC)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">lab</field>
+            <field name="specialty_id" ref="spec_lab"/>
+            <field name="list_price">150</field>
+            <field name="insurance_code">LAB-85025</field>
+            <field name="procedure_duration">15</field>
+            <field name="result_type_ids" eval="[(6, 0, [ref('obs_hb'), ref('obs_wbc'), ref('obs_plt')])]"/>
+        </record>
+        <record id="product_lab_fbs" model="product.product">
+            <field name="name">Fasting Blood Sugar</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">lab</field>
+            <field name="specialty_id" ref="spec_lab"/>
+            <field name="list_price">40</field>
+            <field name="insurance_code">LAB-82947</field>
+            <field name="procedure_duration">15</field>
+            <field name="result_type_ids" eval="[(6, 0, [ref('obs_fbs')])]"/>
+        </record>
+        <record id="product_lab_rbs" model="product.product">
+            <field name="name">Random Blood Sugar</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">lab</field>
+            <field name="specialty_id" ref="spec_lab"/>
+            <field name="list_price">40</field>
+            <field name="insurance_code">LAB-82948</field>
+            <field name="procedure_duration">15</field>
+            <field name="result_type_ids" eval="[(6, 0, [ref('obs_rbs')])]"/>
+        </record>
+        <record id="product_lab_hba1c" model="product.product">
+            <field name="name">HbA1c</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">lab</field>
+            <field name="specialty_id" ref="spec_lab"/>
+            <field name="list_price">180</field>
+            <field name="insurance_code">LAB-83036</field>
+            <field name="procedure_duration">15</field>
+            <field name="result_type_ids" eval="[(6, 0, [ref('obs_hba1c')])]"/>
+        </record>
+        <record id="product_lab_kft" model="product.product">
+            <field name="name">Kidney Function (Urea, Creatinine)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">lab</field>
+            <field name="specialty_id" ref="spec_lab"/>
+            <field name="list_price">120</field>
+            <field name="insurance_code">LAB-80069</field>
+            <field name="procedure_duration">15</field>
+            <field name="result_type_ids" eval="[(6, 0, [ref('obs_urea'), ref('obs_creatinine')])]"/>
+        </record>
+        <record id="product_lab_lft" model="product.product">
+            <field name="name">Liver Enzymes (ALT, AST)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">lab</field>
+            <field name="specialty_id" ref="spec_lab"/>
+            <field name="list_price">120</field>
+            <field name="insurance_code">LAB-80076</field>
+            <field name="procedure_duration">15</field>
+            <field name="result_type_ids" eval="[(6, 0, [ref('obs_alt'), ref('obs_ast')])]"/>
+        </record>
+        <record id="product_lab_lipid" model="product.product">
+            <field name="name">Lipid Profile</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">lab</field>
+            <field name="specialty_id" ref="spec_lab"/>
+            <field name="list_price">200</field>
+            <field name="insurance_code">LAB-80061</field>
+            <field name="procedure_duration">15</field>
+            <field name="result_type_ids" eval="[(6, 0, [ref('obs_chol'), ref('obs_ldl'), ref('obs_hdl'), ref('obs_tg')])]"/>
+        </record>
+        <record id="product_lab_tsh" model="product.product">
+            <field name="name">TSH</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">lab</field>
+            <field name="specialty_id" ref="spec_lab"/>
+            <field name="list_price">160</field>
+            <field name="insurance_code">LAB-84443</field>
+            <field name="procedure_duration">15</field>
+            <field name="result_type_ids" eval="[(6, 0, [ref('obs_tsh')])]"/>
+        </record>
+        <record id="product_lab_vitd" model="product.product">
+            <field name="name">Vitamin D</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">lab</field>
+            <field name="specialty_id" ref="spec_lab"/>
+            <field name="list_price">350</field>
+            <field name="insurance_code">LAB-82306</field>
+            <field name="procedure_duration">15</field>
+            <field name="result_type_ids" eval="[(6, 0, [ref('obs_vitd')])]"/>
+        </record>
+        <record id="product_lab_ferritin" model="product.product">
+            <field name="name">Ferritin</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">lab</field>
+            <field name="specialty_id" ref="spec_lab"/>
+            <field name="list_price">220</field>
+            <field name="insurance_code">LAB-82728</field>
+            <field name="procedure_duration">15</field>
+            <field name="result_type_ids" eval="[(6, 0, [ref('obs_ferritin')])]"/>
+        </record>
+        <record id="product_lab_crp" model="product.product">
+            <field name="name">C-Reactive Protein</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">lab</field>
+            <field name="specialty_id" ref="spec_lab"/>
+            <field name="list_price">120</field>
+            <field name="insurance_code">LAB-86140</field>
+            <field name="procedure_duration">15</field>
+            <field name="result_type_ids" eval="[(6, 0, [ref('obs_crp')])]"/>
+        </record>
+        <record id="product_lab_esr" model="product.product">
+            <field name="name">ESR</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">lab</field>
+            <field name="specialty_id" ref="spec_lab"/>
+            <field name="list_price">50</field>
+            <field name="insurance_code">LAB-85651</field>
+            <field name="procedure_duration">15</field>
+            <field name="result_type_ids" eval="[(6, 0, [ref('obs_esr')])]"/>
+        </record>
+        <record id="product_lab_uric" model="product.product">
+            <field name="name">Uric Acid</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">lab</field>
+            <field name="specialty_id" ref="spec_lab"/>
+            <field name="list_price">60</field>
+            <field name="insurance_code">LAB-84550</field>
+            <field name="procedure_duration">15</field>
+            <field name="result_type_ids" eval="[(6, 0, [ref('obs_uric')])]"/>
+        </record>
+        <record id="product_lab_electrolytes" model="product.product">
+            <field name="name">Electrolytes (Na, K)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">lab</field>
+            <field name="specialty_id" ref="spec_lab"/>
+            <field name="list_price">140</field>
+            <field name="insurance_code">LAB-80051</field>
+            <field name="procedure_duration">15</field>
+            <field name="result_type_ids" eval="[(6, 0, [ref('obs_na'), ref('obs_k')])]"/>
+        </record>
+        <record id="product_img_xray" model="product.product">
+            <field name="name">X-Ray</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">imaging</field>
+            <field name="specialty_id" ref="spec_radiology"/>
+            <field name="list_price">250</field>
+            <field name="insurance_code">RAD-XR</field>
+            <field name="procedure_duration">15</field>
+            <field name="site_requirement">body_site</field>
+        </record>
+        <record id="product_img_us_abdomen" model="product.product">
+            <field name="name">Abdominal Ultrasound</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">imaging</field>
+            <field name="specialty_id" ref="spec_radiology"/>
+            <field name="list_price">450</field>
+            <field name="insurance_code">RAD-US-ABD</field>
+            <field name="procedure_duration">15</field>
+        </record>
+        <record id="product_img_us" model="product.product">
+            <field name="name">Ultrasound (other site)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">imaging</field>
+            <field name="specialty_id" ref="spec_radiology"/>
+            <field name="list_price">400</field>
+            <field name="insurance_code">RAD-US</field>
+            <field name="procedure_duration">15</field>
+            <field name="site_requirement">body_site</field>
+        </record>
+        <record id="product_img_ct" model="product.product">
+            <field name="name">CT Scan</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">imaging</field>
+            <field name="specialty_id" ref="spec_radiology"/>
+            <field name="list_price">1800</field>
+            <field name="insurance_code">RAD-CT</field>
+            <field name="procedure_duration">15</field>
+            <field name="site_requirement">body_site</field>
+        </record>
+        <record id="product_img_mri" model="product.product">
+            <field name="name">MRI</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">imaging</field>
+            <field name="specialty_id" ref="spec_radiology"/>
+            <field name="list_price">3000</field>
+            <field name="insurance_code">RAD-MRI</field>
+            <field name="procedure_duration">15</field>
+            <field name="site_requirement">body_site</field>
+        </record>
+        <record id="product_consultation" model="product.product">
+            <field name="name">Consultation</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">consultation</field>
+            <field name="specialty_id" ref="spec_general"/>
+            <field name="list_price">300</field>
+            <field name="insurance_code">CONS-NEW</field>
+            <field name="procedure_duration">20</field>
+        </record>
+        <record id="product_follow_up" model="product.product">
+            <field name="name">Follow-up Visit</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">consultation</field>
+            <field name="specialty_id" ref="spec_general"/>
+            <field name="list_price">150</field>
+            <field name="insurance_code">CONS-FU</field>
+            <field name="procedure_duration">15</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- departments -->
+    <record id="medical_department_view_list" model="ir.ui.view">
+        <field name="name">medical.department.list</field>
+        <field name="model">medical.department</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="manager_id"/>
+                <field name="practitioner_ids" widget="many2many_tags"/>
+                <field name="color" widget="color_picker"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_department_view_form" model="ir.ui.view">
+        <field name="name">medical.department.form</field>
+        <field name="model">medical.department</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="e.g. Orthopedics"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                            <field name="manager_id"/>
+                            <field name="default_visit_duration" widget="float_time"/>
+                        </group>
+                        <group>
+                            <field name="color" widget="color_picker"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Doctors" name="doctors">
+                            <field name="practitioner_ids" domain="[('is_practitioner', '=', True)]">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="main_specialty_id"/>
+                                    <field name="default_room_id"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Specialties" name="specialties">
+                            <field name="specialty_ids" context="{'default_department_id': id}">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="code"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Rooms" name="rooms">
+                            <field name="room_ids" context="{'default_department_id': id}">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="room_type"/>
+                                    <field name="company_id" column_invisible="True"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Notes" name="notes">
+                            <field name="note"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_medical_department" model="ir.actions.act_window">
+        <field name="name">Clinics &amp; Departments</field>
+        <field name="res_model">medical.department</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="medical_specialty_view_list" model="ir.ui.view">
+        <field name="name">medical.specialty.list</field>
+        <field name="model">medical.specialty</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="department_id"/>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_medical_specialty" model="ir.actions.act_window">
+        <field name="name">Specialties</field>
+        <field name="res_model">medical.specialty</field>
+        <field name="view_mode">list</field>
+        <field name="context">{'search_default_group_department': 1}</field>
+    </record>
+
+    <record id="medical_specialty_view_search" model="ir.ui.view">
+        <field name="name">medical.specialty.search</field>
+        <field name="model">medical.specialty</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="department_id"/>
+                <group>
+                    <filter name="group_department" string="Department" context="{'group_by': 'department_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- rooms -->
+    <record id="medical_room_view_list" model="ir.ui.view">
+        <field name="name">medical.room.list</field>
+        <field name="model">medical.room</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="room_type"/>
+                <field name="department_id"/>
+                <field name="color" widget="color_picker"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="active" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_room_view_search" model="ir.ui.view">
+        <field name="name">medical.room.search</field>
+        <field name="model">medical.room</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="department_id"/>
+                <group>
+                    <filter name="group_department" string="Department" context="{'group_by': 'department_id'}"/>
+                    <filter name="group_type" string="Type" context="{'group_by': 'room_type'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_medical_room" model="ir.actions.act_window">
+        <field name="name">Rooms, Chairs &amp; Devices</field>
+        <field name="res_model">medical.room</field>
+        <field name="view_mode">list</field>
+    </record>
+
+    <!-- body sites -->
+    <record id="medical_body_site_view_list" model="ir.ui.view">
+        <field name="name">medical.body.site.list</field>
+        <field name="model">medical.body.site</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="region"/>
+                <field name="has_laterality"/>
+                <field name="parent_id" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_body_site_view_search" model="ir.ui.view">
+        <field name="name">medical.body.site.search</field>
+        <field name="model">medical.body.site</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <group>
+                    <filter name="group_region" string="Region" context="{'group_by': 'region'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_medical_body_site" model="ir.actions.act_window">
+        <field name="name">Body Sites</field>
+        <field name="res_model">medical.body.site</field>
+        <field name="view_mode">list</field>
+        <field name="context">{'search_default_group_region': 1}</field>
+    </record>
+
+    <!-- diagnoses -->
+    <record id="medical_diagnosis_view_list" model="ir.ui.view">
+        <field name="name">medical.diagnosis.list</field>
+        <field name="model">medical.diagnosis</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="is_chronic"/>
+                <field name="department_ids" widget="many2many_tags" optional="show"/>
+                <field name="chapter" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_diagnosis_view_search" model="ir.ui.view">
+        <field name="name">medical.diagnosis.search</field>
+        <field name="model">medical.diagnosis</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" filter_domain="['|', ('code', 'ilike', self), ('name', 'ilike', self)]"/>
+                <field name="department_ids"/>
+                <filter name="chronic" string="Chronic" domain="[('is_chronic', '=', True)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_medical_diagnosis" model="ir.actions.act_window">
+        <field name="name">Diagnoses (ICD-10)</field>
+        <field name="res_model">medical.diagnosis</field>
+        <field name="view_mode">list</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Add the ICD-10 codes your doctors use</p>
+            <p>The full WHO list can be imported from a spreadsheet with the columns code and name.</p>
+        </field>
+    </record>
+
+    <record id="medical_allergen_view_list" model="ir.ui.view">
+        <field name="name">medical.allergen.list</field>
+        <field name="model">medical.allergen</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="name"/>
+                <field name="kind"/>
+                <field name="color" widget="color_picker"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_medical_allergen" model="ir.actions.act_window">
+        <field name="name">Allergies</field>
+        <field name="res_model">medical.allergen</field>
+        <field name="view_mode">list</field>
+    </record>
+
+    <!-- measurement types -->
+    <record id="medical_observation_type_view_list" model="ir.ui.view">
+        <field name="name">medical.observation.type.list</field>
+        <field name="model">medical.observation.type</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="category"/>
+                <field name="unit"/>
+                <field name="normal_min"/>
+                <field name="normal_max"/>
+                <field name="critical_min" optional="show"/>
+                <field name="critical_max" optional="show"/>
+                <field name="decimals" optional="hide"/>
+                <field name="lower_is_better" optional="hide"/>
+                <field name="department_ids" widget="many2many_tags" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_observation_type_view_search" model="ir.ui.view">
+        <field name="name">medical.observation.type.search</field>
+        <field name="model">medical.observation.type</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <group>
+                    <filter name="group_category" string="Category" context="{'group_by': 'category'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_medical_observation_type" model="ir.actions.act_window">
+        <field name="name">Measurements &amp; Normal Ranges</field>
+        <field name="res_model">medical.observation.type</field>
+        <field name="view_mode">list</field>
+        <field name="context">{'search_default_group_category': 1}</field>
+        <field name="help" type="html">
+            <p>Normal and critical limits are adult defaults: adjust them to your laboratory's reference ranges.</p>
+        </field>
+    </record>
+
+    <!-- clinical scores -->
+    <record id="medical_assessment_template_view_list" model="ir.ui.view">
+        <field name="name">medical.assessment.template.list</field>
+        <field name="model">medical.assessment.template</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="department_ids" widget="many2many_tags"/>
+                <field name="score_mode"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_assessment_template_view_form" model="ir.ui.view">
+        <field name="name">medical.assessment.template.form</field>
+        <field name="model">medical.assessment.template</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                            <field name="score_mode"/>
+                        </group>
+                        <group>
+                            <field name="department_ids" widget="many2many_tags"/>
+                            <field name="observation_type_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Questions" name="items">
+                            <field name="item_ids">
+                                <list>
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="section"/>
+                                    <field name="name"/>
+                                    <field name="answer_type"/>
+                                    <field name="max_score"/>
+                                </list>
+                                <form>
+                                    <group>
+                                        <field name="section"/>
+                                        <field name="name"/>
+                                        <field name="answer_type"/>
+                                        <field name="min_value" invisible="answer_type != 'number'"/>
+                                        <field name="max_value" invisible="answer_type != 'number'"/>
+                                    </group>
+                                    <field name="option_ids" invisible="answer_type != 'choice'">
+                                        <list editable="bottom">
+                                            <field name="sequence" widget="handle"/>
+                                            <field name="name"/>
+                                            <field name="score"/>
+                                            <field name="is_alert"/>
+                                        </list>
+                                    </field>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Interpretation" name="ranges">
+                            <field name="range_ids">
+                                <list editable="bottom">
+                                    <field name="min_score"/>
+                                    <field name="max_score"/>
+                                    <field name="name"/>
+                                    <field name="severity"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="How to Use" name="description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_medical_assessment_template" model="ir.actions.act_window">
+        <field name="name">Clinical Scores</field>
+        <field name="res_model">medical.assessment.template</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

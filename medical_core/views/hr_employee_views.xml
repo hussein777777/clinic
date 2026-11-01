@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_employee_form_medical" model="ir.ui.view">
+        <field name="name">hr.employee.form.medical</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Medical" name="medical" groups="hr.group_hr_user,medical_core.group_medical_user">
+                    <group>
+                        <group>
+                            <field name="is_practitioner"/>
+                            <field name="main_specialty_id" invisible="not is_practitioner"/>
+                            <field name="medical_department_ids" widget="many2many_tags" invisible="not is_practitioner"/>
+                        </group>
+                        <group invisible="not is_practitioner">
+                            <field name="default_room_id"/>
+                            <field name="medical_license_no"/>
+                            <field name="medical_title"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_doctor_view_list" model="ir.ui.view">
+        <field name="name">hr.employee.doctor.list</field>
+        <field name="model">hr.employee</field>
+        <field name="priority">90</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="main_specialty_id"/>
+                <field name="medical_department_ids" widget="many2many_tags"/>
+                <field name="default_room_id"/>
+                <field name="work_phone" optional="show"/>
+                <field name="user_id" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_doctor_view_search" model="ir.ui.view">
+        <field name="name">hr.employee.doctor.search</field>
+        <field name="model">hr.employee</field>
+        <field name="priority">90</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="medical_department_ids"/>
+                <field name="main_specialty_id"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_medical_doctor" model="ir.actions.act_window">
+        <field name="name">Doctors</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('is_practitioner', '=', True)]</field>
+        <field name="context">{'default_is_practitioner': True}</field>
+        <field name="search_view_id" ref="medical_doctor_view_search"/>
+        <field name="view_ids" eval="[(5, 0, 0), (0, 0, {'view_mode': 'list', 'view_id': ref('medical_doctor_view_list')})]"/>
+    </record>
+</odoo>

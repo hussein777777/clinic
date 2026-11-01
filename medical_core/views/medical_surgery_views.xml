@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_surgery_view_form" model="ir.ui.view">
+        <field name="name">medical.surgery.form</field>
+        <field name="model">medical.surgery</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_schedule" type="object" string="Schedule Surgery" class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_enter_theatre" type="object" string="Patient in Theatre" class="btn-primary"
+                            invisible="state != 'scheduled'" groups="medical_core.group_medical_nurse"/>
+                    <button name="action_to_recovery" type="object" string="To Recovery" class="btn-primary"
+                            invisible="state != 'in_theatre'" groups="medical_core.group_medical_nurse"/>
+                    <button name="action_done" type="object" string="Discharge from Recovery" class="btn-primary"
+                            invisible="state != 'recovery'" groups="medical_core.group_medical_doctor"/>
+                    <button name="action_print" type="object" string="Operative Report" icon="fa-print"
+                            invisible="state not in ('recovery', 'done')" groups="medical_core.group_medical_doctor"/>
+                    <button name="action_cancel" type="object" string="Cancel" invisible="state not in ('draft', 'scheduled')"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,scheduled,in_theatre,recovery,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_open_visit" type="object" class="oe_stat_button" icon="fa-file-text-o"
+                                invisible="not visit_id">
+                            <span class="o_stat_text">Billing Visit</span>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="patient_id" readonly="state != 'draft'"/>
+                            <field name="body_site_id"/>
+                            <field name="laterality"/>
+                            <field name="priority"/>
+                            <field name="preop_visit_id" domain="[('patient_id', '=', patient_id)]"/>
+                            <field name="visit_id" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="surgeon_id" readonly="state not in ('draft', 'scheduled')"/>
+                            <field name="assistant_ids" widget="many2many_tags"/>
+                            <field name="anesthetist_id"/>
+                            <field name="anesthesia_type"/>
+                            <field name="department_id"/>
+                            <field name="room_id" readonly="state not in ('draft', 'scheduled')"/>
+                            <field name="scheduled_start" readonly="state not in ('draft', 'scheduled')"/>
+                            <field name="duration" widget="float_time" readonly="state not in ('draft', 'scheduled')"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Procedures &amp; Materials" name="lines">
+                            <field name="line_ids" readonly="state == 'done'"
+                                   context="{'default_patient_id': patient_id, 'default_doctor_id': surgeon_id, 'default_visit_id': visit_id, 'default_body_site_id': body_site_id, 'default_laterality': laterality}">
+                                <list editable="bottom" decoration-success="state == 'executed'">
+                                    <field name="product_id"/>
+                                    <field name="body_site_id" optional="show"/>
+                                    <field name="laterality" optional="show"/>
+                                    <field name="patient_id" column_invisible="True"/>
+                                    <field name="visit_id" column_invisible="True"/>
+                                    <field name="company_id" column_invisible="True"/>
+                                    <field name="currency_id" column_invisible="True"/>
+                                    <field name="consent_id" column_invisible="True"/>
+                                    <field name="price_unit"/>
+                                    <field name="price_subtotal"/>
+                                    <field name="state" widget="badge"/>
+                                    <button name="action_consent" type="object" icon="fa-pencil-square-o" title="Consent"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Safety Checklist" name="checklist">
+                            <group>
+                                <group string="Sign In (before anesthesia)">
+                                    <field name="check_identity"/>
+                                    <field name="check_site_marked"/>
+                                    <field name="check_consent"/>
+                                    <field name="check_anesthesia"/>
+                                    <field name="check_allergy"/>
+                                    <field name="check_fasting"/>
+                                    <field name="sign_in_done" invisible="1"/>
+                                </group>
+                                <group string="Time Out (before incision)">
+                                    <field name="check_team"/>
+                                    <field name="check_procedure_confirmed"/>
+                                    <field name="check_antibiotic"/>
+                                    <field name="check_imaging"/>
+                                    <field name="time_out_done" invisible="1"/>
+                                </group>
+                                <group string="Sign Out (before leaving theatre)">
+                                    <field name="check_counts"/>
+                                    <field name="check_specimens"/>
+                                    <field name="check_equipment"/>
+                                    <field name="sign_out_done" invisible="1"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Operative Note" name="note" groups="medical_core.group_medical_doctor">
+                            <group>
+                                <group>
+                                    <field name="actual_start"/>
+                                    <field name="actual_end"/>
+                                </group>
+                                <group>
+                                    <field name="blood_loss_ml"/>
+                                    <field name="complications"/>
+                                </group>
+                            </group>
+                            <separator string="Findings"/>
+                            <field name="findings"/>
+                            <separator string="Procedure"/>
+                            <field name="operative_note" placeholder="Approach, steps, implants, closure..."/>
+                        </page>
+                        <page string="Post-op Orders" name="post_op">
+                            <field name="post_op_instructions"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_surgery_view_list" model="ir.ui.view">
+        <field name="name">medical.surgery.list</field>
+        <field name="model">medical.surgery</field>
+        <field name="arch" type="xml">
+            <list decoration-muted="state == 'cancelled'" decoration-danger="priority == 'emergency' and state in ('draft', 'scheduled')">
+                <field name="name"/>
+                <field name="scheduled_start"/>
+                <field name="patient_id"/>
+                <field name="display_name" string="Operation"/>
+                <field name="surgeon_id"/>
+                <field name="room_id"/>
+                <field name="department_id" optional="show"/>
+                <field name="priority" optional="show"/>
+                <field name="state" widget="badge" decoration-success="state == 'done'" decoration-info="state in ('in_theatre', 'recovery')"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_surgery_view_calendar" model="ir.ui.view">
+        <field name="name">medical.surgery.calendar</field>
+        <field name="model">medical.surgery</field>
+        <field name="arch" type="xml">
+            <calendar string="Theatre Schedule" date_start="scheduled_start" date_delay="duration" color="room_id" mode="week"
+                      quick_create="0" event_open_popup="0">
+                <field name="patient_id"/>
+                <field name="surgeon_id" filters="1"/>
+                <field name="room_id" filters="1"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="medical_surgery_view_search" model="ir.ui.view">
+        <field name="name">medical.surgery.search</field>
+        <field name="model">medical.surgery</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="patient_id"/>
+                <field name="surgeon_id"/>
+                <filter name="upcoming" string="Upcoming" domain="[('state', 'in', ('draft', 'scheduled'))]"/>
+                <filter name="today" string="In Progress" domain="[('state', 'in', ('in_theatre', 'recovery'))]"/>
+                <group>
+                    <filter name="group_surgeon" string="Surgeon" context="{'group_by': 'surgeon_id'}"/>
+                    <filter name="group_department" string="Department" context="{'group_by': 'department_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_medical_surgery" model="ir.actions.act_window">
+        <field name="name">Theatre</field>
+        <field name="res_model">medical.surgery</field>
+        <field name="view_mode">calendar,list,form</field>
+    </record>
+
+    <menuitem id="menu_medical_surgery" name="Theatre" parent="menu_medical_clinical" action="action_medical_surgery" sequence="35"/>
+</odoo>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="medical_core.ObservationTrend">
+        <div class="o_mo_root">
+            <div t-if="state.loading" class="o_mo_empty"><i class="fa fa-circle-o-notch fa-spin"/></div>
+            <div t-elif="!state.series.length" class="o_mo_empty">
+                No measurements yet. Vitals typed on visits, lab results and clinical scores appear here.
+            </div>
+            <t t-else="">
+                <div class="o_mo_chips" role="tablist">
+                    <button t-foreach="chips" t-as="chip" t-key="chip.id" type="button" role="tab"
+                            t-attf-class="o_mo_chip {{ chip.id === state.selected ? 'o_mo_chip_active' : '' }}"
+                            t-att-aria-selected="chip.id === state.selected ? 'true' : 'false'"
+                            t-on-click="() => this.select(chip.id)">
+                        <span class="o_mo_chip_name" t-esc="chip.name"/>
+                        <span class="o_mo_chip_value">
+                            <t t-esc="chip.value"/>
+                            <span t-if="chip.flag" t-attf-class="o_mo_flag {{ chip.critical ? 'o_mo_flag_critical' : 'o_mo_flag_serious' }}">
+                                <i t-attf-class="fa {{ chip.critical ? 'fa-exclamation-triangle' : 'fa-exclamation-circle' }}" aria-hidden="true"/>
+                                <t t-esc="chip.flagLabel"/>
+                            </span>
+                        </span>
+                    </button>
+                </div>
+                <div class="o_mo_card" t-if="current">
+                    <div class="o_mo_head">
+                        <div>
+                            <h4 class="o_mo_title"><t t-esc="current.name"/> <span class="o_mo_unit" t-if="current.unit">(<t t-esc="current.unit"/>)</span></h4>
+                            <p class="o_mo_sub">
+                                <t t-esc="changeText"/>
+                                <t t-if="changeText and rangeText"> · </t>
+                                <t t-esc="rangeText"/>
+                            </p>
+                        </div>
+                        <button type="button" class="btn btn-link btn-sm" t-on-click="toggleTable"
+                                t-att-aria-pressed="state.table ? 'true' : 'false'">
+                            <i t-attf-class="fa {{ state.table ? 'fa-line-chart' : 'fa-table' }} me-1"/>
+                            <t t-if="state.table">Chart</t><t t-else="">Table</t>
+                        </button>
+                    </div>
+                    <div t-if="state.table" class="o_mo_table_wrap">
+                        <table class="table table-sm mb-0">
+                            <thead><tr><th>Date</th><th class="text-end">Value</th><th/></tr></thead>
+                            <tbody>
+                                <tr t-foreach="rows" t-as="row" t-key="row_index">
+                                    <td t-esc="row.label"/>
+                                    <td class="text-end o_mo_num" t-esc="row.value"/>
+                                    <td>
+                                        <span t-if="row.flag" t-attf-class="o_mo_flag {{ row.critical ? 'o_mo_flag_critical' : 'o_mo_flag_serious' }}">
+                                            <i t-attf-class="fa {{ row.critical ? 'fa-exclamation-triangle' : 'fa-exclamation-circle' }}" aria-hidden="true"/>
+                                            <t t-esc="row.flagLabel"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div t-else="" class="o_mo_canvas">
+                        <canvas t-ref="canvas" role="img" t-att-aria-label="current.name"/>
+                    </div>
+                </div>
+            </t>
+        </div>
+    </t>
+</templates>
