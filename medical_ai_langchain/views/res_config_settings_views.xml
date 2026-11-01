@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_medical_ai_langchain" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.medical.ai.langchain</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="medical_ai.res_config_settings_view_form_medical_ai"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='medical_ai_provider']" position="after">
+                <block title="LangChain" name="medical_ai_langchain">
+                    <setting string="Engine" help="LangChain also powers the knowledge base, the clinic assistant, claim reviews and dashboard insights.">
+                        <field name="medical_ai_engine"/>
+                    </setting>
+                    <setting string="Knowledge base" help="How documents and questions are turned into vectors. Local needs no provider; a real embedding model finds answers by meaning, not only by wording.">
+                        <div class="content-group">
+                            <div class="row mt-2"><label for="medical_ai_embedding_provider" class="col-lg-4 o_light_label"/><field name="medical_ai_embedding_provider"/></div>
+                            <div class="row" invisible="medical_ai_embedding_provider == 'local'">
+                                <label for="medical_ai_embedding_model" class="col-lg-4 o_light_label"/>
+                                <field name="medical_ai_embedding_model" placeholder="e.g. the embedding model name from your provider"/>
+                            </div>
+                            <div class="row"><label for="medical_ai_rag_top_k" class="col-lg-4 o_light_label"/><field name="medical_ai_rag_top_k"/></div>
+                            <div class="row"><label for="medical_ai_vector_store" class="col-lg-4 o_light_label"/><field name="medical_ai_vector_store"/></div>
+                        </div>
+                    </setting>
+                    <setting string="Cost estimate" help="Your provider's prices, used to estimate the cost of each request in the AI log and the smart dashboard.">
+                        <div class="content-group">
+                            <div class="row mt-2"><label for="medical_ai_price_input" class="col-lg-6 o_light_label"/><field name="medical_ai_price_input"/></div>
+                            <div class="row"><label for="medical_ai_price_output" class="col-lg-6 o_light_label"/><field name="medical_ai_price_output"/></div>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>

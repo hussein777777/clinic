@@ -1,0 +1,14 @@
+.o_sd_root {
+    --sd-warning: #fab219;
+    --sd-bubble-user: #1f2833;
+    --sd-chip: #2c2c2a;
+}
+
+.o_sd_sev_warning .o_sd_sev .fa,
+.o_sd_kb_alert .fa-exclamation-triangle {
+    color: #fab219;
+}
+
+.o_ai_transcript .o_ai_msg_user {
+    background: #1f2833;
+}

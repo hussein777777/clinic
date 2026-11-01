@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_ai_log_view_list_langchain" model="ir.ui.view">
+        <field name="name">medical.ai.log.list.langchain</field>
+        <field name="model">medical.ai.log</field>
+        <field name="inherit_id" ref="medical_ai.medical_ai_log_view_list"/>
+        <field name="arch" type="xml">
+            <field name="model" position="after">
+                <field name="engine" optional="show"/>
+                <field name="input_tokens" optional="show" sum="Total"/>
+                <field name="output_tokens" optional="show" sum="Total"/>
+                <field name="tool_calls" optional="hide"/>
+                <field name="cost" optional="show" sum="Total"/>
+            </field>
+        </field>
+    </record>
+    <record id="medical_ai_log_view_form_langchain" model="ir.ui.view">
+        <field name="name">medical.ai.log.form.langchain</field>
+        <field name="model">medical.ai.log</field>
+        <field name="inherit_id" ref="medical_ai.medical_ai_log_view_form"/>
+        <field name="arch" type="xml">
+            <field name="duration" position="after">
+                <field name="engine"/>
+                <field name="input_tokens"/>
+                <field name="output_tokens"/>
+                <field name="tool_calls"/>
+                <field name="cost"/>
+            </field>
+        </field>
+    </record>
+</odoo>

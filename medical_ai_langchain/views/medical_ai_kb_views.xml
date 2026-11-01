@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_ai_kb_document_view_list" model="ir.ui.view">
+        <field name="name">medical.ai.kb.document.list</field>
+        <field name="model">medical.ai.kb.document</field>
+        <field name="arch" type="xml">
+            <list decoration-danger="state == 'error'" decoration-muted="state == 'draft'">
+                <field name="name"/>
+                <field name="category"/>
+                <field name="department_id" optional="show"/>
+                <field name="insurer_id" optional="show"/>
+                <field name="chunk_count"/>
+                <field name="indexed_at" optional="show"/>
+                <field name="embedding_signature" optional="hide"/>
+                <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+                <field name="state" widget="badge" decoration-success="state == 'indexed'"
+                       decoration-danger="state == 'error'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_ai_kb_document_view_form" model="ir.ui.view">
+        <field name="name">medical.ai.kb.document.form</field>
+        <field name="model">medical.ai.kb.document</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_index" type="object" string="Index" class="btn-primary"
+                            invisible="state == 'indexed' and not is_outdated"/>
+                    <button name="action_index" type="object" string="Re-index" invisible="state != 'indexed' or is_outdated"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_open_passages" type="object" class="oe_stat_button" icon="fa-paragraph">
+                            <field name="chunk_count" widget="statinfo" string="Passages"/>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <div class="alert alert-warning" role="alert" invisible="not is_outdated">
+                        <i class="fa fa-exclamation-triangle me-1" title="Warning"/>
+                        The embedding model changed since this document was indexed: re-index it so questions can find it.
+                    </div>
+                    <div class="alert alert-danger" role="alert" invisible="state != 'error'">
+                        <field name="error_message" readonly="1"/>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="e.g. Ministry of Health antenatal protocol"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="category"/>
+                            <field name="department_id"/>
+                            <field name="insurer_id" invisible="category != 'insurer_policy'"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="source_type" widget="radio"/>
+                            <field name="datas" filename="filename" invisible="source_type != 'file'"/>
+                            <field name="filename" invisible="1"/>
+                            <field name="indexed_at"/>
+                            <field name="char_count"/>
+                            <field name="embedding_signature"/>
+                            <field name="is_outdated" invisible="1"/>
+                        </group>
+                    </group>
+                    <field name="body" invisible="source_type != 'text'" placeholder="Paste or write the document here..."/>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_ai_kb_document_view_search" model="ir.ui.view">
+        <field name="name">medical.ai.kb.document.search</field>
+        <field name="model">medical.ai.kb.document</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="department_id"/>
+                <field name="insurer_id"/>
+                <filter name="not_indexed" string="Not Indexed" domain="[('state', 'in', ('draft', 'error'))]"/>
+                <separator/>
+                <filter name="archived" string="Archived" domain="[('active', '=', False)]"/>
+                <group>
+                    <filter name="group_category" string="Category" context="{'group_by': 'category'}"/>
+                    <filter name="group_department" string="Clinic" context="{'group_by': 'department_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="medical_ai_kb_chunk_view_list" model="ir.ui.view">
+        <field name="name">medical.ai.kb.chunk.list</field>
+        <field name="model">medical.ai.kb.chunk</field>
+        <field name="arch" type="xml">
+            <list create="0" edit="0">
+                <field name="document_id"/>
+                <field name="sequence"/>
+                <field name="page"/>
+                <field name="content"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_ai_kb_chunk_view_form" model="ir.ui.view">
+        <field name="name">medical.ai.kb.chunk.form</field>
+        <field name="model">medical.ai.kb.chunk</field>
+        <field name="arch" type="xml">
+            <form create="0" edit="0">
+                <sheet>
+                    <group>
+                        <field name="document_id"/>
+                        <field name="page"/>
+                        <field name="signature"/>
+                    </group>
+                    <field name="content"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_medical_ai_kb_document" model="ir.actions.act_window">
+        <field name="name">Knowledge Base</field>
+        <field name="res_model">medical.ai.kb.document</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiley_face">Add the center's own documents</p>
+            <p>Protocols, insurer policies, price lists, admin procedures and patient FAQs. The clinic assistant
+               answers from them and quotes its sources.</p>
+        </field>
+    </record>
+</odoo>

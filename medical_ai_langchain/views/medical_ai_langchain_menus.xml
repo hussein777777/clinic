@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_medical_ai_smart_dashboard" name="AI Dashboard" parent="medical_core.menu_medical_root"
+              action="action_medical_ai_smart_dashboard" sequence="3" groups="medical_core.group_medical_manager"/>
+    <menuitem id="menu_medical_ai_assistant" name="Clinic Assistant" parent="medical_core.menu_medical_clinical"
+              action="action_medical_ai_chat_session" sequence="90"/>
+    <menuitem id="menu_medical_ai_kb" name="Knowledge Base" parent="medical_ai.menu_medical_ai_config"
+              action="action_medical_ai_kb_document" sequence="15"/>
+</odoo>

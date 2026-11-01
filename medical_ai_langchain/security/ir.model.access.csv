@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_kb_document_user,kb document user,model_medical_ai_kb_document,medical_core.group_medical_user,1,0,0,0
+access_kb_document_manager,kb document manager,model_medical_ai_kb_document,medical_core.group_medical_manager,1,1,1,1
+access_kb_chunk_user,kb chunk user,model_medical_ai_kb_chunk,medical_core.group_medical_user,1,0,0,0
+access_kb_chunk_manager,kb chunk manager,model_medical_ai_kb_chunk,medical_core.group_medical_manager,1,1,1,1
+access_chat_session_user,chat session user,model_medical_ai_chat_session,medical_core.group_medical_user,1,1,1,1
+access_chat_message_user,chat message user,model_medical_ai_chat_message,medical_core.group_medical_user,1,1,1,1
+access_ai_insight_manager,ai insight manager,model_medical_ai_insight,medical_core.group_medical_manager,1,1,1,1

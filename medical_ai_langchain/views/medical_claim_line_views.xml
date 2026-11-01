@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_claim_line_form_ai_review" model="ir.ui.view">
+        <field name="name">medical.claim.line.form.ai.review</field>
+        <field name="model">medical.claim.line</field>
+        <field name="inherit_id" ref="medical_ai.medical_claim_line_form_ai"/>
+        <field name="arch" type="xml">
+            <button name="action_scrub" position="after">
+                <button name="action_ai_review" type="object" string="AI Review" icon="fa-magic"
+                        invisible="state not in ('to_claim', 'claimed', 'rejected', 'partially_approved')"/>
+            </button>
+            <xpath expr="//field[@name='risk_reasons']/.." position="after">
+                <group string="AI Review" invisible="not ai_review_level">
+                    <group>
+                        <field name="ai_review_level" widget="badge" decoration-danger="ai_review_level == 'high'"
+                               decoration-warning="ai_review_level == 'medium'" decoration-success="ai_review_level == 'low'"/>
+                        <field name="ai_review_date"/>
+                    </group>
+                    <field name="ai_review_html" nolabel="1" colspan="2" readonly="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_claim_line_list_ai_review" model="ir.ui.view">
+        <field name="name">medical.claim.line.list.ai.review</field>
+        <field name="model">medical.claim.line</field>
+        <field name="inherit_id" ref="medical_insurance.medical_claim_line_view_list"/>
+        <field name="arch" type="xml">
+            <field name="claimed" position="before">
+                <field name="ai_review_level" optional="show" widget="badge" decoration-danger="ai_review_level == 'high'"
+                       decoration-warning="ai_review_level == 'medium'" decoration-success="ai_review_level == 'low'"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="medical_claim_form_ai_review" model="ir.ui.view">
+        <field name="name">medical.claim.form.ai.review</field>
+        <field name="model">medical.claim</field>
+        <field name="inherit_id" ref="medical_insurance.medical_claim_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_ai_review_risky" type="object" string="AI Review Risky Lines" icon="fa-magic"
+                        invisible="state not in ('draft', 'submitted', 'settled')"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

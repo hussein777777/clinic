@@ -1,0 +1,1620 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* medical_ai_langchain
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-14 23:58+0000\n"
+"PO-Revision-Date: 2026-10-14 23:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid "%(amount)s %(cur)s in the period."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid "%(amount)s %(cur)s waiting: %(label)s"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid "%(name)s brings %(pct)s%% of production"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid "%(now)s %(cur)s against %(before)s %(cur)s in the previous period."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid ""
+"%(now)s %(cur)s so far, against %(before)s %(cur)s at the same point of the "
+"previous period."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid "%s clinical tasks overdue"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid "%s items in this list on the dashboard."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_kb.py:0
+msgid ""
+"%s: only PDF, text, Markdown, CSV and HTML files can be indexed. For Word "
+"files, paste the text in the document instead."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "30 days"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "7 days"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "90 days"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.medical_ai_kb_document_view_form
+msgid ""
+"<i class=\"fa fa-exclamation-triangle me-1\" title=\"Warning\"/>\n"
+"                        The embedding model changed since this document was indexed: re-index it so questions can find it."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_insight__mode__ai
+msgid "AI"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+#: model:ir.ui.menu,name:medical_ai_langchain.menu_medical_ai_smart_dashboard
+msgid "AI Dashboard"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_res_config_settings__medical_ai_engine
+msgid "AI Engine"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "AI Request Log"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_claim_line__ai_review_level
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.medical_claim_line_form_ai_review
+msgid "AI Review"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_claim_line__ai_review_date
+msgid "AI Review Date"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_claim_line__ai_review_html
+msgid "AI Review Details"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_claim_line__ai_review
+msgid "AI Review Result"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.medical_claim_form_ai_review
+msgid "AI Review Risky Lines"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model,name:medical_ai_langchain.model_medical_ai_insight
+msgid "AI insights on the center figures"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "AI requests"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "AI requests per day"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__active
+msgid "Active"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid ""
+"Add protocols, insurer policies and price lists so the assistant can quote "
+"them."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model_terms:ir.actions.act_window,help:medical_ai_langchain.action_medical_ai_kb_document
+msgid "Add the center's own documents"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_kb_document__category__admin
+msgid "Admin procedure"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_claim_review.py:0
+msgid "An appeal is unlikely to succeed."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_claim_review.py:0
+msgid "An appeal looks worthwhile."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "Answered"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "Answered and failed requests, all features"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.medical_ai_kb_document_view_form
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.medical_ai_kb_document_view_search
+msgid "Archived"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.medical_ai_chat_session_view_form
+msgid "Ask"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "Ask a question... (Enter to send)"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.medical_ai_chat_session_view_form
+msgid ""
+"Ask about today's schedule, a patient by file number, claims, overdue work "
+"or the center's documents..."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model_terms:ir.actions.act_window,help:medical_ai_langchain.action_medical_ai_chat_session
+msgid "Ask the clinic assistant"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid "Assign the overdue tasks to the clinics today."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_agent.py:0
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_chat_message__role__assistant
+msgid "Assistant"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_chat_message__mode__agent
+msgid "Assistant with tools"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "Average response"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_claim_review.py:0
+msgid "Billing"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__body
+msgid "Body"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid ""
+"Cast removals, recalls, vaccinations and result reviews past their date."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__category
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.medical_ai_kb_document_view_search
+msgid "Category"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__char_count
+msgid "Characters"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid "Check again after the next claim batch."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid "Check which clinics drove the change in Production by clinic."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_log__feature__claim_review
+msgid "Claim review"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_session__department_id
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__department_id
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.medical_ai_kb_document_view_search
+msgid "Clinic"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.actions.act_window,name:medical_ai_langchain.action_medical_ai_chat_session
+#: model:ir.ui.menu,name:medical_ai_langchain.menu_medical_ai_assistant
+msgid "Clinic Assistant"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model,name:medical_ai_langchain.model_medical_ai_chat_session
+msgid "Clinic Assistant Conversation"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model,name:medical_ai_langchain.model_medical_ai_chat_message
+msgid "Clinic Assistant Message"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_log__feature__agent
+msgid "Clinic assistant"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model,name:medical_ai_langchain.model_medical_ai_agent
+msgid "Clinic assistant (LangChain tool-calling agent)"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_kb_document__category__protocol
+msgid "Clinical protocol"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_kb.py:0
+msgid "Closest passages (no AI provider set, so no written answer):"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid ""
+"Collected %(c)s %(cur)s for %(p)s %(cur)s of treatments; the gap includes "
+"insurer shares not yet paid."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid "Collections at %s%% of production"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_session__company_id
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_insight__company_id
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_chunk__company_id
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__company_id
+msgid "Company"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model,name:medical_ai_langchain.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/lc_engine.py:0
+msgid "Configure an AI provider and model in Settings > Medical AI first."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid ""
+"Confirm high-risk bookings the day before (Reception > Bookings to Confirm)."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_message__content
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_chunk__content
+msgid "Content"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_message__content_html
+msgid "Content Html"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.res_config_settings_view_form_medical_ai_langchain
+msgid "Cost estimate"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_message__create_uid
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_session__create_uid
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_insight__create_uid
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_chunk__create_uid
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_message__create_date
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_session__create_date
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_insight__create_date
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_chunk__create_date
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "Critical"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_log__feature__insight
+msgid "Dashboard insights"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_log__engine__http
+msgid "Direct HTTP"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__res_config_settings__medical_ai_engine__http
+msgid "Direct HTTP (no LangChain)"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_agent__display_name
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_message__display_name
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_session__display_name
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_insight__display_name
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_chunk__display_name
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__display_name
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_log__display_name
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_service__display_name
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_smart_dashboard__display_name
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_claim__display_name
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_claim_line__display_name
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_claim_review.py:0
+msgid "Doctor"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_chunk__document_id
+msgid "Document"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_claim_review.py:0
+msgid "Documents to attach"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__embedding_signature
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_res_config_settings__medical_ai_embedding_model
+msgid "Embedding Model"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_res_config_settings__medical_ai_embedding_provider
+msgid "Embeddings"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_log__engine
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.res_config_settings_view_form_medical_ai_langchain
+msgid "Engine"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_kb_document__state__error
+msgid "Error"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__error_message
+msgid "Error Message"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "Errors"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_log__cost
+msgid "Estimated Cost (USD)"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "Estimated cost"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_log__feature
+msgid "Feature"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__datas
+msgid "File"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_kb_document__source_type__file
+msgid "File (PDF or text)"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__filename
+msgid "Filename"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_claim_review.py:0
+msgid "Fix before sending"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid "Follow up overdue patient balances and submit pending claim batches."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "Generate"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__res_config_settings__medical_ai_embedding_provider__gemini
+msgid "Google Gemini"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_claim_line__ai_review_level__high
+msgid "High"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid "Highest: %s."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.res_config_settings_view_form_medical_ai_langchain
+msgid ""
+"How documents and questions are turned into vectors. Local needs no "
+"provider; a real embedding model finds answers by meaning, not only by "
+"wording."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_agent.py:0
+msgid "I could not finish within %s steps. Please ask a narrower question."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_agent__id
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_message__id
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_session__id
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_insight__id
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_chunk__id
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__id
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_log__id
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_service__id
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_smart_dashboard__id
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_claim__id
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_claim_line__id
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_res_config_settings__id
+msgid "ID"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid "Idle hours are the cheapest capacity to sell."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,help:medical_ai_langchain.field_medical_ai_kb_document__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,help:medical_ai_langchain.field_medical_ai_kb_document__message_has_error
+#: model:ir.model.fields,help:medical_ai_langchain.field_medical_ai_kb_document__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.medical_ai_kb_document_view_form
+msgid "Index"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "Index now"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_kb_document__state__indexed
+msgid "Indexed"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__indexed_at
+msgid "Indexed At"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "Info"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_log__input_tokens
+msgid "Input Tokens"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "Insight period"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "Insights on the center"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model,name:medical_ai_langchain.model_medical_claim
+msgid "Insurance Claim Batch"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model,name:medical_ai_langchain.model_medical_claim_line
+msgid "Insurance Claim Line"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_claim_review.py:0
+msgid "Insurance officer"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__insurer_id
+msgid "Insurer"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_kb_document__category__insurer_policy
+msgid "Insurer policy"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid "Insurers rejected %s%% of the claimed amount"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_insight__items
+msgid "Items"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.actions.act_window,name:medical_ai_langchain.action_medical_ai_kb_document
+#: model:ir.ui.menu,name:medical_ai_langchain.menu_medical_ai_kb
+msgid "Knowledge Base"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model,name:medical_ai_langchain.model_medical_ai_kb_document
+msgid "Knowledge Base Document"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model,name:medical_ai_langchain.model_medical_ai_kb_chunk
+msgid "Knowledge Base Passage"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_chat_message__mode__generative
+msgid "Knowledge answer"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.res_config_settings_view_form_medical_ai_langchain
+msgid "Knowledge base"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "Knowledge base indexed."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_log__feature__embedding
+msgid "Knowledge indexing"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_log__feature__rag
+msgid "Knowledge question"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_log__engine__langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__res_config_settings__medical_ai_engine__langchain
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.res_config_settings_view_form_medical_ai_langchain
+msgid "LangChain"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.res_config_settings_view_form_medical_ai_langchain
+msgid ""
+"LangChain also powers the knowledge base, the clinic assistant, claim "
+"reviews and dashboard insights."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "Last 90 days"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_session__last_message_at
+msgid "Last Message At"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_message__write_uid
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_session__write_uid
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_insight__write_uid
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_chunk__write_uid
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_message__write_date
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_session__write_date
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_insight__write_date
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_chunk__write_date
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "Last month"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,help:medical_ai_langchain.field_medical_ai_kb_chunk__company_id
+#: model:ir.model.fields,help:medical_ai_langchain.field_medical_ai_kb_document__company_id
+msgid "Leave empty to share the document with every company."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_claim_review.py:0
+msgid "Likely rejection reasons"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "Loading"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__res_config_settings__medical_ai_embedding_provider__local
+msgid "Local (no provider, works offline)"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_claim_line__ai_review_level__low
+msgid "Low"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model,name:medical_ai_langchain.model_medical_ai_service
+msgid "Medical AI provider gateway"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model,name:medical_ai_langchain.model_medical_ai_log
+msgid "Medical AI request log"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.actions.server,name:medical_ai_langchain.cron_index_knowledge_ir_actions_server
+msgid "Medical AI: index new knowledge-base documents"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_claim_line__ai_review_level__medium
+msgid "Medium"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_session__message_ids
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_message__mode
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_insight__mode
+msgid "Mode"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_session__name
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__name
+msgid "Name"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__is_outdated
+msgid "Needs Re-indexing"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "New"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_agent.py:0
+msgid "New conversation"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "No AI provider set"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_kb.py:0
+msgid "No document in the knowledge base covers this question."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "No insights yet: press Generate."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_claim_review.py:0
+msgid "No medium- or high-risk line to review in this batch."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_agent.py:0
+msgid "No patient with file number %s."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_kb.py:0
+msgid "No text found in %s."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid "No warning signs in this period"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid "No-shows at %s%%"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.medical_ai_kb_document_view_search
+msgid "Not Indexed"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_kb_document__state__draft
+msgid "Not indexed"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_chat_message__mode__none
+msgid "Nothing found"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,help:medical_ai_langchain.field_medical_ai_kb_document__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,help:medical_ai_langchain.field_medical_ai_kb_document__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "Open"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid "Open the list from the dashboard."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__res_config_settings__medical_ai_embedding_provider__openai
+msgid "OpenAI"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__res_config_settings__medical_ai_embedding_provider__openai_compatible
+msgid "OpenAI-compatible server"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_kb_document__category__other
+msgid "Other"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_log__output_tokens
+msgid "Output Tokens"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_chunk__page
+msgid "Page"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__chunk_count
+msgid "Passage Count"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_kb.py:0
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__chunk_ids
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.medical_ai_kb_document_view_form
+msgid "Passages"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_chat_message__mode__extractive
+msgid "Passages only"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_res_config_settings__medical_ai_rag_top_k
+msgid "Passages per Answer"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.medical_ai_kb_document_view_form
+msgid "Paste or write the document here..."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_kb_document__category__faq
+msgid "Patient FAQ"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "Patients anonymized"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_insight__period
+msgid "Period"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_insight__period_label
+msgid "Period Label"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/res_config_settings.py:0
+msgid "PostgreSQL table"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid "Previous period: %s%%."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_res_config_settings__medical_ai_price_input
+msgid "Price per 1M Input Tokens (USD)"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_res_config_settings__medical_ai_price_output
+msgid "Price per 1M Output Tokens (USD)"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_kb_document__category__price_list
+msgid "Prices & packages"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid "Production %(dir)s %(pct)s%%"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid ""
+"Production, collections, no-shows, rejections and open work are within the "
+"usual limits."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid "Protect its capacity: doctors' hours and room availability."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model_terms:ir.actions.act_window,help:medical_ai_langchain.action_medical_ai_kb_document
+msgid ""
+"Protocols, insurer policies, price lists, admin procedures and patient FAQs. The clinic assistant\n"
+"               answers from them and quotes its sources."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "Question"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "Questions asked"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,help:medical_ai_langchain.field_medical_ai_kb_document__department_id
+msgid "Questions asked for this clinic search its documents first."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,help:medical_ai_langchain.field_medical_ai_chat_session__department_id
+msgid "Questions in this conversation are about this clinic."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.medical_ai_kb_document_view_form
+msgid "Re-index"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "Read the management figures and tell me what needs attention."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_kb.py:0
+msgid "Reading PDF files needs the Python package pypdf on the server."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_claim_review.py:0
+msgid "Reception"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "Requests by feature"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_message__role
+msgid "Role"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid "Rooms booked %s%% of opening hours"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_insight__mode__rules
+msgid "Rules"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid ""
+"Run the AI review on medium- and high-risk lines before the next batch."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid ""
+"Schedule, patients by file number, claims, overdue work and the knowledge "
+"base. Uses your access rights."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "Send"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_chunk__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_message__session_id
+msgid "Session"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_chunk__signature
+msgid "Signature"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.actions.client,name:medical_ai_langchain.action_medical_ai_smart_dashboard
+msgid "Smart AI Dashboard"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model,name:medical_ai_langchain.model_medical_ai_smart_dashboard
+msgid "Smart AI dashboard"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__source_type
+msgid "Source Type"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_message__sources
+msgid "Sources"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__state
+msgid "State"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "Success rate"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/lc_engine.py:0
+msgid "The AI provider did not answer: %s"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/lc_engine.py:0
+msgid ""
+"The Python package %(package)s is missing on the server. Install it with: "
+"pip install %(package)s"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.medical_ai_chat_session_view_form
+msgid ""
+"The assistant uses your own access rights. Patients are sent to the AI "
+"provider by file number only."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "Thinking..."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/lc_engine.py:0
+msgid ""
+"This feature needs the LangChain engine: select it in Settings > Medical AI."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "This month"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "This year"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model_terms:ir.actions.act_window,help:medical_ai_langchain.action_medical_ai_chat_session
+msgid ""
+"Today's schedule, a patient's overview, claims, overdue work and the "
+"center's own documents."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "Tokens"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,help:medical_ai_langchain.field_medical_ai_log__cost
+msgid "Tokens multiplied by the prices per million tokens set in Settings."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_log__tool_calls
+msgid "Tool Calls"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_message__tool_trace
+msgid "Tool Trace"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,help:medical_ai_langchain.field_medical_ai_log__tool_calls
+msgid "Tools the clinic assistant called to answer."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.medical_ai_log_view_list_langchain
+msgid "Total"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_session__transcript
+msgid "Transcript"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_agent.py:0
+msgid "Type a question first."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,help:medical_ai_langchain.field_medical_ai_chat_session__question
+msgid "Typed in the form, sent with \"Ask\"."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_kb.py:0
+msgid "Upload a file for %s."
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid ""
+"Use the occupancy heatmap to place follow-ups and programs in quiet slots."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,help:medical_ai_langchain.field_res_config_settings__medical_ai_embedding_provider
+msgid ""
+"Used to index the knowledge base. Changing it means re-indexing the "
+"documents."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_message__user_id
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_session__user_id
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_insight__user_id
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_chat_message__role__user
+msgid "User"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_res_config_settings__medical_ai_vector_store
+msgid "Vector Store"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "Warning"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_kb_document__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,help:medical_ai_langchain.field_medical_ai_kb_document__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "What clinical work is overdue?"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "What does the insurer policy say about pre-authorization?"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "Which AI features people use"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "Which claim rejections are most frequent?"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "Who is booked today, by clinic?"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields.selection,name:medical_ai_langchain.selection__medical_ai_kb_document__source_type__text
+msgid "Written here"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_agent.py:0
+msgid "You"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_agent.py:0
+msgid "You can only write in your own conversations."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.res_config_settings_view_form_medical_ai_langchain
+msgid ""
+"Your provider's prices, used to estimate the cost of each request in the AI "
+"log and the smart dashboard."
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model:ir.model.fields,field_description:medical_ai_langchain.field_medical_ai_chat_session__question
+msgid "Your question"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "answered without error"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "assistant and knowledge base"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_kb.py:0
+msgid "document_id"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "documents indexed ·"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid "down"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.medical_ai_kb_document_view_form
+msgid "e.g. Ministry of Health antenatal protocol"
+msgstr ""
+
+#. module: medical_ai_langchain
+#: model_terms:ir.ui.view,arch_db:medical_ai_langchain.res_config_settings_view_form_medical_ai_langchain
+msgid "e.g. the embedding model name from your provider"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "from the prices in Settings"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "in"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "no change"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "out"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "passages"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "per request"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "rule-based (no AI provider)"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "s"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "table"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "to index ·"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "to re-index"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-python
+#: code:addons/medical_ai_langchain/models/medical_ai_smart_dashboard.py:0
+msgid "up"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.js:0
+msgid "vs previous period"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "written by the AI from the dashboard figures"
+msgstr ""
+
+#. module: medical_ai_langchain
+#. odoo-javascript
+#: code:addons/medical_ai_langchain/static/src/smart_dashboard/smart_dashboard.xml:0
+msgid "· p."
+msgstr ""

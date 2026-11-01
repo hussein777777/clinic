@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="medical_ai_langchain.SmartDashboard">
+        <div class="o_action o_dd_root o_sd_root">
+            <div class="o_dd_scroll">
+                <div t-if="state.loading and !state.data" class="o_dd_loading">
+                    <i class="fa fa-circle-o-notch fa-spin" title="Loading"/>
+                </div>
+                <div t-elif="state.data" class="o_dd_page">
+                    <!-- toolbar -->
+                    <div class="o_dd_toolbar">
+                        <div>
+                            <h2 class="o_dd_heading">AI Dashboard</h2>
+                            <div class="o_sd_chips">
+                                <span t-foreach="engineChips" t-as="chip" t-key="chip_index" class="o_sd_chip">
+                                    <i t-attf-class="fa {{ chip.icon }}" aria-hidden="true"/>
+                                    <t t-esc="chip.text"/>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="o_dd_filters">
+                            <div class="btn-group" role="group" aria-label="Period">
+                                <button t-foreach="dayOptions" t-as="opt" t-key="opt.key"
+                                        t-attf-class="btn btn-sm {{ state.days === opt.key ? 'btn-primary' : 'btn-light' }}"
+                                        t-on-click="() => this.setDays(opt.key)" t-esc="opt.label"/>
+                            </div>
+                            <button class="btn btn-sm btn-light" t-on-click="openLog">
+                                <i class="fa fa-list me-1" aria-hidden="true"/>AI Request Log
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- KPI tiles -->
+                    <div class="o_dd_kpis">
+                        <div t-foreach="tiles" t-as="tile" t-key="tile.key" class="o_dd_tile">
+                            <div class="o_dd_tile_label" t-esc="tile.label"/>
+                            <div class="o_dd_tile_value o_dd_num" t-esc="tile.value"/>
+                            <div class="o_dd_meter" t-if="tile.meter !== undefined">
+                                <div class="o_dd_meter_fill" t-attf-style="width: {{ tile.meter }}%"/>
+                            </div>
+                            <div class="o_dd_tile_foot">
+                                <span t-if="tile.delta" t-attf-class="o_dd_delta {{ tile.delta.cls }}">
+                                    <i t-if="tile.delta.icon" t-attf-class="fa {{ tile.delta.icon }}" aria-hidden="true"/>
+                                    <t t-esc="tile.delta.text"/>
+                                </span>
+                                <span class="o_dd_muted" t-esc="tile.hint"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="o_sd_layout">
+                        <!-- main column -->
+                        <div class="o_sd_main">
+                            <section class="o_dd_card o_sd_insights">
+                                <header class="o_dd_card_head">
+                                    <div>
+                                        <h3 class="o_dd_card_title">Insights on the center</h3>
+                                        <p class="o_dd_card_sub">
+                                            <t t-if="state.data.insight">
+                                                <t t-esc="state.data.insight.period_label"/> ·
+                                                <t t-if="state.data.insight.mode === 'ai'">written by the AI from the dashboard figures</t>
+                                                <t t-else="">rule-based (no AI provider)</t>
+                                                · <t t-esc="state.data.insight.date"/>
+                                            </t>
+                                            <t t-else="">Read the management figures and tell me what needs attention.</t>
+                                        </p>
+                                    </div>
+                                    <div class="o_sd_insight_controls" t-if="state.data.engine.is_manager">
+                                        <select class="form-select form-select-sm" aria-label="Insight period" t-on-change="onInsightPeriod">
+                                            <option t-foreach="insightPeriods" t-as="p" t-key="p.key" t-att-value="p.key"
+                                                    t-att-selected="state.insightPeriod === p.key" t-esc="p.label"/>
+                                        </select>
+                                        <button class="btn btn-sm btn-primary o_sd_generate" t-on-click="generateInsights"
+                                                t-att-disabled="state.insightBusy">
+                                            <i t-attf-class="fa {{ state.insightBusy ? 'fa-circle-o-notch fa-spin' : 'fa-magic' }} me-1" aria-hidden="true"/>
+                                            Generate
+                                        </button>
+                                    </div>
+                                </header>
+                                <div t-if="!state.data.insight" class="o_dd_empty">No insights yet: press Generate.</div>
+                                <ol t-else="" class="o_sd_insight_list">
+                                    <li t-foreach="state.data.insight.items" t-as="item" t-key="item_index"
+                                        t-attf-class="o_sd_insight o_sd_sev_{{ item.severity }}">
+                                        <span class="o_sd_sev">
+                                            <i t-attf-class="fa {{ severity(item.severity).icon }}" aria-hidden="true"/>
+                                            <t t-esc="severity(item.severity).label"/>
+                                        </span>
+                                        <div class="o_sd_insight_body">
+                                            <div class="o_sd_insight_title" t-esc="item.title"/>
+                                            <div class="o_sd_insight_detail" t-esc="item.detail"/>
+                                            <div class="o_sd_insight_action">
+                                                <i class="fa fa-long-arrow-right me-1" aria-hidden="true"/>
+                                                <t t-esc="item.action"/>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </section>
+
+                            <MedicalChartCard title.translate="AI requests per day"
+                                              subtitle.translate="Answered and failed requests, all features"
+                                              kind="'stacked'" labels="dailyChart.labels" series="dailyChart.series"
+                                              unit="'number'" height="220"/>
+                            <MedicalChartCard title.translate="Requests by feature"
+                                              subtitle.translate="Which AI features people use"
+                                              kind="'hbar'" labels="featureChart.labels" series="featureChart.series"
+                                              unit="'number'"/>
+                        </div>
+
+                        <!-- side column -->
+                        <div class="o_sd_side">
+                            <section class="o_dd_card o_sd_chat">
+                                <header class="o_dd_card_head">
+                                    <div>
+                                        <h3 class="o_dd_card_title">Clinic assistant</h3>
+                                        <p class="o_dd_card_sub">Schedule, patients by file number, claims, overdue work and the knowledge base. Uses your access rights.</p>
+                                    </div>
+                                    <button class="btn btn-link btn-sm" t-on-click="newConversation" t-if="state.messages.length">
+                                        <i class="fa fa-plus me-1" aria-hidden="true"/>New
+                                    </button>
+                                </header>
+                                <div class="o_sd_messages" t-ref="chat">
+                                    <div t-if="!state.messages.length" class="o_sd_suggest">
+                                        <button t-foreach="suggestions" t-as="s" t-key="s_index" class="btn btn-sm o_sd_suggest_btn"
+                                                t-on-click="() => this.ask(s)" t-esc="s"/>
+                                    </div>
+                                    <div t-foreach="state.messages" t-as="m" t-key="m.id" t-attf-class="o_sd_msg o_sd_msg_{{ m.role }}">
+                                        <div class="o_sd_bubble">
+                                            <t t-if="m.text" t-esc="m.text"/>
+                                            <t t-else="" t-out="m.html"/>
+                                        </div>
+                                        <div t-if="m.sources and m.sources.length" class="o_sd_sources">
+                                            <button t-foreach="m.sources" t-as="src" t-key="src_index" class="o_sd_source"
+                                                    t-on-click="() => this.openDocument(src.document_id)" t-att-title="src.excerpt">
+                                                <span class="o_sd_source_n" t-esc="src.n"/>
+                                                <t t-esc="src.document"/><t t-if="src.page"> · p. <t t-esc="src.page"/></t>
+                                            </button>
+                                        </div>
+                                        <div t-if="m.tools and m.tools.length" class="o_sd_tools">
+                                            <i class="fa fa-wrench me-1" aria-hidden="true"/>
+                                            <t t-esc="m.tools.join(' · ')"/>
+                                        </div>
+                                    </div>
+                                    <div t-if="state.asking" class="o_sd_msg o_sd_msg_assistant">
+                                        <div class="o_sd_bubble o_sd_thinking">
+                                            <i class="fa fa-circle-o-notch fa-spin me-1" aria-hidden="true"/>Thinking...
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="o_sd_input">
+                                    <textarea class="form-control" rows="2" t-ref="question" t-att-value="state.question"
+                                              t-on-input="onInput" t-on-keydown="onKeydown" aria-label="Question"
+                                              placeholder="Ask a question... (Enter to send)"/>
+                                    <button class="btn btn-primary" t-on-click="() => this.ask()" t-att-disabled="state.asking"
+                                            aria-label="Send" title="Send">
+                                        <i class="fa fa-paper-plane" aria-hidden="true"/>
+                                    </button>
+                                </div>
+                            </section>
+
+                            <section class="o_dd_card o_sd_kb">
+                                <header class="o_dd_card_head">
+                                    <div>
+                                        <h3 class="o_dd_card_title">Knowledge base</h3>
+                                        <p class="o_dd_card_sub">
+                                            <t t-esc="state.data.kb.indexed"/> / <t t-esc="state.data.kb.documents"/> documents indexed ·
+                                            <t t-esc="state.data.kb.passages"/> passages
+                                        </p>
+                                    </div>
+                                    <button class="btn btn-link btn-sm" t-on-click="openKnowledge">
+                                        <i class="fa fa-folder-open me-1" aria-hidden="true"/>Open
+                                    </button>
+                                </header>
+                                <div t-if="state.data.kb.pending or state.data.kb.outdated or state.data.kb.errors" class="o_sd_kb_alert">
+                                    <span>
+                                        <i class="fa fa-exclamation-triangle me-1" aria-hidden="true"/>
+                                        <t t-esc="state.data.kb.pending + state.data.kb.errors"/> to index ·
+                                        <t t-esc="state.data.kb.outdated"/> to re-index
+                                    </span>
+                                    <button class="btn btn-sm btn-light" t-on-click="indexPending" t-att-disabled="state.indexBusy">
+                                        <i t-attf-class="fa {{ state.indexBusy ? 'fa-circle-o-notch fa-spin' : 'fa-refresh' }} me-1" aria-hidden="true"/>
+                                        Index now
+                                    </button>
+                                </div>
+                                <div t-if="!state.data.kb.by_category.length" class="o_dd_empty">
+                                    Add protocols, insurer policies and price lists so the assistant can quote them.
+                                </div>
+                                <ul class="o_sd_bars" t-else="">
+                                    <li t-foreach="state.data.kb.by_category" t-as="cat" t-key="cat_index">
+                                        <span class="o_sd_bar_label" t-esc="cat.label"/>
+                                        <span class="o_sd_bar_track">
+                                            <span class="o_sd_bar_fill" t-attf-style="width: {{ 100 * cat.count / kbMax }}%"/>
+                                        </span>
+                                        <span class="o_sd_bar_value o_dd_num" t-esc="cat.count"/>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

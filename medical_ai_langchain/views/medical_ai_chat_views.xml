@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_ai_chat_session_view_list" model="ir.ui.view">
+        <field name="name">medical.ai.chat.session.list</field>
+        <field name="model">medical.ai.chat.session</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="department_id" optional="show"/>
+                <field name="last_message_at"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_ai_chat_session_view_form" model="ir.ui.view">
+        <field name="name">medical.ai.chat.session.form</field>
+        <field name="model">medical.ai.chat.session</field>
+        <field name="arch" type="xml">
+            <form class="o_ai_chat_form">
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <field name="department_id" options="{'no_create': True}"/>
+                    </group>
+                    <field name="transcript" readonly="1" class="o_ai_transcript"/>
+                    <div class="d-flex gap-2 align-items-end mt-3">
+                        <field name="question" class="flex-grow-1" nolabel="1"
+                               placeholder="Ask about today's schedule, a patient by file number, claims, overdue work or the center's documents..."/>
+                        <button name="action_send" type="object" string="Ask" class="btn-primary" icon="fa-paper-plane"/>
+                    </div>
+                    <p class="text-muted small mt-2">
+                        The assistant uses your own access rights. Patients are sent to the AI provider by file number only.
+                    </p>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_medical_ai_chat_session" model="ir.actions.act_window">
+        <field name="name">Clinic Assistant</field>
+        <field name="res_model">medical.ai.chat.session</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiley_face">Ask the clinic assistant</p>
+            <p>Today's schedule, a patient's overview, claims, overdue work and the center's own documents.</p>
+        </field>
+    </record>
+</odoo>

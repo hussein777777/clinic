@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="rule_kb_document_company" model="ir.rule">
+        <field name="name">Knowledge base document: multi-company</field>
+        <field name="model_id" ref="model_medical_ai_kb_document"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="rule_kb_chunk_company" model="ir.rule">
+        <field name="name">Knowledge base passage: multi-company</field>
+        <field name="model_id" ref="model_medical_ai_kb_chunk"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="rule_chat_session_own" model="ir.rule">
+        <field name="name">Clinic assistant: own conversations only</field>
+        <field name="model_id" ref="model_medical_ai_chat_session"/>
+        <field name="domain_force">[('user_id', '=', user.id)]</field>
+    </record>
+    <record id="rule_chat_message_own" model="ir.rule">
+        <field name="name">Clinic assistant: own messages only</field>
+        <field name="model_id" ref="model_medical_ai_chat_message"/>
+        <field name="domain_force">[('user_id', '=', user.id)]</field>
+    </record>
+    <record id="rule_ai_insight_company" model="ir.rule">
+        <field name="name">AI insights: multi-company</field>
+        <field name="model_id" ref="model_medical_ai_insight"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+</odoo>
