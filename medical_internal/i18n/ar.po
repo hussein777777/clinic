@@ -1,0 +1,835 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* medical_internal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-19 19:28+0000\n"
+"PO-Revision-Date: 2026-10-19 19:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: medical_internal
+#. odoo-python
+#: code:addons/medical_internal/models/medical_chronic.py:0
+msgid "%s periodic tests"
+msgstr "فحوصات دورية لـ %s"
+
+#. module: medical_internal
+#: model_terms:ir.ui.view,arch_db:medical_internal.medical_chronic_enrollment_view_form
+msgid "<i class=\"fa fa-flask me-1\" title=\"Tests\"/><strong>Tests due: </strong>"
+msgstr ""
+"<i class=\"fa fa-flask me-1\" title=\"الفحوصات\"/><strong>فحوصات مستحقة: "
+"</strong>"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_program__active
+#: model:ir.model.fields.selection,name:medical_internal.selection__medical_chronic_enrollment__state__active
+#: model_terms:ir.ui.view,arch_db:medical_internal.medical_chronic_enrollment_view_search
+msgid "Active"
+msgstr "نشطة"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_program__advice
+msgid "Advice"
+msgstr "نصائح"
+
+#. module: medical_internal
+#: model:product.template,name:medical_internal.product_abpm_product_template
+msgid "Ambulatory Blood Pressure (24 h)"
+msgstr "قياس ضغط الدم المتنقل (24 ساعة)"
+
+#. module: medical_internal
+#: model_terms:medical.assessment.template,description:medical_internal.score_phq9
+msgid ""
+"Any answer other than \"Not at all\" on the last question needs a safety "
+"assessment the same day."
+msgstr ""
+"أي إجابة غير \"Not at all\" على السؤال الأخير تستوجب تقييمًا للسلامة في نفس "
+"اليوم."
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_target__target_min
+msgid "At least"
+msgstr "على الأقل"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_target__target_max
+msgid "At most"
+msgstr "على الأكثر"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: medical_internal
+#: model_terms:medical.chronic.program,advice:medical_internal.program_ckd
+msgid ""
+"Avoid painkillers like ibuprofen and diclofenac unless your doctor allows "
+"them, and follow the diet advice for salt and potassium."
+msgstr ""
+"تجنب المسكنات مثل الإيبوبروفين والديكلوفيناك إلا بإذن طبيبك، والتزم بنصائح "
+"النظام الغذائي بخصوص الملح والبوتاسيوم."
+
+#. module: medical_internal
+#: model:medical.assessment.template,name:medical_internal.score_cha2ds2vasc
+msgid "CHA₂DS₂-VASc (atrial fibrillation)"
+msgstr "CHA₂DS₂-VASc (الرجفان الأذيني)"
+
+#. module: medical_internal
+#: model:medical.observation.type,name:medical_internal.obs_cha2ds2vasc
+msgid "CHA₂DS₂-VASc (stroke risk in AF)"
+msgstr "CHA₂DS₂-VASc (خطر السكتة في الرجفان الأذيني)"
+
+#. module: medical_internal
+#. odoo-python
+#: code:addons/medical_internal/models/medical_chronic.py:0
+msgid "Call the patient to book the follow-up. Due tests: %s"
+msgstr "اتصل بالمريض لحجز المتابعة. الفحوصات المستحقة: %s"
+
+#. module: medical_internal
+#: model:medical.specialty,name:medical_internal.spec_cardio
+msgid "Cardiology"
+msgstr "القلب"
+
+#. module: medical_internal
+#: model:medical.specialty,name:medical_internal.spec_chest
+msgid "Chest & Respiratory"
+msgstr "الصدر والجهاز التنفسي"
+
+#. module: medical_internal
+#: model:medical.diagnosis,name:medical_internal.icd_r07_4
+msgid "Chest pain, unspecified"
+msgstr "ألم الصدر، غير محدد"
+
+#. module: medical_internal
+#: model:product.template,name:medical_internal.product_chronic_package_product_template
+msgid "Chronic Care Program (monthly follow-up)"
+msgstr "برنامج رعاية الأمراض المزمنة (متابعة شهرية)"
+
+#. module: medical_internal
+#: model:ir.model,name:medical_internal.model_medical_chronic_program
+msgid "Chronic Disease Program"
+msgstr "برنامج الأمراض المزمنة"
+
+#. module: medical_internal
+#: model:product.template,name:medical_internal.product_chronic_review_product_template
+msgid "Chronic Disease Review"
+msgstr "مراجعة الأمراض المزمنة"
+
+#. module: medical_internal
+#: model:medical.chronic.program,name:medical_internal.program_ckd
+msgid "Chronic Kidney Disease"
+msgstr "مرض الكلى المزمن"
+
+#. module: medical_internal
+#: model:ir.actions.act_window,name:medical_internal.action_medical_chronic_enrollment
+#: model:ir.ui.menu,name:medical_internal.menu_chronic_enrollment
+msgid "Chronic Patients"
+msgstr "مرضى الأمراض المزمنة"
+
+#. module: medical_internal
+#: model:ir.model,name:medical_internal.model_medical_chronic_enrollment
+msgid "Chronic Program Enrollment"
+msgstr "تسجيل في برنامج مزمن"
+
+#. module: medical_internal
+#: model:ir.actions.act_window,name:medical_internal.action_medical_chronic_program
+#: model:ir.model.fields,field_description:medical_internal.field_medical_visit__chronic_enrollment_ids
+#: model:ir.model.fields,field_description:medical_internal.field_res_partner__chronic_enrollment_ids
+#: model:ir.model.fields,field_description:medical_internal.field_res_users__chronic_enrollment_ids
+#: model:ir.ui.menu,name:medical_internal.menu_chronic_program
+#: model_terms:ir.ui.view,arch_db:medical_internal.res_partner_form_internal
+msgid "Chronic Programs"
+msgstr "برامج الأمراض المزمنة"
+
+#. module: medical_internal
+#. odoo-python
+#: code:addons/medical_internal/models/medical_chronic.py:0
+msgid "Chronic programs"
+msgstr "برامج الأمراض المزمنة"
+
+#. module: medical_internal
+#: model:medical.diagnosis,name:medical_internal.icd_b18_2
+msgid "Chronic viral hepatitis C"
+msgstr "التهاب الكبد الفيروسي المزمن C"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: medical_internal
+#: model:ir.model,name:medical_internal.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: medical_internal
+#: model_terms:ir.ui.view,arch_db:medical_internal.medical_chronic_enrollment_view_search
+msgid "Control"
+msgstr "الانضباط"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__control_detail
+msgid "Control Detail"
+msgstr "تفاصيل الانضباط"
+
+#. module: medical_internal
+#: model_terms:ir.ui.view,arch_db:medical_internal.medical_chronic_enrollment_view_pivot
+msgid "Control Rate"
+msgstr "نسبة الانضباط"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__control_status
+msgid "Control Status"
+msgstr "حالة الانضباط"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__create_uid
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_program__create_uid
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_target__create_uid
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_test__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__create_date
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_program__create_date
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_target__create_date
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_test__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: medical_internal
+#: model_terms:ir.ui.view,arch_db:medical_internal.medical_chronic_program_view_form
+msgid ""
+"Default targets follow common adult guidance; adjust them to your protocol."
+msgstr ""
+"الأهداف الافتراضية تتبع الإرشادات الشائعة للبالغين؛ عدّلها حسب بروتوكولك."
+
+#. module: medical_internal
+#: model:medical.chronic.program,name:medical_internal.program_diabetes
+msgid "Diabetes"
+msgstr "السكري"
+
+#. module: medical_internal
+#: model:medical.specialty,name:medical_internal.spec_diabetes
+msgid "Diabetes & Endocrinology"
+msgstr "السكري والغدد الصماء"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_program__diagnosis_ids
+msgid "Diagnoses"
+msgstr "التشخيصات"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__display_name
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_program__display_name
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_target__display_name
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_test__display_name
+#: model:ir.model.fields,field_description:medical_internal.field_medical_observation__display_name
+#: model:ir.model.fields,field_description:medical_internal.field_medical_visit__display_name
+#: model:ir.model.fields,field_description:medical_internal.field_res_partner__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__doctor_id
+msgid "Doctor"
+msgstr "الطبيب"
+
+#. module: medical_internal
+#: model:medical.chronic.program,name:medical_internal.program_lipids
+msgid "Dyslipidaemia"
+msgstr "اضطراب الدهون"
+
+#. module: medical_internal
+#: model:medical.diagnosis,name:medical_internal.icd_r06_0
+msgid "Dyspnoea"
+msgstr "ضيق التنفس"
+
+#. module: medical_internal
+#: model:product.template,name:medical_internal.product_echo_product_template
+msgid "Echocardiography"
+msgstr "إيكو على القلب"
+
+#. module: medical_internal
+#: model:product.template,name:medical_internal.product_ecg_product_template
+msgid "Electrocardiogram (ECG)"
+msgstr "رسم القلب (ECG)"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_test__interval_months
+msgid "Every (months)"
+msgstr "كل (شهر)"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: medical_internal
+#: model:ir.model.fields,help:medical_internal.field_medical_chronic_enrollment__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
+
+#. module: medical_internal
+#: model:medical.observation.type,name:medical_internal.obs_gad7
+msgid "GAD-7 (anxiety)"
+msgstr "GAD-7 (القلق)"
+
+#. module: medical_internal
+#: model:medical.assessment.template,name:medical_internal.score_gad7
+msgid "GAD-7 Anxiety Questionnaire"
+msgstr "استبيان القلق GAD-7"
+
+#. module: medical_internal
+#: model:medical.specialty,name:medical_internal.spec_internal_general
+msgid "General Internal Medicine"
+msgstr "الباطنة العامة"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__has_tests_due
+msgid "Has Tests Due"
+msgstr "لديه فحوصات مستحقة"
+
+#. module: medical_internal
+#: model:product.template,name:medical_internal.product_holter_product_template
+msgid "Holter Monitoring (24 h)"
+msgstr "هولتر (24 ساعة)"
+
+#. module: medical_internal
+#: model:medical.chronic.program,name:medical_internal.program_hypertension
+msgid "Hypertension"
+msgstr "ارتفاع ضغط الدم"
+
+#. module: medical_internal
+#: model:medical.diagnosis,name:medical_internal.icd_i11_9
+msgid "Hypertensive heart disease without heart failure"
+msgstr "مرض القلب الناتج عن ارتفاع الضغط بدون قصور في القلب"
+
+#. module: medical_internal
+#: model:medical.diagnosis,name:medical_internal.icd_e87_1
+msgid "Hypo-osmolality and hyponatraemia"
+msgstr "نقص الأسمولية ونقص صوديوم الدم"
+
+#. module: medical_internal
+#: model:medical.chronic.program,name:medical_internal.program_hypothyroid
+msgid "Hypothyroidism"
+msgstr "قصور الغدة الدرقية"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__id
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_program__id
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_target__id
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_test__id
+#: model:ir.model.fields,field_description:medical_internal.field_medical_observation__id
+#: model:ir.model.fields,field_description:medical_internal.field_medical_visit__id
+#: model:ir.model.fields,field_description:medical_internal.field_res_partner__id
+msgid "ID"
+msgstr "المُعرّف"
+
+#. module: medical_internal
+#: model:product.template,name:medical_internal.product_iv_infusion_product_template
+msgid "IV Infusion"
+msgstr "محلول وريدي"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: medical_internal
+#: model:ir.model.fields,help:medical_internal.field_medical_chronic_enrollment__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "الأيقونة للإشارة إلى النشاط المستثنى."
+
+#. module: medical_internal
+#: model:ir.model.fields,help:medical_internal.field_medical_chronic_enrollment__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة تحتاج انتباهك."
+
+#. module: medical_internal
+#: model:ir.model.fields,help:medical_internal.field_medical_chronic_enrollment__message_has_error
+#: model:ir.model.fields,help:medical_internal.field_medical_chronic_enrollment__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: medical_internal
+#: model:ir.ui.menu,name:medical_internal.menu_internal
+#: model:medical.department,name:medical_internal.dept_internal
+msgid "Internal Medicine"
+msgstr "الباطنة"
+
+#. module: medical_internal
+#: model:product.template,name:medical_internal.product_internal_consultation_product_template
+msgid "Internal Medicine Consultation"
+msgstr "كشف باطنة"
+
+#. module: medical_internal
+#: model:ir.actions.act_window,name:medical_internal.action_internal_visit
+msgid "Internal Medicine Schedule"
+msgstr "جدول الباطنة"
+
+#. module: medical_internal
+#: model:medical.diagnosis,name:medical_internal.icd_k58_9
+msgid "Irritable bowel syndrome without diarrhoea"
+msgstr "متلازمة القولون العصبي بدون إسهال"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__is_review_due
+msgid "Is Review Due"
+msgstr "المراجعة مستحقة"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__last_review_date
+msgid "Last Review Date"
+msgstr "تاريخ آخر مراجعة"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__write_uid
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_program__write_uid
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_target__write_uid
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_test__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__write_date
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_program__write_date
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_target__write_date
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_test__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: medical_internal
+#: model_terms:ir.ui.view,arch_db:medical_internal.medical_chronic_enrollment_view_form
+msgid "Latest Results vs Targets"
+msgstr "أحدث النتائج مقابل الأهداف"
+
+#. module: medical_internal
+#: model:ir.model,name:medical_internal.model_medical_observation
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_target__type_id
+msgid "Measurement"
+msgstr "القياس"
+
+#. module: medical_internal
+#: model:ir.actions.server,name:medical_internal.ir_cron_chronic_recall_ir_actions_server
+msgid "Medical: chronic programs recall"
+msgstr "طبي: استدعاء برامج الأمراض المزمنة"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "موعدي النهائي للنشاط"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_program__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: medical_internal
+#: model:product.template,name:medical_internal.product_nebulizer_product_template
+msgid "Nebulizer Session"
+msgstr "جلسة نيبولايزر"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__next_review_date
+msgid "Next Review Date"
+msgstr "تاريخ المراجعة القادمة"
+
+#. module: medical_internal
+#: model:ir.model.fields.selection,name:medical_internal.selection__medical_chronic_enrollment__control_status__unknown
+msgid "No recent results"
+msgstr "لا توجد نتائج حديثة"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: medical_internal
+#: model:ir.model.fields,help:medical_internal.field_medical_chronic_enrollment__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراءً"
+
+#. module: medical_internal
+#: model:ir.model.fields,help:medical_internal.field_medical_chronic_enrollment__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: medical_internal
+#: model_terms:ir.ui.view,arch_db:medical_internal.medical_chronic_enrollment_view_search
+msgid "Off Target"
+msgstr "خارج الهدف"
+
+#. module: medical_internal
+#: model:ir.model.fields.selection,name:medical_internal.selection__medical_chronic_enrollment__control_status__uncontrolled
+msgid "Off target"
+msgstr "خارج الهدف"
+
+#. module: medical_internal
+#: model:ir.model.fields.selection,name:medical_internal.selection__medical_chronic_enrollment__control_status__controlled
+msgid "On target"
+msgstr "ضمن الهدف"
+
+#. module: medical_internal
+#: model_terms:ir.ui.view,arch_db:medical_internal.medical_chronic_enrollment_view_form
+msgid "Order Due Tests"
+msgstr "طلب الفحوصات المستحقة"
+
+#. module: medical_internal
+#. odoo-python
+#: code:addons/medical_internal/models/medical_chronic.py:0
+msgid "Ordered Tests"
+msgstr "الفحوصات المطلوبة"
+
+#. module: medical_internal
+#: model:medical.diagnosis,name:medical_internal.icd_k74_6
+msgid "Other and unspecified cirrhosis of liver"
+msgstr "تليف كبدي آخر وغير محدد"
+
+#. module: medical_internal
+#: model:medical.observation.type,name:medical_internal.obs_phq9
+msgid "PHQ-9 (depression)"
+msgstr "PHQ-9 (الاكتئاب)"
+
+#. module: medical_internal
+#: model:medical.assessment.template,name:medical_internal.score_phq9
+msgid "PHQ-9 Depression Questionnaire"
+msgstr "استبيان الاكتئاب PHQ-9"
+
+#. module: medical_internal
+#: model:medical.diagnosis,name:medical_internal.icd_r00_2
+msgid "Palpitations"
+msgstr "خفقان"
+
+#. module: medical_internal
+#: model:ir.model.fields.selection,name:medical_internal.selection__medical_chronic_enrollment__control_status__partial
+msgid "Partly on target"
+msgstr "ضمن الهدف جزئيًا"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__patient_id
+msgid "Patient"
+msgstr "المريض"
+
+#. module: medical_internal
+#: model_terms:ir.ui.view,arch_db:medical_internal.medical_chronic_program_view_form
+msgid "Patient Advice"
+msgstr "نصائح للمريض"
+
+#. module: medical_internal
+#: model:ir.model.fields,help:medical_internal.field_medical_chronic_program__diagnosis_ids
+msgid "Patients with these diagnoses are offered the program."
+msgstr "يُعرض البرنامج على المرضى المصابين بهذه التشخيصات."
+
+#. module: medical_internal
+#: model_terms:ir.ui.view,arch_db:medical_internal.medical_chronic_enrollment_view_form
+msgid "Pause"
+msgstr "إيقاف مؤقت"
+
+#. module: medical_internal
+#: model:ir.model.fields.selection,name:medical_internal.selection__medical_chronic_enrollment__state__paused
+msgid "Paused"
+msgstr "موقوف مؤقتًا"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_program__test_ids
+#: model_terms:ir.ui.view,arch_db:medical_internal.medical_chronic_program_view_form
+msgid "Periodic Tests"
+msgstr "الفحوصات الدورية"
+
+#. module: medical_internal
+#: model:ir.model.fields,help:medical_internal.field_medical_chronic_program__advice
+msgid "Printed for the patient: diet, activity, warning signs."
+msgstr "تُطبع للمريض: النظام الغذائي، النشاط، علامات الخطر."
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__program_id
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_target__program_id
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_test__program_id
+#: model_terms:ir.ui.view,arch_db:medical_internal.medical_chronic_enrollment_view_search
+msgid "Program"
+msgstr "البرنامج"
+
+#. module: medical_internal
+#: model:ir.model,name:medical_internal.model_medical_chronic_test
+msgid "Program Periodic Test"
+msgstr "فحص دوري للبرنامج"
+
+#. module: medical_internal
+#: model:ir.model,name:medical_internal.model_medical_chronic_target
+msgid "Program Target"
+msgstr "هدف البرنامج"
+
+#. module: medical_internal
+#: model:ir.actions.act_window,name:medical_internal.action_medical_chronic_recall
+#: model:ir.ui.menu,name:medical_internal.menu_chronic_recall
+msgid "Recall List"
+msgstr "قائمة الاستدعاء"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: medical_internal
+#: model_terms:ir.ui.view,arch_db:medical_internal.medical_chronic_enrollment_view_form
+msgid "Resume"
+msgstr "استئناف"
+
+#. module: medical_internal
+#: model_terms:ir.ui.view,arch_db:medical_internal.medical_chronic_enrollment_view_search
+msgid "Review Due"
+msgstr "المراجعة مستحقة"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_program__review_months
+msgid "Review Every (months)"
+msgstr "المراجعة كل (شهر)"
+
+#. module: medical_internal
+#. odoo-python
+#: code:addons/medical_internal/models/medical_chronic.py:0
+msgid "Review due"
+msgstr "المراجعة مستحقة"
+
+#. module: medical_internal
+#. odoo-python
+#: code:addons/medical_internal/models/medical_chronic.py:0
+msgid "Review due: %s"
+msgstr "المراجعة مستحقة: %s"
+
+#. module: medical_internal
+#: model_terms:ir.ui.view,arch_db:medical_internal.medical_chronic_enrollment_view_form
+msgid "Reviewed Today"
+msgstr "تمت المراجعة اليوم"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية"
+
+#. module: medical_internal
+#: model:ir.ui.menu,name:medical_internal.menu_internal_visit
+msgid "Schedule"
+msgstr "الجدول"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_program__sequence
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_target__sequence
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_test__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: medical_internal
+#: model:product.template,name:medical_internal.product_spirometry_product_template
+msgid "Spirometry"
+msgstr "قياس وظائف التنفس"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__start_date
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: medical_internal
+#: model:ir.model.fields,help:medical_internal.field_medical_chronic_enrollment__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخرة: تاريخ الاستحقاق قد فات\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخططة: أنشطة مستقبلية."
+
+#. module: medical_internal
+#: model_terms:ir.ui.view,arch_db:medical_internal.medical_chronic_enrollment_view_form
+msgid "Stop Program"
+msgstr "إنهاء المتابعة"
+
+#. module: medical_internal
+#: model:ir.model.fields.selection,name:medical_internal.selection__medical_chronic_enrollment__state__stopped
+msgid "Stopped"
+msgstr "متوقف"
+
+#. module: medical_internal
+#: model_terms:medical.chronic.program,advice:medical_internal.program_hypothyroid
+msgid ""
+"Take the thyroid tablet on an empty stomach, 30 minutes before breakfast, "
+"every day."
+msgstr ""
+"تناول قرص الغدة الدرقية على معدة فارغة، قبل الإفطار بـ30 دقيقة، كل يوم."
+
+#. module: medical_internal
+#: model_terms:medical.chronic.program,advice:medical_internal.program_lipids
+msgid ""
+"Take your medicine at the same time every day, eat less fried and fatty "
+"food, and stay active."
+msgstr ""
+"تناول دواءك في نفس الموعد يوميًا، وقلل الأكل المقلي والدهني، وحافظ على "
+"نشاطك."
+
+#. module: medical_internal
+#: model_terms:medical.chronic.program,advice:medical_internal.program_hypertension
+msgid ""
+"Take your medicines every day even when you feel well, reduce salt, keep a "
+"healthy weight and measure your blood pressure at home. Come back at once "
+"for chest pain, severe headache or weakness of one side."
+msgstr ""
+"تناول أدويتك يوميًا حتى لو كنت تشعر بتحسن، وقلل الملح، وحافظ على وزن صحي، "
+"وقِس ضغطك في البيت. عُد فورًا إذا شعرت بألم في الصدر أو صداع شديد أو ضعف في "
+"جانب من الجسم."
+
+#. module: medical_internal
+#: model_terms:medical.chronic.program,advice:medical_internal.program_diabetes
+msgid ""
+"Take your medicines every day, check your sugar as advised, walk 30 minutes "
+"most days, check your feet daily and have your eyes examined once a year. "
+"Come back at once if your sugar stays above 300 or you feel very weak or "
+"confused."
+msgstr ""
+"تناول أدويتك يوميًا، وقِس السكر حسب التعليمات، وامشِ 30 دقيقة معظم الأيام، "
+"وافحص قدميك يوميًا، واكشف على عينيك مرة في السنة. عُد فورًا إذا ظل السكر فوق"
+" 300 أو شعرت بضعف شديد أو تشوش."
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_program__target_ids
+#: model_terms:ir.ui.view,arch_db:medical_internal.medical_chronic_program_view_form
+msgid "Targets"
+msgstr "الأهداف"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_test__product_id
+msgid "Test"
+msgstr "فحص"
+
+#. module: medical_internal
+#: model:ir.model.fields,field_description:medical_internal.field_medical_chronic_enrollment__tests_due
+#: model_terms:ir.ui.view,arch_db:medical_internal.medical_chronic_enrollment_view_search
+msgid "Tests Due"
+msgstr "الفحوصات المستحقة"
+
+#. module: medical_internal
+#: model:ir.model.constraint,message:medical_internal.constraint_medical_chronic_enrollment_patient_program_uniq
+msgid "The patient is already in this program."
+msgstr "المريض مسجل في هذا البرنامج بالفعل."
+
+#. module: medical_internal
+#: model:medical.diagnosis,name:medical_internal.icd_e11_6
+msgid "Type 2 diabetes mellitus with other specified complications"
+msgstr "داء السكري من النوع الثاني مع مضاعفات أخرى محددة"
+
+#. module: medical_internal
+#: model:ir.model.fields,help:medical_internal.field_medical_chronic_enrollment__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط المستثنى في السجل."
+
+#. module: medical_internal
+#: model:ir.model,name:medical_internal.model_medical_visit
+msgid "Visit"
+msgstr "الزيارة"
+
+#. module: medical_internal
+#. odoo-python
+#: code:addons/medical_internal/models/medical_chronic.py:0
+msgid "due"
+msgstr "مستحق"
+
+#. module: medical_internal
+#. odoo-python
+#: code:addons/medical_internal/models/medical_chronic.py:0
+msgid "none"
+msgstr "لا يوجد"
+
+#. module: medical_internal
+#. odoo-python
+#: code:addons/medical_internal/models/medical_chronic.py:0
+msgid "target"
+msgstr "الهدف"

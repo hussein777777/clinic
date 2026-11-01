@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_chronic_program_user,medical.chronic.program user,model_medical_chronic_program,medical_core.group_medical_user,1,0,0,0
+access_chronic_program_manager,medical.chronic.program manager,model_medical_chronic_program,medical_core.group_medical_manager,1,1,1,1
+access_chronic_target_user,medical.chronic.target user,model_medical_chronic_target,medical_core.group_medical_user,1,0,0,0
+access_chronic_target_manager,medical.chronic.target manager,model_medical_chronic_target,medical_core.group_medical_manager,1,1,1,1
+access_chronic_test_user,medical.chronic.test user,model_medical_chronic_test,medical_core.group_medical_user,1,0,0,0
+access_chronic_test_manager,medical.chronic.test manager,model_medical_chronic_test,medical_core.group_medical_manager,1,1,1,1
+access_chronic_enrollment_user,medical.chronic.enrollment user,model_medical_chronic_enrollment,medical_core.group_medical_user,1,1,0,0
+access_chronic_enrollment_doctor,medical.chronic.enrollment doctor,model_medical_chronic_enrollment,medical_core.group_medical_doctor,1,1,1,0
+access_chronic_enrollment_manager,medical.chronic.enrollment manager,model_medical_chronic_enrollment,medical_core.group_medical_manager,1,1,1,1

@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="dept_internal" model="medical.department">
+            <field name="name">Internal Medicine</field>
+            <field name="code">INT</field>
+            <field name="sequence">15</field>
+            <field name="color">4</field>
+        </record>
+        <record id="spec_internal_general" model="medical.specialty">
+            <field name="name">General Internal Medicine</field>
+            <field name="code">INT-GEN</field>
+            <field name="department_id" ref="dept_internal"/>
+            <field name="sequence">1</field>
+        </record>
+        <record id="spec_diabetes" model="medical.specialty">
+            <field name="name">Diabetes &amp; Endocrinology</field>
+            <field name="code">INT-DM</field>
+            <field name="department_id" ref="dept_internal"/>
+            <field name="sequence">2</field>
+        </record>
+        <record id="spec_cardio" model="medical.specialty">
+            <field name="name">Cardiology</field>
+            <field name="code">INT-CARD</field>
+            <field name="department_id" ref="dept_internal"/>
+            <field name="sequence">3</field>
+        </record>
+        <record id="spec_chest" model="medical.specialty">
+            <field name="name">Chest &amp; Respiratory</field>
+            <field name="code">INT-CHEST</field>
+            <field name="department_id" ref="dept_internal"/>
+            <field name="sequence">4</field>
+        </record>
+        <record id="room_ecg" model="medical.room">
+            <field name="name">ECG &amp; Spirometry Room</field>
+            <field name="room_type">device</field>
+            <field name="department_id" ref="dept_internal"/>
+        </record>
+        <record id="room_treatment" model="medical.room">
+            <field name="name">Treatment Room (infusions)</field>
+            <field name="room_type">procedure</field>
+            <field name="department_id" ref="dept_internal"/>
+        </record>
+        <record id="product_internal_consultation" model="product.product">
+            <field name="name">Internal Medicine Consultation</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">consultation</field>
+            <field name="specialty_id" ref="spec_internal_general"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">350</field>
+            <field name="insurance_code">INT-CONS</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_chronic_review" model="product.product">
+            <field name="name">Chronic Disease Review</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">consultation</field>
+            <field name="specialty_id" ref="spec_internal_general"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">250</field>
+            <field name="insurance_code">INT-REVIEW</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_ecg" model="product.product">
+            <field name="name">Electrocardiogram (ECG)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">test</field>
+            <field name="specialty_id" ref="spec_cardio"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">150</field>
+            <field name="insurance_code">INT-ECG</field>
+            <field name="procedure_duration">15</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_echo" model="product.product">
+            <field name="name">Echocardiography</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">test</field>
+            <field name="specialty_id" ref="spec_cardio"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">900</field>
+            <field name="insurance_code">INT-ECHO</field>
+            <field name="procedure_duration">30</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_holter" model="product.product">
+            <field name="name">Holter Monitoring (24 h)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">test</field>
+            <field name="specialty_id" ref="spec_cardio"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">1200</field>
+            <field name="insurance_code">INT-HOLTER</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_abpm" model="product.product">
+            <field name="name">Ambulatory Blood Pressure (24 h)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">test</field>
+            <field name="specialty_id" ref="spec_cardio"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">1000</field>
+            <field name="insurance_code">INT-ABPM</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_spirometry" model="product.product">
+            <field name="name">Spirometry</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">test</field>
+            <field name="specialty_id" ref="spec_chest"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">400</field>
+            <field name="insurance_code">INT-SPIRO</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_nebulizer" model="product.product">
+            <field name="name">Nebulizer Session</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_chest"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">100</field>
+            <field name="insurance_code">INT-NEB</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_iv_infusion" model="product.product">
+            <field name="name">IV Infusion</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_internal_general"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">200</field>
+            <field name="insurance_code">INT-IV</field>
+            <field name="procedure_duration">60</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_chronic_package" model="product.product">
+            <field name="name">Chronic Care Program (monthly follow-up)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">package</field>
+            <field name="specialty_id" ref="spec_internal_general"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">1500</field>
+            <field name="insurance_code">INT-PKG</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="icd_i11_9" model="medical.diagnosis">
+            <field name="code">I11.9</field>
+            <field name="name">Hypertensive heart disease without heart failure</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_internal'))]"/>
+        </record>
+        <record id="icd_e11_6" model="medical.diagnosis">
+            <field name="code">E11.6</field>
+            <field name="name">Type 2 diabetes mellitus with other specified complications</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_internal'))]"/>
+        </record>
+        <record id="icd_e87_1" model="medical.diagnosis">
+            <field name="code">E87.1</field>
+            <field name="name">Hypo-osmolality and hyponatraemia</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_internal'))]"/>
+        </record>
+        <record id="icd_r07_4" model="medical.diagnosis">
+            <field name="code">R07.4</field>
+            <field name="name">Chest pain, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_internal'))]"/>
+        </record>
+        <record id="icd_r00_2" model="medical.diagnosis">
+            <field name="code">R00.2</field>
+            <field name="name">Palpitations</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_internal'))]"/>
+        </record>
+        <record id="icd_r06_0" model="medical.diagnosis">
+            <field name="code">R06.0</field>
+            <field name="name">Dyspnoea</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_internal'))]"/>
+        </record>
+        <record id="icd_k58_9" model="medical.diagnosis">
+            <field name="code">K58.9</field>
+            <field name="name">Irritable bowel syndrome without diarrhoea</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_internal'))]"/>
+        </record>
+        <record id="icd_b18_2" model="medical.diagnosis">
+            <field name="code">B18.2</field>
+            <field name="name">Chronic viral hepatitis C</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_internal'))]"/>
+        </record>
+        <record id="icd_k74_6" model="medical.diagnosis">
+            <field name="code">K74.6</field>
+            <field name="name">Other and unspecified cirrhosis of liver</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_internal'))]"/>
+        </record>
+        <record id="obs_phq9" model="medical.observation.type">
+            <field name="name">PHQ-9 (depression)</field>
+            <field name="code">phq9</field>
+            <field name="unit">/27</field>
+            <field name="category">score</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">4</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="True"/>
+            <field name="sequence">95</field>
+            <field name="department_ids" eval="[(4, ref('dept_internal'))]"/>
+        </record>
+        <record id="obs_gad7" model="medical.observation.type">
+            <field name="name">GAD-7 (anxiety)</field>
+            <field name="code">gad7</field>
+            <field name="unit">/21</field>
+            <field name="category">score</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">4</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="True"/>
+            <field name="sequence">95</field>
+            <field name="department_ids" eval="[(4, ref('dept_internal'))]"/>
+        </record>
+        <record id="obs_cha2ds2vasc" model="medical.observation.type">
+            <field name="name">CHA₂DS₂-VASc (stroke risk in AF)</field>
+            <field name="code">cha2ds2vasc</field>
+            <field name="unit">/9</field>
+            <field name="category">score</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">1</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="True"/>
+            <field name="sequence">95</field>
+            <field name="department_ids" eval="[(4, ref('dept_internal'))]"/>
+        </record>
+        <record id="score_phq9" model="medical.assessment.template">
+            <field name="name">PHQ-9 Depression Questionnaire</field>
+            <field name="code">PHQ9</field>
+            <field name="score_mode">sum</field>
+            <field name="department_ids" eval="[(4, ref('dept_internal'))]"/>
+            <field name="item_ids" eval="[(0, 0, {'sequence': 1, 'name': 'Little interest or pleasure in doing things', 'section': 'Over the last 2 weeks', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Not at all', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Several days', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'More than half the days', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Nearly every day', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 2, 'name': 'Feeling down, depressed or hopeless', 'section': 'Over the last 2 weeks', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Not at all', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Several days', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'More than half the days', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Nearly every day', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 3, 'name': 'Trouble falling or staying asleep, or sleeping too much', 'section': 'Over the last 2 weeks', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Not at all', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Several days', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'More than half the days', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Nearly every day', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 4, 'name': 'Feeling tired or having little energy', 'section': 'Over the last 2 weeks', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Not at all', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Several days', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'More than half the days', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Nearly every day', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 5, 'name': 'Poor appetite or overeating', 'section': 'Over the last 2 weeks', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Not at all', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Several days', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'More than half the days', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Nearly every day', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 6, 'name': 'Feeling bad about yourself, or that you are a failure', 'section': 'Over the last 2 weeks', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Not at all', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Several days', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'More than half the days', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Nearly every day', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 7, 'name': 'Trouble concentrating on things', 'section': 'Over the last 2 weeks', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Not at all', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Several days', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'More than half the days', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Nearly every day', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 8, 'name': 'Moving or speaking slowly, or being restless', 'section': 'Over the last 2 weeks', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Not at all', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Several days', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'More than half the days', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Nearly every day', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 9, 'name': 'Thoughts that you would be better off dead, or of hurting yourself', 'section': 'Over the last 2 weeks', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Not at all', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Several days', 'score': 1, 'is_alert': True}), (0, 0, {'sequence': 3, 'name': 'More than half the days', 'score': 2, 'is_alert': True}), (0, 0, {'sequence': 4, 'name': 'Nearly every day', 'score': 3, 'is_alert': True})]})]"/>
+            <field name="range_ids" eval="[(0, 0, {'min_score': 0, 'max_score': 4, 'name': 'Minimal', 'severity': 'none'}), (0, 0, {'min_score': 5, 'max_score': 9, 'name': 'Mild', 'severity': 'mild'}), (0, 0, {'min_score': 10, 'max_score': 14, 'name': 'Moderate', 'severity': 'moderate'}), (0, 0, {'min_score': 15, 'max_score': 19, 'name': 'Moderately severe', 'severity': 'severe'}), (0, 0, {'min_score': 20, 'max_score': 27, 'name': 'Severe', 'severity': 'severe'})]"/>
+            <field name="observation_type_id" ref="obs_phq9"/>
+            <field name="description" type="html"><p>Any answer other than "Not at all" on the last question needs a safety assessment the same day.</p></field>
+        </record>
+        <record id="score_gad7" model="medical.assessment.template">
+            <field name="name">GAD-7 Anxiety Questionnaire</field>
+            <field name="code">GAD7</field>
+            <field name="score_mode">sum</field>
+            <field name="department_ids" eval="[(4, ref('dept_internal'))]"/>
+            <field name="item_ids" eval="[(0, 0, {'sequence': 1, 'name': 'Feeling nervous, anxious or on edge', 'section': 'Over the last 2 weeks', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Not at all', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Several days', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'More than half the days', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Nearly every day', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 2, 'name': 'Not being able to stop or control worrying', 'section': 'Over the last 2 weeks', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Not at all', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Several days', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'More than half the days', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Nearly every day', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 3, 'name': 'Worrying too much about different things', 'section': 'Over the last 2 weeks', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Not at all', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Several days', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'More than half the days', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Nearly every day', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 4, 'name': 'Trouble relaxing', 'section': 'Over the last 2 weeks', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Not at all', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Several days', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'More than half the days', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Nearly every day', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 5, 'name': 'Being so restless that it is hard to sit still', 'section': 'Over the last 2 weeks', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Not at all', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Several days', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'More than half the days', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Nearly every day', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 6, 'name': 'Becoming easily annoyed or irritable', 'section': 'Over the last 2 weeks', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Not at all', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Several days', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'More than half the days', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Nearly every day', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 7, 'name': 'Feeling afraid, as if something awful might happen', 'section': 'Over the last 2 weeks', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Not at all', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Several days', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'More than half the days', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Nearly every day', 'score': 3, 'is_alert': False})]})]"/>
+            <field name="range_ids" eval="[(0, 0, {'min_score': 0, 'max_score': 4, 'name': 'Minimal', 'severity': 'none'}), (0, 0, {'min_score': 5, 'max_score': 9, 'name': 'Mild', 'severity': 'mild'}), (0, 0, {'min_score': 10, 'max_score': 14, 'name': 'Moderate', 'severity': 'moderate'}), (0, 0, {'min_score': 15, 'max_score': 21, 'name': 'Severe', 'severity': 'severe'})]"/>
+            <field name="observation_type_id" ref="obs_gad7"/>
+        </record>
+        <record id="score_cha2ds2vasc" model="medical.assessment.template">
+            <field name="name">CHA₂DS₂-VASc (atrial fibrillation)</field>
+            <field name="code">CHA2DS2VASC</field>
+            <field name="score_mode">sum</field>
+            <field name="department_ids" eval="[(4, ref('dept_internal'))]"/>
+            <field name="item_ids" eval="[(0, 0, {'sequence': 1, 'name': 'Congestive heart failure', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Yes', 'score': 1, 'is_alert': False})]}), (0, 0, {'sequence': 2, 'name': 'Hypertension', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Yes', 'score': 1, 'is_alert': False})]}), (0, 0, {'sequence': 3, 'name': 'Age 75 or older', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Yes', 'score': 2, 'is_alert': False})]}), (0, 0, {'sequence': 4, 'name': 'Diabetes', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Yes', 'score': 1, 'is_alert': False})]}), (0, 0, {'sequence': 5, 'name': 'Previous stroke, TIA or thromboembolism', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Yes', 'score': 2, 'is_alert': False})]}), (0, 0, {'sequence': 6, 'name': 'Vascular disease (heart attack, peripheral artery disease, aortic plaque)', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Yes', 'score': 1, 'is_alert': False})]}), (0, 0, {'sequence': 7, 'name': 'Age 65 to 74', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Yes', 'score': 1, 'is_alert': False})]}), (0, 0, {'sequence': 8, 'name': 'Female sex', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Yes', 'score': 1, 'is_alert': False})]})]"/>
+            <field name="range_ids" eval="[(0, 0, {'min_score': 0, 'max_score': 0, 'name': 'Low risk', 'severity': 'none'}), (0, 0, {'min_score': 1, 'max_score': 1, 'name': 'Low to moderate risk', 'severity': 'mild'}), (0, 0, {'min_score': 2, 'max_score': 9, 'name': 'Higher risk: discuss anticoagulation', 'severity': 'moderate'})]"/>
+            <field name="observation_type_id" ref="obs_cha2ds2vasc"/>
+        </record>
+        <record id="program_diabetes" model="medical.chronic.program">
+            <field name="name">Diabetes</field>
+            <field name="sequence">1</field>
+            <field name="review_months">3</field>
+            <field name="diagnosis_ids" eval="[(6, 0, [ref('medical_core.icd_e11_9'), ref('medical_core.icd_e10_9'), ref('icd_e11_6')])]"/>
+            <field name="target_ids" eval="[(0, 0, {'type_id': ref('medical_core.obs_hba1c'), 'target_min': 0, 'target_max': 7.0}), (0, 0, {'type_id': ref('medical_core.obs_fbs'), 'target_min': 80, 'target_max': 130}), (0, 0, {'type_id': ref('medical_core.obs_bp_systolic'), 'target_min': 0, 'target_max': 130}), (0, 0, {'type_id': ref('medical_core.obs_bp_diastolic'), 'target_min': 0, 'target_max': 80}), (0, 0, {'type_id': ref('medical_core.obs_ldl'), 'target_min': 0, 'target_max': 100})]"/>
+            <field name="test_ids" eval="[(0, 0, {'product_id': ref('medical_core.product_lab_hba1c'), 'interval_months': 3}), (0, 0, {'product_id': ref('medical_core.product_lab_lipid'), 'interval_months': 12}), (0, 0, {'product_id': ref('medical_core.product_lab_kft'), 'interval_months': 12})]"/>
+            <field name="advice" type="html"><p>Take your medicines every day, check your sugar as advised, walk 30 minutes most days, check your feet daily and have your eyes examined once a year. Come back at once if your sugar stays above 300 or you feel very weak or confused.</p></field>
+        </record>
+        <record id="program_hypertension" model="medical.chronic.program">
+            <field name="name">Hypertension</field>
+            <field name="sequence">2</field>
+            <field name="review_months">3</field>
+            <field name="diagnosis_ids" eval="[(6, 0, [ref('medical_core.icd_i10'), ref('icd_i11_9')])]"/>
+            <field name="target_ids" eval="[(0, 0, {'type_id': ref('medical_core.obs_bp_systolic'), 'target_min': 0, 'target_max': 130}), (0, 0, {'type_id': ref('medical_core.obs_bp_diastolic'), 'target_min': 0, 'target_max': 80})]"/>
+            <field name="test_ids" eval="[(0, 0, {'product_id': ref('medical_core.product_lab_kft'), 'interval_months': 12}), (0, 0, {'product_id': ref('medical_core.product_lab_electrolytes'), 'interval_months': 12}), (0, 0, {'product_id': ref('product_ecg'), 'interval_months': 12})]"/>
+            <field name="advice" type="html"><p>Take your medicines every day even when you feel well, reduce salt, keep a healthy weight and measure your blood pressure at home. Come back at once for chest pain, severe headache or weakness of one side.</p></field>
+        </record>
+        <record id="program_lipids" model="medical.chronic.program">
+            <field name="name">Dyslipidaemia</field>
+            <field name="sequence">3</field>
+            <field name="review_months">6</field>
+            <field name="diagnosis_ids" eval="[(6, 0, [ref('medical_core.icd_e78_5')])]"/>
+            <field name="target_ids" eval="[(0, 0, {'type_id': ref('medical_core.obs_ldl'), 'target_min': 0, 'target_max': 100}), (0, 0, {'type_id': ref('medical_core.obs_tg'), 'target_min': 0, 'target_max': 150})]"/>
+            <field name="test_ids" eval="[(0, 0, {'product_id': ref('medical_core.product_lab_lipid'), 'interval_months': 6}), (0, 0, {'product_id': ref('medical_core.product_lab_lft'), 'interval_months': 12})]"/>
+            <field name="advice" type="html"><p>Take your medicine at the same time every day, eat less fried and fatty food, and stay active.</p></field>
+        </record>
+        <record id="program_hypothyroid" model="medical.chronic.program">
+            <field name="name">Hypothyroidism</field>
+            <field name="sequence">4</field>
+            <field name="review_months">6</field>
+            <field name="diagnosis_ids" eval="[(6, 0, [ref('medical_core.icd_e03_9')])]"/>
+            <field name="target_ids" eval="[(0, 0, {'type_id': ref('medical_core.obs_tsh'), 'target_min': 0.4, 'target_max': 4.0})]"/>
+            <field name="test_ids" eval="[(0, 0, {'product_id': ref('medical_core.product_lab_tsh'), 'interval_months': 6})]"/>
+            <field name="advice" type="html"><p>Take the thyroid tablet on an empty stomach, 30 minutes before breakfast, every day.</p></field>
+        </record>
+        <record id="program_ckd" model="medical.chronic.program">
+            <field name="name">Chronic Kidney Disease</field>
+            <field name="sequence">5</field>
+            <field name="review_months">3</field>
+            <field name="diagnosis_ids" eval="[(6, 0, [ref('medical_core.icd_n18_9')])]"/>
+            <field name="target_ids" eval="[(0, 0, {'type_id': ref('medical_core.obs_bp_systolic'), 'target_min': 0, 'target_max': 130}), (0, 0, {'type_id': ref('medical_core.obs_k'), 'target_min': 3.5, 'target_max': 5.1})]"/>
+            <field name="test_ids" eval="[(0, 0, {'product_id': ref('medical_core.product_lab_kft'), 'interval_months': 3}), (0, 0, {'product_id': ref('medical_core.product_lab_electrolytes'), 'interval_months': 3}), (0, 0, {'product_id': ref('medical_core.product_lab_cbc'), 'interval_months': 6})]"/>
+            <field name="advice" type="html"><p>Avoid painkillers like ibuprofen and diclofenac unless your doctor allows them, and follow the diet advice for salt and potassium.</p></field>
+        </record>
+    </data>
+</odoo>

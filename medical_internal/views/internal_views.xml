@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_chronic_enrollment_view_form" model="ir.ui.view">
+        <field name="name">medical.chronic.enrollment.form</field>
+        <field name="model">medical.chronic.enrollment</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_order_due_tests" type="object" string="Order Due Tests" class="btn-primary"
+                            invisible="not has_tests_due or state != 'active'" groups="medical_core.group_medical_doctor"/>
+                    <button name="action_mark_reviewed" type="object" string="Reviewed Today" invisible="state != 'active'"/>
+                    <button name="action_pause" type="object" string="Pause" invisible="state != 'active'"/>
+                    <button name="action_resume" type="object" string="Resume" invisible="state == 'active'"/>
+                    <button name="action_stop" type="object" string="Stop Program" invisible="state == 'stopped'"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="alert alert-info" role="status" invisible="not tests_due or state != 'active'">
+                        <i class="fa fa-flask me-1" title="Tests"/><strong>Tests due: </strong><field name="tests_due" class="d-inline"/>
+                        <field name="has_tests_due" invisible="1"/>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="patient_id"/>
+                            <field name="program_id"/>
+                            <field name="doctor_id"/>
+                        </group>
+                        <group>
+                            <field name="start_date"/>
+                            <field name="last_review_date"/>
+                            <field name="next_review_date"/>
+                            <field name="control_status" widget="badge" decoration-success="control_status == 'controlled'"
+                                   decoration-warning="control_status == 'partial'" decoration-danger="control_status == 'uncontrolled'"/>
+                        </group>
+                    </group>
+                    <group string="Latest Results vs Targets">
+                        <field name="control_detail" nolabel="1" colspan="2"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_chronic_enrollment_view_list" model="ir.ui.view">
+        <field name="name">medical.chronic.enrollment.list</field>
+        <field name="model">medical.chronic.enrollment</field>
+        <field name="arch" type="xml">
+            <list decoration-muted="state != 'active'" decoration-danger="is_review_due and state == 'active'">
+                <field name="patient_id"/>
+                <field name="program_id"/>
+                <field name="doctor_id" optional="show"/>
+                <field name="last_review_date"/>
+                <field name="next_review_date"/>
+                <field name="is_review_due" column_invisible="True"/>
+                <field name="tests_due" optional="show"/>
+                <field name="control_status" widget="badge" decoration-success="control_status == 'controlled'"
+                       decoration-warning="control_status == 'partial'" decoration-danger="control_status == 'uncontrolled'"/>
+                <field name="state" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_chronic_enrollment_view_pivot" model="ir.ui.view">
+        <field name="name">medical.chronic.enrollment.pivot</field>
+        <field name="model">medical.chronic.enrollment</field>
+        <field name="arch" type="xml">
+            <pivot string="Control Rate">
+                <field name="program_id" type="row"/>
+                <field name="control_status" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="medical_chronic_enrollment_view_graph" model="ir.ui.view">
+        <field name="name">medical.chronic.enrollment.graph</field>
+        <field name="model">medical.chronic.enrollment</field>
+        <field name="arch" type="xml">
+            <graph type="bar" stacked="1" sample="0">
+                <field name="program_id"/>
+                <field name="control_status"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="medical_chronic_enrollment_view_search" model="ir.ui.view">
+        <field name="name">medical.chronic.enrollment.search</field>
+        <field name="model">medical.chronic.enrollment</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="patient_id"/>
+                <field name="program_id"/>
+                <field name="doctor_id"/>
+                <filter name="active" string="Active" domain="[('state', '=', 'active')]"/>
+                <filter name="review_due" string="Review Due" domain="[('is_review_due', '=', True)]"/>
+                <filter name="tests_due" string="Tests Due" domain="[('has_tests_due', '=', True)]"/>
+                <filter name="uncontrolled" string="Off Target" domain="[('control_status', '=', 'uncontrolled')]"/>
+                <group>
+                    <filter name="group_program" string="Program" context="{'group_by': 'program_id'}"/>
+                    <filter name="group_status" string="Control" context="{'group_by': 'control_status'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_medical_chronic_enrollment" model="ir.actions.act_window">
+        <field name="name">Chronic Patients</field>
+        <field name="res_model">medical.chronic.enrollment</field>
+        <field name="view_mode">list,form,pivot,graph</field>
+        <field name="context">{'search_default_active': 1}</field>
+    </record>
+
+    <record id="action_medical_chronic_recall" model="ir.actions.act_window">
+        <field name="name">Recall List</field>
+        <field name="res_model">medical.chronic.enrollment</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_active': 1, 'search_default_review_due': 1}</field>
+    </record>
+
+    <record id="medical_chronic_program_view_form" model="ir.ui.view">
+        <field name="name">medical.chronic.program.form</field>
+        <field name="model">medical.chronic.program</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title"><h1><field name="name"/></h1></div>
+                    <group>
+                        <group>
+                            <field name="review_months"/>
+                            <field name="diagnosis_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Targets" name="targets">
+                            <field name="target_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="type_id"/>
+                                    <field name="target_min"/>
+                                    <field name="target_max"/>
+                                </list>
+                            </field>
+                            <p class="text-muted">Default targets follow common adult guidance; adjust them to your protocol.</p>
+                        </page>
+                        <page string="Periodic Tests" name="tests">
+                            <field name="test_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="product_id"/>
+                                    <field name="interval_months"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Patient Advice" name="advice">
+                            <field name="advice"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_chronic_program_view_list" model="ir.ui.view">
+        <field name="name">medical.chronic.program.list</field>
+        <field name="model">medical.chronic.program</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="review_months"/>
+                <field name="diagnosis_ids" widget="many2many_tags"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_medical_chronic_program" model="ir.actions.act_window">
+        <field name="name">Chronic Programs</field>
+        <field name="res_model">medical.chronic.program</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="res_partner_form_internal" model="ir.ui.view">
+        <field name="name">res.partner.form.internal</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="medical_core.res_partner_form_medical"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='problem_ids']" position="after">
+                <separator string="Chronic Programs" groups="medical_core.group_medical_doctor"/>
+                <field name="chronic_enrollment_ids" context="{'default_patient_id': id}" groups="medical_core.group_medical_doctor">
+                    <list>
+                        <field name="program_id"/>
+                        <field name="next_review_date"/>
+                        <field name="tests_due"/>
+                        <field name="control_status" widget="badge" decoration-success="control_status == 'controlled'"
+                               decoration-warning="control_status == 'partial'" decoration-danger="control_status == 'uncontrolled'"/>
+                        <field name="state"/>
+                    </list>
+                </field>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_visit_form_internal" model="ir.ui.view">
+        <field name="name">medical.visit.form.internal</field>
+        <field name="model">medical.visit</field>
+        <field name="inherit_id" ref="medical_core.medical_visit_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='consultation']/field[@name='diagnosis_ids']" position="after">
+                <field name="chronic_enrollment_ids" readonly="1" invisible="not chronic_enrollment_ids">
+                    <list>
+                        <field name="program_id"/>
+                        <field name="tests_due"/>
+                        <field name="control_status" widget="badge" decoration-success="control_status == 'controlled'"
+                               decoration-warning="control_status == 'partial'" decoration-danger="control_status == 'uncontrolled'"/>
+                    </list>
+                </field>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_internal_visit" model="ir.actions.act_window">
+        <field name="name">Internal Medicine Schedule</field>
+        <field name="res_model">medical.visit</field>
+        <field name="view_mode">calendar,list,kanban,form</field>
+        <field name="domain" eval="[('department_id', '=', ref('dept_internal'))]"/>
+        <field name="context" eval="{'default_department_id': ref('dept_internal')}"/>
+    </record>
+
+    <menuitem id="menu_internal" name="Internal Medicine" parent="medical_core.menu_medical_clinics" sequence="5"/>
+    <menuitem id="menu_internal_visit" name="Schedule" parent="menu_internal" action="action_internal_visit" sequence="5"/>
+    <menuitem id="menu_chronic_enrollment" name="Chronic Patients" parent="menu_internal" action="action_medical_chronic_enrollment" sequence="10"/>
+    <menuitem id="menu_chronic_recall" name="Recall List" parent="menu_internal" action="action_medical_chronic_recall" sequence="20"/>
+    <menuitem id="menu_chronic_program" name="Chronic Programs" parent="menu_internal" action="action_medical_chronic_program"
+              sequence="90" groups="medical_core.group_medical_manager"/>
+</odoo>
