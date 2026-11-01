@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="dept_obgyn" model="medical.department">
+            <field name="name">Obstetrics &amp; Gynecology</field>
+            <field name="code">OBG</field>
+            <field name="sequence">55</field>
+            <field name="color">9</field>
+        </record>
+        <record id="spec_obstetrics" model="medical.specialty">
+            <field name="name">Obstetrics</field>
+            <field name="code">OBG-OB</field>
+            <field name="department_id" ref="dept_obgyn"/>
+            <field name="sequence">1</field>
+        </record>
+        <record id="spec_gynecology" model="medical.specialty">
+            <field name="name">Gynecology</field>
+            <field name="code">OBG-GYN</field>
+            <field name="department_id" ref="dept_obgyn"/>
+            <field name="sequence">2</field>
+        </record>
+        <record id="spec_fertility" model="medical.specialty">
+            <field name="name">Fertility &amp; Family Planning</field>
+            <field name="code">OBG-FP</field>
+            <field name="department_id" ref="dept_obgyn"/>
+            <field name="sequence">3</field>
+        </record>
+        <record id="room_obgyn_us" model="medical.room">
+            <field name="name">Ultrasound Room (OB/GYN)</field>
+            <field name="room_type">imaging</field>
+            <field name="department_id" ref="dept_obgyn"/>
+        </record>
+        <record id="room_ctg" model="medical.room">
+            <field name="name">CTG Room</field>
+            <field name="room_type">device</field>
+            <field name="department_id" ref="dept_obgyn"/>
+        </record>
+        <record id="product_obgyn_consultation" model="product.product">
+            <field name="name">Gynecology Consultation</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">consultation</field>
+            <field name="specialty_id" ref="spec_gynecology"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">300</field>
+            <field name="insurance_code">OBG-CONS</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_antenatal_visit" model="product.product">
+            <field name="name">Antenatal Visit</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">consultation</field>
+            <field name="specialty_id" ref="spec_obstetrics"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">250</field>
+            <field name="insurance_code">OBG-ANC</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_ob_ultrasound" model="product.product">
+            <field name="name">Obstetric Ultrasound</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">test</field>
+            <field name="specialty_id" ref="spec_obstetrics"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">450</field>
+            <field name="insurance_code">OBG-OBUS</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_anomaly_scan" model="product.product">
+            <field name="name">Detailed Anomaly Scan</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">test</field>
+            <field name="specialty_id" ref="spec_obstetrics"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">900</field>
+            <field name="insurance_code">OBG-ANOM</field>
+            <field name="procedure_duration">40</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_ctg" model="product.product">
+            <field name="name">Cardiotocography (CTG)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">test</field>
+            <field name="specialty_id" ref="spec_obstetrics"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">300</field>
+            <field name="insurance_code">OBG-CTG</field>
+            <field name="procedure_duration">40</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_pap_smear" model="product.product">
+            <field name="name">Pap Smear</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">test</field>
+            <field name="specialty_id" ref="spec_gynecology"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">350</field>
+            <field name="insurance_code">OBG-PAP</field>
+            <field name="procedure_duration">15</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_pelvic_us" model="product.product">
+            <field name="name">Pelvic / Transvaginal Ultrasound</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">test</field>
+            <field name="specialty_id" ref="spec_gynecology"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">400</field>
+            <field name="insurance_code">OBG-TVUS</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_colposcopy" model="product.product">
+            <field name="name">Colposcopy</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_gynecology"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">1200</field>
+            <field name="insurance_code">OBG-COLP</field>
+            <field name="procedure_duration">30</field>
+            <field name="site_requirement">none</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the procedure described on this form. The doctor explained why it is recommended, the alternatives and the possible risks: pain, bleeding, infection and, rarely, injury to nearby organs needing further treatment.</p></field>
+        </record>
+        <record id="product_iud_insertion" model="product.product">
+            <field name="name">IUD Insertion</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_fertility"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">900</field>
+            <field name="insurance_code">OBG-IUD</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">none</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the procedure described on this form. The doctor explained why it is recommended, the alternatives and the possible risks: pain, bleeding, infection and, rarely, injury to nearby organs needing further treatment.</p></field>
+        </record>
+        <record id="product_dc" model="product.product">
+            <field name="name">Dilatation and Curettage (D&amp;C)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">surgery</field>
+            <field name="specialty_id" ref="spec_gynecology"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">4000</field>
+            <field name="insurance_code">OBG-DC</field>
+            <field name="procedure_duration">30</field>
+            <field name="site_requirement">none</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the procedure described on this form. The doctor explained why it is recommended, the alternatives and the possible risks: pain, bleeding, infection and, rarely, injury to nearby organs needing further treatment.</p></field>
+        </record>
+        <record id="product_normal_delivery" model="product.product">
+            <field name="name">Normal Vaginal Delivery</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_obstetrics"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">8000</field>
+            <field name="insurance_code">OBG-NVD</field>
+            <field name="procedure_duration">240</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_caesarean" model="product.product">
+            <field name="name">Caesarean Section</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">surgery</field>
+            <field name="specialty_id" ref="spec_obstetrics"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">15000</field>
+            <field name="insurance_code">OBG-CS</field>
+            <field name="procedure_duration">90</field>
+            <field name="site_requirement">none</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to a caesarean section. The doctor explained the reasons and the possible risks to me and my baby: bleeding that may need transfusion, infection, blood clots, injury to the bladder or bowel, and implications for future pregnancies.</p></field>
+        </record>
+        <record id="product_antenatal_package" model="product.product">
+            <field name="name">Antenatal Care Package (until delivery)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">package</field>
+            <field name="specialty_id" ref="spec_obstetrics"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">3000</field>
+            <field name="insurance_code">OBG-ANCPKG</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="icd_z34_9" model="medical.diagnosis">
+            <field name="code">Z34.9</field>
+            <field name="name">Supervision of normal pregnancy, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+        </record>
+        <record id="icd_z35_9" model="medical.diagnosis">
+            <field name="code">Z35.9</field>
+            <field name="name">Supervision of high-risk pregnancy, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+        </record>
+        <record id="icd_o24_4" model="medical.diagnosis">
+            <field name="code">O24.4</field>
+            <field name="name">Diabetes mellitus arising in pregnancy</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+        </record>
+        <record id="icd_o13" model="medical.diagnosis">
+            <field name="code">O13</field>
+            <field name="name">Gestational hypertension</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+        </record>
+        <record id="icd_o14_9" model="medical.diagnosis">
+            <field name="code">O14.9</field>
+            <field name="name">Pre-eclampsia, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+        </record>
+        <record id="icd_o21_0" model="medical.diagnosis">
+            <field name="code">O21.0</field>
+            <field name="name">Mild hyperemesis gravidarum</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+        </record>
+        <record id="icd_o03_9" model="medical.diagnosis">
+            <field name="code">O03.9</field>
+            <field name="name">Spontaneous abortion, complete or unspecified, without complication</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+        </record>
+        <record id="icd_o80" model="medical.diagnosis">
+            <field name="code">O80</field>
+            <field name="name">Single spontaneous delivery</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+        </record>
+        <record id="icd_o82" model="medical.diagnosis">
+            <field name="code">O82</field>
+            <field name="name">Single delivery by caesarean section</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+        </record>
+        <record id="icd_o99_0" model="medical.diagnosis">
+            <field name="code">O99.0</field>
+            <field name="name">Anaemia complicating pregnancy, childbirth and the puerperium</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+        </record>
+        <record id="icd_n91_2" model="medical.diagnosis">
+            <field name="code">N91.2</field>
+            <field name="name">Amenorrhoea, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+        </record>
+        <record id="icd_n92_0" model="medical.diagnosis">
+            <field name="code">N92.0</field>
+            <field name="name">Excessive and frequent menstruation with regular cycle</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+        </record>
+        <record id="icd_e28_2" model="medical.diagnosis">
+            <field name="code">E28.2</field>
+            <field name="name">Polycystic ovarian syndrome</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+        </record>
+        <record id="icd_n76_0" model="medical.diagnosis">
+            <field name="code">N76.0</field>
+            <field name="name">Acute vaginitis</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+        </record>
+        <record id="icd_n97_9" model="medical.diagnosis">
+            <field name="code">N97.9</field>
+            <field name="name">Female infertility, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+        </record>
+        <record id="icd_n95_1" model="medical.diagnosis">
+            <field name="code">N95.1</field>
+            <field name="name">Menopausal and female climacteric states</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+        </record>
+        <record id="icd_d25_9" model="medical.diagnosis">
+            <field name="code">D25.9</field>
+            <field name="name">Leiomyoma of uterus, unspecified</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+        </record>
+        <record id="icd_z30_1" model="medical.diagnosis">
+            <field name="code">Z30.1</field>
+            <field name="name">Insertion of intrauterine contraceptive device</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+        </record>
+        <record id="icd_n80_9" model="medical.diagnosis">
+            <field name="code">N80.9</field>
+            <field name="name">Endometriosis, unspecified</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+        </record>
+        <record id="obs_fundal_height" model="medical.observation.type">
+            <field name="name">Fundal Height</field>
+            <field name="code">fundal_height</field>
+            <field name="unit">cm</field>
+            <field name="category">exam</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">0</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="False"/>
+            <field name="sequence">50</field>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+        </record>
+        <record id="obs_fhr" model="medical.observation.type">
+            <field name="name">Fetal Heart Rate</field>
+            <field name="code">fhr</field>
+            <field name="unit">bpm</field>
+            <field name="category">exam</field>
+            <field name="normal_min">110</field>
+            <field name="normal_max">160</field>
+            <field name="critical_min">100</field>
+            <field name="critical_max">180</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="False"/>
+            <field name="sequence">51</field>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+        </record>
+        <record id="obs_epds" model="medical.observation.type">
+            <field name="name">Edinburgh Postnatal Depression Scale</field>
+            <field name="code">epds</field>
+            <field name="unit">/30</field>
+            <field name="category">score</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">9</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="True"/>
+            <field name="sequence">99</field>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+        </record>
+        <record id="obs_bishop" model="medical.observation.type">
+            <field name="name">Bishop Score</field>
+            <field name="code">bishop</field>
+            <field name="unit">/13</field>
+            <field name="category">score</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">0</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="False"/>
+            <field name="sequence">99</field>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+        </record>
+        <record id="risk_00" model="medical.pregnancy.risk">
+            <field name="name">Previous caesarean section</field>
+            <field name="is_high_risk" eval="True"/>
+            <field name="sequence">0</field>
+        </record>
+        <record id="risk_01" model="medical.pregnancy.risk">
+            <field name="name">Hypertension</field>
+            <field name="is_high_risk" eval="True"/>
+            <field name="sequence">1</field>
+        </record>
+        <record id="risk_02" model="medical.pregnancy.risk">
+            <field name="name">Pre-existing diabetes</field>
+            <field name="is_high_risk" eval="True"/>
+            <field name="sequence">2</field>
+        </record>
+        <record id="risk_03" model="medical.pregnancy.risk">
+            <field name="name">Gestational diabetes</field>
+            <field name="is_high_risk" eval="True"/>
+            <field name="sequence">3</field>
+        </record>
+        <record id="risk_04" model="medical.pregnancy.risk">
+            <field name="name">Age 35 or older</field>
+            <field name="is_high_risk" eval="True"/>
+            <field name="sequence">4</field>
+        </record>
+        <record id="risk_05" model="medical.pregnancy.risk">
+            <field name="name">Age under 18</field>
+            <field name="is_high_risk" eval="True"/>
+            <field name="sequence">5</field>
+        </record>
+        <record id="risk_06" model="medical.pregnancy.risk">
+            <field name="name">Multiple pregnancy</field>
+            <field name="is_high_risk" eval="True"/>
+            <field name="sequence">6</field>
+        </record>
+        <record id="risk_07" model="medical.pregnancy.risk">
+            <field name="name">Rhesus negative</field>
+            <field name="is_high_risk" eval="True"/>
+            <field name="sequence">7</field>
+        </record>
+        <record id="risk_08" model="medical.pregnancy.risk">
+            <field name="name">Previous preterm birth</field>
+            <field name="is_high_risk" eval="True"/>
+            <field name="sequence">8</field>
+        </record>
+        <record id="risk_09" model="medical.pregnancy.risk">
+            <field name="name">Previous stillbirth</field>
+            <field name="is_high_risk" eval="True"/>
+            <field name="sequence">9</field>
+        </record>
+        <record id="risk_10" model="medical.pregnancy.risk">
+            <field name="name">BMI 35 or more</field>
+            <field name="is_high_risk" eval="True"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="risk_11" model="medical.pregnancy.risk">
+            <field name="name">Placenta praevia</field>
+            <field name="is_high_risk" eval="True"/>
+            <field name="sequence">11</field>
+        </record>
+        <record id="risk_12" model="medical.pregnancy.risk">
+            <field name="name">Anaemia</field>
+            <field name="is_high_risk" eval="False"/>
+            <field name="sequence">12</field>
+        </record>
+        <record id="risk_13" model="medical.pregnancy.risk">
+            <field name="name">Thyroid disease</field>
+            <field name="is_high_risk" eval="False"/>
+            <field name="sequence">13</field>
+        </record>
+        <record id="risk_14" model="medical.pregnancy.risk">
+            <field name="name">Smoking</field>
+            <field name="is_high_risk" eval="False"/>
+            <field name="sequence">14</field>
+        </record>
+        <record id="score_epds" model="medical.assessment.template">
+            <field name="name">Edinburgh Postnatal Depression Scale</field>
+            <field name="code">EPDS</field>
+            <field name="score_mode">sum</field>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+            <field name="item_ids" eval="[(0, 0, {'sequence': 1, 'name': 'I have been able to laugh and see the funny side of things', 'section': 'In the past 7 days', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'As much as I always could', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Not quite so much now', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'Definitely not so much now', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Not at all', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 2, 'name': 'I have looked forward with enjoyment to things', 'section': 'In the past 7 days', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'As much as I ever did', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Rather less than I used to', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'Definitely less than I used to', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Hardly at all', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 3, 'name': 'I have blamed myself unnecessarily when things went wrong', 'section': 'In the past 7 days', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No, never', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Not very often', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'Yes, some of the time', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Yes, most of the time', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 4, 'name': 'I have been anxious or worried for no good reason', 'section': 'In the past 7 days', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No, not at all', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Hardly ever', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'Yes, sometimes', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Yes, very often', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 5, 'name': 'I have felt scared or panicky for no very good reason', 'section': 'In the past 7 days', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No, not at all', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'No, not much', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'Yes, sometimes', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Yes, quite a lot', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 6, 'name': 'Things have been getting on top of me', 'section': 'In the past 7 days', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No, I have been coping as well as ever', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'No, most of the time I have coped quite well', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'Yes, sometimes I have not been coping as well as usual', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Yes, most of the time I have not been able to cope', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 7, 'name': 'I have been so unhappy that I have had difficulty sleeping', 'section': 'In the past 7 days', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No, not at all', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Not very often', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'Yes, sometimes', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Yes, most of the time', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 8, 'name': 'I have felt sad or miserable', 'section': 'In the past 7 days', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No, not at all', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Not very often', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'Yes, quite often', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Yes, most of the time', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 9, 'name': 'I have been so unhappy that I have been crying', 'section': 'In the past 7 days', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No, never', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Only occasionally', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'Yes, quite often', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': 'Yes, most of the time', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 10, 'name': 'The thought of harming myself has occurred to me', 'section': 'In the past 7 days', 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Never', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Hardly ever', 'score': 1, 'is_alert': True}), (0, 0, {'sequence': 3, 'name': 'Sometimes', 'score': 2, 'is_alert': True}), (0, 0, {'sequence': 4, 'name': 'Yes, quite often', 'score': 3, 'is_alert': True})]})]"/>
+            <field name="range_ids" eval="[(0, 0, {'min_score': 0, 'max_score': 9, 'name': 'Depression unlikely', 'severity': 'none'}), (0, 0, {'min_score': 10, 'max_score': 12, 'name': 'Possible depression: review', 'severity': 'moderate'}), (0, 0, {'min_score': 13, 'max_score': 30, 'name': 'Probable depression: assess', 'severity': 'severe'})]"/>
+            <field name="observation_type_id" ref="obs_epds"/>
+            <field name="description" type="html"><p>Any answer other than "Never" to the last question needs a safety assessment the same day.</p></field>
+        </record>
+        <record id="score_bishop" model="medical.assessment.template">
+            <field name="name">Bishop Score</field>
+            <field name="code">BISHOP</field>
+            <field name="score_mode">sum</field>
+            <field name="department_ids" eval="[(4, ref('dept_obgyn'))]"/>
+            <field name="item_ids" eval="[(0, 0, {'sequence': 1, 'name': 'Cervical dilatation', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Closed', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': '1-2 cm', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': '3-4 cm', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': '5 cm or more', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 2, 'name': 'Effacement', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': '0-30%', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': '40-50%', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': '60-70%', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': '80% or more', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 3, 'name': 'Station', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': '-3', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': '-2', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': '-1 or 0', 'score': 2, 'is_alert': False}), (0, 0, {'sequence': 4, 'name': '+1 or +2', 'score': 3, 'is_alert': False})]}), (0, 0, {'sequence': 4, 'name': 'Consistency', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Firm', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Medium', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'Soft', 'score': 2, 'is_alert': False})]}), (0, 0, {'sequence': 5, 'name': 'Position', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Posterior', 'score': 0, 'is_alert': False}), (0, 0, {'sequence': 2, 'name': 'Mid', 'score': 1, 'is_alert': False}), (0, 0, {'sequence': 3, 'name': 'Anterior', 'score': 2, 'is_alert': False})]})]"/>
+            <field name="range_ids" eval="[(0, 0, {'min_score': 0, 'max_score': 5, 'name': 'Unfavourable cervix', 'severity': 'moderate'}), (0, 0, {'min_score': 6, 'max_score': 7, 'name': 'Intermediate', 'severity': 'mild'}), (0, 0, {'min_score': 8, 'max_score': 13, 'name': 'Favourable cervix', 'severity': 'none'})]"/>
+            <field name="observation_type_id" ref="obs_bishop"/>
+        </record>
+        <record id="seq_pregnancy" model="ir.sequence">
+            <field name="name">Pregnancy</field>
+            <field name="code">medical.pregnancy</field>
+            <field name="prefix">PREG/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

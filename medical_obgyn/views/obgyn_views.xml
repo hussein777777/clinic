@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_pregnancy_view_form" model="ir.ui.view">
+        <field name="name">medical.pregnancy.form</field>
+        <field name="model">medical.pregnancy</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_book_next_contact" type="object" string="Book Next Visit" class="btn-primary"
+                            invisible="state != 'active'"/>
+                    <button name="action_delivered" type="object" string="Mark as Delivered" invisible="state != 'active'"
+                            groups="medical_core.group_medical_doctor"/>
+                    <button name="action_register_baby" type="object" string="Register Baby" invisible="state != 'delivered' or baby_patient_id"/>
+                    <button name="action_loss" type="object" string="Pregnancy Loss" invisible="state != 'active'"
+                            groups="medical_core.group_medical_doctor" confirm="Record a pregnancy loss?"/>
+                    <field name="state" widget="statusbar" statusbar_visible="active,delivered"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="High Risk" bg_color="text-bg-danger" invisible="risk_level != 'high'"/>
+                    <div class="oe_title"><h1><field name="name"/></h1></div>
+                    <group>
+                        <group string="Mother">
+                            <field name="patient_id"/>
+                            <field name="doctor_id"/>
+                            <label for="gravida" string="Obstetric History"/>
+                            <div class="o_row">
+                                G <field name="gravida" class="oe_inline"/>
+                                P <field name="para" class="oe_inline"/>
+                                A <field name="abortions" class="oe_inline"/>
+                                L <field name="living" class="oe_inline"/>
+                            </div>
+                            <field name="blood_group"/>
+                            <field name="fetuses"/>
+                        </group>
+                        <group string="Dates">
+                            <field name="lmp"/>
+                            <field name="edd_lmp"/>
+                            <field name="edd_us"/>
+                            <field name="edd"/>
+                            <field name="ga_label"/>
+                            <field name="trimester"/>
+                            <field name="next_contact_id"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="risk_factor_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                        <field name="risk_level" invisible="1"/>
+                        <field name="care_contract_id" domain="[('patient_id', '=', patient_id)]"/>
+                    </group>
+                    <notebook>
+                        <page string="Antenatal Contacts" name="contacts">
+                            <field name="contact_ids">
+                                <list editable="bottom" create="0" decoration-success="state == 'done'"
+                                      decoration-danger="is_overdue" decoration-muted="state == 'skipped'">
+                                    <field name="week"/>
+                                    <field name="due_date"/>
+                                    <field name="focus"/>
+                                    <field name="visit_id" readonly="1"/>
+                                    <field name="is_overdue" column_invisible="True"/>
+                                    <field name="state" widget="badge" decoration-success="state == 'done'"/>
+                                    <button name="action_book" type="object" string="Book" invisible="state != 'planned'"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Ultrasounds" name="ultrasounds">
+                            <field name="ultrasound_ids">
+                                <list decoration-warning="flag">
+                                    <field name="date"/>
+                                    <field name="ga_weeks"/>
+                                    <field name="ga_extra_days"/>
+                                    <field name="efw_g"/>
+                                    <field name="afi_cm"/>
+                                    <field name="fhr"/>
+                                    <field name="placenta"/>
+                                    <field name="presentation"/>
+                                    <field name="use_for_dating"/>
+                                    <field name="flag"/>
+                                </list>
+                                <form>
+                                    <group>
+                                        <group>
+                                            <field name="date"/>
+                                            <label for="ga_weeks" string="Gestational Age by Scan"/>
+                                            <div class="o_row">
+                                                <field name="ga_weeks" class="oe_inline"/> w + <field name="ga_extra_days" class="oe_inline"/> d
+                                            </div>
+                                            <field name="use_for_dating"/>
+                                            <field name="crl_mm"/>
+                                            <field name="bpd_mm"/>
+                                            <field name="hc_mm"/>
+                                            <field name="ac_mm"/>
+                                            <field name="fl_mm"/>
+                                        </group>
+                                        <group>
+                                            <field name="efw_g"/>
+                                            <field name="afi_cm"/>
+                                            <field name="fhr"/>
+                                            <field name="placenta"/>
+                                            <field name="presentation"/>
+                                            <field name="flag"/>
+                                        </group>
+                                    </group>
+                                    <field name="findings" placeholder="Findings..."/>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Visits" name="visits">
+                            <field name="visit_ids" readonly="1">
+                                <list>
+                                    <field name="start"/>
+                                    <field name="ga_label"/>
+                                    <field name="doctor_id"/>
+                                    <field name="state" widget="badge"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Delivery" name="delivery">
+                            <group>
+                                <group>
+                                    <field name="delivery_date"/>
+                                    <field name="delivery_mode"/>
+                                    <field name="birth_weight_g"/>
+                                </group>
+                                <group>
+                                    <field name="apgar_1"/>
+                                    <field name="apgar_5"/>
+                                    <field name="baby_patient_id"/>
+                                </group>
+                            </group>
+                            <field name="outcome_note" placeholder="Outcome notes..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_pregnancy_view_list" model="ir.ui.view">
+        <field name="name">medical.pregnancy.list</field>
+        <field name="model">medical.pregnancy</field>
+        <field name="arch" type="xml">
+            <list decoration-danger="risk_level == 'high' and state == 'active'" decoration-muted="state != 'active'">
+                <field name="name"/>
+                <field name="patient_id"/>
+                <field name="ga_label"/>
+                <field name="edd"/>
+                <field name="next_contact_id" optional="show"/>
+                <field name="doctor_id"/>
+                <field name="risk_level" widget="badge" decoration-danger="risk_level == 'high'"/>
+                <field name="state" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_pregnancy_view_search" model="ir.ui.view">
+        <field name="name">medical.pregnancy.search</field>
+        <field name="model">medical.pregnancy</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <filter name="active" string="Ongoing" domain="[('state', '=', 'active')]"/>
+                <filter name="high_risk" string="High Risk" domain="[('risk_level', '=', 'high')]"/>
+                <filter name="due_month" string="Due within 30 days"
+                        domain="[('edd', '&lt;=', (context_today() + relativedelta(days=30)).strftime('%Y-%m-%d')), ('state', '=', 'active')]"/>
+                <group>
+                    <filter name="group_edd" string="Due Month" context="{'group_by': 'edd:month'}"/>
+                    <filter name="group_doctor" string="Obstetrician" context="{'group_by': 'doctor_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_medical_pregnancy" model="ir.actions.act_window">
+        <field name="name">Pregnancies</field>
+        <field name="res_model">medical.pregnancy</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_active': 1}</field>
+    </record>
+
+    <record id="medical_antenatal_contact_view_list" model="ir.ui.view">
+        <field name="name">medical.antenatal.contact.list</field>
+        <field name="model">medical.antenatal.contact</field>
+        <field name="arch" type="xml">
+            <list decoration-danger="is_overdue">
+                <field name="patient_id"/>
+                <field name="pregnancy_id"/>
+                <field name="week"/>
+                <field name="due_date"/>
+                <field name="focus"/>
+                <field name="is_overdue" column_invisible="True"/>
+                <field name="state" widget="badge"/>
+                <button name="action_book" type="object" string="Book" invisible="state != 'planned'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_medical_antenatal_due" model="ir.actions.act_window">
+        <field name="name">Antenatal Visits Due</field>
+        <field name="res_model">medical.antenatal.contact</field>
+        <field name="view_mode">list</field>
+        <field name="domain">[('state', '=', 'planned'), ('visit_id', '=', False), ('pregnancy_id.state', '=', 'active'),
+            ('due_date', '&lt;=', (context_today() + relativedelta(days=14)).strftime('%Y-%m-%d'))]</field>
+    </record>
+
+    <record id="medical_visit_form_obgyn" model="ir.ui.view">
+        <field name="name">medical.visit.form.obgyn</field>
+        <field name="model">medical.visit</field>
+        <field name="inherit_id" ref="medical_core.medical_visit_view_form"/>
+        <field name="arch" type="xml">
+            <field name="care_contract_id" position="after">
+                <field name="pregnancy_id" invisible="patient_gender == 'male'"/>
+                <field name="ga_label" invisible="not pregnancy_id"/>
+            </field>
+            <xpath expr="//div[hasclass('oe_title')]" position="before">
+                <div class="alert alert-danger mb-2" role="alert" invisible="not obstetric_alert" groups="medical_core.group_medical_nurse">
+                    <i class="fa fa-exclamation-triangle me-1" title="Alert"/>
+                    <field name="obstetric_alert" class="d-inline"/>
+                </div>
+            </xpath>
+            <xpath expr="//page[@name='vitals']" position="after">
+                <page string="Antenatal" name="antenatal" invisible="not pregnancy_id" groups="medical_core.group_medical_nurse">
+                    <group>
+                        <group>
+                            <field name="fundal_height"/>
+                            <field name="fetal_heart_rate"/>
+                            <field name="presentation"/>
+                            <field name="fetal_movements"/>
+                        </group>
+                        <group>
+                            <field name="edema"/>
+                            <field name="urine_protein"/>
+                            <field name="urine_glucose"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_partner_form_obgyn" model="ir.ui.view">
+        <field name="name">res.partner.form.obgyn</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="medical_core.res_partner_form_medical"/>
+        <field name="arch" type="xml">
+            <page name="measurements" position="after">
+                <page string="Pregnancies" name="pregnancies" invisible="not is_patient or gender == 'male' or not id"
+                      groups="medical_core.group_medical_nurse">
+                    <field name="pregnancy_ids" context="{'default_patient_id': id}">
+                        <list>
+                            <field name="name"/>
+                            <field name="edd"/>
+                            <field name="ga_label"/>
+                            <field name="risk_level" widget="badge" decoration-danger="risk_level == 'high'"/>
+                            <field name="state"/>
+                        </list>
+                    </field>
+                </page>
+            </page>
+        </field>
+    </record>
+
+    <record id="action_medical_maternity_package" model="ir.actions.act_window">
+        <field name="name">Maternity Packages</field>
+        <field name="res_model">medical.care.contract</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('care_type', '=', 'maternity')]</field>
+        <field name="context" eval="{'default_care_type': 'maternity', 'default_billing_mode': 'monthly', 'default_est_months': 7,
+                                     'default_product_id': ref('product_antenatal_package'),
+                                     'default_session_product_id': ref('product_antenatal_visit'), 'search_default_running': 1}"/>
+    </record>
+
+    <record id="action_obgyn_visit" model="ir.actions.act_window">
+        <field name="name">OB/GYN Schedule</field>
+        <field name="res_model">medical.visit</field>
+        <field name="view_mode">calendar,list,kanban,form</field>
+        <field name="domain" eval="[('department_id', '=', ref('dept_obgyn'))]"/>
+        <field name="context" eval="{'default_department_id': ref('dept_obgyn')}"/>
+    </record>
+
+    <record id="medical_pregnancy_risk_view_list" model="ir.ui.view">
+        <field name="name">medical.pregnancy.risk.list</field>
+        <field name="model">medical.pregnancy.risk</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="is_high_risk"/>
+                <field name="color" widget="color_picker"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_medical_pregnancy_risk" model="ir.actions.act_window">
+        <field name="name">Pregnancy Risk Factors</field>
+        <field name="res_model">medical.pregnancy.risk</field>
+        <field name="view_mode">list</field>
+    </record>
+
+    <menuitem id="menu_obgyn" name="Obstetrics &amp; Gynecology" parent="medical_core.menu_medical_clinics" sequence="60"/>
+    <menuitem id="menu_obgyn_visit" name="Schedule" parent="menu_obgyn" action="action_obgyn_visit" sequence="5"/>
+    <menuitem id="menu_pregnancy" name="Pregnancies" parent="menu_obgyn" action="action_medical_pregnancy" sequence="10"/>
+    <menuitem id="menu_antenatal_due" name="Antenatal Visits Due" parent="menu_obgyn" action="action_medical_antenatal_due" sequence="20"/>
+    <menuitem id="menu_maternity_package" name="Maternity Packages" parent="menu_obgyn" action="action_medical_maternity_package" sequence="30"/>
+    <menuitem id="menu_pregnancy_risk" name="Pregnancy Risk Factors" parent="menu_obgyn" action="action_medical_pregnancy_risk"
+              sequence="90" groups="medical_core.group_medical_manager"/>
+</odoo>

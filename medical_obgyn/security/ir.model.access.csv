@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pregnancy_risk_user,medical.pregnancy.risk user,model_medical_pregnancy_risk,medical_core.group_medical_user,1,0,0,0
+access_pregnancy_risk_manager,medical.pregnancy.risk manager,model_medical_pregnancy_risk,medical_core.group_medical_manager,1,1,1,1
+access_pregnancy_user,medical.pregnancy user,model_medical_pregnancy,medical_core.group_medical_user,1,0,0,0
+access_pregnancy_nurse,medical.pregnancy nurse,model_medical_pregnancy,medical_core.group_medical_nurse,1,1,1,0
+access_pregnancy_manager,medical.pregnancy manager,model_medical_pregnancy,medical_core.group_medical_manager,1,1,1,1
+access_antenatal_contact_user,medical.antenatal.contact user,model_medical_antenatal_contact,medical_core.group_medical_user,1,1,1,0
+access_antenatal_contact_manager,medical.antenatal.contact manager,model_medical_antenatal_contact,medical_core.group_medical_manager,1,1,1,1
+access_obstetric_us_nurse,medical.obstetric.us nurse,model_medical_obstetric_us,medical_core.group_medical_nurse,1,1,1,1

@@ -1,0 +1,1416 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* medical_obgyn
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-19 19:27+0000\n"
+"PO-Revision-Date: 2026-10-19 19:27+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "%(ga)s, EDD %(edd)s, G%(g)s P%(p)s"
+msgstr "%(ga)s، الولادة المتوقعة %(edd)s، G%(g)s P%(p)s"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "%(w)sw %(d)sd"
+msgstr "%(w)s أسبوع و%(d)s يوم"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_obstetric_us__ga_extra_days
+msgid "+ days"
+msgstr "+ أيام"
+
+#. module: medical_obgyn
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_visit_form_obgyn
+msgid "<i class=\"fa fa-exclamation-triangle me-1\" title=\"Alert\"/>"
+msgstr "<i class=\"fa fa-exclamation-triangle me-1\" title=\"تنبيه\"/>"
+
+#. module: medical_obgyn
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_form
+msgid "A"
+msgstr "A"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_obstetric_us__ac_mm
+msgid "AC (mm)"
+msgstr "محيط البطن AC (مم)"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__apgar_1
+msgid "APGAR 1 min"
+msgstr "APGAR دقيقة 1"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__apgar_5
+msgid "APGAR 5 min"
+msgstr "APGAR دقيقة 5"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_visit__fetal_movements__absent
+msgid "Absent"
+msgstr "غائب"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: medical_obgyn
+#: model:medical.diagnosis,name:medical_obgyn.icd_n76_0
+msgid "Acute vaginitis"
+msgstr "التهاب مهبلي حاد"
+
+#. module: medical_obgyn
+#: model:medical.pregnancy.risk,name:medical_obgyn.risk_04
+msgid "Age 35 or older"
+msgstr "العمر 35 أو أكثر"
+
+#. module: medical_obgyn
+#: model:medical.pregnancy.risk,name:medical_obgyn.risk_05
+msgid "Age under 18"
+msgstr "العمر أقل من 18"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "All antenatal contacts are done."
+msgstr "تمت جميع زيارات متابعة الحمل."
+
+#. module: medical_obgyn
+#: model:medical.diagnosis,name:medical_obgyn.icd_n91_2
+msgid "Amenorrhoea, unspecified"
+msgstr "انقطاع الطمث، غير محدد"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_obstetric_us__afi_cm
+msgid "Amniotic Fluid Index (cm)"
+msgstr "مؤشر السائل الأمنيوسي (سم)"
+
+#. module: medical_obgyn
+#: model:medical.pregnancy.risk,name:medical_obgyn.risk_12
+msgid "Anaemia"
+msgstr "الأنيميا"
+
+#. module: medical_obgyn
+#: model:medical.diagnosis,name:medical_obgyn.icd_o99_0
+msgid "Anaemia complicating pregnancy, childbirth and the puerperium"
+msgstr "أنيميا تُضاعف الحمل والولادة والنفاس"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "Anomaly scan (18-22 weeks)"
+msgstr "سونار التشوهات (18-22 أسبوعًا)"
+
+#. module: medical_obgyn
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_visit_form_obgyn
+msgid "Antenatal"
+msgstr "متابعة الحمل"
+
+#. module: medical_obgyn
+#: model:product.template,name:medical_obgyn.product_antenatal_package_product_template
+msgid "Antenatal Care Package (until delivery)"
+msgstr "باقة متابعة الحمل (حتى الولادة)"
+
+#. module: medical_obgyn
+#: model:ir.model,name:medical_obgyn.model_medical_antenatal_contact
+msgid "Antenatal Contact"
+msgstr "زيارة متابعة حمل"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__contact_ids
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_form
+msgid "Antenatal Contacts"
+msgstr "زيارات متابعة الحمل"
+
+#. module: medical_obgyn
+#: model:product.template,name:medical_obgyn.product_antenatal_visit_product_template
+msgid "Antenatal Visit"
+msgstr "زيارة متابعة حمل"
+
+#. module: medical_obgyn
+#: model:ir.actions.act_window,name:medical_obgyn.action_medical_antenatal_due
+#: model:ir.ui.menu,name:medical_obgyn.menu_antenatal_due
+msgid "Antenatal Visits Due"
+msgstr "زيارات متابعة حمل مستحقة"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_obstetric_us__placenta__anterior
+msgid "Anterior"
+msgstr "أمامية"
+
+#. module: medical_obgyn
+#: model_terms:medical.assessment.template,description:medical_obgyn.score_epds
+msgid ""
+"Any answer other than \"Never\" to the last question needs a safety "
+"assessment the same day."
+msgstr ""
+"أي إجابة غير \"Never\" على السؤال الأخير تستوجب تقييمًا للسلامة في نفس "
+"اليوم."
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_pregnancy__delivery_mode__assisted
+msgid "Assisted vaginal delivery"
+msgstr "ولادة مهبلية بمساعدة أدوات"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: medical_obgyn
+#: model:medical.pregnancy.risk,name:medical_obgyn.risk_10
+msgid "BMI 35 or more"
+msgstr "مؤشر كتلة الجسم 35 أو أكثر"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_obstetric_us__bpd_mm
+msgid "BPD (mm)"
+msgstr "قطر الرأس BPD (مم)"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__baby_patient_id
+msgid "Baby"
+msgstr "المولود"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "Baby of %s"
+msgstr "مولود %s"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__birth_weight_g
+msgid "Birth Weight (g)"
+msgstr "وزن الولادة (جم)"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,help:medical_obgyn.field_medical_pregnancy__para
+msgid "Births after 24 weeks"
+msgstr "ولادات بعد 24 أسبوعًا"
+
+#. module: medical_obgyn
+#: model:medical.assessment.template,name:medical_obgyn.score_bishop
+#: model:medical.observation.type,name:medical_obgyn.obs_bishop
+msgid "Bishop Score"
+msgstr "مقياس بيشوب"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__blood_group
+msgid "Blood Group"
+msgstr "فصيلة الدم"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "Blood pressure 140/90 or more"
+msgstr "ضغط الدم 140/90 أو أكثر"
+
+#. module: medical_obgyn
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_antenatal_contact_view_list
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_form
+msgid "Book"
+msgstr "حجز"
+
+#. module: medical_obgyn
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_form
+msgid "Book Next Visit"
+msgstr "حجز الزيارة القادمة"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "Booking: history, blood tests, blood group and Rh, dating scan"
+msgstr ""
+"الحجز: التاريخ المرضي، تحاليل الدم، فصيلة الدم وعامل ريسس، سونار تحديد العمر"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_obstetric_us__presentation__breech
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_visit__presentation__breech
+msgid "Breech"
+msgstr "مقعدي"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_obstetric_us__crl_mm
+msgid "CRL (mm)"
+msgstr "طول الجنين CRL (مم)"
+
+#. module: medical_obgyn
+#: model:product.template,name:medical_obgyn.product_caesarean_product_template
+msgid "Caesarean Section"
+msgstr "ولادة قيصرية"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_pregnancy__delivery_mode__cs_emergency
+msgid "Caesarean section (emergency)"
+msgstr "ولادة قيصرية (طارئة)"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_pregnancy__delivery_mode__cs_elective
+msgid "Caesarean section (planned)"
+msgstr "ولادة قيصرية (مخططة)"
+
+#. module: medical_obgyn
+#: model:product.template,name:medical_obgyn.product_ctg_product_template
+msgid "Cardiotocography (CTG)"
+msgstr "رسم قلب الجنين (CTG)"
+
+#. module: medical_obgyn
+#: model:ir.model,name:medical_obgyn.model_medical_care_contract
+msgid "Care Program"
+msgstr "برنامج الرعاية"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_care_contract__care_type
+msgid "Care Type"
+msgstr "نوع البرنامج"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_obstetric_us__presentation__cephalic
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_visit__presentation__cephalic
+msgid "Cephalic"
+msgstr "رأسي"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "Choose the obstetrician of the pregnancy first."
+msgstr "اختر طبيب النساء المتابع للحمل أولًا."
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy_risk__color
+msgid "Color"
+msgstr "اللون"
+
+#. module: medical_obgyn
+#: model:product.template,name:medical_obgyn.product_colposcopy_product_template
+msgid "Colposcopy"
+msgstr "منظار عنق الرحم"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: medical_obgyn
+#: model:ir.model,name:medical_obgyn.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_antenatal_contact__create_uid
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_obstetric_us__create_uid
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__create_uid
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy_risk__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_antenatal_contact__create_date
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_obstetric_us__create_date
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__create_date
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy_risk__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_res_partner__current_pregnancy_id
+#: model:ir.model.fields,field_description:medical_obgyn.field_res_users__current_pregnancy_id
+msgid "Current Pregnancy"
+msgstr "الحمل الحالي"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_obstetric_us__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: medical_obgyn
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_form
+msgid "Dates"
+msgstr "التواريخ"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_pregnancy__state__delivered
+msgid "Delivered"
+msgstr "مُسلّم"
+
+#. module: medical_obgyn
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_form
+msgid "Delivery"
+msgstr "الولادة"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__delivery_date
+msgid "Delivery Date"
+msgstr "تاريخ الولادة"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__delivery_mode
+msgid "Delivery Mode"
+msgstr "طريقة الولادة"
+
+#. module: medical_obgyn
+#: model:product.template,name:medical_obgyn.product_anomaly_scan_product_template
+msgid "Detailed Anomaly Scan"
+msgstr "سونار تفصيلي للتشوهات"
+
+#. module: medical_obgyn
+#: model:medical.diagnosis,name:medical_obgyn.icd_o24_4
+msgid "Diabetes mellitus arising in pregnancy"
+msgstr "سكري ناشئ أثناء الحمل"
+
+#. module: medical_obgyn
+#: model:product.template,name:medical_obgyn.product_dc_product_template
+msgid "Dilatation and Curettage (D&C)"
+msgstr "توسيع وكحت (D&C)"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_antenatal_contact__display_name
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_care_contract__display_name
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_obstetric_us__display_name
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__display_name
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy_risk__display_name
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_visit__display_name
+#: model:ir.model.fields,field_description:medical_obgyn.field_res_partner__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_antenatal_contact__state__done
+msgid "Done"
+msgstr "منتهية"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_antenatal_contact__due_date
+msgid "Due Date"
+msgstr "تاريخ التسليم"
+
+#. module: medical_obgyn
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_search
+msgid "Due Month"
+msgstr "شهر الولادة المتوقع"
+
+#. module: medical_obgyn
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_search
+msgid "Due within 30 days"
+msgstr "مستحقة خلال 30 يومًا"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "EDD"
+msgstr "الولادة المتوقعة"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__edd_lmp
+msgid "EDD by LMP"
+msgstr "الولادة المتوقعة حسب آخر دورة"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__edd_us
+msgid "EDD by Ultrasound"
+msgstr "الولادة المتوقعة حسب السونار"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_visit__edema
+msgid "Edema"
+msgstr "التورم"
+
+#. module: medical_obgyn
+#: model:medical.assessment.template,name:medical_obgyn.score_epds
+#: model:medical.observation.type,name:medical_obgyn.obs_epds
+msgid "Edinburgh Postnatal Depression Scale"
+msgstr "مقياس إدنبرة لاكتئاب ما بعد الولادة"
+
+#. module: medical_obgyn
+#: model:medical.diagnosis,name:medical_obgyn.icd_n80_9
+msgid "Endometriosis, unspecified"
+msgstr "بطانة الرحم المهاجرة، غير محددة"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "Enter the delivery date and mode first."
+msgstr "أدخل تاريخ الولادة وطريقتها أولًا."
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "Enter the delivery date first."
+msgstr "أدخل تاريخ الولادة أولًا."
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_obstetric_us__efw_g
+msgid "Estimated Fetal Weight (g)"
+msgstr "الوزن التقديري للجنين (جم)"
+
+#. module: medical_obgyn
+#: model:medical.diagnosis,name:medical_obgyn.icd_n92_0
+msgid "Excessive and frequent menstruation with regular cycle"
+msgstr "طمث غزير ومتكرر مع دورة منتظمة"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__edd
+msgid "Expected Delivery Date"
+msgstr "تاريخ الولادة المتوقع"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_obstetric_us__fl_mm
+msgid "FL (mm)"
+msgstr "طول عظمة الفخذ FL (مم)"
+
+#. module: medical_obgyn
+#: model:medical.diagnosis,name:medical_obgyn.icd_n97_9
+msgid "Female infertility, unspecified"
+msgstr "عقم أنثوي، غير محدد"
+
+#. module: medical_obgyn
+#: model:medical.specialty,name:medical_obgyn.spec_fertility
+msgid "Fertility & Family Planning"
+msgstr "الخصوبة وتنظيم الأسرة"
+
+#. module: medical_obgyn
+#: model:medical.observation.type,name:medical_obgyn.obs_fhr
+msgid "Fetal Heart Rate"
+msgstr "نبض الجنين"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_obstetric_us__fhr
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_visit__fetal_heart_rate
+msgid "Fetal Heart Rate (bpm)"
+msgstr "نبض الجنين (نبضة/دقيقة)"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_visit__fetal_movements
+msgid "Fetal Movements"
+msgstr "حركة الجنين"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "Fetal growth, blood pressure, urine protein"
+msgstr "نمو الجنين، ضغط الدم، بروتين البول"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "Fetal heart rate outside 110-160"
+msgstr "نبض الجنين خارج 110-160"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "Fetal well-being, signs of labour"
+msgstr "سلامة الجنين، علامات الولادة"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_obstetric_us__findings
+msgid "Findings"
+msgstr "الموجودات"
+
+#. module: medical_obgyn
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_form
+msgid "Findings..."
+msgstr "النتائج..."
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_pregnancy__trimester__1
+msgid "First"
+msgstr "الأول"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_obstetric_us__flag
+msgid "Flag"
+msgstr "المؤشر"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_antenatal_contact__focus
+msgid "Focus"
+msgstr "التركيز"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,help:medical_obgyn.field_medical_pregnancy__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_obstetric_us__placenta__fundal
+msgid "Fundal"
+msgstr "قاعية"
+
+#. module: medical_obgyn
+#: model:medical.observation.type,name:medical_obgyn.obs_fundal_height
+msgid "Fundal Height"
+msgstr "ارتفاع قاع الرحم"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_visit__fundal_height
+msgid "Fundal Height (cm)"
+msgstr "ارتفاع قاع الرحم (سم)"
+
+#. module: medical_obgyn
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_form
+msgid "G"
+msgstr "G"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_obstetric_us__ga_weeks
+msgid "GA by Scan (weeks)"
+msgstr "عمر الحمل بالسونار (أسابيع)"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__ga_label
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_visit__ga_label
+msgid "Gestational Age"
+msgstr "عمر الحمل"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__ga_days
+msgid "Gestational Age (days)"
+msgstr "عمر الحمل (أيام)"
+
+#. module: medical_obgyn
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_form
+msgid "Gestational Age by Scan"
+msgstr "عمر الحمل بالسونار"
+
+#. module: medical_obgyn
+#: model:medical.pregnancy.risk,name:medical_obgyn.risk_03
+msgid "Gestational diabetes"
+msgstr "سكري الحمل"
+
+#. module: medical_obgyn
+#: model:medical.diagnosis,name:medical_obgyn.icd_o13
+msgid "Gestational hypertension"
+msgstr "ارتفاع ضغط الحمل"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "Glucose screening (24-28 weeks), blood pressure"
+msgstr "فحص السكر (24-28 أسبوعًا)، ضغط الدم"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__gravida
+msgid "Gravida"
+msgstr "عدد مرات الحمل"
+
+#. module: medical_obgyn
+#: model:medical.specialty,name:medical_obgyn.spec_gynecology
+msgid "Gynecology"
+msgstr "أمراض النساء"
+
+#. module: medical_obgyn
+#: model:product.template,name:medical_obgyn.product_obgyn_consultation_product_template
+msgid "Gynecology Consultation"
+msgstr "كشف نساء"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_obstetric_us__hc_mm
+msgid "HC (mm)"
+msgstr "محيط الرأس HC (مم)"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "Haemoglobin, fetal growth"
+msgstr "الهيموجلوبين، نمو الجنين"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy_risk__is_high_risk
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_pregnancy__risk_level__high
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_form
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_search
+msgid "High Risk"
+msgstr "خطورة عالية"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "High fluid (AFI > 24)"
+msgstr "سائل زائد (AFI > 24)"
+
+#. module: medical_obgyn
+#: model:medical.pregnancy.risk,name:medical_obgyn.risk_01
+msgid "Hypertension"
+msgstr "ارتفاع ضغط الدم"
+
+#. module: medical_obgyn
+#: model_terms:product.template,consent_text:medical_obgyn.product_caesarean_product_template
+msgid ""
+"I agree to a caesarean section. The doctor explained the reasons and the "
+"possible risks to me and my baby: bleeding that may need transfusion, "
+"infection, blood clots, injury to the bladder or bowel, and implications for"
+" future pregnancies."
+msgstr ""
+"أوافق على الولادة القيصرية. شرح لي الطبيب الأسباب والمخاطر المحتملة عليّ "
+"وعلى طفلي: نزيف قد يحتاج لنقل دم، عدوى، جلطات، إصابة المثانة أو الأمعاء، "
+"وتأثيرها على الحمل في المستقبل."
+
+#. module: medical_obgyn
+#: model_terms:product.template,consent_text:medical_obgyn.product_colposcopy_product_template
+#: model_terms:product.template,consent_text:medical_obgyn.product_dc_product_template
+#: model_terms:product.template,consent_text:medical_obgyn.product_iud_insertion_product_template
+msgid ""
+"I agree to the procedure described on this form. The doctor explained why it"
+" is recommended, the alternatives and the possible risks: pain, bleeding, "
+"infection and, rarely, injury to nearby organs needing further treatment."
+msgstr ""
+"أوافق على الإجراء الموضح في هذا النموذج. شرح لي الطبيب سبب التوصية به "
+"والبدائل والمخاطر المحتملة: ألم، نزيف، عدوى، ونادرًا إصابة أعضاء مجاورة "
+"تحتاج لعلاج إضافي."
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_antenatal_contact__id
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_care_contract__id
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_obstetric_us__id
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__id
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy_risk__id
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_visit__id
+#: model:ir.model.fields,field_description:medical_obgyn.field_res_partner__id
+msgid "ID"
+msgstr "المُعرّف"
+
+#. module: medical_obgyn
+#: model:product.template,name:medical_obgyn.product_iud_insertion_product_template
+msgid "IUD Insertion"
+msgstr "تركيب لولب"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,help:medical_obgyn.field_medical_pregnancy__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "الأيقونة للإشارة إلى النشاط المستثنى."
+
+#. module: medical_obgyn
+#: model:ir.model.fields,help:medical_obgyn.field_medical_pregnancy__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة تحتاج انتباهك."
+
+#. module: medical_obgyn
+#: model:ir.model.fields,help:medical_obgyn.field_medical_pregnancy__message_has_error
+#: model:ir.model.fields,help:medical_obgyn.field_medical_pregnancy__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: medical_obgyn
+#: model:medical.diagnosis,name:medical_obgyn.icd_z30_1
+msgid "Insertion of intrauterine contraceptive device"
+msgstr "تركيب وسيلة منع حمل داخل الرحم"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_antenatal_contact__is_overdue
+msgid "Is Overdue"
+msgstr "متأخر"
+
+#. module: medical_obgyn
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_form
+msgid "L"
+msgstr "L"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__lmp
+msgid "Last Menstrual Period"
+msgstr "آخر دورة شهرية"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_antenatal_contact__write_uid
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_obstetric_us__write_uid
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__write_uid
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy_risk__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_antenatal_contact__write_date
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_obstetric_us__write_date
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__write_date
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy_risk__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "Last scan %(date)s: EFW %(efw)s g, AFI %(afi)s"
+msgstr "آخر سونار %(date)s: الوزن التقديري %(efw)s جم، AFI %(afi)s"
+
+#. module: medical_obgyn
+#: model:medical.diagnosis,name:medical_obgyn.icd_d25_9
+msgid "Leiomyoma of uterus, unspecified"
+msgstr "ورم ليفي بالرحم، غير محدد"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__living
+msgid "Living Children"
+msgstr "الأطفال الأحياء"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_pregnancy__risk_level__low
+msgid "Low Risk"
+msgstr "خطورة منخفضة"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "Low fluid (AFI < 5)"
+msgstr "سائل قليل (AFI < 5)"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_obstetric_us__placenta__low
+msgid "Low-lying"
+msgstr "منخفضة الموضع"
+
+#. module: medical_obgyn
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_form
+msgid "Mark as Delivered"
+msgstr "تمت الولادة"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_visit__edema__marked
+msgid "Marked"
+msgstr "واضح"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "Marked oedema"
+msgstr "تورم شديد"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__care_contract_id
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_care_contract__care_type__maternity
+msgid "Maternity Package"
+msgstr "باقة الولادة"
+
+#. module: medical_obgyn
+#: model:ir.actions.act_window,name:medical_obgyn.action_medical_maternity_package
+#: model:ir.ui.menu,name:medical_obgyn.menu_maternity_package
+msgid "Maternity Packages"
+msgstr "باقات الولادة"
+
+#. module: medical_obgyn
+#: model:medical.diagnosis,name:medical_obgyn.icd_n95_1
+msgid "Menopausal and female climacteric states"
+msgstr "انقطاع الطمث وسن اليأس"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_visit__edema__mild
+msgid "Mild"
+msgstr "خفيف"
+
+#. module: medical_obgyn
+#: model:medical.diagnosis,name:medical_obgyn.icd_o21_0
+msgid "Mild hyperemesis gravidarum"
+msgstr "قيء الحمل الخفيف"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__abortions
+msgid "Miscarriages / Abortions"
+msgstr "الإجهاض"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_antenatal_contact__state__skipped
+msgid "Missed / Not Needed"
+msgstr "فائتة / غير مطلوبة"
+
+#. module: medical_obgyn
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_form
+msgid "Mother"
+msgstr "الأم"
+
+#. module: medical_obgyn
+#: model:medical.pregnancy.risk,name:medical_obgyn.risk_06
+msgid "Multiple pregnancy"
+msgstr "حمل متعدد"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "موعدي النهائي للنشاط"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__name
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy_risk__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_visit__urine_glucose__neg
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_visit__urine_protein__neg
+msgid "Negative"
+msgstr "سلبي"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__next_contact_id
+msgid "Next Contact"
+msgstr "الزيارة القادمة"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_visit__edema__none
+msgid "None"
+msgstr "لا شيء"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_visit__fetal_movements__normal
+msgid "Normal"
+msgstr "طبيعي"
+
+#. module: medical_obgyn
+#: model:product.template,name:medical_obgyn.product_normal_delivery_product_template
+msgid "Normal Vaginal Delivery"
+msgstr "ولادة طبيعية"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_pregnancy__delivery_mode__svd
+msgid "Normal vaginal delivery"
+msgstr "ولادة طبيعية"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_visit__presentation__unknown
+msgid "Not assessed"
+msgstr "لم يُقيّم"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__fetuses
+msgid "Number of Fetuses"
+msgstr "عدد الأجنة"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,help:medical_obgyn.field_medical_pregnancy__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراءً"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,help:medical_obgyn.field_medical_pregnancy__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,help:medical_obgyn.field_medical_pregnancy__gravida
+msgid "Number of pregnancies including this one"
+msgstr "عدد مرات الحمل بما فيها الحالي"
+
+#. module: medical_obgyn
+#: model:ir.actions.act_window,name:medical_obgyn.action_obgyn_visit
+msgid "OB/GYN Schedule"
+msgstr "جدول النساء والتوليد"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_visit__obstetric_alert
+msgid "Obstetric Alert"
+msgstr "تنبيه توليدي"
+
+#. module: medical_obgyn
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_form
+msgid "Obstetric History"
+msgstr "التاريخ التوليدي"
+
+#. module: medical_obgyn
+#: model:ir.model,name:medical_obgyn.model_medical_obstetric_us
+#: model:product.template,name:medical_obgyn.product_ob_ultrasound_product_template
+msgid "Obstetric Ultrasound"
+msgstr "سونار الحمل"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__doctor_id
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_search
+msgid "Obstetrician"
+msgstr "طبيب النساء والتوليد"
+
+#. module: medical_obgyn
+#: model:medical.specialty,name:medical_obgyn.spec_obstetrics
+msgid "Obstetrics"
+msgstr "التوليد"
+
+#. module: medical_obgyn
+#: model:ir.ui.menu,name:medical_obgyn.menu_obgyn
+#: model:medical.department,name:medical_obgyn.dept_obgyn
+msgid "Obstetrics & Gynecology"
+msgstr "النساء والتوليد"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_pregnancy__state__active
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_search
+msgid "Ongoing"
+msgstr "مستمر"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__outcome_note
+msgid "Outcome Note"
+msgstr "ملاحظة النتيجة"
+
+#. module: medical_obgyn
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_form
+msgid "Outcome notes..."
+msgstr "ملاحظات النتيجة..."
+
+#. module: medical_obgyn
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_form
+msgid "P"
+msgstr "P"
+
+#. module: medical_obgyn
+#: model:product.template,name:medical_obgyn.product_pap_smear_product_template
+msgid "Pap Smear"
+msgstr "مسحة عنق الرحم"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__para
+msgid "Para"
+msgstr "عدد الولادات"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_antenatal_contact__patient_id
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_obstetric_us__patient_id
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__patient_id
+msgid "Patient"
+msgstr "المريض"
+
+#. module: medical_obgyn
+#: model:product.template,name:medical_obgyn.product_pelvic_us_product_template
+msgid "Pelvic / Transvaginal Ultrasound"
+msgstr "سونار الحوض / مهبلي"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_obstetric_us__placenta
+msgid "Placenta"
+msgstr "المشيمة"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+#: model:medical.pregnancy.risk,name:medical_obgyn.risk_11
+msgid "Placenta praevia"
+msgstr "المشيمة المنزاحة"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "Plan for post-term pregnancy"
+msgstr "خطة الحمل بعد موعده"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_antenatal_contact__state__planned
+msgid "Planned"
+msgstr "مخطط"
+
+#. module: medical_obgyn
+#: model:medical.diagnosis,name:medical_obgyn.icd_e28_2
+msgid "Polycystic ovarian syndrome"
+msgstr "متلازمة تكيس المبايض"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_obstetric_us__placenta__posterior
+msgid "Posterior"
+msgstr "خلفية"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_obstetric_us__placenta__previa
+msgid "Praevia"
+msgstr "منزاحة"
+
+#. module: medical_obgyn
+#: model:medical.diagnosis,name:medical_obgyn.icd_o14_9
+msgid "Pre-eclampsia, unspecified"
+msgstr "تسمم الحمل، غير محدد"
+
+#. module: medical_obgyn
+#: model:medical.pregnancy.risk,name:medical_obgyn.risk_02
+msgid "Pre-existing diabetes"
+msgstr "سكري سابق للحمل"
+
+#. module: medical_obgyn
+#: model:ir.actions.act_window,name:medical_obgyn.action_medical_pregnancy
+#: model:ir.model.fields,field_description:medical_obgyn.field_res_partner__pregnancy_ids
+#: model:ir.model.fields,field_description:medical_obgyn.field_res_users__pregnancy_ids
+#: model:ir.ui.menu,name:medical_obgyn.menu_pregnancy
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.res_partner_form_obgyn
+msgid "Pregnancies"
+msgstr "مرات الحمل"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+#: model:ir.model,name:medical_obgyn.model_medical_pregnancy
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_antenatal_contact__pregnancy_id
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_obstetric_us__pregnancy_id
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_visit__pregnancy_id
+msgid "Pregnancy"
+msgstr "الحمل"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_pregnancy__state__loss
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_form
+msgid "Pregnancy Loss"
+msgstr "فقدان الحمل"
+
+#. module: medical_obgyn
+#: model:ir.model,name:medical_obgyn.model_medical_pregnancy_risk
+msgid "Pregnancy Risk Factor"
+msgstr "عامل خطورة الحمل"
+
+#. module: medical_obgyn
+#: model:ir.actions.act_window,name:medical_obgyn.action_medical_pregnancy_risk
+#: model:ir.ui.menu,name:medical_obgyn.menu_pregnancy_risk
+msgid "Pregnancy Risk Factors"
+msgstr "عوامل خطورة الحمل"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_obstetric_us__presentation
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_visit__presentation
+msgid "Presentation"
+msgstr "المجيء"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "Presentation, birth plan"
+msgstr "وضع الجنين، خطة الولادة"
+
+#. module: medical_obgyn
+#: model:medical.pregnancy.risk,name:medical_obgyn.risk_00
+msgid "Previous caesarean section"
+msgstr "ولادة قيصرية سابقة"
+
+#. module: medical_obgyn
+#: model:medical.pregnancy.risk,name:medical_obgyn.risk_08
+msgid "Previous preterm birth"
+msgstr "ولادة مبكرة سابقة"
+
+#. module: medical_obgyn
+#: model:medical.pregnancy.risk,name:medical_obgyn.risk_09
+msgid "Previous stillbirth"
+msgstr "ولادة جنين ميت سابقة"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "Proteinuria: rule out pre-eclampsia"
+msgstr "بروتين في البول: استبعد تسمم الحمل"
+
+#. module: medical_obgyn
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_form
+msgid "Record a pregnancy loss?"
+msgstr "تسجيل فقدان الحمل؟"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_visit__fetal_movements__reduced
+msgid "Reduced"
+msgstr "منخفض"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "Reduced fetal movements: assess fetal well-being today"
+msgstr "قلة حركة الجنين: قيّم حالة الجنين اليوم"
+
+#. module: medical_obgyn
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_form
+msgid "Register Baby"
+msgstr "تسجيل المولود"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: medical_obgyn
+#: model:medical.pregnancy.risk,name:medical_obgyn.risk_07
+msgid "Rhesus negative"
+msgstr "عامل ريسس سالب"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__risk_factor_ids
+msgid "Risk Factors"
+msgstr "عوامل الخطورة"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__risk_level
+msgid "Risk Level"
+msgstr "مستوى الخطر"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "Risk factors: %s"
+msgstr "عوامل الخطورة: %s"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية"
+
+#. module: medical_obgyn
+#: model:ir.ui.menu,name:medical_obgyn.menu_obgyn_visit
+msgid "Schedule"
+msgstr "الجدول"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_pregnancy__trimester__2
+msgid "Second"
+msgstr "الثاني"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy_risk__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: medical_obgyn
+#: model:medical.diagnosis,name:medical_obgyn.icd_o82
+msgid "Single delivery by caesarean section"
+msgstr "ولادة مفردة بالقيصرية"
+
+#. module: medical_obgyn
+#: model:medical.diagnosis,name:medical_obgyn.icd_o80
+msgid "Single spontaneous delivery"
+msgstr "ولادة مفردة تلقائية"
+
+#. module: medical_obgyn
+#: model:medical.pregnancy.risk,name:medical_obgyn.risk_14
+msgid "Smoking"
+msgstr "التدخين"
+
+#. module: medical_obgyn
+#: model:medical.diagnosis,name:medical_obgyn.icd_o03_9
+msgid "Spontaneous abortion, complete or unspecified, without complication"
+msgstr "إجهاض تلقائي، كامل أو غير محدد، بدون مضاعفات"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_antenatal_contact__state
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,help:medical_obgyn.field_medical_pregnancy__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخرة: تاريخ الاستحقاق قد فات\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخططة: أنشطة مستقبلية."
+
+#. module: medical_obgyn
+#: model:medical.diagnosis,name:medical_obgyn.icd_z35_9
+msgid "Supervision of high-risk pregnancy, unspecified"
+msgstr "متابعة حمل عالي الخطورة، غير محدد"
+
+#. module: medical_obgyn
+#: model:medical.diagnosis,name:medical_obgyn.icd_z34_9
+msgid "Supervision of normal pregnancy, unspecified"
+msgstr "متابعة حمل طبيعي، غير محدد"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "The last menstrual period cannot be in the future."
+msgstr "لا يمكن أن يكون تاريخ آخر دورة في المستقبل."
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_pregnancy__trimester__3
+msgid "Third"
+msgstr "الثالث"
+
+#. module: medical_obgyn
+#: model:medical.pregnancy.risk,name:medical_obgyn.risk_13
+msgid "Thyroid disease"
+msgstr "مرض الغدة الدرقية"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_visit__urine_glucose__trace
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_visit__urine_protein__trace
+msgid "Trace"
+msgstr "أثر"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_pregnancy__state__closed
+msgid "Transferred / Closed"
+msgstr "محوّلة / مغلقة"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_obstetric_us__presentation__transverse
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_visit__presentation__transverse
+msgid "Transverse"
+msgstr "مستعرض"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__trimester
+msgid "Trimester"
+msgstr "الثلث"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,help:medical_obgyn.field_medical_pregnancy__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط المستثنى في السجل."
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__ultrasound_ids
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_form
+msgid "Ultrasounds"
+msgstr "السونار"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_visit__urine_glucose
+msgid "Urine Glucose"
+msgstr "سكر البول"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_visit__urine_protein
+msgid "Urine Protein"
+msgstr "بروتين البول"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_obstetric_us__use_for_dating
+msgid "Use to Date the Pregnancy"
+msgstr "استخدامه لتأريخ الحمل"
+
+#. module: medical_obgyn
+#: model:ir.model.fields.selection,name:medical_obgyn.selection__medical_obstetric_us__presentation__variable
+msgid "Variable"
+msgstr "متغير"
+
+#. module: medical_obgyn
+#: model:ir.model,name:medical_obgyn.model_medical_visit
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_antenatal_contact__visit_id
+msgid "Visit"
+msgstr "الزيارة"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_pregnancy__visit_ids
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_form
+msgid "Visits"
+msgstr "الزيارات"
+
+#. module: medical_obgyn
+#: model:ir.model.fields,field_description:medical_obgyn.field_medical_antenatal_contact__week
+msgid "Week"
+msgstr "الأسبوع"
+
+#. module: medical_obgyn
+#. odoo-python
+#: code:addons/medical_obgyn/models/medical_pregnancy.py:0
+msgid "Week %(week)s (%(date)s)"
+msgstr "الأسبوع %(week)s (%(date)s)"
+
+#. module: medical_obgyn
+#: model:medical.observation.type,unit:medical_obgyn.obs_fhr
+msgid "bpm"
+msgstr "نبضة/دقيقة"
+
+#. module: medical_obgyn
+#: model:medical.observation.type,unit:medical_obgyn.obs_fundal_height
+msgid "cm"
+msgstr "سم"
+
+#. module: medical_obgyn
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_form
+msgid "d"
+msgstr "ي"
+
+#. module: medical_obgyn
+#: model_terms:ir.ui.view,arch_db:medical_obgyn.medical_pregnancy_view_form
+msgid "w +"
+msgstr "أ +"
