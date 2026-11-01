@@ -1,0 +1,799 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* medical_ophthalmology
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-11 17:50+0000\n"
+"PO-Revision-Date: 2026-10-11 17:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: medical_ophthalmology
+#: model:ir.actions.report,print_report_name:medical_ophthalmology.action_report_eye_prescription
+msgid "'Glasses - %s' % object.name.replace('/', '-')"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.report_eye_prescription_document
+msgid "<strong>Lenses: </strong>"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.report_eye_prescription_document
+msgid "<strong>PD: </strong>"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.report_eye_prescription_document
+msgid "<strong>Type: </strong>"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.medical_eye_prescription_view_form
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.medical_visit_form_eye
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.report_eye_prescription_document
+msgid "Add"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:medical.diagnosis,name:medical_ophthalmology.icd_h53_0
+msgid "Amblyopia ex anopsia"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__ant_os
+msgid "Anterior Segment Left"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__ant_od
+msgid "Anterior Segment Right"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.medical_visit_form_eye
+msgid "Anterior segment"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,help:medical_ophthalmology.field_medical_eye_prescription__lens_notes
+msgid "Anti-reflective, photochromic, high index..."
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:product.template,name:medical_ophthalmology.medicine_artificial_tears_product_template
+msgid "Artificial Tears"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:medical.diagnosis,name:medical_ophthalmology.icd_h52_2
+msgid "Astigmatism"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_surgery__axial_length
+msgid "Axial Length (mm)"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.medical_eye_prescription_view_form
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.medical_visit_form_eye
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.report_eye_prescription_document
+msgid "Axis"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields.selection,name:medical_ophthalmology.selection__medical_eye_prescription__rx_type__bifocal
+msgid "Bifocal"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.medical_surgery_form_eye
+msgid "Biometry & IOL"
+msgstr ""
+
+#. module: medical_ophthalmology
+#. odoo-python
+#: code:addons/medical_ophthalmology/models/medical_eye.py:0
+msgid "Both eyes (OU)"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:medical.specialty,name:medical_ophthalmology.spec_eye_cataract
+msgid "Cataract & Anterior Segment"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:product.template,name:medical_ophthalmology.product_chalazion_product_template
+msgid "Chalazion Incision"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_eye_prescription__company_id
+msgid "Company"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:medical.diagnosis,name:medical_ophthalmology.icd_h10_9
+msgid "Conjunctivitis, unspecified"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields.selection,name:medical_ophthalmology.selection__medical_eye_prescription__rx_type__contact
+msgid "Contact Lenses"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields.selection,name:medical_ophthalmology.selection__medical_visit__va_od_cc__cf
+#: model:ir.model.fields.selection,name:medical_ophthalmology.selection__medical_visit__va_od_sc__cf
+#: model:ir.model.fields.selection,name:medical_ophthalmology.selection__medical_visit__va_os_cc__cf
+#: model:ir.model.fields.selection,name:medical_ophthalmology.selection__medical_visit__va_os_sc__cf
+msgid "Counting fingers"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_eye_prescription__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_eye_prescription__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.medical_visit_form_eye
+msgid "Cup / disc ratio"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__cdr_os
+msgid "Cup/Disc Left"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:medical.observation.type,name:medical_ophthalmology.obs_cdr
+msgid "Cup/Disc Ratio"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__cdr_od
+msgid "Cup/Disc Right"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.medical_eye_prescription_view_form
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.medical_visit_form_eye
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.report_eye_prescription_document
+msgid "Cylinder"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_eye_prescription__date
+msgid "Date"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:medical.diagnosis,name:medical_ophthalmology.icd_h35_3
+msgid "Degeneration of macula and posterior pole"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:medical.diagnosis,name:medical_ophthalmology.icd_h36_0
+msgid "Diabetic retinopathy"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_eye_prescription__display_name
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_surgery__display_name
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_treatment_line__display_name
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields.selection,name:medical_ophthalmology.selection__medical_eye_prescription__rx_type__distance
+msgid "Distance"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_eye_prescription__doctor_id
+msgid "Doctor"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.report_eye_prescription_document
+msgid "Doctor's signature"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.medical_visit_form_eye
+msgid "Eye Exam"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.actions.act_window,name:medical_ophthalmology.action_eye_iop_tracking
+#: model:ir.ui.menu,name:medical_ophthalmology.menu_eye_iop
+msgid "Eye Pressure & Vision"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.medical_visit_form_eye
+msgid "Fundus"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__fundus_os
+msgid "Fundus Left"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:product.template,name:medical_ophthalmology.product_fundus_photo_product_template
+msgid "Fundus Photography"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__fundus_od
+msgid "Fundus Right"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:medical.specialty,name:medical_ophthalmology.spec_eye_general
+msgid "General Ophthalmology"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.actions.report,name:medical_ophthalmology.action_report_eye_prescription
+#: model:ir.model,name:medical_ophthalmology.model_medical_eye_prescription
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.medical_visit_form_eye
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.report_eye_prescription_document
+msgid "Glasses Prescription"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.actions.act_window,name:medical_ophthalmology.action_medical_eye_prescription
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__eye_prescription_ids
+#: model:ir.ui.menu,name:medical_ophthalmology.menu_eye_prescription
+msgid "Glasses Prescriptions"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:medical.specialty,name:medical_ophthalmology.spec_eye_glaucoma
+msgid "Glaucoma"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields.selection,name:medical_ophthalmology.selection__medical_visit__va_od_cc__hm
+#: model:ir.model.fields.selection,name:medical_ophthalmology.selection__medical_visit__va_od_sc__hm
+#: model:ir.model.fields.selection,name:medical_ophthalmology.selection__medical_visit__va_os_cc__hm
+#: model:ir.model.fields.selection,name:medical_ophthalmology.selection__medical_visit__va_os_sc__hm
+msgid "Hand movements"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:medical.diagnosis,name:medical_ophthalmology.icd_h00_0
+msgid "Hordeolum and other deep inflammation of eyelid"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:medical.diagnosis,name:medical_ophthalmology.icd_h52_0
+msgid "Hypermetropia"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:product.template,consent_text:medical_ophthalmology.product_ivi_product_template
+msgid ""
+"I agree to an injection into the eye. Possible risks were explained: redness"
+" and discomfort, floaters, raised eye pressure, and rarely infection inside "
+"the eye (endophthalmitis) or retinal detachment, which need urgent care. I "
+"will come back at once for pain or reduced vision."
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:product.template,consent_text:medical_ophthalmology.product_phaco_product_template
+msgid ""
+"I agree to cataract surgery with lens implant on the eye shown on this form."
+" The surgeon explained the expected result, the need for glasses for some "
+"tasks after surgery, and the possible risks: inflammation, raised eye "
+"pressure, posterior capsule opacification, infection, retinal detachment "
+"and, rarely, loss of vision."
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:product.template,consent_text:medical_ophthalmology.product_pterygium_product_template
+msgid ""
+"I agree to pterygium excision on the eye shown on this form. The surgeon "
+"explained the expected result, the need for glasses for some tasks after "
+"surgery, and the possible risks: inflammation, raised eye pressure, "
+"posterior capsule opacification, infection, retinal detachment and, rarely, "
+"loss of vision."
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:product.template,consent_text:medical_ophthalmology.product_prp_product_template
+#: model_terms:product.template,consent_text:medical_ophthalmology.product_slt_product_template
+#: model_terms:product.template,consent_text:medical_ophthalmology.product_yag_product_template
+msgid ""
+"I agree to the laser treatment of the eye shown on this form. The doctor "
+"explained the purpose and the possible effects: temporary blurred vision, "
+"glare, a short rise in eye pressure and, rarely, inflammation or worsened "
+"vision."
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_eye_prescription__id
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_surgery__id
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_treatment_line__id
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__id
+msgid "ID"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_surgery__iol_model
+msgid "IOL Model"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_surgery__iol_power
+msgid "IOL Power (D)"
+msgstr ""
+
+#. module: medical_ophthalmology
+#. odoo-python
+#: code:addons/medical_ophthalmology/models/medical_eye.py:0
+msgid "IOP"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__iop_os
+msgid "IOP Left (mmHg)"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__iop_od
+msgid "IOP Right (mmHg)"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:medical.observation.type,name:medical_ophthalmology.obs_iop
+msgid "Intraocular Pressure"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.medical_visit_form_eye
+msgid "Intraocular pressure (mmHg)"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:product.template,name:medical_ophthalmology.product_ivi_product_template
+msgid "Intravitreal Anti-VEGF Injection"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_surgery__is_eye
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__is_eye
+msgid "Is Eye"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_surgery__k1
+msgid "K1 (D)"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_surgery__k2
+msgid "K2 (D)"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_eye_prescription__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_eye_prescription__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:product.template,name:medical_ophthalmology.medicine_latanoprost_product_template
+msgid "Latanoprost 0.005% Eye Drops"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.medical_eye_prescription_view_form
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.report_eye_prescription_document
+msgid "Left (OS)"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_eye_prescription__os_add
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__os_add
+msgid "Left Add"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_eye_prescription__os_axis
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__os_axis
+msgid "Left Axis"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_eye_prescription__os_cyl
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__os_cyl
+msgid "Left Cylinder"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_eye_prescription__os_sph
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__os_sph
+msgid "Left Sphere"
+msgstr ""
+
+#. module: medical_ophthalmology
+#. odoo-python
+#: code:addons/medical_ophthalmology/models/medical_eye.py:0
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.medical_visit_form_eye
+msgid "Left eye (OS)"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_eye_prescription__lens_notes
+msgid "Lens Recommendations"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.medical_eye_prescription_view_form
+msgid "Lens recommendations..."
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields.selection,name:medical_ophthalmology.selection__medical_visit__va_od_cc__pl
+#: model:ir.model.fields.selection,name:medical_ophthalmology.selection__medical_visit__va_od_sc__pl
+#: model:ir.model.fields.selection,name:medical_ophthalmology.selection__medical_visit__va_os_cc__pl
+#: model:ir.model.fields.selection,name:medical_ophthalmology.selection__medical_visit__va_os_sc__pl
+msgid "Light perception"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:product.template,name:medical_ophthalmology.medicine_moxifloxacin_eye_product_template
+msgid "Moxifloxacin 0.5% Eye Drops"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:medical.diagnosis,name:medical_ophthalmology.icd_h52_1
+msgid "Myopia"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_eye_prescription__name
+msgid "Name"
+msgstr ""
+
+#. module: medical_ophthalmology
+#. odoo-python
+#: code:addons/medical_ophthalmology/models/medical_eye.py:0
+msgid "New"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields.selection,name:medical_ophthalmology.selection__medical_visit__va_od_cc__npl
+#: model:ir.model.fields.selection,name:medical_ophthalmology.selection__medical_visit__va_od_sc__npl
+#: model:ir.model.fields.selection,name:medical_ophthalmology.selection__medical_visit__va_os_cc__npl
+#: model:ir.model.fields.selection,name:medical_ophthalmology.selection__medical_visit__va_os_sc__npl
+msgid "No light perception"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:product.template,name:medical_ophthalmology.product_oct_product_template
+msgid "OCT (Optical Coherence Tomography)"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.ui.menu,name:medical_ophthalmology.menu_ophthalmology
+#: model:medical.department,name:medical_ophthalmology.dept_ophthalmology
+msgid "Ophthalmology"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:product.template,name:medical_ophthalmology.product_eye_consultation_product_template
+msgid "Ophthalmology Consultation"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.actions.act_window,name:medical_ophthalmology.action_eye_visit
+msgid "Ophthalmology Schedule"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:product.template,name:medical_ophthalmology.product_biometry_product_template
+msgid "Optical Biometry (IOL calculation)"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:medical.specialty,name:medical_ophthalmology.spec_eye_optometry
+msgid "Optometry & Refraction"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:medical.diagnosis,name:medical_ophthalmology.icd_h04_1
+msgid "Other disorders of lacrimal gland (dry eye)"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:product.template,name:medical_ophthalmology.product_prp_product_template
+msgid "Panretinal Laser Photocoagulation"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_eye_prescription__patient_id
+msgid "Patient"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:product.template,name:medical_ophthalmology.product_phaco_product_template
+msgid "Phacoemulsification with IOL"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:medical.diagnosis,name:medical_ophthalmology.icd_h52_4
+msgid "Presbyopia"
+msgstr ""
+
+#. module: medical_ophthalmology
+#. odoo-python
+#: code:addons/medical_ophthalmology/models/medical_eye.py:0
+msgid "Previous eye measurements"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:medical.diagnosis,name:medical_ophthalmology.icd_h40_1
+msgid "Primary open-angle glaucoma"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.medical_eye_prescription_view_form
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.medical_visit_form_eye
+msgid "Print"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields.selection,name:medical_ophthalmology.selection__medical_eye_prescription__rx_type__progressive
+msgid "Progressive"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:medical.diagnosis,name:medical_ophthalmology.icd_h11_0
+msgid "Pterygium"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:product.template,name:medical_ophthalmology.product_pterygium_product_template
+msgid "Pterygium Excision"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_eye_prescription__pd
+msgid "Pupillary Distance (mm)"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__eye_pupils
+msgid "Pupils"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__eye_rapd
+msgid "RAPD"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields.selection,name:medical_ophthalmology.selection__medical_eye_prescription__rx_type__near
+msgid "Reading"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:product.template,name:medical_ophthalmology.product_refraction_product_template
+msgid "Refraction & Glasses Prescription"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:medical.specialty,name:medical_ophthalmology.spec_eye_retina
+msgid "Retina"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.medical_eye_prescription_view_form
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.report_eye_prescription_document
+msgid "Right (OD)"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_eye_prescription__od_add
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__od_add
+msgid "Right Add"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_eye_prescription__od_axis
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__od_axis
+msgid "Right Axis"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_eye_prescription__od_cyl
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__od_cyl
+msgid "Right Cylinder"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_eye_prescription__od_sph
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__od_sph
+msgid "Right Sphere"
+msgstr ""
+
+#. module: medical_ophthalmology
+#. odoo-python
+#: code:addons/medical_ophthalmology/models/medical_eye.py:0
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.medical_visit_form_eye
+msgid "Right eye (OD)"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.ui.menu,name:medical_ophthalmology.menu_eye_visit
+msgid "Schedule"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:product.template,name:medical_ophthalmology.product_slt_product_template
+msgid "Selective Laser Trabeculoplasty (SLT)"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:medical.diagnosis,name:medical_ophthalmology.icd_h25_9
+msgid "Senile cataract, unspecified"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.medical_eye_prescription_view_form
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.medical_visit_form_eye
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.report_eye_prescription_document
+msgid "Sphere"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:medical.diagnosis,name:medical_ophthalmology.icd_h50_9
+msgid "Strabismus, unspecified"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model,name:medical_ophthalmology.model_medical_surgery
+msgid "Surgery"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_surgery__target_refraction
+msgid "Target Refraction (D)"
+msgstr ""
+
+#. module: medical_ophthalmology
+#. odoo-python
+#: code:addons/medical_ophthalmology/models/medical_eye.py:0
+msgid "The cup/disc ratio is between 0 and 1."
+msgstr ""
+
+#. module: medical_ophthalmology
+#. odoo-python
+#: code:addons/medical_ophthalmology/models/medical_eye.py:0
+msgid "The cylinder axis goes from 0 to 180 degrees."
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model,name:medical_ophthalmology.model_medical_treatment_line
+msgid "Treatment Line"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_eye_prescription__rx_type
+msgid "Type"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__va_os_cc
+msgid "VA Left (best corrected)"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__va_os_sc
+msgid "VA Left (unaided)"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__va_od_cc
+msgid "VA Right (best corrected)"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_visit__va_od_sc
+msgid "VA Right (unaided)"
+msgstr ""
+
+#. module: medical_ophthalmology
+#. odoo-python
+#: code:addons/medical_ophthalmology/models/medical_eye.py:0
+msgid "VA logMAR"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_eye_prescription__valid_months
+msgid "Valid Months"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.report_eye_prescription_document
+msgid "Valid for"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:ir.model,name:medical_ophthalmology.model_medical_visit
+#: model:ir.model.fields,field_description:medical_ophthalmology.field_medical_eye_prescription__visit_id
+msgid "Visit"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:medical.observation.type,name:medical_ophthalmology.obs_va_logmar
+msgid "Visual Acuity (logMAR)"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:product.template,name:medical_ophthalmology.product_visual_field_product_template
+msgid "Visual Field Test"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.medical_visit_form_eye
+msgid "Visual acuity, best corrected"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.medical_visit_form_eye
+msgid "Visual acuity, unaided"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:product.template,name:medical_ophthalmology.product_yag_product_template
+msgid "YAG Laser Capsulotomy"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:medical.observation.type,unit:medical_ophthalmology.obs_va_logmar
+msgid "logMAR"
+msgstr ""
+
+#. module: medical_ophthalmology
+#. odoo-python
+#: code:addons/medical_ophthalmology/models/medical_eye.py:0
+msgid "medical_ophthalmology.obs_va_logmar"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.report_eye_prescription_document
+msgid "mm"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model:medical.observation.type,unit:medical_ophthalmology.obs_iop
+msgid "mmHg"
+msgstr ""
+
+#. module: medical_ophthalmology
+#: model_terms:ir.ui.view,arch_db:medical_ophthalmology.report_eye_prescription_document
+msgid "months."
+msgstr ""

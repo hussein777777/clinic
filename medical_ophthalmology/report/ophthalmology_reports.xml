@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_eye_prescription_document">
+        <t t-call="web.external_layout">
+            <t t-set="doc" t-value="doc.with_context(lang=doc.patient_id.lang)"/>
+            <div class="page">
+                <h3>Glasses Prescription <small class="text-muted" t-field="doc.name"/></h3>
+                <t t-call="medical_core.report_patient_header">
+                    <t t-set="patient" t-value="doc.patient_id"/>
+                    <t t-set="doctor" t-value="doc.doctor_id"/>
+                    <t t-set="date" t-value="doc.date"/>
+                </t>
+                <p><strong>Type: </strong><span t-field="doc.rx_type"/></p>
+                <table class="table table-bordered text-center">
+                    <thead><tr><th/><th>Sphere</th><th>Cylinder</th><th>Axis</th><th>Add</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <th>Right (OD)</th>
+                            <td t-out="doc._fmt(doc.od_sph)"/><td t-out="doc._fmt(doc.od_cyl)"/>
+                            <td><t t-if="doc.od_cyl" t-out="doc.od_axis"/></td><td t-out="doc.od_add and doc._fmt(doc.od_add) or ''"/>
+                        </tr>
+                        <tr>
+                            <th>Left (OS)</th>
+                            <td t-out="doc._fmt(doc.os_sph)"/><td t-out="doc._fmt(doc.os_cyl)"/>
+                            <td><t t-if="doc.os_cyl" t-out="doc.os_axis"/></td><td t-out="doc.os_add and doc._fmt(doc.os_add) or ''"/>
+                        </tr>
+                    </tbody>
+                </table>
+                <p t-if="doc.pd"><strong>PD: </strong><span t-out="'%g' % doc.pd"/> mm</p>
+                <p t-if="doc.lens_notes"><strong>Lenses: </strong><span t-field="doc.lens_notes"/></p>
+                <p class="text-muted">Valid for <span t-field="doc.valid_months"/> months.</p>
+                <div class="row mt-5"><div class="col-6 offset-6 text-center"><div class="border-top pt-2">Doctor's signature</div></div></div>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_eye_prescription">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="medical_ophthalmology.report_eye_prescription_document" t-lang="doc.patient_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_eye_prescription" model="ir.actions.report">
+        <field name="name">Glasses Prescription</field>
+        <field name="model">medical.eye.prescription</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">medical_ophthalmology.report_eye_prescription</field>
+        <field name="report_file">medical_ophthalmology.report_eye_prescription</field>
+        <field name="print_report_name">'Glasses - %s' % object.name.replace('/', '-')</field>
+        <field name="binding_model_id" ref="model_medical_eye_prescription"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

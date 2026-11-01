@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_eye_prescription_user,medical.eye.prescription user,model_medical_eye_prescription,medical_core.group_medical_user,1,0,0,0
+access_eye_prescription_nurse,medical.eye.prescription nurse,model_medical_eye_prescription,medical_core.group_medical_nurse,1,1,1,0
+access_eye_prescription_manager,medical.eye.prescription manager,model_medical_eye_prescription,medical_core.group_medical_manager,1,1,1,1

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="medical_visit_form_eye" model="ir.ui.view">
+        <field name="name">medical.visit.form.eye</field>
+        <field name="model">medical.visit</field>
+        <field name="inherit_id" ref="medical_core.medical_visit_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_eye_prescription" type="object" string="Glasses Prescription" icon="fa-eye"
+                        invisible="not is_eye or state in ('draft', 'confirmed', 'cancelled', 'no_show')"
+                        groups="medical_core.group_medical_nurse"/>
+            </xpath>
+            <field name="visit_type" position="after">
+                <field name="is_eye" invisible="1"/>
+            </field>
+            <xpath expr="//page[@name='vitals']" position="after">
+                <page string="Eye Exam" name="eye_exam" invisible="not is_eye" groups="medical_core.group_medical_nurse">
+                    <table class="table table-sm o_eye_table">
+                        <thead>
+                            <tr><th/><th class="text-center">Right eye (OD)</th><th class="text-center">Left eye (OS)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><th>Visual acuity, unaided</th><td><field name="va_od_sc" nolabel="1"/></td><td><field name="va_os_sc" nolabel="1"/></td></tr>
+                            <tr><th>Visual acuity, best corrected</th><td><field name="va_od_cc" nolabel="1"/></td><td><field name="va_os_cc" nolabel="1"/></td></tr>
+                            <tr><th>Sphere</th><td><field name="od_sph" nolabel="1"/></td><td><field name="os_sph" nolabel="1"/></td></tr>
+                            <tr><th>Cylinder</th><td><field name="od_cyl" nolabel="1"/></td><td><field name="os_cyl" nolabel="1"/></td></tr>
+                            <tr><th>Axis</th><td><field name="od_axis" nolabel="1"/></td><td><field name="os_axis" nolabel="1"/></td></tr>
+                            <tr><th>Add</th><td><field name="od_add" nolabel="1"/></td><td><field name="os_add" nolabel="1"/></td></tr>
+                            <tr><th>Intraocular pressure (mmHg)</th><td><field name="iop_od" nolabel="1"/></td><td><field name="iop_os" nolabel="1"/></td></tr>
+                            <tr groups="medical_core.group_medical_doctor"><th>Anterior segment</th><td><field name="ant_od" nolabel="1"/></td><td><field name="ant_os" nolabel="1"/></td></tr>
+                            <tr groups="medical_core.group_medical_doctor"><th>Fundus</th><td><field name="fundus_od" nolabel="1"/></td><td><field name="fundus_os" nolabel="1"/></td></tr>
+                            <tr groups="medical_core.group_medical_doctor"><th>Cup / disc ratio</th><td><field name="cdr_od" nolabel="1"/></td><td><field name="cdr_os" nolabel="1"/></td></tr>
+                        </tbody>
+                    </table>
+                    <group groups="medical_core.group_medical_doctor">
+                        <group>
+                            <field name="eye_pupils"/>
+                            <field name="eye_rapd"/>
+                        </group>
+                    </group>
+                    <field name="eye_prescription_ids" readonly="1" invisible="not eye_prescription_ids">
+                        <list>
+                            <field name="name"/>
+                            <field name="rx_type"/>
+                            <field name="date"/>
+                            <button name="action_print" type="object" icon="fa-print" title="Print"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_surgery_form_eye" model="ir.ui.view">
+        <field name="name">medical.surgery.form.eye</field>
+        <field name="model">medical.surgery</field>
+        <field name="inherit_id" ref="medical_core.medical_surgery_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='checklist']" position="before">
+                <page string="Biometry &amp; IOL" name="iol" invisible="not is_eye">
+                    <field name="is_eye" invisible="1"/>
+                    <group>
+                        <group>
+                            <field name="axial_length"/>
+                            <field name="k1"/>
+                            <field name="k2"/>
+                        </group>
+                        <group>
+                            <field name="iol_model"/>
+                            <field name="iol_power"/>
+                            <field name="target_refraction"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_eye_prescription_view_form" model="ir.ui.view">
+        <field name="name">medical.eye.prescription.form</field>
+        <field name="model">medical.eye.prescription</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_print" type="object" string="Print" class="btn-primary" icon="fa-print"/>
+                </header>
+                <sheet>
+                    <div class="oe_title"><h1><field name="name"/></h1></div>
+                    <group>
+                        <group>
+                            <field name="patient_id"/>
+                            <field name="doctor_id"/>
+                            <field name="visit_id"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <field name="rx_type"/>
+                            <field name="pd"/>
+                            <field name="valid_months"/>
+                        </group>
+                    </group>
+                    <table class="table table-sm">
+                        <thead><tr><th/><th>Sphere</th><th>Cylinder</th><th>Axis</th><th>Add</th></tr></thead>
+                        <tbody>
+                            <tr><th>Right (OD)</th><td><field name="od_sph" nolabel="1"/></td><td><field name="od_cyl" nolabel="1"/></td>
+                                <td><field name="od_axis" nolabel="1"/></td><td><field name="od_add" nolabel="1"/></td></tr>
+                            <tr><th>Left (OS)</th><td><field name="os_sph" nolabel="1"/></td><td><field name="os_cyl" nolabel="1"/></td>
+                                <td><field name="os_axis" nolabel="1"/></td><td><field name="os_add" nolabel="1"/></td></tr>
+                        </tbody>
+                    </table>
+                    <field name="lens_notes" placeholder="Lens recommendations..."/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_eye_prescription_view_list" model="ir.ui.view">
+        <field name="name">medical.eye.prescription.list</field>
+        <field name="model">medical.eye.prescription</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="patient_id"/>
+                <field name="rx_type"/>
+                <field name="doctor_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_medical_eye_prescription" model="ir.actions.act_window">
+        <field name="name">Glasses Prescriptions</field>
+        <field name="res_model">medical.eye.prescription</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_eye_visit" model="ir.actions.act_window">
+        <field name="name">Ophthalmology Schedule</field>
+        <field name="res_model">medical.visit</field>
+        <field name="view_mode">calendar,list,kanban,form</field>
+        <field name="domain" eval="[('department_id', '=', ref('dept_ophthalmology'))]"/>
+        <field name="context" eval="{'default_department_id': ref('dept_ophthalmology')}"/>
+    </record>
+
+    <record id="action_eye_iop_tracking" model="ir.actions.act_window">
+        <field name="name">Eye Pressure &amp; Vision</field>
+        <field name="res_model">medical.observation</field>
+        <field name="view_mode">list,graph</field>
+        <field name="domain">[('type_id.code', 'in', ('iop', 'va_logmar', 'cdr'))]</field>
+        <field name="context">{'search_default_abnormal': 1}</field>
+    </record>
+
+    <menuitem id="menu_ophthalmology" name="Ophthalmology" parent="medical_core.menu_medical_clinics" sequence="50"/>
+    <menuitem id="menu_eye_visit" name="Schedule" parent="menu_ophthalmology" action="action_eye_visit" sequence="5"/>
+    <menuitem id="menu_eye_prescription" name="Glasses Prescriptions" parent="menu_ophthalmology" action="action_medical_eye_prescription" sequence="10"/>
+    <menuitem id="menu_eye_iop" name="Eye Pressure &amp; Vision" parent="menu_ophthalmology" action="action_eye_iop_tracking"
+              sequence="20" groups="medical_core.group_medical_nurse"/>
+</odoo>

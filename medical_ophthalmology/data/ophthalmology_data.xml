@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="dept_ophthalmology" model="medical.department">
+            <field name="name">Ophthalmology</field>
+            <field name="code">OPH</field>
+            <field name="sequence">45</field>
+            <field name="color">7</field>
+        </record>
+        <record id="spec_eye_general" model="medical.specialty">
+            <field name="name">General Ophthalmology</field>
+            <field name="code">OPH-GEN</field>
+            <field name="department_id" ref="dept_ophthalmology"/>
+            <field name="sequence">1</field>
+        </record>
+        <record id="spec_eye_cataract" model="medical.specialty">
+            <field name="name">Cataract &amp; Anterior Segment</field>
+            <field name="code">OPH-CAT</field>
+            <field name="department_id" ref="dept_ophthalmology"/>
+            <field name="sequence">2</field>
+        </record>
+        <record id="spec_eye_retina" model="medical.specialty">
+            <field name="name">Retina</field>
+            <field name="code">OPH-RET</field>
+            <field name="department_id" ref="dept_ophthalmology"/>
+            <field name="sequence">3</field>
+        </record>
+        <record id="spec_eye_glaucoma" model="medical.specialty">
+            <field name="name">Glaucoma</field>
+            <field name="code">OPH-GLA</field>
+            <field name="department_id" ref="dept_ophthalmology"/>
+            <field name="sequence">4</field>
+        </record>
+        <record id="spec_eye_optometry" model="medical.specialty">
+            <field name="name">Optometry &amp; Refraction</field>
+            <field name="code">OPH-OPT</field>
+            <field name="department_id" ref="dept_ophthalmology"/>
+            <field name="sequence">5</field>
+        </record>
+        <record id="room_eye_exam" model="medical.room">
+            <field name="name">Eye Exam Room</field>
+            <field name="room_type">consultation</field>
+            <field name="department_id" ref="dept_ophthalmology"/>
+        </record>
+        <record id="room_eye_imaging" model="medical.room">
+            <field name="name">OCT &amp; Visual Field Room</field>
+            <field name="room_type">device</field>
+            <field name="department_id" ref="dept_ophthalmology"/>
+        </record>
+        <record id="room_eye_laser" model="medical.room">
+            <field name="name">Laser Room</field>
+            <field name="room_type">procedure</field>
+            <field name="department_id" ref="dept_ophthalmology"/>
+        </record>
+        <record id="product_eye_consultation" model="product.product">
+            <field name="name">Ophthalmology Consultation</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">consultation</field>
+            <field name="specialty_id" ref="spec_eye_general"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">300</field>
+            <field name="insurance_code">OPH-CONS</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_refraction" model="product.product">
+            <field name="name">Refraction &amp; Glasses Prescription</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_eye_optometry"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">150</field>
+            <field name="insurance_code">OPH-REFR</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_oct" model="product.product">
+            <field name="name">OCT (Optical Coherence Tomography)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">test</field>
+            <field name="specialty_id" ref="spec_eye_retina"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">600</field>
+            <field name="insurance_code">OPH-OCT</field>
+            <field name="procedure_duration">15</field>
+            <field name="site_requirement">side</field>
+        </record>
+        <record id="product_visual_field" model="product.product">
+            <field name="name">Visual Field Test</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">test</field>
+            <field name="specialty_id" ref="spec_eye_glaucoma"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">400</field>
+            <field name="insurance_code">OPH-VF</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">side</field>
+        </record>
+        <record id="product_fundus_photo" model="product.product">
+            <field name="name">Fundus Photography</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">test</field>
+            <field name="specialty_id" ref="spec_eye_retina"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">300</field>
+            <field name="insurance_code">OPH-FP</field>
+            <field name="procedure_duration">10</field>
+            <field name="site_requirement">side</field>
+        </record>
+        <record id="product_biometry" model="product.product">
+            <field name="name">Optical Biometry (IOL calculation)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">test</field>
+            <field name="specialty_id" ref="spec_eye_cataract"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">500</field>
+            <field name="insurance_code">OPH-BIO</field>
+            <field name="procedure_duration">15</field>
+            <field name="site_requirement">side</field>
+        </record>
+        <record id="product_yag" model="product.product">
+            <field name="name">YAG Laser Capsulotomy</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_eye_cataract"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">1200</field>
+            <field name="insurance_code">OPH-YAG</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">side</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the laser treatment of the eye shown on this form. The doctor explained the purpose and the possible effects: temporary blurred vision, glare, a short rise in eye pressure and, rarely, inflammation or worsened vision.</p></field>
+        </record>
+        <record id="product_slt" model="product.product">
+            <field name="name">Selective Laser Trabeculoplasty (SLT)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_eye_glaucoma"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">2000</field>
+            <field name="insurance_code">OPH-SLT</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">side</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the laser treatment of the eye shown on this form. The doctor explained the purpose and the possible effects: temporary blurred vision, glare, a short rise in eye pressure and, rarely, inflammation or worsened vision.</p></field>
+        </record>
+        <record id="product_prp" model="product.product">
+            <field name="name">Panretinal Laser Photocoagulation</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_eye_retina"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">1800</field>
+            <field name="insurance_code">OPH-PRP</field>
+            <field name="procedure_duration">30</field>
+            <field name="site_requirement">side</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the laser treatment of the eye shown on this form. The doctor explained the purpose and the possible effects: temporary blurred vision, glare, a short rise in eye pressure and, rarely, inflammation or worsened vision.</p></field>
+        </record>
+        <record id="product_ivi" model="product.product">
+            <field name="name">Intravitreal Anti-VEGF Injection</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_eye_retina"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">3500</field>
+            <field name="insurance_code">OPH-IVI</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">side</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to an injection into the eye. Possible risks were explained: redness and discomfort, floaters, raised eye pressure, and rarely infection inside the eye (endophthalmitis) or retinal detachment, which need urgent care. I will come back at once for pain or reduced vision.</p></field>
+        </record>
+        <record id="product_phaco" model="product.product">
+            <field name="name">Phacoemulsification with IOL</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">surgery</field>
+            <field name="specialty_id" ref="spec_eye_cataract"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">12000</field>
+            <field name="insurance_code">OPH-PHACO</field>
+            <field name="procedure_duration">45</field>
+            <field name="site_requirement">side</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to cataract surgery with lens implant on the eye shown on this form. The surgeon explained the expected result, the need for glasses for some tasks after surgery, and the possible risks: inflammation, raised eye pressure, posterior capsule opacification, infection, retinal detachment and, rarely, loss of vision.</p></field>
+        </record>
+        <record id="product_pterygium" model="product.product">
+            <field name="name">Pterygium Excision</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">surgery</field>
+            <field name="specialty_id" ref="spec_eye_general"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">4000</field>
+            <field name="insurance_code">OPH-PTER</field>
+            <field name="procedure_duration">40</field>
+            <field name="site_requirement">side</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to pterygium excision on the eye shown on this form. The surgeon explained the expected result, the need for glasses for some tasks after surgery, and the possible risks: inflammation, raised eye pressure, posterior capsule opacification, infection, retinal detachment and, rarely, loss of vision.</p></field>
+        </record>
+        <record id="product_chalazion" model="product.product">
+            <field name="name">Chalazion Incision</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_eye_general"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">800</field>
+            <field name="insurance_code">OPH-CHAL</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">side</field>
+        </record>
+        <record id="icd_h52_1" model="medical.diagnosis">
+            <field name="code">H52.1</field>
+            <field name="name">Myopia</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_ophthalmology'))]"/>
+        </record>
+        <record id="icd_h52_0" model="medical.diagnosis">
+            <field name="code">H52.0</field>
+            <field name="name">Hypermetropia</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_ophthalmology'))]"/>
+        </record>
+        <record id="icd_h52_2" model="medical.diagnosis">
+            <field name="code">H52.2</field>
+            <field name="name">Astigmatism</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_ophthalmology'))]"/>
+        </record>
+        <record id="icd_h52_4" model="medical.diagnosis">
+            <field name="code">H52.4</field>
+            <field name="name">Presbyopia</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_ophthalmology'))]"/>
+        </record>
+        <record id="icd_h25_9" model="medical.diagnosis">
+            <field name="code">H25.9</field>
+            <field name="name">Senile cataract, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_ophthalmology'))]"/>
+        </record>
+        <record id="icd_h40_1" model="medical.diagnosis">
+            <field name="code">H40.1</field>
+            <field name="name">Primary open-angle glaucoma</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_ophthalmology'))]"/>
+        </record>
+        <record id="icd_h36_0" model="medical.diagnosis">
+            <field name="code">H36.0</field>
+            <field name="name">Diabetic retinopathy</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_ophthalmology'))]"/>
+        </record>
+        <record id="icd_h10_9" model="medical.diagnosis">
+            <field name="code">H10.9</field>
+            <field name="name">Conjunctivitis, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_ophthalmology'))]"/>
+        </record>
+        <record id="icd_h04_1" model="medical.diagnosis">
+            <field name="code">H04.1</field>
+            <field name="name">Other disorders of lacrimal gland (dry eye)</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_ophthalmology'))]"/>
+        </record>
+        <record id="icd_h35_3" model="medical.diagnosis">
+            <field name="code">H35.3</field>
+            <field name="name">Degeneration of macula and posterior pole</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_ophthalmology'))]"/>
+        </record>
+        <record id="icd_h50_9" model="medical.diagnosis">
+            <field name="code">H50.9</field>
+            <field name="name">Strabismus, unspecified</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_ophthalmology'))]"/>
+        </record>
+        <record id="icd_h53_0" model="medical.diagnosis">
+            <field name="code">H53.0</field>
+            <field name="name">Amblyopia ex anopsia</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_ophthalmology'))]"/>
+        </record>
+        <record id="icd_h00_0" model="medical.diagnosis">
+            <field name="code">H00.0</field>
+            <field name="name">Hordeolum and other deep inflammation of eyelid</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_ophthalmology'))]"/>
+        </record>
+        <record id="icd_h11_0" model="medical.diagnosis">
+            <field name="code">H11.0</field>
+            <field name="name">Pterygium</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_ophthalmology'))]"/>
+        </record>
+        <record id="obs_iop" model="medical.observation.type">
+            <field name="name">Intraocular Pressure</field>
+            <field name="code">iop</field>
+            <field name="unit">mmHg</field>
+            <field name="category">exam</field>
+            <field name="normal_min">10</field>
+            <field name="normal_max">21</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">30</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="True"/>
+            <field name="sequence">40</field>
+            <field name="department_ids" eval="[(4, ref('dept_ophthalmology'))]"/>
+        </record>
+        <record id="obs_va_logmar" model="medical.observation.type">
+            <field name="name">Visual Acuity (logMAR)</field>
+            <field name="code">va_logmar</field>
+            <field name="unit">logMAR</field>
+            <field name="category">exam</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">0.2</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">2</field>
+            <field name="lower_is_better" eval="True"/>
+            <field name="sequence">41</field>
+            <field name="department_ids" eval="[(4, ref('dept_ophthalmology'))]"/>
+        </record>
+        <record id="obs_cdr" model="medical.observation.type">
+            <field name="name">Cup/Disc Ratio</field>
+            <field name="code">cdr</field>
+            <field name="unit"></field>
+            <field name="category">exam</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">0.5</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">2</field>
+            <field name="lower_is_better" eval="True"/>
+            <field name="sequence">42</field>
+            <field name="department_ids" eval="[(4, ref('dept_ophthalmology'))]"/>
+        </record>
+        <record id="seq_eye_prescription" model="ir.sequence">
+            <field name="name">Glasses Prescription</field>
+            <field name="code">medical.eye.prescription</field>
+            <field name="prefix">GRX/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="medicine_latanoprost" model="product.product">
+            <field name="name">Latanoprost 0.005% Eye Drops</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Latanoprost</field>
+            <field name="strength">0.005%</field>
+            <field name="dosage_form">drops</field>
+            <field name="default_route">eye</field>
+        </record>
+        <record id="medicine_artificial_tears" model="product.product">
+            <field name="name">Artificial Tears</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Carboxymethylcellulose</field>
+            <field name="strength">0.5%</field>
+            <field name="dosage_form">drops</field>
+            <field name="default_route">eye</field>
+        </record>
+        <record id="medicine_moxifloxacin_eye" model="product.product">
+            <field name="name">Moxifloxacin 0.5% Eye Drops</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Moxifloxacin</field>
+            <field name="strength">0.5%</field>
+            <field name="dosage_form">drops</field>
+            <field name="default_route">eye</field>
+            <field name="allergen_ids" eval="[(6, 0, [ref('medical_core.allergen_quinolone')])]"/>
+        </record>
+    </data>
+</odoo>
