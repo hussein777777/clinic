@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="dept_orthopedics" model="medical.department">
+            <field name="name">Orthopedics</field>
+            <field name="code">ORT</field>
+            <field name="sequence">30</field>
+            <field name="color">5</field>
+        </record>
+        <record id="dept_physiotherapy" model="medical.department">
+            <field name="name">Physiotherapy</field>
+            <field name="code">PHY</field>
+            <field name="sequence">35</field>
+            <field name="color">10</field>
+        </record>
+        <record id="spec_ortho_general" model="medical.specialty">
+            <field name="name">General Orthopedics</field>
+            <field name="code">ORT-GEN</field>
+            <field name="department_id" ref="dept_orthopedics"/>
+            <field name="sequence">1</field>
+        </record>
+        <record id="spec_trauma" model="medical.specialty">
+            <field name="name">Trauma &amp; Fractures</field>
+            <field name="code">ORT-TRAUMA</field>
+            <field name="department_id" ref="dept_orthopedics"/>
+            <field name="sequence">2</field>
+        </record>
+        <record id="spec_joints" model="medical.specialty">
+            <field name="name">Joints &amp; Sports Medicine</field>
+            <field name="code">ORT-JOINT</field>
+            <field name="department_id" ref="dept_orthopedics"/>
+            <field name="sequence">3</field>
+        </record>
+        <record id="spec_spine" model="medical.specialty">
+            <field name="name">Spine</field>
+            <field name="code">ORT-SPINE</field>
+            <field name="department_id" ref="dept_orthopedics"/>
+            <field name="sequence">4</field>
+        </record>
+        <record id="spec_physio" model="medical.specialty">
+            <field name="name">Physiotherapy</field>
+            <field name="code">PHY-GEN</field>
+            <field name="department_id" ref="dept_physiotherapy"/>
+            <field name="sequence">1</field>
+        </record>
+        <record id="room_cast" model="medical.room">
+            <field name="name">Cast Room</field>
+            <field name="room_type">procedure</field>
+            <field name="department_id" ref="dept_orthopedics"/>
+        </record>
+        <record id="room_physio_1" model="medical.room">
+            <field name="name">Physio Bay 1</field>
+            <field name="room_type">procedure</field>
+            <field name="department_id" ref="dept_physiotherapy"/>
+        </record>
+        <record id="room_physio_2" model="medical.room">
+            <field name="name">Physio Bay 2</field>
+            <field name="room_type">procedure</field>
+            <field name="department_id" ref="dept_physiotherapy"/>
+        </record>
+        <record id="product_ortho_consultation" model="product.product">
+            <field name="name">Orthopedic Consultation</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">consultation</field>
+            <field name="specialty_id" ref="spec_ortho_general"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">350</field>
+            <field name="insurance_code">ORT-CONS</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_cast_application" model="product.product">
+            <field name="name">Cast Application</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_trauma"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">400</field>
+            <field name="insurance_code">ORT-CAST</field>
+            <field name="procedure_duration">30</field>
+            <field name="site_requirement">body_site</field>
+        </record>
+        <record id="product_splint_application" model="product.product">
+            <field name="name">Splint / Backslab Application</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_trauma"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">250</field>
+            <field name="insurance_code">ORT-SPLINT</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">body_site</field>
+        </record>
+        <record id="product_cast_removal" model="product.product">
+            <field name="name">Cast Removal</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_trauma"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">100</field>
+            <field name="insurance_code">ORT-CASTREM</field>
+            <field name="procedure_duration">15</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_closed_reduction" model="product.product">
+            <field name="name">Closed Reduction of Fracture / Dislocation</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_trauma"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">1500</field>
+            <field name="insurance_code">ORT-CR</field>
+            <field name="procedure_duration">45</field>
+            <field name="site_requirement">body_site</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the operation described on this form under the anesthesia explained to me. The surgeon explained the expected benefits, the alternatives, and the possible risks including bleeding, infection, blood clots, stiffness, nerve or vessel injury, failure or loosening of the implant and the possible need for further surgery.</p></field>
+        </record>
+        <record id="product_joint_injection" model="product.product">
+            <field name="name">Joint Injection (corticosteroid)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_joints"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">500</field>
+            <field name="insurance_code">ORT-INJ</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">body_site</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the injection described on this form. The doctor explained the expected benefit and the possible risks: pain at the injection site for a few days, temporary rise in blood sugar for diabetic patients, skin colour change, and rarely infection of the joint, which needs urgent treatment.</p></field>
+        </record>
+        <record id="product_prp_injection" model="product.product">
+            <field name="name">Platelet-Rich Plasma Injection</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_joints"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">1200</field>
+            <field name="insurance_code">ORT-PRP</field>
+            <field name="procedure_duration">30</field>
+            <field name="site_requirement">body_site</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the injection described on this form. The doctor explained the expected benefit and the possible risks: pain at the injection site for a few days, temporary rise in blood sugar for diabetic patients, skin colour change, and rarely infection of the joint, which needs urgent treatment.</p></field>
+        </record>
+        <record id="product_arthrocentesis" model="product.product">
+            <field name="name">Joint Aspiration (Arthrocentesis)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">procedure</field>
+            <field name="specialty_id" ref="spec_joints"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">400</field>
+            <field name="insurance_code">ORT-ASP</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">body_site</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the injection described on this form. The doctor explained the expected benefit and the possible risks: pain at the injection site for a few days, temporary rise in blood sugar for diabetic patients, skin colour change, and rarely infection of the joint, which needs urgent treatment.</p></field>
+        </record>
+        <record id="product_knee_arthroscopy" model="product.product">
+            <field name="name">Knee Arthroscopy</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">surgery</field>
+            <field name="specialty_id" ref="spec_joints"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">12000</field>
+            <field name="insurance_code">ORT-ARTHRO</field>
+            <field name="procedure_duration">90</field>
+            <field name="site_requirement">side</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the operation described on this form under the anesthesia explained to me. The surgeon explained the expected benefits, the alternatives, and the possible risks including bleeding, infection, blood clots, stiffness, nerve or vessel injury, failure or loosening of the implant and the possible need for further surgery.</p></field>
+        </record>
+        <record id="product_acl_reconstruction" model="product.product">
+            <field name="name">ACL Reconstruction</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">surgery</field>
+            <field name="specialty_id" ref="spec_joints"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">25000</field>
+            <field name="insurance_code">ORT-ACL</field>
+            <field name="procedure_duration">120</field>
+            <field name="site_requirement">side</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the operation described on this form under the anesthesia explained to me. The surgeon explained the expected benefits, the alternatives, and the possible risks including bleeding, infection, blood clots, stiffness, nerve or vessel injury, failure or loosening of the implant and the possible need for further surgery.</p></field>
+        </record>
+        <record id="product_tkr" model="product.product">
+            <field name="name">Total Knee Replacement</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">surgery</field>
+            <field name="specialty_id" ref="spec_joints"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">60000</field>
+            <field name="insurance_code">ORT-TKR</field>
+            <field name="procedure_duration">150</field>
+            <field name="site_requirement">side</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the operation described on this form under the anesthesia explained to me. The surgeon explained the expected benefits, the alternatives, and the possible risks including bleeding, infection, blood clots, stiffness, nerve or vessel injury, failure or loosening of the implant and the possible need for further surgery.</p></field>
+        </record>
+        <record id="product_thr" model="product.product">
+            <field name="name">Total Hip Replacement</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">surgery</field>
+            <field name="specialty_id" ref="spec_joints"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">65000</field>
+            <field name="insurance_code">ORT-THR</field>
+            <field name="procedure_duration">150</field>
+            <field name="site_requirement">side</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the operation described on this form under the anesthesia explained to me. The surgeon explained the expected benefits, the alternatives, and the possible risks including bleeding, infection, blood clots, stiffness, nerve or vessel injury, failure or loosening of the implant and the possible need for further surgery.</p></field>
+        </record>
+        <record id="product_orif" model="product.product">
+            <field name="name">Open Reduction and Internal Fixation (ORIF)</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">surgery</field>
+            <field name="specialty_id" ref="spec_trauma"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">18000</field>
+            <field name="insurance_code">ORT-ORIF</field>
+            <field name="procedure_duration">120</field>
+            <field name="site_requirement">body_site</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the operation described on this form under the anesthesia explained to me. The surgeon explained the expected benefits, the alternatives, and the possible risks including bleeding, infection, blood clots, stiffness, nerve or vessel injury, failure or loosening of the implant and the possible need for further surgery.</p></field>
+        </record>
+        <record id="product_carpal_tunnel_release" model="product.product">
+            <field name="name">Carpal Tunnel Release</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">surgery</field>
+            <field name="specialty_id" ref="spec_joints"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">6000</field>
+            <field name="insurance_code">ORT-CTR</field>
+            <field name="procedure_duration">45</field>
+            <field name="site_requirement">side</field>
+            <field name="requires_consent" eval="True"/>
+            <field name="consent_text" type="html"><p>I agree to the operation described on this form under the anesthesia explained to me. The surgeon explained the expected benefits, the alternatives, and the possible risks including bleeding, infection, blood clots, stiffness, nerve or vessel injury, failure or loosening of the implant and the possible need for further surgery.</p></field>
+        </record>
+        <record id="product_physio_assessment" model="product.product">
+            <field name="name">Physiotherapy Assessment</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">consultation</field>
+            <field name="specialty_id" ref="spec_physio"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">300</field>
+            <field name="insurance_code">PHY-ASSESS</field>
+            <field name="procedure_duration">45</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_physio_session" model="product.product">
+            <field name="name">Physiotherapy Session</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">session</field>
+            <field name="specialty_id" ref="spec_physio"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">250</field>
+            <field name="insurance_code">PHY-SESSION</field>
+            <field name="procedure_duration">45</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="product_shockwave_session" model="product.product">
+            <field name="name">Shockwave Therapy Session</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">session</field>
+            <field name="specialty_id" ref="spec_physio"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">600</field>
+            <field name="insurance_code">PHY-ESWT</field>
+            <field name="procedure_duration">20</field>
+            <field name="site_requirement">body_site</field>
+        </record>
+        <record id="product_physio_package_10" model="product.product">
+            <field name="name">Physiotherapy Program - 10 Sessions</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">package</field>
+            <field name="specialty_id" ref="spec_physio"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">2000</field>
+            <field name="insurance_code">PHY-PKG10</field>
+            <field name="procedure_duration">45</field>
+            <field name="site_requirement">none</field>
+        </record>
+        <record id="icd_m17_1" model="medical.diagnosis">
+            <field name="code">M17.1</field>
+            <field name="name">Primary gonarthrosis (knee osteoarthritis)</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="icd_m16_1" model="medical.diagnosis">
+            <field name="code">M16.1</field>
+            <field name="name">Primary coxarthrosis (hip osteoarthritis)</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="icd_m51_1" model="medical.diagnosis">
+            <field name="code">M51.1</field>
+            <field name="name">Lumbar disc disorder with radiculopathy</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="icd_m48_0" model="medical.diagnosis">
+            <field name="code">M48.0</field>
+            <field name="name">Spinal stenosis</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="icd_m75_1" model="medical.diagnosis">
+            <field name="code">M75.1</field>
+            <field name="name">Rotator cuff syndrome</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="icd_m75_0" model="medical.diagnosis">
+            <field name="code">M75.0</field>
+            <field name="name">Adhesive capsulitis of shoulder</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="icd_m77_1" model="medical.diagnosis">
+            <field name="code">M77.1</field>
+            <field name="name">Lateral epicondylitis</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="icd_m65_3" model="medical.diagnosis">
+            <field name="code">M65.3</field>
+            <field name="name">Trigger finger</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="icd_m72_2" model="medical.diagnosis">
+            <field name="code">M72.2</field>
+            <field name="name">Plantar fascial fibromatosis (plantar fasciitis)</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="icd_m76_6" model="medical.diagnosis">
+            <field name="code">M76.6</field>
+            <field name="name">Achilles tendinitis</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="icd_s83_5" model="medical.diagnosis">
+            <field name="code">S83.5</field>
+            <field name="name">Sprain of cruciate ligament of knee</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="icd_s83_2" model="medical.diagnosis">
+            <field name="code">S83.2</field>
+            <field name="name">Tear of meniscus, current</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="icd_s52_5" model="medical.diagnosis">
+            <field name="code">S52.5</field>
+            <field name="name">Fracture of lower end of radius</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="icd_s82_6" model="medical.diagnosis">
+            <field name="code">S82.6</field>
+            <field name="name">Fracture of lateral malleolus</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="icd_s72_0" model="medical.diagnosis">
+            <field name="code">S72.0</field>
+            <field name="name">Fracture of neck of femur</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="icd_s42_0" model="medical.diagnosis">
+            <field name="code">S42.0</field>
+            <field name="name">Fracture of clavicle</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="icd_s93_4" model="medical.diagnosis">
+            <field name="code">S93.4</field>
+            <field name="name">Sprain of ankle</field>
+            <field name="is_chronic" eval="False"/>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="icd_m81_0" model="medical.diagnosis">
+            <field name="code">M81.0</field>
+            <field name="name">Postmenopausal osteoporosis</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="icd_m10_9" model="medical.diagnosis">
+            <field name="code">M10.9</field>
+            <field name="name">Gout, unspecified</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="icd_m06_9" model="medical.diagnosis">
+            <field name="code">M06.9</field>
+            <field name="name">Rheumatoid arthritis, unspecified</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="obs_rom_knee_flexion" model="medical.observation.type">
+            <field name="name">Knee Flexion</field>
+            <field name="code">rom_knee_flexion</field>
+            <field name="unit">°</field>
+            <field name="category">exam</field>
+            <field name="normal_min">135</field>
+            <field name="normal_max">0</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="False"/>
+            <field name="sequence">60</field>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="obs_rom_shoulder_flexion" model="medical.observation.type">
+            <field name="name">Shoulder Flexion</field>
+            <field name="code">rom_shoulder_flexion</field>
+            <field name="unit">°</field>
+            <field name="category">exam</field>
+            <field name="normal_min">160</field>
+            <field name="normal_max">0</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="False"/>
+            <field name="sequence">61</field>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="obs_rom_shoulder_abduction" model="medical.observation.type">
+            <field name="name">Shoulder Abduction</field>
+            <field name="code">rom_shoulder_abduction</field>
+            <field name="unit">°</field>
+            <field name="category">exam</field>
+            <field name="normal_min">160</field>
+            <field name="normal_max">0</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="False"/>
+            <field name="sequence">62</field>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="obs_rom_shoulder_er" model="medical.observation.type">
+            <field name="name">Shoulder External Rotation</field>
+            <field name="code">rom_shoulder_er</field>
+            <field name="unit">°</field>
+            <field name="category">exam</field>
+            <field name="normal_min">80</field>
+            <field name="normal_max">0</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="False"/>
+            <field name="sequence">63</field>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="obs_rom_hip_flexion" model="medical.observation.type">
+            <field name="name">Hip Flexion</field>
+            <field name="code">rom_hip_flexion</field>
+            <field name="unit">°</field>
+            <field name="category">exam</field>
+            <field name="normal_min">110</field>
+            <field name="normal_max">0</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="False"/>
+            <field name="sequence">64</field>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="obs_rom_elbow_flexion" model="medical.observation.type">
+            <field name="name">Elbow Flexion</field>
+            <field name="code">rom_elbow_flexion</field>
+            <field name="unit">°</field>
+            <field name="category">exam</field>
+            <field name="normal_min">140</field>
+            <field name="normal_max">0</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="False"/>
+            <field name="sequence">65</field>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="obs_rom_wrist_extension" model="medical.observation.type">
+            <field name="name">Wrist Extension</field>
+            <field name="code">rom_wrist_extension</field>
+            <field name="unit">°</field>
+            <field name="category">exam</field>
+            <field name="normal_min">60</field>
+            <field name="normal_max">0</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="False"/>
+            <field name="sequence">66</field>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="obs_rom_ankle_dorsiflexion" model="medical.observation.type">
+            <field name="name">Ankle Dorsiflexion</field>
+            <field name="code">rom_ankle_dorsiflexion</field>
+            <field name="unit">°</field>
+            <field name="category">exam</field>
+            <field name="normal_min">15</field>
+            <field name="normal_max">0</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="False"/>
+            <field name="sequence">67</field>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="obs_knee_extension_lag" model="medical.observation.type">
+            <field name="name">Knee Extension Lag</field>
+            <field name="code">knee_extension_lag</field>
+            <field name="unit">°</field>
+            <field name="category">exam</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">5</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="True"/>
+            <field name="sequence">69</field>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="obs_grip_strength" model="medical.observation.type">
+            <field name="name">Grip Strength</field>
+            <field name="code">grip_strength</field>
+            <field name="unit">kg</field>
+            <field name="category">exam</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">0</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">1</field>
+            <field name="lower_is_better" eval="False"/>
+            <field name="sequence">70</field>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="obs_lysholm" model="medical.observation.type">
+            <field name="name">Lysholm Knee Score</field>
+            <field name="code">lysholm</field>
+            <field name="unit">/100</field>
+            <field name="category">score</field>
+            <field name="normal_min">84</field>
+            <field name="normal_max">0</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="False"/>
+            <field name="sequence">80</field>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="obs_odi" model="medical.observation.type">
+            <field name="name">Oswestry Disability Index</field>
+            <field name="code">odi</field>
+            <field name="unit">%</field>
+            <field name="category">score</field>
+            <field name="normal_min">0</field>
+            <field name="normal_max">20</field>
+            <field name="critical_min">0</field>
+            <field name="critical_max">0</field>
+            <field name="decimals">0</field>
+            <field name="lower_is_better" eval="True"/>
+            <field name="sequence">81</field>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+        </record>
+        <record id="score_lysholm" model="medical.assessment.template">
+            <field name="name">Lysholm Knee Score</field>
+            <field name="code">LYSHOLM</field>
+            <field name="score_mode">sum</field>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+            <field name="item_ids" eval="[(0, 0, {'sequence': 1, 'name': 'Limp', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'None', 'score': 5}), (0, 0, {'sequence': 2, 'name': 'Slight or periodical', 'score': 3}), (0, 0, {'sequence': 3, 'name': 'Severe and constant', 'score': 0})]}), (0, 0, {'sequence': 2, 'name': 'Support', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'None', 'score': 5}), (0, 0, {'sequence': 2, 'name': 'Stick or crutch', 'score': 2}), (0, 0, {'sequence': 3, 'name': 'Weight-bearing impossible', 'score': 0})]}), (0, 0, {'sequence': 3, 'name': 'Locking', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No locking and no catching', 'score': 15}), (0, 0, {'sequence': 2, 'name': 'Catching but no locking', 'score': 10}), (0, 0, {'sequence': 3, 'name': 'Locking occasionally', 'score': 6}), (0, 0, {'sequence': 4, 'name': 'Locking frequently', 'score': 2}), (0, 0, {'sequence': 5, 'name': 'Locked joint on examination', 'score': 0})]}), (0, 0, {'sequence': 4, 'name': 'Instability', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Never giving way', 'score': 25}), (0, 0, {'sequence': 2, 'name': 'Rarely, during athletics or other severe exertion', 'score': 20}), (0, 0, {'sequence': 3, 'name': 'Frequently during athletics or other severe exertion', 'score': 15}), (0, 0, {'sequence': 4, 'name': 'Occasionally in daily activities', 'score': 10}), (0, 0, {'sequence': 5, 'name': 'Often in daily activities', 'score': 5}), (0, 0, {'sequence': 6, 'name': 'Every step', 'score': 0})]}), (0, 0, {'sequence': 5, 'name': 'Pain', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'None', 'score': 25}), (0, 0, {'sequence': 2, 'name': 'Inconstant and slight during severe exertion', 'score': 20}), (0, 0, {'sequence': 3, 'name': 'Marked during severe exertion', 'score': 15}), (0, 0, {'sequence': 4, 'name': 'Marked on or after walking more than 2 km', 'score': 10}), (0, 0, {'sequence': 5, 'name': 'Marked on or after walking less than 2 km', 'score': 5}), (0, 0, {'sequence': 6, 'name': 'Constant', 'score': 0})]}), (0, 0, {'sequence': 6, 'name': 'Swelling', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'None', 'score': 10}), (0, 0, {'sequence': 2, 'name': 'On severe exertion', 'score': 6}), (0, 0, {'sequence': 3, 'name': 'On ordinary exertion', 'score': 2}), (0, 0, {'sequence': 4, 'name': 'Constant', 'score': 0})]}), (0, 0, {'sequence': 7, 'name': 'Stair climbing', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No problems', 'score': 10}), (0, 0, {'sequence': 2, 'name': 'Slightly impaired', 'score': 6}), (0, 0, {'sequence': 3, 'name': 'One step at a time', 'score': 2}), (0, 0, {'sequence': 4, 'name': 'Impossible', 'score': 0})]}), (0, 0, {'sequence': 8, 'name': 'Squatting', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No problems', 'score': 5}), (0, 0, {'sequence': 2, 'name': 'Slightly impaired', 'score': 4}), (0, 0, {'sequence': 3, 'name': 'Not beyond 90° knee flexion', 'score': 2}), (0, 0, {'sequence': 4, 'name': 'Impossible', 'score': 0})]})]"/>
+            <field name="range_ids" eval="[(0, 0, {'min_score': 95, 'max_score': 100, 'name': 'Excellent', 'severity': 'none'}), (0, 0, {'min_score': 84, 'max_score': 94, 'name': 'Good', 'severity': 'mild'}), (0, 0, {'min_score': 65, 'max_score': 83, 'name': 'Fair', 'severity': 'moderate'}), (0, 0, {'min_score': 0, 'max_score': 64, 'name': 'Poor', 'severity': 'severe'})]"/>
+            <field name="observation_type_id" ref="obs_lysholm"/>
+            <field name="description" type="html"><p>Knee function after ligament or meniscus injury. 100 = no symptoms or disability.</p></field>
+        </record>
+        <record id="score_odi" model="medical.assessment.template">
+            <field name="name">Oswestry Disability Index (low back pain)</field>
+            <field name="code">ODI</field>
+            <field name="score_mode">percent</field>
+            <field name="department_ids" eval="[(4, ref('dept_orthopedics'))]"/>
+            <field name="item_ids" eval="[(0, 0, {'sequence': 1, 'name': 'Pain intensity', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'No pain at the moment', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'Very mild pain', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Moderate pain', 'score': 2}), (0, 0, {'sequence': 4, 'name': 'Fairly severe pain', 'score': 3}), (0, 0, {'sequence': 5, 'name': 'Very severe pain', 'score': 4}), (0, 0, {'sequence': 6, 'name': 'Worst imaginable pain', 'score': 5})]}), (0, 0, {'sequence': 2, 'name': 'Personal care', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Normal, without extra pain', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'Normal but very painful', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Painful, slow and careful', 'score': 2}), (0, 0, {'sequence': 4, 'name': 'Need some help', 'score': 3}), (0, 0, {'sequence': 5, 'name': 'Need help every day', 'score': 4}), (0, 0, {'sequence': 6, 'name': 'Cannot dress, stay in bed', 'score': 5})]}), (0, 0, {'sequence': 3, 'name': 'Lifting', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Heavy weights without extra pain', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'Heavy weights with extra pain', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Heavy weights only if well placed', 'score': 2}), (0, 0, {'sequence': 4, 'name': 'Light to medium weights only if well placed', 'score': 3}), (0, 0, {'sequence': 5, 'name': 'Only very light weights', 'score': 4}), (0, 0, {'sequence': 6, 'name': 'Cannot lift anything', 'score': 5})]}), (0, 0, {'sequence': 4, 'name': 'Walking', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Any distance', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'Not more than 1 km', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Not more than 500 m', 'score': 2}), (0, 0, {'sequence': 4, 'name': 'Not more than 100 m', 'score': 3}), (0, 0, {'sequence': 5, 'name': 'Only with a stick or crutches', 'score': 4}), (0, 0, {'sequence': 6, 'name': 'In bed most of the time', 'score': 5})]}), (0, 0, {'sequence': 5, 'name': 'Sitting', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Any chair, as long as I like', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'Favourite chair, as long as I like', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Not more than 1 hour', 'score': 2}), (0, 0, {'sequence': 4, 'name': 'Not more than 30 minutes', 'score': 3}), (0, 0, {'sequence': 5, 'name': 'Not more than 10 minutes', 'score': 4}), (0, 0, {'sequence': 6, 'name': 'Cannot sit at all', 'score': 5})]}), (0, 0, {'sequence': 6, 'name': 'Standing', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'As long as I want, no extra pain', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'As long as I want, with extra pain', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Not more than 1 hour', 'score': 2}), (0, 0, {'sequence': 4, 'name': 'Not more than 30 minutes', 'score': 3}), (0, 0, {'sequence': 5, 'name': 'Not more than 10 minutes', 'score': 4}), (0, 0, {'sequence': 6, 'name': 'Cannot stand at all', 'score': 5})]}), (0, 0, {'sequence': 7, 'name': 'Sleeping', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Never disturbed by pain', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'Occasionally disturbed', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Less than 6 hours of sleep', 'score': 2}), (0, 0, {'sequence': 4, 'name': 'Less than 4 hours of sleep', 'score': 3}), (0, 0, {'sequence': 5, 'name': 'Less than 2 hours of sleep', 'score': 4}), (0, 0, {'sequence': 6, 'name': 'Cannot sleep at all', 'score': 5})]}), (0, 0, {'sequence': 8, 'name': 'Sex life', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Normal, no extra pain', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'Normal, some extra pain', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Nearly normal, very painful', 'score': 2}), (0, 0, {'sequence': 4, 'name': 'Severely restricted', 'score': 3}), (0, 0, {'sequence': 5, 'name': 'Nearly absent', 'score': 4}), (0, 0, {'sequence': 6, 'name': 'Prevented by pain', 'score': 5})]}), (0, 0, {'sequence': 9, 'name': 'Social life', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Normal, no extra pain', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'Normal, increases pain', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Limits energetic interests only', 'score': 2}), (0, 0, {'sequence': 4, 'name': 'Do not go out as often', 'score': 3}), (0, 0, {'sequence': 5, 'name': 'Restricted to home', 'score': 4}), (0, 0, {'sequence': 6, 'name': 'No social life', 'score': 5})]}), (0, 0, {'sequence': 10, 'name': 'Travelling', 'section': False, 'option_ids': [(0, 0, {'sequence': 1, 'name': 'Anywhere without pain', 'score': 0}), (0, 0, {'sequence': 2, 'name': 'Anywhere with extra pain', 'score': 1}), (0, 0, {'sequence': 3, 'name': 'Journeys over 2 hours', 'score': 2}), (0, 0, {'sequence': 4, 'name': 'Journeys under 1 hour', 'score': 3}), (0, 0, {'sequence': 5, 'name': 'Short necessary journeys under 30 minutes', 'score': 4}), (0, 0, {'sequence': 6, 'name': 'Only to receive treatment', 'score': 5})]})]"/>
+            <field name="range_ids" eval="[(0, 0, {'min_score': 0, 'max_score': 20, 'name': 'Minimal disability', 'severity': 'none'}), (0, 0, {'min_score': 20.01, 'max_score': 40, 'name': 'Moderate disability', 'severity': 'mild'}), (0, 0, {'min_score': 40.01, 'max_score': 60, 'name': 'Severe disability', 'severity': 'moderate'}), (0, 0, {'min_score': 60.01, 'max_score': 80, 'name': 'Crippled', 'severity': 'severe'}), (0, 0, {'min_score': 80.01, 'max_score': 100, 'name': 'Bed-bound or exaggerating symptoms', 'severity': 'severe'})]"/>
+            <field name="observation_type_id" ref="obs_odi"/>
+            <field name="description" type="html"><p>Leave a section empty if it does not apply: the percentage uses the answered sections only.</p></field>
+        </record>
+        <record id="modality_0" model="medical.physio.modality">
+            <field name="name">Heat therapy</field>
+            <field name="sequence">0</field>
+        </record>
+        <record id="modality_1" model="medical.physio.modality">
+            <field name="name">Cold therapy</field>
+            <field name="sequence">1</field>
+        </record>
+        <record id="modality_2" model="medical.physio.modality">
+            <field name="name">TENS</field>
+            <field name="sequence">2</field>
+        </record>
+        <record id="modality_3" model="medical.physio.modality">
+            <field name="name">Therapeutic ultrasound</field>
+            <field name="sequence">3</field>
+        </record>
+        <record id="modality_4" model="medical.physio.modality">
+            <field name="name">Interferential current</field>
+            <field name="sequence">4</field>
+        </record>
+        <record id="modality_5" model="medical.physio.modality">
+            <field name="name">Manual therapy</field>
+            <field name="sequence">5</field>
+        </record>
+        <record id="modality_6" model="medical.physio.modality">
+            <field name="name">Therapeutic exercise</field>
+            <field name="sequence">6</field>
+        </record>
+        <record id="modality_7" model="medical.physio.modality">
+            <field name="name">Traction</field>
+            <field name="sequence">7</field>
+        </record>
+        <record id="modality_8" model="medical.physio.modality">
+            <field name="name">Shockwave</field>
+            <field name="sequence">8</field>
+        </record>
+        <record id="modality_9" model="medical.physio.modality">
+            <field name="name">Kinesio taping</field>
+            <field name="sequence">9</field>
+        </record>
+        <record id="modality_10" model="medical.physio.modality">
+            <field name="name">Dry needling</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="modality_11" model="medical.physio.modality">
+            <field name="name">Gait training</field>
+            <field name="sequence">11</field>
+        </record>
+        <record id="seq_orthopedic_case" model="ir.sequence">
+            <field name="name">Orthopedic Case</field>
+            <field name="code">medical.orthopedic.case</field>
+            <field name="prefix">ORT/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

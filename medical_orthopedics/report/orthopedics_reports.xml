@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_home_exercises_document">
+        <t t-call="web.external_layout">
+            <t t-set="doc" t-value="doc.with_context(lang=doc.patient_id.lang)"/>
+            <div class="page">
+                <h3>Home Exercise Program</h3>
+                <t t-call="medical_core.report_patient_header">
+                    <t t-set="patient" t-value="doc.patient_id"/>
+                    <t t-set="doctor" t-value="doc.doctor_id"/>
+                    <t t-set="date" t-value="doc.start_date"/>
+                </t>
+                <div t-field="doc.home_exercises"/>
+                <p class="mt-4">Stop an exercise and call the center if it causes sharp pain, numbness or swelling.</p>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_home_exercises">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="medical_orthopedics.report_home_exercises_document" t-lang="doc.patient_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_home_exercises" model="ir.actions.report">
+        <field name="name">Home Exercise Program</field>
+        <field name="model">medical.care.contract</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">medical_orthopedics.report_home_exercises</field>
+        <field name="report_file">medical_orthopedics.report_home_exercises</field>
+    </record>
+</odoo>

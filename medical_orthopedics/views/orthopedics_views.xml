@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- orthopedic case -->
+    <record id="medical_orthopedic_case_view_form" model="ir.ui.view">
+        <field name="name">medical.orthopedic.case.form</field>
+        <field name="model">medical.orthopedic.case</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_book_visit" type="object" string="Book Follow-up" class="btn-primary" invisible="state == 'closed'"/>
+                    <button name="action_order_imaging" type="object" string="Order X-Ray" invisible="state == 'closed'"
+                            groups="medical_core.group_medical_doctor"/>
+                    <button name="action_apply_cast" type="object" string="Apply Cast / Splint" invisible="state == 'closed'"
+                            groups="medical_core.group_medical_nurse"/>
+                    <button name="action_book_surgery" type="object" string="Book Surgery" invisible="state == 'closed'"
+                            groups="medical_core.group_medical_doctor"/>
+                    <button name="action_start_physio" type="object" string="Start Physiotherapy" invisible="state == 'closed' or physio_contract_id"
+                            groups="medical_core.group_medical_doctor"/>
+                    <button name="action_close" type="object" string="Close Case" invisible="state == 'closed'"
+                            groups="medical_core.group_medical_doctor"/>
+                    <button name="action_reopen" type="object" string="Reopen" invisible="state != 'closed'"/>
+                    <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_visits" type="object" class="oe_stat_button" icon="fa-calendar">
+                            <field name="visit_count" widget="statinfo" string="Visits"/>
+                        </button>
+                        <button name="action_rom_trend" type="object" class="oe_stat_button" icon="fa-line-chart"
+                                groups="medical_core.group_medical_nurse">
+                            <span class="o_stat_text">ROM &amp; Scores</span>
+                        </button>
+                    </div>
+                    <div class="alert alert-warning" role="alert" invisible="not current_cast_id">
+                        <i class="fa fa-medkit me-1" title="Cast"/>
+                        <strong>Cast on: </strong><field name="current_cast_id" class="d-inline" readonly="1"/>
+                    </div>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group string="Problem">
+                            <field name="patient_id"/>
+                            <field name="case_type"/>
+                            <field name="body_site_id"/>
+                            <field name="laterality"/>
+                            <field name="diagnosis_id"/>
+                            <field name="injury_date"/>
+                            <field name="mechanism"/>
+                        </group>
+                        <group string="Plan">
+                            <field name="doctor_id"/>
+                            <field name="treatment"/>
+                            <field name="weight_bearing"/>
+                            <field name="expected_weeks"/>
+                            <field name="expected_healed_date"/>
+                            <field name="weeks_since_injury"/>
+                            <field name="healed_date" invisible="state != 'closed'"/>
+                            <field name="physio_contract_id"/>
+                        </group>
+                    </group>
+                    <group string="Fracture Details" invisible="case_type not in ('fracture', 'dislocation')">
+                        <group>
+                            <field name="fracture_classification"/>
+                            <field name="is_open_fracture"/>
+                        </group>
+                        <group>
+                            <field name="is_displaced"/>
+                            <field name="neurovascular_ok"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Casts &amp; Splints" name="casts">
+                            <field name="cast_ids" readonly="1">
+                                <list decoration-danger="is_overdue" decoration-muted="state != 'on'">
+                                    <field name="display_name" string="Cast"/>
+                                    <field name="applied_date"/>
+                                    <field name="removal_due"/>
+                                    <field name="removed_date"/>
+                                    <field name="days_on"/>
+                                    <field name="is_overdue" column_invisible="True"/>
+                                    <field name="state" widget="badge" decoration-info="state == 'on'"/>
+                                    <button name="action_remove" type="object" string="Remove" invisible="state != 'on'"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Visits" name="visits">
+                            <field name="visit_ids" readonly="1">
+                                <list>
+                                    <field name="start"/>
+                                    <field name="doctor_id"/>
+                                    <field name="visit_type"/>
+                                    <field name="state" widget="badge"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Imaging" name="imaging">
+                            <field name="order_ids" readonly="1">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="date"/>
+                                    <field name="line_ids" widget="many2many_tags" string="Tests"/>
+                                    <field name="state" widget="badge"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Operations" name="surgery">
+                            <field name="surgery_ids" readonly="1">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="scheduled_start"/>
+                                    <field name="surgeon_id"/>
+                                    <field name="state" widget="badge"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Notes" name="notes" groups="medical_core.group_medical_doctor">
+                            <field name="note"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_orthopedic_case_view_list" model="ir.ui.view">
+        <field name="name">medical.orthopedic.case.list</field>
+        <field name="model">medical.orthopedic.case</field>
+        <field name="arch" type="xml">
+            <list decoration-muted="state == 'closed'">
+                <field name="name"/>
+                <field name="patient_id"/>
+                <field name="case_type"/>
+                <field name="body_site_id"/>
+                <field name="laterality"/>
+                <field name="injury_date"/>
+                <field name="weeks_since_injury"/>
+                <field name="doctor_id"/>
+                <field name="treatment" optional="show"/>
+                <field name="state" widget="badge" decoration-danger="state == 'acute'" decoration-info="state in ('healing', 'rehab')"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_orthopedic_case_view_search" model="ir.ui.view">
+        <field name="name">medical.orthopedic.case.search</field>
+        <field name="model">medical.orthopedic.case</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <field name="body_site_id"/>
+                <filter name="open" string="Open" domain="[('state', '!=', 'closed')]"/>
+                <filter name="fractures" string="Fractures" domain="[('case_type', '=', 'fracture')]"/>
+                <group>
+                    <filter name="group_type" string="Type" context="{'group_by': 'case_type'}"/>
+                    <filter name="group_site" string="Site" context="{'group_by': 'body_site_id'}"/>
+                    <filter name="group_state" string="Status" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="medical_orthopedic_case_view_pivot" model="ir.ui.view">
+        <field name="name">medical.orthopedic.case.pivot</field>
+        <field name="model">medical.orthopedic.case</field>
+        <field name="arch" type="xml">
+            <pivot string="Orthopedic Cases">
+                <field name="case_type" type="row"/>
+                <field name="injury_date" interval="month" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="action_medical_orthopedic_case" model="ir.actions.act_window">
+        <field name="name">Orthopedic Cases</field>
+        <field name="res_model">medical.orthopedic.case</field>
+        <field name="view_mode">list,form,pivot</field>
+        <field name="context">{'search_default_open': 1}</field>
+    </record>
+
+    <!-- casts -->
+    <record id="medical_orthopedic_cast_view_form" model="ir.ui.view">
+        <field name="name">medical.orthopedic.cast.form</field>
+        <field name="model">medical.orthopedic.cast</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_remove" type="object" string="Remove" class="btn-primary" invisible="state != 'on' or not id"/>
+                    <button name="action_replace" type="object" string="Replace" invisible="state != 'on' or not id"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="patient_id"/>
+                            <field name="case_id" domain="[('patient_id', '=', patient_id)]"/>
+                            <field name="cast_type"/>
+                            <field name="body_site_id"/>
+                            <field name="laterality"/>
+                            <field name="position"/>
+                        </group>
+                        <group>
+                            <field name="doctor_id"/>
+                            <field name="applied_date"/>
+                            <field name="removal_due"/>
+                            <field name="removed_date" invisible="state == 'on'"/>
+                            <field name="days_on"/>
+                            <field name="skin_condition" invisible="state == 'on'"/>
+                        </group>
+                    </group>
+                    <field name="note" placeholder="Note..."/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_orthopedic_cast_view_list" model="ir.ui.view">
+        <field name="name">medical.orthopedic.cast.list</field>
+        <field name="model">medical.orthopedic.cast</field>
+        <field name="arch" type="xml">
+            <list decoration-danger="is_overdue" decoration-muted="state != 'on'">
+                <field name="patient_id"/>
+                <field name="display_name" string="Cast"/>
+                <field name="applied_date"/>
+                <field name="removal_due"/>
+                <field name="days_on"/>
+                <field name="is_overdue" column_invisible="True"/>
+                <field name="state" widget="badge" decoration-info="state == 'on'"/>
+                <button name="action_remove" type="object" string="Remove" invisible="state != 'on'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_orthopedic_cast_view_search" model="ir.ui.view">
+        <field name="name">medical.orthopedic.cast.search</field>
+        <field name="model">medical.orthopedic.cast</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="patient_id"/>
+                <filter name="on" string="On" domain="[('state', '=', 'on')]"/>
+                <filter name="overdue" string="Overdue for Removal" domain="[('is_overdue', '=', True)]"/>
+                <filter name="removal_due" string="Removal Date" date="removal_due"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_medical_orthopedic_cast" model="ir.actions.act_window">
+        <field name="name">Casts &amp; Splints</field>
+        <field name="res_model">medical.orthopedic.cast</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_on': 1}</field>
+    </record>
+
+    <!-- visit: case link + physiotherapy session -->
+    <record id="medical_visit_form_orthopedics" model="ir.ui.view">
+        <field name="name">medical.visit.form.orthopedics</field>
+        <field name="model">medical.visit</field>
+        <field name="inherit_id" ref="medical_core.medical_visit_view_form"/>
+        <field name="arch" type="xml">
+            <field name="care_contract_id" position="after">
+                <field name="orthopedic_case_id" invisible="not orthopedic_case_id and state in ('done', 'invoiced')"/>
+                <field name="is_physio" invisible="1"/>
+            </field>
+            <xpath expr="//page[@name='follow_up']" position="before">
+                <page string="Physiotherapy" name="physio" invisible="not is_physio" groups="medical_core.group_medical_nurse">
+                    <group>
+                        <group>
+                            <field name="physio_modality_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                            <field name="session_tolerance"/>
+                        </group>
+                        <group>
+                            <field name="pain_score" string="Pain Before (0-10)"/>
+                            <field name="pain_after"/>
+                        </group>
+                    </group>
+                    <field name="physio_exercises" placeholder="Exercises, sets and repetitions..."/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_care_contract_form_physio" model="ir.ui.view">
+        <field name="name">medical.care.contract.form.physio</field>
+        <field name="model">medical.care.contract</field>
+        <field name="inherit_id" ref="medical_core.medical_care_contract_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_print_exercises" type="object" string="Print Home Exercises" icon="fa-print"
+                        invisible="care_type != 'physiotherapy' or not home_exercises"/>
+            </xpath>
+            <field name="session_product_id" position="after">
+                <field name="orthopedic_case_id" invisible="care_type != 'physiotherapy'"/>
+            </field>
+            <xpath expr="//page[@name='notes']" position="before">
+                <page string="Home Exercises" name="home_exercises" invisible="care_type != 'physiotherapy'">
+                    <field name="home_exercises" placeholder="Exercise, how many times, how often..."/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_surgery_form_orthopedics" model="ir.ui.view">
+        <field name="name">medical.surgery.form.orthopedics</field>
+        <field name="model">medical.surgery</field>
+        <field name="inherit_id" ref="medical_core.medical_surgery_view_form"/>
+        <field name="arch" type="xml">
+            <field name="preop_visit_id" position="after">
+                <field name="orthopedic_case_id" domain="[('patient_id', '=', patient_id)]"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="medical_physio_modality_view_list" model="ir.ui.view">
+        <field name="name">medical.physio.modality.list</field>
+        <field name="model">medical.physio.modality</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="color" widget="color_picker"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_medical_physio_modality" model="ir.actions.act_window">
+        <field name="name">Physiotherapy Modalities</field>
+        <field name="res_model">medical.physio.modality</field>
+        <field name="view_mode">list</field>
+    </record>
+
+    <record id="action_medical_physio_program" model="ir.actions.act_window">
+        <field name="name">Physiotherapy Programs</field>
+        <field name="res_model">medical.care.contract</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('care_type', '=', 'physiotherapy')]</field>
+        <field name="context" eval="{'default_care_type': 'physiotherapy', 'default_billing_mode': 'sessions',
+                                     'default_session_count': 10, 'default_est_months': 2,
+                                     'default_product_id': ref('product_physio_package_10'),
+                                     'default_session_product_id': ref('product_physio_session'),
+                                     'search_default_running': 1}"/>
+    </record>
+
+    <record id="action_orthopedic_visit" model="ir.actions.act_window">
+        <field name="name">Orthopedic Schedule</field>
+        <field name="res_model">medical.visit</field>
+        <field name="view_mode">calendar,list,kanban,form</field>
+        <field name="domain" eval="[('department_id', 'in', [ref('dept_orthopedics'), ref('dept_physiotherapy')])]"/>
+        <field name="context" eval="{'default_department_id': ref('dept_orthopedics')}"/>
+    </record>
+
+    <menuitem id="menu_orthopedics" name="Orthopedics &amp; Physiotherapy" parent="medical_core.menu_medical_clinics" sequence="20"/>
+    <menuitem id="menu_orthopedic_visit" name="Schedule" parent="menu_orthopedics" action="action_orthopedic_visit" sequence="5"/>
+    <menuitem id="menu_orthopedic_case" name="Orthopedic Cases" parent="menu_orthopedics" action="action_medical_orthopedic_case" sequence="10"/>
+    <menuitem id="menu_orthopedic_cast" name="Casts &amp; Splints" parent="menu_orthopedics" action="action_medical_orthopedic_cast" sequence="20"/>
+    <menuitem id="menu_physio_program" name="Physiotherapy Programs" parent="menu_orthopedics" action="action_medical_physio_program" sequence="30"/>
+    <menuitem id="menu_physio_modality" name="Physiotherapy Modalities" parent="menu_orthopedics" action="action_medical_physio_modality"
+              sequence="90" groups="medical_core.group_medical_manager"/>
+</odoo>

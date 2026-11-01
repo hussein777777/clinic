@@ -1,0 +1,1443 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* medical_orthopedics
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-11 17:50+0000\n"
+"PO-Revision-Date: 2026-10-11 17:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_form
+msgid ""
+"<i class=\"fa fa-medkit me-1\" title=\"Cast\"/>\n"
+"                        <strong>Cast on: </strong>"
+msgstr ""
+"<i class=\"fa fa-medkit me-1\" title=\"جبيرة\"/>\n"
+"                        <strong>الجبيرة منذ: </strong>"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_form
+msgid "<span class=\"o_stat_text\">ROM &amp; Scores</span>"
+msgstr "<span class=\"o_stat_text\">الحركة والمقاييس</span>"
+
+#. module: medical_orthopedics
+#: model:product.template,name:medical_orthopedics.product_acl_reconstruction_product_template
+msgid "ACL Reconstruction"
+msgstr "إعادة بناء الرباط الصليبي الأمامي"
+
+#. module: medical_orthopedics
+#: model:medical.diagnosis,name:medical_orthopedics.icd_m76_6
+msgid "Achilles tendinitis"
+msgstr "التهاب وتر أكيليس"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__message_needaction
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__activity_ids
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__activity_exception_decoration
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__activity_state
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__activity_type_icon
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__state__acute
+msgid "Acute"
+msgstr "حاد"
+
+#. module: medical_orthopedics
+#: model:medical.diagnosis,name:medical_orthopedics.icd_m75_0
+msgid "Adhesive capsulitis of shoulder"
+msgstr "التهاب المحفظة اللاصق للكتف (الكتف المتجمد)"
+
+#. module: medical_orthopedics
+#: model:medical.observation.type,name:medical_orthopedics.obs_rom_ankle_dorsiflexion
+msgid "Ankle Dorsiflexion"
+msgstr "ثني الكاحل لأعلى"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__applied_date
+msgid "Applied Date"
+msgstr "تاريخ التركيب"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__doctor_id
+msgid "Applied by"
+msgstr "ركّبها"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_form
+msgid "Apply Cast / Splint"
+msgstr "تركيب جبيرة"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__message_attachment_count
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__case_type__spine
+msgid "Back / Neck Problem"
+msgstr "مشكلة في الظهر / الرقبة"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_cast__cast_type__backslab
+msgid "Backslab / Splint"
+msgstr "جبيرة خلفية"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_form
+msgid "Book Follow-up"
+msgstr "حجز متابعة"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_form
+msgid "Book Surgery"
+msgstr "حجز عملية"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__laterality__bilateral
+msgid "Both Sides"
+msgstr "الجهتين"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_cast__cast_type__brace
+msgid "Brace / Orthosis"
+msgstr "دعامة / جهاز تقويمي"
+
+#. module: medical_orthopedics
+#: model:ir.model,name:medical_orthopedics.model_medical_care_contract
+msgid "Care Program"
+msgstr "برنامج الرعاية"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_care_contract__care_type
+msgid "Care Type"
+msgstr "نوع البرنامج"
+
+#. module: medical_orthopedics
+#: model:product.template,name:medical_orthopedics.product_carpal_tunnel_release_product_template
+msgid "Carpal Tunnel Release"
+msgstr "تحرير النفق الرسغي"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__case_type
+msgid "Case Type"
+msgstr "نوع الحالة"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_form
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_cast_view_list
+msgid "Cast"
+msgstr "جبيرة"
+
+#. module: medical_orthopedics
+#: model:ir.model,name:medical_orthopedics.model_medical_orthopedic_cast
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__treatment__cast
+msgid "Cast / Splint"
+msgstr "جبيرة / سبلنت"
+
+#. module: medical_orthopedics
+#: model:product.template,name:medical_orthopedics.product_cast_application_product_template
+msgid "Cast Application"
+msgstr "تركيب جبيرة"
+
+#. module: medical_orthopedics
+#: model:product.template,name:medical_orthopedics.product_cast_removal_product_template
+msgid "Cast Removal"
+msgstr "فك الجبيرة"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__cast_type
+msgid "Cast Type"
+msgstr "نوع الجبيرة"
+
+#. module: medical_orthopedics
+#: model:ir.actions.act_window,name:medical_orthopedics.action_medical_orthopedic_cast
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__cast_ids
+#: model:ir.ui.menu,name:medical_orthopedics.menu_orthopedic_cast
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_form
+msgid "Casts & Splints"
+msgstr "الجبائر"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_cast__cast_type__collar
+msgid "Cervical Collar"
+msgstr "رقبة طبية"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_form
+msgid "Close Case"
+msgstr "إغلاق الحالة"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__state__closed
+msgid "Closed"
+msgstr "مغلق"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__treatment__reduction
+msgid "Closed Reduction"
+msgstr "رد مغلق"
+
+#. module: medical_orthopedics
+#: model:product.template,name:medical_orthopedics.product_closed_reduction_product_template
+msgid "Closed Reduction of Fracture / Dislocation"
+msgstr "رد مغلق لكسر / خلع"
+
+#. module: medical_orthopedics
+#: model:medical.physio.modality,name:medical_orthopedics.modality_1
+msgid "Cold therapy"
+msgstr "العلاج بالبرودة"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_physio_modality__color
+msgid "Color"
+msgstr "اللون"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__company_id
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_cast__cast_type__bandage
+msgid "Compression Bandage"
+msgstr "رباط ضاغط"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__treatment__conservative
+msgid "Conservative"
+msgstr "تحفظي"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__create_uid
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__create_uid
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_physio_modality__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__create_date
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__create_date
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_physio_modality__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__current_cast_id
+msgid "Current Cast"
+msgstr "الجبيرة الحالية"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__days_on
+msgid "Days On"
+msgstr "أيام التركيب"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__case_type__degenerative
+msgid "Degenerative (Osteoarthritis)"
+msgstr "تنكسي (خشونة المفاصل)"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__diagnosis_id
+msgid "Diagnosis"
+msgstr "التشخيص"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__case_type__dislocation
+msgid "Dislocation"
+msgstr "خلع"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__is_displaced
+msgid "Displaced"
+msgstr "متزحزح"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_care_contract__display_name
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_order__display_name
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__display_name
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__display_name
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_physio_modality__display_name
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_surgery__display_name
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_visit__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: medical_orthopedics
+#: model:medical.physio.modality,name:medical_orthopedics.modality_10
+msgid "Dry needling"
+msgstr "الإبر الجافة"
+
+#. module: medical_orthopedics
+#: model:medical.observation.type,name:medical_orthopedics.obs_rom_elbow_flexion
+msgid "Elbow Flexion"
+msgstr "ثني الكوع"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_care_contract_form_physio
+msgid "Exercise, how many times, how often..."
+msgstr "التمرين، عدد المرات، التكرار..."
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_visit__physio_exercises
+msgid "Exercises Done"
+msgstr "التمارين المنفذة"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_visit_form_orthopedics
+msgid "Exercises, sets and repetitions..."
+msgstr "التمارين، المجموعات والتكرارات..."
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__expected_healed_date
+msgid "Expected Healed Date"
+msgstr "تاريخ الالتئام المتوقع"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__expected_weeks
+msgid "Expected Healing (weeks)"
+msgstr "الالتئام المتوقع (أسابيع)"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__mechanism__fall
+msgid "Fall"
+msgstr "سقوط"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_cast__cast_type__fiberglass
+msgid "Fiberglass Cast"
+msgstr "جبيرة فايبرجلاس"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__message_follower_ids
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__message_partner_ids
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,help:medical_orthopedics.field_medical_orthopedic_case__activity_type_icon
+#: model:ir.model.fields,help:medical_orthopedics.field_medical_orthopedic_cast__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__case_type__fracture
+msgid "Fracture"
+msgstr "كسر"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__fracture_classification
+msgid "Fracture Classification"
+msgstr "تصنيف الكسر"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_form
+msgid "Fracture Details"
+msgstr "تفاصيل الكسر"
+
+#. module: medical_orthopedics
+#: model:medical.diagnosis,name:medical_orthopedics.icd_s42_0
+msgid "Fracture of clavicle"
+msgstr "كسر الترقوة"
+
+#. module: medical_orthopedics
+#: model:medical.diagnosis,name:medical_orthopedics.icd_s82_6
+msgid "Fracture of lateral malleolus"
+msgstr "كسر الكعب الخارجي"
+
+#. module: medical_orthopedics
+#: model:medical.diagnosis,name:medical_orthopedics.icd_s52_5
+msgid "Fracture of lower end of radius"
+msgstr "كسر الطرف السفلي لعظمة الكعبرة"
+
+#. module: medical_orthopedics
+#: model:medical.diagnosis,name:medical_orthopedics.icd_s72_0
+msgid "Fracture of neck of femur"
+msgstr "كسر عنق عظمة الفخذ"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_search
+msgid "Fractures"
+msgstr "الكسور"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__weight_bearing__full
+msgid "Full"
+msgstr "كامل"
+
+#. module: medical_orthopedics
+#: model:medical.physio.modality,name:medical_orthopedics.modality_11
+msgid "Gait training"
+msgstr "تدريب المشي"
+
+#. module: medical_orthopedics
+#: model:medical.specialty,name:medical_orthopedics.spec_ortho_general
+msgid "General Orthopedics"
+msgstr "العظام العامة"
+
+#. module: medical_orthopedics
+#: model:medical.diagnosis,name:medical_orthopedics.icd_m10_9
+msgid "Gout, unspecified"
+msgstr "النقرس، غير محدد"
+
+#. module: medical_orthopedics
+#: model:medical.observation.type,name:medical_orthopedics.obs_grip_strength
+msgid "Grip Strength"
+msgstr "قوة القبضة"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__has_message
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__healed_date
+msgid "Healed Date"
+msgstr "تاريخ الالتئام"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__state__healing
+msgid "Healing"
+msgstr "في طور الالتئام"
+
+#. module: medical_orthopedics
+#: model:medical.physio.modality,name:medical_orthopedics.modality_0
+msgid "Heat therapy"
+msgstr "العلاج الحراري"
+
+#. module: medical_orthopedics
+#: model:medical.observation.type,name:medical_orthopedics.obs_rom_hip_flexion
+msgid "Hip Flexion"
+msgstr "ثني الفخذ"
+
+#. module: medical_orthopedics
+#: model:ir.actions.report,name:medical_orthopedics.action_report_home_exercises
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_care_contract__home_exercises
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.report_home_exercises_document
+msgid "Home Exercise Program"
+msgstr "برنامج التمارين المنزلية"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_care_contract_form_physio
+msgid "Home Exercises"
+msgstr "التمارين المنزلية"
+
+#. module: medical_orthopedics
+#: model_terms:product.template,consent_text:medical_orthopedics.product_arthrocentesis_product_template
+#: model_terms:product.template,consent_text:medical_orthopedics.product_joint_injection_product_template
+#: model_terms:product.template,consent_text:medical_orthopedics.product_prp_injection_product_template
+msgid ""
+"I agree to the injection described on this form. The doctor explained the "
+"expected benefit and the possible risks: pain at the injection site for a "
+"few days, temporary rise in blood sugar for diabetic patients, skin colour "
+"change, and rarely infection of the joint, which needs urgent treatment."
+msgstr ""
+"أوافق على الحقن الموضح في هذا النموذج. شرح لي الطبيب الفائدة المتوقعة "
+"والمخاطر المحتملة: ألم مكان الحقن لعدة أيام، ارتفاع مؤقت في السكر لمرضى "
+"السكري، تغير لون الجلد، ونادرًا عدوى المفصل التي تحتاج علاجًا عاجلًا."
+
+#. module: medical_orthopedics
+#: model_terms:product.template,consent_text:medical_orthopedics.product_acl_reconstruction_product_template
+#: model_terms:product.template,consent_text:medical_orthopedics.product_carpal_tunnel_release_product_template
+#: model_terms:product.template,consent_text:medical_orthopedics.product_closed_reduction_product_template
+#: model_terms:product.template,consent_text:medical_orthopedics.product_knee_arthroscopy_product_template
+#: model_terms:product.template,consent_text:medical_orthopedics.product_orif_product_template
+#: model_terms:product.template,consent_text:medical_orthopedics.product_thr_product_template
+#: model_terms:product.template,consent_text:medical_orthopedics.product_tkr_product_template
+msgid ""
+"I agree to the operation described on this form under the anesthesia "
+"explained to me. The surgeon explained the expected benefits, the "
+"alternatives, and the possible risks including bleeding, infection, blood "
+"clots, stiffness, nerve or vessel injury, failure or loosening of the "
+"implant and the possible need for further surgery."
+msgstr ""
+"أوافق على العملية الموضحة في هذا النموذج تحت التخدير الذي شُرح لي. شرح لي "
+"الجرّاح الفوائد المتوقعة والبدائل والمخاطر المحتملة ومنها: النزيف، العدوى، "
+"الجلطات، التيبس، إصابة عصب أو وعاء دموي، فشل أو ارتخاء المثبتات، واحتمال "
+"الحاجة لجراحة أخرى."
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_care_contract__id
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_order__id
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__id
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__id
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_physio_modality__id
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_surgery__id
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_visit__id
+msgid "ID"
+msgstr "المُعرّف"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__activity_exception_icon
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,help:medical_orthopedics.field_medical_orthopedic_case__activity_exception_icon
+#: model:ir.model.fields,help:medical_orthopedics.field_medical_orthopedic_cast__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "الأيقونة للإشارة إلى النشاط المستثنى."
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,help:medical_orthopedics.field_medical_orthopedic_case__message_needaction
+#: model:ir.model.fields,help:medical_orthopedics.field_medical_orthopedic_cast__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة تحتاج انتباهك."
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,help:medical_orthopedics.field_medical_orthopedic_case__message_has_error
+#: model:ir.model.fields,help:medical_orthopedics.field_medical_orthopedic_case__message_has_sms_error
+#: model:ir.model.fields,help:medical_orthopedics.field_medical_orthopedic_cast__message_has_error
+#: model:ir.model.fields,help:medical_orthopedics.field_medical_orthopedic_cast__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__order_ids
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_form
+msgid "Imaging"
+msgstr "الأشعة"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__treatment__injection
+msgid "Injection"
+msgstr "حقن"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__injury_date
+msgid "Injury / Onset Date"
+msgstr "تاريخ الإصابة / البداية"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_cast__skin_condition__ok
+msgid "Intact"
+msgstr "سليم"
+
+#. module: medical_orthopedics
+#: model:medical.physio.modality,name:medical_orthopedics.modality_4
+msgid "Interferential current"
+msgstr "التيار المتداخل"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__message_is_follower
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__is_overdue
+msgid "Is Overdue"
+msgstr "متأخر"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_visit__is_physio
+msgid "Is Physio"
+msgstr "علاج طبيعي"
+
+#. module: medical_orthopedics
+#: model:product.template,name:medical_orthopedics.product_arthrocentesis_product_template
+msgid "Joint Aspiration (Arthrocentesis)"
+msgstr "سحب سائل من المفصل"
+
+#. module: medical_orthopedics
+#: model:product.template,name:medical_orthopedics.product_joint_injection_product_template
+msgid "Joint Injection (corticosteroid)"
+msgstr "حقن المفصل (كورتيزون)"
+
+#. module: medical_orthopedics
+#: model:medical.specialty,name:medical_orthopedics.spec_joints
+msgid "Joints & Sports Medicine"
+msgstr "المفاصل والطب الرياضي"
+
+#. module: medical_orthopedics
+#: model:medical.physio.modality,name:medical_orthopedics.modality_9
+msgid "Kinesio taping"
+msgstr "الشريط اللاصق (كينيزيو)"
+
+#. module: medical_orthopedics
+#: model:product.template,name:medical_orthopedics.product_knee_arthroscopy_product_template
+msgid "Knee Arthroscopy"
+msgstr "منظار الركبة"
+
+#. module: medical_orthopedics
+#: model:medical.observation.type,name:medical_orthopedics.obs_knee_extension_lag
+msgid "Knee Extension Lag"
+msgstr "تأخر فرد الركبة"
+
+#. module: medical_orthopedics
+#: model:medical.observation.type,name:medical_orthopedics.obs_rom_knee_flexion
+msgid "Knee Flexion"
+msgstr "ثني الركبة"
+
+#. module: medical_orthopedics
+#: model_terms:medical.assessment.template,description:medical_orthopedics.score_lysholm
+msgid ""
+"Knee function after ligament or meniscus injury. 100 = no symptoms or "
+"disability."
+msgstr "وظيفة الركبة بعد إصابة الرباط أو الغضروف. 100 = لا أعراض ولا إعاقة."
+
+#. module: medical_orthopedics
+#: model:ir.model,name:medical_orthopedics.model_medical_order
+msgid "Lab / Imaging Order"
+msgstr "طلب تحاليل / أشعة"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__write_uid
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__write_uid
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_physio_modality__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__write_date
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__write_date
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_physio_modality__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: medical_orthopedics
+#: model:medical.diagnosis,name:medical_orthopedics.icd_m77_1
+msgid "Lateral epicondylitis"
+msgstr "مرفق لاعب التنس"
+
+#. module: medical_orthopedics
+#: model_terms:medical.assessment.template,description:medical_orthopedics.score_odi
+msgid ""
+"Leave a section empty if it does not apply: the percentage uses the answered"
+" sections only."
+msgstr ""
+"اترك القسم فارغًا إذا لم يكن ينطبق: النسبة تُحسب من الأقسام المُجابة فقط."
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__laterality__left
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_cast__laterality__left
+msgid "Left"
+msgstr "يسار"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__case_type__ligament
+msgid "Ligament / Tendon Injury"
+msgstr "إصابة رباط / وتر"
+
+#. module: medical_orthopedics
+#: model:medical.diagnosis,name:medical_orthopedics.icd_m51_1
+msgid "Lumbar disc disorder with radiculopathy"
+msgstr "انزلاق غضروفي قطني مع اعتلال جذر عصبي"
+
+#. module: medical_orthopedics
+#: model:medical.assessment.template,name:medical_orthopedics.score_lysholm
+#: model:medical.observation.type,name:medical_orthopedics.obs_lysholm
+msgid "Lysholm Knee Score"
+msgstr "مقياس ليشولم للركبة"
+
+#. module: medical_orthopedics
+#: model:medical.physio.modality,name:medical_orthopedics.modality_5
+msgid "Manual therapy"
+msgstr "العلاج اليدوي"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__mechanism
+msgid "Mechanism"
+msgstr "آلية الإصابة"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__message_has_error
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__message_ids
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_visit__physio_modality_ids
+msgid "Modalities Used"
+msgstr "الوسائل المستخدمة"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__my_activity_date_deadline
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "موعدي النهائي للنشاط"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__name
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_physio_modality__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__neurovascular_ok
+msgid "Neurovascular Status Intact"
+msgstr "الحالة العصبية الوعائية سليمة"
+
+#. module: medical_orthopedics
+#. odoo-python
+#: code:addons/medical_orthopedics/models/medical_orthopedic_case.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__activity_date_deadline
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__activity_summary
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__activity_type_id
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__mechanism__none
+msgid "No Trauma"
+msgstr "بدون إصابة"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__weight_bearing__none
+msgid "Non-weight-bearing"
+msgstr "بدون تحميل"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__note
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__note
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_cast_view_form
+msgid "Note..."
+msgstr "ملاحظة..."
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_form
+msgid "Notes"
+msgstr "الملاحظات"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__message_needaction_counter
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__message_has_error_counter
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,help:medical_orthopedics.field_medical_orthopedic_case__message_needaction_counter
+#: model:ir.model.fields,help:medical_orthopedics.field_medical_orthopedic_cast__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراءً"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,help:medical_orthopedics.field_medical_orthopedic_case__message_has_error_counter
+#: model:ir.model.fields,help:medical_orthopedics.field_medical_orthopedic_cast__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_cast__state__on
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_cast_view_search
+msgid "On"
+msgstr "في"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_search
+msgid "Open"
+msgstr "مفتوح"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__is_open_fracture
+msgid "Open Fracture"
+msgstr "كسر مضاعف (مفتوح)"
+
+#. module: medical_orthopedics
+#: model:product.template,name:medical_orthopedics.product_orif_product_template
+msgid "Open Reduction and Internal Fixation (ORIF)"
+msgstr "رد مفتوح وتثبيت داخلي (ORIF)"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__surgery_ids
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_form
+msgid "Operations"
+msgstr "العمليات"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_form
+msgid "Order X-Ray"
+msgstr "طلب أشعة"
+
+#. module: medical_orthopedics
+#: model:ir.model,name:medical_orthopedics.model_medical_orthopedic_case
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_care_contract__orthopedic_case_id
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_order__orthopedic_case_id
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__case_id
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_surgery__orthopedic_case_id
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_visit__orthopedic_case_id
+msgid "Orthopedic Case"
+msgstr "حالة عظام"
+
+#. module: medical_orthopedics
+#: model:ir.actions.act_window,name:medical_orthopedics.action_medical_orthopedic_case
+#: model:ir.ui.menu,name:medical_orthopedics.menu_orthopedic_case
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_pivot
+msgid "Orthopedic Cases"
+msgstr "حالات العظام"
+
+#. module: medical_orthopedics
+#: model:product.template,name:medical_orthopedics.product_ortho_consultation_product_template
+msgid "Orthopedic Consultation"
+msgstr "كشف عظام"
+
+#. module: medical_orthopedics
+#: model:ir.actions.act_window,name:medical_orthopedics.action_orthopedic_visit
+msgid "Orthopedic Schedule"
+msgstr "جدول العظام"
+
+#. module: medical_orthopedics
+#: model:medical.department,name:medical_orthopedics.dept_orthopedics
+msgid "Orthopedics"
+msgstr "العظام"
+
+#. module: medical_orthopedics
+#: model:ir.ui.menu,name:medical_orthopedics.menu_orthopedics
+msgid "Orthopedics & Physiotherapy"
+msgstr "العظام والعلاج الطبيعي"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__doctor_id
+msgid "Orthopedist"
+msgstr "طبيب العظام"
+
+#. module: medical_orthopedics
+#: model:medical.observation.type,name:medical_orthopedics.obs_odi
+msgid "Oswestry Disability Index"
+msgstr "مؤشر أوسويستري للإعاقة"
+
+#. module: medical_orthopedics
+#: model:medical.assessment.template,name:medical_orthopedics.score_odi
+msgid "Oswestry Disability Index (low back pain)"
+msgstr "مؤشر أوسويستري للإعاقة (ألم أسفل الظهر)"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__case_type__other
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__mechanism__other
+msgid "Other"
+msgstr "أخرى"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_cast_view_search
+msgid "Overdue for Removal"
+msgstr "متأخرة عن موعد الفك"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__mechanism__overuse
+msgid "Overuse"
+msgstr "إجهاد متكرر"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_visit__pain_after
+msgid "Pain After Session (0-10)"
+msgstr "الألم بعد الجلسة (0-10)"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_visit_form_orthopedics
+msgid "Pain Before (0-10)"
+msgstr "الألم قبل (0-10)"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__weight_bearing__partial
+msgid "Partial"
+msgstr "جزئي"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__patient_id
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__patient_id
+msgid "Patient"
+msgstr "المريض"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_care_contract__care_type__physiotherapy
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__treatment__physio
+#: model:medical.department,name:medical_orthopedics.dept_physiotherapy
+#: model:medical.specialty,name:medical_orthopedics.spec_physio
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_visit_form_orthopedics
+msgid "Physiotherapy"
+msgstr "العلاج الطبيعي"
+
+#. module: medical_orthopedics
+#: model:product.template,name:medical_orthopedics.product_physio_assessment_product_template
+msgid "Physiotherapy Assessment"
+msgstr "تقييم العلاج الطبيعي"
+
+#. module: medical_orthopedics
+#: model:ir.actions.act_window,name:medical_orthopedics.action_medical_physio_modality
+#: model:ir.ui.menu,name:medical_orthopedics.menu_physio_modality
+msgid "Physiotherapy Modalities"
+msgstr "وسائل العلاج الطبيعي"
+
+#. module: medical_orthopedics
+#: model:ir.model,name:medical_orthopedics.model_medical_physio_modality
+msgid "Physiotherapy Modality"
+msgstr "وسيلة علاج طبيعي"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__physio_contract_id
+msgid "Physiotherapy Program"
+msgstr "برنامج علاج طبيعي"
+
+#. module: medical_orthopedics
+#: model:product.template,name:medical_orthopedics.product_physio_package_10_product_template
+msgid "Physiotherapy Program - 10 Sessions"
+msgstr "برنامج علاج طبيعي - 10 جلسات"
+
+#. module: medical_orthopedics
+#: model:ir.actions.act_window,name:medical_orthopedics.action_medical_physio_program
+#: model:ir.ui.menu,name:medical_orthopedics.menu_physio_program
+msgid "Physiotherapy Programs"
+msgstr "برامج العلاج الطبيعي"
+
+#. module: medical_orthopedics
+#: model:product.template,name:medical_orthopedics.product_physio_session_product_template
+msgid "Physiotherapy Session"
+msgstr "جلسة علاج طبيعي"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_form
+msgid "Plan"
+msgstr "الخطة"
+
+#. module: medical_orthopedics
+#: model:medical.diagnosis,name:medical_orthopedics.icd_m72_2
+msgid "Plantar fascial fibromatosis (plantar fasciitis)"
+msgstr "التهاب اللفافة الأخمصية (شوكة الكعب)"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_cast__cast_type__plaster
+msgid "Plaster Cast"
+msgstr "جبيرة جبس"
+
+#. module: medical_orthopedics
+#: model:product.template,name:medical_orthopedics.product_prp_injection_product_template
+msgid "Platelet-Rich Plasma Injection"
+msgstr "حقن البلازما الغنية بالصفائح"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_visit__session_tolerance__poor
+msgid "Poorly tolerated"
+msgstr "تحمّل ضعيف"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__position
+msgid "Position"
+msgstr "الموضع"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__case_type__post_op
+msgid "Post-operative Follow-up"
+msgstr "متابعة ما بعد العملية"
+
+#. module: medical_orthopedics
+#: model:medical.diagnosis,name:medical_orthopedics.icd_m81_0
+msgid "Postmenopausal osteoporosis"
+msgstr "هشاشة العظام بعد انقطاع الطمث"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_cast__skin_condition__sore
+msgid "Pressure Sore"
+msgstr "قرحة ضغط"
+
+#. module: medical_orthopedics
+#: model:medical.diagnosis,name:medical_orthopedics.icd_m16_1
+msgid "Primary coxarthrosis (hip osteoarthritis)"
+msgstr "خشونة مفصل الفخذ الأولية"
+
+#. module: medical_orthopedics
+#: model:medical.diagnosis,name:medical_orthopedics.icd_m17_1
+msgid "Primary gonarthrosis (knee osteoarthritis)"
+msgstr "خشونة مفصل الركبة الأولية"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_care_contract_form_physio
+msgid "Print Home Exercises"
+msgstr "طباعة التمارين المنزلية"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_form
+msgid "Problem"
+msgstr "المشكلة"
+
+#. module: medical_orthopedics
+#. odoo-python
+#: code:addons/medical_orthopedics/models/medical_orthopedic_case.py:0
+msgid "Range of Motion & Scores"
+msgstr "مدى الحركة والمقاييس"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_cast__skin_condition__redness
+msgid "Redness"
+msgstr "احمرار"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__state__rehab
+msgid "Rehabilitation"
+msgstr "التأهيل"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_cast_view_search
+msgid "Removal Date"
+msgstr "تاريخ الفك"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_form
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_cast_view_form
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_cast_view_list
+msgid "Remove"
+msgstr "فك"
+
+#. module: medical_orthopedics
+#. odoo-python
+#: code:addons/medical_orthopedics/models/medical_orthopedic_cast.py:0
+msgid "Remove %(cast)s - %(patient)s"
+msgstr "فك %(cast)s - %(patient)s"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__removal_due
+msgid "Remove on"
+msgstr "الفك في"
+
+#. module: medical_orthopedics
+#. odoo-python
+#: code:addons/medical_orthopedics/models/medical_orthopedic_case.py:0
+msgid "Remove the cast or splint before closing %s."
+msgstr "فك الجبيرة قبل إغلاق %s."
+
+#. module: medical_orthopedics
+#. odoo-python
+#: code:addons/medical_orthopedics/models/medical_orthopedic_cast.py:0
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_cast__state__removed
+msgid "Removed"
+msgstr "تم الفك"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__removed_date
+msgid "Removed Date"
+msgstr "تاريخ الفك الفعلي"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_form
+msgid "Reopen"
+msgstr "إعادة فتح"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_cast_view_form
+msgid "Replace"
+msgstr "استبدال"
+
+#. module: medical_orthopedics
+#. odoo-python
+#: code:addons/medical_orthopedics/models/medical_orthopedic_cast.py:0
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_cast__state__replaced
+msgid "Replaced"
+msgstr "تم الاستبدال"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__activity_user_id
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: medical_orthopedics
+#: model:medical.diagnosis,name:medical_orthopedics.icd_m06_9
+msgid "Rheumatoid arthritis, unspecified"
+msgstr "الروماتويد، غير محدد"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__laterality__right
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_cast__laterality__right
+msgid "Right"
+msgstr "يمين"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__mechanism__road
+msgid "Road Traffic Accident"
+msgstr "حادث طريق"
+
+#. module: medical_orthopedics
+#: model:medical.diagnosis,name:medical_orthopedics.icd_m75_1
+msgid "Rotator cuff syndrome"
+msgstr "متلازمة الكفة المدورة"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__message_has_sms_error
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية"
+
+#. module: medical_orthopedics
+#: model:ir.ui.menu,name:medical_orthopedics.menu_orthopedic_visit
+msgid "Schedule"
+msgstr "الجدول"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_physio_modality__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: medical_orthopedics
+#: model:medical.physio.modality,name:medical_orthopedics.modality_8
+msgid "Shockwave"
+msgstr "الموجات التصادمية"
+
+#. module: medical_orthopedics
+#: model:product.template,name:medical_orthopedics.product_shockwave_session_product_template
+msgid "Shockwave Therapy Session"
+msgstr "جلسة موجات تصادمية"
+
+#. module: medical_orthopedics
+#: model:medical.observation.type,name:medical_orthopedics.obs_rom_shoulder_abduction
+msgid "Shoulder Abduction"
+msgstr "رفع الكتف جانبيًا"
+
+#. module: medical_orthopedics
+#: model:medical.observation.type,name:medical_orthopedics.obs_rom_shoulder_er
+msgid "Shoulder External Rotation"
+msgstr "الدوران الخارجي للكتف"
+
+#. module: medical_orthopedics
+#: model:medical.observation.type,name:medical_orthopedics.obs_rom_shoulder_flexion
+msgid "Shoulder Flexion"
+msgstr "ثني الكتف"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__laterality
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__laterality
+msgid "Side"
+msgstr "الجهة"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__body_site_id
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__body_site_id
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_search
+msgid "Site"
+msgstr "الموضع"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__skin_condition
+msgid "Skin at Removal"
+msgstr "الجلد عند الفك"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_cast__cast_type__sling
+msgid "Sling"
+msgstr "حمّالة ذراع"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_visit__session_tolerance__fair
+msgid "Some discomfort"
+msgstr "بعض الانزعاج"
+
+#. module: medical_orthopedics
+#: model:medical.diagnosis,name:medical_orthopedics.icd_m48_0
+msgid "Spinal stenosis"
+msgstr "ضيق القناة الشوكية"
+
+#. module: medical_orthopedics
+#: model:medical.specialty,name:medical_orthopedics.spec_spine
+msgid "Spine"
+msgstr "العمود الفقري"
+
+#. module: medical_orthopedics
+#: model:product.template,name:medical_orthopedics.product_splint_application_product_template
+msgid "Splint / Backslab Application"
+msgstr "تركيب سبلنت / جبيرة خلفية"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__mechanism__sports
+msgid "Sports"
+msgstr "الرياضة"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__case_type__sports
+msgid "Sports Injury"
+msgstr "إصابة رياضية"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__case_type__sprain
+msgid "Sprain / Strain"
+msgstr "التواء / شد"
+
+#. module: medical_orthopedics
+#: model:medical.diagnosis,name:medical_orthopedics.icd_s93_4
+msgid "Sprain of ankle"
+msgstr "التواء الكاحل"
+
+#. module: medical_orthopedics
+#: model:medical.diagnosis,name:medical_orthopedics.icd_s83_5
+msgid "Sprain of cruciate ligament of knee"
+msgstr "التواء الرباط الصليبي للركبة"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_form
+msgid "Start Physiotherapy"
+msgstr "بدء العلاج الطبيعي"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__state
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,help:medical_orthopedics.field_medical_orthopedic_case__activity_state
+#: model:ir.model.fields,help:medical_orthopedics.field_medical_orthopedic_cast__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخرة: تاريخ الاستحقاق قد فات\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخططة: أنشطة مستقبلية."
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.report_home_exercises_document
+msgid ""
+"Stop an exercise and call the center if it causes sharp pain, numbness or "
+"swelling."
+msgstr "أوقف التمرين واتصل بالمركز إذا سبب ألمًا حادًا أو تنميلًا أو تورمًا."
+
+#. module: medical_orthopedics
+#: model:ir.model,name:medical_orthopedics.model_medical_surgery
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__treatment__surgery
+msgid "Surgery"
+msgstr "الجراحة"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_cast__skin_condition__swelling
+msgid "Swelling"
+msgstr "تورم"
+
+#. module: medical_orthopedics
+#: model:medical.physio.modality,name:medical_orthopedics.modality_2
+msgid "TENS"
+msgstr "TENS"
+
+#. module: medical_orthopedics
+#: model:medical.diagnosis,name:medical_orthopedics.icd_s83_2
+msgid "Tear of meniscus, current"
+msgstr "تمزق الغضروف الهلالي، حديث"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_form
+msgid "Tests"
+msgstr "الفحوصات"
+
+#. module: medical_orthopedics
+#. odoo-python
+#: code:addons/medical_orthopedics/models/medical_orthopedic_cast.py:0
+msgid "The removal date must be after the application date."
+msgstr "يجب أن يكون تاريخ الفك بعد تاريخ التركيب."
+
+#. module: medical_orthopedics
+#: model:medical.physio.modality,name:medical_orthopedics.modality_6
+msgid "Therapeutic exercise"
+msgstr "التمارين العلاجية"
+
+#. module: medical_orthopedics
+#: model:medical.physio.modality,name:medical_orthopedics.modality_3
+msgid "Therapeutic ultrasound"
+msgstr "الموجات فوق الصوتية العلاجية"
+
+#. module: medical_orthopedics
+#. odoo-python
+#: code:addons/medical_orthopedics/models/medical_orthopedic_cast.py:0
+msgid "This cast was already removed."
+msgstr "تم فك هذه الجبيرة بالفعل."
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__weight_bearing__touch
+msgid "Toe-touch"
+msgstr "لمس بأطراف الأصابع"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_visit__session_tolerance
+msgid "Tolerance"
+msgstr "التحمّل"
+
+#. module: medical_orthopedics
+#: model:product.template,name:medical_orthopedics.product_thr_product_template
+msgid "Total Hip Replacement"
+msgstr "تغيير مفصل الفخذ الكامل"
+
+#. module: medical_orthopedics
+#: model:product.template,name:medical_orthopedics.product_tkr_product_template
+msgid "Total Knee Replacement"
+msgstr "تغيير مفصل الركبة الكامل"
+
+#. module: medical_orthopedics
+#: model:medical.physio.modality,name:medical_orthopedics.modality_7
+msgid "Traction"
+msgstr "الشد"
+
+#. module: medical_orthopedics
+#: model:medical.specialty,name:medical_orthopedics.spec_trauma
+msgid "Trauma & Fractures"
+msgstr "الإصابات والكسور"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__treatment
+msgid "Treatment"
+msgstr "العلاج"
+
+#. module: medical_orthopedics
+#: model:medical.diagnosis,name:medical_orthopedics.icd_m65_3
+msgid "Trigger finger"
+msgstr "الإصبع الزنادي"
+
+#. module: medical_orthopedics
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_search
+msgid "Type"
+msgstr "النوع"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,help:medical_orthopedics.field_medical_orthopedic_case__activity_exception_decoration
+#: model:ir.model.fields,help:medical_orthopedics.field_medical_orthopedic_cast__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط المستثنى في السجل."
+
+#. module: medical_orthopedics
+#: model:ir.model,name:medical_orthopedics.model_medical_visit
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__visit_id
+msgid "Visit"
+msgstr "الزيارة"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__visit_count
+msgid "Visit Count"
+msgstr "عدد الزيارات"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__visit_ids
+#: model_terms:ir.ui.view,arch_db:medical_orthopedics.medical_orthopedic_case_view_form
+msgid "Visits"
+msgstr "الزيارات"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_cast__cast_type__boot
+msgid "Walking Boot"
+msgstr "حذاء طبي (بوت)"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__website_message_ids
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_cast__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,help:medical_orthopedics.field_medical_orthopedic_case__website_message_ids
+#: model:ir.model.fields,help:medical_orthopedics.field_medical_orthopedic_cast__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع الإلكتروني"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__weeks_since_injury
+msgid "Weeks Since Injury"
+msgstr "أسابيع منذ الإصابة"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,field_description:medical_orthopedics.field_medical_orthopedic_case__weight_bearing
+msgid "Weight Bearing"
+msgstr "التحميل"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_visit__session_tolerance__good
+msgid "Well tolerated"
+msgstr "تحمّل جيد"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields.selection,name:medical_orthopedics.selection__medical_orthopedic_case__mechanism__work
+msgid "Work Accident"
+msgstr "حادث عمل"
+
+#. module: medical_orthopedics
+#: model:medical.observation.type,name:medical_orthopedics.obs_rom_wrist_extension
+msgid "Wrist Extension"
+msgstr "فرد الرسغ"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,help:medical_orthopedics.field_medical_orthopedic_case__fracture_classification
+msgid "e.g. AO/OTA 23-A2, Weber B, Garden III"
+msgstr "مثال: AO/OTA 23-A2، Weber B، Garden III"
+
+#. module: medical_orthopedics
+#: model:ir.model.fields,help:medical_orthopedics.field_medical_orthopedic_cast__position
+msgid "e.g. wrist in neutral, ankle at 90°"
+msgstr "مثال: الرسغ في الوضع المحايد، الكاحل بزاوية 90°"
+
+#. module: medical_orthopedics
+#: model:medical.observation.type,unit:medical_orthopedics.obs_grip_strength
+msgid "kg"
+msgstr "كجم"
