@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="mail_template_booking_received" model="mail.template">
+            <field name="name">Clinic: online booking received</field>
+            <field name="model_id" ref="medical_core.model_medical_visit"/>
+            <field name="subject">{{ object.company_id.name }}: your appointment on {{ format_datetime(object.start, tz=object.doctor_id.tz, dt_format='EEEE d MMMM, HH:mm') }}</field>
+            <field name="email_from">{{ (object.company_id.email_formatted or user.email_formatted) }}</field>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html" type="html">
+<div style="font-family: Arial, sans-serif; font-size: 15px; line-height: 1.6;">
+    <p>Hello <t t-out="object.booking_name or object.patient_id.name or ''"/>,</p>
+    <p>We received your booking at <strong t-out="object.company_id.name or ''"/>:</p>
+    <p style="font-size: 18px;">
+        <strong t-out="format_datetime(object.start, tz=object.doctor_id.tz, dt_format='EEEE d MMMM y, HH:mm') or ''"/><br/>
+        <t t-out="object.doctor_id.name or ''"/>, <t t-out="object.department_id.name or ''"/>
+    </p>
+    <p t-if="object.state == 'confirmed'">Your appointment is confirmed. Please come 10 minutes early.</p>
+    <p t-else="">The clinic will call you or message you on WhatsApp to confirm.</p>
+    <p>To check or cancel the appointment, open your booking page:<br/>
+        <a t-att-href="'%s/appointment/booking/%s' % (object.get_base_url(), object.sudo().booking_token)">Your booking page</a></p>
+    <p>Booking number: <t t-out="object.name or ''"/></p>
+</div>
+            </field>
+            <field name="lang">{{ object.patient_id.lang }}</field>
+        </record>
+    </data>
+</odoo>

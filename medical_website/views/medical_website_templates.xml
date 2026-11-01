@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ================================================================ shared pieces -->
+    <template id="doctor_card" name="Clinic: doctor card">
+        <article class="o_mw_doctor">
+            <a t-att-href="'/clinic/doctor/%s' % slug(doctor)" class="o_mw_doctor_photo" t-att-aria-label="doctor.name">
+                <img t-if="has_photo(doctor)" t-att-src="'/clinic/doctor/%s/photo' % doctor.id" t-att-alt="doctor.name" loading="lazy"/>
+                <span t-else="" class="o_mw_initials" aria-hidden="true" t-esc="initials(doctor.name)"/>
+            </a>
+            <div class="o_mw_doctor_body">
+                <h3 class="o_mw_doctor_name"><a t-att-href="'/clinic/doctor/%s' % slug(doctor)" t-esc="doctor.name"/></h3>
+                <p class="o_mw_doctor_headline" t-if="doctor.website_headline" t-esc="doctor.website_headline"/>
+                <p class="o_mw_doctor_clinics" t-esc="', '.join(doctor.medical_department_ids.filtered('website_published').mapped('name'))"/>
+                <a t-if="doctor.website_booking and doctor.resource_calendar_id"
+                   t-att-href="'/appointment?department=%s&amp;doctor=%s' % (doctor.medical_department_ids.filtered('website_published')[:1].id, doctor.id)"
+                   class="o_mw_link">Book with this doctor</a>
+            </div>
+        </article>
+    </template>
+
+    <template id="visit_us" name="Clinic: visit us">
+        <section class="o_mw_section o_mw_visit" id="visit-us">
+            <div class="container">
+                <h2 class="o_mw_h2">Visit us</h2>
+                <div class="o_mw_visit_grid">
+                    <div t-if="website.clinic_hours_text">
+                        <h3 class="o_mw_h3">Opening hours</h3>
+                        <p class="o_mw_hours" t-esc="website.clinic_hours_text"/>
+                    </div>
+                    <div t-if="clinic_company.street or clinic_company.city">
+                        <h3 class="o_mw_h3">Address</h3>
+                        <p>
+                            <t t-esc="clinic_company.street"/><br t-if="clinic_company.street and clinic_company.city"/>
+                            <t t-esc="clinic_company.city"/>
+                        </p>
+                        <a t-if="website.clinic_map_url" t-att-href="website.clinic_map_url" target="_blank" rel="noopener" class="o_mw_link">Get directions</a>
+                    </div>
+                    <div>
+                        <h3 class="o_mw_h3">Contact</h3>
+                        <p t-if="clinic_company.phone"><a t-att-href="'tel:%s' % clinic_company.phone" dir="ltr" t-esc="clinic_company.phone"/></p>
+                        <p t-if="clinic_company.email"><a t-att-href="'mailto:%s' % clinic_company.email" t-esc="clinic_company.email"/></p>
+                        <a t-if="clinic_whatsapp_url" t-att-href="clinic_whatsapp_url" target="_blank" rel="noopener" class="o_mw_link">Message us on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- ===================================================================== home -->
+    <template id="clinic_home" name="Clinic: home">
+        <t t-call="website.layout">
+            <t t-set="pageName" t-value="'clinic'"/>
+            <div id="wrap" class="o_mw">
+                <section class="o_mw_hero">
+                    <div class="container"><div class="o_mw_hero_grid">
+                        <div class="o_mw_hero_text">
+                            <h1 class="o_mw_display" t-esc="website.clinic_name or clinic_company.name"/>
+                            <p class="o_mw_lead" t-if="website.clinic_tagline" t-esc="website.clinic_tagline"/>
+                            <p class="o_mw_lead" t-else="">Book your visit online in under a minute.</p>
+                            <div class="o_mw_actions">
+                                <a href="/appointment" class="btn o_mw_btn_primary">Book an appointment</a>
+                                <a t-if="clinic_whatsapp_url" t-att-href="clinic_whatsapp_url" target="_blank" rel="noopener"
+                                   class="btn o_mw_btn_ghost"><i class="fa fa-whatsapp" role="img" aria-label="WhatsApp" title="WhatsApp"/> Message us on WhatsApp</a>
+                            </div>
+                        </div>
+                        <aside class="o_mw_ticket" t-if="next_slot">
+                            <p class="o_mw_ticket_label">Next free appointment</p>
+                            <p class="o_mw_ticket_day" t-esc="day_label(next_slot['day'], 'EEEE d MMMM')"/>
+                            <p class="o_mw_ticket_time" dir="ltr" t-esc="next_slot['time']"/>
+                            <p class="o_mw_ticket_who">
+                                <span t-esc="next_slot['doctor'].name"/><br/>
+                                <span class="o_mw_muted" t-esc="next_slot['department'].name"/>
+                            </p>
+                            <a class="btn o_mw_btn_primary w-100"
+                               t-att-href="'/appointment?department=%s&amp;doctor=%s' % (next_slot['department'].id, next_slot['doctor'].id)">Book this time</a>
+                        </aside>
+                        <aside class="o_mw_ticket" t-elif="website.clinic_hours_text">
+                            <p class="o_mw_ticket_label">Opening hours</p>
+                            <p class="o_mw_hours" t-esc="website.clinic_hours_text"/>
+                        </aside>
+                    </div></div>
+                </section>
+
+                <section class="o_mw_section o_mw_about" t-if="website.clinic_about">
+                    <div class="container o_mw_narrow">
+                        <h2 class="o_mw_h2">About the clinic</h2>
+                        <div class="o_mw_prose" t-out="website.clinic_about"/>
+                    </div>
+                </section>
+
+                <section class="o_mw_section" t-if="clinic_departments">
+                    <div class="container">
+                        <h2 class="o_mw_h2">Our clinics</h2>
+                        <ul class="o_mw_clinics">
+                            <li t-foreach="clinic_departments" t-as="department">
+                                <a t-att-href="department.website_url" class="o_mw_clinic">
+                                    <i t-attf-class="fa {{ department.website_icon or 'fa-stethoscope' }} o_mw_clinic_icon" role="img"
+                                       t-att-aria-label="department.name" t-att-title="department.name"/>
+                                    <span class="o_mw_clinic_text">
+                                        <span class="o_mw_clinic_name" t-esc="department.name"/>
+                                        <span class="o_mw_clinic_intro" t-if="department.website_intro" t-esc="department.website_intro"/>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="o_mw_section o_mw_tinted" t-if="doctors">
+                    <div class="container">
+                        <div class="o_mw_section_head">
+                            <h2 class="o_mw_h2">Our doctors</h2>
+                            <a href="/clinic/doctors" class="o_mw_link">All doctors</a>
+                        </div>
+                        <div class="o_mw_doctors">
+                            <t t-foreach="doctors[:6]" t-as="doctor">
+                                <t t-call="medical_website.doctor_card"/>
+                            </t>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="o_mw_section">
+                    <div class="container">
+                        <h2 class="o_mw_h2">Booking takes three steps</h2>
+                        <ol class="o_mw_steps">
+                            <li>
+                                <h3 class="o_mw_h3">Choose the clinic and doctor</h3>
+                                <p>Or let us give you the first doctor who is free.</p>
+                            </li>
+                            <li>
+                                <h3 class="o_mw_h3">Pick a day and time</h3>
+                                <p>You only see times that are really free in the doctor's schedule.</p>
+                            </li>
+                            <li>
+                                <h3 class="o_mw_h3">Leave your name and phone</h3>
+                                <p>We confirm by phone or WhatsApp. You can cancel from your booking page.</p>
+                            </li>
+                        </ol>
+                        <a href="/appointment" class="btn o_mw_btn_primary">Book an appointment</a>
+                    </div>
+                </section>
+
+                <t t-call="medical_website.visit_us"/>
+            </div>
+        </t>
+    </template>
+
+    <!-- =============================================================== department -->
+    <template id="clinic_department" name="Clinic: department">
+        <t t-call="website.layout">
+            <t t-set="additional_title" t-value="department.name"/>
+            <div id="wrap" class="o_mw">
+                <section class="o_mw_page_head">
+                    <div class="container">
+                        <a href="/clinic" class="o_mw_back">Clinic home</a>
+                        <h1 class="o_mw_h1">
+                            <i t-attf-class="fa {{ department.website_icon or 'fa-stethoscope' }} o_mw_clinic_icon" role="img"
+                               t-att-aria-label="department.name" t-att-title="department.name"/>
+                            <t t-esc="department.name"/>
+                        </h1>
+                        <p class="o_mw_lead" t-if="department.website_intro" t-esc="department.website_intro"/>
+                        <a t-if="department.online_booking" t-att-href="'/appointment?department=%s' % department.id"
+                           class="btn o_mw_btn_primary">Book in this clinic</a>
+                    </div>
+                </section>
+                <section class="o_mw_section" t-if="department.website_description">
+                    <div class="container o_mw_narrow">
+                        <div class="o_mw_prose" t-out="department.website_description"/>
+                    </div>
+                </section>
+                <section class="o_mw_section" t-if="services">
+                    <div class="container o_mw_narrow">
+                        <h2 class="o_mw_h2">Services</h2>
+                        <dl class="o_mw_services">
+                            <t t-foreach="services" t-as="service">
+                                <div class="o_mw_service">
+                                    <dt>
+                                        <span t-esc="service.name"/>
+                                        <span class="o_mw_price" t-if="service.medical_website_show_price"
+                                              t-esc="service.list_price" t-options="{'widget': 'monetary', 'display_currency': currency}"/>
+                                    </dt>
+                                    <dd t-if="service.medical_website_description" t-esc="service.medical_website_description"/>
+                                </div>
+                            </t>
+                        </dl>
+                    </div>
+                </section>
+                <section class="o_mw_section o_mw_tinted" t-if="doctors">
+                    <div class="container">
+                        <h2 class="o_mw_h2">Doctors in this clinic</h2>
+                        <div class="o_mw_doctors">
+                            <t t-foreach="doctors" t-as="doctor">
+                                <t t-call="medical_website.doctor_card"/>
+                            </t>
+                        </div>
+                    </div>
+                </section>
+                <t t-call="medical_website.visit_us"/>
+            </div>
+        </t>
+    </template>
+
+    <!-- ================================================================== doctors -->
+    <template id="clinic_doctors" name="Clinic: doctors">
+        <t t-call="website.layout">
+            <div id="wrap" class="o_mw">
+                <section class="o_mw_page_head">
+                    <div class="container">
+                        <a href="/clinic" class="o_mw_back">Clinic home</a>
+                        <h1 class="o_mw_h1">Our doctors</h1>
+                    </div>
+                </section>
+                <section class="o_mw_section">
+                    <div class="container">
+                        <div class="o_mw_doctors">
+                            <t t-foreach="doctors" t-as="doctor">
+                                <t t-call="medical_website.doctor_card"/>
+                            </t>
+                        </div>
+                        <p t-if="not doctors" class="o_mw_muted">Our doctors' profiles will be published soon.</p>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+
+    <template id="clinic_doctor" name="Clinic: doctor">
+        <t t-call="website.layout">
+            <t t-set="additional_title" t-value="doctor.name"/>
+            <div id="wrap" class="o_mw">
+                <section class="o_mw_page_head">
+                    <div class="container"><div class="o_mw_profile">
+                        <img t-if="has_photo(doctor)" class="o_mw_profile_photo" t-att-src="'/clinic/doctor/%s/photo' % doctor.id" t-att-alt="doctor.name"/>
+                        <span t-else="" class="o_mw_initials o_mw_profile_photo" aria-hidden="true" t-esc="initials(doctor.name)"/>
+                        <div>
+                            <a href="/clinic/doctors" class="o_mw_back">All doctors</a>
+                            <h1 class="o_mw_h1" t-esc="doctor.name"/>
+                            <p class="o_mw_lead" t-if="doctor.website_headline" t-esc="doctor.website_headline"/>
+                            <p class="o_mw_meta">
+                                <t t-foreach="doctor_departments" t-as="dep">
+                                    <a t-att-href="dep.website_url" t-esc="dep.name"/><t t-if="not dep_last">, </t>
+                                </t>
+                            </p>
+                            <p class="o_mw_meta" t-if="doctor.website_languages">
+                                <span class="o_mw_muted">Speaks:</span> <t t-esc="doctor.website_languages"/>
+                            </p>
+                            <a t-if="doctor.website_booking and doctor.resource_calendar_id and doctor_departments"
+                               t-att-href="'/appointment?department=%s&amp;doctor=%s' % (doctor_departments[:1].id, doctor.id)"
+                               class="btn o_mw_btn_primary">Book with this doctor</a>
+                        </div>
+                    </div></div>
+                </section>
+                <section class="o_mw_section" t-if="doctor.website_bio">
+                    <div class="container o_mw_narrow">
+                        <div class="o_mw_prose" t-out="doctor.website_bio"/>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

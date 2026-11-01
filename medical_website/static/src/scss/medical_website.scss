@@ -1,0 +1,815 @@
+// Clinic website: one bilingual family (IBM Plex Sans Arabic, OFL) and a petrol / saffron palette.
+@each $weight in (400, 500, 600, 700) {
+    @font-face {
+        font-family: "Plex Clinic";
+        font-style: normal;
+        font-weight: $weight;
+        font-display: swap;
+        src: url("/medical_website/static/src/fonts/ibm-plex-sans-arabic-arabic-#{$weight}-normal.woff2") format("woff2");
+        unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E,
+            U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
+    }
+    @font-face {
+        font-family: "Plex Clinic";
+        font-style: normal;
+        font-weight: $weight;
+        font-display: swap;
+        src: url("/medical_website/static/src/fonts/ibm-plex-sans-arabic-latin-#{$weight}-normal.woff2") format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308,
+            U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+}
+
+.o_mw {
+    --mw-petrol: #0f4c5c;
+    --mw-petrol-deep: #0a3540;
+    --mw-petrol-soft: #e3eef0;
+    --mw-saffron: #e2a23b;
+    --mw-saffron-deep: #c98a24;
+    --mw-ink: #13262b;
+    --mw-muted: #56696e;
+    --mw-line: #d4e0e2;
+    --mw-surface: #f2f6f7;
+    --mw-white: #ffffff;
+    --mw-danger: #b3261e;
+    --mw-radius: 12px;
+
+    font-family: "Plex Clinic", system-ui, sans-serif;
+    color: var(--mw-ink);
+    background: var(--mw-white);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+
+    h1, h2, h3, .btn {
+        font-family: inherit;
+    }
+
+    a {
+        color: var(--mw-petrol);
+    }
+
+    :focus-visible {
+        outline: 3px solid var(--mw-saffron);
+        outline-offset: 2px;
+    }
+}
+
+// ------------------------------------------------------------------ typography
+.o_mw_display {
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.12;
+    margin: 0 0 16px;
+    letter-spacing: -0.01em;
+}
+
+.o_mw_h1 {
+    font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 4px 0 12px;
+}
+
+.o_mw_h2 {
+    font-size: clamp(1.5rem, 2.6vw, 1.95rem);
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 24px;
+}
+
+.o_mw_h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0 0 6px;
+}
+
+.o_mw_lead {
+    font-size: 1.25rem;
+    max-width: 38em;
+    margin: 0 0 24px;
+}
+
+.o_mw_muted {
+    color: var(--mw-muted);
+}
+
+.o_mw_small {
+    font-size: 0.875rem;
+}
+
+.o_mw_prose {
+    max-width: 40em;
+
+    p {
+        margin-bottom: 1em;
+    }
+}
+
+.o_mw_link {
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+}
+
+.o_mw_back {
+    font-size: 0.9375rem;
+    color: var(--mw-muted) !important;
+    text-decoration: none;
+}
+
+// --------------------------------------------------------------------- buttons
+.o_mw .btn.o_mw_btn_primary {
+    background: var(--mw-saffron);
+    border: 0;
+    color: var(--mw-ink);
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 999px;
+
+    &:hover,
+    &:focus-visible {
+        background: var(--mw-saffron-deep);
+        color: var(--mw-ink);
+    }
+
+    &:disabled {
+        background: var(--mw-line);
+        color: var(--mw-muted);
+        opacity: 1;
+    }
+}
+
+.o_mw .btn.o_mw_btn_ghost {
+    border: 1.5px solid currentColor;
+    background: transparent;
+    color: inherit;
+    font-weight: 600;
+    padding: 11px 22px;
+    border-radius: 999px;
+
+    .fa {
+        margin-inline-end: 6px;
+    }
+}
+
+.o_mw_actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+// ------------------------------------------------------------------------ hero
+.o_mw_hero {
+    background: var(--mw-petrol);
+    color: var(--mw-white);
+    padding: 72px 0 80px;
+
+    .o_mw_lead {
+        color: #d8e7ea;
+    }
+
+    .btn.o_mw_btn_ghost {
+        color: var(--mw-white);
+    }
+}
+
+.o_mw_hero_grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+    gap: 48px;
+    align-items: center;
+
+    @media (max-width: 767.98px) {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+    }
+}
+
+// The appointment slip: the one bold object on the page, shaped like a torn-off ticket.
+.o_mw_ticket {
+    position: relative;
+    background: var(--mw-white);
+    color: var(--mw-ink);
+    border-radius: var(--mw-radius);
+    padding: 28px 28px 24px;
+    box-shadow: 0 18px 40px rgba(6, 34, 41, 0.35);
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 58%;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--mw-petrol);
+    }
+
+    &::before {
+        inset-inline-start: -11px;
+    }
+
+    &::after {
+        inset-inline-end: -11px;
+    }
+
+    p {
+        margin: 0;
+    }
+}
+
+.o_mw_ticket_label {
+    font-size: 0.9375rem;
+    color: var(--mw-muted);
+}
+
+.o_mw_ticket_day {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 6px !important;
+}
+
+.o_mw_ticket_time {
+    font-size: 3.4rem;
+    font-weight: 700;
+    line-height: 1.05;
+    color: var(--mw-petrol);
+    font-variant-numeric: tabular-nums;
+    text-align: start;
+    unicode-bidi: plaintext;
+}
+
+.o_mw_ticket_who {
+    border-top: 2px dashed var(--mw-line);
+    margin: 18px 0 18px !important;
+    padding-top: 16px;
+    font-weight: 500;
+}
+
+.o_mw_ticket_wide {
+    max-width: 420px;
+    margin: 24px 0;
+    box-shadow: 0 0 0 1px var(--mw-line);
+
+    &::before,
+    &::after {
+        background: var(--mw-white);
+        box-shadow: inset 0 0 0 1px var(--mw-line);
+    }
+}
+
+.o_mw_hours {
+    white-space: pre-line;
+}
+
+// -------------------------------------------------------------------- sections
+.o_mw_section {
+    padding: 64px 0;
+}
+
+.o_mw_section_tight {
+    padding-top: 24px;
+}
+
+.o_mw_tinted {
+    background: var(--mw-surface);
+}
+
+.o_mw_narrow {
+    max-width: 860px;
+}
+
+.o_mw_section_head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+}
+
+.o_mw_page_head {
+    background: var(--mw-petrol-soft);
+    padding: 40px 0 36px;
+}
+
+.o_mw_page_head_compact {
+    padding: 28px 0 20px;
+}
+
+// ---------------------------------------------------------------------- clinics
+.o_mw_clinics {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(#{"min(100%, 340px)"}, 1fr));
+    column-gap: 40px;
+}
+
+.o_mw_clinic {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 18px 0;
+    border-top: 1px solid var(--mw-line);
+    color: var(--mw-ink) !important;
+    text-decoration: none;
+
+    &:hover .o_mw_clinic_name {
+        color: var(--mw-petrol);
+        text-decoration: underline;
+    }
+}
+
+.o_mw_clinic_icon {
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--mw-petrol-soft);
+    color: var(--mw-petrol);
+    font-size: 20px;
+}
+
+.o_mw_h1 .o_mw_clinic_icon {
+    vertical-align: middle;
+    margin-inline-end: 10px;
+}
+
+.o_mw_clinic_text {
+    display: flex;
+    flex-direction: column;
+}
+
+.o_mw_clinic_name {
+    font-weight: 600;
+    font-size: 1.125rem;
+}
+
+.o_mw_clinic_intro {
+    color: var(--mw-muted);
+    font-size: 0.9375rem;
+}
+
+// ---------------------------------------------------------------------- doctors
+.o_mw_doctors {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(#{"min(100%, 230px)"}, 1fr));
+    gap: 32px 24px;
+
+    @media (max-width: 575.98px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px 14px;
+    }
+}
+
+// a doctor without a photo gets a shorter, calmer placeholder than a portrait
+.o_mw_doctors .o_mw_initials {
+    aspect-ratio: 4 / 3;
+}
+
+.o_mw_doctor_photo img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: var(--mw-radius);
+    background: var(--mw-petrol-soft);
+    display: block;
+}
+
+.o_mw_initials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: var(--mw-radius);
+    background: var(--mw-petrol-soft);
+    color: var(--mw-petrol);
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.o_mw_initials_small {
+    width: 40px;
+    height: 40px;
+    aspect-ratio: auto;
+    border-radius: 50%;
+    font-size: 0.9375rem;
+}
+
+.o_mw_choice input:checked + span .o_mw_initials_small {
+    background: rgba(255, 255, 255, 0.18);
+    color: var(--mw-white);
+}
+
+.o_mw_doctor_body {
+    padding-top: 12px;
+
+    p {
+        margin: 0 0 4px;
+    }
+}
+
+.o_mw_doctor_name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0 0 2px;
+
+    a {
+        color: var(--mw-ink);
+        text-decoration: none;
+    }
+}
+
+.o_mw_doctor_headline {
+    font-size: 0.9375rem;
+}
+
+.o_mw_doctor_clinics {
+    font-size: 0.875rem;
+    color: var(--mw-muted);
+    margin-bottom: 8px !important;
+}
+
+.o_mw_profile {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 32px;
+    align-items: end;
+
+    @media (max-width: 575.98px) {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.o_mw_profile_photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: var(--mw-radius);
+}
+
+.o_mw_meta {
+    margin-bottom: 8px;
+}
+
+// ---------------------------------------------------------------------- services
+.o_mw_services {
+    margin: 0;
+}
+
+.o_mw_service {
+    padding: 14px 0;
+    border-top: 1px solid var(--mw-line);
+
+    dt {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        font-weight: 600;
+    }
+
+    dd {
+        margin: 4px 0 0;
+        color: var(--mw-muted);
+    }
+}
+
+.o_mw_price {
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+// ------------------------------------------------------------------------ steps
+.o_mw_steps {
+    list-style: none;
+    counter-reset: mw-step;
+    padding: 0;
+    margin: 0 0 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(#{"min(100%, 240px)"}, 1fr));
+    gap: 32px;
+
+    li {
+        counter-increment: mw-step;
+
+        &::before {
+            content: counter(mw-step);
+            display: block;
+            font-size: 2.6rem;
+            font-weight: 700;
+            line-height: 1;
+            color: var(--mw-petrol);
+            margin-bottom: 12px;
+        }
+    }
+
+    p {
+        color: var(--mw-muted);
+        margin: 0;
+    }
+}
+
+// ------------------------------------------------------------------------ visit
+.o_mw_visit {
+    border-top: 1px solid var(--mw-line);
+}
+
+.o_mw_visit_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(#{"min(100%, 240px)"}, 1fr));
+    gap: 32px;
+
+    p {
+        margin-bottom: 8px;
+    }
+}
+
+// ---------------------------------------------------------------------- booking
+.o_mw_alert {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    border-inline-start: 4px solid var(--mw-danger);
+    background: #fbeeed;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+
+    .fa {
+        color: var(--mw-danger);
+    }
+}
+
+.o_mw_hp {
+    position: absolute;
+    inset-inline-start: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.o_mw_booking_grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 40px;
+    align-items: start;
+
+    @media (max-width: 991.98px) {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.o_mw_step {
+    border: 0;
+    padding: 0 0 28px;
+    margin: 0 0 28px;
+    border-bottom: 1px solid var(--mw-line);
+    min-width: 0;
+}
+
+.o_mw_step_title {
+    // Bootstrap floats legends; a float beside the scrolling day strip would squeeze it to zero width
+    float: none;
+    width: auto;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.o_mw_step_n {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--mw-petrol);
+    color: var(--mw-white);
+    font-size: 0.9375rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.o_mw_choices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.o_mw_choice {
+    position: relative;
+    cursor: pointer;
+    margin: 0;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        inset: 0;
+        cursor: pointer;
+    }
+
+    > span {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 18px;
+        border: 1.5px solid var(--mw-line);
+        border-radius: 999px;
+        background: var(--mw-white);
+        font-weight: 500;
+    }
+
+    input:checked + span {
+        border-color: var(--mw-petrol);
+        background: var(--mw-petrol);
+        color: var(--mw-white);
+    }
+
+    input:focus-visible + span {
+        outline: 3px solid var(--mw-saffron);
+        outline-offset: 2px;
+    }
+}
+
+.o_mw_choice_person {
+    border-radius: var(--mw-radius) !important;
+    padding: 8px 14px 8px 8px !important;
+
+    img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    > span {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.3;
+    }
+}
+
+.o_mw_choice_sub {
+    font-size: 0.8125rem;
+    opacity: 0.8;
+}
+
+.o_mw_days {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+    scrollbar-width: thin;
+}
+
+.o_mw_day,
+.o_mw_time {
+    border: 1.5px solid var(--mw-line);
+    background: var(--mw-white);
+    color: var(--mw-ink);
+    border-radius: 10px;
+    font-family: inherit;
+    cursor: pointer;
+
+    &.is-selected {
+        border-color: var(--mw-petrol);
+        background: var(--mw-petrol);
+        color: var(--mw-white);
+    }
+}
+
+.o_mw_day {
+    flex: 0 0 auto;
+    min-width: 92px;
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.o_mw_day_sub {
+    font-weight: 400;
+    font-size: 0.875rem;
+}
+
+.o_mw_times {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+    gap: 8px;
+}
+
+.o_mw_time {
+    padding: 10px 0;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    direction: ltr;
+}
+
+.o_mw_fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 20px;
+
+    @media (max-width: 575.98px) {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.o_mw_field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 0;
+    font-weight: 500;
+
+    input,
+    select,
+    textarea {
+        font: inherit;
+        font-weight: 400;
+        border: 1.5px solid var(--mw-line);
+        border-radius: 10px;
+        padding: 10px 12px;
+        background: var(--mw-white);
+        color: var(--mw-ink);
+        width: 100%;
+
+        &:focus {
+            border-color: var(--mw-petrol);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(15, 76, 92, 0.15);
+        }
+    }
+}
+
+.o_mw_field_wide {
+    grid-column: 1 / -1;
+}
+
+.o_mw_check {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 0.9375rem;
+
+    input {
+        margin-top: 6px;
+        accent-color: var(--mw-petrol);
+    }
+}
+
+.o_mw_summary {
+    position: sticky;
+    top: 96px;
+    background: var(--mw-surface);
+    border-radius: var(--mw-radius);
+    padding: 24px;
+
+    dl {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 8px 16px;
+        margin: 16px 0 20px;
+    }
+
+    dt {
+        font-weight: 500;
+        color: var(--mw-muted);
+    }
+
+    dd {
+        margin: 0;
+        font-weight: 600;
+    }
+
+    .o_mw_sum_time {
+        text-align: end;
+        unicode-bidi: plaintext;
+    }
+
+    p {
+        margin: 12px 0 0;
+    }
+}
+
+.o_mw_cancel {
+    color: var(--mw-danger) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .o_mw * {
+        transition: none !important;
+        animation: none !important;
+    }
+}

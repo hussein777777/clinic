@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="booking_page" name="Clinic: book an appointment">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Book an appointment</t>
+            <div id="wrap" class="o_mw">
+                <section class="o_mw_page_head o_mw_page_head_compact">
+                    <div class="container">
+                        <a href="/clinic" class="o_mw_back">Clinic home</a>
+                        <h1 class="o_mw_h1">Book an appointment</h1>
+                    </div>
+                </section>
+                <section class="o_mw_section o_mw_section_tight">
+                    <div class="container">
+                        <div t-if="error" class="o_mw_alert" role="alert">
+                            <i class="fa fa-exclamation-circle" role="img" aria-label="Error" title="Error"/>
+                            <span t-esc="error"/>
+                        </div>
+                        <p t-if="not departments" class="o_mw_muted">Online booking is not open yet. Please call the clinic.</p>
+                        <form t-else="" action="/appointment/submit" method="post" class="o_mw_booking"
+                              t-att-data-department="selected_department" t-att-data-doctor="selected_doctor"
+                              t-att-data-start="selected_start">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <input type="hidden" name="start" t-att-value="selected_start"/>
+                            <div class="o_mw_hp" aria-hidden="true">
+                                <label for="website_hp">Leave this field empty</label>
+                                <input type="text" id="website_hp" name="website_hp" tabindex="-1" autocomplete="off"/>
+                            </div>
+                            <div class="o_mw_booking_grid">
+                                <div class="o_mw_booking_steps">
+                                    <fieldset class="o_mw_step">
+                                        <legend class="o_mw_step_title"><span class="o_mw_step_n">1</span> Clinic</legend>
+                                        <div class="o_mw_choices">
+                                            <t t-foreach="departments" t-as="dep">
+                                                <label class="o_mw_choice">
+                                                    <input type="radio" name="department_id" t-att-value="dep.id" required="required"
+                                                           t-att-checked="dep.id == selected_department or None"
+                                                           t-att-data-name="dep.name"/>
+                                                    <span><i t-attf-class="fa {{ dep.website_icon or 'fa-stethoscope' }}" role="img" t-att-aria-label="dep.name" t-att-title="dep.name"/> <t t-esc="dep.name"/></span>
+                                                </label>
+                                            </t>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="o_mw_step">
+                                        <legend class="o_mw_step_title"><span class="o_mw_step_n">2</span> Doctor</legend>
+                                        <div class="o_mw_choices o_mw_doctor_choices">
+                                            <t t-set="any_doctor_label">First doctor free</t>
+                                            <label class="o_mw_choice">
+                                                <input type="radio" name="doctor_id" value="" t-att-checked="not selected_doctor or None"
+                                                       t-att-data-name="any_doctor_label" data-any="1"/>
+                                                <span>First doctor free</span>
+                                            </label>
+                                            <t t-foreach="booking_doctors" t-as="doc">
+                                                <label class="o_mw_choice o_mw_choice_doctor"
+                                                       t-att-data-departments="','.join(str(i) for i in doc.medical_department_ids.ids)">
+                                                    <input type="radio" name="doctor_id" t-att-value="doc.id"
+                                                           t-att-checked="doc.id == selected_doctor or None" t-att-data-name="doc.name"/>
+                                                    <span class="o_mw_choice_person">
+                                                        <img t-if="has_photo(doc)" t-att-src="'/clinic/doctor/%s/photo' % doc.id" alt="" loading="lazy"/>
+                                                        <span t-else="" class="o_mw_initials o_mw_initials_small" aria-hidden="true" t-esc="initials(doc.name)"/>
+                                                        <span>
+                                                            <span class="o_mw_choice_name" t-esc="doc.name"/>
+                                                            <span class="o_mw_choice_sub" t-if="doc.website_headline" t-esc="doc.website_headline"/>
+                                                        </span>
+                                                    </span>
+                                                </label>
+                                            </t>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="o_mw_step">
+                                        <legend class="o_mw_step_title"><span class="o_mw_step_n">3</span> Day and time</legend>
+                                        <p class="o_mw_slots_hint o_mw_muted">Choose a clinic to see the free times.</p>
+                                        <p class="o_mw_slots_empty o_mw_muted d-none">No free time in the coming weeks. Please call the clinic or choose another doctor.</p>
+                                        <p class="o_mw_slots_loading o_mw_muted d-none"><i class="fa fa-circle-o-notch fa-spin" role="img" aria-label="Loading" title="Loading"/> Looking for free times...</p>
+                                        <div class="o_mw_days" role="group" aria-label="Day"/>
+                                        <div class="o_mw_times" role="group" aria-label="Time"/>
+                                        <noscript><p class="o_mw_muted">Turn on JavaScript to see the free times, or call the clinic.</p></noscript>
+                                    </fieldset>
+
+                                    <fieldset class="o_mw_step">
+                                        <legend class="o_mw_step_title"><span class="o_mw_step_n">4</span> Your details</legend>
+                                        <div class="o_mw_fields">
+                                            <label class="o_mw_field o_mw_field_wide">
+                                                <span>Full name</span>
+                                                <input type="text" name="name" required="required" autocomplete="name" t-att-value="form.get('name')"/>
+                                            </label>
+                                            <label class="o_mw_field">
+                                                <span>Mobile number</span>
+                                                <input type="tel" name="phone" required="required" autocomplete="tel" dir="ltr" t-att-value="form.get('phone')"/>
+                                            </label>
+                                            <label class="o_mw_field">
+                                                <span>E-mail <t t-if="not email_required"><span class="o_mw_muted">(optional)</span></t></span>
+                                                <input type="email" name="email" autocomplete="email" dir="ltr" t-att-value="form.get('email')"
+                                                       t-att-required="email_required or None"/>
+                                            </label>
+                                            <label class="o_mw_field">
+                                                <span>Date of birth <span class="o_mw_muted">(optional)</span></span>
+                                                <input type="date" name="birthdate" t-att-value="form.get('birthdate')"/>
+                                            </label>
+                                            <label class="o_mw_field">
+                                                <span>Gender <span class="o_mw_muted">(optional)</span></span>
+                                                <select name="gender">
+                                                    <option value="">-</option>
+                                                    <option value="female" t-att-selected="form.get('gender') == 'female' or None">Female</option>
+                                                    <option value="male" t-att-selected="form.get('gender') == 'male' or None">Male</option>
+                                                </select>
+                                            </label>
+                                            <label class="o_mw_field o_mw_field_wide">
+                                                <span>Reason for the visit <span class="o_mw_muted">(optional)</span></span>
+                                                <textarea name="note" rows="3" maxlength="1000" t-esc="form.get('note')"/>
+                                            </label>
+                                            <label class="o_mw_check o_mw_field_wide">
+                                                <input type="checkbox" name="consent" value="1" required="required"/>
+                                                <span>I agree that the clinic stores these details to manage my visit and contacts me about it.</span>
+                                            </label>
+                                        </div>
+                                    </fieldset>
+                                </div>
+
+                                <aside class="o_mw_summary" aria-live="polite">
+                                    <h2 class="o_mw_h3">Your appointment</h2>
+                                    <dl>
+                                        <dt>Clinic</dt><dd class="o_mw_sum_department">-</dd>
+                                        <dt>Doctor</dt><dd class="o_mw_sum_doctor">-</dd>
+                                        <dt>Day</dt><dd class="o_mw_sum_day">-</dd>
+                                        <dt>Time</dt><dd class="o_mw_sum_time" dir="ltr">-</dd>
+                                    </dl>
+                                    <button type="submit" class="btn o_mw_btn_primary w-100 o_mw_submit" disabled="disabled">Book this appointment</button>
+                                    <p class="o_mw_small o_mw_muted">The clinic confirms by phone or WhatsApp.</p>
+                                </aside>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+
+    <template id="booking_done" name="Clinic: booking page">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Your appointment</t>
+            <div id="wrap" class="o_mw">
+                <section class="o_mw_section">
+                    <div class="container o_mw_narrow">
+                        <t t-if="visit.state == 'cancelled'">
+                            <h1 class="o_mw_h1">Appointment cancelled</h1>
+                            <p class="o_mw_lead">Your appointment was cancelled. You can book another time whenever you want.</p>
+                        </t>
+                        <t t-elif="visit.state == 'confirmed'">
+                            <h1 class="o_mw_h1">Appointment confirmed</h1>
+                            <p class="o_mw_lead">We are waiting for you. Please come 10 minutes early.</p>
+                        </t>
+                        <t t-else="">
+                            <h1 class="o_mw_h1">Booking received</h1>
+                            <p class="o_mw_lead">The clinic will call you or message you on WhatsApp to confirm.</p>
+                        </t>
+                        <div class="o_mw_ticket o_mw_ticket_wide">
+                            <p class="o_mw_ticket_day" t-esc="visit_day"/>
+                            <p class="o_mw_ticket_time" dir="ltr" t-esc="visit_time"/>
+                            <p class="o_mw_ticket_who">
+                                <span t-esc="visit.doctor_id.name"/><br/>
+                                <span class="o_mw_muted" t-esc="visit.department_id.name"/>
+                            </p>
+                            <p class="o_mw_small o_mw_muted">Booking number <span dir="ltr" t-esc="visit.name"/></p>
+                        </div>
+                        <p class="o_mw_small o_mw_muted">Keep this page: its address lets you check or cancel the appointment.</p>
+                        <div class="o_mw_actions">
+                            <form t-if="can_cancel" t-att-action="'/appointment/booking/%s/cancel' % visit.booking_token" method="post">
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                <button type="submit" class="btn o_mw_btn_ghost o_mw_cancel">Cancel this appointment</button>
+                            </form>
+                            <a href="/clinic" class="btn o_mw_btn_ghost">Clinic home</a>
+                        </div>
+                        <t t-call="medical_website.visit_us"/>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

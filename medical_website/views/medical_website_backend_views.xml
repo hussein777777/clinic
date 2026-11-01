@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- clinic / department -->
+    <record id="medical_department_view_form_website" model="ir.ui.view">
+        <field name="name">medical.department.form.website</field>
+        <field name="model">medical.department</field>
+        <field name="inherit_id" ref="medical_core.medical_department_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Website" name="website">
+                    <group>
+                        <group>
+                            <field name="website_published"/>
+                            <field name="website_sequence" invisible="not website_published"/>
+                            <field name="website_icon" invisible="not website_published"/>
+                            <field name="website_url" widget="url" invisible="not website_published or not id"/>
+                        </group>
+                        <group>
+                            <field name="online_booking" invisible="not website_published"/>
+                            <field name="booking_duration" widget="float_time" invisible="not website_published or not online_booking"/>
+                        </group>
+                    </group>
+                    <group invisible="not website_published">
+                        <field name="website_intro" placeholder="e.g. Fillings, root canals, crowns and children's dentistry"/>
+                    </group>
+                    <field name="website_description" invisible="not website_published"
+                           placeholder="What patients should know about this clinic..."/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- doctor -->
+    <record id="hr_employee_form_medical_website" model="ir.ui.view">
+        <field name="name">hr.employee.form.medical.website</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="medical_core.hr_employee_form_medical"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='medical']" position="inside">
+                <group string="Clinic Website" invisible="not is_practitioner">
+                    <group>
+                        <field name="website_published"/>
+                        <field name="website_booking" invisible="not website_published"/>
+                    </group>
+                    <group invisible="not website_published">
+                        <field name="website_headline"/>
+                        <field name="website_languages" placeholder="e.g. Arabic, English"/>
+                    </group>
+                    <div class="text-muted" colspan="2" invisible="not website_published or not website_booking">
+                        Online booking uses the doctor's working hours (Work Information tab) and the schedule.
+                    </div>
+                    <field name="website_bio" colspan="2" invisible="not website_published" nolabel="1"
+                           placeholder="Training, experience and what the doctor treats..."/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- procedure -->
+    <record id="product_template_form_medical_website" model="ir.ui.view">
+        <field name="name">product.template.form.medical.website</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="medical_core.product_template_form_view_medical"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='medical']" position="inside">
+                <group string="Clinic Website">
+                    <group>
+                        <field name="medical_website_published"/>
+                        <field name="medical_website_show_price" invisible="not medical_website_published"/>
+                    </group>
+                    <field name="medical_website_description" colspan="2" invisible="not medical_website_published"
+                           placeholder="One or two sentences for patients"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- visit -->
+    <record id="medical_visit_view_form_website" model="ir.ui.view">
+        <field name="name">medical.visit.form.website</field>
+        <field name="model">medical.visit</field>
+        <field name="inherit_id" ref="medical_core.medical_visit_view_form"/>
+        <field name="arch" type="xml">
+            <field name="visit_type" position="after">
+                <field name="booking_source"/>
+                <field name="booking_name" invisible="booking_source != 'website'"/>
+                <field name="booking_note" invisible="not booking_note"/>
+                <field name="booking_cancelled_online" invisible="not booking_cancelled_online"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="medical_visit_view_list_website" model="ir.ui.view">
+        <field name="name">medical.visit.list.website</field>
+        <field name="model">medical.visit</field>
+        <field name="inherit_id" ref="medical_core.medical_visit_view_list"/>
+        <field name="arch" type="xml">
+            <field name="visit_type" position="after">
+                <field name="booking_source" optional="show"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="medical_visit_view_search_website" model="ir.ui.view">
+        <field name="name">medical.visit.search.website</field>
+        <field name="model">medical.visit</field>
+        <field name="inherit_id" ref="medical_core.medical_visit_view_search"/>
+        <field name="arch" type="xml">
+            <filter name="waiting" position="after">
+                <filter name="online_to_confirm" string="Online, to confirm"
+                        domain="[('booking_source', '=', 'website'), ('state', '=', 'draft')]"/>
+                <filter name="online" string="Booked online" domain="[('booking_source', '=', 'website')]"/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="action_medical_visit_online" model="ir.actions.act_window">
+        <field name="name">Online Bookings</field>
+        <field name="res_model">medical.visit</field>
+        <field name="view_mode">list,calendar,form</field>
+        <field name="context">{'search_default_online_to_confirm': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiley_face">No online booking to confirm</p>
+            <p>Bookings made on the clinic website appear here until reception confirms them.</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_medical_visit_online" name="Online Bookings" parent="medical_core.menu_medical_front"
+              action="action_medical_visit_online" sequence="11"/>
+</odoo>

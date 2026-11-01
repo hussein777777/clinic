@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_medical_website" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.medical.website</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="website.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='website_info_settings']" position="after">
+                <block title="Clinic Website" id="medical_website_settings" invisible="not website_id">
+                    <setting string="Clinic introduction" help="Shown on the clinic home page (/clinic). Switch the language at the top of the form to write the Arabic and English versions.">
+                        <div class="content-group">
+                            <div class="row mt-2"><label for="clinic_name" class="col-lg-4 o_light_label"/><field name="clinic_name" placeholder="Company name"/></div>
+                            <div class="row mt-2"><label for="clinic_tagline" class="col-lg-4 o_light_label"/><field name="clinic_tagline"/></div>
+                            <div class="row"><label for="clinic_hours_text" class="col-lg-4 o_light_label"/><field name="clinic_hours_text"/></div>
+                            <div class="row"><label for="clinic_whatsapp" class="col-lg-4 o_light_label"/><field name="clinic_whatsapp"/></div>
+                            <div class="row"><label for="clinic_map_url" class="col-lg-4 o_light_label"/><field name="clinic_map_url" widget="url"/></div>
+                            <div class="mt-2"><label for="clinic_about" class="o_light_label"/><field name="clinic_about"/></div>
+                        </div>
+                    </setting>
+                    <setting string="Online booking" help="Patients pick a free time from the doctors' working hours and the real schedule.">
+                        <div class="content-group">
+                            <div class="row mt-2"><label for="booking_lead_hours" class="col-lg-6 o_light_label"/><field name="booking_lead_hours"/></div>
+                            <div class="row"><label for="booking_days_ahead" class="col-lg-6 o_light_label"/><field name="booking_days_ahead"/></div>
+                            <div class="mt-2"><field name="booking_auto_confirm"/><label for="booking_auto_confirm" class="o_light_label"/></div>
+                            <div><field name="booking_email_required"/><label for="booking_email_required" class="o_light_label"/></div>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,998 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* medical_website
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-19 19:03+0000\n"
+"PO-Revision-Date: 2026-10-19 19:03+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: medical_website
+#: model:mail.template,body_html:medical_website.mail_template_booking_received
+msgid ""
+"<div style=\"font-family: Arial, sans-serif; font-size: 15px; line-height: 1.6;\">\n"
+"    <p>Hello <t t-out=\"object.booking_name or object.patient_id.name or ''\"/>,</p>\n"
+"    <p>We received your booking at <strong t-out=\"object.company_id.name or ''\"/>:</p>\n"
+"    <p style=\"font-size: 18px;\">\n"
+"        <strong t-out=\"format_datetime(object.start, tz=object.doctor_id.tz, dt_format='EEEE d MMMM y, HH:mm') or ''\"/><br/>\n"
+"        <t t-out=\"object.doctor_id.name or ''\"/>, <t t-out=\"object.department_id.name or ''\"/>\n"
+"    </p>\n"
+"    <p t-if=\"object.state == 'confirmed'\">Your appointment is confirmed. Please come 10 minutes early.</p>\n"
+"    <p t-else=\"\">The clinic will call you or message you on WhatsApp to confirm.</p>\n"
+"    <p>To check or cancel the appointment, open your booking page:<br/>\n"
+"        <a t-att-href=\"'%s/appointment/booking/%s' % (object.get_base_url(), object.sudo().booking_token)\">Your booking page</a></p>\n"
+"    <p>Booking number: <t t-out=\"object.name or ''\"/></p>\n"
+"</div>\n"
+"            "
+msgstr ""
+"<div style=\"font-family: Arial, sans-serif; font-size: 15px; line-height: 1.6;\" dir=\"rtl\">\n"
+"    <p>مرحبًا <t t-out=\"object.booking_name or object.patient_id.name or ''\"/>،</p>\n"
+"    <p>استلمنا حجزك في <strong t-out=\"object.company_id.name or ''\"/>:</p>\n"
+"    <p style=\"font-size: 18px;\">\n"
+"        <strong t-out=\"format_datetime(object.start, tz=object.doctor_id.tz, dt_format='EEEE d MMMM y, HH:mm') or ''\"/><br/>\n"
+"        <t t-out=\"object.doctor_id.name or ''\"/>، <t t-out=\"object.department_id.name or ''\"/>\n"
+"    </p>\n"
+"    <p t-if=\"object.state == 'confirmed'\">تم تأكيد موعدك. من فضلك احضر قبل الموعد بعشر دقائق.</p>\n"
+"    <p t-else=\"\">ستتصل بك العيادة أو تراسلك على واتساب لتأكيد الموعد.</p>\n"
+"    <p>لمراجعة الموعد أو إلغائه افتح صفحة حجزك:<br/>\n"
+"        <a t-att-href=\"'%s/appointment/booking/%s' % (object.get_base_url(), object.sudo().booking_token)\">صفحة حجزك</a></p>\n"
+"    <p>رقم الحجز: <t t-out=\"object.name or ''\"/></p>\n"
+"</div>\n"
+"            "
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid ""
+"<i class=\"fa fa-circle-o-notch fa-spin\" role=\"img\" aria-"
+"label=\"Loading\" title=\"Loading\"/> Looking for free times..."
+msgstr ""
+"<i class=\"fa fa-circle-o-notch fa-spin\" role=\"img\" aria-label=\"جارٍ "
+"التحميل\" title=\"جارٍ التحميل\"/> نبحث عن المواعيد المتاحة..."
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid ""
+"<i class=\"fa fa-exclamation-circle\" role=\"img\" aria-label=\"Error\" "
+"title=\"Error\"/>"
+msgstr "<i class=\"fa fa-exclamation-circle\" role=\"img\" aria-label=\"خطأ\" title=\"خطأ\"/>"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_home
+msgid ""
+"<i class=\"fa fa-whatsapp\" role=\"img\" aria-label=\"WhatsApp\" "
+"title=\"WhatsApp\"/> Message us on WhatsApp"
+msgstr ""
+"<i class=\"fa fa-whatsapp\" role=\"img\" aria-label=\"واتساب\" "
+"title=\"واتساب\"/> راسلنا على واتساب"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "<option value=\"\">-</option>"
+msgstr "<option value=\"\">-</option>"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "<span class=\"o_mw_muted\">(optional)</span>"
+msgstr "<span class=\"o_mw_muted\">(اختياري)</span>"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_doctor
+msgid "<span class=\"o_mw_muted\">Speaks:</span>"
+msgstr "<span class=\"o_mw_muted\">يتحدث:</span>"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "<span class=\"o_mw_step_n\">1</span> Clinic"
+msgstr "<span class=\"o_mw_step_n\">1</span> العيادة"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "<span class=\"o_mw_step_n\">2</span> Doctor"
+msgstr "<span class=\"o_mw_step_n\">2</span> الطبيب"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "<span class=\"o_mw_step_n\">3</span> Day and time"
+msgstr "<span class=\"o_mw_step_n\">3</span> اليوم والساعة"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "<span class=\"o_mw_step_n\">4</span> Your details"
+msgstr "<span class=\"o_mw_step_n\">4</span> بياناتك"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "<span>Date of birth <span class=\"o_mw_muted\">(optional)</span></span>"
+msgstr "<span>تاريخ الميلاد <span class=\"o_mw_muted\">(اختياري)</span></span>"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "<span>First doctor free</span>"
+msgstr "<span>أول طبيب متاح</span>"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "<span>Full name</span>"
+msgstr "<span>الاسم بالكامل</span>"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "<span>Gender <span class=\"o_mw_muted\">(optional)</span></span>"
+msgstr "<span>النوع <span class=\"o_mw_muted\">(اختياري)</span></span>"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid ""
+"<span>I agree that the clinic stores these details to manage my visit and "
+"contacts me about it.</span>"
+msgstr ""
+"<span>أوافق على أن تحفظ العيادة هذه البيانات لإدارة زيارتي والتواصل معي "
+"بشأنها.</span>"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "<span>Mobile number</span>"
+msgstr "<span>رقم الموبايل</span>"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid ""
+"<span>Reason for the visit <span "
+"class=\"o_mw_muted\">(optional)</span></span>"
+msgstr "<span>سبب الزيارة <span class=\"o_mw_muted\">(اختياري)</span></span>"
+
+#. module: medical_website
+#: model:ir.model.fields,help:medical_website.field_res_config_settings__clinic_map_url
+#: model:ir.model.fields,help:medical_website.field_website__clinic_map_url
+msgid "A Google Maps (or similar) link to the clinic."
+msgstr "رابط موقع العيادة على خرائط جوجل (أو ما يشابهها)."
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_res_config_settings__clinic_about
+#: model:ir.model.fields,field_description:medical_website.field_website__clinic_about
+msgid "About the Clinic"
+msgstr "عن العيادة"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_home
+msgid "About the clinic"
+msgstr "عن العيادة"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.visit_us
+msgid "Address"
+msgstr "العنوان"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_doctor
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_home
+msgid "All doctors"
+msgstr "كل الأطباء"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_done
+msgid "Appointment cancelled"
+msgstr "تم إلغاء الموعد"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_done
+msgid "Appointment confirmed"
+msgstr "تم تأكيد الموعد"
+
+#. module: medical_website
+#: model:ir.model.fields,help:medical_website.field_res_config_settings__clinic_hours_text
+#: model:ir.model.fields,help:medical_website.field_website__clinic_hours_text
+msgid "As patients should read it, one line per day group."
+msgstr "كما يجب أن يقرأها المرضى، سطر لكل مجموعة أيام."
+
+#. module: medical_website
+#: model:website.menu,name:medical_website.menu_appointment
+msgid "Book an Appointment"
+msgstr "احجز موعدًا"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_home
+msgid "Book an appointment"
+msgstr "احجز موعدًا"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_res_config_settings__booking_lead_hours
+#: model:ir.model.fields,field_description:medical_website.field_website__booking_lead_hours
+msgid "Book at Least (hours ahead)"
+msgstr "الحجز قبل الموعد بـ (ساعات) على الأقل"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_department
+msgid "Book in this clinic"
+msgstr "احجز في هذه العيادة"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "Book this appointment"
+msgstr "احجز هذا الموعد"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_home
+msgid "Book this time"
+msgstr "احجز هذا الموعد"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_res_config_settings__booking_days_ahead
+#: model:ir.model.fields,field_description:medical_website.field_website__booking_days_ahead
+msgid "Book up to (days ahead)"
+msgstr "الحجز حتى (أيام مقدمًا)"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_doctor
+#: model_terms:ir.ui.view,arch_db:medical_website.doctor_card
+msgid "Book with this doctor"
+msgstr "احجز مع هذا الطبيب"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_home
+msgid "Book your visit online in under a minute."
+msgstr "احجز زيارتك عبر الإنترنت في أقل من دقيقة."
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_hr_employee__website_booking
+msgid "Bookable Online"
+msgstr "متاح للحجز إلكتروني"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.medical_visit_view_search_website
+msgid "Booked online"
+msgstr "محجوز عبر الإنترنت"
+
+#. module: medical_website
+#. odoo-python
+#: code:addons/medical_website/models/medical_booking.py:0
+msgid "Booked online by %(name)s (%(phone)s)."
+msgstr "حُجز عبر الإنترنت بواسطة %(name)s (%(phone)s)."
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_medical_visit__booking_ip
+msgid "Booking Ip"
+msgstr "عنوان IP للحجز"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_medical_visit__booking_source
+msgid "Booking Source"
+msgstr "مصدر الحجز"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_medical_visit__booking_token
+msgid "Booking Token"
+msgstr "رمز الحجز"
+
+#. module: medical_website
+#. odoo-python
+#: code:addons/medical_website/models/medical_booking.py:0
+msgid "Booking not found."
+msgstr "لم يتم العثور على الحجز."
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_done
+msgid "Booking number"
+msgstr "رقم الحجز"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_done
+msgid "Booking received"
+msgstr "تم استلام الحجز"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_home
+msgid "Booking takes three steps"
+msgstr "الحجز في ثلاث خطوات"
+
+#. module: medical_website
+#: model_terms:ir.actions.act_window,help:medical_website.action_medical_visit_online
+msgid ""
+"Bookings made on the clinic website appear here until reception confirms "
+"them."
+msgstr "الحجوزات من موقع العيادة تظهر هنا حتى يؤكدها الاستقبال."
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_done
+msgid "Cancel this appointment"
+msgstr "إلغاء هذا الموعد"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_medical_visit__booking_cancelled_online
+msgid "Cancelled by the Patient"
+msgstr "ألغاه المريض"
+
+#. module: medical_website
+#. odoo-python
+#: code:addons/medical_website/models/medical_booking.py:0
+msgid "Cancelled by the patient from the booking page."
+msgstr "ألغاه المريض من صفحة الحجز."
+
+#. module: medical_website
+#: model:ir.model.fields.selection,name:medical_website.selection__medical_department__website_icon__fa-child
+msgid "Child"
+msgstr "طفل"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "Choose a clinic to see the free times."
+msgstr "اختر العيادة لتظهر المواعيد المتاحة."
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_home
+msgid "Choose the clinic and doctor"
+msgstr "اختر العيادة والطبيب"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "Clinic"
+msgstr "العيادة"
+
+#. module: medical_website
+#: model:ir.model,name:medical_website.model_medical_department
+msgid "Clinic / Department"
+msgstr "العيادة / القسم"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_res_config_settings__clinic_name
+#: model:ir.model.fields,field_description:medical_website.field_website__clinic_name
+msgid "Clinic Name"
+msgstr "اسم العيادة"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_res_config_settings__clinic_tagline
+#: model:ir.model.fields,field_description:medical_website.field_website__clinic_tagline
+msgid "Clinic Tagline"
+msgstr "شعار العيادة"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.hr_employee_form_medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.product_template_form_medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.res_config_settings_view_form_medical_website
+msgid "Clinic Website"
+msgstr "موقع العيادة"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_done
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_department
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_doctors
+msgid "Clinic home"
+msgstr "الرئيسية"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.res_config_settings_view_form_medical_website
+msgid "Clinic introduction"
+msgstr "تعريف العيادة"
+
+#. module: medical_website
+#: model:mail.template,name:medical_website.mail_template_booking_received
+msgid "Clinic: online booking received"
+msgstr "العيادة: تم استلام حجز إلكتروني"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.res_config_settings_view_form_medical_website
+msgid "Company name"
+msgstr "اسم الشركة"
+
+#. module: medical_website
+#: model:ir.model,name:medical_website.model_res_config_settings
+msgid "Config Settings"
+msgstr "إعدادات التهيئة"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_res_config_settings__booking_auto_confirm
+#: model:ir.model.fields,field_description:medical_website.field_website__booking_auto_confirm
+msgid "Confirm Online Bookings Automatically"
+msgstr "تأكيد الحجوزات الإلكترونية تلقائيًا"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.visit_us
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "Day"
+msgstr "اليوم"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:medical_website.field_medical_department__display_name
+#: model:ir.model.fields,field_description:medical_website.field_medical_visit__display_name
+#: model:ir.model.fields,field_description:medical_website.field_medical_website_booking__display_name
+#: model:ir.model.fields,field_description:medical_website.field_product_template__display_name
+#: model:ir.model.fields,field_description:medical_website.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:medical_website.field_website__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: medical_website
+#: model:ir.model.fields.selection,name:medical_website.selection__medical_department__website_icon__fa-user-md
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "Doctor"
+msgstr "الطبيب"
+
+#. module: medical_website
+#: model:website.menu,name:medical_website.menu_doctors
+msgid "Doctors"
+msgstr "الأطباء"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_department
+msgid "Doctors in this clinic"
+msgstr "أطباء هذه العيادة"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "E-mail"
+msgstr "البريد الإلكتروني"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_res_config_settings__booking_email_required
+#: model:ir.model.fields,field_description:medical_website.field_website__booking_email_required
+msgid "E-mail Required to Book"
+msgstr "البريد الإلكتروني مطلوب للحجز"
+
+#. module: medical_website
+#: model:ir.model,name:medical_website.model_hr_employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: medical_website
+#: model:ir.model.fields.selection,name:medical_website.selection__medical_department__website_icon__fa-eye
+msgid "Eye"
+msgstr "العين"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "Female"
+msgstr "أنثى"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "First doctor free"
+msgstr "أول طبيب متاح"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.visit_us
+msgid "Get directions"
+msgstr "اعرف الطريق"
+
+#. module: medical_website
+#: model:ir.model.fields.selection,name:medical_website.selection__medical_department__website_icon__fa-heartbeat
+msgid "Heartbeat"
+msgstr "نبض القلب"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_hr_employee__id
+#: model:ir.model.fields,field_description:medical_website.field_medical_department__id
+#: model:ir.model.fields,field_description:medical_website.field_medical_visit__id
+#: model:ir.model.fields,field_description:medical_website.field_medical_website_booking__id
+#: model:ir.model.fields,field_description:medical_website.field_product_template__id
+#: model:ir.model.fields,field_description:medical_website.field_res_config_settings__id
+#: model:ir.model.fields,field_description:medical_website.field_website__id
+msgid "ID"
+msgstr "المُعرّف"
+
+#. module: medical_website
+#: model:ir.model.fields,help:medical_website.field_res_config_settings__clinic_whatsapp
+#: model:ir.model.fields,help:medical_website.field_website__clinic_whatsapp
+msgid "International format, e.g. +201001234567."
+msgstr "بالصيغة الدولية، مثال: +201001234567."
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_done
+msgid "Keep this page: its address lets you check or cancel the appointment."
+msgstr "احتفظ بهذه الصفحة: رابطها يتيح لك مراجعة الموعد أو إلغاءه."
+
+#. module: medical_website
+#: model:ir.model.fields.selection,name:medical_website.selection__medical_department__website_icon__fa-flask
+msgid "Laboratory"
+msgstr "المختبر"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "Leave this field empty"
+msgstr "اترك هذا الحقل فارغًا"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_home
+msgid "Leave your name and phone"
+msgstr "اكتب اسمك ورقم موبايلك"
+
+#. module: medical_website
+#: model:ir.model.fields,help:medical_website.field_medical_department__booking_duration
+msgid "Length of a visit booked from the website."
+msgstr "مدة الزيارة المحجوزة من الموقع."
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "Male"
+msgstr "ذكر"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_res_config_settings__clinic_map_url
+#: model:ir.model.fields,field_description:medical_website.field_website__clinic_map_url
+msgid "Map Link"
+msgstr "رابط الخريطة"
+
+#. module: medical_website
+#: model:ir.model.fields.selection,name:medical_website.selection__medical_department__website_icon__fa-medkit
+msgid "Medical kit"
+msgstr "حقيبة طبية"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.visit_us
+msgid "Message us on WhatsApp"
+msgstr "راسلنا على واتساب"
+
+#. module: medical_website
+#: model:ir.model.fields.selection,name:medical_website.selection__medical_department__website_icon__fa-wheelchair
+msgid "Mobility"
+msgstr "الحركة"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_medical_visit__booking_name
+msgid "Name Given Online"
+msgstr "الاسم المكتوب عبر الإنترنت"
+
+#. module: medical_website
+#: model:ir.model.fields,help:medical_website.field_res_config_settings__clinic_name
+#: model:ir.model.fields,help:medical_website.field_website__clinic_name
+msgid ""
+"Name shown on the clinic website, per language. Empty: the company name."
+msgstr ""
+"الاسم الظاهر في موقع العيادة، لكل لغة. إذا تُرك فارغًا يظهر اسم الشركة."
+
+#. module: medical_website
+#: model:ir.model.fields.selection,name:medical_website.selection__medical_department__website_icon__fa-bolt
+msgid "Nerves"
+msgstr "الأعصاب"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_home
+msgid "Next free appointment"
+msgstr "أقرب موعد متاح"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid ""
+"No free time in the coming weeks. Please call the clinic or choose another "
+"doctor."
+msgstr ""
+"لا توجد مواعيد متاحة في الأسابيع القادمة. من فضلك اتصل بالعيادة أو اختر "
+"طبيبًا آخر."
+
+#. module: medical_website
+#: model_terms:ir.actions.act_window,help:medical_website.action_medical_visit_online
+msgid "No online booking to confirm"
+msgstr "لا توجد حجوزات إلكترونية للتأكيد"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.product_template_form_medical_website
+msgid "One or two sentences for patients"
+msgstr "جملة أو جملتان للمرضى"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_medical_department__website_intro
+msgid "One-line Introduction"
+msgstr "تعريف في سطر"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_medical_department__online_booking
+msgid "Online Booking"
+msgstr "الحجز الإلكتروني"
+
+#. module: medical_website
+#: model:ir.actions.act_window,name:medical_website.action_medical_visit_online
+#: model:ir.ui.menu,name:medical_website.menu_medical_visit_online
+msgid "Online Bookings"
+msgstr "الحجوزات الإلكترونية"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_medical_department__booking_duration
+msgid "Online Slot (h)"
+msgstr "مدة الموعد عبر الإنترنت (ساعة)"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.res_config_settings_view_form_medical_website
+msgid "Online booking"
+msgstr "الحجز الإلكتروني"
+
+#. module: medical_website
+#: model:ir.model,name:medical_website.model_medical_website_booking
+msgid "Online booking engine"
+msgstr "محرك الحجز الإلكتروني"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "Online booking is not open yet. Please call the clinic."
+msgstr "الحجز الإلكتروني غير متاح بعد. من فضلك اتصل بالعيادة."
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.hr_employee_form_medical_website
+msgid ""
+"Online booking uses the doctor's working hours (Work Information tab) and "
+"the schedule."
+msgstr ""
+"الحجز الإلكتروني يستخدم ساعات عمل الطبيب (تبويب معلومات العمل) والجدول "
+"الفعلي."
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.medical_visit_view_search_website
+msgid "Online, to confirm"
+msgstr "عبر الإنترنت، بانتظار التأكيد"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_res_config_settings__clinic_hours_text
+#: model:ir.model.fields,field_description:medical_website.field_website__clinic_hours_text
+msgid "Opening Hours"
+msgstr "مواعيد العمل"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_home
+#: model_terms:ir.ui.view,arch_db:medical_website.visit_us
+msgid "Opening hours"
+msgstr "مواعيد العمل"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_home
+msgid "Or let us give you the first doctor who is free."
+msgstr "أو اترك لنا اختيار أول طبيب متاح."
+
+#. module: medical_website
+#: model:website.menu,name:medical_website.menu_clinic
+msgid "Our Clinic"
+msgstr "عيادتنا"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_home
+msgid "Our clinics"
+msgstr "عياداتنا"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_doctors
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_home
+msgid "Our doctors"
+msgstr "أطباؤنا"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_doctors
+msgid "Our doctors' profiles will be published soon."
+msgstr "سننشر صفحات أطبائنا قريبًا."
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_medical_visit__booking_note
+msgid "Patient Message"
+msgstr "رسالة المريض"
+
+#. module: medical_website
+#: model:ir.model.fields,help:medical_website.field_medical_department__online_booking
+msgid "Patients can book this clinic from the website."
+msgstr "يمكن للمرضى حجز هذه العيادة من الموقع."
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.res_config_settings_view_form_medical_website
+msgid ""
+"Patients pick a free time from the doctors' working hours and the real "
+"schedule."
+msgstr "يختار المريض موعدًا متاحًا من ساعات عمل الأطباء والجدول الفعلي."
+
+#. module: medical_website
+#: model:ir.model.fields.selection,name:medical_website.selection__medical_visit__booking_source__phone
+msgid "Phone"
+msgstr "الهاتف"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_home
+msgid "Pick a day and time"
+msgstr "اختر اليوم والساعة"
+
+#. module: medical_website
+#. odoo-python
+#: code:addons/medical_website/models/medical_booking.py:0
+msgid "Please accept that the clinic stores your details to manage the visit."
+msgstr "من فضلك وافق على حفظ العيادة لبياناتك لإدارة الزيارة."
+
+#. module: medical_website
+#. odoo-python
+#: code:addons/medical_website/models/medical_booking.py:0
+msgid "Please choose a time."
+msgstr "من فضلك اختر الساعة."
+
+#. module: medical_website
+#. odoo-python
+#: code:addons/medical_website/models/medical_booking.py:0
+msgid "Please write a phone number we can call."
+msgstr "من فضلك اكتب رقم هاتف يمكننا الاتصال به."
+
+#. module: medical_website
+#. odoo-python
+#: code:addons/medical_website/models/medical_booking.py:0
+msgid "Please write the patient's full name."
+msgstr "من فضلك اكتب اسم المريض بالكامل."
+
+#. module: medical_website
+#. odoo-python
+#: code:addons/medical_website/models/medical_booking.py:0
+msgid "Please write your e-mail address."
+msgstr "من فضلك اكتب بريدك الإلكتروني."
+
+#. module: medical_website
+#: model:ir.model,name:medical_website.model_product_template
+msgid "Product"
+msgstr "المنتج"
+
+#. module: medical_website
+#: model:ir.model.fields.selection,name:medical_website.selection__medical_visit__booking_source__reception
+msgid "Reception"
+msgstr "الاستقبال"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_department
+msgid "Services"
+msgstr "الخدمات"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_product_product__medical_website_show_price
+#: model:ir.model.fields,field_description:medical_website.field_product_template__medical_website_show_price
+msgid "Show Price on Website"
+msgstr "إظهار السعر على الموقع"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_product_product__medical_website_published
+#: model:ir.model.fields,field_description:medical_website.field_product_template__medical_website_published
+msgid "Show on Clinic Website"
+msgstr "إظهار على موقع العيادة"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_hr_employee__website_published
+#: model:ir.model.fields,field_description:medical_website.field_medical_department__website_published
+msgid "Show on Website"
+msgstr "إظهار على الموقع"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.res_config_settings_view_form_medical_website
+msgid ""
+"Shown on the clinic home page (/clinic). Switch the language at the top of "
+"the form to write the Arabic and English versions."
+msgstr ""
+"يظهر في الصفحة الرئيسية للعيادة (/clinic). غيّر اللغة من أعلى النموذج لكتابة"
+" النسختين العربية والإنجليزية."
+
+#. module: medical_website
+#: model:ir.model.fields,help:medical_website.field_medical_department__website_intro
+msgid "Shown under the clinic name on the website."
+msgstr "يظهر تحت اسم العيادة على الموقع."
+
+#. module: medical_website
+#: model:ir.model.fields.selection,name:medical_website.selection__medical_department__website_icon__fa-hand-paper-o
+msgid "Skin"
+msgstr "الجلد"
+
+#. module: medical_website
+#: model:ir.model.fields.selection,name:medical_website.selection__medical_department__website_icon__fa-smile-o
+msgid "Smile (dentistry)"
+msgstr "ابتسامة (الأسنان)"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_hr_employee__website_languages
+msgid "Spoken Languages"
+msgstr "اللغات"
+
+#. module: medical_website
+#: model:ir.model.fields.selection,name:medical_website.selection__medical_department__website_icon__fa-stethoscope
+msgid "Stethoscope"
+msgstr "سماعة طبية"
+
+#. module: medical_website
+#. odoo-python
+#: code:addons/medical_website/models/medical_booking.py:0
+msgid "The booking could not be sent."
+msgstr "تعذر إرسال الحجز."
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "The clinic confirms by phone or WhatsApp."
+msgstr "تؤكد العيادة الموعد بالهاتف أو واتساب."
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_done
+msgid "The clinic will call you or message you on WhatsApp to confirm."
+msgstr "ستتصل بك العيادة أو تراسلك على واتساب لتأكيد الموعد."
+
+#. module: medical_website
+#. odoo-python
+#: code:addons/medical_website/models/medical_booking.py:0
+msgid "The e-mail address is not valid."
+msgstr "البريد الإلكتروني غير صحيح."
+
+#. module: medical_website
+#: model:ir.model.fields,help:medical_website.field_medical_visit__booking_name
+msgid ""
+"The name typed in the online form; the visit may be linked to an existing "
+"patient."
+msgstr "الاسم المكتوب في نموذج الحجز؛ قد تُربط الزيارة بمريض مسجل بالفعل."
+
+#. module: medical_website
+#. odoo-python
+#: code:addons/medical_website/models/medical_booking.py:0
+msgid ""
+"This booking can no longer be cancelled online. Please call the clinic."
+msgstr "لم يعد ممكنًا إلغاء هذا الحجز عبر الإنترنت. من فضلك اتصل بالعيادة."
+
+#. module: medical_website
+#. odoo-python
+#: code:addons/medical_website/models/medical_booking.py:0
+msgid "This clinic does not take online bookings."
+msgstr "هذه العيادة لا تستقبل حجوزات إلكترونية."
+
+#. module: medical_website
+#. odoo-python
+#: code:addons/medical_website/models/medical_booking.py:0
+msgid "This doctor cannot be booked online."
+msgstr "لا يمكن حجز هذا الطبيب عبر الإنترنت."
+
+#. module: medical_website
+#. odoo-python
+#: code:addons/medical_website/models/medical_booking.py:0
+msgid ""
+"This phone number already has upcoming bookings. Please call the clinic to "
+"add another."
+msgstr "لهذا الرقم حجوزات قادمة بالفعل. من فضلك اتصل بالعيادة لإضافة حجز آخر."
+
+#. module: medical_website
+#. odoo-python
+#: code:addons/medical_website/models/medical_booking.py:0
+msgid "This time was just taken. Please choose another one."
+msgstr "هذا الموعد حُجز للتو. من فضلك اختر موعدًا آخر."
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "Time"
+msgstr "الوقت"
+
+#. module: medical_website
+#. odoo-python
+#: code:addons/medical_website/models/medical_booking.py:0
+msgid "Too many bookings from this connection. Please call the clinic."
+msgstr "حجوزات كثيرة من هذا الاتصال. من فضلك اتصل بالعيادة."
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.hr_employee_form_medical_website
+msgid "Training, experience and what the doctor treats..."
+msgstr "التدريب والخبرة وما يعالجه الطبيب..."
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "Turn on JavaScript to see the free times, or call the clinic."
+msgstr "فعّل JavaScript لرؤية المواعيد المتاحة، أو اتصل بالعيادة."
+
+#. module: medical_website
+#: model:ir.model,name:medical_website.model_medical_visit
+msgid "Visit"
+msgstr "الزيارة"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.visit_us
+msgid "Visit us"
+msgstr "زورونا"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_done
+msgid "We are waiting for you. Please come 10 minutes early."
+msgstr "في انتظارك. من فضلك احضر قبل الموعد بعشر دقائق."
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_home
+msgid ""
+"We confirm by phone or WhatsApp. You can cancel from your booking page."
+msgstr "نؤكد الموعد بالهاتف أو واتساب، ويمكنك الإلغاء من صفحة حجزك."
+
+#. module: medical_website
+#: model:ir.model,name:medical_website.model_website
+#: model:ir.model.fields.selection,name:medical_website.selection__medical_visit__booking_source__website
+#: model_terms:ir.ui.view,arch_db:medical_website.medical_department_view_form_website
+msgid "Website"
+msgstr "الموقع"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_hr_employee__website_bio
+msgid "Website Biography"
+msgstr "السيرة على الموقع"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_medical_department__website_description
+#: model:ir.model.fields,field_description:medical_website.field_product_product__medical_website_description
+#: model:ir.model.fields,field_description:medical_website.field_product_template__medical_website_description
+msgid "Website Description"
+msgstr "الوصف على الموقع"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_hr_employee__website_headline
+msgid "Website Headline"
+msgstr "العنوان على الموقع"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_medical_department__website_icon
+msgid "Website Icon"
+msgstr "أيقونة الموقع"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_medical_department__website_sequence
+msgid "Website Sequence"
+msgstr "الترتيب على الموقع"
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_medical_department__website_url
+msgid "Website Url"
+msgstr "رابط الموقع"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.medical_department_view_form_website
+msgid "What patients should know about this clinic..."
+msgstr "ما يجب أن يعرفه المرضى عن هذه العيادة..."
+
+#. module: medical_website
+#: model:ir.model.fields,field_description:medical_website.field_res_config_settings__clinic_whatsapp
+#: model:ir.model.fields,field_description:medical_website.field_website__clinic_whatsapp
+msgid "WhatsApp Number"
+msgstr "رقم واتساب"
+
+#. module: medical_website
+#: model:ir.model.fields.selection,name:medical_website.selection__medical_department__website_icon__fa-female
+msgid "Woman"
+msgstr "امرأة"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.clinic_home
+msgid "You only see times that are really free in the doctor's schedule."
+msgstr "لن ترى إلا المواعيد المتاحة فعلًا في جدول الطبيب."
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_done
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_page
+msgid "Your appointment"
+msgstr "موعدك"
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.booking_done
+msgid ""
+"Your appointment was cancelled. You can book another time whenever you want."
+msgstr "تم إلغاء موعدك. يمكنك حجز موعد آخر في أي وقت."
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.hr_employee_form_medical_website
+msgid "e.g. Arabic, English"
+msgstr "مثال: العربية، الإنجليزية"
+
+#. module: medical_website
+#: model:ir.model.fields,help:medical_website.field_hr_employee__website_headline
+msgid "e.g. Consultant orthodontist, 15 years of experience."
+msgstr "مثال: استشاري تقويم الأسنان، خبرة 15 عامًا."
+
+#. module: medical_website
+#: model_terms:ir.ui.view,arch_db:medical_website.medical_department_view_form_website
+msgid "e.g. Fillings, root canals, crowns and children's dentistry"
+msgstr "مثال: الحشوات وعلاج العصب والتيجان وأسنان الأطفال"
+
+#. module: medical_website
+#: model:mail.template,subject:medical_website.mail_template_booking_received
+msgid ""
+"{{ object.company_id.name }}: your appointment on {{ "
+"format_datetime(object.start, tz=object.doctor_id.tz, dt_format='EEEE d "
+"MMMM, HH:mm') }}"
+msgstr ""
+"{{ object.company_id.name }}: موعدك يوم {{ format_datetime(object.start, "
+"tz=object.doctor_id.tz, dt_format='EEEE d MMMM، HH:mm') }}"
