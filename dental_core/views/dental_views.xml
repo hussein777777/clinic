@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_form_dental" model="ir.ui.view">
+        <field name="name">product.template.form.dental</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="medical_core.product_template_form_view_medical"/>
+        <field name="arch" type="xml">
+            <group name="rules" position="inside">
+                <field name="dental_requires_surface" invisible="site_requirement != 'tooth'"/>
+                <field name="dental_chart_condition" invisible="site_requirement != 'tooth'"/>
+            </group>
+        </field>
+    </record>
+
+    <record id="res_partner_form_dental" model="ir.ui.view">
+        <field name="name">res.partner.form.dental</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="medical_core.res_partner_form_medical"/>
+        <field name="arch" type="xml">
+            <page name="medical" position="after">
+                <page string="Tooth Chart" name="dental_chart" invisible="not is_patient" groups="medical_core.group_medical_user">
+                    <field name="dental_chart_data" widget="dental_tooth_chart" nolabel="1"/>
+                    <field name="chart_line_ids" context="{'default_patient_id': id}" groups="medical_core.group_medical_doctor">
+                        <list editable="top" limit="10">
+                            <field name="date"/>
+                            <field name="tooth_id"/>
+                            <field name="surfaces"/>
+                            <field name="condition"/>
+                            <field name="doctor_id" optional="show"/>
+                            <field name="note"/>
+                        </list>
+                    </field>
+                </page>
+            </page>
+        </field>
+    </record>
+
+    <record id="medical_visit_form_dental" model="ir.ui.view">
+        <field name="name">medical.visit.form.dental</field>
+        <field name="model">medical.visit</field>
+        <field name="inherit_id" ref="medical_core.medical_visit_view_form"/>
+        <field name="arch" type="xml">
+            <field name="visit_type" position="after">
+                <field name="is_dental" invisible="1"/>
+            </field>
+            <xpath expr="//field[@name='line_ids']/list/field[@name='product_id']" position="after">
+                <field name="tooth_id" optional="show" readonly="state == 'executed'"/>
+                <field name="surfaces" optional="show" readonly="state == 'executed'"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_treatment_plan_form_dental" model="ir.ui.view">
+        <field name="name">medical.treatment.plan.form.dental</field>
+        <field name="model">medical.treatment.plan</field>
+        <field name="inherit_id" ref="medical_core.medical_treatment_plan_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='line_ids']/list/field[@name='product_id']" position="after">
+                <field name="tooth_id" optional="show" readonly="state == 'executed'"/>
+                <field name="surfaces" optional="show" readonly="state == 'executed'"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_treatment_line_form_dental" model="ir.ui.view">
+        <field name="name">medical.treatment.line.form.dental</field>
+        <field name="model">medical.treatment.line</field>
+        <field name="inherit_id" ref="medical_core.medical_treatment_line_view_form"/>
+        <field name="arch" type="xml">
+            <field name="body_site_id" position="before">
+                <field name="tooth_id"/>
+                <field name="surfaces"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="medical_treatment_line_search_dental" model="ir.ui.view">
+        <field name="name">medical.treatment.line.search.dental</field>
+        <field name="model">medical.treatment.line</field>
+        <field name="inherit_id" ref="medical_core.medical_treatment_line_view_search"/>
+        <field name="arch" type="xml">
+            <field name="site_label" position="after">
+                <field name="tooth_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="action_dental_visit" model="ir.actions.act_window">
+        <field name="name">Dental Visits</field>
+        <field name="res_model">medical.visit</field>
+        <field name="view_mode">calendar,list,kanban,form</field>
+        <field name="domain" eval="[('department_id', '=', ref('dept_dentistry'))]"/>
+        <field name="context" eval="{'default_department_id': ref('dept_dentistry')}"/>
+    </record>
+
+    <record id="action_dental_procedure" model="ir.actions.act_window">
+        <field name="name">Dental Procedures</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('is_dental', '=', True)]</field>
+        <field name="context">{'default_is_medical_procedure': True, 'default_type': 'service', 'search_default_group_specialty': 1}</field>
+        <field name="search_view_id" ref="medical_core.medical_procedure_view_search"/>
+        <field name="view_ids" eval="[(5, 0, 0), (0, 0, {'view_mode': 'list', 'view_id': ref('medical_core.medical_procedure_view_list')})]"/>
+    </record>
+
+    <menuitem id="menu_dental" name="Dentistry" parent="medical_core.menu_medical_clinics" sequence="10"/>
+    <menuitem id="menu_dental_visit" name="Dental Schedule" parent="menu_dental" action="action_dental_visit" sequence="10"/>
+    <menuitem id="menu_dental_chart_line" name="Tooth Chart Entries" parent="menu_dental" action="action_dental_chart_line"
+              sequence="30" groups="medical_core.group_medical_doctor"/>
+    <menuitem id="menu_dental_procedure" name="Dental Procedures" parent="menu_dental" action="action_dental_procedure"
+              sequence="80" groups="medical_core.group_medical_manager"/>
+    <menuitem id="menu_dental_tooth" name="Teeth (FDI)" parent="menu_dental" action="action_dental_tooth"
+              sequence="90" groups="medical_core.group_medical_manager"/>
+</odoo>

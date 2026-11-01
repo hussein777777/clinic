@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dental_tooth_user,dental.tooth user,model_dental_tooth,medical_core.group_medical_user,1,0,0,0
+access_dental_tooth_manager,dental.tooth manager,model_dental_tooth,medical_core.group_medical_manager,1,1,1,1
+access_dental_chart_line_user,dental.chart.line user,model_dental_chart_line,medical_core.group_medical_user,1,0,0,0
+access_dental_chart_line_doctor,dental.chart.line doctor,model_dental_chart_line,medical_core.group_medical_doctor,1,1,1,1

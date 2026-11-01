@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dental_tooth_view_list" model="ir.ui.view">
+        <field name="name">dental.tooth.list</field>
+        <field name="model">dental.tooth</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="quadrant"/>
+                <field name="position"/>
+                <field name="arch"/>
+                <field name="is_primary"/>
+                <field name="active" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+    <record id="action_dental_tooth" model="ir.actions.act_window">
+        <field name="name">Teeth (FDI)</field>
+        <field name="res_model">dental.tooth</field>
+        <field name="view_mode">list</field>
+        <field name="context">{'active_test': False}</field>
+    </record>
+</odoo>

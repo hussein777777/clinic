@@ -1,0 +1,79 @@
+.o_dental_chart {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 8px 0;
+    overflow-x: auto;
+
+    .o_dental_row {
+        display: flex;
+        justify-content: center;
+        gap: 4px;
+    }
+    .o_dental_row_upper_primary,
+    .o_dental_row_lower_primary {
+        transform: scale(0.85);
+    }
+    .o_dental_row_upper + .o_dental_row_lower,
+    .o_dental_row_lower_primary + .o_dental_row_lower {
+        margin-top: 6px;
+    }
+    .o_dental_tooth {
+        position: relative;
+        width: 38px;
+        min-width: 38px;
+        height: 46px;
+        border: 1px solid $border-color;
+        border-radius: 8px 8px 12px 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        cursor: default;
+        background-color: $o-view-background-color;
+    }
+    .o_dental_row_upper .o_dental_tooth:nth-child(8),
+    .o_dental_row_lower .o_dental_tooth:nth-child(8),
+    .o_dental_row_upper_primary .o_dental_tooth:nth-child(5),
+    .o_dental_row_lower_primary .o_dental_tooth:nth-child(5) {
+        margin-right: 12px;
+    }
+    .o_dental_code {
+        font-weight: 600;
+    }
+    .o_dental_surfaces {
+        font-size: 10px;
+        opacity: 0.8;
+    }
+    .o_dental_tooth_caries { background-color: rgba(220, 53, 69, 0.25); border-color: #dc3545; }
+    .o_dental_tooth_filled { background-color: rgba(13, 110, 253, 0.2); border-color: #0d6efd; }
+    .o_dental_tooth_rct { background-color: rgba(111, 66, 193, 0.22); border-color: #6f42c1; }
+    .o_dental_tooth_crown { background-color: rgba(255, 193, 7, 0.3); border-color: #d39e00; }
+    .o_dental_tooth_veneer { background-color: rgba(255, 193, 7, 0.2); border-color: #d39e00; }
+    .o_dental_tooth_implant { background-color: rgba(25, 135, 84, 0.22); border-color: #198754; }
+    .o_dental_tooth_missing { background-color: transparent; border-style: dashed; opacity: 0.45; }
+    .o_dental_tooth_fractured,
+    .o_dental_tooth_other { background-color: rgba(253, 126, 20, 0.22); border-color: #fd7e14; }
+
+    .o_dental_legend {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 8px;
+        font-size: 12px;
+    }
+    .o_dental_legend_item {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+    }
+    .o_dental_swatch {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border: 1px solid $border-color;
+        border-radius: 3px;
+    }
+}

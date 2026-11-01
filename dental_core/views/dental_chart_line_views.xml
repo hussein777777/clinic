@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dental_chart_line_view_list" model="ir.ui.view">
+        <field name="name">dental.chart.line.list</field>
+        <field name="model">dental.chart.line</field>
+        <field name="arch" type="xml">
+            <list editable="top">
+                <field name="date"/>
+                <field name="patient_id"/>
+                <field name="tooth_id"/>
+                <field name="surfaces"/>
+                <field name="condition"/>
+                <field name="doctor_id" optional="show"/>
+                <field name="treatment_line_id" optional="hide" readonly="1"/>
+                <field name="note"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="dental_chart_line_view_search" model="ir.ui.view">
+        <field name="name">dental.chart.line.search</field>
+        <field name="model">dental.chart.line</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="patient_id"/>
+                <field name="tooth_id"/>
+                <field name="condition"/>
+                <group>
+                    <filter name="group_patient" string="Patient" context="{'group_by': 'patient_id'}"/>
+                    <filter name="group_tooth" string="Tooth" context="{'group_by': 'tooth_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_dental_chart_line" model="ir.actions.act_window">
+        <field name="name">Tooth Chart Entries</field>
+        <field name="res_model">dental.chart.line</field>
+        <field name="view_mode">list</field>
+    </record>
+</odoo>

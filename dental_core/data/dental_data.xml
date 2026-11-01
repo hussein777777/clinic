@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="dept_dentistry" model="medical.department">
+            <field name="name">Dentistry</field>
+            <field name="code">DEN</field>
+            <field name="sequence">20</field>
+            <field name="color">2</field>
+        </record>
+
+        <record id="spec_dental_general" model="medical.specialty">
+            <field name="name">Diagnostic / General</field>
+            <field name="code">DEN-GEN</field>
+            <field name="department_id" ref="dept_dentistry"/>
+            <field name="sequence">1</field>
+        </record>
+        <record id="spec_restorative" model="medical.specialty">
+            <field name="name">Restorative (Fillings)</field>
+            <field name="code">DEN-REST</field>
+            <field name="department_id" ref="dept_dentistry"/>
+            <field name="sequence">2</field>
+        </record>
+        <record id="spec_endo" model="medical.specialty">
+            <field name="name">Endodontics</field>
+            <field name="code">DEN-ENDO</field>
+            <field name="department_id" ref="dept_dentistry"/>
+            <field name="sequence">3</field>
+        </record>
+        <record id="spec_surgery" model="medical.specialty">
+            <field name="name">Oral Surgery / Extraction</field>
+            <field name="code">DEN-SURG</field>
+            <field name="department_id" ref="dept_dentistry"/>
+            <field name="sequence">4</field>
+        </record>
+        <record id="spec_prostho" model="medical.specialty">
+            <field name="name">Prosthodontics</field>
+            <field name="code">DEN-PROS</field>
+            <field name="department_id" ref="dept_dentistry"/>
+            <field name="sequence">5</field>
+        </record>
+        <record id="spec_ortho" model="medical.specialty">
+            <field name="name">Orthodontics</field>
+            <field name="code">DEN-ORTH</field>
+            <field name="department_id" ref="dept_dentistry"/>
+            <field name="sequence">6</field>
+        </record>
+        <record id="spec_perio" model="medical.specialty">
+            <field name="name">Periodontics</field>
+            <field name="code">DEN-PERIO</field>
+            <field name="department_id" ref="dept_dentistry"/>
+            <field name="sequence">7</field>
+        </record>
+        <record id="spec_implant" model="medical.specialty">
+            <field name="name">Implantology</field>
+            <field name="code">DEN-IMPL</field>
+            <field name="department_id" ref="dept_dentistry"/>
+            <field name="sequence">8</field>
+        </record>
+
+        <record id="product_dental_consultation" model="product.product">
+            <field name="name">Dental Consultation &amp; Examination</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">consultation</field>
+            <field name="specialty_id" ref="spec_dental_general"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">300</field>
+            <field name="insurance_code">D0150</field>
+            <field name="procedure_duration">20</field>
+        </record>
+        <record id="product_dental_scaling" model="product.product">
+            <field name="name">Scaling &amp; Polishing</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="specialty_id" ref="spec_perio"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">600</field>
+            <field name="insurance_code">D1110</field>
+        </record>
+        <record id="product_dental_xray_pa" model="product.product">
+            <field name="name">Periapical X-Ray</field>
+            <field name="type">service</field>
+            <field name="is_medical_procedure" eval="True"/>
+            <field name="procedure_type">imaging</field>
+            <field name="specialty_id" ref="spec_dental_general"/>
+            <field name="categ_id" ref="medical_core.product_category_medical"/>
+            <field name="list_price">150</field>
+            <field name="site_requirement">tooth</field>
+            <field name="insurance_code">D0220</field>
+        </record>
+
+        <record id="icd_k02_9" model="medical.diagnosis">
+            <field name="code">K02.9</field>
+            <field name="name">Dental caries, unspecified</field>
+            <field name="department_ids" eval="[(4, ref('dept_dentistry'))]"/>
+        </record>
+        <record id="icd_k04_0" model="medical.diagnosis">
+            <field name="code">K04.0</field>
+            <field name="name">Pulpitis</field>
+            <field name="department_ids" eval="[(4, ref('dept_dentistry'))]"/>
+        </record>
+        <record id="icd_k04_7" model="medical.diagnosis">
+            <field name="code">K04.7</field>
+            <field name="name">Periapical abscess without sinus</field>
+            <field name="department_ids" eval="[(4, ref('dept_dentistry'))]"/>
+        </record>
+        <record id="icd_k05_1" model="medical.diagnosis">
+            <field name="code">K05.1</field>
+            <field name="name">Chronic gingivitis</field>
+            <field name="department_ids" eval="[(4, ref('dept_dentistry'))]"/>
+        </record>
+        <record id="icd_k05_3" model="medical.diagnosis">
+            <field name="code">K05.3</field>
+            <field name="name">Chronic periodontitis</field>
+            <field name="is_chronic" eval="True"/>
+            <field name="department_ids" eval="[(4, ref('dept_dentistry'))]"/>
+        </record>
+        <record id="icd_k01_1" model="medical.diagnosis">
+            <field name="code">K01.1</field>
+            <field name="name">Impacted teeth</field>
+            <field name="department_ids" eval="[(4, ref('dept_dentistry'))]"/>
+        </record>
+        <record id="icd_k08_1" model="medical.diagnosis">
+            <field name="code">K08.1</field>
+            <field name="name">Loss of teeth due to accident, extraction or local periodontal disease</field>
+            <field name="department_ids" eval="[(4, ref('dept_dentistry'))]"/>
+        </record>
+        <record id="icd_k07_3" model="medical.diagnosis">
+            <field name="code">K07.3</field>
+            <field name="name">Anomalies of tooth position</field>
+            <field name="department_ids" eval="[(4, ref('dept_dentistry'))]"/>
+        </record>
+        <record id="icd_s02_5" model="medical.diagnosis">
+            <field name="code">S02.5</field>
+            <field name="name">Fracture of tooth</field>
+            <field name="department_ids" eval="[(4, ref('dept_dentistry'))]"/>
+        </record>
+
+        <record id="allergen_chlorhexidine" model="medical.allergen">
+            <field name="name">Chlorhexidine</field>
+            <field name="kind">drug</field>
+        </record>
+        <record id="medicine_chlorhexidine" model="product.product">
+            <field name="name">Chlorhexidine Mouthwash 0.12%</field>
+            <field name="type">consu</field>
+            <field name="is_medicine" eval="True"/>
+            <field name="sale_ok" eval="False"/>
+            <field name="active_ingredient">Chlorhexidine gluconate</field>
+            <field name="strength">0.12%</field>
+            <field name="dosage_form">other</field>
+            <field name="default_route">topical</field>
+            <field name="allergen_ids" eval="[(6, 0, [ref('allergen_chlorhexidine')])]"/>
+        </record>
+    </data>
+</odoo>

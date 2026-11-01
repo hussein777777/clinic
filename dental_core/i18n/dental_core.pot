@@ -1,0 +1,722 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dental_core
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-11 17:50+0000\n"
+"PO-Revision-Date: 2026-10-11 17:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dental_core
+#. odoo-python
+#: code:addons/dental_core/models/medical_treatment_line.py:0
+msgid "%(proc)s on tooth %(tooth)s requires the surfaces."
+msgstr ""
+
+#. module: dental_core
+#. odoo-python
+#: code:addons/dental_core/models/medical_treatment_line.py:0
+msgid "%(proc)s requires a tooth."
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,help:dental_core.field_dental_tooth__position
+msgid "1 = central incisor ... 8 = third molar"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,help:dental_core.field_dental_tooth__quadrant
+msgid "1-4 permanent, 5-8 primary"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__active
+msgid "Active"
+msgstr ""
+
+#. module: dental_core
+#: model:medical.diagnosis,name:dental_core.icd_k07_3
+msgid "Anomalies of tooth position"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,help:dental_core.field_dental_chart_line__surfaces
+#: model:ir.model.fields,help:dental_core.field_medical_treatment_line__surfaces
+msgid "Any of M, O, D, B, L, I"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__arch
+msgid "Arch"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_chart_line__condition__bridge
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__dental_chart_condition__bridge
+msgid "Bridge Unit"
+msgstr ""
+
+#. module: dental_core
+#. odoo-javascript
+#: code:addons/dental_core/static/src/tooth_chart/tooth_chart.js:0
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_chart_line__condition__caries
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__dental_chart_condition__caries
+msgid "Caries"
+msgstr ""
+
+#. module: dental_core
+#: model:medical.allergen,name:dental_core.allergen_chlorhexidine
+msgid "Chlorhexidine"
+msgstr ""
+
+#. module: dental_core
+#: model:product.template,name:dental_core.medicine_chlorhexidine_product_template
+msgid "Chlorhexidine Mouthwash 0.12%"
+msgstr ""
+
+#. module: dental_core
+#: model:medical.diagnosis,name:dental_core.icd_k05_1
+msgid "Chronic gingivitis"
+msgstr ""
+
+#. module: dental_core
+#: model:medical.diagnosis,name:dental_core.icd_k05_3
+msgid "Chronic periodontitis"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__code
+msgid "Code"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__condition
+msgid "Condition"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,help:dental_core.field_product_product__dental_chart_condition
+#: model:ir.model.fields,help:dental_core.field_product_template__dental_chart_condition
+msgid "Condition written on the tooth chart when the procedure is executed."
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model,name:dental_core.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__create_uid
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__create_date
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_chart_line__condition__crown
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__dental_chart_condition__crown
+msgid "Crown"
+msgstr ""
+
+#. module: dental_core
+#. odoo-javascript
+#: code:addons/dental_core/static/src/tooth_chart/tooth_chart.js:0
+msgid "Crown / Bridge"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__date
+msgid "Date"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_res_partner__dental_chart_data
+#: model:ir.model.fields,field_description:dental_core.field_res_users__dental_chart_data
+msgid "Dental Chart Data"
+msgstr ""
+
+#. module: dental_core
+#: model:product.template,name:dental_core.product_dental_consultation_product_template
+msgid "Dental Consultation & Examination"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.actions.act_window,name:dental_core.action_dental_procedure
+#: model:ir.ui.menu,name:dental_core.menu_dental_procedure
+msgid "Dental Procedures"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.ui.menu,name:dental_core.menu_dental_visit
+msgid "Dental Schedule"
+msgstr ""
+
+#. module: dental_core
+#. odoo-javascript
+#: code:addons/dental_core/static/src/tooth_chart/tooth_chart.js:0
+msgid "Dental Tooth Chart"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.actions.act_window,name:dental_core.action_dental_visit
+msgid "Dental Visits"
+msgstr ""
+
+#. module: dental_core
+#: model:medical.diagnosis,name:dental_core.icd_k02_9
+msgid "Dental caries, unspecified"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__doctor_id
+msgid "Dentist"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.ui.menu,name:dental_core.menu_dental
+#: model:medical.department,name:dental_core.dept_dentistry
+msgid "Dentistry"
+msgstr ""
+
+#. module: dental_core
+#: model:medical.specialty,name:dental_core.spec_dental_general
+msgid "Diagnostic / General"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__display_name
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__display_name
+#: model:ir.model.fields,field_description:dental_core.field_medical_treatment_line__display_name
+#: model:ir.model.fields,field_description:dental_core.field_medical_visit__display_name
+#: model:ir.model.fields,field_description:dental_core.field_product_template__display_name
+#: model:ir.model.fields,field_description:dental_core.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: dental_core
+#: model:medical.specialty,name:dental_core.spec_endo
+msgid "Endodontics"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_chart_line__condition__extracted
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__dental_chart_condition__extracted
+msgid "Extracted"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,help:dental_core.field_dental_tooth__code
+msgid "FDI two-digit code, e.g. 11, 36, 85"
+msgstr ""
+
+#. module: dental_core
+#. odoo-javascript
+#: code:addons/dental_core/static/src/tooth_chart/tooth_chart.js:0
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_chart_line__condition__filled
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__dental_chart_condition__filled
+msgid "Filled"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,help:dental_core.field_product_product__dental_requires_surface
+#: model:ir.model.fields,help:dental_core.field_product_template__dental_requires_surface
+msgid "Fillings: the dentist must pick the surfaces (M, O, D, B, L, I)."
+msgstr ""
+
+#. module: dental_core
+#: model:medical.diagnosis,name:dental_core.icd_s02_5
+msgid "Fracture of tooth"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_chart_line__condition__fractured
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__dental_chart_condition__fractured
+msgid "Fractured"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__id
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__id
+#: model:ir.model.fields,field_description:dental_core.field_medical_treatment_line__id
+#: model:ir.model.fields,field_description:dental_core.field_medical_visit__id
+#: model:ir.model.fields,field_description:dental_core.field_product_template__id
+#: model:ir.model.fields,field_description:dental_core.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: dental_core
+#: model:medical.diagnosis,name:dental_core.icd_k01_1
+msgid "Impacted teeth"
+msgstr ""
+
+#. module: dental_core
+#. odoo-javascript
+#: code:addons/dental_core/static/src/tooth_chart/tooth_chart.js:0
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_chart_line__condition__implant
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__dental_chart_condition__implant
+msgid "Implant"
+msgstr ""
+
+#. module: dental_core
+#: model:medical.specialty,name:dental_core.spec_implant
+msgid "Implantology"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_medical_visit__is_dental
+#: model:ir.model.fields,field_description:dental_core.field_product_product__is_dental
+#: model:ir.model.fields,field_description:dental_core.field_product_template__is_dental
+msgid "Is Dental"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__write_uid
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__write_date
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: dental_core
+#: model:medical.diagnosis,name:dental_core.icd_k08_1
+msgid "Loss of teeth due to accident, extraction or local periodontal disease"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_tooth__arch__lower
+msgid "Lower"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_33
+#: model:dental.tooth,name:dental_core.tooth_73
+msgid "Lower Left Canine"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_31
+#: model:dental.tooth,name:dental_core.tooth_71
+msgid "Lower Left Central Incisor"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_36
+#: model:dental.tooth,name:dental_core.tooth_74
+msgid "Lower Left First Molar"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_34
+msgid "Lower Left First Premolar"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_32
+#: model:dental.tooth,name:dental_core.tooth_72
+msgid "Lower Left Lateral Incisor"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_37
+#: model:dental.tooth,name:dental_core.tooth_75
+msgid "Lower Left Second Molar"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_35
+msgid "Lower Left Second Premolar"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_38
+msgid "Lower Left Third Molar"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_43
+#: model:dental.tooth,name:dental_core.tooth_83
+msgid "Lower Right Canine"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_41
+#: model:dental.tooth,name:dental_core.tooth_81
+msgid "Lower Right Central Incisor"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_46
+#: model:dental.tooth,name:dental_core.tooth_84
+msgid "Lower Right First Molar"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_44
+msgid "Lower Right First Premolar"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_42
+#: model:dental.tooth,name:dental_core.tooth_82
+msgid "Lower Right Lateral Incisor"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_47
+#: model:dental.tooth,name:dental_core.tooth_85
+msgid "Lower Right Second Molar"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_45
+msgid "Lower Right Second Premolar"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_48
+msgid "Lower Right Third Molar"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_chart_line__condition__missing
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__dental_chart_condition__missing
+msgid "Missing"
+msgstr ""
+
+#. module: dental_core
+#. odoo-javascript
+#: code:addons/dental_core/static/src/tooth_chart/tooth_chart.js:0
+msgid "Missing / Extracted"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__name
+msgid "Name"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__note
+msgid "Note"
+msgstr ""
+
+#. module: dental_core
+#: model:medical.specialty,name:dental_core.spec_surgery
+msgid "Oral Surgery / Extraction"
+msgstr ""
+
+#. module: dental_core
+#: model:medical.specialty,name:dental_core.spec_ortho
+msgid "Orthodontics"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_chart_line__condition__other
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__dental_chart_condition__other
+msgid "Other"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__patient_id
+#: model_terms:ir.ui.view,arch_db:dental_core.dental_chart_line_view_search
+msgid "Patient"
+msgstr ""
+
+#. module: dental_core
+#: model:product.template,name:dental_core.product_dental_xray_pa_product_template
+msgid "Periapical X-Ray"
+msgstr ""
+
+#. module: dental_core
+#: model:medical.diagnosis,name:dental_core.icd_k04_7
+msgid "Periapical abscess without sinus"
+msgstr ""
+
+#. module: dental_core
+#: model:medical.specialty,name:dental_core.spec_perio
+msgid "Periodontics"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__position
+msgid "Position"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__is_primary
+msgid "Primary (Deciduous)"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model,name:dental_core.model_product_template
+msgid "Product"
+msgstr ""
+
+#. module: dental_core
+#: model:medical.specialty,name:dental_core.spec_prostho
+msgid "Prosthodontics"
+msgstr ""
+
+#. module: dental_core
+#: model:medical.diagnosis,name:dental_core.icd_k04_0
+msgid "Pulpitis"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__quadrant
+msgid "Quadrant"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_product_product__dental_requires_surface
+#: model:ir.model.fields,field_description:dental_core.field_product_template__dental_requires_surface
+msgid "Requires Surfaces"
+msgstr ""
+
+#. module: dental_core
+#: model:medical.specialty,name:dental_core.spec_restorative
+msgid "Restorative (Fillings)"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_product_product__dental_chart_condition
+#: model:ir.model.fields,field_description:dental_core.field_product_template__dental_chart_condition
+msgid "Resulting Tooth Condition"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_chart_line__condition__rct
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__dental_chart_condition__rct
+msgid "Root Canal Treated"
+msgstr ""
+
+#. module: dental_core
+#. odoo-javascript
+#: code:addons/dental_core/static/src/tooth_chart/tooth_chart.js:0
+msgid "Root canal"
+msgstr ""
+
+#. module: dental_core
+#: model:product.template,name:dental_core.product_dental_scaling_product_template
+msgid "Scaling & Polishing"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_product_product__site_requirement
+#: model:ir.model.fields,field_description:dental_core.field_product_template__site_requirement
+msgid "Site Requirement"
+msgstr ""
+
+#. module: dental_core
+#. odoo-javascript
+#: code:addons/dental_core/static/src/tooth_chart/tooth_chart.js:0
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_chart_line__condition__sound
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__dental_chart_condition__sound
+msgid "Sound"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__treatment_line_id
+msgid "Source Treatment"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__surfaces
+#: model:ir.model.fields,field_description:dental_core.field_medical_treatment_line__surfaces
+msgid "Surfaces"
+msgstr ""
+
+#. module: dental_core
+#. odoo-python
+#: code:addons/dental_core/models/dental_chart_line.py:0
+#: code:addons/dental_core/models/medical_treatment_line.py:0
+msgid "Surfaces can only contain the letters M, O, D, B, L, I."
+msgstr ""
+
+#. module: dental_core
+#: model:ir.actions.act_window,name:dental_core.action_dental_tooth
+#: model:ir.ui.menu,name:dental_core.menu_dental_tooth
+msgid "Teeth (FDI)"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.constraint,message:dental_core.constraint_dental_tooth_code_uniq
+msgid "The FDI code must be unique."
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__tooth_id
+#: model:ir.model.fields,field_description:dental_core.field_medical_treatment_line__tooth_id
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__site_requirement__tooth
+#: model_terms:ir.ui.view,arch_db:dental_core.dental_chart_line_view_search
+msgid "Tooth"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model,name:dental_core.model_dental_tooth
+msgid "Tooth (FDI notation)"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_res_partner__chart_line_ids
+#: model:ir.model.fields,field_description:dental_core.field_res_users__chart_line_ids
+#: model_terms:ir.ui.view,arch_db:dental_core.res_partner_form_dental
+msgid "Tooth Chart"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.actions.act_window,name:dental_core.action_dental_chart_line
+#: model:ir.ui.menu,name:dental_core.menu_dental_chart_line
+msgid "Tooth Chart Entries"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model,name:dental_core.model_dental_chart_line
+msgid "Tooth Chart Entry"
+msgstr ""
+
+#. module: dental_core
+#. odoo-python
+#: code:addons/dental_core/models/res_partner.py:0
+msgid "Tooth chart"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model,name:dental_core.model_medical_treatment_line
+msgid "Treatment Line"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_tooth__arch__upper
+msgid "Upper"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_23
+#: model:dental.tooth,name:dental_core.tooth_63
+msgid "Upper Left Canine"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_21
+#: model:dental.tooth,name:dental_core.tooth_61
+msgid "Upper Left Central Incisor"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_26
+#: model:dental.tooth,name:dental_core.tooth_64
+msgid "Upper Left First Molar"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_24
+msgid "Upper Left First Premolar"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_22
+#: model:dental.tooth,name:dental_core.tooth_62
+msgid "Upper Left Lateral Incisor"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_27
+#: model:dental.tooth,name:dental_core.tooth_65
+msgid "Upper Left Second Molar"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_25
+msgid "Upper Left Second Premolar"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_28
+msgid "Upper Left Third Molar"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_13
+#: model:dental.tooth,name:dental_core.tooth_53
+msgid "Upper Right Canine"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_11
+#: model:dental.tooth,name:dental_core.tooth_51
+msgid "Upper Right Central Incisor"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_16
+#: model:dental.tooth,name:dental_core.tooth_54
+msgid "Upper Right First Molar"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_14
+msgid "Upper Right First Premolar"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_12
+#: model:dental.tooth,name:dental_core.tooth_52
+msgid "Upper Right Lateral Incisor"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_17
+#: model:dental.tooth,name:dental_core.tooth_55
+msgid "Upper Right Second Molar"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_15
+msgid "Upper Right Second Premolar"
+msgstr ""
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_18
+msgid "Upper Right Third Molar"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_chart_line__condition__veneer
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__dental_chart_condition__veneer
+msgid "Veneer"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model,name:dental_core.model_medical_visit
+msgid "Visit"
+msgstr ""
+
+#. module: dental_core
+#: model:ir.model.fields,help:dental_core.field_product_product__site_requirement
+#: model:ir.model.fields,help:dental_core.field_product_template__site_requirement
+msgid ""
+"What the doctor must record on the treatment line before it is executed."
+msgstr ""
+
+#. module: dental_core
+#. odoo-python
+#: code:addons/dental_core/models/medical_treatment_line.py:0
+msgid "tooth %s"
+msgstr ""

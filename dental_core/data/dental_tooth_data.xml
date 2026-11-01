@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="tooth_11" model="dental.tooth">
+            <field name="code">11</field>
+            <field name="name">Upper Right Central Incisor</field>
+            <field name="quadrant">1</field>
+            <field name="position">1</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_12" model="dental.tooth">
+            <field name="code">12</field>
+            <field name="name">Upper Right Lateral Incisor</field>
+            <field name="quadrant">1</field>
+            <field name="position">2</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_13" model="dental.tooth">
+            <field name="code">13</field>
+            <field name="name">Upper Right Canine</field>
+            <field name="quadrant">1</field>
+            <field name="position">3</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_14" model="dental.tooth">
+            <field name="code">14</field>
+            <field name="name">Upper Right First Premolar</field>
+            <field name="quadrant">1</field>
+            <field name="position">4</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_15" model="dental.tooth">
+            <field name="code">15</field>
+            <field name="name">Upper Right Second Premolar</field>
+            <field name="quadrant">1</field>
+            <field name="position">5</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_16" model="dental.tooth">
+            <field name="code">16</field>
+            <field name="name">Upper Right First Molar</field>
+            <field name="quadrant">1</field>
+            <field name="position">6</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_17" model="dental.tooth">
+            <field name="code">17</field>
+            <field name="name">Upper Right Second Molar</field>
+            <field name="quadrant">1</field>
+            <field name="position">7</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_18" model="dental.tooth">
+            <field name="code">18</field>
+            <field name="name">Upper Right Third Molar</field>
+            <field name="quadrant">1</field>
+            <field name="position">8</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_21" model="dental.tooth">
+            <field name="code">21</field>
+            <field name="name">Upper Left Central Incisor</field>
+            <field name="quadrant">2</field>
+            <field name="position">1</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_22" model="dental.tooth">
+            <field name="code">22</field>
+            <field name="name">Upper Left Lateral Incisor</field>
+            <field name="quadrant">2</field>
+            <field name="position">2</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_23" model="dental.tooth">
+            <field name="code">23</field>
+            <field name="name">Upper Left Canine</field>
+            <field name="quadrant">2</field>
+            <field name="position">3</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_24" model="dental.tooth">
+            <field name="code">24</field>
+            <field name="name">Upper Left First Premolar</field>
+            <field name="quadrant">2</field>
+            <field name="position">4</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_25" model="dental.tooth">
+            <field name="code">25</field>
+            <field name="name">Upper Left Second Premolar</field>
+            <field name="quadrant">2</field>
+            <field name="position">5</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_26" model="dental.tooth">
+            <field name="code">26</field>
+            <field name="name">Upper Left First Molar</field>
+            <field name="quadrant">2</field>
+            <field name="position">6</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_27" model="dental.tooth">
+            <field name="code">27</field>
+            <field name="name">Upper Left Second Molar</field>
+            <field name="quadrant">2</field>
+            <field name="position">7</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_28" model="dental.tooth">
+            <field name="code">28</field>
+            <field name="name">Upper Left Third Molar</field>
+            <field name="quadrant">2</field>
+            <field name="position">8</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_31" model="dental.tooth">
+            <field name="code">31</field>
+            <field name="name">Lower Left Central Incisor</field>
+            <field name="quadrant">3</field>
+            <field name="position">1</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_32" model="dental.tooth">
+            <field name="code">32</field>
+            <field name="name">Lower Left Lateral Incisor</field>
+            <field name="quadrant">3</field>
+            <field name="position">2</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_33" model="dental.tooth">
+            <field name="code">33</field>
+            <field name="name">Lower Left Canine</field>
+            <field name="quadrant">3</field>
+            <field name="position">3</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_34" model="dental.tooth">
+            <field name="code">34</field>
+            <field name="name">Lower Left First Premolar</field>
+            <field name="quadrant">3</field>
+            <field name="position">4</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_35" model="dental.tooth">
+            <field name="code">35</field>
+            <field name="name">Lower Left Second Premolar</field>
+            <field name="quadrant">3</field>
+            <field name="position">5</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_36" model="dental.tooth">
+            <field name="code">36</field>
+            <field name="name">Lower Left First Molar</field>
+            <field name="quadrant">3</field>
+            <field name="position">6</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_37" model="dental.tooth">
+            <field name="code">37</field>
+            <field name="name">Lower Left Second Molar</field>
+            <field name="quadrant">3</field>
+            <field name="position">7</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_38" model="dental.tooth">
+            <field name="code">38</field>
+            <field name="name">Lower Left Third Molar</field>
+            <field name="quadrant">3</field>
+            <field name="position">8</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_41" model="dental.tooth">
+            <field name="code">41</field>
+            <field name="name">Lower Right Central Incisor</field>
+            <field name="quadrant">4</field>
+            <field name="position">1</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_42" model="dental.tooth">
+            <field name="code">42</field>
+            <field name="name">Lower Right Lateral Incisor</field>
+            <field name="quadrant">4</field>
+            <field name="position">2</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_43" model="dental.tooth">
+            <field name="code">43</field>
+            <field name="name">Lower Right Canine</field>
+            <field name="quadrant">4</field>
+            <field name="position">3</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_44" model="dental.tooth">
+            <field name="code">44</field>
+            <field name="name">Lower Right First Premolar</field>
+            <field name="quadrant">4</field>
+            <field name="position">4</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_45" model="dental.tooth">
+            <field name="code">45</field>
+            <field name="name">Lower Right Second Premolar</field>
+            <field name="quadrant">4</field>
+            <field name="position">5</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_46" model="dental.tooth">
+            <field name="code">46</field>
+            <field name="name">Lower Right First Molar</field>
+            <field name="quadrant">4</field>
+            <field name="position">6</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_47" model="dental.tooth">
+            <field name="code">47</field>
+            <field name="name">Lower Right Second Molar</field>
+            <field name="quadrant">4</field>
+            <field name="position">7</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_48" model="dental.tooth">
+            <field name="code">48</field>
+            <field name="name">Lower Right Third Molar</field>
+            <field name="quadrant">4</field>
+            <field name="position">8</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="False"/>
+        </record>
+        <record id="tooth_51" model="dental.tooth">
+            <field name="code">51</field>
+            <field name="name">Upper Right Central Incisor</field>
+            <field name="quadrant">5</field>
+            <field name="position">1</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="True"/>
+        </record>
+        <record id="tooth_52" model="dental.tooth">
+            <field name="code">52</field>
+            <field name="name">Upper Right Lateral Incisor</field>
+            <field name="quadrant">5</field>
+            <field name="position">2</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="True"/>
+        </record>
+        <record id="tooth_53" model="dental.tooth">
+            <field name="code">53</field>
+            <field name="name">Upper Right Canine</field>
+            <field name="quadrant">5</field>
+            <field name="position">3</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="True"/>
+        </record>
+        <record id="tooth_54" model="dental.tooth">
+            <field name="code">54</field>
+            <field name="name">Upper Right First Molar</field>
+            <field name="quadrant">5</field>
+            <field name="position">4</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="True"/>
+        </record>
+        <record id="tooth_55" model="dental.tooth">
+            <field name="code">55</field>
+            <field name="name">Upper Right Second Molar</field>
+            <field name="quadrant">5</field>
+            <field name="position">5</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="True"/>
+        </record>
+        <record id="tooth_61" model="dental.tooth">
+            <field name="code">61</field>
+            <field name="name">Upper Left Central Incisor</field>
+            <field name="quadrant">6</field>
+            <field name="position">1</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="True"/>
+        </record>
+        <record id="tooth_62" model="dental.tooth">
+            <field name="code">62</field>
+            <field name="name">Upper Left Lateral Incisor</field>
+            <field name="quadrant">6</field>
+            <field name="position">2</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="True"/>
+        </record>
+        <record id="tooth_63" model="dental.tooth">
+            <field name="code">63</field>
+            <field name="name">Upper Left Canine</field>
+            <field name="quadrant">6</field>
+            <field name="position">3</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="True"/>
+        </record>
+        <record id="tooth_64" model="dental.tooth">
+            <field name="code">64</field>
+            <field name="name">Upper Left First Molar</field>
+            <field name="quadrant">6</field>
+            <field name="position">4</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="True"/>
+        </record>
+        <record id="tooth_65" model="dental.tooth">
+            <field name="code">65</field>
+            <field name="name">Upper Left Second Molar</field>
+            <field name="quadrant">6</field>
+            <field name="position">5</field>
+            <field name="arch">upper</field>
+            <field name="is_primary" eval="True"/>
+        </record>
+        <record id="tooth_71" model="dental.tooth">
+            <field name="code">71</field>
+            <field name="name">Lower Left Central Incisor</field>
+            <field name="quadrant">7</field>
+            <field name="position">1</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="True"/>
+        </record>
+        <record id="tooth_72" model="dental.tooth">
+            <field name="code">72</field>
+            <field name="name">Lower Left Lateral Incisor</field>
+            <field name="quadrant">7</field>
+            <field name="position">2</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="True"/>
+        </record>
+        <record id="tooth_73" model="dental.tooth">
+            <field name="code">73</field>
+            <field name="name">Lower Left Canine</field>
+            <field name="quadrant">7</field>
+            <field name="position">3</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="True"/>
+        </record>
+        <record id="tooth_74" model="dental.tooth">
+            <field name="code">74</field>
+            <field name="name">Lower Left First Molar</field>
+            <field name="quadrant">7</field>
+            <field name="position">4</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="True"/>
+        </record>
+        <record id="tooth_75" model="dental.tooth">
+            <field name="code">75</field>
+            <field name="name">Lower Left Second Molar</field>
+            <field name="quadrant">7</field>
+            <field name="position">5</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="True"/>
+        </record>
+        <record id="tooth_81" model="dental.tooth">
+            <field name="code">81</field>
+            <field name="name">Lower Right Central Incisor</field>
+            <field name="quadrant">8</field>
+            <field name="position">1</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="True"/>
+        </record>
+        <record id="tooth_82" model="dental.tooth">
+            <field name="code">82</field>
+            <field name="name">Lower Right Lateral Incisor</field>
+            <field name="quadrant">8</field>
+            <field name="position">2</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="True"/>
+        </record>
+        <record id="tooth_83" model="dental.tooth">
+            <field name="code">83</field>
+            <field name="name">Lower Right Canine</field>
+            <field name="quadrant">8</field>
+            <field name="position">3</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="True"/>
+        </record>
+        <record id="tooth_84" model="dental.tooth">
+            <field name="code">84</field>
+            <field name="name">Lower Right First Molar</field>
+            <field name="quadrant">8</field>
+            <field name="position">4</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="True"/>
+        </record>
+        <record id="tooth_85" model="dental.tooth">
+            <field name="code">85</field>
+            <field name="name">Lower Right Second Molar</field>
+            <field name="quadrant">8</field>
+            <field name="position">5</field>
+            <field name="arch">lower</field>
+            <field name="is_primary" eval="True"/>
+        </record>
+    </data>
+</odoo>

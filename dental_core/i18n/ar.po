@@ -1,0 +1,723 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dental_core
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-11 17:50+0000\n"
+"PO-Revision-Date: 2026-10-11 17:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: dental_core
+#. odoo-python
+#: code:addons/dental_core/models/medical_treatment_line.py:0
+msgid "%(proc)s on tooth %(tooth)s requires the surfaces."
+msgstr "%(proc)s على السن %(tooth)s يحتاج تحديد الأسطح."
+
+#. module: dental_core
+#. odoo-python
+#: code:addons/dental_core/models/medical_treatment_line.py:0
+msgid "%(proc)s requires a tooth."
+msgstr "%(proc)s يحتاج تحديد السن."
+
+#. module: dental_core
+#: model:ir.model.fields,help:dental_core.field_dental_tooth__position
+msgid "1 = central incisor ... 8 = third molar"
+msgstr "1 = القاطع الأوسط ... 8 = ضرس العقل"
+
+#. module: dental_core
+#: model:ir.model.fields,help:dental_core.field_dental_tooth__quadrant
+msgid "1-4 permanent, 5-8 primary"
+msgstr "1-4 دائمة، 5-8 لبنية"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__active
+msgid "Active"
+msgstr "نشطة"
+
+#. module: dental_core
+#: model:medical.diagnosis,name:dental_core.icd_k07_3
+msgid "Anomalies of tooth position"
+msgstr "تشوهات وضع الأسنان"
+
+#. module: dental_core
+#: model:ir.model.fields,help:dental_core.field_dental_chart_line__surfaces
+#: model:ir.model.fields,help:dental_core.field_medical_treatment_line__surfaces
+msgid "Any of M, O, D, B, L, I"
+msgstr "أي من M، O، D، B، L، I"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__arch
+msgid "Arch"
+msgstr "الفك"
+
+#. module: dental_core
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_chart_line__condition__bridge
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__dental_chart_condition__bridge
+msgid "Bridge Unit"
+msgstr "وحدة جسر"
+
+#. module: dental_core
+#. odoo-javascript
+#: code:addons/dental_core/static/src/tooth_chart/tooth_chart.js:0
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_chart_line__condition__caries
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__dental_chart_condition__caries
+msgid "Caries"
+msgstr "تسوس"
+
+#. module: dental_core
+#: model:medical.allergen,name:dental_core.allergen_chlorhexidine
+msgid "Chlorhexidine"
+msgstr "الكلورهيكسيدين"
+
+#. module: dental_core
+#: model:product.template,name:dental_core.medicine_chlorhexidine_product_template
+msgid "Chlorhexidine Mouthwash 0.12%"
+msgstr "Chlorhexidine Mouthwash 0.12%"
+
+#. module: dental_core
+#: model:medical.diagnosis,name:dental_core.icd_k05_1
+msgid "Chronic gingivitis"
+msgstr "التهاب اللثة المزمن"
+
+#. module: dental_core
+#: model:medical.diagnosis,name:dental_core.icd_k05_3
+msgid "Chronic periodontitis"
+msgstr "التهاب دواعم السن المزمن"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__code
+msgid "Code"
+msgstr "الكود"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__condition
+msgid "Condition"
+msgstr "الحالة"
+
+#. module: dental_core
+#: model:ir.model.fields,help:dental_core.field_product_product__dental_chart_condition
+#: model:ir.model.fields,help:dental_core.field_product_template__dental_chart_condition
+msgid "Condition written on the tooth chart when the procedure is executed."
+msgstr "الحالة التي تُسجل في خريطة الأسنان عند تنفيذ الإجراء."
+
+#. module: dental_core
+#: model:ir.model,name:dental_core.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__create_uid
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__create_date
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: dental_core
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_chart_line__condition__crown
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__dental_chart_condition__crown
+msgid "Crown"
+msgstr "تاج"
+
+#. module: dental_core
+#. odoo-javascript
+#: code:addons/dental_core/static/src/tooth_chart/tooth_chart.js:0
+msgid "Crown / Bridge"
+msgstr "تاج / جسر"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_res_partner__dental_chart_data
+#: model:ir.model.fields,field_description:dental_core.field_res_users__dental_chart_data
+msgid "Dental Chart Data"
+msgstr "بيانات خريطة الأسنان"
+
+#. module: dental_core
+#: model:product.template,name:dental_core.product_dental_consultation_product_template
+msgid "Dental Consultation & Examination"
+msgstr "كشف وفحص الأسنان"
+
+#. module: dental_core
+#: model:ir.actions.act_window,name:dental_core.action_dental_procedure
+#: model:ir.ui.menu,name:dental_core.menu_dental_procedure
+msgid "Dental Procedures"
+msgstr "إجراءات الأسنان"
+
+#. module: dental_core
+#: model:ir.ui.menu,name:dental_core.menu_dental_visit
+msgid "Dental Schedule"
+msgstr "جدول الأسنان"
+
+#. module: dental_core
+#. odoo-javascript
+#: code:addons/dental_core/static/src/tooth_chart/tooth_chart.js:0
+msgid "Dental Tooth Chart"
+msgstr "خريطة الأسنان"
+
+#. module: dental_core
+#: model:ir.actions.act_window,name:dental_core.action_dental_visit
+msgid "Dental Visits"
+msgstr "زيارات الأسنان"
+
+#. module: dental_core
+#: model:medical.diagnosis,name:dental_core.icd_k02_9
+msgid "Dental caries, unspecified"
+msgstr "تسوس الأسنان، غير محدد"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__doctor_id
+msgid "Dentist"
+msgstr "طبيب الأسنان"
+
+#. module: dental_core
+#: model:ir.ui.menu,name:dental_core.menu_dental
+#: model:medical.department,name:dental_core.dept_dentistry
+msgid "Dentistry"
+msgstr "طب الأسنان"
+
+#. module: dental_core
+#: model:medical.specialty,name:dental_core.spec_dental_general
+msgid "Diagnostic / General"
+msgstr "تشخيص / عام"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__display_name
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__display_name
+#: model:ir.model.fields,field_description:dental_core.field_medical_treatment_line__display_name
+#: model:ir.model.fields,field_description:dental_core.field_medical_visit__display_name
+#: model:ir.model.fields,field_description:dental_core.field_product_template__display_name
+#: model:ir.model.fields,field_description:dental_core.field_res_partner__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: dental_core
+#: model:medical.specialty,name:dental_core.spec_endo
+msgid "Endodontics"
+msgstr "علاج الجذور (العصب)"
+
+#. module: dental_core
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_chart_line__condition__extracted
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__dental_chart_condition__extracted
+msgid "Extracted"
+msgstr "مخلوع"
+
+#. module: dental_core
+#: model:ir.model.fields,help:dental_core.field_dental_tooth__code
+msgid "FDI two-digit code, e.g. 11, 36, 85"
+msgstr "كود FDI من رقمين، مثل 11 أو 36 أو 85"
+
+#. module: dental_core
+#. odoo-javascript
+#: code:addons/dental_core/static/src/tooth_chart/tooth_chart.js:0
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_chart_line__condition__filled
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__dental_chart_condition__filled
+msgid "Filled"
+msgstr "محشو"
+
+#. module: dental_core
+#: model:ir.model.fields,help:dental_core.field_product_product__dental_requires_surface
+#: model:ir.model.fields,help:dental_core.field_product_template__dental_requires_surface
+msgid "Fillings: the dentist must pick the surfaces (M, O, D, B, L, I)."
+msgstr "الحشوات: يجب أن يحدد الطبيب الأسطح (M، O، D، B، L، I)."
+
+#. module: dental_core
+#: model:medical.diagnosis,name:dental_core.icd_s02_5
+msgid "Fracture of tooth"
+msgstr "كسر السن"
+
+#. module: dental_core
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_chart_line__condition__fractured
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__dental_chart_condition__fractured
+msgid "Fractured"
+msgstr "مكسور"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__id
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__id
+#: model:ir.model.fields,field_description:dental_core.field_medical_treatment_line__id
+#: model:ir.model.fields,field_description:dental_core.field_medical_visit__id
+#: model:ir.model.fields,field_description:dental_core.field_product_template__id
+#: model:ir.model.fields,field_description:dental_core.field_res_partner__id
+msgid "ID"
+msgstr "المُعرّف"
+
+#. module: dental_core
+#: model:medical.diagnosis,name:dental_core.icd_k01_1
+msgid "Impacted teeth"
+msgstr "أسنان منطمرة"
+
+#. module: dental_core
+#. odoo-javascript
+#: code:addons/dental_core/static/src/tooth_chart/tooth_chart.js:0
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_chart_line__condition__implant
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__dental_chart_condition__implant
+msgid "Implant"
+msgstr "زرعة"
+
+#. module: dental_core
+#: model:medical.specialty,name:dental_core.spec_implant
+msgid "Implantology"
+msgstr "زراعة الأسنان"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_medical_visit__is_dental
+#: model:ir.model.fields,field_description:dental_core.field_product_product__is_dental
+#: model:ir.model.fields,field_description:dental_core.field_product_template__is_dental
+msgid "Is Dental"
+msgstr "أسنان؟"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__write_uid
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__write_date
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: dental_core
+#: model:medical.diagnosis,name:dental_core.icd_k08_1
+msgid "Loss of teeth due to accident, extraction or local periodontal disease"
+msgstr "فقد الأسنان بسبب حادث أو خلع أو مرض لثوي موضعي"
+
+#. module: dental_core
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_tooth__arch__lower
+msgid "Lower"
+msgstr "سفلي"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_33
+#: model:dental.tooth,name:dental_core.tooth_73
+msgid "Lower Left Canine"
+msgstr "الناب السفلي الأيسر"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_31
+#: model:dental.tooth,name:dental_core.tooth_71
+msgid "Lower Left Central Incisor"
+msgstr "القاطع الأوسط السفلي الأيسر"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_36
+#: model:dental.tooth,name:dental_core.tooth_74
+msgid "Lower Left First Molar"
+msgstr "الضرس الأول السفلي الأيسر"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_34
+msgid "Lower Left First Premolar"
+msgstr "الضاحك الأول السفلي الأيسر"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_32
+#: model:dental.tooth,name:dental_core.tooth_72
+msgid "Lower Left Lateral Incisor"
+msgstr "القاطع الجانبي السفلي الأيسر"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_37
+#: model:dental.tooth,name:dental_core.tooth_75
+msgid "Lower Left Second Molar"
+msgstr "الضرس الثاني السفلي الأيسر"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_35
+msgid "Lower Left Second Premolar"
+msgstr "الضاحك الثاني السفلي الأيسر"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_38
+msgid "Lower Left Third Molar"
+msgstr "ضرس العقل السفلي الأيسر"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_43
+#: model:dental.tooth,name:dental_core.tooth_83
+msgid "Lower Right Canine"
+msgstr "الناب السفلي الأيمن"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_41
+#: model:dental.tooth,name:dental_core.tooth_81
+msgid "Lower Right Central Incisor"
+msgstr "القاطع الأوسط السفلي الأيمن"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_46
+#: model:dental.tooth,name:dental_core.tooth_84
+msgid "Lower Right First Molar"
+msgstr "الضرس الأول السفلي الأيمن"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_44
+msgid "Lower Right First Premolar"
+msgstr "الضاحك الأول السفلي الأيمن"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_42
+#: model:dental.tooth,name:dental_core.tooth_82
+msgid "Lower Right Lateral Incisor"
+msgstr "القاطع الجانبي السفلي الأيمن"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_47
+#: model:dental.tooth,name:dental_core.tooth_85
+msgid "Lower Right Second Molar"
+msgstr "الضرس الثاني السفلي الأيمن"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_45
+msgid "Lower Right Second Premolar"
+msgstr "الضاحك الثاني السفلي الأيمن"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_48
+msgid "Lower Right Third Molar"
+msgstr "ضرس العقل السفلي الأيمن"
+
+#. module: dental_core
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_chart_line__condition__missing
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__dental_chart_condition__missing
+msgid "Missing"
+msgstr "مفقود"
+
+#. module: dental_core
+#. odoo-javascript
+#: code:addons/dental_core/static/src/tooth_chart/tooth_chart.js:0
+msgid "Missing / Extracted"
+msgstr "مفقود / مخلوع"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__note
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: dental_core
+#: model:medical.specialty,name:dental_core.spec_surgery
+msgid "Oral Surgery / Extraction"
+msgstr "جراحة الفم / الخلع"
+
+#. module: dental_core
+#: model:medical.specialty,name:dental_core.spec_ortho
+msgid "Orthodontics"
+msgstr "تقويم الأسنان"
+
+#. module: dental_core
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_chart_line__condition__other
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__dental_chart_condition__other
+msgid "Other"
+msgstr "أخرى"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__patient_id
+#: model_terms:ir.ui.view,arch_db:dental_core.dental_chart_line_view_search
+msgid "Patient"
+msgstr "المريض"
+
+#. module: dental_core
+#: model:product.template,name:dental_core.product_dental_xray_pa_product_template
+msgid "Periapical X-Ray"
+msgstr "أشعة ذروية"
+
+#. module: dental_core
+#: model:medical.diagnosis,name:dental_core.icd_k04_7
+msgid "Periapical abscess without sinus"
+msgstr "خراج حول ذروي بدون ناسور"
+
+#. module: dental_core
+#: model:medical.specialty,name:dental_core.spec_perio
+msgid "Periodontics"
+msgstr "أمراض اللثة"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__position
+msgid "Position"
+msgstr "الموضع"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__is_primary
+msgid "Primary (Deciduous)"
+msgstr "لبنية (مؤقتة)"
+
+#. module: dental_core
+#: model:ir.model,name:dental_core.model_product_template
+msgid "Product"
+msgstr "المنتج"
+
+#. module: dental_core
+#: model:medical.specialty,name:dental_core.spec_prostho
+msgid "Prosthodontics"
+msgstr "التركيبات"
+
+#. module: dental_core
+#: model:medical.diagnosis,name:dental_core.icd_k04_0
+msgid "Pulpitis"
+msgstr "التهاب لب السن"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_tooth__quadrant
+msgid "Quadrant"
+msgstr "الربع"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_product_product__dental_requires_surface
+#: model:ir.model.fields,field_description:dental_core.field_product_template__dental_requires_surface
+msgid "Requires Surfaces"
+msgstr "يتطلب تحديد الأسطح"
+
+#. module: dental_core
+#: model:medical.specialty,name:dental_core.spec_restorative
+msgid "Restorative (Fillings)"
+msgstr "العلاج التحفظي (الحشوات)"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_product_product__dental_chart_condition
+#: model:ir.model.fields,field_description:dental_core.field_product_template__dental_chart_condition
+msgid "Resulting Tooth Condition"
+msgstr "حالة السن بعد الإجراء"
+
+#. module: dental_core
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_chart_line__condition__rct
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__dental_chart_condition__rct
+msgid "Root Canal Treated"
+msgstr "معالج عصبه"
+
+#. module: dental_core
+#. odoo-javascript
+#: code:addons/dental_core/static/src/tooth_chart/tooth_chart.js:0
+msgid "Root canal"
+msgstr "علاج عصب"
+
+#. module: dental_core
+#: model:product.template,name:dental_core.product_dental_scaling_product_template
+msgid "Scaling & Polishing"
+msgstr "تنظيف وتلميع"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_product_product__site_requirement
+#: model:ir.model.fields,field_description:dental_core.field_product_template__site_requirement
+msgid "Site Requirement"
+msgstr "المطلوب تحديده"
+
+#. module: dental_core
+#. odoo-javascript
+#: code:addons/dental_core/static/src/tooth_chart/tooth_chart.js:0
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_chart_line__condition__sound
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__dental_chart_condition__sound
+msgid "Sound"
+msgstr "سليم"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__treatment_line_id
+msgid "Source Treatment"
+msgstr "العلاج المصدر"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__surfaces
+#: model:ir.model.fields,field_description:dental_core.field_medical_treatment_line__surfaces
+msgid "Surfaces"
+msgstr "الأسطح"
+
+#. module: dental_core
+#. odoo-python
+#: code:addons/dental_core/models/dental_chart_line.py:0
+#: code:addons/dental_core/models/medical_treatment_line.py:0
+msgid "Surfaces can only contain the letters M, O, D, B, L, I."
+msgstr "الأسطح يمكن أن تحتوي فقط على الحروف M، O، D، B، L، I."
+
+#. module: dental_core
+#: model:ir.actions.act_window,name:dental_core.action_dental_tooth
+#: model:ir.ui.menu,name:dental_core.menu_dental_tooth
+msgid "Teeth (FDI)"
+msgstr "الأسنان (FDI)"
+
+#. module: dental_core
+#: model:ir.model.constraint,message:dental_core.constraint_dental_tooth_code_uniq
+msgid "The FDI code must be unique."
+msgstr "يجب أن يكون كود FDI فريدًا."
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_dental_chart_line__tooth_id
+#: model:ir.model.fields,field_description:dental_core.field_medical_treatment_line__tooth_id
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__site_requirement__tooth
+#: model_terms:ir.ui.view,arch_db:dental_core.dental_chart_line_view_search
+msgid "Tooth"
+msgstr "السن"
+
+#. module: dental_core
+#: model:ir.model,name:dental_core.model_dental_tooth
+msgid "Tooth (FDI notation)"
+msgstr "السن (ترقيم FDI)"
+
+#. module: dental_core
+#: model:ir.model.fields,field_description:dental_core.field_res_partner__chart_line_ids
+#: model:ir.model.fields,field_description:dental_core.field_res_users__chart_line_ids
+#: model_terms:ir.ui.view,arch_db:dental_core.res_partner_form_dental
+msgid "Tooth Chart"
+msgstr "خريطة الأسنان"
+
+#. module: dental_core
+#: model:ir.actions.act_window,name:dental_core.action_dental_chart_line
+#: model:ir.ui.menu,name:dental_core.menu_dental_chart_line
+msgid "Tooth Chart Entries"
+msgstr "تسجيلات خريطة الأسنان"
+
+#. module: dental_core
+#: model:ir.model,name:dental_core.model_dental_chart_line
+msgid "Tooth Chart Entry"
+msgstr "تسجيل في خريطة الأسنان"
+
+#. module: dental_core
+#. odoo-python
+#: code:addons/dental_core/models/res_partner.py:0
+msgid "Tooth chart"
+msgstr "خريطة الأسنان"
+
+#. module: dental_core
+#: model:ir.model,name:dental_core.model_medical_treatment_line
+msgid "Treatment Line"
+msgstr "سطر العلاج"
+
+#. module: dental_core
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_tooth__arch__upper
+msgid "Upper"
+msgstr "علوي"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_23
+#: model:dental.tooth,name:dental_core.tooth_63
+msgid "Upper Left Canine"
+msgstr "الناب العلوي الأيسر"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_21
+#: model:dental.tooth,name:dental_core.tooth_61
+msgid "Upper Left Central Incisor"
+msgstr "القاطع الأوسط العلوي الأيسر"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_26
+#: model:dental.tooth,name:dental_core.tooth_64
+msgid "Upper Left First Molar"
+msgstr "الضرس الأول العلوي الأيسر"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_24
+msgid "Upper Left First Premolar"
+msgstr "الضاحك الأول العلوي الأيسر"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_22
+#: model:dental.tooth,name:dental_core.tooth_62
+msgid "Upper Left Lateral Incisor"
+msgstr "القاطع الجانبي العلوي الأيسر"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_27
+#: model:dental.tooth,name:dental_core.tooth_65
+msgid "Upper Left Second Molar"
+msgstr "الضرس الثاني العلوي الأيسر"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_25
+msgid "Upper Left Second Premolar"
+msgstr "الضاحك الثاني العلوي الأيسر"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_28
+msgid "Upper Left Third Molar"
+msgstr "ضرس العقل العلوي الأيسر"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_13
+#: model:dental.tooth,name:dental_core.tooth_53
+msgid "Upper Right Canine"
+msgstr "الناب العلوي الأيمن"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_11
+#: model:dental.tooth,name:dental_core.tooth_51
+msgid "Upper Right Central Incisor"
+msgstr "القاطع الأوسط العلوي الأيمن"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_16
+#: model:dental.tooth,name:dental_core.tooth_54
+msgid "Upper Right First Molar"
+msgstr "الضرس الأول العلوي الأيمن"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_14
+msgid "Upper Right First Premolar"
+msgstr "الضاحك الأول العلوي الأيمن"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_12
+#: model:dental.tooth,name:dental_core.tooth_52
+msgid "Upper Right Lateral Incisor"
+msgstr "القاطع الجانبي العلوي الأيمن"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_17
+#: model:dental.tooth,name:dental_core.tooth_55
+msgid "Upper Right Second Molar"
+msgstr "الضرس الثاني العلوي الأيمن"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_15
+msgid "Upper Right Second Premolar"
+msgstr "الضاحك الثاني العلوي الأيمن"
+
+#. module: dental_core
+#: model:dental.tooth,name:dental_core.tooth_18
+msgid "Upper Right Third Molar"
+msgstr "ضرس العقل العلوي الأيمن"
+
+#. module: dental_core
+#: model:ir.model.fields.selection,name:dental_core.selection__dental_chart_line__condition__veneer
+#: model:ir.model.fields.selection,name:dental_core.selection__product_template__dental_chart_condition__veneer
+msgid "Veneer"
+msgstr "قشرة (فينير)"
+
+#. module: dental_core
+#: model:ir.model,name:dental_core.model_medical_visit
+msgid "Visit"
+msgstr "الزيارة"
+
+#. module: dental_core
+#: model:ir.model.fields,help:dental_core.field_product_product__site_requirement
+#: model:ir.model.fields,help:dental_core.field_product_template__site_requirement
+msgid ""
+"What the doctor must record on the treatment line before it is executed."
+msgstr "ما يجب أن يسجله الطبيب على سطر العلاج قبل تنفيذه."
+
+#. module: dental_core
+#. odoo-python
+#: code:addons/dental_core/models/medical_treatment_line.py:0
+msgid "tooth %s"
+msgstr "سن %s"
